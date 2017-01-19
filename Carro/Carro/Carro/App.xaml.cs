@@ -12,8 +12,8 @@ namespace Carro
         public App()
         {
             InitializeComponent();
-
-            MainPage = new Carro.MainPage();
+            MainPage = new Carro.Pessoa();
+            //MainPage = new Carro.MainPage();
         }
 
         protected override void OnStart()
