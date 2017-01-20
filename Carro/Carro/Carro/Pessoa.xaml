@@ -4,13 +4,16 @@
              x:Class="Carro.Pessoa">
   <ContentPage.Content>
   <StackLayout Padding="30" Spacing="30">
-    <Entry x:Name ="nome" Placeholder="Nome" Keyboard="Text"></Entry>
-    <Entry x:Name ="endereco" Placeholder="Endereço"></Entry>
-    <Entry x:Name ="telefone" Placeholder="Telefone" Keyboard="Telephone"></Entry>
-    <Entry x:Name ="email"  Placeholder="Email" Keyboard="Email"></Entry>
-    <Entry x:Name ="ndata" Placeholder="Data de nascimento" Keyboard="Numeric"></Entry>
+    <Label Text="teste"></Label>
+    <Entry x:Name = "nome" Placeholder="Nome" Keyboard="Text"></Entry>
+    <Entry x:Name ="ruaN" Placeholder="Rua"></Entry>
+    <Entry x:Name ="bairro" Placeholder="Bairro"></Entry>
     <Entry x:Name ="cpf" Placeholder="CPF" Keyboard="Numeric"></Entry>
+    <Entry x:Name ="telefone" Placeholder="Telefone" Keyboard="Telephone"></Entry>
+    <Entry x:Name ="data" Placeholder="Data de nascimento" Keyboard="Numeric"></Entry>
+    <Entry x:Name ="email"  Placeholder="Email" Keyboard="Email"></Entry>
     <Button x:Name ="Salvar" Text="Salvar" Clicked="SalvarClicked"></Button>
+    <ListView x:Name ="Lista"></ListView>
   </StackLayout>
   </ContentPage.Content>
 </ContentPage>

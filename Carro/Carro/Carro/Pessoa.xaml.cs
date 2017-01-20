@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 
 namespace Carro
@@ -13,18 +12,28 @@ namespace Carro
         public Pessoa()
         {
             InitializeComponent();
+            using (var dados = new AcessoDados())
+            {
+                Lista.ItemsSource = dados.Listar();
+            }
         }
         protected void SalvarClicked(object sender, EventArgs e)
         {
-            var pessoa = new Pessoa
+            var pessoa = new Pessoa()
             {
-                nome = nome,
-                endereco = endereco,
-                telefone = telefone,
-                email = email,
-                ndata = telefone,
-                cpf = cpf
+                nome = this.Nome.Text,
+                ruaN = this.RuaN.Text,
+                bairro = this.Bairro.Text,
+                cpf = this.Cpf.Text,
+                telefone = this.Telefone.Text,
+                data = this.Data.Text,
+                email = this.Email.Text
             };
+           using(var dados = new AcessoDados())
+            {
+                dados.Insert(pessoa);
+                Lista.ItemsSource = dados.Listar();
+            }
         }
     }
 }
