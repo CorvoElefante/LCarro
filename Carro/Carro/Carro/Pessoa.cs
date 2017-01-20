@@ -7,7 +7,7 @@ using SQLite.Net.Attributes;
 
 namespace Carro
 {
-    class Pessoa
+    public partial class Pessoa
     {
         [PrimaryKey, AutoIncrement]
         public int Id
