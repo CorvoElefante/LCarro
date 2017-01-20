@@ -12,7 +12,7 @@ namespace Carro
         public App()
         {
             InitializeComponent();
-            MainPage = new Carro.Pessoa();
+            MainPage = new Carro.PessoaPage();
             //MainPage = new Carro.MainPage();
         }
 

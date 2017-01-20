@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Carro.PessoaPage">
+  <ContentPage.Content>
+  <StackLayout Padding="30" Spacing="30">
+    <Label Text="teste"></Label>
+    <Entry x:Name = "nomeEntry" Placeholder="Nome" Keyboard="Text"></Entry>
+    <Entry x:Name ="ruaNEntry" Placeholder="Rua"></Entry>
+    <Entry x:Name ="bairroEntry" Placeholder="Bairro"></Entry>
+    <Entry x:Name ="cpfEntry" Placeholder="CPF" Keyboard="Numeric"></Entry>
+    <Entry x:Name ="telefoneEntry" Placeholder="Telefone" Keyboard="Telephone"></Entry>
+    <Entry x:Name ="dataEntry" Placeholder="Data de nascimento" Keyboard="Numeric"></Entry>
+    <Entry x:Name ="emailEntry"  Placeholder="Email" Keyboard="Email"></Entry>
+    <Button x:Name ="Salvar" Text="Salvar" Clicked="SalvarClicked"></Button>
+    <ListView x:Name ="Lista"></ListView>
+  </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

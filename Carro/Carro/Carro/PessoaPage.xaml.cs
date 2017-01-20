@@ -7,9 +7,9 @@ using Xamarin.Forms;
 
 namespace Carro
 {
-    public partial class Pessoa : ContentPage
+    public partial class PessoaPage : ContentPage
     {
-        public Pessoa()
+        public PessoaPage()
         {
             InitializeComponent();
             using (var dados = new AcessoDados())
@@ -21,13 +21,13 @@ namespace Carro
         {
             var pessoa = new Pessoa()
             {
-                nome = this.Nome.Text,
-                ruaN = this.RuaN.Text,
-                bairro = this.Bairro.Text,
-                cpf = this.Cpf.Text,
-                telefone = this.Telefone.Text,
-                data = this.Data.Text,
-                email = this.Email.Text
+                Nome = nomeEntry.Text,
+                RuaN = ruaNEntry.Text,
+                Bairro = bairroEntry.Text,
+                Cpf = cpfEntry.Text,
+                Telefone = telefoneEntry.Text,
+                Data = dataEntry.Text,
+                Email = emailEntry.Text
             };
            using(var dados = new AcessoDados())
             {
@@ -35,5 +35,6 @@ namespace Carro
                 Lista.ItemsSource = dados.Listar();
             }
         }
+
     }
 }
