@@ -22,6 +22,8 @@ namespace Carro
 
         }
 
+        #region Pessoa
+
         public void Insert(Pessoa pessoa)
         {
             _conexao.Insert(pessoa);
@@ -47,6 +49,8 @@ namespace Carro
             List<Pessoa> pessoa = _conexao.Table<Pessoa>().ToList();
             return pessoa;
         }
+
+        #endregion
 
         public void Dispose()
         {
