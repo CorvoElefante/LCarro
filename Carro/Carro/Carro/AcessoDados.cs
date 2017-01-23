@@ -50,6 +50,11 @@ namespace Carro
             return pessoa;
         }
 
+        //public void Commit()
+        //{
+        //    _conexao.Commit();
+        //}
+
         #endregion
 
         public void Dispose()

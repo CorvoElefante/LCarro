@@ -32,6 +32,7 @@ namespace Carro
            using(var dados = new AcessoDados())
             {
                 dados.Insert(pessoa);
+                //dados.Commit();
                 Lista.ItemsSource = dados.Listar();
             }
         }

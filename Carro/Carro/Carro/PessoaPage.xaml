@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Carro.PessoaPage">
   <ContentPage.Content>
+    <ScrollView>
   <StackLayout Padding="30" Spacing="30">
     <Label Text="teste"></Label>
     <Entry x:Name = "nomeEntry" Placeholder="Nome" Keyboard="Text"></Entry>
@@ -13,7 +14,26 @@
     <Entry x:Name ="dataEntry" Placeholder="Data de nascimento" Keyboard="Numeric"></Entry>
     <Entry x:Name ="emailEntry"  Placeholder="Email" Keyboard="Email"></Entry>
     <Button x:Name ="Salvar" Text="Salvar" Clicked="SalvarClicked"></Button>
-    <ListView x:Name ="Lista"></ListView>
+    <ListView x:Name ="Lista">
+      <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout BackgroundColor="#eee"
+                        Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal">
+                                
+                                <Label Text="{Binding Nome}"
+                                TextColor="#f35e20" />
+                                <Label Text="{Binding Cpf}"
+                                HorizontalOptions="EndAndExpand"
+                                TextColor="#503026" />
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+    </ListView>
   </StackLayout>
+      </ScrollView>
   </ContentPage.Content>
 </ContentPage>
