@@ -8,11 +8,11 @@ using Xamarin.Forms;
 
 namespace Carro
 {
-    public partial class ProdutoPage : ContentPage
+    public partial class ServicoPage : ContentPage
     {
-        public ProdutoPage()
+        public ServicoPage()
         {
-            InitializeComponent();
+            //InitializeComponent();
         }
     }
 }
