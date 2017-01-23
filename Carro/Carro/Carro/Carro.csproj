@@ -39,6 +39,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FuncionarioPage.xaml.cs">
+      <DependentUpon>FuncionarioPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="IConfig.cs" />
     <Compile Include="Pessoa.cs" />
     <Compile Include="MainPage.xaml.cs">
@@ -47,7 +50,13 @@
     <Compile Include="PessoaPage.xaml.cs">
       <DependentUpon>PessoaPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ProdutoPage.xaml.cs">
+      <DependentUpon>ProdutoPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServicoPage.xaml.cs">
+      <DependentUpon>ServicoPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainPage.xaml">
@@ -84,6 +93,24 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="PessoaPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FuncionarioPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ProdutoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ServicoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

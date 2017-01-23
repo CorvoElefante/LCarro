@@ -21,13 +21,13 @@ namespace Carro
         {
             var pessoa = new Pessoa()
             {
-                Nome = nomeEntry.Text,
-                RuaN = ruaNEntry.Text,
-                Bairro = bairroEntry.Text,
-                Cpf = cpfEntry.Text,
-                Telefone = telefoneEntry.Text,
-                Data = dataEntry.Text,
-                Email = emailEntry.Text
+                Nome = pessoanomeE.Text,
+                RuaN = pessoaruaNE.Text,
+                Bairro = pessoabairroE.Text,
+                Cpf = pessoacpfE.Text,
+                Telefone = pessoatelefoneE.Text,
+                Data = pessoadataE.Text,
+                Email = pessoaemailE.Text
             };
            using(var dados = new AcessoDados())
             {

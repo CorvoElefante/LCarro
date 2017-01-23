@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Carro.FuncionarioPage">
+  <ContentPage.Content>
+    <ScrollView>
+  <StackLayout Padding="30" Spacing="30">
+    <Entry x:Name = "funcionarionomeE" Placeholder="Nome" Keyboard="Text"></Entry>
+    <Entry x:Name ="funcionarioruaNE" Placeholder="Rua"></Entry>
+    <Entry x:Name ="funcionariobairroE" Placeholder="Bairro"></Entry>
+    <Entry x:Name ="funcionariocpfE" Placeholder="CPF" Keyboard="Numeric"></Entry>
+    <Entry x:Name ="funcionariotelefoneE" Placeholder="Telefone" Keyboard="Telephone"></Entry>
+    <Entry x:Name ="funcionariodataE" Placeholder="Data de nascimento" Keyboard="Numeric"></Entry>
+    <Entry x:Name ="funcionarioemailE"  Placeholder="Email" Keyboard="Email"></Entry>
+    <Entry x:Name ="funcionariosalarioE"  Placeholder="Salario"></Entry>
+    <Entry x:Name ="funcionariofuncaoE"  Placeholder="Função"></Entry>
+    <Button x:Name ="Salvar" Text="Salvar" Clicked="SalvarClicked"></Button>
+  </StackLayout>
+    </ScrollView>
+  </ContentPage.Content>
+</ContentPage>
