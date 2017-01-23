@@ -7,7 +7,7 @@
       <StackLayout Padding="30" Spacing="30">
         <Label Text="Cadastro de Serviço"></Label>
         <Entry x:Name = "servicoNomeE" Placeholder="Nome" Keyboard="Text"></Entry>
-        <Entry x:Name ="servicovalorVendaE" Placeholder="Preço"></Entry>
+        <Entry x:Name ="servicoValorVendaE" Placeholder="Preço"></Entry>
         <Entry x:Name ="servicoDescricaoE" Placeholder="Descrição"></Entry>
         <Entry x:Name ="servicoTempoE" Placeholder="Tempo de conclusão"></Entry>
         <Button x:Name ="Salvar" Text="Salvar" Clicked="SalvarClicked"></Button>
