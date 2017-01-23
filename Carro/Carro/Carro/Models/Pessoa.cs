@@ -10,52 +10,20 @@ namespace Carro
     public partial class Pessoa
     {
         [PrimaryKey, AutoIncrement]
-        public int Id
-        {
-            get;
-            set;
-        }
+        public int Id { get; set; }
 
-        public string Nome
-        {
-            get;
-            set;
-        }
-        
-        public string RuaN //Rua e número
-        {
-            get;
-            set;
-        }
+        public string Nome { get; set; }
 
-        public string Bairro
-        {
-            get;
-            set;
-        }
+        public string RuaN { get; set; }
 
-        public string Cpf
-        {
-            get;
-            set;
-        }
+        public string Bairro { get; set; }
 
-        public string Telefone
-        {
-            get;
-            set;
-        }
+        public string Cpf { get; set; }
 
-        public string Data
-        {
-            get;
-            set;
-        }
-        
-        public string Email
-        {
-            get;
-            set;
-        }
+        public string Telefone { get; set; }
+
+        public string Data { get; set; }
+
+        public string Email { get; set; }
     }
 }
