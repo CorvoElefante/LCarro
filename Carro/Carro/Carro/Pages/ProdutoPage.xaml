@@ -5,12 +5,13 @@
   <ContentPage.Content>
     <ScrollView>
       <StackLayout Padding="30" Spacing="30">
-        <Entry x:Name = "produtonomeE" Placeholder="Nome" Keyboard="Text"></Entry>
-        <Entry x:Name ="produtovalorcompraE" Placeholder="Valor gasto"></Entry>
-        <Entry x:Name ="produtovalorvendaE" Placeholder="Preço de venda"></Entry>
-        <Entry x:Name ="produtomarcaE" Placeholder="Marca"></Entry>
-        <Entry x:Name ="produtodescricaoE" Placeholder="Descrição"></Entry>
-        <Entry x:Name ="produtolovalE" Placeholder="Local no estoque"></Entry>
+        <Label Text="Cadastro de Produto"></Label>
+        <Entry x:Name = "produtoNomeE" Placeholder="Nome" Keyboard="Text"></Entry>
+        <Entry x:Name ="produtoValorCompraE" Placeholder="Valor gasto"></Entry>
+        <Entry x:Name ="produtoValorVendaE" Placeholder="Preço de venda"></Entry>
+        <Entry x:Name ="produtoMarcaE" Placeholder="Marca"></Entry>
+        <Entry x:Name ="produtoDescricaoE" Placeholder="Descrição"></Entry>
+        <Entry x:Name ="produtoLocalE" Placeholder="Local no estoque"></Entry>
         <Button x:Name ="Salvar" Text="Salvar" Clicked="SalvarClicked"></Button>
       </StackLayout>
     </ScrollView>

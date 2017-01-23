@@ -5,15 +5,16 @@
   <ContentPage.Content>
     <ScrollView>
   <StackLayout Padding="30" Spacing="30">
-    <Entry x:Name = "funcionarionomeE" Placeholder="Nome" Keyboard="Text"></Entry>
-    <Entry x:Name ="funcionarioruaNE" Placeholder="Rua"></Entry>
-    <Entry x:Name ="funcionariobairroE" Placeholder="Bairro"></Entry>
-    <Entry x:Name ="funcionariocpfE" Placeholder="CPF" Keyboard="Numeric"></Entry>
-    <Entry x:Name ="funcionariotelefoneE" Placeholder="Telefone" Keyboard="Telephone"></Entry>
-    <Entry x:Name ="funcionariodataE" Placeholder="Data de nascimento" Keyboard="Numeric"></Entry>
-    <Entry x:Name ="funcionarioemailE"  Placeholder="Email" Keyboard="Email"></Entry>
-    <Entry x:Name ="funcionariosalarioE"  Placeholder="Salario"></Entry>
-    <Entry x:Name ="funcionariofuncaoE"  Placeholder="Função"></Entry>
+    <Label Text="Cadastro de Funcionário"></Label>
+    <Entry x:Name = "funcionarioNomeE" Placeholder="Nome" Keyboard="Text"></Entry>
+    <Entry x:Name ="funcionarioRuaNE" Placeholder="Rua"></Entry>
+    <Entry x:Name ="funcionarioBairroE" Placeholder="Bairro"></Entry>
+    <Entry x:Name ="funcionarioCpfE" Placeholder="CPF" Keyboard="Numeric"></Entry>
+    <Entry x:Name ="funcionarioTelefoneE" Placeholder="Telefone" Keyboard="Telephone"></Entry>
+    <Entry x:Name ="funcionarioDataE" Placeholder="Data de nascimento" Keyboard="Numeric"></Entry>
+    <Entry x:Name ="funcionarioEmailE"  Placeholder="Email" Keyboard="Email"></Entry>
+    <Entry x:Name ="funcionarioAalarioE"  Placeholder="Salario"></Entry>
+    <Entry x:Name ="funcionarioFuncaoE"  Placeholder="Função"></Entry>
     <Button x:Name ="Salvar" Text="Salvar" Clicked="SalvarClicked"></Button>
   </StackLayout>
     </ScrollView>
