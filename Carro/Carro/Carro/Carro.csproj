@@ -38,8 +38,17 @@
     <Compile Include="Pages\FuncionarioPage.xaml.cs">
       <DependentUpon>FuncionarioPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\MenuPage.xaml.cs">
+      <DependentUpon>MenuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PerdaPage.xaml.cs">
+      <DependentUpon>PerdaPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ProdutoPage.xaml.cs">
       <DependentUpon>ProdutoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DespesaPage.xaml.cs">
+      <DependentUpon>DespesaPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ServicoPage.xaml.cs">
       <DependentUpon>ServicoPage.xaml</DependentUpon>
@@ -101,10 +110,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <EmbeddedResource Include="Pages\PerdaPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\MenuPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <Page Include="Pages\ProdutoPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <EmbeddedResource Include="Pages\DespesaPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <Page Include="Pages\ServicoPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
