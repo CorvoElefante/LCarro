@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
-namespace Carro
+namespace Carro.Pages
 {
     public partial class ProdutoPage : ContentPage
     {

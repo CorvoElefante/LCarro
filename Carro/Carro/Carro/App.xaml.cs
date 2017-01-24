@@ -12,8 +12,8 @@ namespace Carro
         public App()
         {
             InitializeComponent();
-            MainPage = new Carro.Pages.MenuPage();
-            //MainPage = new Carro.PessoaPage();
+            //MainPage = new Carro.Pages.MenuPage();
+            MainPage = new Carro.Pages.PessoaPage();
             //MainPage = new Carro.MainPage();
         }
 

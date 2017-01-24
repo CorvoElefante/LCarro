@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace Carro
+namespace Carro.Pages
 {
     public partial class PessoaPage : ContentPage
     {
@@ -17,7 +17,7 @@ namespace Carro
                 Lista.ItemsSource = dados.Listar();
             }
         }
-        protected void SalvarClicked(object sender, EventArgs e)
+        protected async void SalvarClicked(object sender, EventArgs e)
         {
             var pessoa = new Pessoa()
             {
@@ -35,6 +35,7 @@ namespace Carro
                 //dados.Commit();
                 Lista.ItemsSource = dados.Listar();
             }
+            await DisplayAlert("Aviso", "Cliente adicionado com sucesso", "OK");
         }
 
     }
