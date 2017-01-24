@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Models\Funcionario.cs" />
+    <Compile Include="Models\Produto.cs" />
+    <Compile Include="Models\Servico.cs" />
     <Compile Include="Pages\FuncionarioPage.xaml.cs">
       <DependentUpon>FuncionarioPage.xaml</DependentUpon>
     </Compile>
