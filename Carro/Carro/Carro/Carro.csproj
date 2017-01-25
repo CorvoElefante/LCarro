@@ -42,6 +42,24 @@
     <Compile Include="Pages\FuncionarioPage.xaml.cs">
       <DependentUpon>FuncionarioPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\HistoricoVendaPage.xaml.cs">
+      <DependentUpon>HistoricoVendaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ListaClientePage.xaml.cs">
+      <DependentUpon>ListaClientePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ListaDespesaPage.xaml.cs">
+      <DependentUpon>ListaDespesaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ListaFuncionarioPage.xaml.cs">
+      <DependentUpon>ListaFuncionarioPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ListaPerdaPage.xaml.cs">
+      <DependentUpon>ListaPerdaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ListaServiçoPage.xaml.cs">
+      <DependentUpon>ListaServiçoPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\MenuPage.xaml.cs">
       <DependentUpon>MenuPage.xaml</DependentUpon>
     </Compile>
@@ -119,6 +137,30 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\MenuPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\HistoricoVendaPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\ListaClientePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\ListaFuncionarioPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\ListaPerdaPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\ListaDespesaPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\ListaServiçoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

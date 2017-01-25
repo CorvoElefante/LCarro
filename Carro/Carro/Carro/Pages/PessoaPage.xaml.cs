@@ -29,7 +29,7 @@ namespace Carro.Pages
                 Data = pessoaDataE.Text,
                 Email = pessoaEmailE.Text
             };
-           using(var dados = new AcessoDados())
+            using(var dados = new AcessoDados())
             {
                 dados.Insert(pessoa);
                 //dados.Commit();
