@@ -57,8 +57,8 @@
     <Compile Include="Pages\ListaPerdaPage.xaml.cs">
       <DependentUpon>ListaPerdaPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ListaServiçoPage.xaml.cs">
-      <DependentUpon>ListaServiçoPage.xaml</DependentUpon>
+    <Compile Include="Pages\ListaServicoPage.xaml.cs">
+      <DependentUpon>ListaServicoPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MenuPage.xaml.cs">
       <DependentUpon>MenuPage.xaml</DependentUpon>
@@ -66,11 +66,11 @@
     <Compile Include="Pages\PerdaPage.xaml.cs">
       <DependentUpon>PerdaPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ProdutoPage.xaml.cs">
-      <DependentUpon>ProdutoPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\DespesaPage.xaml.cs">
       <DependentUpon>DespesaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ProdutoPage.xaml.cs">
+      <DependentUpon>ProdutoPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ServicoPage.xaml.cs">
       <DependentUpon>ServicoPage.xaml</DependentUpon>
@@ -128,10 +128,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Pages\FuncionarioPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <EmbeddedResource Include="Pages\PerdaPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
@@ -160,22 +156,32 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\ListaServiçoPage.xaml">
+    <EmbeddedResource Include="Pages\ListaServicoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Page Include="Pages\ProdutoPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <EmbeddedResource Include="Pages\DespesaPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Page Include="Pages\ServicoPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\FuncionarioPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
-    </Page>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\ProdutoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\ServicoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

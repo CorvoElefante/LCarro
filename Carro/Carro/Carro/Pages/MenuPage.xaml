@@ -6,12 +6,12 @@
     <ScrollView>
       <StackLayout Padding="30" Spacing="30">
         <Label Text="Menu"></Label>
-        <Button x:Name ="menuVendaE" Text="Vendas"></Button>
-        <Button x:Name ="menuOrdemE" Text="Ordens de venda"></Button>
-        <Button x:Name ="menuCustosE" Text="Custos"></Button>
-        <Button x:Name ="menuRelatoriosE" Text="Relatórios"></Button>
-        <Button x:Name ="menuClientesE" Text="Clientes"></Button>
-        <Button x:Name ="menuFuncionarioE" Text="Funcionário"></Button>
+        <Button x:Name ="menuVendaE" Text="Vendas" Clicked="VendaClicked"></Button>
+        <Button x:Name ="menuOrdemE" Text="Ordens de venda" Clicked="OrdemClicked"></Button>
+        <Button x:Name ="menuCustosE" Text="Custos" Clicked="CustosClicked"></Button>
+        <Button x:Name ="menuRelatoriosE" Text="Relatórios" Clicked="RelatoriosClicked"></Button>
+        <Button x:Name ="menuClientesE" Text="Clientes" Clicked="ClientesClicked"></Button>
+        <Button x:Name ="menuFuncionarioE" Text="Funcionário" Clicked="FuncionarioClicked"></Button>
       </StackLayout>
     </ScrollView>
   </ContentPage.Content>

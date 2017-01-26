@@ -14,5 +14,23 @@ namespace Carro.Pages
         {
             InitializeComponent();
         }
+        void VendaClicked(object sender, EventArgs e)
+        {
+        }
+        void OrdemClicked(object sender, EventArgs e)
+        {
+        }
+        void CustosClicked(object sender, EventArgs e)
+        {
+        }
+        void RelatoriosClicked(object sender, EventArgs e)
+        {
+        }
+        void ClientesClicked(object sender, EventArgs e)
+        {
+        }
+        void FuncionarioClicked(object sender, EventArgs e)
+        {
+        }
     }
 }

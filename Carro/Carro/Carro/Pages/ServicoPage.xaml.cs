@@ -12,7 +12,7 @@ namespace Carro.Pages
     {
         public ServicoPage()
         {
-            //InitializeComponent();
+            InitializeComponent();
         }
     }
 }

@@ -4,19 +4,19 @@
              x:Class="Carro.Pages.FuncionarioPage">
   <ContentPage.Content>
     <ScrollView>
-  <StackLayout Padding="30" Spacing="30">
-    <Label Text="Cadastro de Funcionário"></Label>
-    <Entry x:Name = "funcionarioNomeE" Placeholder="Nome" Keyboard="Text"></Entry>
-    <Entry x:Name ="funcionarioRuaNE" Placeholder="Rua"></Entry>
-    <Entry x:Name ="funcionarioBairroE" Placeholder="Bairro"></Entry>
-    <Entry x:Name ="funcionarioCpfE" Placeholder="CPF" Keyboard="Numeric"></Entry>
-    <Entry x:Name ="funcionarioTelefoneE" Placeholder="Telefone" Keyboard="Telephone"></Entry>
-    <Entry x:Name ="funcionarioDataE" Placeholder="Data de nascimento" Keyboard="Numeric"></Entry>
-    <Entry x:Name ="funcionarioEmailE"  Placeholder="Email" Keyboard="Email"></Entry>
-    <Entry x:Name ="funcionarioSalarioE"  Placeholder="Salario"></Entry>
-    <Entry x:Name ="funcionarioFuncaoE"  Placeholder="Função"></Entry>
-    <Button x:Name ="Salvar" Text="Salvar" Clicked="SalvarClicked"></Button>
-  </StackLayout>
+      <StackLayout Padding="30" Spacing="30">
+        <Label Text="Cadastro de Funcionário"></Label>
+        <Entry x:Name = "funcionarioNomeE" Placeholder="Nome" Keyboard="Text"></Entry>
+        <Entry x:Name ="funcionarioRuaNE" Placeholder="Rua"></Entry>
+        <Entry x:Name ="funcionarioBairroE" Placeholder="Bairro"></Entry>
+        <Entry x:Name ="funcionarioCpfE" Placeholder="CPF" Keyboard="Numeric"></Entry>
+        <Entry x:Name ="funcionarioTelefoneE" Placeholder="Telefone" Keyboard="Telephone"></Entry>
+        <Entry x:Name ="funcionarioDataE" Placeholder="Data de nascimento" Keyboard="Numeric"></Entry>
+        <Entry x:Name ="funcionarioEmailE"  Placeholder="Email" Keyboard="Email"></Entry>
+        <Entry x:Name ="funcionarioSalarioE"  Placeholder="Salario"></Entry>
+        <Entry x:Name ="funcionarioFuncaoE"  Placeholder="Função"></Entry>
+        <Button x:Name ="Salvar" Text="Salvar" Clicked="SalvarClicked"></Button>
+      </StackLayout>
     </ScrollView>
   </ContentPage.Content>
 </ContentPage>
