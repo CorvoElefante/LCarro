@@ -12,7 +12,7 @@
         <Entry x:Name ="produtoMarcaE" Placeholder="Marca"></Entry>
         <Entry x:Name ="produtoDescricaoE" Placeholder="Descrição"></Entry>
         <Entry x:Name ="produtoLocalE" Placeholder="Local no estoque"></Entry>
-        <Button x:Name ="Salvar" Text="Salvar" Clicked="SalvarClicked"></Button>
+        <!--<Button x:Name ="Salvar" Text="Salvar" Clicked="SalvarClicked"></Button>-->
       </StackLayout>
     </ScrollView>
   </ContentPage.Content>

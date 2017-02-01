@@ -15,7 +15,7 @@
         <Entry x:Name ="funcionarioEmailE"  Placeholder="Email" Keyboard="Email"></Entry>
         <Entry x:Name ="funcionarioSalarioE"  Placeholder="Salario"></Entry>
         <Entry x:Name ="funcionarioFuncaoE"  Placeholder="Função"></Entry>
-        <Button x:Name ="Salvar" Text="Salvar" Clicked="SalvarClicked"></Button>
+        <!--<Button x:Name ="Salvar" Text="Salvar" Clicked="SalvarClicked"></Button>-->
       </StackLayout>
     </ScrollView>
   </ContentPage.Content>

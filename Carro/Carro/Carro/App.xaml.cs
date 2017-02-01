@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿using Carro.Pages;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Carro
 {
     public partial class App : Application
@@ -12,9 +10,8 @@ namespace Carro
         public App()
         {
             InitializeComponent();
-            //MainPage = new Carro.Pages.MenuPage();
-            MainPage = new Carro.Pages.ListaClientePage();
-            //MainPage = new Carro.MainPage();
+
+            MainPage = new NavigationPage(new ListaClientePage());
         }
 
         protected override void OnStart()

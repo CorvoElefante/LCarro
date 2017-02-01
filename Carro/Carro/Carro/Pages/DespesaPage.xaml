@@ -8,7 +8,7 @@
         <Label Text="Cadastro de despesa"></Label>
         <Entry x:Name = "despesaNomeE" Placeholder="Nome" Keyboard="Text"></Entry>
         <Entry x:Name ="despesaValorE" Placeholder="Valor gasto"></Entry>
-        <Button x:Name ="Salvar" Text="Salvar" Clicked="SalvarClicked"></Button>
+        <!--<Button x:Name ="Salvar" Text="Salvar" Clicked="SalvarClicked"></Button>-->
       </StackLayout>
     </ScrollView>
   </ContentPage.Content>

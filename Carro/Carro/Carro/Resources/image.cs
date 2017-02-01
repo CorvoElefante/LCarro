@@ -1,7 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 
-namespace FormsSample.Resources
+namespace Carro.Resources
 {
     public static class Images
     {
