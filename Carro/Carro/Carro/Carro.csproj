@@ -35,6 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ISQLite.cs" />
     <Compile Include="Models\Despesa.cs" />
     <Compile Include="Models\Funcionario.cs" />
     <Compile Include="Models\Produto.cs" />
@@ -69,25 +70,35 @@
     <Compile Include="Pages\DespesaPage.xaml.cs">
       <DependentUpon>DespesaPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PessoaPage.xaml.cs">
+      <DependentUpon>PessoaPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ProdutoPage.xaml.cs">
       <DependentUpon>ProdutoPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ServicoPage.xaml.cs">
       <DependentUpon>ServicoPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\AcessoDados.cs" />
+    <Compile Include="Repositories\GenericReadOnlyRepository.cs" />
+    <Compile Include="Repositories\GenericRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IGenericReadOnlyRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IGenericRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ITransactionScope.cs" />
+    <Compile Include="Repositories\Interfaces\IUnitOfWork.cs" />
+    <Compile Include="Repositories\TransactionScope.cs" />
+    <Compile Include="Repositories\UnitOfWork.cs" />
+    <Compile Include="Resources\image.cs" />
+    <Compile Include="Services\DataService.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\IConfig.cs" />
     <Compile Include="Models\Pessoa.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PessoaPage.xaml.cs">
-      <DependentUpon>PessoaPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\PessoaViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainPage.xaml">
@@ -120,12 +131,6 @@
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Pages\PessoaPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\PerdaPage.xaml">
@@ -179,6 +184,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\ServicoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\PessoaPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

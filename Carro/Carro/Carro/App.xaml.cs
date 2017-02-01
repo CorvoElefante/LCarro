@@ -13,7 +13,7 @@ namespace Carro
         {
             InitializeComponent();
             //MainPage = new Carro.Pages.MenuPage();
-            MainPage = new Carro.Pages.PessoaPage();
+            MainPage = new Carro.Pages.ListaClientePage();
             //MainPage = new Carro.MainPage();
         }
 

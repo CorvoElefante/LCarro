@@ -2,38 +2,5 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Carro.Pages.PessoaPage">
-  <ContentPage.Content>
-    <ScrollView>
-  <StackLayout Padding="30" Spacing="30">
-    <Label Text="Cadastro de Cliente"></Label>
-    <Entry x:Name ="pessoaNomeE" Placeholder="Nome" Keyboard="Text"></Entry>
-    <Entry x:Name ="pessoaRuaNE" Placeholder="Rua"></Entry>
-    <Entry x:Name ="pessoaBairroE" Placeholder="Bairro"></Entry>
-    <Entry x:Name ="pessoaCpfE" Placeholder="CPF" Keyboard="Numeric"></Entry>
-    <Entry x:Name ="pessoaTelefoneE" Placeholder="Telefone" Keyboard="Telephone"></Entry>
-    <Entry x:Name ="pessoaDataE" Placeholder="Data de nascimento" Keyboard="Numeric"></Entry>
-    <Entry x:Name  ="pessoaEmailE"  Placeholder="Email" Keyboard="Email"></Entry>
-    <Button x:Name ="Salvar" Text="Salvar" Clicked="SalvarClicked"></Button>
-    <ListView x:Name ="Lista">
-      <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout BackgroundColor="#eee"
-                        Orientation="Vertical">
-                            <StackLayout Orientation="Horizontal">
-                                
-                                <Label Text="{Binding Nome}"
-                                TextColor="#f35e20" />
-                                <Label Text="{Binding Cpf}"
-                                HorizontalOptions="EndAndExpand"
-                                TextColor="#503026" />
-                            </StackLayout>
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-    </ListView>
-  </StackLayout>
-      </ScrollView>
-  </ContentPage.Content>
+  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
 </ContentPage>
