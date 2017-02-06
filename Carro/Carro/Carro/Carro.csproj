@@ -70,8 +70,8 @@
     <Compile Include="Pages\DespesaPage.xaml.cs">
       <DependentUpon>DespesaPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PessoaPage.xaml.cs">
-      <DependentUpon>PessoaPage.xaml</DependentUpon>
+    <Compile Include="Pages\CadastroPessoaPage.xaml.cs">
+      <DependentUpon>CadastroPessoaPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ProdutoPage.xaml.cs">
       <DependentUpon>ProdutoPage.xaml</DependentUpon>
@@ -189,7 +189,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\PessoaPage.xaml">
+    <EmbeddedResource Include="Pages\CadastroPessoaPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

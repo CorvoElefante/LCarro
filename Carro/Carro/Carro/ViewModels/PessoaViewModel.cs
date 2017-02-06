@@ -77,7 +77,7 @@ namespace Carro.ViewModels
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new PessoaPage());
+                await Navigation.PushAsync(new CadastroPessoaPage());
                 IsBusy = false;
             }
         }
