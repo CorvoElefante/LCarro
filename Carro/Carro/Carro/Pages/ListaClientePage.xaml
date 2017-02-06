@@ -6,7 +6,7 @@
 		x:Class="Carro.Pages.ListaClientePage"
 		Title="Pessoas">
   <ContentPage.ToolbarItems>
-    <ToolbarItem Icon="{x:Static resources:Images.IconeAdicionar}"
+    <ToolbarItem Icon="{x:Static resources:Images.IconeAdicionarPessoa}"
 			Command="{Binding AddPessoaCommand}"/>
   </ContentPage.ToolbarItems>
   <ListView
