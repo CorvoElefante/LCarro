@@ -16,6 +16,8 @@ namespace Carro.Services
             UnitOfWork = new UnitOfWork(sqlite);
         }
 
+        #region Pessoa
+
         public List<Pessoa> GetPessoas()
         {
             return UnitOfWork.PessoaRepository.GetAll().ToList();
@@ -28,7 +30,9 @@ namespace Carro.Services
 
         public List<Pessoa> FindPessoaByNome(string nome)
         {
-            return UnitOfWork.PessoaRepository.Find(a => a.Nome == nome).ToList();
+            return UnitOfWork.PessoaRepository.Find(a => a.Nome.Contains(nome)).ToList();
         }
+
+        #endregion
     }
 }
