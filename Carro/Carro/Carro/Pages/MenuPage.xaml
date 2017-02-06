@@ -1,17 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Carro.Pages.MenuPage">
+             xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
+             x:Class="Carro.Pages.MenuPage"
+             Title="Menu">
   <ContentPage.Content>
     <ScrollView>
-      <StackLayout Padding="30" Spacing="30">
-        <Label Text="Menu"></Label>
+      <StackLayout Spacing="0">
+      <StackLayout>
         <Button x:Name ="menuVendaE" Text="Vendas" Clicked="VendaClicked"></Button>
+      </StackLayout>
+      <StackLayout>
         <Button x:Name ="menuOrdemE" Text="Ordens de venda" Clicked="OrdemClicked"></Button>
+      </StackLayout>
+      <StackLayout>
         <Button x:Name ="menuCustosE" Text="Custos" Clicked="CustosClicked"></Button>
+      </StackLayout>
+      <StackLayout>
         <Button x:Name ="menuRelatoriosE" Text="Relatórios" Clicked="RelatoriosClicked"></Button>
+      </StackLayout>
+      <StackLayout>
         <Button x:Name ="menuClientesE" Text="Clientes" Clicked="ClientesClicked"></Button>
+      </StackLayout>
+      <StackLayout>
         <Button x:Name ="menuFuncionarioE" Text="Funcionário" Clicked="FuncionarioClicked"></Button>
+      </StackLayout>
       </StackLayout>
     </ScrollView>
   </ContentPage.Content>
