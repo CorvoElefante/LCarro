@@ -39,7 +39,6 @@ namespace Carro.ViewModels
             }
 
         }
-
         ObservableCollection<Pessoa> _Pessoas;
         public ObservableCollection<Pessoa> Pessoas
         {
@@ -81,5 +80,16 @@ namespace Carro.ViewModels
                 IsBusy = false;
             }
         }
+ 
+            //var pessoa = new Pessoa()
+            //{
+            //    Nome = Carro.Pages.CadastroPessoaPage.nomeEntry.Text,
+            //    RuaN = Carro.Pages.CadastroPessoaPage.ruaNEntry.Text,
+            //    Bairro = Carro.Pages.CadastroPessoaPage.bairroEntry.Text,
+            //    Cpf = Carro.Pages.CadastroPessoaPage.cpfEntry.Text,
+            //    Telefone = Carro.Pages.CadastroPessoaPage.telefoneEntry.Text,
+            //    Data = Carro.Pages.CadastroPessoaPage.ndataEntry.Text,
+            //    Email = Carro.Pages.CadastroPessoaPage.emailEntry.Text
+            //};
     }
 }

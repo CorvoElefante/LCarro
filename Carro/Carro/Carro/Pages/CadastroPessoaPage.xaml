@@ -4,12 +4,13 @@
              x:Class="Carro.Pages.CadastroPessoaPage">
     <ContentPage.Content>
       <StackLayout Padding="30" Spacing="30">
-          <Entry x:Name ="nome" Placeholder="Nome" Keyboard="Text"></Entry>
-          <Entry x:Name ="endereco" Placeholder="Endereço"></Entry>
-          <Entry x:Name ="telefone" Placeholder="Telefone" Keyboard="Telephone"></Entry>
-          <Entry x:Name ="email"  Placeholder="Email" Keyboard="Email"></Entry>
-          <Entry x:Name ="ndata" Placeholder="Data de nascimento" Keyboard="Numeric"></Entry>
-          <Entry x:Name ="cpf" Placeholder="CPF" Keyboard="Numeric"></Entry>
+          <Entry x:Name ="nomeEntry" Placeholder="Nome" Keyboard="Text"></Entry>
+          <Entry x:Name ="ruaNEntry" Placeholder="Rua"></Entry>
+          <Entry x:Name ="bairroEntry" Placeholder="Bairro"></Entry>
+          <Entry x:Name ="telefoneEntry" Placeholder="Telefone" Keyboard="Telephone"></Entry>
+          <Entry x:Name ="emailEntry"  Placeholder="Email" Keyboard="Email"></Entry>
+          <Entry x:Name ="ndataEntry" Placeholder="Data de nascimento" Keyboard="Numeric"></Entry>
+          <Entry x:Name ="cpfEntry" Placeholder="CPF" Keyboard="Numeric"></Entry>
           <!--<Button x:Name ="Salvar" Text="Salvar" Clicked="SalvarClicked"></Button>-->
     </StackLayout>
   </ContentPage.Content>
