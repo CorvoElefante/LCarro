@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
+using Carro.ViewModels;
 
 namespace Carro.Pages
 {
@@ -12,6 +13,7 @@ namespace Carro.Pages
     {
         public CadastroPessoaPage()
         {
+            BindingContext = new PessoaViewModel(Navigation);
             InitializeComponent();
         }
     }
