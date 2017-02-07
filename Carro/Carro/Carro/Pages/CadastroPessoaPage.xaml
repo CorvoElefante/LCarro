@@ -3,16 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
              x:Class="Carro.Pages.CadastroPessoaPage">
-    <ContentPage.Content>
-      <StackLayout Padding="30" Spacing="30">
-          <Entry Text="{Binding nomeEntry, Mode=TwoWay}" Placeholder="Nome" Keyboard="Text"></Entry>
-          <Entry Text="{Binding ruaNEntry, Mode=TwoWay}" Placeholder="Rua"></Entry>
-          <Entry Text="{Binding bairroEntry, Mode=TwoWay}" Placeholder="Bairro"></Entry>
-          <Entry Text="{Binding telefoneEntry, Mode=TwoWay}" Placeholder="Telefone" Keyboard="Telephone"></Entry>
-          <Entry Text="{Binding emailEntry, Mode=TwoWay}"  Placeholder="Email" Keyboard="Email"></Entry>
-          <Entry Text="{Binding ndataEntry, Mode=TwoWay}" Placeholder="Data de nascimento" Keyboard="Numeric"></Entry>
-          <Entry Text="{Binding cpfEntry, Mode=TwoWay}" Placeholder="CPF" Keyboard="Numeric"></Entry>
-          <Button Text="Salvar" Command="{Binding SalvarPessoaCommand}"></Button>
+  <ContentPage.Content>
+    <StackLayout Padding="30" Spacing="30">
+      <Entry Text="{Binding nomeEntry, Mode=TwoWay}" Placeholder="Nome" Keyboard="Text"></Entry>
+      <Entry Text="{Binding ruaNEntry, Mode=TwoWay}" Placeholder="Rua"></Entry>
+      <Entry Text="{Binding bairroEntry, Mode=TwoWay}" Placeholder="Bairro"></Entry>
+      <Entry Text="{Binding telefoneEntry, Mode=TwoWay}" Placeholder="Telefone" Keyboard="Telephone"></Entry>
+      <Entry Text="{Binding emailEntry, Mode=TwoWay}"  Placeholder="Email" Keyboard="Email"></Entry>
+      <Entry Text="{Binding ndataEntry, Mode=TwoWay}" Placeholder="Data de nascimento" Keyboard="Numeric"></Entry>
+      <Entry Text="{Binding cpfEntry, Mode=TwoWay}" Placeholder="CPF" Keyboard="Numeric"></Entry>
+      <Button Text="Salvar" Command="{Binding SalvarPessoaCommand}"></Button>
     </StackLayout>
   </ContentPage.Content>
 </ContentPage>
