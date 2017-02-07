@@ -23,9 +23,9 @@ namespace Carro.ViewModels
                 if (service.GetPessoas().Count == 0)
                 {
                     service.SavePessoa(new Pessoa { Nome = "João" });
-                    service.SavePessoa(new Pessoa { Nome = "Maria"});
-                    service.SavePessoa(new Pessoa { Nome = "Pedro"});
-                    service.SavePessoa(new Pessoa { Nome = "Carlos"});
+                    service.SavePessoa(new Pessoa { Nome = "Maria" });
+                    service.SavePessoa(new Pessoa { Nome = "Pedro" });
+                    service.SavePessoa(new Pessoa { Nome = "Carlos" });
                 }
                 scope.Complete();
             }
@@ -70,7 +70,7 @@ namespace Carro.ViewModels
         Command _SalvarPessoaCommand;
         public Command SalvarPessoaCommand
         {
-            get { return _AddPessoaCommand ?? (_AddPessoaCommand = new Command(async () => await ExecuteSalvarPessoaCommand())); }
+            get { return _SalvarPessoaCommand ?? (_SalvarPessoaCommand = new Command(async () => await ExecuteSalvarPessoaCommand())); }
         }
 
         async Task ExecuteSalvarPessoaCommand()
@@ -79,22 +79,22 @@ namespace Carro.ViewModels
             {
                 IsBusy = true;
 
-                    var sqlite = DependencyService.Get<ISQLite>();
-                    using (var scope = new TransactionScope(sqlite))
-                    {
-                        var service = new DataService(sqlite);
+                var sqlite = DependencyService.Get<ISQLite>();
+                using (var scope = new TransactionScope(sqlite))
+                {
+                    var service = new DataService(sqlite);
 
-                        service.SavePessoa(new Pessoa { Nome = nomeEntry });
-                        scope.Complete();
-                    }
+                    service.SavePessoa(new Pessoa { Nome = nomeEntry });
+                    scope.Complete();
+                }
 
-                    using (var scope = new TransactionScope(sqlite))
-                    {
-                        Pessoas = new ObservableCollection<Pessoa>(
-                            new DataService(sqlite).GetPessoas()
-                        );
-                        scope.Complete();
-                    } 
+                using (var scope = new TransactionScope(sqlite))
+                {
+                    Pessoas = new ObservableCollection<Pessoa>(
+                        new DataService(sqlite).GetPessoas()
+                    );
+                    scope.Complete();
+                }
 
 
                 IsBusy = false;
@@ -128,16 +128,6 @@ namespace Carro.ViewModels
                 IsBusy = false;
             }
         }
- 
-            //var pessoa = new Pessoa()
-            //{
-            //    Nome = Carro.Pages.CadastroPessoaPage.nomeEntry.Text,
-            //    RuaN = Carro.Pages.CadastroPessoaPage.ruaNEntry.Text,
-            //    Bairro = Carro.Pages.CadastroPessoaPage.bairroEntry.Text,
-            //    Cpf = Carro.Pages.CadastroPessoaPage.cpfEntry.Text,
-            //    Telefone = Carro.Pages.CadastroPessoaPage.telefoneEntry.Text,
-            //    Data = Carro.Pages.CadastroPessoaPage.ndataEntry.Text,
-            //    Email = Carro.Pages.CadastroPessoaPage.emailEntry.Text
-            //};
+
     }
 }
