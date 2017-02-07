@@ -95,9 +95,7 @@ namespace Carro.ViewModels
                     );
                     scope.Complete();
                 }
-
-
-                IsBusy = false;
+                    IsBusy = false;
             }
         }
 
@@ -124,7 +122,7 @@ namespace Carro.ViewModels
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new CadastroPessoaPage());
+                await Navigation.PushAsync(new CadastroClientePage());
                 IsBusy = false;
             }
         }

@@ -5,13 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
+using Carro.ViewModels;
 
 namespace Carro.Pages
 {
-    public partial class ProdutoPage : ContentPage
+    public partial class CadastroClientePage : ContentPage
     {
-        public ProdutoPage()
+        public CadastroClientePage()
         {
+            BindingContext = new PessoaViewModel(Navigation);
             InitializeComponent();
         }
     }

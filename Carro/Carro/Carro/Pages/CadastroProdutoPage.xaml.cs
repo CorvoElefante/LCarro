@@ -8,9 +8,9 @@ using Xamarin.Forms;
 
 namespace Carro.Pages
 {
-    public partial class Page1 : ContentPage
+    public partial class CadastroProdutoPage : ContentPage
     {
-        public Page1()
+        public CadastroProdutoPage()
         {
             InitializeComponent();
         }

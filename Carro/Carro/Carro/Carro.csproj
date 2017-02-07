@@ -70,17 +70,17 @@
     <Compile Include="Pages\MenuPage.xaml.cs">
       <DependentUpon>MenuPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PerdaPage.xaml.cs">
-      <DependentUpon>PerdaPage.xaml</DependentUpon>
+    <Compile Include="Pages\CadastroPerdaPage.xaml.cs">
+      <DependentUpon>CadastroPerdaPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\CadastroPessoaPage.xaml.cs">
-      <DependentUpon>CadastroPessoaPage.xaml</DependentUpon>
+    <Compile Include="Pages\CadastroClientePage.xaml.cs">
+      <DependentUpon>CadastroClientePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ProdutoPage.xaml.cs">
-      <DependentUpon>ProdutoPage.xaml</DependentUpon>
+    <Compile Include="Pages\CadastroProdutoPage.xaml.cs">
+      <DependentUpon>CadastroProdutoPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ServicoPage.xaml.cs">
-      <DependentUpon>ServicoPage.xaml</DependentUpon>
+    <Compile Include="Pages\CadastroServicoPage.xaml.cs">
+      <DependentUpon>CadastroServicoPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Repositories\GenericReadOnlyRepository.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
@@ -131,7 +131,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\PerdaPage.xaml">
+    <EmbeddedResource Include="Pages\CadastroPerdaPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -171,19 +171,19 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\ProdutoPage.xaml">
+    <EmbeddedResource Include="Pages\CadastroProdutoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\ServicoPage.xaml">
+    <EmbeddedResource Include="Pages\CadastroServicoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\CadastroPessoaPage.xaml">
+    <EmbeddedResource Include="Pages\CadastroClientePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
