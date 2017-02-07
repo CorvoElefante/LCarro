@@ -48,13 +48,13 @@ namespace Carro.ViewModels
             }
         }
 
-        Command _MenuDespesaCommand;
-        public Command MenuDespesaCommand
+        Command _MenuCustosCommand;
+        public Command MenuCustosCommand
         {
-            get { return _MenuDespesaCommand ?? (_MenuDespesaCommand = new Command(async () => await ExecuteMenuDespesaCommand())); }
+            get { return _MenuCustosCommand ?? (_MenuCustosCommand = new Command(async () => await ExecuteMenuCustosCommand())); }
         }
 
-        async Task ExecuteMenuDespesaCommand()
+        async Task ExecuteMenuCustosCommand()
         {
             if (!IsBusy)
             {

@@ -14,7 +14,7 @@
         <Button x:Name ="menuOrdemE" Text="Ordens de venda" Command="{Binding MenuOrdemCommand}"></Button>
       </StackLayout>
       <StackLayout>
-        <Button x:Name ="menuDespesaE" Text="Despesas" Command="{Binding MenuDespesaCommand}"></Button>
+        <Button x:Name ="menuDespesaE" Text="Custos" Command="{Binding MenuCustosCommand}"></Button>
       </StackLayout>
       <StackLayout>
         <Button x:Name ="menuRelatoriosE" Text="Relatórios" Command="{Binding MenuRelatoriosCommand}"></Button>
