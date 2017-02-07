@@ -8,22 +8,22 @@
     <ScrollView>
       <StackLayout Spacing="0">
       <StackLayout>
-        <Button x:Name ="menuVendaE" Text="Vendas" Clicked="VendaClicked"></Button>
+        <Button x:Name ="menuVendaE" Text="Vendas" Command="{Binding MenuVendaCommand}"></Button>
       </StackLayout>
       <StackLayout>
-        <Button x:Name ="menuOrdemE" Text="Ordens de venda" Clicked="OrdemClicked"></Button>
+        <Button x:Name ="menuOrdemE" Text="Ordens de venda" Command="{Binding MenuOrdemCommand}"></Button>
       </StackLayout>
       <StackLayout>
-        <Button x:Name ="menuCustosE" Text="Custos" Clicked="CustosClicked"></Button>
+        <Button x:Name ="menuDespesaE" Text="Despesas" Command="{Binding MenuDespesaCommand}"></Button>
       </StackLayout>
       <StackLayout>
-        <Button x:Name ="menuRelatoriosE" Text="Relatórios" Clicked="RelatoriosClicked"></Button>
+        <Button x:Name ="menuRelatoriosE" Text="Relatórios" Command="{Binding MenuRelatoriosCommand}"></Button>
       </StackLayout>
       <StackLayout>
-        <Button x:Name ="menuClientesE" Text="Clientes" Clicked="ClientesClicked"></Button>
+        <Button x:Name ="menuClientesE" Text="Clientes" Command="{Binding MenuClientesCommand}"></Button>
       </StackLayout>
       <StackLayout>
-        <Button x:Name ="menuFuncionarioE" Text="Funcionário" Clicked="FuncionarioClicked"></Button>
+        <Button x:Name ="menuFuncionarioE" Text="Funcionário" Command="{Binding MenuFuncionarioCommand}"></Button>
       </StackLayout>
       </StackLayout>
     </ScrollView>

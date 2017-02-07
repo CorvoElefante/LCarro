@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using System;
+using System.Collections.Generic;
 using Xamarin.Forms;
+using Carro.ViewModels;
 
 namespace Carro.Pages
 {
@@ -12,25 +12,8 @@ namespace Carro.Pages
     {
         public MenuPage()
         {
+            BindingContext = new MenuViewModel(Navigation);
             InitializeComponent();
-        }
-        void VendaClicked(object sender, EventArgs e)
-        {
-        }
-        void OrdemClicked(object sender, EventArgs e)
-        {
-        }
-        void CustosClicked(object sender, EventArgs e)
-        {
-        }
-        void RelatoriosClicked(object sender, EventArgs e)
-        {
-        }
-        void ClientesClicked(object sender, EventArgs e)
-        {
-        }
-        void FuncionarioClicked(object sender, EventArgs e)
-        {
         }
     }
 }

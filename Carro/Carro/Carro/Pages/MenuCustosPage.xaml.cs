@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using Xamarin.Forms;
 
-namespace Carro
+namespace Carro.Pages
 {
-    public partial class MainPage : ContentPage
+    public partial class MenuCustosPage : ContentPage
     {
-        public MainPage()
+        public MenuCustosPage()
         {
             InitializeComponent();
         }

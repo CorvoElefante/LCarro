@@ -11,7 +11,7 @@ namespace Carro
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new ListaClientePage());
+            MainPage = new NavigationPage(new MenuPage());
         }
 
         protected override void OnStart()
