@@ -53,6 +53,54 @@ namespace Carro.ViewModels
             }
         }
 
+        string _nomeEntry = string.Empty;
+        public string nomeEntry
+        {
+            get
+            {
+                return _nomeEntry;
+            }
+            set
+            {
+                _nomeEntry = value;
+                SetPropertyChanged(nameof(nomeEntry));
+            }
+        }
+
+        Command _SalvarPessoaCommand;
+        public Command SalvarPessoaCommand
+        {
+            get { return _AddPessoaCommand ?? (_AddPessoaCommand = new Command(async () => await ExecuteSalvarPessoaCommand())); }
+        }
+
+        async Task ExecuteSalvarPessoaCommand()
+        {
+            if (!IsBusy)
+            {
+                IsBusy = true;
+
+                    var sqlite = DependencyService.Get<ISQLite>();
+                    using (var scope = new TransactionScope(sqlite))
+                    {
+                        var service = new DataService(sqlite);
+
+                        service.SavePessoa(new Pessoa { Nome = nomeEntry });
+                        scope.Complete();
+                    }
+
+                    using (var scope = new TransactionScope(sqlite))
+                    {
+                        Pessoas = new ObservableCollection<Pessoa>(
+                            new DataService(sqlite).GetPessoas()
+                        );
+                        scope.Complete();
+                    } 
+
+
+                IsBusy = false;
+            }
+        }
+
         string _Search = string.Empty;
         public string Search
         {
