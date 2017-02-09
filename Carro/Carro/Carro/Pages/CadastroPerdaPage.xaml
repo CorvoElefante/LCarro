@@ -6,9 +6,9 @@
     <ScrollView>
       <StackLayout Padding="30" Spacing="30">
         <Label Text="Cadastro de perda"></Label>
-        <Entry x:Name = "NomeEntry" Placeholder="Nome" Keyboard="Text"></Entry>
-        <Entry x:Name ="QuantidadeEntry" Placeholder="Quantidade perdida"></Entry>
-        <Entry x:Name ="JustificativaEntry" Placeholder="Justificativa"></Entry>
+        <Entry x:Name = "nomeEntry" Placeholder="Nome" Keyboard="Text"></Entry>
+        <Entry x:Name ="quantidadeEntry" Placeholder="Quantidade perdida"></Entry>
+        <Entry x:Name ="justificativaEntry" Placeholder="Justificativa"></Entry>
         <!--<Button x:Name ="Salvar" Text="Salvar" Clicked="SalvarClicked"></Button>-->
       </StackLayout>
     </ScrollView>

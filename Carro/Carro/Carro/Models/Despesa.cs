@@ -18,6 +18,6 @@ namespace Carro.Models
 
         public float Valor { get; set; }
 
-        public string Categoria { get; set; }// Materiais, escritório...
+        public int Categoria { get; set; }// Materiais, escritório...
     }
 }
