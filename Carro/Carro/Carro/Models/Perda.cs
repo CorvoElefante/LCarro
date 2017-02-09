@@ -12,6 +12,8 @@ namespace Carro.Models
         [PrimaryKey, AutoIncrement]
         public long? Id { get; set; }
 
+        public string Nome { get; set; }
+
         public int Quantidade { get; set; }
 
         public string Justificativa { get; set; }
