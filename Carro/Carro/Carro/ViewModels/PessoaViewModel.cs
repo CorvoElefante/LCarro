@@ -67,6 +67,90 @@ namespace Carro.ViewModels
             }
         }
 
+        string _ruaNEntry = string.Empty;
+        public string ruaNEntry
+        {
+            get
+            {
+                return _ruaNEntry;
+            }
+            set
+            {
+                _ruaNEntry = value;
+                SetPropertyChanged(nameof(ruaNEntry));
+            }
+        }
+
+        string _bairroEntry = string.Empty;
+        public string bairroEntry
+        {
+            get
+            {
+                return _bairroEntry;
+            }
+            set
+            {
+                _bairroEntry = value;
+                SetPropertyChanged(nameof(bairroEntry));
+            }
+        }
+
+        string _telefoneEntry = string.Empty;
+        public string telefoneEntry
+        {
+            get
+            {
+                return _telefoneEntry;
+            }
+            set
+            {
+                _telefoneEntry = value;
+                SetPropertyChanged(nameof(telefoneEntry));
+            }
+        }
+
+        string _emailEntry = string.Empty;
+        public string emailEntry
+        {
+            get
+            {
+                return _emailEntry;
+            }
+            set
+            {
+                _emailEntry = value;
+                SetPropertyChanged(nameof(emailEntry));
+            }
+        }
+
+        string _ndataEntry = string.Empty;
+        public string ndataEntry
+        {
+            get
+            {
+                return _ndataEntry;
+            }
+            set
+            {
+                _ndataEntry = value;
+                SetPropertyChanged(nameof(ndataEntry));
+            }
+        }
+
+        string _cpfEntry = string.Empty;
+        public string cpfEntry
+        {
+            get
+            {
+                return _cpfEntry;
+            }
+            set
+            {
+                _cpfEntry = value;
+                SetPropertyChanged(nameof(cpfEntry));
+            }
+        }
+
         Command _SalvarPessoaCommand;
         public Command SalvarPessoaCommand
         {
@@ -84,7 +168,7 @@ namespace Carro.ViewModels
                 {
                     var service = new DataService(sqlite);
 
-                    service.SavePessoa(new Pessoa { Nome = nomeEntry });
+                    service.SavePessoa(new Pessoa { Nome = nomeEntry, RuaN = ruaNEntry, Bairro = bairroEntry, Telefone = telefoneEntry, Email = emailEntry, Data = ndataEntry, Cpf = cpfEntry });
                     scope.Complete();
                 }
 
