@@ -16,7 +16,7 @@ namespace Carro.Services
             UnitOfWork = new UnitOfWork(sqlite);
         }
 
-        #region Pessoa
+        #region PessoaCliente
 
         public List<Pessoa> GetPessoas()
         {
@@ -33,6 +33,21 @@ namespace Carro.Services
             return UnitOfWork.PessoaRepository.Find(a => a.Nome.Contains(nome)).ToList();
         }
 
+        #endregion
+
+        #region Despesa
+        #endregion
+
+        #region Perda
+        #endregion
+
+        #region Funcionario
+        #endregion
+
+        #region Produto
+        #endregion
+
+        #region Servico
         #endregion
     }
 }

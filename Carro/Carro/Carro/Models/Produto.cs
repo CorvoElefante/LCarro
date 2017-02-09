@@ -10,7 +10,7 @@ namespace Carro.Models
     public partial class Produto
     {
         [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
+        public long? Id { get; set; }
 
         public string Nome { get; set; }
 
