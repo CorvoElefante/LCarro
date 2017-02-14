@@ -7,7 +7,7 @@ using SQLite.Net.Attributes;
 
 namespace Carro.Models
 {
-    public partial class OrdemvendaProduto
+    public partial class OrdemVendaProduto
     {
         [PrimaryKey, AutoIncrement]
         public long? Id { get; set; }
