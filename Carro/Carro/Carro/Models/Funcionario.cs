@@ -15,5 +15,7 @@ namespace Carro.Models
         public float Salario { get; set; }
 
         public string Funcao { get; set; }
+
+        public long PessoaId { get; set; }
     }
 }
