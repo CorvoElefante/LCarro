@@ -18,6 +18,6 @@ namespace Carro.Models
 
         public float Valor { get; set; }
 
-        public long IdCategoria { get; set; }// Materiais, escritório...
+        public string Categoria { get; set; }// Materiais, escritório...
     }
 }
