@@ -6,8 +6,10 @@
     <ScrollView>
       <StackLayout Padding="30" Spacing="30">
         <Label Text="Cadastro de despesa"></Label>
-        <Entry x:Name = "despesaNomeE" Placeholder="Nome" Keyboard="Text"></Entry>
-        <Entry x:Name ="despesaValorE" Placeholder="Valor gasto"></Entry>
+        <Entry x:Name = "nomeEntry" Placeholder="Nome" Keyboard="Text"></Entry>
+        <Entry x:Name ="valorEntry" Placeholder="Valor gasto"></Entry>
+        <Entry x:Name = "descricaoEntry" Placeholder="Descricao" Keyboard="Text"></Entry>
+        <Entry x:Name = "categoriaEntry" Placeholder="Categoria" Keyboard="Text"></Entry>
       </StackLayout>
     </ScrollView>
   </ContentPage.Content>
