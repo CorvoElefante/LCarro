@@ -14,8 +14,10 @@ namespace Carro.Models
 
         public string Nome { get; set; }
 
+        public string Justificativa { get; set; }
+
         public int Quantidade { get; set; }
 
-        public string Justificativa { get; set; }
+        public long IdProduto { get; set; }
     }
 }

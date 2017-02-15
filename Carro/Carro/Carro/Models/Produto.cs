@@ -14,7 +14,9 @@ namespace Carro.Models
 
         public string Nome { get; set; }
 
-        public float  Preco { get; set; }//Preco de venda do produto
+        public float Preco { get; set; }
+
+        public int Quantidade { get; set; }
 
         public string Marca { get; set; }
 
@@ -22,6 +24,5 @@ namespace Carro.Models
 
         public string Local { get; set; }//Localizacao do produto na loja(estante, balcao, mostruario...)
 
-        public string Custo { get; set; }//Preco pago para obtenção do produto
     }
 }

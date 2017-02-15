@@ -7,15 +7,11 @@ using SQLite.Net.Attributes;
 
 namespace Carro.Models
 {
-    public partial class Funcionario
+    public partial class Categoria
     {
         [PrimaryKey, AutoIncrement]
         public long? Id { get; set; }
 
-        public float Salario { get; set; }
-
-        public string Funcao { get; set; }
-
-        public long PessoaId { get; set; }
+        public string Nome { get; set; }
     }
 }
