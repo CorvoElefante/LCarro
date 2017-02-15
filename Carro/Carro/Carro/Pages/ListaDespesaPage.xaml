@@ -5,7 +5,7 @@
              x:Class="Carro.Pages.ListaDespesaPage"
              Title="Despesas">
   <ContentPage.ToolbarItems>
-    <ToolbarItem Icon="{x:Static resources:Images.IconeAdicionarPessoa}"
-			Command="{Binding AddDespesaCommand}"/>
+    <ToolbarItem Icon="{x:Static resources:Images.IconeAdicionarPessoa}" 
+                 Command="{Binding AddDespesaCommand}"/>
   </ContentPage.ToolbarItems>
 </ContentPage>

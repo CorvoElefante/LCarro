@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Xamarin.Forms;
+using Carro.ViewModels;
 
 using Xamarin.Forms;
 
@@ -12,6 +11,7 @@ namespace Carro.Pages
     {
         public ListaFuncionarioPage()
         {
+            BindingContext = new FuncionarioViewModel(Navigation);
             InitializeComponent();
         }
     }
