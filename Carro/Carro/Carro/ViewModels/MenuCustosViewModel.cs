@@ -17,13 +17,19 @@ namespace Carro.ViewModels
             {
             }
 
-            Command _MenuCustosPerdaCommand;
-            public Command MenuVendaCommand
+            Command _MenuPerdaCommand;
+            public Command MenuPerdaCommand
             {
-                get { return _MenuCustosPerdaCommand ?? (_MenuCustosPerdaCommand = new Command(async () => await ExecuteMenuCustosPerdaCommand())); }
+                get { return _MenuPerdaCommand ?? (_MenuPerdaCommand = new Command(async () => await ExecuteMenuPerdaCommand())); }
             }
 
-            async Task ExecuteMenuCustosPerdaCommand()
+            Command _MenuDespesaCommand;
+            public Command MenuDespesaCommand
+            {
+                get { return _MenuDespesaCommand ?? (_MenuDespesaCommand = new Command(async () => await ExecuteMenuDespesaCommand())); }
+            }
+
+            async Task ExecuteMenuPerdaCommand()
             {
                 if (!IsBusy)
                 {
@@ -33,13 +39,7 @@ namespace Carro.ViewModels
                 }
             }
 
-            Command _MenuCustosDespesaCommand;
-            public Command MenuCustosDespesaCommand
-            {
-                get { return _MenuCustosDespesaCommand ?? (_MenuCustosDespesaCommand = new Command(async () => await ExecuteMenuOrdemCommand())); }
-            }
-
-            async Task ExecuteMenuOrdemCommand()
+            async Task ExecuteMenuDespesaCommand()
             {
                 if (!IsBusy)
                 {
