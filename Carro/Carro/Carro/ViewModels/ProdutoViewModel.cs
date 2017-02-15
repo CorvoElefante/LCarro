@@ -54,20 +54,6 @@ namespace Carro.ViewModels
             }
         }
 
-        float _precoEntry = 0.0F;
-        public float precoEntry
-        {
-            get
-            {
-                return _precoEntry;
-            }
-            set
-            {
-                _precoEntry = value;
-                SetPropertyChanged(nameof(precoEntry));
-            }
-        }
-
         string _marcaEntry = string.Empty;
         public string marcaEntry
         {
@@ -127,7 +113,7 @@ namespace Carro.ViewModels
                 {
                     var service = new DataService(sqlite);
 
-                    service.SaveProduto(new Produto { Nome = nomeEntry, Preco = precoEntry, Marca = marcaEntry, Descricao = descricaoEntry, Local = localEntry});
+                    service.SaveProduto(new Produto { Nome = nomeEntry, Marca = marcaEntry, Descricao = descricaoEntry, Local = localEntry});
                     scope.Complete();
                 }
 

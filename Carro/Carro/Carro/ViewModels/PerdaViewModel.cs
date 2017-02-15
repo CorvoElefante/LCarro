@@ -137,7 +137,7 @@ namespace Carro.ViewModels
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new CadastroClientePage());
+                await Navigation.PushAsync(new CadastroPerdaPage());
                 IsBusy = false;
             }
         }

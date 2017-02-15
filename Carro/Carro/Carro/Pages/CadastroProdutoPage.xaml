@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
              x:Class="Carro.Pages.CadastroProdutoPage"
              Title="Novo Produto">
   <ContentPage.Content>
@@ -8,11 +9,10 @@
       <StackLayout Padding="30" Spacing="30">
         <Label Text="Cadastro de Produto"></Label>
         <Entry x:Name ="nomeEntry" Placeholder="Nome" Keyboard="Text"></Entry>
-        <Entry x:Name ="precoEntry" Placeholder="Preço de venda"></Entry>
         <Entry x:Name ="marcaEntry" Placeholder="Marca"></Entry>
         <Entry x:Name ="descricaoEntry" Placeholder="Descrição"></Entry>
         <Entry x:Name ="localEntry" Placeholder="Local no estoque"></Entry>
-        <!--<Button x:Name ="Salvar" Text="Salvar" Clicked="SalvarClicked"></Button>-->
+        <Button Text="Salvar" Command="{Binding SalvarProdutoCommand}"></Button>
       </StackLayout>
     </ScrollView>
   </ContentPage.Content>

@@ -9,7 +9,7 @@
         <Entry x:Name = "nomeEntry" Placeholder="Nome" Keyboard="Text"></Entry>
         <Entry x:Name ="quantidadeEntry" Placeholder="Quantidade perdida"></Entry>
         <Entry x:Name ="justificativaEntry" Placeholder="Justificativa"></Entry>
-        <!--<Button x:Name ="Salvar" Text="Salvar" Clicked="SalvarClicked"></Button>-->
+        <Button Text="Salvar" Command="{Binding SalvarPerdaCommand}"></Button>
       </StackLayout>
     </ScrollView>
   </ContentPage.Content>
