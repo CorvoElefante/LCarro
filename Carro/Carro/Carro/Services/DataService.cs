@@ -28,6 +28,12 @@ namespace Carro.Services
             UnitOfWork.PessoaRepository.AddOrUpdate(pessoa);
         }
 
+        public long? SavePessoaId(Pessoa pessoa)
+        {
+            UnitOfWork.PessoaRepository.AddOrUpdate(pessoa);
+            return pessoa.Id;
+        }
+
         public List<Pessoa> FindPessoaByNome(string nome)
         {
             return UnitOfWork.PessoaRepository.Find(a => a.Nome.Contains(nome)).ToList();
@@ -85,10 +91,10 @@ namespace Carro.Services
             UnitOfWork.FuncionarioRepository.AddOrUpdate(funcionario);
         }
 
-        //public List<Perda> FindPerdaByNome(string nome)
-        //{
-        //    return UnitOfWork.PerdaRepository.Find(a => a.Nome.Contains(nome)).ToList();
-        //}
+        public List<Funcionario> FindFuncionarioByNome(string nome)
+        {
+            return UnitOfWork.FuncionarioRepository.Find(a => a.Funcao.Contains(nome)).ToList();
+        }
 
         #endregion
 

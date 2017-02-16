@@ -49,8 +49,8 @@
     <Compile Include="Pages\CadastroDespesaPage.xaml.cs">
       <DependentUpon>CadastroDespesaPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\FuncionarioPage.xaml.cs">
-      <DependentUpon>FuncionarioPage.xaml</DependentUpon>
+    <Compile Include="Pages\CadastroFuncionarioPage.xaml.cs">
+      <DependentUpon>CadastroFuncionarioPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\HistoricoVendaPage.xaml.cs">
       <DependentUpon>HistoricoVendaPage.xaml</DependentUpon>
@@ -177,7 +177,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\FuncionarioPage.xaml">
+    <EmbeddedResource Include="Pages\CadastroFuncionarioPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
