@@ -7,8 +7,8 @@
       <StackLayout Padding="30" Spacing="30">
         <Label Text="Cadastro de perda"></Label>
         <Entry x:Name = "nomeEntry" Placeholder="Nome" Keyboard="Text"></Entry>
-        <Entry x:Name ="quantidadeEntry" Placeholder="Quantidade perdida"></Entry>
-        <Entry x:Name ="justificativaEntry" Placeholder="Justificativa"></Entry>
+        <Entry x:Name ="quantidadeEntry" Placeholder="Quantidade perdida" Keyboard="Numeric"></Entry>
+        <Entry x:Name ="justificativaEntry" Placeholder="Justificativa" Keyboard="Text"></Entry>
         <Button Text="Salvar" Command="{Binding SalvarPerdaCommand}"></Button>
       </StackLayout>
     </ScrollView>

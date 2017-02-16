@@ -4,7 +4,8 @@
              xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
              x:Class="Carro.Pages.CadastroClientePage">
   <ContentPage.Content>
-    <StackLayout Padding="30" Spacing="30">
+    <ScrollView>
+     <StackLayout Padding="30" Spacing="30">
       <Entry Text="{Binding nomeEntry, Mode=TwoWay}" Placeholder="Nome" Keyboard="Text"></Entry>
       <Entry Text="{Binding ruaNEntry, Mode=TwoWay}" Placeholder="Rua"></Entry>
       <Entry Text="{Binding bairroEntry, Mode=TwoWay}" Placeholder="Bairro"></Entry>
@@ -13,6 +14,7 @@
       <Entry Text="{Binding ndataEntry, Mode=TwoWay}" Placeholder="Data de nascimento" Keyboard="Numeric"></Entry>
       <Entry Text="{Binding cpfEntry, Mode=TwoWay}" Placeholder="CPF" Keyboard="Numeric"></Entry>
       <Button Text="Salvar" Command="{Binding SalvarPessoaCommand}"></Button>
-    </StackLayout>
+     </StackLayout>
+    </ScrollView>
   </ContentPage.Content>
 </ContentPage>

@@ -32,13 +32,13 @@ namespace Carro.ViewModels
             }
         }
 
-        Command _MenuOrdemCommand;
-        public Command MenuOrdemCommand
+        Command _MenuServicoCommand;
+        public Command MenuServicoCommand
         {
-            get { return _MenuOrdemCommand ?? (_MenuOrdemCommand = new Command(async () => await ExecuteMenuOrdemCommand())); }
+            get { return _MenuServicoCommand ?? (_MenuServicoCommand = new Command(async () => await ExecuteMenuServicoCommand())); }
         }
 
-        async Task ExecuteMenuOrdemCommand()
+        async Task ExecuteMenuServicoCommand()
         {
             if (!IsBusy)
             {

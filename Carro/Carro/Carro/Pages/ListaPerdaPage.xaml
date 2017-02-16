@@ -5,7 +5,7 @@
              x:Class="Carro.Pages.ListaPerdaPage"
              Title="Perdas">
   <ContentPage.ToolbarItems>
-    <ToolbarItem Icon="{x:Static resources:Images.IconeAdicionarPessoa}"
+    <ToolbarItem Icon="{x:Static resources:Images.IconeAdicionar}"
 			Command="{Binding AddPerdaCommand}"/>
   </ContentPage.ToolbarItems>
 </ContentPage>

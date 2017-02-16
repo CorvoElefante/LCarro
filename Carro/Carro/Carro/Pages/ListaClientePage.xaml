@@ -5,11 +5,59 @@
 		xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
 		x:Class="Carro.Pages.ListaClientePage"
 		Title="Pessoas">
+  
   <ContentPage.ToolbarItems>
-    <ToolbarItem Icon="{x:Static resources:Images.IconeAdicionarPessoa}"
-			Command="{Binding AddPessoaCommand}"/>
+    <ToolbarItem 
+      Icon="{x:Static resources:Images.IconeAdicionarPessoa}"
+		  Command="{Binding AddPessoaCommand}"/>
   </ContentPage.ToolbarItems>
+
   <ListView
+			HorizontalOptions="FillAndExpand"
+			VerticalOptions="FillAndExpand"
+			HasUnevenRows="true"
+			SeparatorVisibility="None"
+			Header="{Binding .}"
+			ItemsSource="{Binding Pessoas}"
+			ItemTapped="Handle_ItemTapped">
+
+    <x:Arguments>
+      <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
+    </x:Arguments>
+
+    <ListView.HeaderTemplate>
+      <DataTemplate>
+        <SearchBar
+					HeightRequest="45"
+					Placeholder="Buscar"
+					Text="{Binding Search}">
+        </SearchBar>
+      </DataTemplate>
+    </ListView.HeaderTemplate>
+
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+          <Frame
+							Margin="0" Padding="0">
+            <Grid>
+              <Label Grid.ColumnSpan="2"
+								FontAttributes="Bold"
+								FontSize="Large"
+								Text="{Binding Nome}"/>
+              <Label Grid.Row="1"
+								Text="{Binding Email}"/>
+              <Label Grid.Row="1" Grid.Column="1"
+                HorizontalOptions="End"
+								Text="{Binding Telefone}"/>
+            </Grid>
+          </Frame>
+        </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+  </ListView>
+  
+  <!--<ListView
 			HorizontalOptions="FillAndExpand"
 			VerticalOptions="FillAndExpand"
 			HasUnevenRows="true"
@@ -46,15 +94,15 @@
 								FontAttributes="Bold"
 								FontSize="Large"
 								Text="{Binding Nome}"/>
-              <!--<Label Grid.Row="1"
+              <Label Grid.Row="1"
 								Text="{Binding outroatributo}"/>
               <Label Grid.Row="1" Grid.Column="1"
 								HorizontalOptions="End"
-								Text="{Binding outroatributo}"/>-->
+								Text="{Binding outroatributo}"/>
             </Grid>
           </Frame>
         </ViewCell>
       </DataTemplate>
     </ListView.ItemTemplate>
-  </ListView>
+  </ListView>-->
 </ContentPage>

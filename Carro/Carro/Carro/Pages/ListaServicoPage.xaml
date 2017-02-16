@@ -5,7 +5,7 @@
              x:Class="Carro.Pages.ListaServicoPage"
              Title="Lista de Serviços">
   <ContentPage.ToolbarItems>
-    <ToolbarItem Icon="{x:Static resources:Images.IconeAdicionarPessoa}"
+    <ToolbarItem Icon="{x:Static resources:Images.IconeAdicionar}"
 			Command="{Binding AddServicoCommand}"/>
   </ContentPage.ToolbarItems>
 </ContentPage>

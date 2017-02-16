@@ -11,7 +11,7 @@
         <Button x:Name ="menuVendaE" Text="Vendas" Command="{Binding MenuVendaCommand}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></Button>
       </StackLayout>
       <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-        <Button x:Name ="menuOrdemE" Text="Ordem de Serviço" Command="{Binding MenuOrdemCommand}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></Button>
+        <Button x:Name ="menuOrdemE" Text="Serviços" Command="{Binding MenuServicoCommand}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></Button>
       </StackLayout>
       <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
         <Button x:Name ="menuDespesaE" Text="Custos" Command="{Binding MenuCustosCommand}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></Button>
