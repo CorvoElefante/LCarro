@@ -128,6 +128,34 @@ namespace Carro.ViewModels
             }
         }
 
+        float _salarioEntry = 0.0F;
+        public float salarioEntry
+        {
+            get
+            {
+                return _salarioEntry;
+            }
+            set
+            {
+                _salarioEntry = value;
+                SetPropertyChanged(nameof(salarioEntry));
+            }
+        }
+
+        string _funcaoEntry = string.Empty;
+        public string funcaoEntry
+        {
+            get
+            {
+                return _funcaoEntry;
+            }
+            set
+            {
+                _funcaoEntry = value;
+                SetPropertyChanged(nameof(funcaoEntry));
+            }
+        }
+
         Command _SalvarFuncionarioCommand;
         public Command SalvarFuncionarioCommand
         {
@@ -145,7 +173,12 @@ namespace Carro.ViewModels
                 {
                     var service = new DataService(sqlite);
 
-                    service.SavePessoa(new Pessoa { Nome = nomeEntry, RuaN = ruaNEntry, Bairro = bairroEntry, Telefone = telefoneEntry, Email = emailEntry, Data = ndataEntry, Cpf = cpfEntry });
+                    long? PessoaIdd = 0;
+
+                    PessoaIdd = service.SavePessoaId(new Pessoa { Nome = nomeEntry, RuaN = ruaNEntry, Bairro = bairroEntry, Telefone = telefoneEntry, Email = emailEntry, Data = ndataEntry, Cpf = cpfEntry });
+
+                    service.SaveFuncionario(new Funcionario { Salario = salarioEntry, Funcao = funcaoEntry, PessoaId = PessoaIdd });
+
                     scope.Complete();
                 }
 

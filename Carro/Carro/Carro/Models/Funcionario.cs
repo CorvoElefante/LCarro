@@ -16,6 +16,6 @@ namespace Carro.Models
 
         public string Funcao { get; set; }
 
-        public long PessoaId { get; set; }
+        public long? PessoaId { get; set; }
     }
 }
