@@ -14,7 +14,14 @@ namespace Carro.ViewModels
     {
         public FuncionarioViewModel(INavigation navigation) : base(navigation)
         {
-
+            var sqlite = DependencyService.Get<ISQLite>();
+            using (var scope = new TransactionScope(sqlite))
+            {
+                Funcionarios = new ObservableCollection<Funcionario>(
+                    new DataService(sqlite).GetFuncionarios()
+                );
+                scope.Complete();
+            }
         }
         ObservableCollection<Funcionario> _Funcionarios;
         public ObservableCollection<Funcionario> Funcionarios
