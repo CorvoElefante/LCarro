@@ -11,7 +11,7 @@ namespace Carro.Pages
     {
         public ListaFuncionarioPage()
         {
-            //BindingContext = new FuncionarioViewModel(Navigation);
+            BindingContext = new FuncionarioViewModel(Navigation);
             InitializeComponent();
         }
 
