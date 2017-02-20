@@ -16,7 +16,7 @@
         <Entry Text ="{Binding EmailEntry, Mode=TwoWay}"  Placeholder="Email" Keyboard="Email"></Entry>
         <Entry Text ="{Binding SalarioEntry, Mode=TwoWay}"  Placeholder="Salario"></Entry>
         <Entry Text ="{Binding FuncaoEntry, Mode=TwoWay}"  Placeholder="Função"></Entry>
-        <Button Text="Salvar" Command="{Binding SalvarFuncinarioCommand}"></Button>
+        <Button Text="Salvar" Command="{Binding SalvarFuncionarioCommand}"></Button>
       </StackLayout>
     </ScrollView>
   </ContentPage.Content>
