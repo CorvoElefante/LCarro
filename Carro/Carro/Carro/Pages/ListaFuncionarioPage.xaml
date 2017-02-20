@@ -16,7 +16,7 @@
      HasUnevenRows="true"
      SeparatorVisibility="None"
      Header="{Binding .}"
-     ItemsSource="{Binding Funcionarios}"
+     ItemsSource="{Binding Funcionario}"
      ItemTapped="Handle_ItemTapped">
 
     <x:Arguments>
