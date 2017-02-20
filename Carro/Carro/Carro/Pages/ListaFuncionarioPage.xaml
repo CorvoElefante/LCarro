@@ -48,23 +48,6 @@
               <Label Grid.Row="1" Grid.Column="1"
                 HorizontalOptions="End"
 								Text="{Binding Funcao}"/>
-              <Label Grid.Row="2"
-								Text="{Binding Telefone}"/>
-              <Label Grid.Row="2" Grid.Column="1"
-                HorizontalOptions="End"
-								Text="{Binding Email}"/>
-              <Label Grid.Row="3"
-								Text="{Binding Cpf}"/>
-              <Label Grid.Row="3" Grid.Column="1"
-                HorizontalOptions="End"
-								Text="{Binding Data}"/>
-              <Label Grid.Row="4"
-								Text="{Binding RuaN}"/>
-              <Label Grid.Row="4" Grid.Column="1"
-                HorizontalOptions="End"
-								Text="{Binding Bairro}"/>
-              <Label Grid.Row="5"
-								Text="{Binding PessoaId}"/>
             </Grid>
           </Frame>
         </ViewCell>
