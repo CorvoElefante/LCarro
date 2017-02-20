@@ -6,11 +6,11 @@
     <ScrollView>
       <StackLayout Padding="30" Spacing="30">
         <Label Text="Cadastro de despesa"></Label>
-        <Entry x:Name = "nomeEntry" Placeholder="Nome" Keyboard="Text"></Entry>
-        <Entry x:Name ="valorEntry" Placeholder="Valor gasto" Keyboard="Numeric"></Entry>
-        <Entry x:Name = "descricaoEntry" Placeholder="Descricao" Keyboard="Text"></Entry>
-        <Entry x:Name = "categoriaEntry" Placeholder="Categoria" Keyboard="Text"></Entry>
-        <Button Text="Salvar" Command="{Binding SalvarPerdaCommand}"></Button>
+        <Entry Text = "{Binding nomeEntry, Mode=TwoWay}" Placeholder="Nome" Keyboard="Text"></Entry>
+        <Entry Text = "{Binding valorEntry, Mode=TwoWay}" Placeholder="Valor gasto" Keyboard="Numeric"></Entry>
+        <Entry Text = "{Binding descricaoEntry, Mode=TwoWay}" Placeholder="Descricao" Keyboard="Text"></Entry>
+        <Entry Text = "{Binding categoriaEntry, Mode=TwoWay}" Placeholder="Categoria" Keyboard="Text"></Entry>
+        <Button Text= "Salvar" Command="{Binding SalvarPerdaCommand}"></Button>
       </StackLayout>
     </ScrollView>
   </ContentPage.Content>
