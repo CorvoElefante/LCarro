@@ -8,22 +8,22 @@
     <ScrollView>
       <StackLayout>
       <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-        <Button x:Name ="menuVendaE" Text="Vendas" Command="{Binding MenuVendaCommand}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></Button>
+        <Button x:Name ="VendaEntry" Text="Vendas" Command="{Binding MenuVendaCommand}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></Button>
       </StackLayout>
       <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-        <Button x:Name ="menuOrdemE" Text="Serviços" Command="{Binding MenuServicoCommand}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></Button>
+        <Button x:Name ="ServicoEntry" Text="Serviços" Command="{Binding MenuServicoCommand}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></Button>
       </StackLayout>
       <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-        <Button x:Name ="menuDespesaE" Text="Custos" Command="{Binding MenuCustosCommand}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></Button>
+        <Button x:Name ="DespesaEntry" Text="Custos" Command="{Binding MenuCustosCommand}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></Button>
       </StackLayout>
       <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-        <Button x:Name ="menuRelatoriosE" Text="Relatórios" Command="{Binding MenuRelatoriosCommand}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></Button>
+        <Button x:Name ="RelatoriosEntry" Text="Relatórios" Command="{Binding MenuRelatoriosCommand}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></Button>
       </StackLayout>
       <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-        <Button x:Name ="menuClientesE" Text="Clientes" Command="{Binding MenuClientesCommand}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></Button>
+        <Button x:Name ="ClientesEntry" Text="Clientes" Command="{Binding MenuClientesCommand}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></Button>
       </StackLayout>
       <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-        <Button x:Name ="menuFuncionarioE" Text="Funcionário" Command="{Binding MenuFuncionarioCommand}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></Button>
+        <Button x:Name ="FuncionarioEntry" Text="Funcionário" Command="{Binding MenuFuncionarioCommand}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></Button>
       </StackLayout>
       </StackLayout>
     </ScrollView>

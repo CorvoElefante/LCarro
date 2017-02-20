@@ -8,4 +8,49 @@
     <ToolbarItem Icon="{x:Static resources:Images.IconeAdicionar}"
 			Command="{Binding AddPerdaCommand}"/>
   </ContentPage.ToolbarItems>
+
+  <ListView
+     HorizontalOptions="FillAndExpand"
+     VerticalOptions="FillAndExpand"
+     HasUnevenRows="true"
+     SeparatorVisibility="None"
+     Header="{Binding .}"
+     ItemsSource="{Binding Perda}"
+     ItemTapped="Handle_ItemTapped">
+
+    <x:Arguments>
+      <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
+    </x:Arguments>
+
+    <ListView.HeaderTemplate>
+      <DataTemplate>
+        <SearchBar
+					HeightRequest="45"
+					Placeholder="Buscar"
+					Text="{Binding Search}">
+        </SearchBar>
+      </DataTemplate>
+    </ListView.HeaderTemplate>
+
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+          <Frame
+							Margin="0" Padding="0">
+            <Grid>
+              <Label Grid.ColumnSpan="2"
+								FontAttributes="Bold"
+								FontSize="Large"
+								Text="{Binding Nome}"/>
+              <Label Grid.Row="1"
+								Text="{Binding IdProduto}"/>
+              <Label Grid.Row="1" Grid.Column="1"
+                HorizontalOptions="End"
+								Text="{Binding Quantidade}"/>
+            </Grid>
+          </Frame>
+        </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+  </ListView>
 </ContentPage>

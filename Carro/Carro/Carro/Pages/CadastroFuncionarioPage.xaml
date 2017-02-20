@@ -7,16 +7,16 @@
     <ScrollView>
       <StackLayout Padding="30" Spacing="30">
         <Label Text="Cadastro de Funcionário"></Label>
-        <Entry x:Name = "funcionarioNomeE" Placeholder="Nome" Keyboard="Text"></Entry>
-        <Entry x:Name ="funcionarioRuaNE" Placeholder="Rua"></Entry>
-        <Entry x:Name ="funcionarioBairroE" Placeholder="Bairro"></Entry>
-        <Entry x:Name ="funcionarioCpfE" Placeholder="CPF" Keyboard="Numeric"></Entry>
-        <Entry x:Name ="funcionarioTelefoneE" Placeholder="Telefone" Keyboard="Telephone"></Entry>
-        <Entry x:Name ="funcionarioDataE" Placeholder="Data de nascimento" Keyboard="Numeric"></Entry>
-        <Entry x:Name ="funcionarioEmailE"  Placeholder="Email" Keyboard="Email"></Entry>
-        <Entry x:Name ="funcionarioSalarioE"  Placeholder="Salario"></Entry>
-        <Entry x:Name ="funcionarioFuncaoE"  Placeholder="Função"></Entry>
-        <Button x:Name ="Salvar" Text="Salvar" Command="SalvarFuncinarioCommand"></Button>
+        <Entry Text ="{Binding NomeEntry, Mode=TwoWay}" Placeholder="Nome" Keyboard="Text"></Entry>
+        <Entry Text ="{Binding RuaNEntry, Mode=TwoWay}" Placeholder="Rua"></Entry>
+        <Entry Text ="{Binding BairroEntry, Mode=TwoWay}" Placeholder="Bairro"></Entry>
+        <Entry Text ="{Binding CpfEntry, Mode=TwoWay}" Placeholder="CPF" Keyboard="Numeric"></Entry>
+        <Entry Text ="{Binding TelefoneEntry, Mode=TwoWay}" Placeholder="Telefone" Keyboard="Telephone"></Entry>
+        <Entry Text ="{Binding DataEntry, Mode=TwoWay}" Placeholder="Data de nascimento" Keyboard="Numeric"></Entry>
+        <Entry Text ="{Binding EmailEntry, Mode=TwoWay}"  Placeholder="Email" Keyboard="Email"></Entry>
+        <Entry Text ="{Binding SalarioEntry, Mode=TwoWay}"  Placeholder="Salario"></Entry>
+        <Entry Text ="{Binding FuncaoEntry, Mode=TwoWay}"  Placeholder="Função"></Entry>
+        <Button Text="Salvar" Command="{Binding SalvarFuncinarioCommand}"></Button>
       </StackLayout>
     </ScrollView>
   </ContentPage.Content>

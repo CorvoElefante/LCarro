@@ -7,12 +7,12 @@
   <ContentPage.Content>
     <ScrollView>
       <StackLayout Padding="30" Spacing="30">
-        <Label Text="Cadastro de Produto"></Label>
-        <Entry x:Name ="nomeEntry" Placeholder="Nome" Keyboard="Text"></Entry>
-        <Entry x:Name ="marcaEntry" Placeholder="Marca"></Entry>
-        <Entry x:Name ="descricaoEntry" Placeholder="Descrição"></Entry>
-        <Entry x:Name ="localEntry" Placeholder="Local no estoque"></Entry>
-        <Button Text="Salvar" Command="{Binding SalvarProdutoCommand}"></Button>
+        <Label Text = "Cadastro de Produto"></Label>
+        <Entry Text = "{Binding nomeEntry, Mode=TwoWay}" Placeholder="Nome" Keyboard="Text"></Entry>
+        <Entry Text = "{Binding marcaEntry, Mode=TwoWay}" Placeholder="Marca"></Entry>
+        <Entry Text = "{Binding descricaoEntry, Mode=TwoWay}" Placeholder="Descrição"></Entry>
+        <Entry Text = "{Binding localEntry, Mode=TwoWay}" Placeholder="Local no estoque"></Entry>
+        <Button Text = "Salvar" Command="{Binding SalvarProdutoCommand}"></Button>
       </StackLayout>
     </ScrollView>
   </ContentPage.Content>
