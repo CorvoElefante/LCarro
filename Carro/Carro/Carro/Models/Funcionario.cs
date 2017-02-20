@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SQLite.Net.Attributes;
+using SQLiteNetExtensions.Attributes;
 
 namespace Carro.Models
 {
@@ -16,6 +17,10 @@ namespace Carro.Models
 
         public string Funcao { get; set; }
 
+        [ForeignKey(typeof(Pessoa))]
         public long? PessoaId { get; set; }
+
+        [OneToOne]
+        public Pessoa Pessoa { get; set; }
     }
 }

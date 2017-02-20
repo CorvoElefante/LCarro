@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SQLite.Net.Attributes;
+using SQLiteNetExtensions.Attributes;
 
 namespace Carro.Models
 {
@@ -14,10 +15,17 @@ namespace Carro.Models
 
         public long IdOrdemVenda { get; set; }
 
+        [ForeignKey(typeof(Produto))]
         public long IdProduto { get; set; }
+
+        [OneToOne]
+        public Produto Produto { get; set; }
 
         public float Valor { get; set; }
 
         public int Quantidade { get; set; }
+
+        [ManyToOne]
+        public OrdemVenda OrdemVenda { get; set; }
     }
 }
