@@ -9,10 +9,10 @@
     <ScrollView>
       <StackLayout Spacing="0">
       <StackLayout>
-        <Button x:Name ="PerdaEntry" Text="Perdas" Command="{Binding MenuPerdaCommand}"></Button>
+        <Button x:Name ="perdaEntry" Text="Perdas" Command="{Binding MenuPerdaCommand}"></Button>
       </StackLayout>
       <StackLayout>
-        <Button x:Name ="DespesasEentry" Text="Despesas" Command="{Binding MenuDespesaCommand}"></Button>
+        <Button x:Name ="despesasEentry" Text="Despesas" Command="{Binding MenuDespesaCommand}"></Button>
       </StackLayout>
       </StackLayout>
     </ScrollView>
