@@ -155,6 +155,34 @@ namespace Carro.ViewModels
                 IsBusy = false;
             }
         }
+ //       //
+ //       public ObservableCollection<TextBoxVm> Items { get { return _items; } }
+ //       private ObservableCollection<TextBoxVm> _items = new ObservableCollection<TextBoxVm>();
 
+ //       public string Text
+ //       {
+ //           get { return (string)GetValue(TextProperty); }
+ //           set { SetValue(TextProperty, value); }
+ //       }
+ //       public static readonly DependencyProperty TextProperty =
+ //           DependencyProperty.Register("Text", typeof(string), typeof(TextBoxVm), new UIPropertyMetadata("default text",
+ //           (d, e) =>
+ //           {
+ //               var vm = (TextBoxVm)d;
+ //               var val = (string)e.NewValue;
+ //               MyDataService.FindAndUpdateItemInDatabase(vm.Id, val);//you can access database with something like this
+ //   }));
+
+ //       public string TitleText
+ //       {
+ //           get { return (string)GetValue(TitleTextProperty); }
+ //           set { SetValue(TitleTextProperty, value); }
+ //       }
+ //       public static readonly DependencyProperty TitleTextProperty =
+ //           DependencyProperty.Register("TitleText", typeof(string), typeof(TextBoxVm), new UIPropertyMetadata("default title"));
+
+ //        Items.Add(new TextBoxVm { 
+ //    TitleText = string.Format("Document Title{0}:", Items.Count+1)
+ //});
     }
 }

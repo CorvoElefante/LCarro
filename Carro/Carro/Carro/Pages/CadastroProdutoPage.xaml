@@ -16,4 +16,14 @@
       </StackLayout>
     </ScrollView>
   </ContentPage.Content>
+  <!--<ItemsControl ItemsSource="{Binding Items}">
+    <ItemsControl.ItemTemplate>
+      <DataTemplate>
+        <WrapPanel>
+          <TextBlock Text="{Binding TitleText}"/>
+          <TextBox Text="{Binding Text}"/>
+        </WrapPanel>
+      </DataTemplate>
+    </ItemsControl.ItemTemplate>
+  </ItemsControl>-->
 </ContentPage>

@@ -5,27 +5,32 @@
              x:Class="Carro.Pages.MenuPage"
              Title="Menu">
   <ContentPage.Content>
-    <ScrollView>
-      <StackLayout>
-      <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+      <StackLayout Spacing="0" Margin="0">
+      
         <Button x:Name ="vendaEntry" Text="Vendas" Command="{Binding MenuVendaCommand}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></Button>
-      </StackLayout>
-      <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+      
         <Button x:Name ="servicoEntry" Text="Serviços" Command="{Binding MenuServicoCommand}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></Button>
-      </StackLayout>
-      <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+    
         <Button x:Name ="despesaEntry" Text="Custos" Command="{Binding MenuCustosCommand}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></Button>
-      </StackLayout>
-      <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+    
         <Button x:Name ="relatoriosEntry" Text="Relatórios" Command="{Binding MenuRelatoriosCommand}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></Button>
-      </StackLayout>
-      <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+     
         <Button x:Name ="clientesEntry" Text="Clientes" Command="{Binding MenuClientesCommand}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></Button>
-      </StackLayout>
-      <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+        
         <Button x:Name ="funcionarioEntry" Text="Funcionário" Command="{Binding MenuFuncionarioCommand}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></Button>
+
+        <!--<Button x:Name ="vendaEntry" Text="Vendas" Command="{Binding MenuVendaCommand}" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Padding="-4" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"> <Image Source="tin.jpg"/> </Button>
+        <Button x:Name ="servicoEntry" Text="Serviços" Command="{Binding MenuServicoCommand}" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Padding="-4" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"> <Image Source="tin.jpg"/> </Button>
+        <Button x:Name ="despesaEntry" Text="Custos" Command="{Binding MenuCustosCommand}" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Padding="-4" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"> <Image Source="tin.jpg"/> </Button>
+        <Button x:Name ="relatoriosEntry" Text="Relatórios" Command="{Binding MenuRelatoriosCommand}" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Padding="-4" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"> <Image Source="tin.jpg"/> </Button>
+        <Button x:Name ="clientesEntry" Text="Clientes" Command="{Binding MenuClientesCommand}" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Padding="-4" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"> <Image Source="tin.jpg"/> </Button>
+        <Button x:Name ="funcionarioEntry" Text="Funcionário" Command="{Binding MenuFuncionarioCommand}" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Padding="-4" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"> <Image Source="tin.jpg"/> </Button>-->
+        
       </StackLayout>
-      </StackLayout>
-    </ScrollView>
   </ContentPage.Content>
 </ContentPage>

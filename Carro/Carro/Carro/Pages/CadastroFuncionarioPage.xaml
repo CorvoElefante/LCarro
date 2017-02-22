@@ -12,7 +12,7 @@
         <Entry Text ="{Binding bairroEntry, Mode=TwoWay}" Placeholder="Bairro"></Entry>
         <Entry Text ="{Binding cpfEntry, Mode=TwoWay}" Placeholder="CPF" Keyboard="Numeric"></Entry>
         <Entry Text ="{Binding telefoneEntry, Mode=TwoWay}" Placeholder="Telefone" Keyboard="Telephone"></Entry>
-        <Entry Text ="{Binding dataEntry, Mode=TwoWay}" Placeholder="Data de nascimento" Keyboard="Numeric"></Entry>
+        <Entry Text ="{Binding ndataEntry, Mode=TwoWay}" Placeholder="Data de nascimento" Keyboard="Numeric"></Entry>
         <Entry Text ="{Binding emailEntry, Mode=TwoWay}"  Placeholder="Email" Keyboard="Email"></Entry>
         <Entry Text ="{Binding salarioEntry, Mode=TwoWay}"  Placeholder="Salario"></Entry>
         <Entry Text ="{Binding funcaoEntry, Mode=TwoWay}"  Placeholder="Função"></Entry>
