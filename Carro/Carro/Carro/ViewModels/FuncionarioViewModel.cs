@@ -7,6 +7,7 @@ using Carro.Repositories;
 using Carro.Services;
 using System.Threading.Tasks;
 using Carro.Pages;
+using SQLiteNetExtensions;
 
 namespace Carro.ViewModels
 {
@@ -179,13 +180,11 @@ namespace Carro.ViewModels
                 using (var scope = new TransactionScope(sqlite))
                 {
                     var service = new DataService(sqlite);
+                    var Pessoa = new Pessoa{ Nome = nomeEntry, RuaN = ruaNEntry, Bairro = bairroEntry, Telefone = telefoneEntry, Email = emailEntry, Data = ndataEntry, Cpf = cpfEntry };
+                    service.SavePessoa(Pessoa);
 
-                    long? PessoaIdd = 0;
-
-                    PessoaIdd = service.SavePessoaId(new Pessoa { Nome = nomeEntry, RuaN = ruaNEntry, Bairro = bairroEntry, Telefone = telefoneEntry, Email = emailEntry, Data = ndataEntry, Cpf = cpfEntry });
-
-                    service.SaveFuncionario(new Funcionario { Salario = salarioEntry, Funcao = funcaoEntry, PessoaId = PessoaIdd });
-
+                    service.SaveFuncionario(new Funcionario { Salario = salarioEntry, Funcao = funcaoEntry, Pessoa = Pessoa});
+                    
                     scope.Complete();
                 }
 

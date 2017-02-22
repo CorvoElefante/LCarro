@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Carro.Repositories.Interfaces;
 using SQLite.Net;
+using SQLiteNetExtensions.Extensions;
 
 namespace Carro.Repositories
 {
@@ -15,7 +16,8 @@ namespace Carro.Repositories
         {
             lock (Locker)
             {
-                return Context.Insert(entity);
+                Context.InsertWithChildren(entity);
+                return 0;
             }
         }
 
@@ -23,7 +25,8 @@ namespace Carro.Repositories
         {
             lock (Locker)
             {
-                return Context.InsertOrReplace(entity);
+                Context.InsertOrReplaceWithChildren(entity);
+                return 0;
             }
         }
 
