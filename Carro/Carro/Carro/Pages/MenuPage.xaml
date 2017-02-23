@@ -2,35 +2,62 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
-             x:Class="Carro.Pages.MenuPage"
-             Title="Menu">
-  <ContentPage.Content>
-      <StackLayout Spacing="0" Margin="0">
-      
-        <Button x:Name ="vendaEntry" Text="Vendas" Command="{Binding MenuVendaCommand}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></Button>
+             x:Class="Carro.Pages.MenuPage">
 
-      
-        <Button x:Name ="servicoEntry" Text="Serviços" Command="{Binding MenuServicoCommand}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></Button>
-
-    
-        <Button x:Name ="despesaEntry" Text="Custos" Command="{Binding MenuCustosCommand}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></Button>
-
-    
-        <Button x:Name ="relatoriosEntry" Text="Relatórios" Command="{Binding MenuRelatoriosCommand}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></Button>
-
-     
-        <Button x:Name ="clientesEntry" Text="Clientes" Command="{Binding MenuClientesCommand}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></Button>
-
-        
-        <Button x:Name ="funcionarioEntry" Text="Funcionário" Command="{Binding MenuFuncionarioCommand}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></Button>
-
-        <!--<Button x:Name ="vendaEntry" Text="Vendas" Command="{Binding MenuVendaCommand}" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Padding="-4" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"> <Image Source="tin.jpg"/> </Button>
-        <Button x:Name ="servicoEntry" Text="Serviços" Command="{Binding MenuServicoCommand}" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Padding="-4" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"> <Image Source="tin.jpg"/> </Button>
-        <Button x:Name ="despesaEntry" Text="Custos" Command="{Binding MenuCustosCommand}" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Padding="-4" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"> <Image Source="tin.jpg"/> </Button>
-        <Button x:Name ="relatoriosEntry" Text="Relatórios" Command="{Binding MenuRelatoriosCommand}" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Padding="-4" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"> <Image Source="tin.jpg"/> </Button>
-        <Button x:Name ="clientesEntry" Text="Clientes" Command="{Binding MenuClientesCommand}" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Padding="-4" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"> <Image Source="tin.jpg"/> </Button>
-        <Button x:Name ="funcionarioEntry" Text="Funcionário" Command="{Binding MenuFuncionarioCommand}" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Padding="-4" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"> <Image Source="tin.jpg"/> </Button>-->
-        
-      </StackLayout>
-  </ContentPage.Content>
+  <Grid Margin="0" Padding="0" RowSpacing="0" ColumnSpacing="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+    <Grid>
+      <Image
+          Source="ic_adicionarPessoa.png"
+          BackgroundColor="#42A5F5"
+          IsOpaque="True"/>
+      <Grid.GestureRecognizers>
+        <TapGestureRecognizer Command="{Binding MenuVendaCommand}" />
+      </Grid.GestureRecognizers>
+    </Grid>
+    <Grid Grid.Row="1">
+      <Image
+           Source="ic_adicionarPessoa.png"
+           BackgroundColor="#2196F3"
+           IsOpaque="True"/>
+      <Grid.GestureRecognizers>
+        <TapGestureRecognizer Command="{Binding MenuServicoCommand}" />
+      </Grid.GestureRecognizers>
+    </Grid>
+    <Grid Grid.Row="2">
+      <Image
+           Source="ic_adicionarPessoa.png"
+           BackgroundColor="#1E88E5"
+           IsOpaque="True"/>
+      <Grid.GestureRecognizers>
+        <TapGestureRecognizer Command="{Binding MenuCustosCommand}" />
+      </Grid.GestureRecognizers>
+    </Grid>
+    <Grid Grid.Row="3">
+      <Image
+           Source="ic_adicionarPessoa.png"
+           BackgroundColor="#1976D2"
+           IsOpaque="True"/>
+      <Grid.GestureRecognizers>
+        <TapGestureRecognizer Command="{Binding MenuRelatoriosCommand}" />
+      </Grid.GestureRecognizers>
+    </Grid>
+    <Grid Grid.Row="4">
+      <Image
+           Source="ic_adicionarPessoa.png"
+           BackgroundColor="#1565C0"
+           IsOpaque="True"/>
+      <Grid.GestureRecognizers>
+        <TapGestureRecognizer Command="{Binding MenuClientesCommand}" />
+      </Grid.GestureRecognizers>
+    </Grid>
+    <Grid Grid.Row="5">
+      <Image
+           Source="ic_adicionarPessoa.png"
+           BackgroundColor="#0D47A1"
+           IsOpaque="True"/>
+      <Grid.GestureRecognizers>
+        <TapGestureRecognizer Command="{Binding MenuFuncionarioCommand}" />
+      </Grid.GestureRecognizers>
+    </Grid>
+  </Grid>
 </ContentPage>
