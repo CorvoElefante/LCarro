@@ -42,7 +42,7 @@
               <Label Grid.ColumnSpan="2"
 								FontAttributes="Bold"
 								FontSize="Large"
-								Text="{Binding Nome}"/>
+								Text="{Binding Pessoa.Nome}"/>
               <Label Grid.Row="1"
 								Text="{Binding Salario}"/>
               <Label Grid.Row="1" Grid.Column="1"

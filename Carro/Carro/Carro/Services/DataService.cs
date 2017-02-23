@@ -4,6 +4,7 @@ using Carro.Models;
 using SQLite.Net;
 using Carro.Repositories;
 using System.Linq;
+using SQLiteNetExtensions.Extensions;
 
 namespace Carro.Services
 {
@@ -13,9 +14,11 @@ namespace Carro.Services
 
         public DataService(ISQLite sqlite)
         {
-            UnitOfWork = new UnitOfWork(sqlite);
+            DB = sqlite.GetConnection();
+            UnitOfWork = new UnitOfWork(DB);
+            
         }
-
+        readonly SQLiteConnection DB;
         #region PessoaCliente
 
         public List<Pessoa> GetPessoas()
@@ -36,6 +39,7 @@ namespace Carro.Services
 
         public List<Pessoa> FindPessoaByNome(string nome)
         {
+
             return UnitOfWork.PessoaRepository.Find(a => a.Nome.Contains(nome)).ToList();
         }
 
@@ -93,7 +97,23 @@ namespace Carro.Services
 
         public List<Funcionario> FindFuncionarioByNome(string nome)
         {
-            return UnitOfWork.FuncionarioRepository.Find(a => a.Funcao.Contains(nome)).ToList();
+            List<Funcionario> list = new List<Funcionario>();
+            var elements = DB.Table<Funcionario>();
+            if (nome == null || nome == "")
+            {
+                list = DB.Query<Funcionario>("SELECT funcionario.Id, funcionario.Salario, funcionario.Funcao, funcionario.PessoaId FROM funcionario INNER JOIN pessoa ON funcionario.PessoaId = Pessoa.Id").ToList();
+            }
+            else
+            {
+                list = DB.Query<Funcionario>("SELECT funcionario.Id, funcionario.Salario, funcionario.Funcao, funcionario.PessoaId FROM funcionario INNER JOIN pessoa ON funcionario.PessoaId = Pessoa.Id WHERE (Pessoa.Nome LIKE ('%' || ? || '%'))", nome).ToList();
+            }
+            
+            foreach (Funcionario element in list)
+            {
+                DB.GetChildren(element, false);
+            }
+
+            return list;
         }
 
         #endregion
