@@ -6,9 +6,9 @@ namespace Carro.Repositories
 {
     public class UnitOfWork : IUnitOfWork
     {
-        public UnitOfWork(ISQLite sqlite)
+        public UnitOfWork(SQLiteConnection sqlite)
         {
-            DB = sqlite.GetConnection();
+            DB = sqlite;
 
             _PessoaRepository = new GenericRepository<Pessoa, long>(DB, DBLocker);
             _CategoriaRepository = new GenericRepository<Categoria, long>(DB, DBLocker);
