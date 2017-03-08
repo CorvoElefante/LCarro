@@ -19,6 +19,11 @@ namespace Carro.Pages
             {
                 return; // has been set to null, do not 'process' tapped event 
             }
+            
+            if (((PessoaViewModel)BindingContext).EditarPessoaCommand.CanExecute(null))
+            {
+                ((PessoaViewModel)BindingContext).EditarPessoaCommand.Execute(((ListView)sender).SelectedItem);
+            }
             ((ListView)sender).SelectedItem = null; // de-select the row
         }
     }

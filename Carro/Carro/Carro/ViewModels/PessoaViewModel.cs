@@ -15,7 +15,7 @@ namespace Carro.ViewModels
 
         public PessoaViewModel(INavigation navigation) : base(navigation)
         {
-
+            
             var sqlite = DependencyService.Get<ISQLite>();
             using (var scope = new TransactionScope(sqlite))
             {
@@ -179,7 +179,7 @@ namespace Carro.ViewModels
                     );
                     scope.Complete();
                 }
-                    IsBusy = false;
+                IsBusy = false;
             }
         }
 
@@ -211,5 +211,23 @@ namespace Carro.ViewModels
             }
         }
 
+        Command _EditarPessoaCommand;
+        public Command EditarPessoaCommand
+        {
+            get { return _EditarPessoaCommand ?? (_EditarPessoaCommand = new Command<Pessoa>(async (qq) => await ExecuteEditarPessoaCommand(qq))); }
+        }
+
+
+
+        async Task ExecuteEditarPessoaCommand(Pessoa value)
+        { 
+            if (!IsBusy)
+            {
+                Pessoa PessoaEditar = value;
+                IsBusy = true;
+                await Navigation.PushAsync(new CadastroClientePage());
+                IsBusy = false;
+            }
+        }
     }
 }
