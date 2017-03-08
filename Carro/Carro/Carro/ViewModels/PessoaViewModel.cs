@@ -223,11 +223,11 @@ namespace Carro.ViewModels
         { 
             if (!IsBusy)
             {
-                Pessoa PessoaEditar = value;
                 IsBusy = true;
-                await Navigation.PushAsync(new CadastroClientePage());
+                await Navigation.PushAsync(new EditarClientePage());
                 IsBusy = false;
             }
+            nomeEntry = value.Nome;
         }
     }
 }
