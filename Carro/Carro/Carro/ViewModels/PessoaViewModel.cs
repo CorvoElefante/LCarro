@@ -226,6 +226,7 @@ namespace Carro.ViewModels
                 await Navigation.PushAsync(new EditarClientePage());
                 IsBusy = false;
             }
+            nomeEntry = value.Nome;
         }
 
         Command _DeletarPessoaCommand;
