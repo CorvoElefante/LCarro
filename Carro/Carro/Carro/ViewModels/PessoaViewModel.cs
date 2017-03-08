@@ -218,10 +218,9 @@ namespace Carro.ViewModels
         }
 
         async Task ExecuteEditarPessoaCommand(Pessoa value)
-        { 
+        {
             if (!IsBusy)
             {
-                Pessoa PessoaEditar = value;
                 IsBusy = true;
                 await Navigation.PushAsync(new EditarClientePage());
                 IsBusy = false;
@@ -235,11 +234,10 @@ namespace Carro.ViewModels
             get { return _DeletarPessoaCommand ?? (_DeletarPessoaCommand = new Command<Pessoa>(async(qq) => await ExecuteDeletarPessoaCommand(qq))); }
         }
 
-        async Task ExecuteDeletarPessoaCommand(Pessoa value)
+        async Task ExecuteDeletarPessoaCommand()
         {
             if (!IsBusy)
             {
-                Pessoa PessoaEditar = value;
                 IsBusy = true;
                 //await Navigation.PushAsync(new CadastroClientePage());
                 IsBusy = false;
