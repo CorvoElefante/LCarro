@@ -73,9 +73,6 @@
     <Compile Include="Pages\ListaServicoPage.xaml.cs">
       <DependentUpon>ListaServicoPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\MenuCustosPage.xaml.cs">
-      <DependentUpon>MenuCustosPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\MenuPage.xaml.cs">
       <DependentUpon>MenuPage.xaml</DependentUpon>
     </Compile>
@@ -112,7 +109,6 @@
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\DespesaViewModel.cs" />
     <Compile Include="ViewModels\FuncionarioViewModel.cs" />
-    <Compile Include="ViewModels\MenuCustosViewModel.cs" />
     <Compile Include="ViewModels\MenuViewModel.cs" />
     <Compile Include="ViewModels\PerdaViewModel.cs" />
     <Compile Include="ViewModels\PessoaViewModel.cs" />
@@ -209,12 +205,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\CadastroClientePage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Pages\MenuCustosPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

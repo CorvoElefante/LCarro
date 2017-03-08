@@ -14,6 +14,7 @@ namespace Carro.Pages
         {
             BindingContext = new MenuViewModel(Navigation);
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
         }
     }
 }

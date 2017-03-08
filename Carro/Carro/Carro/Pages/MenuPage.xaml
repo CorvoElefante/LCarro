@@ -2,77 +2,142 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
-             x:Class="Carro.Pages.MenuPage">
+             x:Class="Carro.Pages.MenuPage"
+             BackgroundColor="#303030">
 
-  <Grid Margin="1" Padding="1" RowSpacing="2" ColumnSpacing="2">
-      <Grid>
-        <Image
-            Source="ic_adicionarPessoa.png"
-            BackgroundColor="#42A5F5"
-            IsOpaque="True"/>
-        <Grid.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding MenuVendaCommand}" />
-        </Grid.GestureRecognizers>
-      </Grid>
-      <Grid Grid.Column="1">
-        <Image
-             Source="ic_adicionarPessoa.png"
-             BackgroundColor="#2196F3"
-             IsOpaque="True"/>
-        <Grid.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding MenuServicoCommand}" />
-        </Grid.GestureRecognizers>
-      </Grid>
-      <Grid Grid.Row="1">
-        <Image
-             Source="ic_adicionarPessoa.png"
-             BackgroundColor="#1976D2"
-             IsOpaque="True"/>
-        <Grid.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding MenuRelatoriosCommand}" />
-        </Grid.GestureRecognizers>
-      </Grid>
-      <Grid Grid.Row="1" Grid.Column="1">
-        <Image
-             Source="ic_adicionarPessoa.png"
-             BackgroundColor="#1565C0"
-             IsOpaque="True"/>
-        <Grid.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding MenuClientesCommand}" />
-        </Grid.GestureRecognizers>
-      </Grid>
-      <Grid Grid.Row="2">
-        <Image
-             Source="ic_adicionarPessoa.png"
-             BackgroundColor="#0D47A1"
-             IsOpaque="True"/>
-        <Grid.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding MenuFuncionarioCommand}" />
-        </Grid.GestureRecognizers>
-      </Grid>
-      <Grid Grid.Row="2" Grid.Column="1">
-        <Image
-             Source="ic_adicionarPessoa.png"
-             BackgroundColor="#0D47A1"
-             IsOpaque="True"/>
-        <Grid.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding MenuPerdaCommand}" />
-        </Grid.GestureRecognizers>
-      </Grid>
-      <Grid Grid.Row="3">
-        <Image
-             Source="ic_adicionarPessoa.png"
-             BackgroundColor="#0D47A1"
-             IsOpaque="True"/>
-        <Grid.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding MenuDespesaCommand}" />
-        </Grid.GestureRecognizers>
-      </Grid>
-    <Grid Grid.Row="3" Grid.Column="1">
+  <Grid Margin="2" Padding="0" RowSpacing="4" ColumnSpacing="4" BackgroundColor="Transparent">
+
+    <Grid BackgroundColor="#1565C0" Margin="0" Padding="2" RowSpacing="0" ColumnSpacing="0">
+      <Image
+        Source="ic_adicionarPessoa.png"
+        IsOpaque="False"
+        Grid.RowSpan="4"/>
+      <Label
+        Text="Vendas"
+        TextColor="White"
+        FontSize="Large"
+        Grid.Row="0"
+        Grid.RowSpan="2">
+      </Label>
+      <Grid.GestureRecognizers>
+        <TapGestureRecognizer Command="{Binding MenuVendaCommand}" />
+      </Grid.GestureRecognizers>
+    </Grid>
+
+    <Grid Grid.Column="1" BackgroundColor="#C62828" Margin="0" Padding="2" RowSpacing="0" ColumnSpacing="0">
       <Image
            Source="ic_adicionarPessoa.png"
-           BackgroundColor="#0D47A1"
-           IsOpaque="True"/>
+           IsOpaque="True"
+           Grid.RowSpan="4"/>
+      <Label
+        Text="Serviços"
+        TextColor="White"
+        FontSize="Large"
+        Grid.Row="0"
+        Grid.RowSpan="2">
+      </Label>
+      <Grid.GestureRecognizers>
+        <TapGestureRecognizer Command="{Binding MenuServicoCommand}" />
+      </Grid.GestureRecognizers>
+    </Grid>
+
+    <Grid Grid.Row="1" BackgroundColor="#00695C" Margin="0" Padding="2" RowSpacing="0" ColumnSpacing="0">
+      <Image
+           Source="ic_adicionarPessoa.png"
+           IsOpaque="True"
+           Grid.RowSpan="4"/>
+      <Label
+        Text="Relatórios"
+        TextColor="White"
+        FontSize="Large"
+        Grid.Row="0"
+        Grid.RowSpan="2">
+      </Label>
+      <Grid.GestureRecognizers>
+        <TapGestureRecognizer Command="{Binding MenuRelatoriosCommand}" />
+      </Grid.GestureRecognizers>
+    </Grid>
+
+    <Grid Grid.Row="1" Grid.Column="1" BackgroundColor="#EF6C00" Margin="0" Padding="2" RowSpacing="0" ColumnSpacing="0">
+      <Image
+           Source="ic_adicionarPessoa.png"
+           IsOpaque="True"
+           Grid.RowSpan="4"/>
+      <Label
+        Text="Clientes"
+        TextColor="White"
+        FontSize="Large"
+        Grid.Row="0"
+        Grid.RowSpan="2">
+      </Label>
+      <Grid.GestureRecognizers>
+        <TapGestureRecognizer Command="{Binding MenuClientesCommand}" />
+      </Grid.GestureRecognizers>
+    </Grid>
+
+    <Grid Grid.Row="2" BackgroundColor="#6A1B9A" Margin="0" Padding="2" RowSpacing="0" ColumnSpacing="0">
+      <Image
+           Source="ic_adicionarPessoa.png"
+           IsOpaque="True"
+           Grid.RowSpan="4"/>
+      <Label
+        Text="Funcionários"
+        TextColor="White"
+        FontSize="Large"
+        Grid.Row="0"
+        Grid.RowSpan="2">
+      </Label>
+      <Grid.GestureRecognizers>
+        <TapGestureRecognizer Command="{Binding MenuFuncionarioCommand}" />
+      </Grid.GestureRecognizers>
+    </Grid>
+
+    <Grid Grid.Row="2" Grid.Column="1" BackgroundColor="#5D4037" Margin="0" Padding="2" RowSpacing="0" ColumnSpacing="0">
+      <Image
+           Source="ic_adicionarPessoa.png"
+           IsOpaque="True"
+           Grid.RowSpan="4"/>
+      <Label
+        Text="Perdas"
+        TextColor="White"
+        FontSize="Large"
+        Grid.Row="0"
+        Grid.RowSpan="2">
+      </Label>
+      <Grid.GestureRecognizers>
+        <TapGestureRecognizer Command="{Binding MenuPerdaCommand}" />
+      </Grid.GestureRecognizers>
+    </Grid>
+
+    <Grid Grid.Row="3" BackgroundColor="#37474F" Margin="0" Padding="2" RowSpacing="0" ColumnSpacing="0">
+      <Image
+           Source="ic_adicionarPessoa.png"
+           IsOpaque="True"
+           Grid.RowSpan="4"/>
+      <Label
+        Text="Despesas"
+        TextColor="White"
+        FontSize="Large"
+        Grid.Row="0"
+        Grid.RowSpan="2">
+      </Label>
+      <Grid.GestureRecognizers>
+        <TapGestureRecognizer Command="{Binding MenuDespesaCommand}" />
+      </Grid.GestureRecognizers>
+    </Grid>
+
+    <Grid Grid.Row="3" Grid.Column="1" BackgroundColor="#FFAB00" Margin="0" Padding="2" RowSpacing="0" ColumnSpacing="0">
+      <Image
+           Source="ic_adicionarPessoa.png"
+           IsOpaque="True"
+           Grid.RowSpan="4"/>
+      <Label
+        Text="Sobre"
+        TextColor="White"
+        FontSize="Large"
+        Grid.Row="0"
+        Grid.RowSpan="2">
+      </Label>
       <Grid.GestureRecognizers>
         <TapGestureRecognizer Command="{Binding MenuSobreCommand}" />
       </Grid.GestureRecognizers>
