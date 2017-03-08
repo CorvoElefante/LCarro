@@ -13,40 +13,40 @@ namespace Carro.ViewModels
 {
     class MenuCustosViewModel : BaseViewModel
     {
-            public MenuCustosViewModel(INavigation navigation) : base(navigation)
-            {
-            }
+        public MenuCustosViewModel(INavigation navigation) : base(navigation)
+        {
+        }
 
-            Command _MenuPerdaCommand;
-            public Command MenuPerdaCommand
-            {
-                get { return _MenuPerdaCommand ?? (_MenuPerdaCommand = new Command(async () => await ExecuteMenuPerdaCommand())); }
-            }
+        Command _MenuPerdaCommand;
+        public Command MenuPerdaCommand
+        {
+            get { return _MenuPerdaCommand ?? (_MenuPerdaCommand = new Command(async () => await ExecuteMenuPerdaCommand())); }
+        }
 
-            Command _MenuDespesaCommand;
-            public Command MenuDespesaCommand
+        async Task ExecuteMenuPerdaCommand()
+        {
+            if (!IsBusy)
             {
-                get { return _MenuDespesaCommand ?? (_MenuDespesaCommand = new Command(async () => await ExecuteMenuDespesaCommand())); }
+                IsBusy = true;
+                await Navigation.PushAsync(new ListaPerdaPage());
+                IsBusy = false;
             }
+        }
 
-            async Task ExecuteMenuPerdaCommand()
+        Command _MenuDespesaCommand;
+        public Command MenuDespesaCommand
+        {
+            get { return _MenuDespesaCommand ?? (_MenuDespesaCommand = new Command(async () => await ExecuteMenuDespesaCommand())); }
+        }
+        
+        async Task ExecuteMenuDespesaCommand()
+        {
+            if (!IsBusy)
             {
-                if (!IsBusy)
-                {
-                    IsBusy = true;
-                    await Navigation.PushAsync(new ListaPerdaPage());
-                    IsBusy = false;
-                }
+                IsBusy = true;
+                await Navigation.PushAsync(new ListaDespesaPage());
+                IsBusy = false;
             }
-
-            async Task ExecuteMenuDespesaCommand()
-            {
-                if (!IsBusy)
-                {
-                    IsBusy = true;
-                    await Navigation.PushAsync(new ListaDespesaPage());
-                    IsBusy = false;
-                }
-            }
+        }
     }
 }

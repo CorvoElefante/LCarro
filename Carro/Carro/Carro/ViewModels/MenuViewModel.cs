@@ -111,5 +111,53 @@ namespace Carro.ViewModels
                 IsBusy = false;
             }
         }
+
+        Command _MenuPerdaCommand;
+        public Command MenuPerdaCommand
+        {
+            get { return _MenuPerdaCommand ?? (_MenuPerdaCommand = new Command(async () => await ExecuteMenuPerdaCommand())); }
+        }
+
+        async Task ExecuteMenuPerdaCommand()
+        {
+            if (!IsBusy)
+            {
+                IsBusy = true;
+                await Navigation.PushAsync(new ListaPerdaPage());
+                IsBusy = false;
+            }
+        }
+
+        Command _MenuDespesaCommand;
+        public Command MenuDespesaCommand
+        {
+            get { return _MenuDespesaCommand ?? (_MenuDespesaCommand = new Command(async () => await ExecuteMenuDespesaCommand())); }
+        }
+
+        async Task ExecuteMenuDespesaCommand()
+        {
+            if (!IsBusy)
+            {
+                IsBusy = true;
+                await Navigation.PushAsync(new ListaDespesaPage());
+                IsBusy = false;
+            }
+        }
+
+        Command _MenuSobreCommand;
+        public Command MenuSobreCommand
+        {
+            get { return _MenuSobreCommand ?? (_MenuSobreCommand = new Command(async () => await ExecuteMenuSobreCommand())); }
+        }
+
+        async Task ExecuteMenuSobreCommand()
+        {
+            if (!IsBusy)
+            {
+                IsBusy = true;
+                await Navigation.PushAsync(new SobrePage());
+                IsBusy = false;
+            }
+        }
     }
 }
