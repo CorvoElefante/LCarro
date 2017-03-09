@@ -1,9 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Carro.Pages.CadastroFuncionarioPage"
              xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
-             Title="Novo Funcionário"
+             x:Class="Carro.Pages.EditarFuncionario"
              BackgroundColor="#FFFFF7">
 
   <ContentPage.ToolbarItems>
@@ -22,7 +21,10 @@
       <Entry Text ="{Binding emailEntry, Mode=TwoWay}"  Placeholder="Email" Keyboard="Email"></Entry>
       <Entry Text ="{Binding salarioEntry, Mode=TwoWay}"  Placeholder="Salario"></Entry>
       <Entry Text ="{Binding funcaoEntry, Mode=TwoWay}"  Placeholder="Função"></Entry>
-      <Button Text="Salvar" Command="{Binding SalvarFuncionarioCommand}"></Button>
+      <Grid>
+        <Button Text="Salvar" Grid.Column="0" Command="{Binding SalvarFuncionarioCommand}"></Button>
+        <Button Text="Deletar" Grid.Column="1" Command="{Binding DeletarFuncionarioCommand}"></Button>
+      </Grid>
     </StackLayout>
   </ScrollView>
 </ContentPage>

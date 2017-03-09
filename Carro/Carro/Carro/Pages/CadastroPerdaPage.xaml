@@ -4,7 +4,6 @@
              x:Class="Carro.Pages.CadastroPerdaPage"
              BackgroundColor="#FFFFF7">
   
-  <ContentPage.Content>
     <ScrollView>
       <StackLayout Padding="30" Spacing="30">
         <Label Text = "Cadastro de perda"></Label>
@@ -14,5 +13,4 @@
         <Button Text = "Salvar" Command="{Binding SalvarPerdaCommand}"></Button>
       </StackLayout>
     </ScrollView>
-  </ContentPage.Content>
 </ContentPage>

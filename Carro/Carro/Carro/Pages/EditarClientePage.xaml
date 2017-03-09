@@ -5,7 +5,11 @@
              x:Class="Carro.Pages.EditarClientePage"
              BackgroundColor="#FFFFF7">
 
-  <ContentPage.Content>
+  <ContentPage.ToolbarItems>
+    <ToolbarItem
+      Icon="{x:Static resources:Images.IconeUser232}"/>
+  </ContentPage.ToolbarItems>
+
     <ScrollView>
       <StackLayout Padding="30" Spacing="30">
         <Entry Text="{Binding nomeEntry, Mode=TwoWay}" Placeholder="Nome" Keyboard="Text"></Entry>
@@ -21,5 +25,4 @@
         </Grid>
       </StackLayout>
     </ScrollView>
-  </ContentPage.Content>
 </ContentPage>

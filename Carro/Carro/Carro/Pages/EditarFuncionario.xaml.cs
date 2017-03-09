@@ -8,11 +8,11 @@ using Carro.ViewModels;
 
 namespace Carro.Pages
 {
-    public partial class EditarClientePage : ContentPage
+    public partial class EditarFuncionario : ContentPage
     {
-        public EditarClientePage(Pessoa value)
+        public EditarFuncionario(Funcionario value)
         {
-            BindingContext = new EditarClienteViewModel(Navigation, value);
+            BindingContext = new EditarFuncionarioViewModel(Navigation, value);
             InitializeComponent();
         }
     }
