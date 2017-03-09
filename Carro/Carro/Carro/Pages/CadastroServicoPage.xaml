@@ -6,7 +6,6 @@
              Title="Novo Serviço"
              BackgroundColor="#FFFFF7">
   
-  <ContentPage.Content>
     <ScrollView>
       <StackLayout Padding="30" Spacing="30">
         <Label Text = "Cadastro de Serviço"></Label>
@@ -17,5 +16,4 @@
         <Button Text = "Salvar" Command="{Binding SalvarServicoCommand}"></Button>
       </StackLayout>
     </ScrollView>
-  </ContentPage.Content>
 </ContentPage>

@@ -3,10 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
              x:Class="Carro.Pages.ListaPerdaPage"
-             Title="Perdas">
+             Title="Perdas"
+             BackgroundColor="#FFFFF7">
+
   <ContentPage.ToolbarItems>
-    <ToolbarItem Icon="{x:Static resources:Images.IconeAdicionar}"
+    <ToolbarItem 
+      Icon="{x:Static resources:Images.IconeAdicionar}"
 			Command="{Binding AddPerdaCommand}"/>
+    <ToolbarItem 
+      Icon="{x:Static resources:Images.IconeAnalytics32}"/>
   </ContentPage.ToolbarItems>
 
   <ListView
@@ -35,20 +40,22 @@
     <ListView.ItemTemplate>
       <DataTemplate>
         <ViewCell>
-          <Frame
-							Margin="0" Padding="0">
-            <Grid>
-              <Label Grid.ColumnSpan="2"
-								FontAttributes="Bold"
-								FontSize="Large"
-								Text="{Binding Nome}"/>
-              <Label Grid.Row="1"
-								Text="{Binding IdProduto}"/>
-              <Label Grid.Row="1" Grid.Column="1"
-                HorizontalOptions="End"
-								Text="{Binding Quantidade}"/>
-            </Grid>
-          </Frame>
+          <Grid
+            Margin="2"
+            Padding="2"
+            RowSpacing="0"
+            ColumnSpacing="0"
+            BackgroundColor="Transparent">
+            <Label Grid.ColumnSpan="2"
+              FontAttributes="Bold"
+              FontSize="Large"
+              Text="{Binding Nome}"/>
+            <Label Grid.Row="1"
+              Text="{Binding IdProduto}"/>
+            <Label Grid.Row="1" Grid.Column="1"
+              HorizontalOptions="End"
+              Text="{Binding Quantidade}"/>
+          </Grid>
         </ViewCell>
       </DataTemplate>
     </ListView.ItemTemplate>

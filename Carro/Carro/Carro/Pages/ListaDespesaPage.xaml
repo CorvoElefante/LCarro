@@ -10,6 +10,8 @@
     <ToolbarItem 
       Icon="{x:Static resources:Images.IconeAdicionar}" 
       Command="{Binding AddDespesaCommand}"/>
+    <ToolbarItem
+      Icon="{x:Static resources:Images.IconeTimeIsMoney32}"/>
   </ContentPage.ToolbarItems>
 
   <ListView

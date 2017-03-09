@@ -7,7 +7,7 @@
 
   <ContentPage.ToolbarItems>
     <ToolbarItem
-      Icon="{x:Static resources:Images.IconeUser128}"/>
+      Icon="{x:Static resources:Images.IconeUser32}"/>
   </ContentPage.ToolbarItems>
 
   <ScrollView>
