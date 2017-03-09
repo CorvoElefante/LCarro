@@ -3,10 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
              x:Class="Carro.Pages.ListaDespesaPage"
-             Title="Despesas">
+             Title="Despesas"
+             BackgroundColor="#FFFFF7">
+  
   <ContentPage.ToolbarItems>
-    <ToolbarItem Icon="{x:Static resources:Images.IconeAdicionar}" 
-                 Command="{Binding AddDespesaCommand}"/>
+    <ToolbarItem 
+      Icon="{x:Static resources:Images.IconeAdicionar}" 
+      Command="{Binding AddDespesaCommand}"/>
   </ContentPage.ToolbarItems>
 
   <ListView
@@ -35,9 +38,12 @@
     <ListView.ItemTemplate>
       <DataTemplate>
         <ViewCell>
-          <Frame
-							Margin="0" Padding="0">
-            <Grid>
+            <Grid
+              Margin="2"
+              Padding="2"
+              RowSpacing="0"
+              ColumnSpacing="0"
+              BackgroundColor="Transparent">
               <Label Grid.ColumnSpan="2"
 								FontAttributes="Bold"
 								FontSize="Large"
@@ -48,7 +54,6 @@
                 HorizontalOptions="End"
 								Text="{Binding Valor}"/>
             </Grid>
-          </Frame>
         </ViewCell>
       </DataTemplate>
     </ListView.ItemTemplate>

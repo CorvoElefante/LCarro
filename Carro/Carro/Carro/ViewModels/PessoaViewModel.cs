@@ -15,7 +15,7 @@ namespace Carro.ViewModels
 
         public PessoaViewModel(INavigation navigation) : base(navigation)
         {
-            
+
             var sqlite = DependencyService.Get<ISQLite>();
             using (var scope = new TransactionScope(sqlite))
             {
@@ -231,18 +231,17 @@ namespace Carro.ViewModels
         Command _DeletarPessoaCommand;
         public Command DeletarPessoaCommand
         {
-            get { return _DeletarPessoaCommand ?? (_DeletarPessoaCommand = new Command<Pessoa>(async(qq) => await ExecuteDeletarPessoaCommand(qq))); }
+            get { return _DeletarPessoaCommand ?? (_DeletarPessoaCommand = new Command<Pessoa>(async (qq) => await ExecuteDeletarPessoaCommand(qq))); }
         }
 
-        async Task ExecuteDeletarPessoaCommand()
+        async Task ExecuteDeletarPessoaCommand(Pessoa value)
         {
             if (!IsBusy)
             {
                 IsBusy = true;
-                //await Navigation.PushAsync(new CadastroClientePage());
+                await Navigation.PushAsync(new CadastroClientePage());
                 IsBusy = false;
             }
         }
-
     }
 }
