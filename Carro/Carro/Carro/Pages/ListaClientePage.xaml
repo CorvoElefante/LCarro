@@ -7,9 +7,11 @@
              BackgroundColor="#FFFFF7">
   
   <ContentPage.ToolbarItems>
-    <ToolbarItem 
-      Icon="{x:Static resources:Images.IconeAdicionarPessoa}"
-		  Command="{Binding AddPessoaCommand}"/>
+    <ToolbarItem
+      Icon="{x:Static resources:Images.IconeUser132}"
+      Command="{Binding AddPessoaCommand}"/>
+    <ToolbarItem
+      Icon="{x:Static resources:Images.IconeMan32}"/>
   </ContentPage.ToolbarItems>
 
   <ListView

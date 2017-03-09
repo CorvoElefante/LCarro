@@ -5,11 +5,13 @@
              x:Class="Carro.Pages.ListaFuncionarioPage"
              Title="Lista de Funcionários"
              BackgroundColor="#FFFFF7">
-  
+
   <ContentPage.ToolbarItems>
-    <ToolbarItem 
-      Icon="{x:Static resources:Images.IconeAdicionarPessoa}"
-			Command="{Binding AddFuncionarioCommand}"/>
+    <ToolbarItem
+      Icon="{x:Static resources:Images.IconeUser132}"
+      Command="{Binding AddFuncionarioCommand}"/>
+    <ToolbarItem
+      Icon="{x:Static resources:Images.IconeTeam32}"/>
   </ContentPage.ToolbarItems>
   
   <ListView

@@ -18,7 +18,7 @@
         RowSpacing="2"
         ColumnSpacing="0">
         <Image
-          Source="ic_tag.png"
+          Source="ic_buy128.png"
           IsOpaque="True"
           Grid.RowSpan="4"
           Aspect="AspectFit"
@@ -44,7 +44,7 @@
         RowSpacing="2"
         ColumnSpacing="0">
         <Image
-          Source="ic_education.png"
+          Source="ic_services128.png"
           IsOpaque="True"
           Grid.RowSpan="4"
           Aspect="AspectFit"
@@ -70,7 +70,7 @@
         RowSpacing="2"
         ColumnSpacing="0">
         <Image
-          Source="ic_analytics.png"
+          Source="ic_business128.png"
           IsOpaque="True"
           Grid.RowSpan="4"
           Aspect="AspectFit"
@@ -97,7 +97,7 @@
         RowSpacing="2" 
         ColumnSpacing="0">
         <Image
-          Source="ic_man.png"
+          Source="ic_man128.png"
           IsOpaque="True"
           Grid.RowSpan="4"
           Aspect="AspectFit"
@@ -123,7 +123,7 @@
         RowSpacing="2"
         ColumnSpacing="0">
         <Image
-          Source="ic_team.png"
+          Source="ic_team128.png"
           IsOpaque="True"
           Grid.RowSpan="4"
           Aspect="AspectFit"
@@ -150,7 +150,7 @@
         RowSpacing="2"
         ColumnSpacing="0">
         <Image
-          Source="ic_creditcard.png"
+          Source="ic_analytics128.png"
           IsOpaque="True"
           Grid.RowSpan="4"
           Aspect="AspectFit"
@@ -176,7 +176,7 @@
         RowSpacing="2"
         ColumnSpacing="0">
         <Image
-          Source="ic_timeismoney.png"
+          Source="ic_timeismoney128.png"
           IsOpaque="True"
           Grid.RowSpan="4"
           Aspect="AspectFit"
@@ -203,7 +203,7 @@
         RowSpacing="2"
         ColumnSpacing="0">
         <Image
-          Source="ic_wrench.png"
+          Source="ic_shield128.png"
           IsOpaque="True"
           Grid.RowSpan="4"
           Aspect="AspectFit"

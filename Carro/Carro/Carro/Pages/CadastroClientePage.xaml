@@ -4,10 +4,14 @@
              xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
              x:Class="Carro.Pages.CadastroClientePage"
              BackgroundColor="#FFFFF7">
-  
-  <ContentPage.Content>
-    <ScrollView>
-     <StackLayout Padding="30" Spacing="30">
+
+  <ContentPage.ToolbarItems>
+    <ToolbarItem
+      Icon="{x:Static resources:Images.IconeUser128}"/>
+  </ContentPage.ToolbarItems>
+
+  <ScrollView>
+    <StackLayout Padding="30" Spacing="30">
       <Entry Text="{Binding nomeEntry, Mode=TwoWay}" Placeholder="Nome" Keyboard="Text"></Entry>
       <Entry Text="{Binding ruaNEntry, Mode=TwoWay}" Placeholder="Rua"></Entry>
       <Entry Text="{Binding bairroEntry, Mode=TwoWay}" Placeholder="Bairro"></Entry>
@@ -16,7 +20,6 @@
       <Entry Text="{Binding ndataEntry, Mode=TwoWay}" Placeholder="Data de nascimento" Keyboard="Numeric"></Entry>
       <Entry Text="{Binding cpfEntry, Mode=TwoWay}" Placeholder="CPF" Keyboard="Numeric"></Entry>
       <Button Text="Salvar" Command="{Binding SalvarPessoaCommand}"></Button>
-     </StackLayout>
-    </ScrollView>
-  </ContentPage.Content>
+    </StackLayout>
+  </ScrollView>
 </ContentPage>

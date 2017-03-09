@@ -2,24 +2,28 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Carro.Pages.CadastroFuncionarioPage"
+             xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
              Title="Novo Funcionário"
              BackgroundColor="#FFFFF7">
-  
-  <ContentPage.Content>
-    <ScrollView>
-      <StackLayout Padding="30" Spacing="30">
-        <Label Text="Cadastro de Funcionário"></Label>
-        <Entry Text ="{Binding nomeEntry, Mode=TwoWay}" Placeholder="Nome" Keyboard="Text"></Entry>
-        <Entry Text ="{Binding ruaNEntry, Mode=TwoWay}" Placeholder="Rua"></Entry>
-        <Entry Text ="{Binding bairroEntry, Mode=TwoWay}" Placeholder="Bairro"></Entry>
-        <Entry Text ="{Binding cpfEntry, Mode=TwoWay}" Placeholder="CPF" Keyboard="Numeric"></Entry>
-        <Entry Text ="{Binding telefoneEntry, Mode=TwoWay}" Placeholder="Telefone" Keyboard="Telephone"></Entry>
-        <Entry Text ="{Binding ndataEntry, Mode=TwoWay}" Placeholder="Data de nascimento" Keyboard="Numeric"></Entry>
-        <Entry Text ="{Binding emailEntry, Mode=TwoWay}"  Placeholder="Email" Keyboard="Email"></Entry>
-        <Entry Text ="{Binding salarioEntry, Mode=TwoWay}"  Placeholder="Salario"></Entry>
-        <Entry Text ="{Binding funcaoEntry, Mode=TwoWay}"  Placeholder="Função"></Entry>
-        <Button Text="Salvar" Command="{Binding SalvarFuncionarioCommand}"></Button>
-      </StackLayout>
-    </ScrollView>
-  </ContentPage.Content>
+
+  <ContentPage.ToolbarItems>
+    <ToolbarItem
+      Icon="{x:Static resources:Images.IconeUser128}"/>
+  </ContentPage.ToolbarItems>
+
+  <ScrollView>
+    <StackLayout Padding="30" Spacing="30">
+      <Label Text="Cadastro de Funcionário"></Label>
+      <Entry Text ="{Binding nomeEntry, Mode=TwoWay}" Placeholder="Nome" Keyboard="Text"></Entry>
+      <Entry Text ="{Binding ruaNEntry, Mode=TwoWay}" Placeholder="Rua"></Entry>
+      <Entry Text ="{Binding bairroEntry, Mode=TwoWay}" Placeholder="Bairro"></Entry>
+      <Entry Text ="{Binding cpfEntry, Mode=TwoWay}" Placeholder="CPF" Keyboard="Numeric"></Entry>
+      <Entry Text ="{Binding telefoneEntry, Mode=TwoWay}" Placeholder="Telefone" Keyboard="Telephone"></Entry>
+      <Entry Text ="{Binding ndataEntry, Mode=TwoWay}" Placeholder="Data de nascimento" Keyboard="Numeric"></Entry>
+      <Entry Text ="{Binding emailEntry, Mode=TwoWay}"  Placeholder="Email" Keyboard="Email"></Entry>
+      <Entry Text ="{Binding salarioEntry, Mode=TwoWay}"  Placeholder="Salario"></Entry>
+      <Entry Text ="{Binding funcaoEntry, Mode=TwoWay}"  Placeholder="Função"></Entry>
+      <Button Text="Salvar" Command="{Binding SalvarFuncionarioCommand}"></Button>
+    </StackLayout>
+  </ScrollView>
 </ContentPage>
