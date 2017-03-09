@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Carro.ViewModels;
+using Carro.Models;
 
 namespace Carro.Pages
 {
-    public partial class EditarFuncionario : ContentPage
+    public partial class EditarFuncionarioPage : ContentPage
     {
-        public EditarFuncionario(Funcionario value)
+        public EditarFuncionarioPage(Funcionario value)
         {
             BindingContext = new EditarFuncionarioViewModel(Navigation, value);
             InitializeComponent();

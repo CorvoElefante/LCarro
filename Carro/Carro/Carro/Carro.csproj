@@ -55,8 +55,8 @@
     <Compile Include="Pages\EditarClientePage.xaml.cs">
       <DependentUpon>EditarClientePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\EditarFuncionario.xaml.cs">
-      <DependentUpon>EditarFuncionario.xaml</DependentUpon>
+    <Compile Include="Pages\EditarFuncionarioPage.xaml.cs">
+      <DependentUpon>EditarFuncionarioPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\HistoricoVendaPage.xaml.cs">
       <DependentUpon>HistoricoVendaPage.xaml</DependentUpon>
@@ -244,7 +244,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\EditarFuncionario.xaml">
+    <EmbeddedResource Include="Pages\EditarFuncionarioPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
