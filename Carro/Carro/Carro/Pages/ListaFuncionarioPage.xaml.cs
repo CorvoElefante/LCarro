@@ -3,15 +3,13 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 using Carro.ViewModels;
 
-using Xamarin.Forms;
-
 namespace Carro.Pages
 {
     public partial class ListaFuncionarioPage : ContentPage
     {
         public ListaFuncionarioPage()
         {
-            BindingContext = new FuncionarioViewModel(Navigation);
+            BindingContext = new ListaFuncionarioViewModel(Navigation);
             InitializeComponent();
         }
 
@@ -20,6 +18,11 @@ namespace Carro.Pages
             if (e == null)
             {
                 return; // has been set to null, do not 'process' tapped event 
+            }
+
+            if (((ListaFuncionarioViewModel)BindingContext).EditarFuncionarioCommand.CanExecute(null))
+            {
+                ((ListaFuncionarioViewModel)BindingContext).EditarFuncionarioCommand.Execute(((ListView)sender).SelectedItem);
             }
             ((ListView)sender).SelectedItem = null; // de-select the row
         }

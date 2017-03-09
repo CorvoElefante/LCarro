@@ -11,31 +11,11 @@ using SQLiteNetExtensions;
 
 namespace Carro.ViewModels
 {
-    public class FuncionarioViewModel : BaseViewModel
+    public class CadastroFuncionarioViewModel : BaseViewModel
     {
-        public FuncionarioViewModel(INavigation navigation) : base(navigation)
+        public CadastroFuncionarioViewModel(INavigation navigation) : base(navigation)
         {
             var sqlite = DependencyService.Get<ISQLite>();
-            using (var scope = new TransactionScope(sqlite))
-            {
-                Funcionarios = new ObservableCollection<Funcionario>(
-                    new DataService(sqlite).GetFuncionarios()
-                );
-                scope.Complete();
-            }
-        }
-        ObservableCollection<Funcionario> _Funcionarios;
-        public ObservableCollection<Funcionario> Funcionarios
-        {
-            get
-            {
-                return _Funcionarios;
-            }
-            set
-            {
-                _Funcionarios = value;
-                SetPropertyChanged(nameof(Funcionarios));
-            }
         }
 
         string _nomeEntry = string.Empty;
@@ -180,52 +160,16 @@ namespace Carro.ViewModels
                 using (var scope = new TransactionScope(sqlite))
                 {
                     var service = new DataService(sqlite);
-                    var Pessoa = new Pessoa{ Nome = nomeEntry, RuaN = ruaNEntry, Bairro = bairroEntry, Telefone = telefoneEntry, Email = emailEntry, Data = ndataEntry, Cpf = cpfEntry };
+                    var Pessoa = new Pessoa { Nome = nomeEntry, RuaN = ruaNEntry, Bairro = bairroEntry, Telefone = telefoneEntry, Email = emailEntry, Data = ndataEntry, Cpf = cpfEntry };
                     service.SavePessoa(Pessoa);
 
-                    service.SaveFuncionario(new Funcionario { Salario = salarioEntry, Funcao = funcaoEntry, Pessoa = Pessoa});
-                    
+                    service.SaveFuncionario(new Funcionario { Salario = salarioEntry, Funcao = funcaoEntry, Pessoa = Pessoa });
+
                     scope.Complete();
                 }
 
-                using (var scope = new TransactionScope(sqlite))
-                {
-                    Funcionarios = new ObservableCollection<Funcionario>(
-                        new DataService(sqlite).GetFuncionarios()
-                    );
-                    scope.Complete();
-                }
                 IsBusy = false;
             }
         }
-
-        string _Search = string.Empty;
-        public string Search
-        {
-            get { return _Search; }
-            set
-            {
-                _Search = value;
-                var sqlite = DependencyService.Get<ISQLite>();
-                Funcionarios = new ObservableCollection<Funcionario>(new DataService(sqlite).FindFuncionarioByNome(_Search));
-            }
-        }
-
-        Command _AddFuncionarioCommand;
-        public Command AddFuncionarioCommand
-        {
-            get { return _AddFuncionarioCommand ?? (_AddFuncionarioCommand = new Command(async () => await ExecuteAddFuncionarioCommand())); }
-        }
-
-        async Task ExecuteAddFuncionarioCommand()
-        {
-            if (!IsBusy)
-            {
-                IsBusy = true;
-                await Navigation.PushAsync(new CadastroFuncionarioPage());
-                IsBusy = false;
-            }
-        }
-
     }
 }

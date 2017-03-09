@@ -55,7 +55,8 @@ namespace Carro.Repositories
         {
             lock (Locker)
             {
-                return Context.Delete(entity);
+                Context.Delete(entity, true);
+                return 0;
             }
         }
 

@@ -116,6 +116,11 @@ namespace Carro.Services
             return list;
         }
 
+        public void DeleteFuncionario(Funcionario funcionario)
+        {
+            UnitOfWork.FuncionarioRepository.Delete(funcionario);
+        }
+
         #endregion
 
         #region Produto
