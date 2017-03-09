@@ -114,7 +114,6 @@
     <Compile Include="ViewModels\ListaClienteViewModel.cs" />
     <Compile Include="ViewModels\MenuViewModel.cs" />
     <Compile Include="ViewModels\PerdaViewModel.cs" />
-    <Compile Include="ViewModels\PessoaViewModel.cs" />
     <Compile Include="ViewModels\ProdutoViewModel.cs" />
     <Compile Include="ViewModels\ServicoViewModel.cs" />
   </ItemGroup>
