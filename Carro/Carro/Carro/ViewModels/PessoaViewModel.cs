@@ -53,7 +53,7 @@ namespace Carro.ViewModels
             }
         }
 
-        string _nomeEntry = string.Empty;
+        string _nomeEntry = "lol";
         public string nomeEntry
         {
             get
@@ -222,7 +222,7 @@ namespace Carro.ViewModels
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new EditarClientePage());
+                await Navigation.PushAsync(new EditarClientePage(value));
                 IsBusy = false;
             }
             nomeEntry = value.Nome;
@@ -231,7 +231,7 @@ namespace Carro.ViewModels
         Command _DeletarPessoaCommand;
         public Command DeletarPessoaCommand
         {
-            get { return _DeletarPessoaCommand ?? (_DeletarPessoaCommand = new Command<Pessoa>(async(qq) => await ExecuteDeletarPessoaCommand(qq))); }
+            get { return _DeletarPessoaCommand ?? (_DeletarPessoaCommand = new Command(async() => await ExecuteDeletarPessoaCommand())); }
         }
 
         async Task ExecuteDeletarPessoaCommand()
