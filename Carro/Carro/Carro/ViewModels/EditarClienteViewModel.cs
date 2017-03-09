@@ -17,6 +17,7 @@ namespace Carro.ViewModels
         {
 
             var sqlite = DependencyService.Get<ISQLite>();
+            idEntry = value.Id;
             nomeEntry = value.Nome;
             ruaNEntry = value.RuaN;
             bairroEntry = value.Bairro;
@@ -24,9 +25,38 @@ namespace Carro.ViewModels
             emailEntry = value.Email;
             ndataEntry = value.Data;
             cpfEntry = value.Cpf;
+            pessoaEntry = value;
 
         }
-       
+
+        Pessoa _pessoaEntry;
+        public Pessoa pessoaEntry
+        {
+            get
+            {
+                return _pessoaEntry;
+            }
+            set
+            {
+                _pessoaEntry = value;
+                SetPropertyChanged(nameof(pessoaEntry));
+            }
+        }
+
+        long? _idEntry = 0;
+        public long? idEntry
+        {
+            get
+            {
+                return _idEntry;
+            }
+            set
+            {
+                _idEntry = value;
+                SetPropertyChanged(nameof(idEntry));
+            }
+        }
+
         string _nomeEntry = string.Empty;
         public string nomeEntry
         {
@@ -125,6 +155,30 @@ namespace Carro.ViewModels
             }
         }
 
+        Command _SalvarPessoaCommand;
+        public Command SalvarPessoaCommand
+        {
+            get { return _SalvarPessoaCommand ?? (_SalvarPessoaCommand = new Command(async () => await ExecuteSalvarPessoaCommand())); }
+        }
+
+        async Task ExecuteSalvarPessoaCommand()
+        {
+            if (!IsBusy)
+            {
+                IsBusy = true;
+
+                var sqlite = DependencyService.Get<ISQLite>();
+                using (var scope = new TransactionScope(sqlite))
+                {
+                    var service = new DataService(sqlite);
+
+                    service.SavePessoa(new Pessoa { Id = idEntry, Nome = nomeEntry, RuaN = ruaNEntry, Bairro = bairroEntry, Telefone = telefoneEntry, Email = emailEntry, Data = ndataEntry, Cpf = cpfEntry });
+                    scope.Complete();
+                }
+                IsBusy = false;
+            }
+        }
+
         Command _DeletarPessoaCommand;
         public Command DeletarPessoaCommand
         {
@@ -136,7 +190,16 @@ namespace Carro.ViewModels
             if (!IsBusy)
             {
                 IsBusy = true;
-                //await Navigation.PushAsync(new CadastroClientePage());
+
+                var sqlite = DependencyService.Get<ISQLite>();
+                using (var scope = new TransactionScope(sqlite))
+                {
+                    var service = new DataService(sqlite);
+
+                    service.DeletePessoa(pessoaEntry);
+                    scope.Complete();
+                }
+
                 IsBusy = false;
             }
         }

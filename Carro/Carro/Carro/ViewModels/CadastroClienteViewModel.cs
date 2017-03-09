@@ -138,6 +138,7 @@ namespace Carro.ViewModels
                     service.SavePessoa(new Pessoa { Nome = nomeEntry, RuaN = ruaNEntry, Bairro = bairroEntry, Telefone = telefoneEntry, Email = emailEntry, Data = ndataEntry, Cpf = cpfEntry });
                     scope.Complete();
                 }
+                IsBusy = false;
             }
         }
 

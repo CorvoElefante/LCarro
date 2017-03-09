@@ -53,6 +53,20 @@ namespace Carro.ViewModels
             }
         }
 
+        ObservableCollection<Pessoa> _PessoasNull;
+        public ObservableCollection<Pessoa> PessoasNull
+        {
+            get
+            {
+                return _PessoasNull;
+            }
+            set
+            {
+                _PessoasNull = value;
+                SetPropertyChanged(nameof(PessoasNull));
+            }
+        }
+
         string _Search = string.Empty;
         public string Search
         {
