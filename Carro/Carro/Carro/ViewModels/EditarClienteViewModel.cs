@@ -10,46 +10,50 @@ using Carro.Pages;
 
 namespace Carro.ViewModels
 {
-    public class PessoaViewModel : BaseViewModel
+    public class EditarClienteViewModel : BaseViewModel
     {
 
-        public PessoaViewModel(INavigation navigation) : base(navigation)
+        public EditarClienteViewModel(INavigation navigation, Pessoa value) : base(navigation)
         {
 
             var sqlite = DependencyService.Get<ISQLite>();
-            using (var scope = new TransactionScope(sqlite))
-            {
-                var service = new DataService(sqlite);
-                if (service.GetPessoas().Count == 0)
-                {
-                    service.SavePessoa(new Pessoa { Nome = "João" });
-                    service.SavePessoa(new Pessoa { Nome = "Maria" });
-                    service.SavePessoa(new Pessoa { Nome = "Pedro" });
-                    service.SavePessoa(new Pessoa { Nome = "Carlos" });
-                }
-                scope.Complete();
-            }
-
-            using (var scope = new TransactionScope(sqlite))
-            {
-                Pessoas = new ObservableCollection<Pessoa>(
-                    new DataService(sqlite).GetPessoas()
-                );
-                scope.Complete();
-            }
+            idEntry = value.Id;
+            nomeEntry = value.Nome;
+            ruaNEntry = value.RuaN;
+            bairroEntry = value.Bairro;
+            telefoneEntry = value.Telefone;
+            emailEntry = value.Email;
+            ndataEntry = value.Data;
+            cpfEntry = value.Cpf;
+            pessoaEntry = value;
 
         }
-        ObservableCollection<Pessoa> _Pessoas;
-        public ObservableCollection<Pessoa> Pessoas
+
+        Pessoa _pessoaEntry;
+        public Pessoa pessoaEntry
         {
             get
             {
-                return _Pessoas;
+                return _pessoaEntry;
             }
             set
             {
-                _Pessoas = value;
-                SetPropertyChanged(nameof(Pessoas));
+                _pessoaEntry = value;
+                SetPropertyChanged(nameof(pessoaEntry));
+            }
+        }
+
+        long? _idEntry = 0;
+        public long? idEntry
+        {
+            get
+            {
+                return _idEntry;
+            }
+            set
+            {
+                _idEntry = value;
+                SetPropertyChanged(nameof(idEntry));
             }
         }
 
@@ -168,80 +172,37 @@ namespace Carro.ViewModels
                 {
                     var service = new DataService(sqlite);
 
-                    service.SavePessoa(new Pessoa { Nome = nomeEntry, RuaN = ruaNEntry, Bairro = bairroEntry, Telefone = telefoneEntry, Email = emailEntry, Data = ndataEntry, Cpf = cpfEntry });
-                    scope.Complete();
-                }
-
-                using (var scope = new TransactionScope(sqlite))
-                {
-                    Pessoas = new ObservableCollection<Pessoa>(
-                        new DataService(sqlite).GetPessoas()
-                    );
+                    service.SavePessoa(new Pessoa { Id = idEntry, Nome = nomeEntry, RuaN = ruaNEntry, Bairro = bairroEntry, Telefone = telefoneEntry, Email = emailEntry, Data = ndataEntry, Cpf = cpfEntry });
                     scope.Complete();
                 }
                 IsBusy = false;
             }
-        }
-
-        string _Search = string.Empty;
-        public string Search
-        {
-            get { return _Search; }
-            set
-            {
-                _Search = value;
-                var sqlite = DependencyService.Get<ISQLite>();
-                Pessoas = new ObservableCollection<Pessoa>(new DataService(sqlite).FindPessoaByNome(_Search));
-            }
-        }
-
-        Command _AddPessoaCommand;
-        public Command AddPessoaCommand
-        {
-            get { return _AddPessoaCommand ?? (_AddPessoaCommand = new Command(async () => await ExecuteAddPessoaCommand())); }
-        }
-
-        async Task ExecuteAddPessoaCommand()
-        {
-            if (!IsBusy)
-            {
-                IsBusy = true;
-                await Navigation.PushAsync(new CadastroClientePage());
-                IsBusy = false;
-            }
-        }
-
-        Command _EditarPessoaCommand;
-        public Command EditarPessoaCommand
-        {
-            get { return _EditarPessoaCommand ?? (_EditarPessoaCommand = new Command<Pessoa>(async (qq) => await ExecuteEditarPessoaCommand(qq))); }
-        }
-
-        async Task ExecuteEditarPessoaCommand(Pessoa value)
-        {
-            if (!IsBusy)
-            {
-                IsBusy = true;
-                await Navigation.PushAsync(new EditarClientePage());
-                IsBusy = false;
-            }
-            nomeEntry = value.Nome;
         }
 
         Command _DeletarPessoaCommand;
         public Command DeletarPessoaCommand
         {
-            get { return _DeletarPessoaCommand ?? (_DeletarPessoaCommand = new Command<Pessoa>(async (qq) => await ExecuteDeletarPessoaCommand(qq))); }
+            get { return _DeletarPessoaCommand ?? (_DeletarPessoaCommand = new Command(async () => await ExecuteDeletarPessoaCommand())); }
         }
 
-        async Task ExecuteDeletarPessoaCommand(Pessoa value)
+        async Task ExecuteDeletarPessoaCommand()
         {
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new CadastroClientePage());
+
+                var sqlite = DependencyService.Get<ISQLite>();
+                using (var scope = new TransactionScope(sqlite))
+                {
+                    var service = new DataService(sqlite);
+
+                    service.DeletePessoa(pessoaEntry);
+                    scope.Complete();
+                }
+
                 IsBusy = false;
             }
         }
+
     }
 }

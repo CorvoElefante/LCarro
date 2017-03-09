@@ -10,9 +10,9 @@ namespace Carro.Pages
 {
     public partial class EditarClientePage : ContentPage
     {
-        public EditarClientePage()
+        public EditarClientePage(Pessoa value)
         {
-            BindingContext = new PessoaViewModel(Navigation);
+            BindingContext = new EditarClienteViewModel(Navigation, value); ;
             InitializeComponent();
         }
     }

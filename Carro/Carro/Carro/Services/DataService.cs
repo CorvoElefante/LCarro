@@ -32,16 +32,15 @@ namespace Carro.Services
             UnitOfWork.PessoaRepository.AddOrUpdate(pessoa);
         }
 
-        public long? SavePessoaId(Pessoa pessoa)
-        {
-            UnitOfWork.PessoaRepository.AddOrUpdate(pessoa);
-            return pessoa.Id;
-        }
-
         public List<Pessoa> FindPessoaByNome(string nome)
         {
 
             return UnitOfWork.PessoaRepository.Find(a => a.Nome.Contains(nome)).ToList();
+        }
+
+        public void DeletePessoa(Pessoa pessoa)
+        {
+            UnitOfWork.PessoaRepository.Delete(pessoa);
         }
 
         #endregion
