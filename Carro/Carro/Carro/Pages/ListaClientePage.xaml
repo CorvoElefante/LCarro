@@ -4,7 +4,7 @@
 		         xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
 		         x:Class="Carro.Pages.ListaClientePage"
 		         Title="Clientes"
-             BackgroundColor="#FFFFF7">
+                 BackgroundColor="#FFFFF7">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem
