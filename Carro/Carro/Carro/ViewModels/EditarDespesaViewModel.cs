@@ -22,7 +22,7 @@ namespace Carro.ViewModels
             nomeEntry = value.Nome;
             valorEntry = value.Valor;
             descricaoEntry = value.Descricao;
-            categoriaEntry = value.IdCategoria;
+            categoriaEntry = value.Categoria;
             despesaEntry = value;
 
         }
@@ -97,8 +97,8 @@ namespace Carro.ViewModels
             }
         }
 
-        long? _categoriaEntry = 0;
-        public long? categoriaEntry
+        int _categoriaEntry = 0;
+        public int categoriaEntry
         {
             get
             {
@@ -128,7 +128,7 @@ namespace Carro.ViewModels
                 {
                     var service = new DataService(sqlite);
 
-                    service.SaveDespesa(new Despesa { Id = idEntry, Nome = nomeEntry, Valor = valorEntry, Descricao = descricaoEntry, IdCategoria = categoriaEntry });
+                    service.SaveDespesa(new Despesa { Id = idEntry, Nome = nomeEntry, Valor = valorEntry, Descricao = descricaoEntry, Categoria = categoriaEntry });
                     scope.Complete();
                 }
 
