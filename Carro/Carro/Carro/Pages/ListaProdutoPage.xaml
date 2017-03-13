@@ -53,6 +53,7 @@
 								Text="{Binding Nome}"/>
                         <Label 
                 Grid.Column="1"
+                HorizontalOptions="End"
 								Text="{Binding Preco}"/>
                         <Label 
                 Grid.Row="1"

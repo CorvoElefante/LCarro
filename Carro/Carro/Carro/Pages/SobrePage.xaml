@@ -3,10 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
              x:Class="Carro.Pages.SobrePage"
-             BackgroundColor="#FFFFF7">
+             BackgroundColor="#FFFFF7"
+             Title="Sobre">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem
       Icon="{x:Static resources:Images.IconeShield32}"/>
     </ContentPage.ToolbarItems>
+
+    <Label Text="Nois é foda"> </Label>
 </ContentPage>

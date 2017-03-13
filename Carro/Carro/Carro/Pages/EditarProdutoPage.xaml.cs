@@ -11,7 +11,7 @@ namespace Carro.Pages
 {
     public partial class EditarProdutoPage : ContentPage
     {
-        public EditarProdutoPage()
+        public EditarProdutoPage(Produto value)
         {
             BindingContext = new EditarProdutoViewModel(Navigation, value);
             InitializeComponent();
