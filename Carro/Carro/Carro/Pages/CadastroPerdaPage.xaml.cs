@@ -12,6 +12,7 @@ namespace Carro.Pages
     {
         public CadastroPerdaPage()
         {
+            //BindingContext = new CadastroPerdaViewModel(Navigation);
             InitializeComponent();
         }
     }

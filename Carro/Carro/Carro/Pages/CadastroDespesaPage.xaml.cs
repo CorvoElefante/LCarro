@@ -12,6 +12,7 @@ namespace Carro.Pages
     {
         public CadastroDespesaPage()
         {
+            BindingContext = new CadastroDespesaViewModel(Navigation);
             InitializeComponent();
         }
     }

@@ -6,24 +6,64 @@
              Title="Editar Cliente"
              BackgroundColor="#FFFFF7">
 
-  <ContentPage.ToolbarItems>
-    <ToolbarItem
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
       Icon="{x:Static resources:Images.IconeUser232}"/>
-  </ContentPage.ToolbarItems>
+    </ContentPage.ToolbarItems>
 
     <ScrollView>
-      <StackLayout Padding="30" Spacing="30">
-        <Entry Text="{Binding nomeEntry, Mode=TwoWay}" Placeholder="Nome" Keyboard="Text"></Entry>
-        <Entry Text="{Binding ruaNEntry, Mode=TwoWay}" Placeholder="Rua"></Entry>
-        <Entry Text="{Binding bairroEntry, Mode=TwoWay}" Placeholder="Bairro"></Entry>
-        <Entry Text="{Binding telefoneEntry, Mode=TwoWay}" Placeholder="Telefone" Keyboard="Telephone"></Entry>
-        <Entry Text="{Binding emailEntry, Mode=TwoWay}"  Placeholder="Email" Keyboard="Email"></Entry>
-        <Entry Text="{Binding ndataEntry, Mode=TwoWay}" Placeholder="Data de nascimento" Keyboard="Numeric"></Entry>
-        <Entry Text="{Binding cpfEntry, Mode=TwoWay}" Placeholder="CPF" Keyboard="Numeric"></Entry>
-        <Grid>
-          <Button Text="Salvar" Grid.Column="0" Command="{Binding SalvarPessoaCommand}"></Button>
-          <Button Text="Deletar" Grid.Column="1" Command="{Binding DeletarPessoaCommand}"></Button>
-        </Grid>
-      </StackLayout>
+        <StackLayout Padding="30" Spacing="30">
+            <Entry Text="{Binding nomeEntry, Mode=TwoWay}" Placeholder="Nome" Keyboard="Text"></Entry>
+            <Entry Text="{Binding ruaNEntry, Mode=TwoWay}" Placeholder="Rua"></Entry>
+            <Entry Text="{Binding bairroEntry, Mode=TwoWay}" Placeholder="Bairro"></Entry>
+            <Entry Text="{Binding telefoneEntry, Mode=TwoWay}" Placeholder="Telefone" Keyboard="Telephone"></Entry>
+            <Entry Text="{Binding emailEntry, Mode=TwoWay}"  Placeholder="Email" Keyboard="Email"></Entry>
+            <Entry Text="{Binding ndataEntry, Mode=TwoWay}" Placeholder="Data de nascimento" Keyboard="Numeric"></Entry>
+            <Entry Text="{Binding cpfEntry, Mode=TwoWay}" Placeholder="CPF" Keyboard="Numeric"></Entry>
+            <Grid
+            BackgroundColor="Transparent"
+            Margin="0"
+            Padding="2">
+                <Grid
+                BackgroundColor="Transparent"
+                Margin="0"
+                Padding="2">
+                    <Image
+                    Source="ic_success64.png"
+                    IsOpaque="True"
+                    Aspect="AspectFit"
+                    HorizontalOptions="Center"/>
+                    <Label
+                    Grid.Row="1"
+                    Text="Salvar"
+                    FontSize="Medium"
+                    HorizontalOptions="Center">
+                    </Label>
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SalvarPessoaCommand}" />
+                    </Grid.GestureRecognizers>
+                </Grid>
+                <Grid
+                BackgroundColor="Transparent"
+                Margin="0"
+                Padding="2"
+                Grid.Column="1">
+                    <Image
+                    Source="ic_error64.png"
+                    IsOpaque="True"
+                    Aspect="AspectFit"
+                    HorizontalOptions="Center"/>
+                    <Label
+                    Grid.Row="1"
+                    Text="Deletar"
+                    FontSize="Medium"
+                    HorizontalOptions="Center">
+                    </Label>
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding DeletarPessoaCommand}" />
+                    </Grid.GestureRecognizers>
+                </Grid>
+            </Grid>
+        </StackLayout>
     </ScrollView>
 </ContentPage>
