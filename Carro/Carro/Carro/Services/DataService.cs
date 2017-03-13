@@ -140,6 +140,11 @@ namespace Carro.Services
             return UnitOfWork.ProdutoRepository.Find(a => a.Nome.Contains(nome)).ToList();
         }
 
+        public void DeleteProduto(Produto produto)
+        {
+            UnitOfWork.ProdutoRepository.Delete(produto);
+        }
+
         #endregion
 
         #region Servico

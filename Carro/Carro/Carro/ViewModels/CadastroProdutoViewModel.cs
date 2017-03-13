@@ -32,6 +32,34 @@ namespace Carro.ViewModels
             }
         }
 
+        float _precoEntry = 0.0F;
+        public float precoEntry
+        {
+            get
+            {
+                return _precoEntry;
+            }
+            set
+            {
+                _precoEntry = value;
+                SetPropertyChanged(nameof(precoEntry));
+            }
+        }
+
+        int _quantidadeEntry = 0;
+        public int quantidadeEntry
+        {
+            get
+            {
+                return _quantidadeEntry;
+            }
+            set
+            {
+                _quantidadeEntry = value;
+                SetPropertyChanged(nameof(quantidadeEntry));
+            }
+        }
+
         string _marcaEntry = string.Empty;
         public string marcaEntry
         {
@@ -91,11 +119,12 @@ namespace Carro.ViewModels
                 {
                     var service = new DataService(sqlite);
 
-                    service.SaveProduto(new Produto { Nome = nomeEntry, Marca = marcaEntry, Descricao = descricaoEntry, Local = localEntry });
+                    service.SaveProduto(new Produto {Nome = nomeEntry, Preco = precoEntry, Quantidade = quantidadeEntry, Marca = marcaEntry, Descricao = descricaoEntry, Local = localEntry });
                     scope.Complete();
                 }
                 IsBusy = false;
             }
         }
+
     }
 }
