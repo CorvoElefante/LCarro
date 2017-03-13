@@ -20,7 +20,7 @@ namespace Carro.Models
         public float Valor { get; set; }
 
         [ForeignKey(typeof(Categoria))]
-        public long IdCategoria { get; set; }
+        public long? IdCategoria { get; set; }
 
         [OneToOne]
         public Categoria Categoria { get; set; }

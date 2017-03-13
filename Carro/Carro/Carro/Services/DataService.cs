@@ -62,6 +62,11 @@ namespace Carro.Services
             return UnitOfWork.DespesaRepository.Find(a => a.Nome.Contains(nome)).ToList();
         }
 
+        public void DeleteDespesa(Despesa despesa)
+        {
+            UnitOfWork.DespesaRepository.Delete(despesa);
+        }
+
         #endregion
 
         #region Perda

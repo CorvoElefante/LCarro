@@ -124,13 +124,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\CadastroClienteViewModel.cs" />
+    <Compile Include="ViewModels\CadastroDespesaViewModel.cs" />
     <Compile Include="ViewModels\CadastroFuncionarioViewModel.cs" />
     <Compile Include="ViewModels\CadastroProdutoViewModel.cs" />
     <Compile Include="ViewModels\DespesaViewModel.cs" />
     <Compile Include="ViewModels\EditarClienteViewModel.cs" />
+    <Compile Include="ViewModels\EditarDespesaViewModel.cs" />
     <Compile Include="ViewModels\EditarFuncionarioViewModel.cs" />
     <Compile Include="ViewModels\EditarProdutoViewModel.cs" />
     <Compile Include="ViewModels\ListaClienteViewModel.cs" />
+    <Compile Include="ViewModels\ListaDespesaViewModel.cs" />
     <Compile Include="ViewModels\ListaFuncionarioViewModel.cs" />
     <Compile Include="ViewModels\ListaProdutoViewModel.cs" />
     <Compile Include="ViewModels\MenuViewModel.cs" />
