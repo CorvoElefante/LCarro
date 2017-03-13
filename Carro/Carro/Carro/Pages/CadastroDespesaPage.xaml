@@ -6,7 +6,6 @@
   
     <ScrollView>
       <StackLayout Padding="30" Spacing="30">
-        <Label Text="Cadastro de despesa"></Label>
         <Entry Text = "{Binding nomeEntry, Mode=TwoWay}" Placeholder="Nome" Keyboard="Text"></Entry>
         <Entry Text = "{Binding valorEntry, Mode=TwoWay}" Placeholder="Valor gasto" Keyboard="Numeric"></Entry>
         <Entry Text = "{Binding descricaoEntry, Mode=TwoWay}" Placeholder="Descricao" Keyboard="Text"></Entry>
