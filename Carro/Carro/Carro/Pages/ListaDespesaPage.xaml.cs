@@ -9,7 +9,7 @@ namespace Carro.Pages
     {
         public ListaDespesaPage()
         {
-            BindingContext = new DespesaViewModel(Navigation);
+            BindingContext = new ListaDespesaViewModel(Navigation);
             InitializeComponent();
         }
 
@@ -19,7 +19,12 @@ namespace Carro.Pages
             {
                 return; // has been set to null, do not 'process' tapped event 
             }
-            ((ListView)sender).SelectedItem = null; // de-select the row
+
+            if (((ListaDespesaViewModel)BindingContext).EditarDespesaCommand.CanExecute(null))
+            {
+                ((ListaDespesaViewModel)BindingContext).EditarDespesaCommand.Execute(((ListView)sender).SelectedItem);
+            }
+             ((ListView)sender).SelectedItem = null; // de-select the row
         }
     }
 }
