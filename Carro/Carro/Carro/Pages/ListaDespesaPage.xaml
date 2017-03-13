@@ -20,7 +20,7 @@
      HasUnevenRows="true"
      SeparatorVisibility="None"
      Header="{Binding .}"
-     ItemsSource="{Binding Despesa}"
+     ItemsSource="{Binding Despesas}"
      ItemTapped="Handle_ItemTapped">
 
     <x:Arguments>

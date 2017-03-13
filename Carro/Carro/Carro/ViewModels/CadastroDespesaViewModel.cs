@@ -93,7 +93,7 @@ namespace Carro.ViewModels
                 {
                     var service = new DataService(sqlite);
 
-                    service.SaveDespesa(new Despesa { Nome = nomeEntry, Valor = valorEntry, Descricao = descricaoEntry, IdCategoria = categoriaEntry });
+                    service.SaveDespesa(new Despesa { Nome = nomeEntry, Valor = valorEntry, Descricao = descricaoEntry, Categoria = categoriaEntry });
                     scope.Complete();
                 }
                 

@@ -11,7 +11,6 @@ namespace Carro.Repositories
             DB = sqlite;
 
             _PessoaRepository = new GenericRepository<Pessoa, long>(DB, DBLocker);
-            _CategoriaRepository = new GenericRepository<Categoria, long>(DB, DBLocker);
             _DespesaRepository = new GenericRepository<Despesa, long>(DB, DBLocker);
             _FuncionarioRepository = new GenericRepository<Funcionario, long>(DB, DBLocker);
             _ProdutoRepository = new GenericRepository<Produto, long>(DB, DBLocker);
@@ -26,7 +25,6 @@ namespace Carro.Repositories
             lock (DBLocker)
             {
                 DB.CreateTable<Pessoa>();
-                DB.CreateTable<Categoria>();
                 DB.CreateTable<Despesa>();
                 DB.CreateTable<Funcionario>();
                 DB.CreateTable<Produto>();
@@ -52,19 +50,6 @@ namespace Carro.Repositories
                 return _PessoaRepository;
             }
         }
-        #endregion
-
-        #region Categoria
-
-        IGenericRepository<Categoria, long> _CategoriaRepository;
-        public IGenericRepository<Categoria, long> CategoriaRepository
-        {
-            get
-            {
-                return _CategoriaRepository;
-            }
-        }
-
         #endregion
 
         #region Despesa
