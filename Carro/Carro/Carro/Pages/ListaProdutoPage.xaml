@@ -1,6 +1,70 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Carro.Pages.ListaProdutoPage">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+             xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
+             x:Class="Carro.Pages.ListaProdutoPage"
+             Title="Produtos"
+             BackgroundColor="#FFFFF7">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+      Icon="{x:Static resources:Images.IconeUser132}"
+      Command="{Binding AddProdutoCommand}"/>
+        <ToolbarItem
+      Icon="{x:Static resources:Images.IconeProdutos32}"/>
+    </ContentPage.ToolbarItems>
+
+    <ListView
+			HorizontalOptions="FillAndExpand"
+			VerticalOptions="FillAndExpand"
+			HasUnevenRows="true"
+			SeparatorVisibility="None"
+			Header="{Binding .}"
+			ItemsSource="{Binding Produtos}"
+			ItemTapped="Handle_ItemTapped">
+
+        <x:Arguments>
+            <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
+        </x:Arguments>
+
+        <ListView.HeaderTemplate>
+            <DataTemplate>
+                <SearchBar
+					HeightRequest="45"
+					Placeholder="Buscar"
+					Text="{Binding Search}">
+                </SearchBar>
+            </DataTemplate>
+        </ListView.HeaderTemplate>
+
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid 
+              Margin="2"
+              Padding="2"
+              RowSpacing="0"
+              ColumnSpacing="0"
+              BackgroundColor="Transparent">
+                        <Label 
+                Grid.ColumnSpan="2"
+								FontAttributes="Bold"
+								FontSize="Large"
+								Text="{Binding Nome}"/>
+                        <Label 
+                Grid.Column="1"
+								Text="{Binding Preco}"/>
+                        <Label 
+                Grid.Row="1"
+								Text="{Binding Marca}"/>
+                        <Label 
+                Grid.Row="1" 
+                Grid.Column="1"
+                HorizontalOptions="End"
+								Text="{Binding Quantidade}"/>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 </ContentPage>

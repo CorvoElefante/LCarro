@@ -11,84 +11,84 @@
       RowSpacing="6"
       ColumnSpacing="0">
 
-      <Grid
+        <Grid
         BackgroundColor="Transparent"
         Margin="0"
         Padding="2"
         RowSpacing="2"
         ColumnSpacing="0">
-        <Image
+            <Image
           Source="ic_buy128.png"
           IsOpaque="True"
           Grid.RowSpan="4"
           Aspect="AspectFit"
           HorizontalOptions="Center"/>
-        <Label
+            <Label
           Text="Vendas"
           TextColor="#FFFFF7"
           FontSize="Large"
           Grid.Row="4"
           Grid.RowSpan="2"
           HorizontalOptions="Center">
-        </Label>
-        <Grid.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding MenuVendaCommand}" />
-        </Grid.GestureRecognizers>
-      </Grid>
+            </Label>
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding MenuVendaCommand}" />
+            </Grid.GestureRecognizers>
+        </Grid>
 
-      <Grid
+        <Grid
         Grid.Column="1"
         BackgroundColor="Transparent"
         Margin="0"
         Padding="2"
         RowSpacing="2"
         ColumnSpacing="0">
-        <Image
+            <Image
           Source="ic_services128.png"
           IsOpaque="True"
           Grid.RowSpan="4"
           Aspect="AspectFit"
           HorizontalOptions="Center"/>
-        <Label
+            <Label
           Text="Serviços"
           TextColor="#FFFFF7"
           FontSize="Large"
           Grid.Row="4"
           Grid.RowSpan="2"
           HorizontalOptions="Center">
-        </Label>
-        <Grid.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding MenuServicoCommand}" />
-        </Grid.GestureRecognizers>
-      </Grid>
+            </Label>
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding MenuServicoCommand}" />
+            </Grid.GestureRecognizers>
+        </Grid>
 
-      <Grid
+        <Grid
         Grid.Row="1"
         BackgroundColor="Transparent"
         Margin="0"
         Padding="2"
         RowSpacing="2"
         ColumnSpacing="0">
-        <Image
+            <Image
           Source="ic_business128.png"
           IsOpaque="True"
           Grid.RowSpan="4"
           Aspect="AspectFit"
           HorizontalOptions="Center"/>
-        <Label
+            <Label
           Text="Relatórios"
           TextColor="#FFFFF7"
           FontSize="Large"
           Grid.Row="4"
           Grid.RowSpan="2"
           HorizontalOptions="Center">
-        </Label>
-        <Grid.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding MenuRelatoriosCommand}" />
-        </Grid.GestureRecognizers>
-      </Grid>
+            </Label>
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding MenuRelatoriosCommand}" />
+            </Grid.GestureRecognizers>
+        </Grid>
 
-      <Grid
+        <Grid
         Grid.Row="1"
         Grid.Column="1"
         BackgroundColor="Transparent"
@@ -96,52 +96,52 @@
         Padding="2" 
         RowSpacing="2" 
         ColumnSpacing="0">
-        <Image
+            <Image
           Source="ic_man128.png"
           IsOpaque="True"
           Grid.RowSpan="4"
           Aspect="AspectFit"
           HorizontalOptions="Center"/>
-        <Label
+            <Label
           Text="Clientes"
           TextColor="#FFFFF7"
           FontSize="Large"
           Grid.Row="4"
           Grid.RowSpan="2"
           HorizontalOptions="Center">
-        </Label>
-        <Grid.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding MenuClientesCommand}" />
-        </Grid.GestureRecognizers>
-      </Grid>
+            </Label>
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding MenuClientesCommand}" />
+            </Grid.GestureRecognizers>
+        </Grid>
 
-      <Grid
+        <Grid
         Grid.Row="2"
         BackgroundColor="Transparent"
         Margin="0"
         Padding="2"
         RowSpacing="2"
         ColumnSpacing="0">
-        <Image
+            <Image
           Source="ic_team128.png"
           IsOpaque="True"
           Grid.RowSpan="4"
           Aspect="AspectFit"
           HorizontalOptions="Center"/>
-        <Label
+            <Label
           Text="Funcionários"
           TextColor="#FFFFF7"
           FontSize="Large"
           Grid.Row="4"
           Grid.RowSpan="2"
           HorizontalOptions="Center">
-        </Label>
-        <Grid.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding MenuFuncionarioCommand}" />
-        </Grid.GestureRecognizers>
-      </Grid>
+            </Label>
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding MenuFuncionarioCommand}" />
+            </Grid.GestureRecognizers>
+        </Grid>
 
-      <Grid
+        <Grid
         Grid.Row="2"
         Grid.Column="1"
         BackgroundColor="Transparent"
@@ -149,52 +149,52 @@
         Padding="2"
         RowSpacing="2"
         ColumnSpacing="0">
-        <Image
+            <Image
           Source="ic_analytics128.png"
           IsOpaque="True"
           Grid.RowSpan="4"
           Aspect="AspectFit"
           HorizontalOptions="Center"/>
-        <Label
+            <Label
           Text="Perdas"
           TextColor="#FFFFF7"
           FontSize="Large"
           Grid.Row="4"
           Grid.RowSpan="2"
           HorizontalOptions="Center">
-        </Label>
-        <Grid.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding MenuPerdaCommand}" />
-        </Grid.GestureRecognizers>
-      </Grid>
+            </Label>
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding MenuPerdaCommand}" />
+            </Grid.GestureRecognizers>
+        </Grid>
 
-      <Grid
+        <Grid
         Grid.Row="3"
         BackgroundColor="Transparent"
         Margin="0"
         Padding="2"
         RowSpacing="2"
         ColumnSpacing="0">
-        <Image
+            <Image
           Source="ic_timeismoney128.png"
           IsOpaque="True"
           Grid.RowSpan="4"
           Aspect="AspectFit"
           HorizontalOptions="Center"/>
-        <Label
+            <Label
           Text="Despesas"
           TextColor="#FFFFF7"
           FontSize="Large"
           Grid.Row="4"
           Grid.RowSpan="2"
           HorizontalOptions="Center">
-        </Label>
-        <Grid.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding MenuDespesaCommand}" />
-        </Grid.GestureRecognizers>
-      </Grid>
+            </Label>
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding MenuDespesaCommand}" />
+            </Grid.GestureRecognizers>
+        </Grid>
 
-      <Grid
+        <Grid
         Grid.Row="3"
         Grid.Column="1"
         BackgroundColor="Transparent"
@@ -202,24 +202,50 @@
         Padding="2"
         RowSpacing="2"
         ColumnSpacing="0">
-        <Image
+            <Image
           Source="ic_shield128.png"
           IsOpaque="True"
           Grid.RowSpan="4"
           Aspect="AspectFit"
           HorizontalOptions="Center"/>
-        <Label
+            <Label
           Text="Sobre"
           TextColor="#FFFFF7"
           FontSize="Large"
           Grid.Row="4"
           Grid.RowSpan="2"
           HorizontalOptions="Center">
-        </Label>
-        <Grid.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding MenuSobreCommand}" />
-        </Grid.GestureRecognizers>
-      </Grid>
+            </Label>
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding MenuSobreCommand}" />
+            </Grid.GestureRecognizers>
+        </Grid>
+
+        <Grid
+        Grid.Row="4"
+        BackgroundColor="Transparent"
+        Margin="0"
+        Padding="2"
+        RowSpacing="2"
+        ColumnSpacing="0">
+            <Image
+          Source="ic_cart128.png"
+          IsOpaque="True"
+          Grid.RowSpan="4"
+          Aspect="AspectFit"
+          HorizontalOptions="Center"/>
+            <Label
+          Text="Produtos"
+          TextColor="#FFFFF7"
+          FontSize="Large"
+          Grid.Row="4"
+          Grid.RowSpan="2"
+          HorizontalOptions="Center">
+            </Label>
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding MenuProdutoCommand}" />
+            </Grid.GestureRecognizers>
+        </Grid>
     </Grid>
 </ContentPage>
 

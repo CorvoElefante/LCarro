@@ -20,7 +20,8 @@ namespace Carro.Resources
         public static FileImageSource IconeTag32 = new FileImageSource { File = "ic_tag32" };
         public static FileImageSource IconeTeam32 = new FileImageSource { File = "ic_team32" };
         public static FileImageSource IconeTimeIsMoney32 = new FileImageSource { File = "ic_timeismoney32" };
-        public static FileImageSource IconeWrench32 = new FileImageSource { File = "ic_wrench32" };
+        public static FileImageSource IconeServices32 = new FileImageSource { File = "ic_services32" };
+        public static FileImageSource IconeProdutos32 = new FileImageSource { File = "ic_cart32" };
 
         public static FileImageSource IconeAdd128 = new FileImageSource { File = "ic_add128" };
         public static FileImageSource IconeError128 = new FileImageSource { File = "ic_error128" };
@@ -37,7 +38,8 @@ namespace Carro.Resources
         public static FileImageSource IconeTag128 = new FileImageSource { File = "ic_tag128" };
         public static FileImageSource IconeTeam128 = new FileImageSource { File = "ic_team128" };
         public static FileImageSource IconeTimeIsMoney128 = new FileImageSource { File = "ic_timeismoney128" };
-        public static FileImageSource IconeWrench128 = new FileImageSource { File = "ic_wrench128" };
+        public static FileImageSource IconeServices128 = new FileImageSource { File = "ic_services128" };
+        public static FileImageSource IconeProdutos128 = new FileImageSource { File = "ic_cart128" };
 
         public static FileImageSource IconeAdicionar = new FileImageSource { File = "ic_adicionar" };
         public static FileImageSource IconeAdicionarPessoa = new FileImageSource { File = "ic_adicionarPessoa" };
