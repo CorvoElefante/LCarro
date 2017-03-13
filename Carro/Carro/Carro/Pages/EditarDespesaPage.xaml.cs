@@ -11,9 +11,9 @@ namespace Carro.Pages
 {
     public partial class EditarDespesaPage : ContentPage
     {
-        public EditarDespesaPage(/*Despesa value*/)
+        public EditarDespesaPage(Despesa value)
         {
-            //BindingContext = new EditarDespesaViewModel(Navigation, value);
+            BindingContext = new EditarDespesaViewModel(Navigation, value);
             InitializeComponent();
         }
     }

@@ -68,5 +68,21 @@ namespace Carro.ViewModels
             }
         }
 
+        Command _EditarDespesaCommand;
+        public Command EditarDespesaCommand
+        {
+            get { return _EditarDespesaCommand ?? (_EditarDespesaCommand = new Command<Despesa>(async (qq) => await ExecuteEditarDespesaCommand(qq))); }
+        }
+
+        async Task ExecuteEditarDespesaCommand(Despesa value)
+        {
+            if (!IsBusy)
+            {
+                IsBusy = true;
+                await Navigation.PushAsync(new EditarDespesaPage(value));
+                IsBusy = false;
+            }
+        }
+
     }
 }
