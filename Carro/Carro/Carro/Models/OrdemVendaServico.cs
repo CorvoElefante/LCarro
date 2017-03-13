@@ -13,7 +13,7 @@ namespace Carro.Models
         [PrimaryKey, AutoIncrement]
         public long? Id { get; set; }
 
-        public long IdOrdemVenda { get; set; }
+        public long? IdOrdemVenda { get; set; }
 
         [ForeignKey(typeof(Servico))]
         public long IdServico { get; set; }

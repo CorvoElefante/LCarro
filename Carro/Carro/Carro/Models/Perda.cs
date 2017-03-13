@@ -17,12 +17,8 @@ namespace Carro.Models
 
         public string Justificativa { get; set; }
 
-        public int Quantidade { get; set; }
+        [OneToMany(CascadeOperations = CascadeOperation.All)]
+        public List<PerdaProduto> PerdaProdutos { get; set; }
 
-        [ForeignKey(typeof(Produto))]
-        public long IdProduto { get; set; }
-
-        [OneToOne]
-        public Produto Produto { get; set; }
     }
 }

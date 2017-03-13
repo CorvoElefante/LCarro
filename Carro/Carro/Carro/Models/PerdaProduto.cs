@@ -8,24 +8,22 @@ using SQLiteNetExtensions.Attributes;
 
 namespace Carro.Models
 {
-    public partial class OrdemVendaProduto
+    public partial class PerdaProduto
     {
         [PrimaryKey, AutoIncrement]
         public long? Id { get; set; }
 
-        public long? IdOrdemVenda { get; set; }
+        public long? IdPerda { get; set; }
 
         [ForeignKey(typeof(Produto))]
-        public long IdProduto { get; set; }
+        public long? IdProduto { get; set; }
 
         [OneToOne]
         public Produto Produto { get; set; }
 
-        public float Valor { get; set; }
-
         public int Quantidade { get; set; }
 
         [ManyToOne]
-        public OrdemVenda OrdemVenda { get; set; }
+        public Perda Perda { get; set; }
     }
 }
