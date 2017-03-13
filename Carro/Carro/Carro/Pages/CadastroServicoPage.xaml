@@ -17,7 +17,25 @@
         <Entry Text = "{Binding valorVendaEntry, Mode=TwoWay}" Placeholder="Preço" Keyboard="Numeric"></Entry>
         <Entry Text = "{Binding descricaoEntry, Mode=TwoWay}" Placeholder="Descrição"></Entry>
         <Entry Text = "{Binding tempoEntry, Mode=TwoWay}" Placeholder="Tempo de conclusão"></Entry>
-        <Button Text = "Salvar" Command="{Binding SalvarServicoCommand}"></Button>
-      </StackLayout>
+            <Grid
+                BackgroundColor="Transparent"
+                Margin="0"
+                Padding="2">
+                <Image
+                    Source="ic_success64.png"
+                    IsOpaque="True"
+                    Aspect="AspectFit"
+                    HorizontalOptions="Center"/>
+                <Label
+                    Grid.Row="1"
+                    Text="Salvar"
+                    FontSize="Medium"
+                    HorizontalOptions="Center">
+                </Label>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding SalvarServicoCommand}" />
+                </Grid.GestureRecognizers>
+            </Grid>
+        </StackLayout>
     </ScrollView>
 </ContentPage>

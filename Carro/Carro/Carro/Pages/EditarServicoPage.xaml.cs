@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Carro.ViewModels;
 
 namespace Carro.Pages
 {
-    public partial class CadastroServicoPage : ContentPage
+    public partial class EditarServicoPage : ContentPage
     {
-        public CadastroServicoPage()
+        public EditarServicoPage(/*Servico value*/)
         {
-            //BindingContext = new CadastroServicoViewModel(Navigation);
+            //BindingContext = new EditarServicoViewModel(Navigation, value);
             InitializeComponent();
         }
     }

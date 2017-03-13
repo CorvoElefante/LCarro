@@ -20,7 +20,7 @@
      HasUnevenRows="true"
      SeparatorVisibility="None"
      Header="{Binding .}"
-     ItemsSource="{Binding Servico}"
+     ItemsSource="{Binding Servicos}"
      ItemTapped="Handle_ItemTapped">
 
     <x:Arguments>

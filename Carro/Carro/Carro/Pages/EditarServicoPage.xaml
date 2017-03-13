@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
+             x:Class="Carro.Pages.EditarServicoPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+      Icon="{x:Static resources:Images.IconeUser232}"/>
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <StackLayout Padding="30" Spacing="30">
+            <Entry Text = "{Binding nomeEntry, Mode=TwoWay}" Placeholder="Nome" Keyboard="Text"></Entry>
+            <Entry Text = "{Binding valorVendaEntry, Mode=TwoWay}" Placeholder="Preço" Keyboard="Numeric"></Entry>
+            <Entry Text = "{Binding descricaoEntry, Mode=TwoWay}" Placeholder="Descrição"></Entry>
+            <Entry Text = "{Binding tempoEntry, Mode=TwoWay}" Placeholder="Tempo de conclusão"></Entry>
+            <Grid
+            BackgroundColor="Transparent"
+            Margin="0"
+            Padding="2">
+                <Grid
+                BackgroundColor="Transparent"
+                Margin="0"
+                Padding="2">
+                    <Image
+                    Source="ic_success64.png"
+                    IsOpaque="True"
+                    Aspect="AspectFit"
+                    HorizontalOptions="Center"/>
+                    <Label
+                    Grid.Row="1"
+                    Text="Salvar"
+                    FontSize="Medium"
+                    HorizontalOptions="Center">
+                    </Label>
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SalvarServicoCommand}" />
+                    </Grid.GestureRecognizers>
+                </Grid>
+                <Grid
+                BackgroundColor="Transparent"
+                Margin="0"
+                Padding="2"
+                Grid.Column="1">
+                    <Image
+                    Source="ic_error64.png"
+                    IsOpaque="True"
+                    Aspect="AspectFit"
+                    HorizontalOptions="Center"/>
+                    <Label
+                    Grid.Row="1"
+                    Text="Deletar"
+                    FontSize="Medium"
+                    HorizontalOptions="Center">
+                    </Label>
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding DeletarServicoCommand}" />
+                    </Grid.GestureRecognizers>
+                </Grid>
+            </Grid>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
