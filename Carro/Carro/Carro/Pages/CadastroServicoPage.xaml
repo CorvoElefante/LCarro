@@ -5,7 +5,12 @@
              x:Class="Carro.Pages.CadastroServicoPage"
              Title="Novo Serviço"
              BackgroundColor="#FFFFF7">
-  
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+      Icon="{x:Static resources:Images.IconeUser32}"/>
+    </ContentPage.ToolbarItems>
+
     <ScrollView>
       <StackLayout Padding="30" Spacing="30">
         <Entry Text = "{Binding nomeEntry, Mode=TwoWay}" Placeholder="Nome" Keyboard="Text"></Entry>

@@ -5,24 +5,18 @@
              x:Class="Carro.Pages.CadastroProdutoPage"
              Title="Novo Produto"
              BackgroundColor="#FFFFF7">
-  
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+      Icon="{x:Static resources:Images.IconeUser32}"/>
+    </ContentPage.ToolbarItems>
+
     <ScrollView>
-      <StackLayout Padding="30" Spacing="30">
-        <Entry Text = "{Binding nomeEntry, Mode=TwoWay}" Placeholder="Nome" Keyboard="Text"></Entry>
-        <Entry Text = "{Binding marcaEntry, Mode=TwoWay}" Placeholder="Marca"></Entry>
-        <Entry Text = "{Binding descricaoEntry, Mode=TwoWay}" Placeholder="Descrição"></Entry>
-        <Entry Text = "{Binding localEntry, Mode=TwoWay}" Placeholder="Local no estoque"></Entry>
-        <Button Text = "Salvar" Command="{Binding SalvarProdutoCommand}"></Button>
-      </StackLayout>
+        <StackLayout Padding="30" Spacing="30">
+            <Entry Text = "{Binding nomeEntry, Mode=TwoWay}" Placeholder="Nome" Keyboard="Text"></Entry>
+            <Entry Text = "{Binding marcaEntry, Mode=TwoWay}" Placeholder="Marca"></Entry>
+            <Entry Text = "{Binding descricaoEntry, Mode=TwoWay}" Placeholder="Descrição"></Entry>
+            <Entry Text = "{Binding localEntry, Mode=TwoWay}" Placeholder="Local no estoque"></Entry>
+            <Button Text = "Salvar" Command="{Binding SalvarProdutoCommand}"></Button>
+        </StackLayout>
     </ScrollView>
-  <!--<ItemsControl ItemsSource="{Binding Items}">
-    <ItemsControl.ItemTemplate>
-      <DataTemplate>
-        <WrapPanel>
-          <TextBlock Text="{Binding TitleText}"/>
-          <TextBox Text="{Binding Text}"/>
-        </WrapPanel>
-      </DataTemplate>
-    </ItemsControl.ItemTemplate>
-  </ItemsControl>-->
-</ContentPage>
