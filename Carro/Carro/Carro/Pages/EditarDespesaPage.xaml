@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
+             x:Class="Carro.Pages.EditarDespesaPage"
+             Title="Editar Despesa"
+             BackgroundColor="#FFFFF7">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+      Icon="{x:Static resources:Images.IconeUser232}"/>
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <StackLayout Padding="30" Spacing="30">
+
+            <Entry Text = "{Binding nomeEntry, Mode=TwoWay}" Placeholder="Nome" Keyboard="Text"></Entry>
+            <Entry Text = "{Binding valorEntry, Mode=TwoWay}" Placeholder="Valor gasto" Keyboard="Numeric"></Entry>
+            <Entry Text = "{Binding descricaoEntry, Mode=TwoWay}" Placeholder="Descricao" Keyboard="Text"></Entry>
+            <Entry Text = "{Binding categoriaEntry, Mode=TwoWay}" Placeholder="Categoria" Keyboard="Text"></Entry>
+            <Grid>
+                <Button Text="Salvar" Grid.Column="0" Command="{Binding SalvarDespesaCommand}"></Button>
+                <Button Text="Deletar" Grid.Column="1" Command="{Binding DeletarDespesaCommand}"></Button>
+            </Grid>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
