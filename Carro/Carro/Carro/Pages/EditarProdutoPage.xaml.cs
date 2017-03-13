@@ -9,11 +9,11 @@ using Carro.Models;
 
 namespace Carro.Pages
 {
-    public partial class CadastroProdutoPage : ContentPage
+    public partial class EditarProdutoPage : ContentPage
     {
-        public CadastroProdutoPage()
+        public EditarProdutoPage()
         {
-            BindingContext = new CadastroProdutoViewModel(Navigation);
+            BindingContext = new EditarProdutoViewModel(Navigation, value);
             InitializeComponent();
         }
     }
