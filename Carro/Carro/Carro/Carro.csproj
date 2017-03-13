@@ -44,6 +44,7 @@
     <Compile Include="Models\OrdemVendaProduto.cs" />
     <Compile Include="Models\OrdemVendaServico.cs" />
     <Compile Include="Models\Perda.cs" />
+    <Compile Include="Models\PerdaProduto.cs" />
     <Compile Include="Models\Produto.cs" />
     <Compile Include="Models\Servico.cs" />
     <Compile Include="Pages\CadastroDespesaPage.xaml.cs">

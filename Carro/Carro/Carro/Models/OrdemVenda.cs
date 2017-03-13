@@ -16,7 +16,7 @@ namespace Carro.Models
         public bool eVenda { get; set; }
 
         [ForeignKey(typeof(Pessoa))]
-        public long IdCliente { get; set; }
+        public long? IdCliente { get; set; }
 
         [OneToOne]
         public Pessoa Pessoa { get; set; }
