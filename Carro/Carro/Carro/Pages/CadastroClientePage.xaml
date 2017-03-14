@@ -11,34 +11,42 @@
       Icon="{x:Static resources:Images.IconeUser32}"/>
     </ContentPage.ToolbarItems>
 
-    <ScrollView>
-        <StackLayout Padding="30" Spacing="30">
-            <Entry Text="{Binding nomeEntry, Mode=TwoWay}" Placeholder="Nome" Keyboard="Text"></Entry>
-            <Entry Text="{Binding ruaNEntry, Mode=TwoWay}" Placeholder="Rua"></Entry>
-            <Entry Text="{Binding bairroEntry, Mode=TwoWay}" Placeholder="Bairro"></Entry>
-            <Entry Text="{Binding telefoneEntry, Mode=TwoWay}" Placeholder="Telefone" Keyboard="Telephone"></Entry>
-            <Entry Text="{Binding emailEntry, Mode=TwoWay}"  Placeholder="Email" Keyboard="Email"></Entry>
-            <Entry Text="{Binding ndataEntry, Mode=TwoWay}" Placeholder="Data de nascimento" Keyboard="Numeric"></Entry>
-            <Entry Text="{Binding cpfEntry, Mode=TwoWay}" Placeholder="CPF" Keyboard="Numeric"></Entry>
-            <Grid
+    <StackLayout Margin="0" Padding="0" Spacing="0">
+        <ScrollView>
+            <StackLayout Padding="30" Spacing="30">
+                <Entry Text="{Binding nomeEntry, Mode=TwoWay}" Placeholder="Nome" Keyboard="Text"></Entry>
+                <Entry Text="{Binding ruaNEntry, Mode=TwoWay}" Placeholder="Rua"></Entry>
+                <Entry Text="{Binding bairroEntry, Mode=TwoWay}" Placeholder="Bairro"></Entry>
+                <Entry Text="{Binding telefoneEntry, Mode=TwoWay}" Placeholder="Telefone" Keyboard="Telephone"></Entry>
+                <Entry Text="{Binding emailEntry, Mode=TwoWay}"  Placeholder="Email" Keyboard="Email"></Entry>
+                <Entry Text="{Binding ndataEntry, Mode=TwoWay}" Placeholder="Data de nascimento" Keyboard="Numeric"></Entry>
+                <Entry Text="{Binding cpfEntry, Mode=TwoWay}" Placeholder="CPF" Keyboard="Numeric"></Entry>
+            </StackLayout>
+        </ScrollView>
+        <Grid
+                HorizontalOptions="Center"
+                VerticalOptions="End"
                 BackgroundColor="Transparent"
                 Margin="0"
-                Padding="2">
-                <Image
+                Padding="4"
+                RowSpacing="-20">
+            <Image
+                    Margin="0"
+                    VerticalOptions="End"
+                    HorizontalOptions="Center"
                     Source="ic_success64.png"
                     IsOpaque="True"
-                    Aspect="AspectFit"
-                    HorizontalOptions="Center"/>
-                <Label
+                    Aspect="AspectFit"/>
+            <Label
+                    VerticalOptions="End"
+                    HorizontalOptions="Center"
                     Grid.Row="1"
                     Text="Salvar"
-                    FontSize="Medium"
-                    HorizontalOptions="Center">
-                </Label>
-                <Grid.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding SalvarPessoaCommand}" />
-                </Grid.GestureRecognizers>
-            </Grid>
-        </StackLayout>
-    </ScrollView>
+                    FontSize="Medium">
+            </Label>
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding SalvarPessoaCommand}" />
+            </Image.GestureRecognizers>
+        </Grid>
+    </StackLayout>
 </ContentPage>
