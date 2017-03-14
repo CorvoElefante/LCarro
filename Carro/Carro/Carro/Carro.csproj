@@ -142,7 +142,6 @@
     <Compile Include="ViewModels\ListaServicoViewModel.cs" />
     <Compile Include="ViewModels\MenuViewModel.cs" />
     <Compile Include="ViewModels\PerdaViewModel.cs" />
-    <Compile Include="ViewModels\ServicoViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">
