@@ -129,14 +129,17 @@
     <Compile Include="ViewModels\CadastroDespesaViewModel.cs" />
     <Compile Include="ViewModels\CadastroFuncionarioViewModel.cs" />
     <Compile Include="ViewModels\CadastroProdutoViewModel.cs" />
+    <Compile Include="ViewModels\CadastroServicoViewModel.cs" />
     <Compile Include="ViewModels\EditarClienteViewModel.cs" />
     <Compile Include="ViewModels\EditarDespesaViewModel.cs" />
     <Compile Include="ViewModels\EditarFuncionarioViewModel.cs" />
     <Compile Include="ViewModels\EditarProdutoViewModel.cs" />
+    <Compile Include="ViewModels\EditarServicoViewModel.cs" />
     <Compile Include="ViewModels\ListaClienteViewModel.cs" />
     <Compile Include="ViewModels\ListaDespesaViewModel.cs" />
     <Compile Include="ViewModels\ListaFuncionarioViewModel.cs" />
     <Compile Include="ViewModels\ListaProdutoViewModel.cs" />
+    <Compile Include="ViewModels\ListaServicoViewModel.cs" />
     <Compile Include="ViewModels\MenuViewModel.cs" />
     <Compile Include="ViewModels\PerdaViewModel.cs" />
     <Compile Include="ViewModels\ServicoViewModel.cs" />

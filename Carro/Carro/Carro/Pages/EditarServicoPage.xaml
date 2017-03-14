@@ -12,7 +12,7 @@
     <ScrollView>
         <StackLayout Padding="30" Spacing="30">
             <Entry Text = "{Binding nomeEntry, Mode=TwoWay}" Placeholder="Nome" Keyboard="Text"></Entry>
-            <Entry Text = "{Binding valorVendaEntry, Mode=TwoWay}" Placeholder="Preço" Keyboard="Numeric"></Entry>
+            <Entry Text = "{Binding precoEntry, Mode=TwoWay}" Placeholder="Preço" Keyboard="Numeric"></Entry>
             <Entry Text = "{Binding descricaoEntry, Mode=TwoWay}" Placeholder="Descrição"></Entry>
             <Entry Text = "{Binding tempoEntry, Mode=TwoWay}" Placeholder="Tempo de conclusão"></Entry>
             <Grid

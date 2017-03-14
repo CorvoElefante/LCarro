@@ -13,7 +13,7 @@ namespace Carro.Pages
     {
         public CadastroServicoPage()
         {
-            //BindingContext = new CadastroServicoViewModel(Navigation);
+            BindingContext = new CadastroServicoViewModel(Navigation);
             InitializeComponent();
         }
     }
