@@ -10,33 +10,46 @@ using Carro.Pages;
 
 namespace Carro.ViewModels
 {
-    public class ServicoViewModel : BaseViewModel
+    public class EditarServicoViewModel : BaseViewModel
     {
 
-        public ServicoViewModel(INavigation navigation) : base(navigation)
+        public EditarServicoViewModel(INavigation navigation, Servico value) : base(navigation)
         {
-
             var sqlite = DependencyService.Get<ISQLite>();
-            using (var scope = new TransactionScope(sqlite))
-            {
-                Servicos = new ObservableCollection<Servico>(
-                    new DataService(sqlite).GetServicos()
-                );
-                scope.Complete();
-            }
+            idEntry = value.Id;
+            nomeEntry = value.Nome;
+            precoEntry = value.Preco;
+            descricaoEntry = value.Descricao;
+            tempoEntry = value.Tempo;
+            servicoEntry = value;
 
         }
-        ObservableCollection<Servico> _Servicos;
-        public ObservableCollection<Servico> Servicos
+
+        Servico _servicoEntry;
+        public Servico servicoEntry
         {
             get
             {
-                return _Servicos;
+                return _servicoEntry;
             }
             set
             {
-                _Servicos = value;
-                SetPropertyChanged(nameof(Servicos));
+                _servicoEntry = value;
+                SetPropertyChanged(nameof(servicoEntry));
+            }
+        }
+
+        long? _idEntry = 0;
+        public long? idEntry
+        {
+            get
+            {
+                return _idEntry;
+            }
+            set
+            {
+                _idEntry = value;
+                SetPropertyChanged(nameof(idEntry));
             }
         }
 
@@ -113,45 +126,34 @@ namespace Carro.ViewModels
                 {
                     var service = new DataService(sqlite);
 
-                    service.SaveServico(new Servico { Nome = nomeEntry, Preco = precoEntry, Descricao = descricaoEntry, Tempo = tempoEntry});
-                    scope.Complete();
-                }
-
-                using (var scope = new TransactionScope(sqlite))
-                {
-                    Servicos = new ObservableCollection<Servico>(
-                        new DataService(sqlite).GetServicos()
-                    );
+                    service.SaveServico(new Servico { Id = idEntry, Nome = nomeEntry, Preco = precoEntry, Descricao = descricaoEntry, Tempo = tempoEntry });
                     scope.Complete();
                 }
                 IsBusy = false;
             }
         }
 
-        string _Search = string.Empty;
-        public string Search
+        Command _DeletarServicoCommand;
+        public Command DeletarServicoCommand
         {
-            get { return _Search; }
-            set
-            {
-                _Search = value;
-                var sqlite = DependencyService.Get<ISQLite>();
-                Servicos = new ObservableCollection<Servico>(new DataService(sqlite).FindServicoByNome(_Search));
-            }
+            get { return _DeletarServicoCommand ?? (_DeletarServicoCommand = new Command(async () => await ExecuteDeletarServicoCommand())); }
         }
 
-        Command _AddServicoCommand;
-        public Command AddServicoCommand
-        {
-            get { return _AddServicoCommand ?? (_AddServicoCommand = new Command(async () => await ExecuteAddServicoCommand())); }
-        }
-
-        async Task ExecuteAddServicoCommand()
+        async Task ExecuteDeletarServicoCommand()
         {
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new CadastroServicoPage());
+
+                var sqlite = DependencyService.Get<ISQLite>();
+                using (var scope = new TransactionScope(sqlite))
+                {
+                    var service = new DataService(sqlite);
+
+                    service.DeleteServico(servicoEntry);
+                    scope.Complete();
+                }
+
                 IsBusy = false;
             }
         }

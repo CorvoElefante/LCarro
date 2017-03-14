@@ -169,6 +169,11 @@ namespace Carro.Services
             return UnitOfWork.ServicoRepository.Find(a => a.Nome.Contains(nome)).ToList();
         }
 
+        public void DeleteServico(Servico servico)
+        {
+            UnitOfWork.ServicoRepository.Delete(servico);
+        }
+
         #endregion
     }
 }

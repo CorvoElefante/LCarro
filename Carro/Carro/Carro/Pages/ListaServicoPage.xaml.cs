@@ -10,7 +10,7 @@ namespace Carro.Pages
     {
         public ListaServicoPage()
         {
-            //BindingContext = new ListaServicoViewModel(Navigation);
+            BindingContext = new ListaServicoViewModel(Navigation);
             InitializeComponent();
         }
 
@@ -21,10 +21,10 @@ namespace Carro.Pages
                 return; // has been set to null, do not 'process' tapped event 
             }
 
-            //if (((ListaServicoViewModel)BindingContext).EditarServicoCommand.CanExecute(null))
-            //{
-            //    ((ListaServicoViewModel)BindingContext).EditarServicoCommand.Execute(((ListView)sender).SelectedItem);
-            //}
+            if (((ListaServicoViewModel)BindingContext).EditarServicoCommand.CanExecute(null))
+            {
+                ((ListaServicoViewModel)BindingContext).EditarServicoCommand.Execute(((ListView)sender).SelectedItem);
+            }
             ((ListView)sender).SelectedItem = null; // de-select the row
         }
     }
