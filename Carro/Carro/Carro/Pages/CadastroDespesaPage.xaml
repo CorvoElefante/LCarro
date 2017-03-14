@@ -6,18 +6,70 @@
              Title="Nova Despesa"
              BackgroundColor="#FFFFF7">
 
+    <!--Essa page possui "backgroundcolor" claro-->
+
     <ContentPage.ToolbarItems>
         <ToolbarItem
       Icon="{x:Static resources:Images.IconeUser32}"/>
     </ContentPage.ToolbarItems>
 
     <ScrollView>
-      <StackLayout Padding="30" Spacing="30">
-        <Entry Text = "{Binding nomeEntry, Mode=TwoWay}" Placeholder="Nome" Keyboard="Text"></Entry>
-        <Entry Text = "{Binding valorEntry, Mode=TwoWay}" Placeholder="Valor gasto" Keyboard="Numeric"></Entry>
-        <Entry Text = "{Binding descricaoEntry, Mode=TwoWay}" Placeholder="Descricao" Keyboard="Text"></Entry>
-        <Entry Text = "{Binding categoriaEntry, Mode=TwoWay}" Placeholder="Categoria" Keyboard="Numeric"></Entry>
-        <Button Text= "Salvar" Command="{Binding SalvarDespesaCommand}"></Button>
-      </StackLayout>
+        <StackLayout 
+          Padding="30" 
+          Spacing="30">
+            <Entry 
+                Text = "{Binding nomeEntry, Mode=TwoWay}" Placeholder="Nome" Keyboard="Text"/>
+            <Entry 
+                Text = "{Binding valorEntry, Mode=TwoWay}" Placeholder="Valor gasto" Keyboard="Numeric"/>
+            <Entry 
+                Text = "{Binding descricaoEntry, Mode=TwoWay}" Placeholder="Descricao" Keyboard="Text"/>
+            <Entry 
+                Text = "{Binding categoriaEntry, Mode=TwoWay}" Placeholder="Categoria" Keyboard="Numeric"/>
+
+            <Grid
+            HorizontalOptions="CenterAndExpand"
+            Margin="0"
+            Padding="4"
+            BackgroundColor="Transparent"
+            ColumnSpacing="32">
+                <Grid
+                HorizontalOptions="Center"
+                Margin="4"
+                Padding="0"
+                RowSpacing="-8"
+                BackgroundColor="Transparent">
+                    <Image
+                    Source="ic_success64.png"
+                    IsOpaque="True"/>
+                    <Label
+                    Grid.Row="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="End"
+                    Text="Salvar"
+                    FontSize="Medium"/>
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer
+                        Command="{Binding SalvarDespesaCommand}"/>
+                    </Grid.GestureRecognizers>
+                </Grid>
+                <Grid
+                HorizontalOptions="Center"
+                Margin="4"
+                Padding="0"
+                Grid.Column="1"
+                RowSpacing="-8"
+                BackgroundColor="Transparent">
+                    <Image
+                    Source="ic_error64.png"
+                    IsOpaque="True"/>
+                    <Label
+                    Grid.Row="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="End"
+                    Text="Deletar"
+                    FontSize="Medium"/>
+                </Grid>
+            </Grid>
+        </StackLayout>
     </ScrollView>
 </ContentPage>

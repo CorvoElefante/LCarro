@@ -4,28 +4,91 @@
              xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
              x:Class="Carro.Pages.EditarFuncionarioPage"
              Title="Editar Funcionário"
-             BackgroundColor="#FFFFF7">
+             BackgroundColor="#444444">
 
-  <ContentPage.ToolbarItems>
-    <ToolbarItem
-      Icon="{x:Static resources:Images.IconeUser32}"/>
-  </ContentPage.ToolbarItems>
+    <!--Essa page possui "backgroundcolor" escuro-->
 
-  <ScrollView>
-    <StackLayout Padding="30" Spacing="30">
-      <Entry Text ="{Binding nomeEntry, Mode=TwoWay}" Placeholder="Nome" Keyboard="Text"></Entry>
-      <Entry Text ="{Binding ruaNEntry, Mode=TwoWay}" Placeholder="Rua"></Entry>
-      <Entry Text ="{Binding bairroEntry, Mode=TwoWay}" Placeholder="Bairro"></Entry>
-      <Entry Text ="{Binding cpfEntry, Mode=TwoWay}" Placeholder="CPF" Keyboard="Numeric"></Entry>
-      <Entry Text ="{Binding telefoneEntry, Mode=TwoWay}" Placeholder="Telefone" Keyboard="Telephone"></Entry>
-      <Entry Text ="{Binding ndataEntry, Mode=TwoWay}" Placeholder="Data de nascimento" Keyboard="Numeric"></Entry>
-      <Entry Text ="{Binding emailEntry, Mode=TwoWay}"  Placeholder="Email" Keyboard="Email"></Entry>
-      <Entry Text ="{Binding salarioEntry, Mode=TwoWay}"  Placeholder="Salario"></Entry>
-      <Entry Text ="{Binding funcaoEntry, Mode=TwoWay}"  Placeholder="Função"></Entry>
-      <Grid>
-        <Button Text="Salvar" Grid.Column="0" Command="{Binding SalvarFuncionarioCommand}"></Button>
-        <Button Text="Deletar" Grid.Column="1" Command="{Binding DeletarFuncionarioCommand}"></Button>
-      </Grid>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+            Icon="{x:Static resources:Images.IconeUser32}"/>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout>
+        <ScrollView
+        BackgroundColor="#FFFFF7">
+            <StackLayout 
+        Padding="30" 
+        Spacing="30">
+                <Entry 
+                Text ="{Binding nomeEntry, Mode=TwoWay}" Placeholder="Nome" Keyboard="Text"/>
+                <Entry 
+                Text ="{Binding ruaNEntry, Mode=TwoWay}" Placeholder="Rua"/>
+                <Entry 
+                Text ="{Binding bairroEntry, Mode=TwoWay}" Placeholder="Bairro"/>
+                <Entry 
+                Text ="{Binding cpfEntry, Mode=TwoWay}" Placeholder="CPF" Keyboard="Numeric"/>
+                <Entry 
+                Text ="{Binding telefoneEntry, Mode=TwoWay}" Placeholder="Telefone" Keyboard="Telephone"/>
+                <Entry 
+                Text ="{Binding ndataEntry, Mode=TwoWay}" Placeholder="Data de nascimento" Keyboard="Numeric"/>
+                <Entry 
+                Text ="{Binding emailEntry, Mode=TwoWay}"  Placeholder="Email" Keyboard="Email"/>
+                <Entry 
+                Text ="{Binding salarioEntry, Mode=TwoWay}"  Placeholder="Salario"/>
+                <Entry 
+                Text ="{Binding funcaoEntry, Mode=TwoWay}"  Placeholder="Função"/>
+            </StackLayout>
+        </ScrollView>
+        
+        <Grid
+            HorizontalOptions="CenterAndExpand"
+            Margin="0"
+            Padding="4"
+            BackgroundColor="Transparent"
+            ColumnSpacing="32">
+            <Grid
+                HorizontalOptions="Center"
+                Margin="4"
+                Padding="0"
+                RowSpacing="-8"
+                BackgroundColor="Transparent">
+                <Image
+                    Source="ic_success64.png"
+                    IsOpaque="True"/>
+                <Label
+                    Grid.Row="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="End"
+                    Text="Salvar"
+                    TextColor="#FFFFF7"
+                    FontSize="Medium"/>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer 
+                            Command="{Binding SalvarFuncionarioCommand}"/>
+                </Grid.GestureRecognizers>
+            </Grid>
+            <Grid
+                HorizontalOptions="Center"
+                Margin="4"
+                Padding="0"
+                Grid.Column="1"
+                RowSpacing="-8"
+                BackgroundColor="Transparent">
+                <Image
+                    Source="ic_error64.png"
+                    IsOpaque="True"/>
+                <Label
+                    Grid.Row="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="End"
+                    Text="Deletar"
+                    TextColor="#FFFFF7"
+                    FontSize="Medium"/>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer 
+                            Command="{Binding DeletarFuncionarioCommand}"/>
+                </Grid.GestureRecognizers>
+            </Grid>
+        </Grid>
     </StackLayout>
-  </ScrollView>
 </ContentPage>

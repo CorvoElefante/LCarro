@@ -6,6 +6,8 @@
              Title="Editar Cliente"
              BackgroundColor="#444444">
 
+    <!--Essa page possui "backgroundcolor" escuro-->
+
     <ContentPage.ToolbarItems>
         <ToolbarItem
             Icon="{x:Static resources:Images.IconeUser232}"/>
@@ -33,6 +35,7 @@
                     Text="{Binding cpfEntry, Mode=TwoWay}" Placeholder="CPF" Keyboard="Numeric"/>
             </StackLayout>
         </ScrollView>
+        
         <Grid
             HorizontalOptions="CenterAndExpand"
             Margin="0"

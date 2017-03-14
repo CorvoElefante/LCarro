@@ -2,63 +2,83 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
-             x:Class="Carro.Pages.EditarServicoPage">
+             x:Class="Carro.Pages.EditarServicoPage"
+             Title="Editar Serviço"
+             BackgroundColor="#444444">
+
+    <!--Essa page possui "backgroundcolor" escuro-->
 
     <ContentPage.ToolbarItems>
         <ToolbarItem
       Icon="{x:Static resources:Images.IconeUser232}"/>
     </ContentPage.ToolbarItems>
 
-    <ScrollView>
-        <StackLayout Padding="30" Spacing="30">
-            <Entry Text = "{Binding nomeEntry, Mode=TwoWay}" Placeholder="Nome" Keyboard="Text"></Entry>
-            <Entry Text = "{Binding precoEntry, Mode=TwoWay}" Placeholder="Preço" Keyboard="Numeric"></Entry>
-            <Entry Text = "{Binding descricaoEntry, Mode=TwoWay}" Placeholder="Descrição"></Entry>
-            <Entry Text = "{Binding tempoEntry, Mode=TwoWay}" Placeholder="Tempo de conclusão"></Entry>
-            <Grid
-            BackgroundColor="Transparent"
+    <StackLayout>
+        <ScrollView
+        BackgroundColor="#FFFFF7">
+            <StackLayout 
+            Padding="30" 
+            Spacing="30">
+                <Entry 
+                Text = "{Binding nomeEntry, Mode=TwoWay}" Placeholder="Nome" Keyboard="Text"/>
+                <Entry 
+                Text = "{Binding precoEntry, Mode=TwoWay}" Placeholder="Preço" Keyboard="Numeric"/>
+                <Entry 
+                Text = "{Binding descricaoEntry, Mode=TwoWay}" Placeholder="Descrição"/>
+                <Entry 
+                Text = "{Binding tempoEntry, Mode=TwoWay}" Placeholder="Tempo de conclusão"/>
+            </StackLayout>
+        </ScrollView>
+
+        <Grid
+            HorizontalOptions="CenterAndExpand"
             Margin="0"
-            Padding="2">
-                <Grid
-                BackgroundColor="Transparent"
-                Margin="0"
-                Padding="2">
-                    <Image
+            Padding="4"
+            BackgroundColor="Transparent"
+            ColumnSpacing="32">
+            <Grid
+                HorizontalOptions="Center"
+                Margin="4"
+                Padding="0"
+                RowSpacing="-8"
+                BackgroundColor="Transparent">
+                <Image
                     Source="ic_success64.png"
-                    IsOpaque="True"
-                    Aspect="AspectFit"
-                    HorizontalOptions="Center"/>
-                    <Label
+                    IsOpaque="True"/>
+                <Label
                     Grid.Row="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="End"
                     Text="Salvar"
-                    FontSize="Medium"
-                    HorizontalOptions="Center">
-                    </Label>
-                    <Grid.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding SalvarServicoCommand}" />
-                    </Grid.GestureRecognizers>
-                </Grid>
-                <Grid
-                BackgroundColor="Transparent"
-                Margin="0"
-                Padding="2"
-                Grid.Column="1">
-                    <Image
-                    Source="ic_error64.png"
-                    IsOpaque="True"
-                    Aspect="AspectFit"
-                    HorizontalOptions="Center"/>
-                    <Label
-                    Grid.Row="1"
-                    Text="Deletar"
-                    FontSize="Medium"
-                    HorizontalOptions="Center">
-                    </Label>
-                    <Grid.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding DeletarServicoCommand}" />
-                    </Grid.GestureRecognizers>
-                </Grid>
+                    TextColor="#FFFFF7"
+                    FontSize="Medium"/>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding SalvarServicoCommand}"/>
+                </Grid.GestureRecognizers>
             </Grid>
-        </StackLayout>
-    </ScrollView>
+            <Grid
+                HorizontalOptions="Center"
+                Margin="4"
+                Padding="0"
+                Grid.Column="1"
+                RowSpacing="-8"
+                BackgroundColor="Transparent">
+                <Image
+                    Source="ic_error64.png"
+                    IsOpaque="True"/>
+                <Label
+                    Grid.Row="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="End"
+                    Text="Deletar"
+                    TextColor="#FFFFF7"
+                    FontSize="Medium"/>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding DeletarServicoCommand}"/>
+                </Grid.GestureRecognizers>
+            </Grid>
+        </Grid>
+    </StackLayout>
 </ContentPage>

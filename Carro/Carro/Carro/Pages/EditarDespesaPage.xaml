@@ -4,24 +4,81 @@
              xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
              x:Class="Carro.Pages.EditarDespesaPage"
              Title="Editar Despesa"
-             BackgroundColor="#FFFFF7">
+             BackgroundColor="#444444">
+
+    <!--Essa page possui "backgroundcolor" escuro-->
 
     <ContentPage.ToolbarItems>
         <ToolbarItem
       Icon="{x:Static resources:Images.IconeUser232}"/>
     </ContentPage.ToolbarItems>
 
-    <ScrollView>
-        <StackLayout Padding="30" Spacing="30">
-
-            <Entry Text = "{Binding nomeEntry, Mode=TwoWay}" Placeholder="Nome" Keyboard="Text"></Entry>
-            <Entry Text = "{Binding valorEntry, Mode=TwoWay}" Placeholder="Valor gasto" Keyboard="Numeric"></Entry>
-            <Entry Text = "{Binding descricaoEntry, Mode=TwoWay}" Placeholder="Descricao" Keyboard="Text"></Entry>
-            <Entry Text = "{Binding categoriaEntry, Mode=TwoWay}" Placeholder="Categoria" Keyboard="Text"></Entry>
-            <Grid>
-                <Button Text="Salvar" Grid.Column="0" Command="{Binding SalvarDespesaCommand}"></Button>
-                <Button Text="Deletar" Grid.Column="1" Command="{Binding DeletarDespesaCommand}"></Button>
+    <StackLayout>
+        <ScrollView
+        BackgroundColor="#FFFFF7">
+            <StackLayout 
+            Padding="30" 
+            Spacing="30">
+                <Entry 
+                Text = "{Binding nomeEntry, Mode=TwoWay}" Placeholder="Nome" Keyboard="Text"/>
+                <Entry 
+                Text = "{Binding valorEntry, Mode=TwoWay}" Placeholder="Valor gasto" Keyboard="Numeric"/>
+                <Entry 
+                Text = "{Binding descricaoEntry, Mode=TwoWay}" Placeholder="Descricao" Keyboard="Text"/>
+                <Entry 
+                Text = "{Binding categoriaEntry, Mode=TwoWay}" Placeholder="Categoria" Keyboard="Text"/>
+            </StackLayout>
+        </ScrollView>
+        
+        <Grid
+            HorizontalOptions="CenterAndExpand"
+            Margin="0"
+            Padding="4"
+            BackgroundColor="Transparent"
+            ColumnSpacing="32">
+            <Grid
+                HorizontalOptions="Center"
+                Margin="4"
+                Padding="0"
+                RowSpacing="-8"
+                BackgroundColor="Transparent">
+                <Image
+                    Source="ic_success64.png"
+                    IsOpaque="True"/>
+                <Label
+                    Grid.Row="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="End"
+                    Text="Salvar"
+                    TextColor="#FFFFF7"
+                    FontSize="Medium"/>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding SalvarDespesaCommand}"/>
+                </Grid.GestureRecognizers>
             </Grid>
-        </StackLayout>
-    </ScrollView>
+            <Grid
+                HorizontalOptions="Center"
+                Margin="4"
+                Padding="0"
+                Grid.Column="1"
+                RowSpacing="-8"
+                BackgroundColor="Transparent">
+                <Image
+                    Source="ic_error64.png"
+                    IsOpaque="True"/>
+                <Label
+                    Grid.Row="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="End"
+                    Text="Deletar"
+                    TextColor="#FFFFF7"
+                    FontSize="Medium"/>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding DeletarDespesaCommand}"/>
+                </Grid.GestureRecognizers>
+            </Grid>
+        </Grid>
+    </StackLayout>
 </ContentPage>

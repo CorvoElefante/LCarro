@@ -6,47 +6,76 @@
              Title="Novo Cliente"
              BackgroundColor="#FFFFF7">
 
+    <!--Essa page possui "backgroundcolor" claro-->
+
     <ContentPage.ToolbarItems>
         <ToolbarItem
       Icon="{x:Static resources:Images.IconeUser32}"/>
     </ContentPage.ToolbarItems>
 
-    <StackLayout Margin="0" Padding="0" Spacing="0">
         <ScrollView>
-            <StackLayout Padding="30" Spacing="30">
-                <Entry Text="{Binding nomeEntry, Mode=TwoWay}" Placeholder="Nome" Keyboard="Text"></Entry>
-                <Entry Text="{Binding ruaNEntry, Mode=TwoWay}" Placeholder="Rua"></Entry>
-                <Entry Text="{Binding bairroEntry, Mode=TwoWay}" Placeholder="Bairro"></Entry>
-                <Entry Text="{Binding telefoneEntry, Mode=TwoWay}" Placeholder="Telefone" Keyboard="Telephone"></Entry>
-                <Entry Text="{Binding emailEntry, Mode=TwoWay}"  Placeholder="Email" Keyboard="Email"></Entry>
-                <Entry Text="{Binding ndataEntry, Mode=TwoWay}" Placeholder="Data de nascimento" Keyboard="Numeric"></Entry>
-                <Entry Text="{Binding cpfEntry, Mode=TwoWay}" Placeholder="CPF" Keyboard="Numeric"></Entry>
-            </StackLayout>
-        </ScrollView>
-        <Grid
+            <StackLayout 
+                Padding="30" 
+                Spacing="30">
+                <Entry 
+                    Text="{Binding nomeEntry, Mode=TwoWay}" Placeholder="Nome" Keyboard="Text"/>
+                <Entry 
+                    Text="{Binding ruaNEntry, Mode=TwoWay}" Placeholder="Rua"/>
+                <Entry 
+                    Text="{Binding bairroEntry, Mode=TwoWay}" Placeholder="Bairro"/>
+                <Entry 
+                    Text="{Binding telefoneEntry, Mode=TwoWay}" Placeholder="Telefone" Keyboard="Telephone"/>
+                <Entry 
+                    Text="{Binding emailEntry, Mode=TwoWay}"  Placeholder="Email" Keyboard="Email"/>
+                <Entry 
+                    Text="{Binding ndataEntry, Mode=TwoWay}" Placeholder="Data de nascimento" Keyboard="Numeric"/>
+                <Entry 
+                    Text="{Binding cpfEntry, Mode=TwoWay}" Placeholder="CPF" Keyboard="Numeric"/>
+
+            <Grid
+            HorizontalOptions="CenterAndExpand"
+            Margin="0"
+            Padding="4"
+            BackgroundColor="Transparent"
+            ColumnSpacing="32">
+                <Grid
                 HorizontalOptions="Center"
-                VerticalOptions="End"
-                BackgroundColor="Transparent"
-                Margin="0"
-                Padding="4"
-                RowSpacing="-20">
-            <Image
-                    Margin="0"
-                    VerticalOptions="End"
-                    HorizontalOptions="Center"
+                Margin="4"
+                Padding="0"
+                RowSpacing="-8"
+                BackgroundColor="Transparent">
+                    <Image
                     Source="ic_success64.png"
-                    IsOpaque="True"
-                    Aspect="AspectFit"/>
-            <Label
-                    VerticalOptions="End"
-                    HorizontalOptions="Center"
+                    IsOpaque="True"/>
+                    <Label
                     Grid.Row="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="End"
                     Text="Salvar"
-                    FontSize="Medium">
-            </Label>
-            <Image.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding SalvarPessoaCommand}" />
-            </Image.GestureRecognizers>
-        </Grid>
-    </StackLayout>
+                    FontSize="Medium"/>
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer
+                        Command="{Binding SalvarPessoaCommand}"/>
+                    </Grid.GestureRecognizers>
+                </Grid>
+                <Grid
+                HorizontalOptions="Center"
+                Margin="4"
+                Padding="0"
+                Grid.Column="1"
+                RowSpacing="-8"
+                BackgroundColor="Transparent">
+                    <Image
+                    Source="ic_error64.png"
+                    IsOpaque="True"/>
+                    <Label
+                    Grid.Row="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="End"
+                    Text="Deletar"
+                    FontSize="Medium"/>
+                </Grid>
+            </Grid>
+        </StackLayout>
+        </ScrollView>
 </ContentPage>
