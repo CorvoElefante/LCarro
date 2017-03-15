@@ -26,5 +26,10 @@ namespace Carro.Pages
             }
             ((ListView)sender).SelectedItem = null; // de-select the row
         }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            ((ListaClienteViewModel)BindingContext).AtualizaPessoaCommand.Execute(null);
+        }
     }
 }
