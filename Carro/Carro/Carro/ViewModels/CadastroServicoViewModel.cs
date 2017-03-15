@@ -34,7 +34,7 @@ namespace Carro.ViewModels
             }
         }
 
-        float _precoEntry = 0.0F;
+        float _precoEntry;
         public float precoEntry
         {
             get

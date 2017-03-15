@@ -16,14 +16,7 @@ namespace Carro.ViewModels
         public ListaServicoViewModel(INavigation navigation) : base(navigation)
         {
 
-            var sqlite = DependencyService.Get<ISQLite>();
-            using (var scope = new TransactionScope(sqlite))
-            {
-                Servicos = new ObservableCollection<Servico>(
-                    new DataService(sqlite).GetServicos()
-                );
-                scope.Complete();
-            }
+            ExecuteAtualizaServicoCommand();
 
         }
         ObservableCollection<Servico> _Servicos;
@@ -82,6 +75,26 @@ namespace Carro.ViewModels
                 await Navigation.PushAsync(new EditarServicoPage(value));
                 IsBusy = false;
             }
+        }
+
+        Command _AtualizaServicoCommand;
+        public Command AtualizaServicoCommand
+        {
+            get { return _AtualizaServicoCommand ?? (_AtualizaServicoCommand = new Command(() =>ExecuteAtualizaServicoCommand())); }
+        }
+
+        void ExecuteAtualizaServicoCommand()
+        {
+
+            var sqlite = DependencyService.Get<ISQLite>();
+            using (var scope = new TransactionScope(sqlite))
+            {
+                Servicos = new ObservableCollection<Servico>(
+                    new DataService(sqlite).GetServicos()
+                );
+                scope.Complete();
+            }
+
         }
 
     }
