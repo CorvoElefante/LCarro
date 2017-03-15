@@ -19,14 +19,76 @@
             <StackLayout 
             Padding="30" 
             Spacing="30">
-                <Entry 
-                Text = "{Binding nomeEntry, Mode=TwoWay}" Placeholder="Nome" Keyboard="Text"/>
-                <Entry 
-                Text = "{Binding precoEntry, Mode=TwoWay}" Placeholder="Preço" Keyboard="Numeric"/>
-                <Entry 
-                Text = "{Binding descricaoEntry, Mode=TwoWay}" Placeholder="Descrição"/>
-                <Entry 
-                Text = "{Binding tempoEntry, Mode=TwoWay}" Placeholder="Tempo de conclusão"/>
+                <Grid>
+                    <Entry
+                Grid.Column="0"
+                Grid.Row="0"
+                Grid.ColumnSpan="12"
+                Text="{Binding nomeEntry, Mode=TwoWay}"
+                Placeholder="Nome"
+                Keyboard="Text"/>
+                    <Image
+                    Grid.Column="12"
+                    Grid.Row="0"
+                    Source="ic_success32.png"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+                    <Image
+                    Grid.Column="12"
+                    Grid.Row="0"
+                    Source="ic_error32.png"
+                    IsVisible="{Binding nomeEntryInvalido}"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+
+                    <Entry
+                Grid.Column="0"
+                Grid.Row="1"
+                Grid.ColumnSpan="12"
+                x:Name="precoEntry"
+                Text="{Binding precoEntry, Mode=TwoWay}"
+                Placeholder="Preço"
+                Keyboard="Numeric"/>
+                    <Image
+                    Grid.Column="12"
+                    Grid.Row="1"
+                    Source="ic_success32.png"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+                    <Image
+                    Grid.Column="12"
+                    Grid.Row="1"
+                    Source="ic_error32.png"
+                    IsVisible="{Binding precoEntryInvalido}"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+
+                    <Entry
+                Grid.Column="0"
+                Grid.Row="2"
+                Grid.ColumnSpan="12"
+                Text="{Binding descricaoEntry, Mode=TwoWay}"
+                Placeholder="Descrição"/>
+                    <Image
+                    Grid.Column="12"
+                    Grid.Row="2"
+                    Source="ic_success32.png"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+
+                    <Entry
+                Grid.Column="0"
+                Grid.Row="3"
+                Grid.ColumnSpan="12"
+                Text="{Binding tempoEntry, Mode=TwoWay}"
+                Placeholder="Tempo de conclusão"/>
+                    <Image
+                    Grid.Column="12"
+                    Grid.Row="3"
+                    Source="ic_success32.png"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+                </Grid>
             </StackLayout>
         </ScrollView>
 

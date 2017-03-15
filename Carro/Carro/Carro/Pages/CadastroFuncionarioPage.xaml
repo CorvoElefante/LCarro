@@ -13,73 +13,187 @@
       Icon="{x:Static resources:Images.IconeUser32}"/>
     </ContentPage.ToolbarItems>
 
-        <ScrollView>
-            <StackLayout 
-        Padding="30" 
-        Spacing="30">
-                <Entry 
-                Text ="{Binding nomeEntry, Mode=TwoWay}" Placeholder="Nome" Keyboard="Text"/>
-                <Entry 
-                Text ="{Binding ruaNEntry, Mode=TwoWay}" Placeholder="Rua"/>
-                <Entry 
-                Text ="{Binding bairroEntry, Mode=TwoWay}" Placeholder="Bairro"/>
-                <Entry 
-                Text ="{Binding cpfEntry, Mode=TwoWay}" Placeholder="CPF" Keyboard="Numeric"/>
-                <Entry 
-                Text ="{Binding telefoneEntry, Mode=TwoWay}" Placeholder="Telefone" Keyboard="Telephone"/>
-                <Entry 
-                Text ="{Binding ndataEntry, Mode=TwoWay}" Placeholder="Data de nascimento" Keyboard="Numeric"/>
-                <Entry 
-                Text ="{Binding emailEntry, Mode=TwoWay}"  Placeholder="Email" Keyboard="Email"/>
-                <Entry 
-                x:Name="salarioEntry" Text ="{Binding salarioEntry, Mode=TwoWay}"  Placeholder="Salario"/>
-                <Entry 
-                Text ="{Binding funcaoEntry, Mode=TwoWay}"  Placeholder="Função"></Entry>
+    <ScrollView>
+        <StackLayout 
+                Padding="30" 
+                Spacing="30">
+            <Grid>
+                <Entry
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    Grid.ColumnSpan="12"
+                    Text="{Binding nomeEntry, Mode=TwoWay}" 
+                    Placeholder="Nome" 
+                    Keyboard="Text"/>
+                <Image
+                    Grid.Column="12"
+                    Grid.Row="0"
+                    Source="ic_success32.png"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+                <Image
+                    Grid.Column="12"
+                    Grid.Row="0"
+                    Source="ic_error32.png"
+                    IsVisible="{Binding nomeEntryInvalido}"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+
+                <Entry
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="12"
+                    Text="{Binding ruaNEntry, Mode=TwoWay}" 
+                    Placeholder="Rua"/>
+                <Image
+                    Grid.Column="12"
+                    Grid.Row="1"
+                    Source="ic_success32.png"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+
+                <Entry
+                    Grid.Column="0"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="12"
+                    Text="{Binding bairroEntry, Mode=TwoWay}" 
+                    Placeholder="Bairro"/>
+                <Image
+                    Grid.Column="12"
+                    Grid.Row="2"
+                    Source="ic_success32.png"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+
+                <Entry
+                    Grid.Column="0"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="12"
+                    Text="{Binding cpfEntry, Mode=TwoWay}" 
+                    Placeholder="CPF" Keyboard="Numeric"/>
+                <Image
+                    Grid.Column="12"
+                    Grid.Row="3"
+                    Source="ic_success32.png"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+
+                <Entry
+                    Grid.Column="0"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="12"
+                    Text ="{Binding telefoneEntry, Mode=TwoWay}" 
+                    Placeholder="Telefone" Keyboard="Telephone"/>
+                <Image
+                    Grid.Column="12"
+                    Grid.Row="4"
+                    Source="ic_success32.png"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+
+                <Entry
+                    Grid.Column="0"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="12"
+                    Text="{Binding ndataEntry, Mode=TwoWay}" 
+                    Placeholder="Data de nascimento" Keyboard="Numeric"/>
+                <Image
+                    Grid.Column="12"
+                    Grid.Row="5"
+                    Source="ic_success32.png"
+                    IsVisible="True"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+
+                <Entry
+                    Grid.Column="0"
+                    Grid.Row="6"
+                    Grid.ColumnSpan="12"
+                    Text="{Binding emailEntry, Mode=TwoWay}"  
+                    Placeholder="Email" Keyboard="Email"/>
+                <Image
+                    Grid.Column="12"
+                    Grid.Row="6"
+                    Source="ic_success32.png"
+                    IsVisible="True"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+
+                <Entry
+                    Grid.Column="0"
+                    Grid.Row="7"
+                    Grid.ColumnSpan="12"
+                    x:Name="salarioEntry" 
+                    Text="{Binding salarioEntry, Mode=TwoWay}"  
+                    Placeholder="Salario"/>
+                <Image
+                    Grid.Column="12"
+                    Grid.Row="7"
+                    Source="ic_success32.png"
+                    IsVisible="True"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+
+                <Entry
+                    Grid.Column="0"
+                    Grid.Row="8"
+                    Grid.ColumnSpan="12"
+                    Text="{Binding funcaoEntry, Mode=TwoWay}"  
+                    Placeholder="Função"></Entry>
+                <Image
+                    Grid.Column="12"
+                    Grid.Row="8"
+                    Source="ic_success32.png"
+                    IsVisible="True"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+            </Grid>
+
 
             <Grid
-            HorizontalOptions="CenterAndExpand"
-            Margin="0"
-            Padding="4"
-            BackgroundColor="Transparent"
-            ColumnSpacing="32">
+                HorizontalOptions="CenterAndExpand"
+                Margin="0"
+                Padding="4"
+                BackgroundColor="Transparent"
+                ColumnSpacing="32">
                 <Grid
-                HorizontalOptions="Center"
-                Margin="4"
-                Padding="0"
-                RowSpacing="-8"
-                BackgroundColor="Transparent">
-                    <Image
-                    Source="ic_success64.png"
-                    IsOpaque="True"/>
-                    <Label
-                    Grid.Row="1"
                     HorizontalOptions="Center"
-                    VerticalOptions="End"
-                    Text="Salvar"
-                    FontSize="Medium"/>
+                    Margin="4"
+                    Padding="0"
+                    RowSpacing="-8"
+                    BackgroundColor="Transparent">
+                    <Image
+                        Source="ic_success64.png"
+                        IsOpaque="True"/>
+                    <Label
+                        Grid.Row="1"
+                        HorizontalOptions="Center"
+                        VerticalOptions="End"
+                        Text="Salvar"
+                        FontSize="Medium"/>
                     <Grid.GestureRecognizers>
                         <TapGestureRecognizer
-                        Command="{Binding SalvarFuncionarioCommand}"/>
+                            Command="{Binding SalvarFuncionarioCommand}"/>
                     </Grid.GestureRecognizers>
                 </Grid>
                 <Grid
-                HorizontalOptions="Center"
-                Margin="4"
-                Padding="0"
-                Grid.Column="1"
-                RowSpacing="-8"
-                BackgroundColor="Transparent">
-                    <Image
-                    Source="ic_error64.png"
-                    IsOpaque="True"/>
-                    <Label
-                    Grid.Row="1"
                     HorizontalOptions="Center"
-                    VerticalOptions="End"
-                    Text="Deletar"
-                    FontSize="Medium"/>
+                    Margin="4"
+                    Padding="0"
+                    Grid.Column="1"
+                    RowSpacing="-8"
+                    BackgroundColor="Transparent">
+                    <Image
+                        Source="ic_error64.png"
+                        IsOpaque="True"/>
+                    <Label
+                        Grid.Row="1"
+                        HorizontalOptions="Center"
+                        VerticalOptions="End"
+                        Text="Deletar"
+                        FontSize="Medium"/>
                 </Grid>
             </Grid>
         </StackLayout>
-        </ScrollView>
+    </ScrollView>
 </ContentPage>

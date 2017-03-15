@@ -19,14 +19,78 @@
             <StackLayout 
             Padding="30" 
             Spacing="30">
-                <Entry 
-                Text = "{Binding nomeEntry, Mode=TwoWay}" Placeholder="Nome" Keyboard="Text"/>
-                <Entry 
-                Text = "{Binding valorEntry, Mode=TwoWay}" Placeholder="Valor gasto" Keyboard="Numeric"/>
-                <Entry 
-                Text = "{Binding descricaoEntry, Mode=TwoWay}" Placeholder="Descricao" Keyboard="Text"/>
-                <Entry 
-                Text = "{Binding categoriaEntry, Mode=TwoWay}" Placeholder="Categoria" Keyboard="Text"/>
+                <Grid>
+                    <Entry 
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    Grid.ColumnSpan="12"
+                    Text="{Binding nomeEntry, Mode=TwoWay}" 
+                    Placeholder="Nome" 
+                    Keyboard="Text"/>
+                    <Image
+                    Grid.Column="12"
+                    Grid.Row="0"
+                    Source="ic_success32.png"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+                    <Image
+                    Grid.Column="12"
+                    Grid.Row="0"
+                    Source="ic_error32.png"
+                    IsVisible="{Binding nomeEntryInvalido}"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+
+                    <Entry 
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="12"
+                    x:Name="valorEntry" 
+                    Text="{Binding valorEntry, Mode=TwoWay}" 
+                    Placeholder="Valor gasto" 
+                    Keyboard="Numeric"/>
+                    <Image
+                    Grid.Column="12"
+                    Grid.Row="1"
+                    Source="ic_success32.png"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+                    <Image
+                    Grid.Column="12"
+                    Grid.Row="1"
+                    Source="ic_error32.png"
+                    IsVisible="{Binding valorEntryInvalido}"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+
+                    <Entry 
+                    Grid.Column="0"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="12"
+                    Text="{Binding descricaoEntry, Mode=TwoWay}" 
+                    Placeholder="Descrição" 
+                    Keyboard="Text"/>
+                    <Image
+                    Grid.Column="12"
+                    Grid.Row="2"
+                    Source="ic_success32.png"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+
+                    <Entry 
+                    Grid.Column="0"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="12"
+                    x:Name="categoriaEntry" 
+                    Text="{Binding categoriaEntry, Mode=TwoWay}" 
+                    Placeholder="Categoria" Keyboard="Numeric"/>
+                    <Image
+                    Grid.Column="12"
+                    Grid.Row="3"
+                    Source="ic_success32.png"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+                </Grid>
             </StackLayout>
         </ScrollView>
         

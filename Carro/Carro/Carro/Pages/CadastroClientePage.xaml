@@ -13,24 +13,117 @@
       Icon="{x:Static resources:Images.IconeUser32}"/>
     </ContentPage.ToolbarItems>
 
-        <ScrollView>
-            <StackLayout 
+    <ScrollView>
+        <StackLayout 
                 Padding="30" 
                 Spacing="30">
+            <Grid>
                 <Entry 
-                    Text="{Binding nomeEntry, Mode=TwoWay}" Placeholder="Nome" Keyboard="Text"/>
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    Grid.ColumnSpan="12"
+                    Text="{Binding nomeEntry, Mode=TwoWay}" 
+                    Placeholder="Nome" 
+                    Keyboard="Text"/>
+                <Image
+                    Grid.Column="12"
+                    Grid.Row="0"
+                    Source="ic_success32.png"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+                <Image
+                    Grid.Column="12"
+                    Grid.Row="0"
+                    Source="ic_error32.png"
+                    IsVisible="{Binding nomeEntryInvalido}"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+
                 <Entry 
-                    Text="{Binding ruaNEntry, Mode=TwoWay}" Placeholder="Rua"/>
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="12"
+                    Text="{Binding ruaNEntry, Mode=TwoWay}" 
+                    Placeholder="Rua"/>
+                <Image
+                    Grid.Column="12"
+                    Grid.Row="1"
+                    Source="ic_success32.png"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+
                 <Entry 
-                    Text="{Binding bairroEntry, Mode=TwoWay}" Placeholder="Bairro"/>
+                    Grid.Column="0"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="12"
+                    Text="{Binding bairroEntry, Mode=TwoWay}" 
+                    Placeholder="Bairro"/>
+                <Image
+                    Grid.Column="12"
+                    Grid.Row="2"
+                    Source="ic_success32.png"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+
                 <Entry 
-                    Text="{Binding telefoneEntry, Mode=TwoWay}" Placeholder="Telefone" Keyboard="Telephone"/>
+                    Grid.Column="0"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="12"
+                    Text="{Binding telefoneEntry, Mode=TwoWay}" 
+                    Placeholder="Telefone" 
+                    Keyboard="Telephone"/>
+                <Image
+                    Grid.Column="12"
+                    Grid.Row="3"
+                    Source="ic_success32.png"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+
                 <Entry 
-                    Text="{Binding emailEntry, Mode=TwoWay}"  Placeholder="Email" Keyboard="Email"/>
+                    Grid.Column="0"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="12"
+                    Text="{Binding emailEntry, Mode=TwoWay}"
+                    Placeholder="Email"
+                    Keyboard="Email"/>
+                <Image
+                    Grid.Column="12"
+                    Grid.Row="4"
+                    Source="ic_success32.png"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+
                 <Entry 
-                    Text="{Binding ndataEntry, Mode=TwoWay}" Placeholder="Data de nascimento" Keyboard="Numeric"/>
+                    Grid.Column="0"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="12"
+                    Text="{Binding ndataEntry, Mode=TwoWay}"
+                    Placeholder="Data de nascimento"
+                    Keyboard="Numeric"/>
+                <Image
+                    Grid.Column="12"
+                    Grid.Row="5"
+                    Source="ic_success32.png"
+                    IsVisible="True"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+
                 <Entry 
-                    Text="{Binding cpfEntry, Mode=TwoWay}" Placeholder="CPF" Keyboard="Numeric"/>
+                    Grid.Column="0"
+                    Grid.Row="6"
+                    Grid.ColumnSpan="12"
+                    Text="{Binding cpfEntry, Mode=TwoWay}"
+                    Placeholder="CPF"
+                    Keyboard="Numeric"/>
+                <Image
+                    Grid.Column="12"
+                    Grid.Row="6"
+                    Source="ic_success32.png"
+                    IsVisible="True"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+
+            </Grid>
 
             <Grid
             HorizontalOptions="CenterAndExpand"
@@ -77,5 +170,5 @@
                 </Grid>
             </Grid>
         </StackLayout>
-        </ScrollView>
+    </ScrollView>
 </ContentPage>
