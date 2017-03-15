@@ -17,18 +17,8 @@ namespace Carro.ViewModels
         {
 
             var sqlite = DependencyService.Get<ISQLite>();
-            using (var scope = new TransactionScope(sqlite))
-            {
-                var service = new DataService(sqlite);
-                if (service.GetPessoas().Count == 0)
-                {
-                    service.SavePessoa(new Pessoa { Nome = "João" });
-                    service.SavePessoa(new Pessoa { Nome = "Maria" });
-                    service.SavePessoa(new Pessoa { Nome = "Pedro" });
-                    service.SavePessoa(new Pessoa { Nome = "Carlos" });
-                }
-                scope.Complete();
-            }
+
+            ExecuteAtualizaPessoaCommand();
 
             using (var scope = new TransactionScope(sqlite))
             {
@@ -111,5 +101,24 @@ namespace Carro.ViewModels
             }
         }
 
+        Command _AtualizaPessoaCommand;
+        public Command AtualizaPessoaCommand
+        {
+            get { return _AtualizaPessoaCommand ?? (_AtualizaPessoaCommand = new Command(() => ExecuteAtualizaPessoaCommand())); }
+        }
+
+        void ExecuteAtualizaPessoaCommand()
+        {
+
+            var sqlite = DependencyService.Get<ISQLite>();
+            using (var scope = new TransactionScope(sqlite))
+            {
+                Pessoas = new ObservableCollection<Pessoa>(
+                    new DataService(sqlite).GetPessoas()
+                );
+                scope.Complete();
+            }
+
+        }
     }
 }

@@ -15,15 +15,9 @@ namespace Carro.ViewModels
     {
         public ListaFuncionarioViewModel(INavigation navigation) : base(navigation)
         {
-            var sqlite = DependencyService.Get<ISQLite>();
-            using (var scope = new TransactionScope(sqlite))
-            {
-                Funcionarios = new ObservableCollection<Funcionario>(
-                    new DataService(sqlite).GetFuncionarios()
-                );
-                scope.Complete();
-            }
+            ExecuteAtualizaFuncionarioCommand();
         }
+
         ObservableCollection<Funcionario> _Funcionarios;
         public ObservableCollection<Funcionario> Funcionarios
         {
@@ -82,5 +76,24 @@ namespace Carro.ViewModels
             }
         }
 
+        Command _AtualizaFuncionarioCommand;
+        public Command AtualizaFuncionarioCommand
+        {
+            get { return _AtualizaFuncionarioCommand ?? (_AtualizaFuncionarioCommand = new Command(() => ExecuteAtualizaFuncionarioCommand())); }
+        }
+
+        void ExecuteAtualizaFuncionarioCommand()
+        {
+
+            var sqlite = DependencyService.Get<ISQLite>();
+            using (var scope = new TransactionScope(sqlite))
+            {
+                Funcionarios = new ObservableCollection<Funcionario>(
+                    new DataService(sqlite).FindFuncionarioByNome("")
+                );
+                scope.Complete();
+            }
+
+        }
     }
 }

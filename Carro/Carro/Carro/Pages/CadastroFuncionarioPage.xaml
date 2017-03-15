@@ -32,7 +32,7 @@
                 <Entry 
                 Text ="{Binding emailEntry, Mode=TwoWay}"  Placeholder="Email" Keyboard="Email"/>
                 <Entry 
-                Text ="{Binding salarioEntry, Mode=TwoWay}"  Placeholder="Salario"/>
+                x:Name="salarioEntry" Text ="{Binding salarioEntry, Mode=TwoWay}"  Placeholder="Salario"/>
                 <Entry 
                 Text ="{Binding funcaoEntry, Mode=TwoWay}"  Placeholder="Função"></Entry>
 

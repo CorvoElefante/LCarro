@@ -20,7 +20,7 @@
             <Entry 
                 Text = "{Binding nomeEntry, Mode=TwoWay}" Placeholder="Nome" Keyboard="Text"/>
             <Entry 
-                Text = "{Binding precoEntry, Mode=TwoWay}" Placeholder="Preço" Keyboard="Numeric"/>
+                x:Name="precoEntry" Text="{Binding precoEntry, Mode=TwoWay}" Placeholder="Preço" Keyboard="Numeric"/>
             <Entry 
                 Text = "{Binding descricaoEntry, Mode=TwoWay}" Placeholder="Descrição"/>
             <Entry 

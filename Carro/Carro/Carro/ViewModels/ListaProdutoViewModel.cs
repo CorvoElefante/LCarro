@@ -16,16 +16,10 @@ namespace Carro.ViewModels
         public ListaProdutoViewModel(INavigation navigation) : base(navigation)
         {
 
-            var sqlite = DependencyService.Get<ISQLite>();
-            using (var scope = new TransactionScope(sqlite))
-            {
-                Produtos = new ObservableCollection<Produto>(
-                    new DataService(sqlite).GetProdutos()
-                );
-                scope.Complete();
-            }
+            ExecuteAtualizaProdutoCommand();
 
         }
+
         ObservableCollection<Produto> _Produtos;
         public ObservableCollection<Produto> Produtos
         {
@@ -82,6 +76,26 @@ namespace Carro.ViewModels
                 await Navigation.PushAsync(new EditarProdutoPage(value));
                 IsBusy = false;
             }
+        }
+
+        Command _AtualizaProdutoCommand;
+        public Command AtualizaProdutoCommand
+        {
+            get { return _AtualizaProdutoCommand ?? (_AtualizaProdutoCommand = new Command(() => ExecuteAtualizaProdutoCommand())); }
+        }
+
+        void ExecuteAtualizaProdutoCommand()
+        {
+
+            var sqlite = DependencyService.Get<ISQLite>();
+            using (var scope = new TransactionScope(sqlite))
+            {
+                Produtos = new ObservableCollection<Produto>(
+                    new DataService(sqlite).GetProdutos()
+                );
+                scope.Complete();
+            }
+
         }
     }
 }

@@ -15,5 +15,11 @@ namespace Carro.Pages
             BindingContext = new CadastroFuncionarioViewModel(Navigation);
             InitializeComponent();
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            salarioEntry.Text = "";
+        }
     }
 }

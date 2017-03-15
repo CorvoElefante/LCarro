@@ -20,11 +20,11 @@
             <Entry 
                 Text = "{Binding nomeEntry, Mode=TwoWay}" Placeholder="Nome" Keyboard="Text"/>
             <Entry 
-                Text = "{Binding valorEntry, Mode=TwoWay}" Placeholder="Valor gasto" Keyboard="Numeric"/>
+                x:Name="valorEntry" Text = "{Binding valorEntry, Mode=TwoWay}" Placeholder="Valor gasto" Keyboard="Numeric"/>
             <Entry 
                 Text = "{Binding descricaoEntry, Mode=TwoWay}" Placeholder="Descricao" Keyboard="Text"/>
             <Entry 
-                Text = "{Binding categoriaEntry, Mode=TwoWay}" Placeholder="Categoria" Keyboard="Numeric"/>
+                x:Name="categoriaEntry" Text = "{Binding categoriaEntry, Mode=TwoWay}" Placeholder="Categoria" Keyboard="Numeric"/>
 
             <Grid
             HorizontalOptions="CenterAndExpand"

@@ -16,16 +16,10 @@ namespace Carro.ViewModels
         public ListaDespesaViewModel(INavigation navigation) : base(navigation)
         {
 
-            var sqlite = DependencyService.Get<ISQLite>();
-            using (var scope = new TransactionScope(sqlite))
-            {
-                Despesas = new ObservableCollection<Despesa>(
-                    new DataService(sqlite).GetDespesas()
-                );
-                scope.Complete();
-            }
+            ExecuteAtualizaDespesaCommand();
 
         }
+
         ObservableCollection<Despesa> _Despesas;
         public ObservableCollection<Despesa> Despesas
         {
@@ -82,6 +76,26 @@ namespace Carro.ViewModels
                 await Navigation.PushAsync(new EditarDespesaPage(value));
                 IsBusy = false;
             }
+        }
+
+        Command _AtualizaDespesaCommand;
+        public Command AtualizaDespesaCommand
+        {
+            get { return _AtualizaDespesaCommand ?? (_AtualizaDespesaCommand = new Command(() => ExecuteAtualizaDespesaCommand())); }
+        }
+
+        void ExecuteAtualizaDespesaCommand()
+        {
+
+            var sqlite = DependencyService.Get<ISQLite>();
+            using (var scope = new TransactionScope(sqlite))
+            {
+                Despesas = new ObservableCollection<Despesa>(
+                    new DataService(sqlite).GetDespesas()
+                );
+                scope.Complete();
+            }
+
         }
 
     }
