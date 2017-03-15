@@ -15,5 +15,12 @@ namespace Carro.Pages
             BindingContext = new CadastroDespesaViewModel(Navigation);
             InitializeComponent();
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            valorEntry.Text = "";
+            categoriaEntry.Text = "";
+        }
     }
 }

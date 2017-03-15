@@ -16,5 +16,11 @@ namespace Carro.Pages
             BindingContext = new CadastroServicoViewModel(Navigation);
             InitializeComponent();
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            precoEntry.Text="";
+        }
     }
 }
