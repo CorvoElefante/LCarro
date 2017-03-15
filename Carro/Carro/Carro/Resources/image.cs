@@ -46,6 +46,7 @@ namespace Carro.Resources
         public static FileImageSource IconeShield128 = new FileImageSource { File = "ic_shield128" };
         public static FileImageSource IconeBusiness128 = new FileImageSource { File = "ic_business128" };
         public static FileImageSource IconeBuy128 = new FileImageSource { File = "ic_buy128" };
+        public static FileImageSource IconeMoney128 = new FileImageSource { File = "ic_money128" };
 
         public static FileImageSource IconeAdicionar = new FileImageSource { File = "ic_adicionar" };
         public static FileImageSource IconeAdicionarPessoa = new FileImageSource { File = "ic_adicionarPessoa" };
