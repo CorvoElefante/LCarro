@@ -6,18 +6,27 @@
              Title="Novo Cliente"
              BackgroundColor="#FFFFF7">
 
-    <!--Essa page possui "backgroundcolor" claro-->
 
     <ContentPage.ToolbarItems>
         <ToolbarItem
       Icon="{x:Static resources:Images.IconeUser32}"/>
     </ContentPage.ToolbarItems>
 
-    <ScrollView>
-        <StackLayout 
-                Padding="30" 
-                Spacing="30">
-            <Grid>
+    <Grid>
+        <ScrollView
+            Grid.RowSpan="8"
+            Padding="30">
+            <Grid
+                RowSpacing="30">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
                 <Entry 
                     Grid.Column="0"
                     Grid.Row="0"
@@ -122,53 +131,57 @@
                     IsVisible="True"
                     IsOpaque="True"
                     Aspect="AspectFit"/>
-
             </Grid>
+        </ScrollView>
 
-            <Grid
-            HorizontalOptions="CenterAndExpand"
-            Margin="0"
+        <Grid
+            Grid.Row="8"
+            BackgroundColor="#444444"
             Padding="4"
-            BackgroundColor="Transparent"
-            ColumnSpacing="32">
-                <Grid
+            ColumnSpacing="-30">
+            <Grid
                 HorizontalOptions="Center"
-                Margin="4"
-                Padding="0"
-                RowSpacing="-8"
+                VerticalOptions="Center"
                 BackgroundColor="Transparent">
-                    <Image
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Image
+                    Grid.Column="1"
                     Source="ic_success64.png"
                     IsOpaque="True"/>
-                    <Label
-                    Grid.Row="1"
-                    HorizontalOptions="Center"
-                    VerticalOptions="End"
+                <Label
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
                     Text="Salvar"
+                    TextColor="#FFFFF7"
                     FontSize="Medium"/>
-                    <Grid.GestureRecognizers>
-                        <TapGestureRecognizer
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer
                         Command="{Binding SalvarPessoaCommand}"/>
-                    </Grid.GestureRecognizers>
-                </Grid>
-                <Grid
+                </Grid.GestureRecognizers>
+            </Grid>
+            <Grid
                 HorizontalOptions="Center"
-                Margin="4"
-                Padding="0"
+                VerticalOptions="Center"
                 Grid.Column="1"
-                RowSpacing="-8"
                 BackgroundColor="Transparent">
-                    <Image
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Image
                     Source="ic_error64.png"
                     IsOpaque="True"/>
-                    <Label
-                    Grid.Row="1"
-                    HorizontalOptions="Center"
-                    VerticalOptions="End"
+                <Label
+                    Grid.Column="1"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
                     Text="Deletar"
+                    TextColor="#FFFFF7"
                     FontSize="Medium"/>
-                </Grid>
             </Grid>
-        </StackLayout>
-    </ScrollView>
+        </Grid>
+    </Grid>
 </ContentPage>

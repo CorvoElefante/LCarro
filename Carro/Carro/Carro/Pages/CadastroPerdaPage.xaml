@@ -6,44 +6,90 @@
              Title="Nova Perda"
              BackgroundColor="#FFFFF7">
 
-    <!--Essa page possui "backgroundcolor" claro-->
 
     <ContentPage.ToolbarItems>
         <ToolbarItem
       Icon="{x:Static resources:Images.IconeUser32}"/>
     </ContentPage.ToolbarItems>
+    
+    <Grid>
+        <ScrollView
+            Grid.RowSpan="8"
+            Padding="30">
+            <Grid
+                RowSpacing="30">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Entry
+                    Grid.ColumnSpan="12"
+                    Text = "{Binding nomeEntry, Mode=TwoWay}" 
+                    Placeholder="Nome" 
+                    Keyboard="Text"/>
+                <Image
+                    Grid.Column="12"
+                    Source="ic_success32.png"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+                <Image
+                    Grid.Column="12"
+                    Source="ic_error32.png"
+                    IsVisible="{Binding nomeEntryInvalido}"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
 
-        <ScrollView>
-            <StackLayout 
-          Padding="30" 
-          Spacing="30">
-                <Entry 
-            Text = "{Binding nomeEntry, Mode=TwoWay}" Placeholder="Nome" Keyboard="Text"/>
-                <Entry 
-            Text = "{Binding quantidadeEntry, Mode=TwoWay}" Placeholder="Quantidade perdida" Keyboard="Numeric"/>
-                <Entry 
-            Text = "{Binding justificativaEntry, Mode=TwoWay}" Placeholder="Justificativa" Keyboard="Text"/>
+                <Entry
+                    Grid.Row="1"
+                    Grid.ColumnSpan="12"
+                    Text = "{Binding quantidadeEntry, Mode=TwoWay}" 
+                    Placeholder="Quantidade perdida" 
+                    Keyboard="Numeric"/>
+                <Image
+                    Grid.Column="12"
+                    Grid.Row="1"
+                    Source="ic_success32.png"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
 
-                <Grid
-            HorizontalOptions="CenterAndExpand"
-            Margin="0"
+                <Entry
+                    Grid.Row="2"
+                    Grid.ColumnSpan="12"
+                    Text = "{Binding justificativaEntry, Mode=TwoWay}" 
+                    Placeholder="Justificativa" 
+                    Keyboard="Text"/>
+                <Image
+                    Grid.Column="12"
+                    Grid.Row="2"
+                    Source="ic_success32.png"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+            </Grid>
+        </ScrollView>
+
+        <Grid
+            Grid.Row="8"
+            BackgroundColor="#444444"
             Padding="4"
-            BackgroundColor="Transparent"
-            ColumnSpacing="32">
+            ColumnSpacing="-30">
                     <Grid
                 HorizontalOptions="Center"
-                Margin="4"
-                Padding="0"
-                RowSpacing="-8"
+                VerticalOptions="Center"
                 BackgroundColor="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
                         <Image
+                    Grid.Column="1"
                     Source="ic_success64.png"
                     IsOpaque="True"/>
                         <Label
-                    Grid.Row="1"
-                    HorizontalOptions="Center"
-                    VerticalOptions="End"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
                     Text="Salvar"
+                    TextColor="#FFFFF7"
                     FontSize="Medium"/>
                         <Grid.GestureRecognizers>
                             <TapGestureRecognizer
@@ -52,22 +98,24 @@
                     </Grid>
                     <Grid
                 HorizontalOptions="Center"
-                Margin="4"
-                Padding="0"
+                VerticalOptions="Center"
                 Grid.Column="1"
-                RowSpacing="-8"
                 BackgroundColor="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
                         <Image
                     Source="ic_error64.png"
                     IsOpaque="True"/>
                         <Label
-                    Grid.Row="1"
-                    HorizontalOptions="Center"
-                    VerticalOptions="End"
+                    Grid.Column="1"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
                     Text="Deletar"
+                    TextColor="#FFFFF7"
                     FontSize="Medium"/>
                     </Grid>
                 </Grid>
-            </StackLayout>
-        </ScrollView>
+            </Grid>
 </ContentPage>
