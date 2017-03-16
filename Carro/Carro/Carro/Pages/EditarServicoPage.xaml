@@ -4,58 +4,58 @@
              xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
              x:Class="Carro.Pages.EditarServicoPage"
              Title="Editar Serviço"
-             BackgroundColor="#444444">
+             BackgroundColor="#FFFFF7">
 
-    <!--Essa page possui "backgroundcolor" escuro-->
 
     <ContentPage.ToolbarItems>
         <ToolbarItem
       Icon="{x:Static resources:Images.IconeUser232}"/>
     </ContentPage.ToolbarItems>
 
-    <StackLayout>
+    <Grid>
         <ScrollView
-        BackgroundColor="#FFFFF7">
-            <StackLayout 
-            Padding="30" 
-            Spacing="30">
-                <Grid>
-                    <Entry
-                Grid.Column="0"
-                Grid.Row="0"
+            Grid.RowSpan="8"
+            Padding="30">
+            <Grid
+               RowSpacing="30">
+                <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions> 
+                <Entry
                 Grid.ColumnSpan="12"
                 Text="{Binding nomeEntry, Mode=TwoWay}"
                 Placeholder="Nome"
                 Keyboard="Text"/>
-                    <Image
+                <Image
                     Grid.Column="12"
-                    Grid.Row="0"
                     Source="ic_success32.png"
                     IsOpaque="True"
                     Aspect="AspectFit"/>
-                    <Image
+                <Image
                     Grid.Column="12"
-                    Grid.Row="0"
                     Source="ic_error32.png"
                     IsVisible="{Binding nomeEntryInvalido}"
                     IsOpaque="True"
                     Aspect="AspectFit"/>
 
-                    <Entry
-                Grid.Column="0"
+                <Entry
                 Grid.Row="1"
                 Grid.ColumnSpan="12"
                 x:Name="precoEntry"
                 Text="{Binding precoEntry, Mode=TwoWay}"
                 Placeholder="Preço"
                 Keyboard="Numeric"/>
-                    <Image
+                <Image
                     Grid.Column="12"
                     Grid.Row="1"
                     Source="ic_success32.png"
                     IsOpaque="True"
                     Aspect="AspectFit"/>
-                    <Image
+                <Image
                     Grid.Column="12"
                     Grid.Row="1"
                     Source="ic_error32.png"
@@ -63,54 +63,52 @@
                     IsOpaque="True"
                     Aspect="AspectFit"/>
 
-                    <Entry
-                Grid.Column="0"
+                <Entry
                 Grid.Row="2"
                 Grid.ColumnSpan="12"
                 Text="{Binding descricaoEntry, Mode=TwoWay}"
                 Placeholder="Descrição"/>
-                    <Image
+                <Image
                     Grid.Column="12"
                     Grid.Row="2"
                     Source="ic_success32.png"
                     IsOpaque="True"
                     Aspect="AspectFit"/>
 
-                    <Entry
-                Grid.Column="0"
+                <Entry
                 Grid.Row="3"
                 Grid.ColumnSpan="12"
                 Text="{Binding tempoEntry, Mode=TwoWay}"
                 Placeholder="Tempo de conclusão"/>
-                    <Image
+                <Image
                     Grid.Column="12"
                     Grid.Row="3"
                     Source="ic_success32.png"
                     IsOpaque="True"
                     Aspect="AspectFit"/>
-                </Grid>
-            </StackLayout>
+            </Grid>
         </ScrollView>
 
         <Grid
-            HorizontalOptions="CenterAndExpand"
-            Margin="0"
+            Grid.Row="8"
+            BackgroundColor="#444444"
             Padding="4"
-            BackgroundColor="Transparent"
-            ColumnSpacing="32">
+            ColumnSpacing="-30">
             <Grid
                 HorizontalOptions="Center"
-                Margin="4"
-                Padding="0"
-                RowSpacing="-8"
+                VerticalOptions="Center"
                 BackgroundColor="Transparent">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
                 <Image
+                    Grid.Column="1"
                     Source="ic_success64.png"
                     IsOpaque="True"/>
                 <Label
-                    Grid.Row="1"
-                    HorizontalOptions="Center"
-                    VerticalOptions="End"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
                     Text="Salvar"
                     TextColor="#FFFFF7"
                     FontSize="Medium"/>
@@ -121,18 +119,20 @@
             </Grid>
             <Grid
                 HorizontalOptions="Center"
-                Margin="4"
-                Padding="0"
+                VerticalOptions="Center"
                 Grid.Column="1"
-                RowSpacing="-8"
                 BackgroundColor="Transparent">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
                 <Image
                     Source="ic_error64.png"
                     IsOpaque="True"/>
                 <Label
-                    Grid.Row="1"
-                    HorizontalOptions="Center"
-                    VerticalOptions="End"
+                    Grid.Column="1"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
                     Text="Deletar"
                     TextColor="#FFFFF7"
                     FontSize="Medium"/>
@@ -142,5 +142,5 @@
                 </Grid.GestureRecognizers>
             </Grid>
         </Grid>
-    </StackLayout>
+    </Grid>
 </ContentPage>
