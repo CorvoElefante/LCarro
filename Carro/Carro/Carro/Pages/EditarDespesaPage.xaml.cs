@@ -16,5 +16,12 @@ namespace Carro.Pages
             BindingContext = new EditarDespesaViewModel(Navigation, value);
             InitializeComponent();
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            valorEntry.Text = "";
+            categoriaEntry.Text = "";
+        }
     }
 }
