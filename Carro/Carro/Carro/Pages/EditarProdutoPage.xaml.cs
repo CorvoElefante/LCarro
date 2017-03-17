@@ -16,11 +16,5 @@ namespace Carro.Pages
             BindingContext = new EditarProdutoViewModel(Navigation, value);
             InitializeComponent();
         }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            precoEntry.Text = "";
-        }
     }
 }

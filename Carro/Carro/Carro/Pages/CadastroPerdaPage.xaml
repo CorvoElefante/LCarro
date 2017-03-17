@@ -29,8 +29,9 @@
                     Placeholder="Nome" 
                     Keyboard="Text"/>
                 <Image
+                    Margin="8"
                     Grid.Column="12"
-                    Source="ic_error32.png"
+                    Source="ic_unchecked16.png"
                     IsVisible="{Binding nomeEntryInvalido}"
                     IsOpaque="True"
                     Aspect="AspectFit"/>
