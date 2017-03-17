@@ -26,43 +26,45 @@
                 <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Entry
-                Grid.ColumnSpan="12"
-                Text="{Binding nomeEntry, Mode=TwoWay}"
-                Placeholder="Nome"
-                Keyboard="Text"/>
+                    Grid.ColumnSpan="12"
+                    Text="{Binding nomeEntry, Mode=TwoWay}"
+                    Placeholder="Nome"
+                    Keyboard="Text"/>
                 <Image
+                    Margin="8"
                     Grid.Column="12"
-                    Source="ic_error32.png"
+                    Source="ic_unchecked16.png"
                     IsVisible="{Binding nomeEntryInvalido}"
                     IsOpaque="True"
                     Aspect="AspectFit"/>
 
                 <Entry
-                Grid.Row="1"
-                Grid.ColumnSpan="12"
-                x:Name="precoEntry"
-                Text="{Binding precoEntry, Mode=TwoWay}"
-                Placeholder="Preço"
-                Keyboard="Numeric"/>
+                    Grid.Row="1"
+                    Grid.ColumnSpan="12"
+                    x:Name="precoEntry"
+                    Text="{Binding precoEntry, Mode=TwoWay}"
+                    Placeholder="Preço"
+                    Keyboard="Numeric"/>
                 <Image
+                    Margin="8"
                     Grid.Column="12"
                     Grid.Row="1"
-                    Source="ic_error32.png"
+                    Source="ic_unchecked16.png"
                     IsVisible="{Binding precoEntryInvalido}"
                     IsOpaque="True"
                     Aspect="AspectFit"/>
 
                 <Entry
-                Grid.Row="2"
-                Grid.ColumnSpan="12"
-                Text="{Binding descricaoEntry, Mode=TwoWay}"
-                Placeholder="Descrição"/>
+                    Grid.Row="2"
+                    Grid.ColumnSpan="12"
+                    Text="{Binding descricaoEntry, Mode=TwoWay}"
+                    Placeholder="Descrição"/>
 
                 <Entry
-                Grid.Row="3"
-                Grid.ColumnSpan="12"
-                Text="{Binding tempoEntry, Mode=TwoWay}"
-                Placeholder="Tempo de conclusão"/>
+                    Grid.Row="3"
+                    Grid.ColumnSpan="12"
+                    Text="{Binding tempoEntry, Mode=TwoWay}"
+                    Placeholder="Tempo de conclusão"/>
             </Grid>
         </ScrollView>
 

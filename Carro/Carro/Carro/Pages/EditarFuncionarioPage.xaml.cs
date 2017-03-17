@@ -16,11 +16,5 @@ namespace Carro.Pages
             BindingContext = new EditarFuncionarioViewModel(Navigation, value);
             InitializeComponent();
         }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            salarioEntry.Text = "";
-        }
     }
 }
