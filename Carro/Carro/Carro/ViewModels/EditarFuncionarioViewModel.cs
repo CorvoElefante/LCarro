@@ -83,6 +83,28 @@ namespace Carro.ViewModels
             {
                 _nomeEntry = value;
                 SetPropertyChanged(nameof(nomeEntry));
+                if (nomeEntry == string.Empty)
+                {
+                    nomeEntryInvalido = true;
+                }
+                else
+                {
+                    nomeEntryInvalido = false;
+                }
+            }
+        }
+
+        bool _nomeEntryInvalido = true;
+        public bool nomeEntryInvalido
+        {
+            get
+            {
+                return _nomeEntryInvalido;
+            }
+            set
+            {
+                _nomeEntryInvalido = value;
+                SetPropertyChanged(nameof(nomeEntryInvalido));
             }
         }
 

@@ -31,10 +31,32 @@ namespace Carro.ViewModels
             {
                 _nomeEntry = value;
                 SetPropertyChanged(nameof(nomeEntry));
+                if (nomeEntry == string.Empty)
+                {
+                    nomeEntryInvalido = true;
+                }
+                else
+                {
+                    nomeEntryInvalido = false;
+                }
             }
         }
 
-        float _precoEntry;
+        bool _nomeEntryInvalido = true;
+        public bool nomeEntryInvalido
+        {
+            get
+            {
+                return _nomeEntryInvalido;
+            }
+            set
+            {
+                _nomeEntryInvalido = value;
+                SetPropertyChanged(nameof(nomeEntryInvalido));
+            }
+        }
+
+        float _precoEntry = 0.0F;
         public float precoEntry
         {
             get
@@ -45,6 +67,28 @@ namespace Carro.ViewModels
             {
                 _precoEntry = value;
                 SetPropertyChanged(nameof(precoEntry));
+                if (precoEntry <= 0)
+                {
+                    precoEntryInvalido = true;
+                }
+                else
+                {
+                    precoEntryInvalido = false;
+                }
+            }
+        }
+
+        bool _precoEntryInvalido = true;
+        public bool precoEntryInvalido
+        {
+            get
+            {
+                return _precoEntryInvalido;
+            }
+            set
+            {
+                _precoEntryInvalido = value;
+                SetPropertyChanged(nameof(precoEntryInvalido));
             }
         }
 
