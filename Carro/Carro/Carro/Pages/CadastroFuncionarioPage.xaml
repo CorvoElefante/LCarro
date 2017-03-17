@@ -12,6 +12,12 @@
       Icon="{x:Static resources:Images.IconeUser32}"/>
     </ContentPage.ToolbarItems>
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <resources:FloatConverter x:Key="floatConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <Grid>
         <ScrollView
             Grid.RowSpan="8"
@@ -82,7 +88,7 @@
                     Grid.Row="7"
                     Grid.ColumnSpan="12"
                     x:Name="salarioEntry" 
-                    Text="{Binding salarioEntry, Mode=TwoWay}"  
+                    Text="{Binding salarioEntry, Mode=TwoWay, Converter={StaticResource floatConverter}}"  
                     Placeholder="Salario"/>
 
                 <Entry

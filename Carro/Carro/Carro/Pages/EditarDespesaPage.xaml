@@ -11,6 +11,12 @@
       Icon="{x:Static resources:Images.IconeUser232}"/>
     </ContentPage.ToolbarItems>
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <resources:FloatConverter x:Key="floatConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <Grid>
         <ScrollView
             Grid.RowSpan="8"
@@ -40,7 +46,7 @@
                     Grid.Row="1"
                     Grid.ColumnSpan="12"
                     x:Name="valorEntry" 
-                    Text="{Binding valorEntry, Mode=TwoWay}" 
+                    Text="{Binding valorEntry, Mode=TwoWay, Converter={StaticResource floatConverter}}" 
                     Placeholder="Valor gasto" 
                     Keyboard="Numeric"/>
                 <Image
@@ -63,7 +69,7 @@
                     Grid.Row="3"
                     Grid.ColumnSpan="12"
                     x:Name="categoriaEntry" 
-                    Text="{Binding categoriaEntry, Mode=TwoWay}" 
+                    Text="{Binding categoriaEntry, Mode=TwoWay, Converter={StaticResource floatConverter}}" 
                     Placeholder="Categoria" Keyboard="Numeric"/>
             </Grid>
         </ScrollView>

@@ -11,7 +11,13 @@
         <ToolbarItem
       Icon="{x:Static resources:Images.IconeUser32}"/>
     </ContentPage.ToolbarItems>
-    
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <resources:FloatConverter x:Key="floatConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <Grid>
         <ScrollView
             Grid.RowSpan="8"

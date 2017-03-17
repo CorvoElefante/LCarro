@@ -120,6 +120,7 @@
     <Compile Include="Repositories\Interfaces\IUnitOfWork.cs" />
     <Compile Include="Repositories\TransactionScope.cs" />
     <Compile Include="Repositories\UnitOfWork.cs" />
+    <Compile Include="Resources\FloatConverter.cs" />
     <Compile Include="Resources\image.cs" />
     <Compile Include="Services\DataService.cs" />
     <Compile Include="App.xaml.cs">

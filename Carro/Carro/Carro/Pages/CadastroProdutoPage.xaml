@@ -13,6 +13,12 @@
       Icon="{x:Static resources:Images.IconeUser32}"/>
     </ContentPage.ToolbarItems>
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <resources:FloatConverter x:Key="floatConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <Grid>
         <ScrollView
             Grid.RowSpan="8"
@@ -43,7 +49,7 @@
                     Grid.Row="1"
                     Grid.ColumnSpan="12"
                     x:Name="precoEntry" 
-                    Text = "{Binding precoEntry, Mode=TwoWay}" 
+                    Text = "{Binding precoEntry, Mode=TwoWay, Converter={StaticResource floatConverter}}" 
                     Placeholder="Preco" 
                     Keyboard="Numeric"/>
                 <Image
