@@ -163,21 +163,25 @@ namespace Carro.ViewModels
 
         async Task ExecuteSalvarDespesaCommand()
         {
-            if (!IsBusy)
+            if (!(nomeEntry == string.Empty || valorEntry <= 0))
             {
-                IsBusy = true;
-
-                var sqlite = DependencyService.Get<ISQLite>();
-                using (var scope = new TransactionScope(sqlite))
+                if (!IsBusy)
                 {
-                    var service = new DataService(sqlite);
+                    IsBusy = true;
 
-                    service.SaveDespesa(new Despesa { Id = idEntry, Nome = nomeEntry, Valor = valorEntry, Descricao = descricaoEntry, Categoria = categoriaEntry });
-                    scope.Complete();
+                    var sqlite = DependencyService.Get<ISQLite>();
+                    using (var scope = new TransactionScope(sqlite))
+                    {
+                        var service = new DataService(sqlite);
+
+                        service.SaveDespesa(new Despesa { Id = idEntry, Nome = nomeEntry, Valor = valorEntry, Descricao = descricaoEntry, Categoria = categoriaEntry });
+                        scope.Complete();
+                    }
+                    await Navigation.PopAsync();
+                    IsBusy = false;
                 }
-
-                IsBusy = false;
             }
+
         }
 
         Command _DeletarDespesaCommand;
@@ -200,7 +204,7 @@ namespace Carro.ViewModels
                     service.DeleteDespesa(despesaEntry);
                     scope.Complete();
                 }
-
+                await Navigation.PopAsync();
                 IsBusy = false;
             }
         }

@@ -148,20 +148,29 @@ namespace Carro.ViewModels
 
         async Task ExecuteSalvarPessoaCommand()
         {
-            if (!IsBusy)
+            if (nomeEntry != string.Empty)
             {
-                IsBusy = true;
-
-                var sqlite = DependencyService.Get<ISQLite>();
-                using (var scope = new TransactionScope(sqlite))
+                if (!IsBusy)
                 {
-                    var service = new DataService(sqlite);
+                    IsBusy = true;
 
-                    service.SavePessoa(new Pessoa { Nome = nomeEntry, RuaN = ruaNEntry, Bairro = bairroEntry, Telefone = telefoneEntry, Email = emailEntry, Data = ndataEntry, Cpf = cpfEntry });
-                    scope.Complete();
+                    var sqlite = DependencyService.Get<ISQLite>();
+                    using (var scope = new TransactionScope(sqlite))
+                    {
+                        var service = new DataService(sqlite);
+
+                        service.SavePessoa(new Pessoa { Nome = nomeEntry, RuaN = ruaNEntry, Bairro = bairroEntry, Telefone = telefoneEntry, Email = emailEntry, Data = ndataEntry, Cpf = cpfEntry });
+                        scope.Complete();
+                    }
+                    await Navigation.PopAsync();
+                    IsBusy = false;
                 }
-                IsBusy = false;
             }
+            else
+            {
+                nomeEntry = string.Empty;
+            }
+
         }
 
     }

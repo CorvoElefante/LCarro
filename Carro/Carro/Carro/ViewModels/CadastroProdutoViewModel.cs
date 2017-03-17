@@ -154,20 +154,25 @@ namespace Carro.ViewModels
 
         async Task ExecuteSalvarProdutoCommand()
         {
-            if (!IsBusy)
+            if (!(nomeEntry == string.Empty || precoEntry <= 0))
             {
-                IsBusy = true;
-
-                var sqlite = DependencyService.Get<ISQLite>();
-                using (var scope = new TransactionScope(sqlite))
+                if (!IsBusy)
                 {
-                    var service = new DataService(sqlite);
+                    IsBusy = true;
 
-                    service.SaveProduto(new Produto {Nome = nomeEntry, Preco = precoEntry, Quantidade = quantidadeEntry, Marca = marcaEntry, Descricao = descricaoEntry, Local = localEntry });
-                    scope.Complete();
+                    var sqlite = DependencyService.Get<ISQLite>();
+                    using (var scope = new TransactionScope(sqlite))
+                    {
+                        var service = new DataService(sqlite);
+
+                        service.SaveProduto(new Produto { Nome = nomeEntry, Preco = precoEntry, Quantidade = quantidadeEntry, Marca = marcaEntry, Descricao = descricaoEntry, Local = localEntry });
+                        scope.Complete();
+                    }
+                    await Navigation.PopAsync();
+                    IsBusy = false;
                 }
-                IsBusy = false;
             }
+            
         }
 
     }

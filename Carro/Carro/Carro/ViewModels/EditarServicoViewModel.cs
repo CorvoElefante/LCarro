@@ -161,20 +161,25 @@ namespace Carro.ViewModels
 
         async Task ExecuteSalvarServicoCommand()
         {
-            if (!IsBusy)
+            if (!(nomeEntry == string.Empty || precoEntry <= 0))
             {
-                IsBusy = true;
-
-                var sqlite = DependencyService.Get<ISQLite>();
-                using (var scope = new TransactionScope(sqlite))
+                if (!IsBusy)
                 {
-                    var service = new DataService(sqlite);
+                    IsBusy = true;
 
-                    service.SaveServico(new Servico { Id = idEntry, Nome = nomeEntry, Preco = precoEntry, Descricao = descricaoEntry, Tempo = tempoEntry });
-                    scope.Complete();
+                    var sqlite = DependencyService.Get<ISQLite>();
+                    using (var scope = new TransactionScope(sqlite))
+                    {
+                        var service = new DataService(sqlite);
+
+                        service.SaveServico(new Servico { Id = idEntry, Nome = nomeEntry, Preco = precoEntry, Descricao = descricaoEntry, Tempo = tempoEntry });
+                        scope.Complete();
+                    }
+                    await Navigation.PopAsync();
+                    IsBusy = false;
                 }
-                IsBusy = false;
             }
+                
         }
 
         Command _DeletarServicoCommand;
@@ -197,7 +202,7 @@ namespace Carro.ViewModels
                     service.DeleteServico(servicoEntry);
                     scope.Complete();
                 }
-
+                await Navigation.PopAsync();
                 IsBusy = false;
             }
         }

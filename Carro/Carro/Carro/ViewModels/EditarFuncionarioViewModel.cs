@@ -228,24 +228,27 @@ namespace Carro.ViewModels
 
         async Task ExecuteSalvarFuncionarioCommand()
         {
-            if (!IsBusy)
+            if (nomeEntry != string.Empty)
             {
-                IsBusy = true;
-
-                var sqlite = DependencyService.Get<ISQLite>();
-                using (var scope = new TransactionScope(sqlite))
+                if (!IsBusy)
                 {
-                    var service = new DataService(sqlite);
-                    var Pessoa = new Pessoa { Id = idEntryPessoa, Nome = nomeEntry, RuaN = ruaNEntry, Bairro = bairroEntry, Telefone = telefoneEntry, Email = emailEntry, Data = ndataEntry, Cpf = cpfEntry };
-                    service.SavePessoa(Pessoa);
+                    IsBusy = true;
 
-                    service.SaveFuncionario(new Funcionario { Id = idEntryFuncionario, Salario = salarioEntry, Funcao = funcaoEntry, Pessoa = Pessoa });
+                    var sqlite = DependencyService.Get<ISQLite>();
+                    using (var scope = new TransactionScope(sqlite))
+                    {
+                        var service = new DataService(sqlite);
+                        var Pessoa = new Pessoa { Id = idEntryPessoa, Nome = nomeEntry, RuaN = ruaNEntry, Bairro = bairroEntry, Telefone = telefoneEntry, Email = emailEntry, Data = ndataEntry, Cpf = cpfEntry };
+                        service.SavePessoa(Pessoa);
 
-                    scope.Complete();
+                        service.SaveFuncionario(new Funcionario { Id = idEntryFuncionario, Salario = salarioEntry, Funcao = funcaoEntry, Pessoa = Pessoa });
+
+                        scope.Complete();
+                    }
+                    await Navigation.PopAsync();
+                    IsBusy = false;
                 }
-
-                IsBusy = false;
-            }
+            }               
         }
 
         Command _DeletarFuncionarioCommand;
@@ -268,7 +271,7 @@ namespace Carro.ViewModels
                     service.DeleteFuncionario(funcionarioEntry);
                     scope.Complete();
                 }
-
+                await Navigation.PopAsync();
                 IsBusy = false;
             }
         }
