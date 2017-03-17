@@ -33,11 +33,6 @@
                     Keyboard="Text"/>
                 <Image
                     Grid.Column="12"
-                    Source="ic_success32.png"
-                    IsOpaque="True"
-                    Aspect="AspectFit"/>
-                <Image
-                    Grid.Column="12"
                     Source="ic_error32.png"
                     IsVisible="{Binding nomeEntryInvalido}"
                     IsOpaque="True"
@@ -48,74 +43,36 @@
                     Grid.ColumnSpan="12"
                     Text="{Binding ruaNEntry, Mode=TwoWay}" 
                     Placeholder="Rua"/>
-                <Image
-                    Grid.Column="12"
-                    Grid.Row="1"
-                    Source="ic_success32.png"
-                    IsOpaque="True"
-                    Aspect="AspectFit"/>
 
                 <Entry
                     Grid.Row="2"
                     Grid.ColumnSpan="12"
                     Text="{Binding bairroEntry, Mode=TwoWay}" 
                     Placeholder="Bairro"/>
-                <Image
-                    Grid.Column="12"
-                    Grid.Row="2"
-                    Source="ic_success32.png"
-                    IsOpaque="True"
-                    Aspect="AspectFit"/>
 
                 <Entry
                     Grid.Row="3"
                     Grid.ColumnSpan="12"
                     Text="{Binding cpfEntry, Mode=TwoWay}" 
                     Placeholder="CPF" Keyboard="Numeric"/>
-                <Image
-                    Grid.Column="12"
-                    Grid.Row="3"
-                    Source="ic_success32.png"
-                    IsOpaque="True"
-                    Aspect="AspectFit"/>
 
                 <Entry
                     Grid.Row="4"
                     Grid.ColumnSpan="12"
                     Text ="{Binding telefoneEntry, Mode=TwoWay}" 
                     Placeholder="Telefone" Keyboard="Telephone"/>
-                <Image
-                    Grid.Column="12"
-                    Grid.Row="4"
-                    Source="ic_success32.png"
-                    IsOpaque="True"
-                    Aspect="AspectFit"/>
 
                 <Entry
                     Grid.Row="5"
                     Grid.ColumnSpan="12"
                     Text="{Binding ndataEntry, Mode=TwoWay}" 
                     Placeholder="Data de nascimento" Keyboard="Numeric"/>
-                <Image
-                    Grid.Column="12"
-                    Grid.Row="5"
-                    Source="ic_success32.png"
-                    IsVisible="True"
-                    IsOpaque="True"
-                    Aspect="AspectFit"/>
 
                 <Entry
                     Grid.Row="6"
                     Grid.ColumnSpan="12"
                     Text="{Binding emailEntry, Mode=TwoWay}"  
                     Placeholder="Email" Keyboard="Email"/>
-                <Image
-                    Grid.Column="12"
-                    Grid.Row="6"
-                    Source="ic_success32.png"
-                    IsVisible="True"
-                    IsOpaque="True"
-                    Aspect="AspectFit"/>
 
                 <Entry
                     Grid.Row="7"
@@ -123,26 +80,12 @@
                     x:Name="salarioEntry" 
                     Text="{Binding salarioEntry, Mode=TwoWay}"  
                     Placeholder="Salario"/>
-                <Image
-                    Grid.Column="12"
-                    Grid.Row="7"
-                    Source="ic_success32.png"
-                    IsVisible="True"
-                    IsOpaque="True"
-                    Aspect="AspectFit"/>
 
                 <Entry
                     Grid.Row="8"
                     Grid.ColumnSpan="12"
                     Text="{Binding funcaoEntry, Mode=TwoWay}"  
                     Placeholder="Função"></Entry>
-                <Image
-                    Grid.Column="12"
-                    Grid.Row="8"
-                    Source="ic_success32.png"
-                    IsVisible="True"
-                    IsOpaque="True"
-                    Aspect="AspectFit"/>
             </Grid>
         </ScrollView>
 

@@ -34,12 +34,6 @@
                 <Image
                     Grid.Column="12"
                     Grid.Row="0"
-                    Source="ic_success32.png"
-                    IsOpaque="True"
-                    Aspect="AspectFit"/>
-                <Image
-                    Grid.Column="12"
-                    Grid.Row="0"
                     Source="ic_error32.png"
                     IsVisible="{Binding nomeEntryInvalido}"
                     IsOpaque="True"
@@ -56,12 +50,6 @@
                 <Image
                     Grid.Column="12"
                     Grid.Row="1"
-                    Source="ic_success32.png"
-                    IsOpaque="True"
-                    Aspect="AspectFit"/>
-                <Image
-                    Grid.Column="12"
-                    Grid.Row="1"
                     Source="ic_error32.png"
                     IsVisible="{Binding valorEntryInvalido}"
                     IsOpaque="True"
@@ -74,12 +62,6 @@
                     Text="{Binding descricaoEntry, Mode=TwoWay}" 
                     Placeholder="Descrição" 
                     Keyboard="Text"/>
-                <Image
-                    Grid.Column="12"
-                    Grid.Row="2"
-                    Source="ic_success32.png"
-                    IsOpaque="True"
-                    Aspect="AspectFit"/>
 
                 <Entry 
                     Grid.Column="0"
@@ -88,18 +70,12 @@
                     x:Name="categoriaEntry" 
                     Text="{Binding categoriaEntry, Mode=TwoWay}" 
                     Placeholder="Categoria" Keyboard="Numeric"/>
-                <Image
-                    Grid.Column="12"
-                    Grid.Row="3"
-                    Source="ic_success32.png"
-                    IsOpaque="True"
-                    Aspect="AspectFit"/>
             </Grid>
         </ScrollView>
 
         <Grid
             Grid.Row="8"
-            BackgroundColor="#444444"
+            BackgroundColor="Transparent"
             Padding="4"
             ColumnSpacing="-30">
             <Grid
@@ -118,7 +94,7 @@
                     HorizontalOptions="End"
                     VerticalOptions="Center"
                     Text="Salvar"
-                    TextColor="#FFFFF7"
+                    TextColor="#444444"
                     FontSize="Medium"/>
                 <Grid.GestureRecognizers>
                     <TapGestureRecognizer
@@ -142,7 +118,7 @@
                     HorizontalOptions="End"
                     VerticalOptions="Center"
                     Text="Deletar"
-                    TextColor="#FFFFF7"
+                    TextColor="#444444"
                     FontSize="Medium"/>
             </Grid>
         </Grid>

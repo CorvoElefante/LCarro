@@ -24,17 +24,12 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions> 
+                </Grid.RowDefinitions>
                 <Entry
                 Grid.ColumnSpan="12"
                 Text="{Binding nomeEntry, Mode=TwoWay}"
                 Placeholder="Nome"
                 Keyboard="Text"/>
-                <Image
-                    Grid.Column="12"
-                    Source="ic_success32.png"
-                    IsOpaque="True"
-                    Aspect="AspectFit"/>
                 <Image
                     Grid.Column="12"
                     Source="ic_error32.png"
@@ -52,12 +47,6 @@
                 <Image
                     Grid.Column="12"
                     Grid.Row="1"
-                    Source="ic_success32.png"
-                    IsOpaque="True"
-                    Aspect="AspectFit"/>
-                <Image
-                    Grid.Column="12"
-                    Grid.Row="1"
                     Source="ic_error32.png"
                     IsVisible="{Binding precoEntryInvalido}"
                     IsOpaque="True"
@@ -68,24 +57,12 @@
                 Grid.ColumnSpan="12"
                 Text="{Binding descricaoEntry, Mode=TwoWay}"
                 Placeholder="Descrição"/>
-                <Image
-                    Grid.Column="12"
-                    Grid.Row="2"
-                    Source="ic_success32.png"
-                    IsOpaque="True"
-                    Aspect="AspectFit"/>
 
                 <Entry
                 Grid.Row="3"
                 Grid.ColumnSpan="12"
                 Text="{Binding tempoEntry, Mode=TwoWay}"
                 Placeholder="Tempo de conclusão"/>
-                <Image
-                    Grid.Column="12"
-                    Grid.Row="3"
-                    Source="ic_success32.png"
-                    IsOpaque="True"
-                    Aspect="AspectFit"/>
             </Grid>
         </ScrollView>
 
