@@ -152,6 +152,21 @@ namespace Carro.ViewModels
             {
                 _quantidadeAdicionadaEntry = value;
                 SetPropertyChanged(nameof(quantidadeAdicionadaEntry));
+                quantidadeTotalEntry = quantidadeEntry + quantidadeAdicionadaEntry;
+            }
+        }
+
+        int _quantidadeTotalEntry;
+        public int quantidadeTotalEntry
+        {
+            get
+            {
+                return _quantidadeTotalEntry;
+            }
+            set
+            {
+                _quantidadeTotalEntry = value;
+                SetPropertyChanged(nameof(quantidadeTotalEntry));
             }
         }
 
