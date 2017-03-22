@@ -141,6 +141,35 @@ namespace Carro.ViewModels
             }
         }
 
+        int _quantidadeAdicionadaEntry = 0;
+        public int quantidadeAdicionadaEntry
+        {
+            get
+            {
+                return _quantidadeAdicionadaEntry;
+            }
+            set
+            {
+                _quantidadeAdicionadaEntry = value;
+                SetPropertyChanged(nameof(quantidadeAdicionadaEntry));
+                quantidadeTotalEntry = quantidadeEntry + quantidadeAdicionadaEntry;
+            }
+        }
+
+        int _quantidadeTotalEntry;
+        public int quantidadeTotalEntry
+        {
+            get
+            {
+                return _quantidadeTotalEntry;
+            }
+            set
+            {
+                _quantidadeTotalEntry = value;
+                SetPropertyChanged(nameof(quantidadeTotalEntry));
+            }
+        }
+
         string _marcaEntry = string.Empty;
         public string marcaEntry
         {
@@ -202,7 +231,7 @@ namespace Carro.ViewModels
                     {
                         var service = new DataService(sqlite);
 
-                        service.SaveProduto(new Produto { Id = idEntry, Nome = nomeEntry, Preco = precoEntry, Quantidade = quantidadeEntry, Marca = marcaEntry, Descricao = descricaoEntry, Local = localEntry });
+                        service.SaveProduto(new Produto { Id = idEntry, Nome = nomeEntry, Preco = precoEntry, Quantidade = (quantidadeEntry + quantidadeAdicionadaEntry), Marca = marcaEntry, Descricao = descricaoEntry, Local = localEntry });
                         scope.Complete();
                     }
                     await Navigation.PopAsync();
