@@ -78,6 +78,47 @@
                     Grid.ColumnSpan="12"
                     Text = "{Binding localEntry, Mode=TwoWay}" 
                     Placeholder="Local no estoque"/>
+
+                <Grid 
+                    Grid.Row="5"
+                    Grid.ColumnSpan="12">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label
+                        Grid.ColumnSpan="11"
+                        FontSize="Large"
+                        Text="Quantidade em estoque:"/>
+                    <Label
+                        Grid.Column="11"
+                        FontSize="Large"
+                        Text="{Binding quantidadeEntry}"/>
+                    
+                    <Label
+                        Grid.ColumnSpan="4"
+                        Grid.Row="1"
+                        FontSize="Large"
+                        Text="Adicionar:"/>
+                    <Entry
+                        Grid.Row="1"
+                        Grid.Column="4"
+                        Text="{Binding quantidadeAdicionadaEntry, Converter={StaticResource floatConverter}}"/>
+
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="5"
+                        Grid.ColumnSpan="2"
+                        FontSize="Large"
+                        Text="Total"/>
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="8"
+                        FontSize="Large"
+                        Text="{Binding quatidadeTotalEntry}"/>
+
+
+                </Grid>
             </Grid>
         </ScrollView>
 
