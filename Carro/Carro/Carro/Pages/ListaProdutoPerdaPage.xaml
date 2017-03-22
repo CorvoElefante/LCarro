@@ -2,17 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
-             x:Class="Carro.Pages.ListaProdutoPage"
+             x:Class="Carro.Pages.ListaProdutoPerdaPage"
              Title="Produtos"
              BackgroundColor="#FFFFF7">
-
-    <ContentPage.ToolbarItems>
-        <ToolbarItem
-      Icon="{x:Static resources:Images.IconeUser132}"
-      Command="{Binding AddProdutoCommand}"/>
-        <ToolbarItem
-      Icon="{x:Static resources:Images.IconeProdutos32}"/>
-    </ContentPage.ToolbarItems>
 
     <ListView
 			HorizontalOptions="FillAndExpand"
@@ -41,32 +33,28 @@
             <DataTemplate>
                 <ViewCell>
                     <Grid 
-                      Margin="2"
-                      Padding="2"
-                      RowSpacing="0"
-                      ColumnSpacing="0"
-                      BackgroundColor="Transparent">
-                        
+              Margin="2"
+              Padding="2"
+              RowSpacing="0"
+              ColumnSpacing="0"
+              BackgroundColor="Transparent">
                         <Label 
-                            Grid.ColumnSpan="2"
-							FontAttributes="Bold"
-							FontSize="Large"
-							Text="{Binding Nome}"/>
-                        
+                Grid.ColumnSpan="2"
+								FontAttributes="Bold"
+								FontSize="Large"
+								Text="{Binding Nome}"/>
                         <Label 
-                            Grid.Column="1"
-                            HorizontalOptions="End"
-							Text="{Binding Preco}"/>
-                        
+                Grid.Column="1"
+                HorizontalOptions="End"
+								Text="{Binding Preco}"/>
                         <Label 
-                            Grid.Row="1"
-							Text="{Binding Marca}"/>
-                        
+                Grid.Row="1"
+								Text="{Binding Marca}"/>
                         <Label 
-                            Grid.Row="1" 
-                            Grid.Column="1"
-                            HorizontalOptions="End"
-						    Text="{Binding Quantidade}"/>
+                Grid.Row="1" 
+                Grid.Column="1"
+                HorizontalOptions="End"
+								Text="{Binding Quantidade}"/>
                     </Grid>
                 </ViewCell>
             </DataTemplate>

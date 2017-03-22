@@ -88,6 +88,9 @@
     <Compile Include="Pages\ListaProdutoPage.xaml.cs">
       <DependentUpon>ListaProdutoPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ListaProdutoPerdaPage.xaml.cs">
+      <DependentUpon>ListaProdutoPerdaPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ListaServicoPage.xaml.cs">
       <DependentUpon>ListaServicoPage.xaml</DependentUpon>
     </Compile>
@@ -145,6 +148,7 @@
     <Compile Include="ViewModels\ListaDespesaViewModel.cs" />
     <Compile Include="ViewModels\ListaFuncionarioViewModel.cs" />
     <Compile Include="ViewModels\ListaPerdaViewModel.cs" />
+    <Compile Include="ViewModels\ListaProdutoPerdaViewModel.cs" />
     <Compile Include="ViewModels\ListaProdutoViewModel.cs" />
     <Compile Include="ViewModels\ListaServicoViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
@@ -301,6 +305,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\LoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\ListaProdutoPerdaPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

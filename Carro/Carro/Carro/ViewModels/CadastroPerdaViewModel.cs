@@ -20,6 +20,39 @@ namespace Carro.ViewModels
 
         }
 
+        public class ListaProdutoPerda
+        {
+            public long? Id { get; set; }
+
+            public string Nome { get; set; }
+
+            public float Preco { get; set; }
+
+            public int Quantidade { get; set; }
+
+            public string Marca { get; set; }
+
+            public string Descricao { get; set; }
+
+            public string Local { get; set; }
+
+            public int QuantidadePerdida { get; set; }
+        }
+
+        ObservableCollection<ListaProdutoPerda> _ListaProdutoPerdas;
+        public ObservableCollection<ListaProdutoPerda> ListaProdutoPerdas
+        {
+            get
+            {
+                return _ListaProdutoPerdas;
+            }
+            set
+            {
+                _ListaProdutoPerdas = value;
+                SetPropertyChanged(nameof(ListaProdutoPerdas));
+            }
+        }
+
         string _nomeEntry = string.Empty;
         public string nomeEntry
         {
@@ -34,17 +67,17 @@ namespace Carro.ViewModels
             }
         }
 
-        int _quantidadeEntry = 0;
-        public int quantidadeEntry
+        bool _nomeEntryInvalido = true;
+        public bool nomeEntryInvalido
         {
             get
             {
-                return _quantidadeEntry;
+                return _nomeEntryInvalido;
             }
             set
             {
-                _quantidadeEntry = value;
-                SetPropertyChanged(nameof(quantidadeEntry));
+                _nomeEntryInvalido = value;
+                SetPropertyChanged(nameof(nomeEntryInvalido));
             }
         }
 
@@ -59,6 +92,22 @@ namespace Carro.ViewModels
             {
                 _justificativaEntry = value;
                 SetPropertyChanged(nameof(justificativaEntry));
+            }
+        }
+
+        Command _ListaProdutoCommand;
+        public Command ListaProdutoCommand
+        {
+            get { return _ListaProdutoCommand ?? (_ListaProdutoCommand = new Command(async () => await ExecuteListaProdutoCommand())); }
+        }
+
+        async Task ExecuteListaProdutoCommand()
+        {
+            if (!IsBusy)
+            {
+                IsBusy = true;
+                await Navigation.PushAsync(new ListaProdutoPerdaPage());
+                IsBusy = false;
             }
         }
 

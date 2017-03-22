@@ -18,13 +18,14 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <Grid>
+    <!--<Grid>
         <ScrollView
             Grid.RowSpan="8"
             Padding="30">
             <Grid
                 RowSpacing="30">
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -45,67 +46,159 @@
                 <Entry
                     Grid.Row="1"
                     Grid.ColumnSpan="12"
-                    Text = "{Binding quantidadeEntry, Mode=TwoWay}" 
-                    Placeholder="Quantidade perdida" 
-                    Keyboard="Numeric"/>
-
-                <Entry
-                    Grid.Row="2"
-                    Grid.ColumnSpan="12"
                     Text = "{Binding justificativaEntry, Mode=TwoWay}" 
                     Placeholder="Justificativa" 
                     Keyboard="Text"/>
-            </Grid>
-        </ScrollView>
 
-        <Grid
+                <Label
+                    Grid.Row="2"
+                    Grid.Column="3"
+                    Grid.ColumnSpan="4"
+                    Text="Adicionar Produto">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer
+                        Command="{Binding ListaProdutoCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <ListView
+			        HorizontalOptions="FillAndExpand"
+			        VerticalOptions="FillAndExpand"
+			        HasUnevenRows="true"
+			        SeparatorVisibility="None"
+			        Header="{Binding .}"
+			        ItemsSource="{Binding ListaProdutoPerdas}"
+			        ItemTapped="Handle_ItemTapped">
+
+                    <x:Arguments>
+                        <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
+                    </x:Arguments>
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid 
+                      Margin="2"
+                      Padding="2"
+                      RowSpacing="0"
+                      ColumnSpacing="0"
+                      BackgroundColor="Transparent">
+
+                                    <Label 
+                            Grid.ColumnSpan="2"
+							FontAttributes="Bold"
+							FontSize="Large"
+							Text="{Binding Nome}"/>
+
+                                    <Label 
+                            Grid.Row="1"
+							Text="{Binding Marca}"/>
+
+                                    <Label 
+                            Grid.Row="1" 
+                            Grid.Column="1"
+                            HorizontalOptions="End"
+						    Text="{Binding Quantidade}"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </ScrollView>-->
+
+        <!--<Grid
             Grid.Row="8"
             BackgroundColor="Transparent"
             Padding="4"
             ColumnSpacing="-30">
-                    <Grid
+            <Grid
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 BackgroundColor="Transparent">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="Auto"/>
-                        </Grid.ColumnDefinitions>
-                        <Image
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Image
                     Grid.Column="1"
                     Source="ic_success64.png"
                     IsOpaque="True"/>
-                        <Label
+                <Label
                     HorizontalOptions="End"
                     VerticalOptions="Center"
                     Text="Salvar"
                     TextColor="#444444"
                     FontSize="Medium"/>
-                        <Grid.GestureRecognizers>
-                            <TapGestureRecognizer
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer
                         Command="{Binding SalvarPerdaCommand}"/>
-                        </Grid.GestureRecognizers>
-                    </Grid>
-                    <Grid
+                </Grid.GestureRecognizers>
+            </Grid>
+            <Grid
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 Grid.Column="1"
                 BackgroundColor="Transparent">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="Auto"/>
-                        </Grid.ColumnDefinitions>
-                        <Image
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Image
                     Source="ic_error64.png"
                     IsOpaque="True"/>
-                        <Label
+                <Label
                     Grid.Column="1"
                     HorizontalOptions="End"
                     VerticalOptions="Center"
                     Text="Deletar"
                     TextColor="#444444"
                     FontSize="Medium"/>
-                    </Grid>
-                </Grid>
             </Grid>
+        </Grid>
+    </Grid>-->
+
+    <ListView
+			        HorizontalOptions="FillAndExpand"
+			        VerticalOptions="FillAndExpand"
+			        HasUnevenRows="true"
+			        SeparatorVisibility="None"
+			        Header="{Binding .}"
+			        ItemsSource="{Binding ListaProdutoPerdas}"
+			        ItemTapped="Handle_ItemTapped">
+
+        <x:Arguments>
+            <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
+        </x:Arguments>
+
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid 
+                      Margin="2"
+                      Padding="2"
+                      RowSpacing="0"
+                      ColumnSpacing="0"
+                      BackgroundColor="Transparent">
+
+                        <Label 
+                            Grid.ColumnSpan="2"
+							FontAttributes="Bold"
+							FontSize="Large"
+							Text="{Binding Nome}"/>
+
+                        <Label 
+                            Grid.Row="1"
+							Text="{Binding Marca}"/>
+
+                        <Label 
+                            Grid.Row="1" 
+                            Grid.Column="1"
+                            HorizontalOptions="End"
+						    Text="{Binding Quantidade}"/>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 </ContentPage>

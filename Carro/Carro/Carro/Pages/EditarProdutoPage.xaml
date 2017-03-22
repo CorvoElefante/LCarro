@@ -103,7 +103,7 @@
                     <Entry
                         Grid.Row="1"
                         Grid.Column="4"
-                        Text="{Binding quantidadeAdicionadaEntry, Converter={StaticResource floatConverter}}"/>
+                        Text="{Binding quantidadeAdicionadaEntry}"/>
 
                     <Label
                         Grid.Row="1"
@@ -115,7 +115,7 @@
                         Grid.Row="1"
                         Grid.Column="8"
                         FontSize="Large"
-                        Text="{Binding quatidadeTotalEntry}"/>
+                        Text="{Binding quantidadeTotalEntry}"/>
 
 
                 </Grid>
