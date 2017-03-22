@@ -71,13 +71,37 @@
                     Placeholder="Descrição" 
                     Keyboard="Text"/>
 
-                <Entry 
+                <!--<Entry 
                     Grid.Column="0"
                     Grid.Row="3"
                     Grid.ColumnSpan="12"
                     x:Name="categoriaEntry" 
                     Text="{Binding categoriaEntry, Mode=TwoWay, Converter={StaticResource floatConverter}}" 
-                    Placeholder="Categoria" Keyboard="Numeric"/>
+                    Placeholder="Categoria" Keyboard="Numeric"/>-->
+
+                <Picker
+                    Grid.Row="3"
+                    Grid.ColumnSpan="12"
+                    SelectedIndex="{Binding categoriaEntry}">
+                    <Picker.Items>
+                        <x:String>Selecione a categoria</x:String>
+                        <x:String>Alimentação</x:String>
+                        <x:String>Compra de produtos</x:String>
+                        <x:String>Funcionários</x:String>
+                        <x:String>Manutenção</x:String>
+                        <x:String>Materias de Escritório</x:String>
+                        <x:String>Materias de Limpeza</x:String>
+                        <x:String>Outros</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Image
+                    Margin="8"
+                    Grid.Column="12"
+                    Grid.Row="3"
+                    Source="ic_unchecked16.png"
+                    IsVisible="{Binding categoriaEntryInvalido}"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
             </Grid>
         </ScrollView>
 

@@ -152,6 +152,37 @@ namespace Carro.ViewModels
             {
                 _categoriaEntry = value;
                 SetPropertyChanged(nameof(categoriaEntry));
+                if (categoriaEntry == 0)
+                {
+                    categoriaEntryInvalido = true;
+                }
+                else
+                {
+                    categoriaEntryInvalido = false;
+                }
+                //0 = Selecione a categoria (Invalido)
+                //1 = Alimentação
+                //2 = Compra de produtos
+                //3 = Funcionários
+                //4 = Manutenção
+                //5 = Materias de Escritório
+                //6 = Materias de Limpeza
+                //7 = Outros
+            }
+        }
+
+        bool _categoriaEntryInvalido = true;
+        public bool categoriaEntryInvalido
+        {
+            get
+            {
+                return _categoriaEntryInvalido;
+            }
+            set
+            {
+                _categoriaEntryInvalido = value;
+                SetPropertyChanged(nameof(categoriaEntryInvalido));
+                //0 = Selecione a categoria (Invalido)
             }
         }
 

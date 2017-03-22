@@ -20,5 +20,13 @@ namespace Carro.Models
         public float Valor { get; set; }
 
         public int Categoria { get; set; }
+        //0 = Selecione a categoria (Invalido)
+        //1 = Alimentação
+        //2 = Compra de produtos
+        //3 = Funcionários
+        //4 = Manutenção
+        //5 = Materias de Escritório
+        //6 = Materias de Limpeza
+        //7 = Outros
     }
 }
