@@ -24,7 +24,7 @@ namespace Carro.Services
 
         public List<Pessoa> GetPessoas()
         {
-            return UnitOfWork.PessoaRepository.GetAll().ToList();
+            return UnitOfWork.PessoaRepository.GetAll().OrderBy(Pessoa => Pessoa.Nome).ToList();
         }
 
         public void SavePessoa(Pessoa pessoa)
@@ -35,7 +35,7 @@ namespace Carro.Services
         public List<Pessoa> FindPessoaByNome(string nome)
         {
 
-            return UnitOfWork.PessoaRepository.Find(a => a.Nome.Contains(nome)).ToList();
+            return UnitOfWork.PessoaRepository.Find(a => a.Nome.Contains(nome)).OrderBy(Pessoa => Pessoa.Nome).ToList();
         }
 
         public void DeletePessoa(Pessoa pessoa)
@@ -49,7 +49,7 @@ namespace Carro.Services
 
         public List<Despesa> GetDespesas()
         {
-            return UnitOfWork.DespesaRepository.GetAll().ToList();
+            return UnitOfWork.DespesaRepository.GetAll().OrderBy(Despesa => Despesa.Nome).ToList();
         }
 
         public void SaveDespesa(Despesa despesa)
@@ -59,7 +59,7 @@ namespace Carro.Services
 
         public List<Despesa> FindDespesaByNome(string nome)
         {
-            return UnitOfWork.DespesaRepository.Find(a => a.Nome.Contains(nome)).ToList();
+            return UnitOfWork.DespesaRepository.Find(a => a.Nome.Contains(nome)).OrderBy(Despesa => Despesa.Nome).ToList();
         }
 
         public void DeleteDespesa(Despesa despesa)
@@ -106,11 +106,11 @@ namespace Carro.Services
             var elements = DB.Table<Funcionario>();
             if (nome == null || nome == "")
             {
-                list = DB.Query<Funcionario>("SELECT funcionario.Id, funcionario.Salario, funcionario.Funcao, funcionario.PessoaId FROM funcionario INNER JOIN pessoa ON funcionario.PessoaId = Pessoa.Id").ToList();
+                list = DB.Query<Funcionario>("SELECT funcionario.Id, funcionario.Salario, funcionario.Funcao, funcionario.PessoaId FROM funcionario INNER JOIN pessoa ON funcionario.PessoaId = Pessoa.Id ORDER BY Pessoa.Nome").ToList();
             }
             else
             {
-                list = DB.Query<Funcionario>("SELECT funcionario.Id, funcionario.Salario, funcionario.Funcao, funcionario.PessoaId FROM funcionario INNER JOIN pessoa ON funcionario.PessoaId = Pessoa.Id WHERE (Pessoa.Nome LIKE ('%' || ? || '%'))", nome).ToList();
+                list = DB.Query<Funcionario>("SELECT funcionario.Id, funcionario.Salario, funcionario.Funcao, funcionario.PessoaId FROM funcionario INNER JOIN pessoa ON funcionario.PessoaId = Pessoa.Id WHERE (Pessoa.Nome LIKE ('%' || ? || '%')) ORDER BY Pessoa.Nome", nome).ToList();
             }
             
             foreach (Funcionario element in list)
@@ -132,7 +132,7 @@ namespace Carro.Services
 
         public List<Produto> GetProdutos()
         {
-            return UnitOfWork.ProdutoRepository.GetAll().ToList();
+            return UnitOfWork.ProdutoRepository.GetAll().OrderBy(Produto => Produto.Nome).ToList();
         }
 
         public void SaveProduto(Produto produto)
@@ -142,7 +142,7 @@ namespace Carro.Services
 
         public List<Produto> FindProdutoByNome(string nome)
         {
-            return UnitOfWork.ProdutoRepository.Find(a => a.Nome.Contains(nome)).ToList();
+            return UnitOfWork.ProdutoRepository.Find(a => a.Nome.Contains(nome)).OrderBy(Produto => Produto.Nome).ToList();
         }
 
         public void DeleteProduto(Produto produto)
@@ -156,7 +156,7 @@ namespace Carro.Services
 
         public List<Servico> GetServicos()
         {
-            return UnitOfWork.ServicoRepository.GetAll().ToList();
+            return UnitOfWork.ServicoRepository.GetAll().OrderBy(Servico => Servico.Nome).ToList();
         }
 
         public void SaveServico(Servico servico)
@@ -166,7 +166,7 @@ namespace Carro.Services
 
         public List<Servico> FindServicoByNome(string nome)
         {
-            return UnitOfWork.ServicoRepository.Find(a => a.Nome.Contains(nome)).ToList();
+            return UnitOfWork.ServicoRepository.Find(a => a.Nome.Contains(nome)).OrderBy(Servico => Servico.Nome).ToList();
         }
 
         public void DeleteServico(Servico servico)
