@@ -9,7 +9,7 @@ namespace Carro.Pages
     {
         public ListaPerdaPage()
         {
-            BindingContext = new PerdaViewModel(Navigation);
+            BindingContext = new ListaPerdaViewModel(Navigation);
             InitializeComponent();
         }
 

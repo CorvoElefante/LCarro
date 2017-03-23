@@ -18,7 +18,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <!--<Grid>
+    <Grid>
         <ScrollView
             Grid.RowSpan="8"
             Padding="30">
@@ -52,7 +52,7 @@
 
                 <Label
                     Grid.Row="2"
-                    Grid.Column="3"
+                    Grid.Column="4"
                     Grid.ColumnSpan="4"
                     Text="Adicionar Produto">
                     <Label.GestureRecognizers>
@@ -62,11 +62,11 @@
                 </Label>
 
                 <ListView
+                    Grid.Row="3"
 			        HorizontalOptions="FillAndExpand"
 			        VerticalOptions="FillAndExpand"
 			        HasUnevenRows="true"
 			        SeparatorVisibility="None"
-			        Header="{Binding .}"
 			        ItemsSource="{Binding ListaProdutoPerdas}"
 			        ItemTapped="Handle_ItemTapped">
 
@@ -105,9 +105,9 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </Grid>
-        </ScrollView>-->
+        </ScrollView>
 
-        <!--<Grid
+        <Grid
             Grid.Row="8"
             BackgroundColor="Transparent"
             Padding="4"
@@ -156,49 +156,5 @@
                     FontSize="Medium"/>
             </Grid>
         </Grid>
-    </Grid>-->
-
-    <ListView
-			        HorizontalOptions="FillAndExpand"
-			        VerticalOptions="FillAndExpand"
-			        HasUnevenRows="true"
-			        SeparatorVisibility="None"
-			        Header="{Binding .}"
-			        ItemsSource="{Binding ListaProdutoPerdas}"
-			        ItemTapped="Handle_ItemTapped">
-
-        <x:Arguments>
-            <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
-        </x:Arguments>
-
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
-                    <Grid 
-                      Margin="2"
-                      Padding="2"
-                      RowSpacing="0"
-                      ColumnSpacing="0"
-                      BackgroundColor="Transparent">
-
-                        <Label 
-                            Grid.ColumnSpan="2"
-							FontAttributes="Bold"
-							FontSize="Large"
-							Text="{Binding Nome}"/>
-
-                        <Label 
-                            Grid.Row="1"
-							Text="{Binding Marca}"/>
-
-                        <Label 
-                            Grid.Row="1" 
-                            Grid.Column="1"
-                            HorizontalOptions="End"
-						    Text="{Binding Quantidade}"/>
-                    </Grid>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+    </Grid>
 </ContentPage>

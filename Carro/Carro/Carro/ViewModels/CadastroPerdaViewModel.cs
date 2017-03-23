@@ -17,7 +17,16 @@ namespace Carro.ViewModels
         {
 
             var sqlite = DependencyService.Get<ISQLite>();
-
+            MessagingCenter.Subscribe<BaseViewModel, Produto>(this, "Hi", (sender, value) => {
+                var lista = new ListaProdutoPerda();
+                lista.Id = value.Id;
+                lista.Local = value.Local;
+                lista.Marca = value.Marca;
+                lista.Nome = value.Nome;
+                lista.Preco = value.Preco;
+                lista.Quantidade = value.Quantidade;
+                ListaProdutoPerdas.Add(lista);
+            });
         }
 
         public class ListaProdutoPerda
@@ -50,6 +59,32 @@ namespace Carro.ViewModels
             {
                 _ListaProdutoPerdas = value;
                 SetPropertyChanged(nameof(ListaProdutoPerdas));
+            }
+        }
+
+        ObservableCollection<Produto> _Produtos;
+        public ObservableCollection<Produto> Produtos
+        {
+            get
+            {
+                return _Produtos;
+            }
+            set
+            {
+                _Produtos = value;
+                SetPropertyChanged(nameof(Produtos));
+            }
+        }
+
+        string _Search = string.Empty;
+        public string Search
+        {
+            get { return _Search; }
+            set
+            {
+                _Search = value;
+                var sqlite = DependencyService.Get<ISQLite>();
+                Produtos = new ObservableCollection<Produto>(new DataService(sqlite).FindProdutoByNome(_Search));
             }
         }
 
@@ -135,5 +170,7 @@ namespace Carro.ViewModels
                 IsBusy = false;
             }
         }
+
+        
     }
 }
