@@ -20,17 +20,47 @@ namespace Carro.ViewModels
 
         }
 
-        ObservableCollection<Perda> _Perdas;
-        public ObservableCollection<Perda> Perdas
+        public class ListaProduto
+        {
+            public long? Id { get; set; }
+
+            public string Nome { get; set; }
+
+            public float Preco { get; set; }
+
+            public int Quantidade { get; set; }
+
+            public string Marca { get; set; }
+
+            public string Descricao { get; set; }
+
+            public string Local { get; set; }
+
+            public int QuantidadePerdida { get; set; }
+        }
+
+        public class ListaProdutoPerda
+        {
+            public long? Id { get; set; }
+
+            public string Nome { get; set; }
+
+            public string Justificativa { get; set; }
+
+            public ObservableCollection<ListaProduto> ListaProduto = new ObservableCollection<ListaProduto>();
+        }
+
+        ObservableCollection<ListaProdutoPerda> _ListaProdutoPerdas;
+        public ObservableCollection<ListaProdutoPerda> ListaProdutoPerdas
         {
             get
             {
-                return _Perdas;
+                return _ListaProdutoPerdas;
             }
             set
             {
-                _Perdas = value;
-                SetPropertyChanged(nameof(Perdas));
+                _ListaProdutoPerdas = value;
+                SetPropertyChanged(nameof(ListaProdutoPerdas));
             }
         }
 
@@ -42,7 +72,7 @@ namespace Carro.ViewModels
             {
                 _Search = value;
                 var sqlite = DependencyService.Get<ISQLite>();
-                Perdas = new ObservableCollection<Perda>(new DataService(sqlite).FindPerdaByNome(_Search));
+                //ListaProdutoPerdas = new ObservableCollection<ListaProdutoPerda>(new DataService(sqlite).FindPerdaByNome(_Search));
             }
         }
 

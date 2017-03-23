@@ -25,7 +25,7 @@ namespace Carro.Pages
             {
                 ((ListaProdutoPerdaViewModel)BindingContext).EnviaProdutoPerdaCommand.Execute(((ListView)sender).SelectedItem);
             }
-            ((ListView)sender).SelectedItem = null; // de-select the row
+            /*((ListView)sender).SelectedItem = null;*/ // de-select the row
         }
     }
 }
