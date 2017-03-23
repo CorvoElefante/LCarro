@@ -19,7 +19,12 @@ namespace Carro.Pages
             {
                 return; // has been set to null, do not 'process' tapped event 
             }
-            ((ListView)sender).SelectedItem = null; // de-select the row
+
+            if (((ListaPerdaViewModel)BindingContext).EditarPerdaCommand.CanExecute(null))
+            {
+                ((ListaPerdaViewModel)BindingContext).EditarPerdaCommand.Execute(((ListView)sender).SelectedItem);
+            }
+              ((ListView)sender).SelectedItem = null; // de-select the row
         }
     }
 }

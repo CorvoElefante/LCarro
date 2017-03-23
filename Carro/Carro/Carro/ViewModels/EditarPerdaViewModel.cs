@@ -13,11 +13,44 @@ namespace Carro.ViewModels
     public class EditarPerdaViewModel : BaseViewModel
     {
 
-        public EditarPerdaViewModel(INavigation navigation) : base(navigation)
+        public EditarPerdaViewModel(INavigation navigation, Carro.ViewModels.ListaPerdaViewModel.ListaProdutoPerda value) : base(navigation)
         {
 
             var sqlite = DependencyService.Get<ISQLite>();
 
+        }
+
+        public class ListaProduto
+        {
+            public long? Id { get; set; }
+
+            public string Nome { get; set; }
+
+            public float Preco { get; set; }
+
+            public int Quantidade { get; set; }
+
+            public string Marca { get; set; }
+
+            public string Descricao { get; set; }
+
+            public string Local { get; set; }
+
+            public int QuantidadePerdida { get; set; }
+        }
+
+        ObservableCollection<ListaProduto> _ListaProdutoPerdas;
+        public ObservableCollection<ListaProduto> ListaProdutoPerdas
+        {
+            get
+            {
+                return _ListaProdutoPerdas;
+            }
+            set
+            {
+                _ListaProdutoPerdas = value;
+                SetPropertyChanged(nameof(ListaProdutoPerdas));
+            }
         }
 
         string _nomeEntry = string.Empty;
@@ -34,20 +67,6 @@ namespace Carro.ViewModels
             }
         }
 
-        int _quantidadeEntry = 0;
-        public int quantidadeEntry
-        {
-            get
-            {
-                return _quantidadeEntry;
-            }
-            set
-            {
-                _quantidadeEntry = value;
-                SetPropertyChanged(nameof(quantidadeEntry));
-            }
-        }
-
         string _justificativaEntry = string.Empty;
         public string justificativaEntry
         {
@@ -61,31 +80,5 @@ namespace Carro.ViewModels
                 SetPropertyChanged(nameof(justificativaEntry));
             }
         }
-
-        Command _SalvarPerdaCommand;
-        public Command SalvarPerdaCommand
-        {
-            get { return _SalvarPerdaCommand ?? (_SalvarPerdaCommand = new Command(async () => await ExecuteSalvarPerdaCommand())); }
-        }
-
-        async Task ExecuteSalvarPerdaCommand()
-        {
-            if (!IsBusy)
-            {
-                IsBusy = true;
-
-                var sqlite = DependencyService.Get<ISQLite>();
-                using (var scope = new TransactionScope(sqlite))
-                {
-                    var service = new DataService(sqlite);
-
-                    service.SavePerda(new Perda { Nome = nomeEntry, Justificativa = justificativaEntry });
-                    scope.Complete();
-                }
-
-                IsBusy = false;
-            }
-        }
-
     }
 }

@@ -11,9 +11,9 @@ namespace Carro.Pages
 {
     public partial class EditarPerdaPage : ContentPage
     {
-        public EditarPerdaPage(/*Perda Value*/)
+        public EditarPerdaPage(ListaPerdaViewModel.ListaProdutoPerda value)
         {
-            //BindingContext = new EditarPerdaViewModel(Navigation, value);
+            BindingContext = new EditarPerdaViewModel(Navigation, value);
             InitializeComponent();
         }
     }

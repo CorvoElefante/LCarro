@@ -92,5 +92,21 @@ namespace Carro.ViewModels
             }
         }
 
+        Command _EditarPerdaCommand;
+        public Command EditarPerdaCommand
+        {
+            get { return _EditarPerdaCommand ?? (_EditarPerdaCommand = new Command<ListaProdutoPerda>(async (qq) => await ExecuteEditarPerdaCommand(qq))); }
+        }
+
+        async Task ExecuteEditarPerdaCommand(ListaProdutoPerda value)
+        {
+            if (!IsBusy)
+            {
+                IsBusy = true;
+                await Navigation.PushAsync(new EditarPerdaPage(value));
+                IsBusy = false;
+            }
+        }
+
     }
 }

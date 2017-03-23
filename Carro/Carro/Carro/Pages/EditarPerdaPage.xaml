@@ -6,25 +6,18 @@
              Title="Editar Despesa"
              BackgroundColor="#FFFFF7">
 
-
-    <ContentPage.ToolbarItems>
-        <ToolbarItem
-      Icon="{x:Static resources:Images.IconeUser232}"/>
-    </ContentPage.ToolbarItems>
-    
     <Grid>
         <ScrollView
             Grid.RowSpan="8"
             Padding="30">
-            <Grid 
-            RowSpacing="30">
-                
+            <Grid
+                RowSpacing="30">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-
                 <Entry
                     Grid.ColumnSpan="12"
                     Text = "{Binding nomeEntry, Mode=TwoWay}" 
@@ -41,71 +34,65 @@
                 <Entry
                     Grid.Row="1"
                     Grid.ColumnSpan="12"
-                    Text = "{Binding quantidadeEntry, Mode=TwoWay}" 
-                    Placeholder="Quantidade perdida" 
-                    Keyboard="Numeric"/>
-
-                <Entry
-                    Grid.Row="2"
-                    Grid.ColumnSpan="12"
                     Text = "{Binding justificativaEntry, Mode=TwoWay}" 
                     Placeholder="Justificativa" 
                     Keyboard="Text"/>
+
+                <Label
+                    Grid.Row="2"
+                    Grid.Column="4"
+                    Grid.ColumnSpan="4"
+                    Text="Adicionar Produto">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer
+                        Command="{Binding ListaProdutoCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <ListView
+                    Grid.Row="3"
+			        HorizontalOptions="FillAndExpand"
+			        VerticalOptions="FillAndExpand"
+			        HasUnevenRows="true"
+			        SeparatorVisibility="None"
+			        ItemsSource="{Binding ListaProdutoPerdas}"
+			        ItemTapped="Handle_ItemTapped">
+
+                    <x:Arguments>
+                        <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
+                    </x:Arguments>
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid 
+                      Margin="2"
+                      Padding="2"
+                      RowSpacing="0"
+                      ColumnSpacing="0"
+                      BackgroundColor="Transparent">
+
+                                    <Label 
+                            Grid.ColumnSpan="2"
+							FontAttributes="Bold"
+							FontSize="Large"
+							Text="{Binding Nome}"/>
+
+                                    <Label 
+                            Grid.Row="1"
+							Text="{Binding Marca}"/>
+
+                                    <Label 
+                            Grid.Row="1" 
+                            Grid.Column="1"
+                            HorizontalOptions="End"
+						    Text="{Binding Quantidade}"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </Grid>
         </ScrollView>
-
-        <Grid
-            Grid.Row="8"
-            BackgroundColor="#444444"
-            Padding="4"
-            ColumnSpacing="-30">
-            <Grid
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                BackgroundColor="Transparent">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                <Image
-                    Grid.Column="1"
-                    Source="ic_success64.png"
-                    IsOpaque="True"/>
-                <Label
-                    HorizontalOptions="End"
-                    VerticalOptions="Center"
-                    Text="Salvar"
-                    TextColor="#FFFFF7"
-                    FontSize="Medium"/>
-                <Grid.GestureRecognizers>
-                    <TapGestureRecognizer
-                        Command="{Binding SalvarPerdaCommand}"/>
-                </Grid.GestureRecognizers>
-            </Grid>
-            <Grid
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                Grid.Column="1"
-                BackgroundColor="Transparent">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                <Image
-                    Source="ic_error64.png"
-                    IsOpaque="True"/>
-                <Label
-                    Grid.Column="1"
-                    HorizontalOptions="End"
-                    VerticalOptions="Center"
-                    Text="Deletar"
-                    TextColor="#FFFFF7"
-                    FontSize="Medium"/>
-                <Grid.GestureRecognizers>
-                    <TapGestureRecognizer
-                        Command="{Binding DeletarPerdaCommand}"/>
-                </Grid.GestureRecognizers>
-            </Grid>
-        </Grid>
     </Grid>
 </ContentPage>

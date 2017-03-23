@@ -62,32 +62,6 @@ namespace Carro.ViewModels
             }
         }
 
-        ObservableCollection<Produto> _Produtos;
-        public ObservableCollection<Produto> Produtos
-        {
-            get
-            {
-                return _Produtos;
-            }
-            set
-            {
-                _Produtos = value;
-                SetPropertyChanged(nameof(Produtos));
-            }
-        }
-
-        string _Search = string.Empty;
-        public string Search
-        {
-            get { return _Search; }
-            set
-            {
-                _Search = value;
-                var sqlite = DependencyService.Get<ISQLite>();
-                Produtos = new ObservableCollection<Produto>(new DataService(sqlite).FindProdutoByNome(_Search));
-            }
-        }
-
         string _nomeEntry = string.Empty;
         public string nomeEntry
         {
