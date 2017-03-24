@@ -48,7 +48,7 @@ namespace Carro.ViewModels
             public int QuantidadePerdida { get; set; }
         }
 
-        ObservableCollection<ListaProdutoPerda> _ListaProdutoPerdas;
+        ObservableCollection<ListaProdutoPerda> _ListaProdutoPerdas = new ObservableCollection<ListaProdutoPerda>();
         public ObservableCollection<ListaProdutoPerda> ListaProdutoPerdas
         {
             get
