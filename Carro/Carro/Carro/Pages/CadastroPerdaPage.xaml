@@ -63,6 +63,7 @@
 
                 <ListView
                     Grid.Row="3"
+                    Grid.ColumnSpan="12"
 			        HorizontalOptions="FillAndExpand"
 			        VerticalOptions="FillAndExpand"
 			        HasUnevenRows="true"
@@ -77,28 +78,59 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <Grid 
-                      Margin="2"
-                      Padding="2"
-                      RowSpacing="0"
-                      ColumnSpacing="0"
-                      BackgroundColor="Transparent">
+                                <Grid
+                                    Margin="2"
+                                    Padding="2"
+                                    RowSpacing="0"
+                                    ColumnSpacing="0"
+                                    BackgroundColor="Transparent">
+
+                                    <Label
+                                        Grid.ColumnSpan="10"
+							            FontAttributes="Bold"
+							            FontSize="Large"
+							            Text="{Binding Nome}"/>
+
+                                    <Image
+                                        Grid.Column="10"
+                                        Grid.RowSpan="2"
+                                        Grid.ColumnSpan="2"
+                                        Source="ic_plus32.png"
+                                        IsOpaque="True"
+                                        Aspect="AspectFit"
+                                        HorizontalOptions="Center">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer
+                                                Command="{Binding Teste}"/>
+                                        </Image.GestureRecognizers>
+                                    </Image>
 
                                     <Label 
-                            Grid.ColumnSpan="2"
-							FontAttributes="Bold"
-							FontSize="Large"
-							Text="{Binding Nome}"/>
+                                        Grid.Column="12"
+                                        Grid.RowSpan="2"
+                                        Grid.ColumnSpan="2"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"
+                                        FontSize="Large"
+						                Text="{Binding Quantidade}"/>
 
-                                    <Label 
-                            Grid.Row="1"
-							Text="{Binding Marca}"/>
+                                    <Image
+                                        Grid.Column="14"
+                                        Grid.RowSpan="2"
+                                        Grid.ColumnSpan="2"
+                                        Source="ic_minus32.png"
+                                        IsOpaque="True"
+                                        Aspect="AspectFit"
+                                        HorizontalOptions="Center">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer
+                                                Command="{Binding TesteCommand}"/>
+                                        </Image.GestureRecognizers>
+                                    </Image>
 
-                                    <Label 
-                            Grid.Row="1" 
-                            Grid.Column="1"
-                            HorizontalOptions="End"
-						    Text="{Binding Quantidade}"/>
+                                    <Label
+                                        Grid.Row="1"
+							            Text="{Binding Marca}"/>
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>
