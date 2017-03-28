@@ -91,20 +91,6 @@
 							            FontSize="Large"
 							            Text="{Binding Nome}"/>
 
-                                    <Image
-                                        Grid.Column="10"
-                                        Grid.RowSpan="2"
-                                        Grid.ColumnSpan="2"
-                                        Source="ic_plus32.png"
-                                        IsOpaque="True"
-                                        Aspect="AspectFit"
-                                        HorizontalOptions="Center">
-                                        <Image.GestureRecognizers>
-                                            <TapGestureRecognizer
-                                                Command="{Binding Teste}"/>
-                                        </Image.GestureRecognizers>
-                                    </Image>
-
                                     <Label 
                                         Grid.Column="12"
                                         Grid.RowSpan="2"
@@ -113,20 +99,6 @@
                                         VerticalOptions="Center"
                                         FontSize="Large"
 						                Text="{Binding Quantidade}"/>
-
-                                    <Image
-                                        Grid.Column="14"
-                                        Grid.RowSpan="2"
-                                        Grid.ColumnSpan="2"
-                                        Source="ic_minus32.png"
-                                        IsOpaque="True"
-                                        Aspect="AspectFit"
-                                        HorizontalOptions="Center">
-                                        <Image.GestureRecognizers>
-                                            <TapGestureRecognizer
-                                                Command="{Binding TesteCommand}"/>
-                                        </Image.GestureRecognizers>
-                                    </Image>
 
                                     <Label
                                         Grid.Row="1"
