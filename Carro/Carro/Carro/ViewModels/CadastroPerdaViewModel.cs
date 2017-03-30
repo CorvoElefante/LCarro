@@ -20,7 +20,8 @@ namespace Carro.ViewModels
             var sqlite = DependencyService.Get<ISQLite>();
             MessagingCenter.Subscribe<BaseViewModel, Produto>(this, "Hi", (sender, value) => {
                 var lista = new PerdaProduto();
-                lista.Produto.Id = value.Id;
+                lista.Produto = new Produto();
+                lista.IdProduto = value.Id;
                 lista.Produto.Local = value.Local;
                 lista.Produto.Marca = value.Marca;
                 lista.Produto.Nome = value.Nome;

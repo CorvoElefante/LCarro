@@ -68,7 +68,7 @@
 			        VerticalOptions="FillAndExpand"
 			        HasUnevenRows="true"
 			        SeparatorVisibility="None"
-			        ItemsSource="{Binding ListaProdutoPerdas}"
+			        ItemsSource="{Binding PerdaProdutos}"
 			        ItemTapped="Handle_ItemTapped">
 
                     <x:Arguments>
@@ -89,7 +89,7 @@
                                         Grid.ColumnSpan="10"
 							            FontAttributes="Bold"
 							            FontSize="Large"
-							            Text="{Binding Nome}"/>
+							            Text="{Binding Produto.Nome}"/>
 
                                     <Label 
                                         Grid.Column="12"
@@ -98,11 +98,11 @@
                                         HorizontalOptions="Center"
                                         VerticalOptions="Center"
                                         FontSize="Large"
-						                Text="{Binding Quantidade}"/>
+						                Text="{Binding Produto.Quantidade}"/>
 
                                     <Label
                                         Grid.Row="1"
-							            Text="{Binding Marca}"/>
+							            Text="{Binding Produto.Marca}"/>
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>
