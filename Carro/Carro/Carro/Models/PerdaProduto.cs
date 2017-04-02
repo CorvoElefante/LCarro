@@ -13,6 +13,7 @@ namespace Carro.Models
         [PrimaryKey, AutoIncrement]
         public long? Id { get; set; }
 
+        [ForeignKey(typeof(Perda))]
         public long? IdPerda { get; set; }
 
         [ForeignKey(typeof(Produto))]

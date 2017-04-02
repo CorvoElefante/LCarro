@@ -18,7 +18,7 @@ namespace Carro.ViewModels
 
         }
 
-        ObservableCollection<Produto> _Produtos;
+        ObservableCollection<Produto> _Produtos = new ObservableCollection<Produto>();
         public ObservableCollection<Produto> Produtos
         {
             get

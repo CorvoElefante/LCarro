@@ -7,6 +7,7 @@ using Carro.Repositories;
 using Carro.Services;
 using System.Threading.Tasks;
 using Carro.Pages;
+using System.Linq;
 
 namespace Carro.ViewModels
 {
@@ -18,47 +19,29 @@ namespace Carro.ViewModels
 
             var sqlite = DependencyService.Get<ISQLite>();
             MessagingCenter.Subscribe<BaseViewModel, Produto>(this, "Hi", (sender, value) => {
-                var lista = new ListaProdutoPerda();
-                lista.Id = value.Id;
-                lista.Local = value.Local;
-                lista.Marca = value.Marca;
-                lista.Nome = value.Nome;
-                lista.Preco = value.Preco;
-                lista.Quantidade = value.Quantidade;
-                ListaProdutoPerdas.Add(lista);
+                var lista = new PerdaProduto();
+                lista.Produto = new Produto();
+                lista.IdProduto = value.Id;
+                lista.Produto.Local = value.Local;
+                lista.Produto.Marca = value.Marca;
+                lista.Produto.Nome = value.Nome;
+                lista.Produto.Preco = value.Preco;
+                lista.Produto.Quantidade = value.Quantidade;
+                PerdaProdutos.Add(lista);
             });
         }
 
-        public class ListaProdutoPerda
-        {
-            public long? Id { get; set; }
-
-            public string Nome { get; set; }
-
-            public float Preco { get; set; }
-
-            public int Quantidade { get; set; }
-
-            public string Marca { get; set; }
-
-            public string Descricao { get; set; }
-
-            public string Local { get; set; }
-
-            public int QuantidadePerdida { get; set; }
-        }
-
-        ObservableCollection<ListaProdutoPerda> _ListaProdutoPerdas = new ObservableCollection<ListaProdutoPerda>();
-        public ObservableCollection<ListaProdutoPerda> ListaProdutoPerdas
+        ObservableCollection<PerdaProduto> _PerdaProdutos = new ObservableCollection<PerdaProduto>();
+        public ObservableCollection<PerdaProduto> PerdaProdutos
         {
             get
             {
-                return _ListaProdutoPerdas;
+                return _PerdaProdutos;
             }
             set
             {
-                _ListaProdutoPerdas = value;
-                SetPropertyChanged(nameof(ListaProdutoPerdas));
+                _PerdaProdutos = value;
+                SetPropertyChanged(nameof(PerdaProdutos));
             }
         }
 
@@ -128,39 +111,29 @@ namespace Carro.ViewModels
 
         async Task ExecuteSalvarPerdaCommand()
         {
-            if (!IsBusy)
+            if (nomeEntry != string.Empty)
             {
-                IsBusy = true;
-
-                var sqlite = DependencyService.Get<ISQLite>();
-                using (var scope = new TransactionScope(sqlite))
+                if (!IsBusy)
                 {
-                    var service = new DataService(sqlite);
+                    IsBusy = true;
 
-                    service.SavePerda(new Perda { Nome = nomeEntry, Justificativa = justificativaEntry });
-                    scope.Complete();
+                    var sqlite = DependencyService.Get<ISQLite>();
+                    using (var scope = new TransactionScope(sqlite))
+                    {
+                        var service = new DataService(sqlite);
+                        //var Pessoa = new Pessoa { Nome = nomeEntry, RuaN = ruaNEntry, Bairro = bairroEntry, Telefone = telefoneEntry, Email = emailEntry, Data = ndataEntry, Cpf = cpfEntry };
+                        //service.SavePessoa(Pessoa);
+
+                        //service.SaveFuncionario(new Funcionario { Salario = salarioEntry, Funcao = funcaoEntry, Pessoa = Pessoa });
+                        //IEnumerable<ListaProdutoPerda> ListaProdutoPerdas = (IEnumerable<ListaProdutoPerda>)GetCollection();
+                        //var list = new List<ListaProdutoPerda>(ListaProdutoPerdas);
+                        service.SavePerda(new Models.Perda { Nome = nomeEntry, Justificativa = justificativaEntry, PerdaProdutos = PerdaProdutos.ToList<PerdaProduto>() });
+                        scope.Complete();
+                    }
+                    await Navigation.PopAsync();
+                    IsBusy = false;
                 }
-
-                IsBusy = false;
             }
         }
-
-        Command _TesteCommand;
-        public Command TesteCommand
-        {
-            get { return _TesteCommand ?? (_TesteCommand = new Command(async () => await ExecuteTesteCommand())); }
-        }
-
-        async Task ExecuteTesteCommand()
-        {
-            if (!IsBusy)
-            {
-                IsBusy = true;
-                await Navigation.PushAsync(new MenuPage());
-                IsBusy = false;
-            }
-        }
-
-
     }
 }
