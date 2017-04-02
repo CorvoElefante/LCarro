@@ -5,32 +5,54 @@
              x:Class="Carro.Pages.LoginPage"
              BackgroundColor="#444444">
 
-    <StackLayout
-        BackgroundColor="Transparent"
-        Padding="30" 
-        Spacing="30"
-        VerticalOptions="End">
+
+    <Grid
+        Margin="0"
+        Padding="10"
+        RowSpacing="30"
+        ColumnSpacing="0">
+
+        <Image
+            Grid.Column="2"
+            Grid.RowSpan="6"
+            Grid.ColumnSpan="6"
+            Source="CarLogo512.png"
+            IsOpaque="True"
+            Aspect="AspectFit"
+            HorizontalOptions="Center"/>
 
         <Entry
-          Text="{Binding cpfEntry, Mode=TwoWay}"
-          Placeholder="CPF"
-          Keyboard="Text"/>
+            Grid.Row="7"
+            Grid.ColumnSpan="10"
+            BackgroundColor="#FFFFF7"
+            Text="{Binding cpfEntry, Mode=TwoWay}"
+            Placeholder="CPF"
+            Keyboard="Text"/>
 
         <Entry
-          Grid.Row="1"
-          Text="{Binding serialKeyEntry, Mode=TwoWay}"
-          Placeholder="Codigo de Ativação"
-          Keyboard="Numeric"/>
-        
-        <Label
-            Grid.Row="2"
-            HorizontalOptions="End"
-            Text="Login"
-            TextColor="White">
-            <Label.GestureRecognizers>
+            Grid.Row="8"
+            Grid.ColumnSpan="10"
+            BackgroundColor="#FFFFF7"
+            Text="{Binding serialKeyEntry, Mode=TwoWay}"
+            Placeholder="Codigo de Ativação"
+            Keyboard="Numeric"/>
+
+        <Frame
+            Grid.Row="9"
+            Grid.Column="6"
+            Grid.ColumnSpan="4"
+            BackgroundColor="Blue"
+            Padding="0">
+            <Label
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Text="Login"
+                FontSize="Large"
+                TextColor="#FFFFF7"/>
+            <Frame.GestureRecognizers>
                 <TapGestureRecognizer
-                        Command="{Binding MenuCommand}"/>
-            </Label.GestureRecognizers>
-        </Label>
-     </StackLayout>
+                    Command="{Binding MenuCommand}"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+    </Grid>
 </ContentPage>
