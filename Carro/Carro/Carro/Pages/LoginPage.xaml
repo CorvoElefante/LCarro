@@ -5,6 +5,17 @@
              x:Class="Carro.Pages.LoginPage"
              BackgroundColor="#444444">
 
+    <!--<ResourceDictionary>
+        <Style 
+            x:Key="EntryStyle" 
+            TargetType="Entry">
+
+            <Setter 
+                Property="TextColor" 
+                Value="#FFFFF7"/>
+        </Style>
+    </ResourceDictionary>-->
+
 
     <Grid
         Margin="0"
@@ -24,7 +35,7 @@
         <Entry
             Grid.Row="7"
             Grid.ColumnSpan="10"
-            BackgroundColor="#FFFFF7"
+            BackgroundColor="Transparent"
             Text="{Binding cpfEntry, Mode=TwoWay}"
             Placeholder="CPF"
             Keyboard="Text"/>
@@ -32,7 +43,7 @@
         <Entry
             Grid.Row="8"
             Grid.ColumnSpan="10"
-            BackgroundColor="#FFFFF7"
+            BackgroundColor="Transparent"
             Text="{Binding serialKeyEntry, Mode=TwoWay}"
             Placeholder="Codigo de Ativação"
             Keyboard="Numeric"/>
@@ -41,7 +52,7 @@
             Grid.Row="9"
             Grid.Column="6"
             Grid.ColumnSpan="4"
-            BackgroundColor="Blue"
+            BackgroundColor="#2f7dd6"
             Padding="0">
             <Label
                 VerticalOptions="Center"
