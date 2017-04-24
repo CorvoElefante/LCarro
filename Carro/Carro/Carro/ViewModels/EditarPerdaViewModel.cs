@@ -8,48 +8,35 @@ using Carro.Services;
 using System.Threading.Tasks;
 using Carro.Pages;
 
+
+
 namespace Carro.ViewModels
 {
     public class EditarPerdaViewModel : BaseViewModel
     {
 
-        public EditarPerdaViewModel(INavigation navigation, Carro.ViewModels.ListaPerdaViewModel.ListaProdutoPerda value) : base(navigation)
+        public EditarPerdaViewModel(INavigation navigation, Perda value) : base(navigation)
         {
 
             var sqlite = DependencyService.Get<ISQLite>();
+            nomeEntry = value.Nome;
+            justificativaEntry = value.Justificativa;
+
+            ProdutosPerdidos = value.PerdaProdutos;
 
         }
 
-        public class ListaProduto
-        {
-            public long? Id { get; set; }
-
-            public string Nome { get; set; }
-
-            public float Preco { get; set; }
-
-            public int Quantidade { get; set; }
-
-            public string Marca { get; set; }
-
-            public string Descricao { get; set; }
-
-            public string Local { get; set; }
-
-            public int QuantidadePerdida { get; set; }
-        }
-
-        ObservableCollection<ListaProduto> _ListaProdutoPerdas;
-        public ObservableCollection<ListaProduto> ListaProdutoPerdas
+        List<PerdaProduto> _ProdutosPerdidos = new List<PerdaProduto>();
+        public List<PerdaProduto> ProdutosPerdidos
         {
             get
             {
-                return _ListaProdutoPerdas;
+                return _ProdutosPerdidos;
             }
             set
             {
-                _ListaProdutoPerdas = value;
-                SetPropertyChanged(nameof(ListaProdutoPerdas));
+                _ProdutosPerdidos = value;
+                SetPropertyChanged(nameof(ProdutosPerdidos));
             }
         }
 

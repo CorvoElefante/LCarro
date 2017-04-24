@@ -20,7 +20,7 @@ namespace Carro.ViewModels
 
         }
 
-        ObservableCollection<Perda> _Perdas;
+        ObservableCollection<Perda> _Perdas = new ObservableCollection<Perda>();
         public ObservableCollection<Perda> Perdas
         {
             get
@@ -64,7 +64,7 @@ namespace Carro.ViewModels
             public ObservableCollection<ListaProduto> ListaProduto = new ObservableCollection<ListaProduto>();
         }
 
-        ObservableCollection<ListaProdutoPerda> _ListaProdutoPerdas;
+        ObservableCollection<ListaProdutoPerda> _ListaProdutoPerdas =  new ObservableCollection<ListaProdutoPerda>();
         public ObservableCollection<ListaProdutoPerda> ListaProdutoPerdas
         {
             get
@@ -109,10 +109,10 @@ namespace Carro.ViewModels
         Command _EditarPerdaCommand;
         public Command EditarPerdaCommand
         {
-            get { return _EditarPerdaCommand ?? (_EditarPerdaCommand = new Command<ListaProdutoPerda>(async (qq) => await ExecuteEditarPerdaCommand(qq))); }
+            get { return _EditarPerdaCommand ?? (_EditarPerdaCommand = new Command<Perda>(async (qq) => await ExecuteEditarPerdaCommand(qq))); }
         }
 
-        async Task ExecuteEditarPerdaCommand(ListaProdutoPerda value)
+        async Task ExecuteEditarPerdaCommand(Perda value)
         {
             if (!IsBusy)
             {
@@ -121,6 +121,5 @@ namespace Carro.ViewModels
                 IsBusy = false;
             }
         }
-
     }
 }
