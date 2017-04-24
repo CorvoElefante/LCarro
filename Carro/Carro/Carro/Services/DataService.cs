@@ -83,7 +83,23 @@ namespace Carro.Services
 
         public List<Perda> FindPerdaByNome(string nome)
         {
-            return UnitOfWork.PerdaRepository.Find(a => a.Nome.Contains(nome)).ToList();
+            List<Perda> list = new List<Perda>();
+            var elements = DB.Table<Perda>();
+            if (nome == null || nome == "")
+            {
+                list = DB.Query<Perda>("SELECT perda.Id, perda.Nome, perda.Justificativa FROM perda INNER JOIN perdaproduto ON perda.Id = perdaproduto.IdPerda ORDER BY perda.Nome").ToList();
+            }
+            else
+            {
+                list = DB.Query<Perda>("SELECT perda.Id, perda.Nome, perda.Justificativa FROM perda INNER JOIN perdaproduto ON perda.Id = perdaproduto.IdPerda WHERE (perda.Nome LIKE ('%' || ? || '%')) ORDER BY perda.Nome", nome).ToList();
+            }
+
+            foreach (Perda element in list)
+            {
+                DB.GetChildren(element, false);
+            }
+
+            return list;
         }
 
         #endregion
