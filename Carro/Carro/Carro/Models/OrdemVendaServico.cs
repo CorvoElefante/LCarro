@@ -15,15 +15,17 @@ namespace Carro.Models
 
         public long? IdOrdemVenda { get; set; }
 
-        [ForeignKey(typeof(Servico))]
-        public long IdServico { get; set; }
+        public long? IdServico { get; set; }
 
-        [OneToOne]
-        public Servico Servico { get; set; }
+        public string Nome { get; set; }
 
         public float Valor { get; set; }
 
         public int Quantidade { get; set; }
+
+        public string Descricao { get; set; }
+
+        public string Tempo { get; set; }
 
         [ManyToOne]
         public OrdemVenda OrdemVenda { get; set; }

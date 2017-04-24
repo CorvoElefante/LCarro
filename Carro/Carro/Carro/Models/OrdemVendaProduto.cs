@@ -15,15 +15,19 @@ namespace Carro.Models
 
         public long? IdOrdemVenda { get; set; }
 
-        [ForeignKey(typeof(Produto))]
-        public long IdProduto { get; set; }
+        public long? IdProduto { get; set; }
 
-        [OneToOne]
-        public Produto Produto { get; set; }
+        public string Nome { get; set; }
 
         public float Valor { get; set; }
 
         public int Quantidade { get; set; }
+
+        public string Marca { get; set; }
+
+        public string Descricao { get; set; }
+
+        public string Local { get; set; }
 
         [ManyToOne]
         public OrdemVenda OrdemVenda { get; set; }
