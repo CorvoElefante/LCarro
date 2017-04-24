@@ -16,13 +16,19 @@ namespace Carro.Models
         [ForeignKey(typeof(Perda))]
         public long? IdPerda { get; set; }
 
-        [ForeignKey(typeof(Produto))]
         public long? IdProduto { get; set; }
 
-        [OneToOne]
-        public Produto Produto { get; set; }
+        public string Nome { get; set; }
 
-        public int Quantidade { get; set; }
+        public float Preco { get; set; }
+
+        public int QuantidadePerdida { get; set; }
+
+        public string Marca { get; set; }
+
+        public string Descricao { get; set; }
+
+        public string Local { get; set; }
 
         [ManyToOne]
         public Perda Perda { get; set; }

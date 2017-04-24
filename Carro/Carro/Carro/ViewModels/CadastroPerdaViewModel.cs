@@ -20,13 +20,12 @@ namespace Carro.ViewModels
             var sqlite = DependencyService.Get<ISQLite>();
             MessagingCenter.Subscribe<BaseViewModel, Produto>(this, "Hi", (sender, value) => {
                 var lista = new PerdaProduto();
-                lista.Produto = new Produto();
                 lista.IdProduto = value.Id;
-                lista.Produto.Local = value.Local;
-                lista.Produto.Marca = value.Marca;
-                lista.Produto.Nome = value.Nome;
-                lista.Produto.Preco = value.Preco;
-                lista.Produto.Quantidade = value.Quantidade;
+                lista.Local = value.Local;
+                lista.Marca = value.Marca;
+                lista.Nome = value.Nome;
+                lista.Preco = value.Preco;
+                lista.QuantidadePerdida = value.Quantidade;
                 PerdaProdutos.Add(lista);
             });
         }
@@ -121,12 +120,6 @@ namespace Carro.ViewModels
                     using (var scope = new TransactionScope(sqlite))
                     {
                         var service = new DataService(sqlite);
-                        //var Pessoa = new Pessoa { Nome = nomeEntry, RuaN = ruaNEntry, Bairro = bairroEntry, Telefone = telefoneEntry, Email = emailEntry, Data = ndataEntry, Cpf = cpfEntry };
-                        //service.SavePessoa(Pessoa);
-
-                        //service.SaveFuncionario(new Funcionario { Salario = salarioEntry, Funcao = funcaoEntry, Pessoa = Pessoa });
-                        //IEnumerable<ListaProdutoPerda> ListaProdutoPerdas = (IEnumerable<ListaProdutoPerda>)GetCollection();
-                        //var list = new List<ListaProdutoPerda>(ListaProdutoPerdas);
                         service.SavePerda(new Models.Perda { Nome = nomeEntry, Justificativa = justificativaEntry, PerdaProdutos = PerdaProdutos.ToList<PerdaProduto>() });
                         scope.Complete();
                     }
