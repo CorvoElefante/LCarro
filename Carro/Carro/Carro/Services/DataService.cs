@@ -87,11 +87,11 @@ namespace Carro.Services
             var elements = DB.Table<Perda>();
             if (nome == null || nome == "")
             {
-                list = DB.Query<Perda>("SELECT perda.Id, perda.Nome, perda.Justificativa FROM perda INNER JOIN perdaproduto ON perda.Id = perdaproduto.IdPerda ORDER BY perda.Nome").ToList();
+                list = DB.Query<Perda>("SELECT perda.Id, perda.Nome, perda.Justificativa FROM perda ").ToList();
             }
             else
             {
-                list = DB.Query<Perda>("SELECT perda.Id, perda.Nome, perda.Justificativa FROM perda INNER JOIN perdaproduto ON perda.Id = perdaproduto.IdPerda WHERE (perda.Nome LIKE ('%' || ? || '%')) ORDER BY perda.Nome", nome).ToList();
+                list = DB.Query<Perda>("SELECT perda.Id, perda.Nome, perda.Justificativa FROM perda WHERE (perda.Nome LIKE ('%' || ? || '%')) ORDER BY perda.Nome", nome).ToList();
             }
 
             foreach (Perda element in list)
