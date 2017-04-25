@@ -29,6 +29,11 @@ namespace Carro.Pages
         public void OnDelete(object sender, EventArgs e)
         {
             var mi = ((MenuItem)sender);
+
+            if (((CadastroPerdaViewModel)BindingContext).RemoveProdutoCommand.CanExecute(null))
+            {
+                ((CadastroPerdaViewModel)BindingContext).RemoveProdutoCommand.Execute(mi.CommandParameter);
+            }
             DisplayAlert("", "Item removido com sucesso", "OK");
         }
     }
