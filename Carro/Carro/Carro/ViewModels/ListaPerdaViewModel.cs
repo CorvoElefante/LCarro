@@ -19,14 +19,6 @@ namespace Carro.ViewModels
             var sqlite = DependencyService.Get<ISQLite>();
             ExecuteAtualizaPerdaCommand();
 
-            using (var scope = new TransactionScope(sqlite))
-            {
-                Perdas = new ObservableCollection<Perda>(
-                    new DataService(sqlite).FindPerdaByNome("")
-                );
-                scope.Complete();
-            }
-
         }
 
         ObservableCollection<Perda> _Perdas = new ObservableCollection<Perda>();
@@ -127,9 +119,7 @@ namespace Carro.ViewModels
             var sqlite = DependencyService.Get<ISQLite>();
             using (var scope = new TransactionScope(sqlite))
             {
-                Perdas = new ObservableCollection<Perda>(
-                    new DataService(sqlite).FindPerdaByNome("")
-                );
+                Perdas = new ObservableCollection<Perda>(new DataService(sqlite).FindPerdaByNome(""));
                 scope.Complete();
             }
 

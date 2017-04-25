@@ -87,7 +87,7 @@ namespace Carro.Services
             var elements = DB.Table<Perda>();
             if (nome == null || nome == "")
             {
-                list = DB.Query<Perda>("SELECT perda.Id, perda.Nome, perda.Justificativa FROM perda ").ToList();
+                list = DB.Query<Perda>("SELECT perda.Id, perda.Nome, perda.Justificativa FROM perda ORDER BY perda.Nome").ToList();
             }
             else
             {
