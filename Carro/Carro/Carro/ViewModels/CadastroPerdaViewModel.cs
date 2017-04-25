@@ -86,6 +86,22 @@ namespace Carro.ViewModels
             }
         }
 
+        Command _RemoveProdutoCommand;
+        public Command RemoveProdutoCommand
+        {
+            get { return _RemoveProdutoCommand ?? (_RemoveProdutoCommand = new Command<PerdaProduto>(async (qq) => await ExecuteRemoveProdutoCommand(qq))); }
+        }
+
+        async Task ExecuteRemoveProdutoCommand(PerdaProduto qq)
+        {
+            if (!IsBusy)
+            {
+                IsBusy = true;
+                PerdaProdutos.Remove(qq);
+                IsBusy = false;
+            }
+        }
+
         Command _ListaProdutoCommand;
         public Command ListaProdutoCommand
         {
