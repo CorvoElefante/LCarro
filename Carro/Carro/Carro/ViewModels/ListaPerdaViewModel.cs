@@ -17,6 +17,15 @@ namespace Carro.ViewModels
         {
 
             var sqlite = DependencyService.Get<ISQLite>();
+            ExecuteAtualizaPerdaCommand();
+
+            using (var scope = new TransactionScope(sqlite))
+            {
+                Perdas = new ObservableCollection<Perda>(
+                    new DataService(sqlite).FindPerdaByNome("")
+                );
+                scope.Complete();
+            }
 
         }
 
@@ -104,6 +113,26 @@ namespace Carro.ViewModels
                 await Navigation.PushAsync(new CadastroPerdaPage());
                 IsBusy = false;
             }
+        }
+
+        Command _AtualizaPerdaCommand;
+        public Command AtualizaPerdaCommand
+        {
+            get { return _AtualizaPerdaCommand ?? (_AtualizaPerdaCommand = new Command(() => ExecuteAtualizaPerdaCommand())); }
+        }
+
+        void ExecuteAtualizaPerdaCommand()
+        {
+
+            var sqlite = DependencyService.Get<ISQLite>();
+            using (var scope = new TransactionScope(sqlite))
+            {
+                Perdas = new ObservableCollection<Perda>(
+                    new DataService(sqlite).FindPerdaByNome("")
+                );
+                scope.Complete();
+            }
+
         }
 
         Command _EditarPerdaCommand;
