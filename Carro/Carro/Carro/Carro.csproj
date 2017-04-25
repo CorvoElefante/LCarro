@@ -125,6 +125,7 @@
     <Compile Include="Repositories\UnitOfWork.cs" />
     <Compile Include="Resources\FloatConverter.cs" />
     <Compile Include="Resources\image.cs" />
+    <Compile Include="Resources\IntConverter.cs" />
     <Compile Include="Services\DataService.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
