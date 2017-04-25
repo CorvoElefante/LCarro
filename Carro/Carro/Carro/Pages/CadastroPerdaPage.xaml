@@ -78,6 +78,14 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
+                                <ViewCell.ContextActions>
+                                    <MenuItem 
+                                        Clicked="OnDelete" 
+                                        CommandParameter="{Binding .}" 
+                                        Text="Delete" 
+                                        IsDestructive="True" />
+                                </ViewCell.ContextActions>
+                                
                                 <Grid
                                     Margin="2"
                                     Padding="2"

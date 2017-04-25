@@ -50,6 +50,7 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
+                                
                                 <Grid
                                     Margin="2"
                                     Padding="2"

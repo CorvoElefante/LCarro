@@ -25,5 +25,11 @@ namespace Carro.Pages
             }
            ((ListView)sender).SelectedItem = null; // de-select the row
         }
+
+        public void OnDelete(object sender, EventArgs e)
+        {
+            var mi = ((MenuItem)sender);
+            DisplayAlert("", "Item removido com sucesso", "OK");
+        }
     }
 }
