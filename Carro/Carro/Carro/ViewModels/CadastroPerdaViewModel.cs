@@ -18,15 +18,20 @@ namespace Carro.ViewModels
         {
 
             var sqlite = DependencyService.Get<ISQLite>();
-            MessagingCenter.Subscribe<BaseViewModel, Produto>(this, "Hi", (sender, value) => {
+            MessagingCenter.Subscribe<BaseViewModel, PerdaProduto>(this, "PerdaProdutos", (sender, value) =>
+            {
                 var lista = new PerdaProduto();
+                lista.QuantidadePerdida = value.QuantidadePerdida;
                 lista.IdProduto = value.Id;
                 lista.Local = value.Local;
                 lista.Marca = value.Marca;
                 lista.Nome = value.Nome;
                 lista.Preco = value.Preco;
-                lista.QuantidadePerdida = value.Quantidade;
-                PerdaProdutos.Add(lista);
+
+                if (lista.QuantidadePerdida > 0)
+                {
+                    PerdaProdutos.Add(lista);
+                }
             });
         }
 
@@ -55,6 +60,14 @@ namespace Carro.ViewModels
             {
                 _nomeEntry = value;
                 SetPropertyChanged(nameof(nomeEntry));
+                if (nomeEntry != string.Empty)
+                {
+                    nomeEntryInvalido = false;
+                }
+                else
+                {
+                    nomeEntryInvalido = true;
+                }
             }
         }
 

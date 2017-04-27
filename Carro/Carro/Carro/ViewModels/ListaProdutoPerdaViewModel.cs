@@ -55,8 +55,8 @@ namespace Carro.ViewModels
             if (!IsBusy)
             {
                 IsBusy = true;
-                MessagingCenter.Send<BaseViewModel, Produto>(this, "Hi", value);
-                await Navigation.PopAsync();
+                Navigation.PopAsync();
+                await Navigation.PushAsync(new EditarProdutoPerdaPage(value));
                 IsBusy = false;
             }
         }

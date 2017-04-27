@@ -8,7 +8,7 @@
   
   <ContentPage.ToolbarItems>
     <ToolbarItem 
-      Icon="{x:Static resources:Images.IconeAdicionar}" 
+      Icon="{x:Static resources:Images.IconeUser132}" 
       Command="{Binding AddDespesaCommand}"/>
     <ToolbarItem
       Icon="{x:Static resources:Images.IconeTimeIsMoney32}"/>

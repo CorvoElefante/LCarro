@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using Carro.ViewModels;
+using Carro.Models;
 
 namespace Carro.Pages
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EditarProdutoPerdaPage : ContentPage
     {
-        public EditarProdutoPerdaPage()
+        public EditarProdutoPerdaPage(Produto value)
         {
+            BindingContext = new EditarProdutoPerdaViewModel (Navigation, value);
             InitializeComponent();
         }
     }

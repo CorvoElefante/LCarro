@@ -12,13 +12,32 @@ namespace Carro.ViewModels
 {
     class EditarProdutoPerdaViewModel : BaseViewModel
     {
-        public EditarProdutoPerdaViewModel(INavigation navigation, int estoqueProduto, string nomeProduto) : base(navigation)
+        public EditarProdutoPerdaViewModel(INavigation navigation, Produto value) : base(navigation)
         {
             var sqlite = DependencyService.Get<ISQLite>();
 
-            produto = nomeProduto;
-            quantidadeEstoque = estoqueProduto;
+            produto = value.Nome;
+            quantidadeEstoque = value.Quantidade;
+            PerdaProdutos.IdProduto = value.Id;
+            PerdaProdutos.Local = value.Local;
+            PerdaProdutos.Marca = value.Marca;
+            PerdaProdutos.Nome = value.Nome;
+            PerdaProdutos.Descricao = value.Descricao;
 
+        }
+
+        PerdaProduto _PerdaProdutos = new PerdaProduto();
+        public PerdaProduto PerdaProdutos
+        {
+            get
+            {
+                return _PerdaProdutos;
+            }
+            set
+            {
+                _PerdaProdutos = value;
+                SetPropertyChanged(nameof(PerdaProdutos));
+            }
         }
 
         int _quantidadeEstoque = 0;
@@ -46,6 +65,7 @@ namespace Carro.ViewModels
             {
                 _quantidadePerdidaEntry = value;
                 SetPropertyChanged(nameof(quantidadePerdidaEntry));
+                PerdaProdutos.QuantidadePerdida = quantidadePerdidaEntry;
             }
         }
 
@@ -60,6 +80,24 @@ namespace Carro.ViewModels
             {
                 _produto = value;
                 SetPropertyChanged(nameof(produto));
+            }
+        }
+
+        Command _SalvaProdutoPerdaCommand;
+        public Command SalvaProdutoPerdaCommand
+        {
+            get { return _SalvaProdutoPerdaCommand ?? (_SalvaProdutoPerdaCommand = new Command(async () => await ExecuteSalvaProdutoPerdaCommand())); }
+        }
+
+        async Task ExecuteSalvaProdutoPerdaCommand()
+        {
+
+            if (!IsBusy)
+            {
+                IsBusy = true;
+                MessagingCenter.Send<BaseViewModel, PerdaProduto>(this, "PerdaProdutos", PerdaProdutos);
+                await Navigation.PopAsync();
+                IsBusy = false;
             }
         }
     }

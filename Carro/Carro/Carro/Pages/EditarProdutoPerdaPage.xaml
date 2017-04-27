@@ -2,12 +2,116 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Carro.Pages.EditarProdutoPerdaPage"
+             xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
              BackgroundColor="#FFFFF7"
-             Title="">
+             Title="Produto Selecionado">
 
-    <Grid>
-        <Label Text="{Binding produto}"/>
-        <Label Text="Quantidade perdida:"/>
-        <Entry Text="{Binding quantidadeEntry}"/>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+      Icon="{x:Static resources:Images.IconeUser32}"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <resources:IntConverter x:Key="intConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid
+        Padding="30">
+        <Grid
+        Grid.RowSpan="8"
+        RowSpacing="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="140"/>
+            </Grid.ColumnDefinitions>
+
+            <Label 
+            Text="{Binding produto}"
+            FontSize="Large"/>
+            
+            <Label
+            Grid.Row="1"
+            Text="Quantidade atual em estoque:"
+            FontSize="Large"/>
+            <Label
+            Grid.Row="1"
+            Grid.Column="1"
+            VerticalOptions="Center"
+            HorizontalOptions="End"
+            Text="{Binding quantidadeEstoque}"
+            FontSize="Large"/>
+            
+            <Label
+            Grid.Row="2"
+                VerticalOptions="Center"
+            Text="Quantidade perdida:"
+            FontSize="Large"/>
+            <Entry
+            Grid.Row="2"
+            Grid.Column="1"
+            VerticalOptions="Center"
+            Text= "{Binding quantidadePerdidaEntry, Converter={StaticResource intConverter}}"
+            FontSize="Large"
+            Keyboard="Numeric"/>
+        </Grid>
+
+        <Grid
+        Grid.Row="8"
+        BackgroundColor="Transparent"
+        Padding="4"
+        ColumnSpacing="-30">
+            <Grid
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            BackgroundColor="Transparent">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Image
+                    Grid.Column="1"
+                    Source="ic_success64.png"
+                    IsOpaque="True"/>
+                <Label
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+                    Text="Salvar"
+                    TextColor="#444444"
+                    FontSize="Medium"/>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding SalvaProdutoPerdaCommand}"/>
+                </Grid.GestureRecognizers>
+            </Grid>
+            <Grid
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Grid.Column="1"
+                BackgroundColor="Transparent">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Image
+                    Source="ic_error64.png"
+                    IsOpaque="True"/>
+                <Label
+                    Grid.Column="1"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+                    Text="Deletar"
+                    TextColor="#444444"
+                    FontSize="Medium"/>
+            </Grid>
+        </Grid>
     </Grid>
+
 </ContentPage>

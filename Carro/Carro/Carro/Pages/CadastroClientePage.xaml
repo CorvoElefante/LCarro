@@ -37,7 +37,6 @@
                 <Image
                     Margin="8"
                     Grid.Column="12"
-                    Grid.Row="0"
                     Source="ic_unchecked16.png"
                     IsVisible="{Binding nomeEntryInvalido}"
                     IsOpaque="True"
