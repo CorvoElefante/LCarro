@@ -25,7 +25,7 @@ namespace Carro.ViewModels
             descricaoEntry = value.Descricao;
             localEntry = value.Local;
             produtoEntry = value;
-    }
+        }
 
         Produto _produtoEntry;
         public Produto produtoEntry
