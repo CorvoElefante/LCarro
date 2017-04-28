@@ -115,8 +115,32 @@
     <Compile Include="Pages\CadastroServicoPage.xaml.cs">
       <DependentUpon>CadastroServicoPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\RelatorioClientePage.xaml.cs">
+      <DependentUpon>RelatorioClientePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RelatorioDespesaPage.xaml.cs">
+      <DependentUpon>RelatorioDespesaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RelatorioFuncionarioPage.xaml.cs">
+      <DependentUpon>RelatorioFuncionarioPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\RelatorioMenuPage.xaml.cs">
       <DependentUpon>RelatorioMenuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RelatorioOrdemDeServicoPage.xaml.cs">
+      <DependentUpon>RelatorioOrdemDeServicoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RelatorioPerdaPage.xaml.cs">
+      <DependentUpon>RelatorioPerdaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RelatorioProdutoPage.xaml.cs">
+      <DependentUpon>RelatorioProdutoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RelatorioServicoPage.xaml.cs">
+      <DependentUpon>RelatorioServicoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RelatorioVendaPage.xaml.cs">
+      <DependentUpon>RelatorioVendaPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SobrePage.xaml.cs">
       <DependentUpon>SobrePage.xaml</DependentUpon>
@@ -331,6 +355,54 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\RelatorioMenuPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\RelatorioOrdemDeServicoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\RelatorioVendaPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\RelatorioClientePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\RelatorioProdutoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\RelatorioServicoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\RelatorioDespesaPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\RelatorioPerdaPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\RelatorioFuncionarioPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
