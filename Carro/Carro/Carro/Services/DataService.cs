@@ -81,6 +81,12 @@ namespace Carro.Services
             UnitOfWork.PerdaRepository.AddOrUpdate(perda);
         }
 
+        public void AtualizaEstoque(long? idProduto, int quantidadeEstoque)
+        {
+            
+            DB.Query<Produto>("UPDATE Produto SET Quantidade = ? WHERE Id = ?", quantidadeEstoque, idProduto);
+        }
+
         public List<Perda> FindPerdaByNome(string nome)
         {
             List<Perda> list = new List<Perda>();

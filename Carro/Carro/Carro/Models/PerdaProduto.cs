@@ -22,6 +22,8 @@ namespace Carro.Models
 
         public float Preco { get; set; }
 
+        public int Quantidade { get; set; }
+
         public int QuantidadePerdida { get; set; }
 
         public string Marca { get; set; }

@@ -23,6 +23,7 @@ namespace Carro.ViewModels
             PerdaProdutos.Marca = value.Marca;
             PerdaProdutos.Nome = value.Nome;
             PerdaProdutos.Descricao = value.Descricao;
+            PerdaProdutos.Quantidade = value.Quantidade;
 
         }
 
