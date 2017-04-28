@@ -13,8 +13,14 @@
     <ToolbarItem
       Icon="{x:Static resources:Images.IconeTeam32}"/>
   </ContentPage.ToolbarItems>
-  
-  <ListView
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <resources:DecimalConverter x:Key="decimalConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ListView
      HorizontalOptions="FillAndExpand"
      VerticalOptions="FillAndExpand"
      HasUnevenRows="true"
@@ -51,7 +57,7 @@
 								FontSize="Large"
 								Text="{Binding Pessoa.Nome}"/>
               <Label Grid.Row="1"
-								Text="{Binding Salario}"/>
+								Text="{Binding Salario, Converter={StaticResource decimalConverter}}"/>
               <Label Grid.Row="1" Grid.Column="1"
                 HorizontalOptions="End"
 								Text="{Binding Funcao}"/>

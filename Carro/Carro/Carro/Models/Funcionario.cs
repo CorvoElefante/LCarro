@@ -13,7 +13,7 @@ namespace Carro.Models
         [PrimaryKey, AutoIncrement]
         public long? Id { get; set; }
 
-        public float Salario { get; set; }
+        public decimal Salario { get; set; }
 
         public string Funcao { get; set; }
 

@@ -6,8 +6,8 @@
              BackgroundColor="#444444">
 
     <Grid
-      Margin="0"
-      Padding="10"
+      Margin="10"
+      Padding="0"
       RowSpacing="6"
       ColumnSpacing="0">
 
@@ -15,8 +15,8 @@
             Grid.Row="0"
             Grid.Column="1"
             BackgroundColor="Transparent"
-            Margin="0"
-            Padding="2"
+            Margin="2"
+            Padding="0"
             RowSpacing="2"
             ColumnSpacing="0">
             <Image
@@ -42,8 +42,8 @@
             Grid.Row="2"
             Grid.Column="0"
             BackgroundColor="Transparent"
-            Margin="0"
-            Padding="2"
+            Margin="2"
+            Padding="0"
             RowSpacing="2"
             ColumnSpacing="0">
             <Image
@@ -69,8 +69,8 @@
             Grid.Row="4"
             Grid.Column="0"
             BackgroundColor="Transparent"
-            Margin="0"
-            Padding="2"
+            Margin="2"
+            Padding="0"
             RowSpacing="2"
             ColumnSpacing="0">
             <Image
@@ -96,8 +96,8 @@
             Grid.Row="1"
             Grid.Column="0"
             BackgroundColor="Transparent"
-            Margin="0"
-            Padding="2" 
+            Margin="2"
+            Padding="0" 
             RowSpacing="2" 
             ColumnSpacing="0">
             <Image
@@ -123,8 +123,8 @@
             Grid.Row="3"
             Grid.Column="1"
             BackgroundColor="Transparent"
-            Margin="0"
-            Padding="2"
+            Margin="2"
+            Padding="0"
             RowSpacing="2"
             ColumnSpacing="0">
             <Image
@@ -150,8 +150,8 @@
             Grid.Row="3"
             Grid.Column="0"
             BackgroundColor="Transparent"
-            Margin="0"
-            Padding="2"
+            Margin="2"
+            Padding="0"
             RowSpacing="2"
             ColumnSpacing="0">
             <Image
@@ -177,8 +177,8 @@
             Grid.Row="2"
             Grid.Column="1"
             BackgroundColor="Transparent"
-            Margin="0"
-            Padding="2"
+            Margin="2"
+            Padding="0"
             RowSpacing="2"
             ColumnSpacing="0">
             <Image
@@ -204,8 +204,8 @@
             Grid.Row="4"
             Grid.Column="1"
             BackgroundColor="Transparent"
-            Margin="0"
-            Padding="2"
+            Margin="2"
+            Padding="0"
             RowSpacing="2"
             ColumnSpacing="0">
             <Image
@@ -231,8 +231,8 @@
             Grid.Row="1"
             Grid.Column="1"
             BackgroundColor="Transparent"
-            Margin="0"
-            Padding="2"
+            Margin="2"
+            Padding="0"
             RowSpacing="2"
             ColumnSpacing="0">
             <Image
@@ -258,8 +258,8 @@
             Grid.Row="0"
             Grid.Column="0"
             BackgroundColor="Transparent"
-            Margin="0"
-            Padding="2"
+            Margin="2"
+            Padding="0"
             RowSpacing="2"
             ColumnSpacing="0">
             <Image

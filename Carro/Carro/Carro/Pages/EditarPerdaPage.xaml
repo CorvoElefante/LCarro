@@ -20,14 +20,14 @@
                 </Grid.RowDefinitions>
                 <Entry
                     Grid.ColumnSpan="12"
-                    Text = "{Binding nomeEntry, Mode=TwoWay}" 
+                    Text = "{Binding nomeEntry}" 
                     Placeholder="Nome" 
                     Keyboard="Text"/>
 
                 <Entry
                     Grid.Row="1"
                     Grid.ColumnSpan="12"
-                    Text = "{Binding justificativaEntry, Mode=TwoWay}" 
+                    Text = "{Binding justificativaEntry}" 
                     Placeholder="Justificativa" 
                     Keyboard="Text"/>
 

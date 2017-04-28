@@ -192,8 +192,8 @@ namespace Carro.ViewModels
             }
         }
 
-        float _salarioEntry = 0.0F;
-        public float salarioEntry
+        decimal _salarioEntry = 0.0m;
+        public decimal salarioEntry
         {
             get
             {

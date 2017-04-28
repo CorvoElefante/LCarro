@@ -14,7 +14,13 @@
       Icon="{x:Static resources:Images.IconeTimeIsMoney32}"/>
   </ContentPage.ToolbarItems>
 
-  <ListView
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <resources:DecimalConverter x:Key="decimalConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ListView
      HorizontalOptions="FillAndExpand"
      VerticalOptions="FillAndExpand"
      HasUnevenRows="true"
@@ -54,7 +60,7 @@
 								Text="{Binding Categoria}"/>
               <Label Grid.Row="1" Grid.Column="1"
                 HorizontalOptions="End"
-								Text="{Binding Valor}"/>
+								Text="{Binding Valor, Converter={StaticResource decimalConverter}}"/>
             </Grid>
         </ViewCell>
       </DataTemplate>

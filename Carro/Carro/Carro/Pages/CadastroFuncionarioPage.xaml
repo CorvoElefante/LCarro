@@ -14,7 +14,7 @@
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <resources:FloatConverter x:Key="floatConverter" />
+            <resources:DecimalConverter x:Key="decimalConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -37,7 +37,7 @@
                 </Grid.RowDefinitions>
                 <Entry
                     Grid.ColumnSpan="12"
-                    Text="{Binding nomeEntry, Mode=TwoWay}" 
+                    Text="{Binding nomeEntry}" 
                     Placeholder="Nome" 
                     Keyboard="Text"/>
                 <Image
@@ -51,51 +51,56 @@
                 <Entry
                     Grid.Row="1"
                     Grid.ColumnSpan="12"
-                    Text="{Binding ruaNEntry, Mode=TwoWay}" 
+                    Text="{Binding ruaNEntry}" 
                     Placeholder="Rua"/>
 
                 <Entry
                     Grid.Row="2"
                     Grid.ColumnSpan="12"
-                    Text="{Binding bairroEntry, Mode=TwoWay}" 
+                    Text="{Binding bairroEntry}" 
                     Placeholder="Bairro"/>
 
                 <Entry
                     Grid.Row="3"
                     Grid.ColumnSpan="12"
-                    Text="{Binding cpfEntry, Mode=TwoWay}" 
-                    Placeholder="CPF" Keyboard="Numeric"/>
+                    Text="{Binding cpfEntry}" 
+                    Placeholder="CPF" 
+                    Keyboard="Numeric"/>
 
                 <Entry
                     Grid.Row="4"
                     Grid.ColumnSpan="12"
-                    Text ="{Binding telefoneEntry, Mode=TwoWay}" 
-                    Placeholder="Telefone" Keyboard="Telephone"/>
+                    Text ="{Binding telefoneEntry}" 
+                    Placeholder="Telefone" 
+                    Keyboard="Telephone"/>
 
                 <Entry
                     Grid.Row="5"
                     Grid.ColumnSpan="12"
-                    Text="{Binding ndataEntry, Mode=TwoWay}" 
-                    Placeholder="Data de nascimento" Keyboard="Numeric"/>
+                    Text="{Binding ndataEntry}" 
+                    Placeholder="Data de nascimento" 
+                    Keyboard="Numeric"/>
 
                 <Entry
                     Grid.Row="6"
                     Grid.ColumnSpan="12"
-                    Text="{Binding emailEntry, Mode=TwoWay}"  
-                    Placeholder="Email" Keyboard="Email"/>
+                    Text="{Binding emailEntry}"  
+                    Placeholder="Email" 
+                    Keyboard="Email"/>
 
                 <Entry
                     Grid.Row="7"
                     Grid.ColumnSpan="12"
                     x:Name="salarioEntry" 
-                    Text="{Binding salarioEntry, Mode=TwoWay, Converter={StaticResource floatConverter}}"  
-                    Placeholder="Salario"/>
+                    Text="{Binding salarioEntry, Converter={StaticResource decimalConverter}}"  
+                    Placeholder="Salario"
+                    Keyboard="Numeric"/>
 
                 <Entry
                     Grid.Row="8"
                     Grid.ColumnSpan="12"
-                    Text="{Binding funcaoEntry, Mode=TwoWay}"  
-                    Placeholder="Função"></Entry>
+                    Text="{Binding funcaoEntry}"  
+                    Placeholder="Função"/>
             </Grid>
         </ScrollView>
 

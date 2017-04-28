@@ -13,7 +13,7 @@
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <resources:FloatConverter x:Key="floatConverter" />
+            <resources:DecimalConverter x:Key="decimalConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -31,7 +31,7 @@
                 </Grid.RowDefinitions>
                 <Entry 
                     Grid.ColumnSpan="12"
-                    Text="{Binding nomeEntry, Mode=TwoWay}" 
+                    Text="{Binding nomeEntry}" 
                     Placeholder="Nome" 
                     Keyboard="Text"/>
                 <Image
@@ -46,7 +46,7 @@
                     Grid.Row="1"
                     Grid.ColumnSpan="12"
                     x:Name="valorEntry" 
-                    Text="{Binding valorEntry, Mode=TwoWay, Converter={StaticResource floatConverter}}" 
+                    Text="{Binding valorEntry, Converter={StaticResource decimalConverter}}" 
                     Placeholder="Valor gasto" 
                     Keyboard="Numeric"/>
                 <Image
@@ -61,7 +61,7 @@
                 <Entry 
                     Grid.Row="2"
                     Grid.ColumnSpan="12"
-                    Text="{Binding descricaoEntry, Mode=TwoWay}" 
+                    Text="{Binding descricaoEntry}" 
                     Placeholder="Descrição" 
                     Keyboard="Text"/>
 

@@ -14,7 +14,6 @@
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <resources:FloatConverter x:Key="floatConverter" />
             <resources:DecimalConverter x:Key="decimalConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -35,7 +34,7 @@
                     Grid.Column="0"
                     Grid.Row="0"
                     Grid.ColumnSpan="12"
-                    Text="{Binding nomeEntry, Mode=TwoWay}" 
+                    Text="{Binding nomeEntry}" 
                     Placeholder="Nome" 
                     Keyboard="Text"/>
                 <Image
@@ -52,7 +51,7 @@
                     Grid.Row="1"
                     Grid.ColumnSpan="12"
                     x:Name="valorEntry" 
-                    Text="{Binding valorEntry, Mode=TwoWay, Converter={StaticResource decimalConverter}}" 
+                    Text="{Binding valorEntry, Converter={StaticResource decimalConverter}}" 
                     Placeholder="Valor gasto" 
                     Keyboard="Numeric"/>
                 <Image
@@ -68,17 +67,9 @@
                     Grid.Column="0"
                     Grid.Row="2"
                     Grid.ColumnSpan="12"
-                    Text="{Binding descricaoEntry, Mode=TwoWay}" 
+                    Text="{Binding descricaoEntry}" 
                     Placeholder="Descrição" 
                     Keyboard="Text"/>
-
-                <!--<Entry 
-                    Grid.Column="0"
-                    Grid.Row="3"
-                    Grid.ColumnSpan="12"
-                    x:Name="categoriaEntry" 
-                    Text="{Binding categoriaEntry, Mode=TwoWay, Converter={StaticResource floatConverter}}" 
-                    Placeholder="Categoria" Keyboard="Numeric"/>-->
 
                 <Picker
                     Grid.Row="3"

@@ -14,7 +14,7 @@
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <resources:FloatConverter x:Key="floatConverter" />
+            <resources:DecimalConverter x:Key="decimalConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
 

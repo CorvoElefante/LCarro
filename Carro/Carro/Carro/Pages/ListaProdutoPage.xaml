@@ -14,6 +14,12 @@
       Icon="{x:Static resources:Images.IconeProdutos32}"/>
     </ContentPage.ToolbarItems>
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <resources:DecimalConverter x:Key="decimalConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <ListView
 			HorizontalOptions="FillAndExpand"
 			VerticalOptions="FillAndExpand"
@@ -56,7 +62,7 @@
                         <Label 
                             Grid.Column="1"
                             HorizontalOptions="End"
-							Text="{Binding Preco}"/>
+							Text="{Binding Preco, Converter={StaticResource decimalConverter}}"/>
                         
                         <Label 
                             Grid.Row="1"

@@ -15,7 +15,7 @@
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <resources:FloatConverter x:Key="floatConverter" />
+            <resources:DecimalConverter x:Key="decimalConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -34,7 +34,7 @@
                 </Grid.RowDefinitions>
                 <Entry
                     Grid.ColumnSpan="12"
-                    Text = "{Binding nomeEntry, Mode=TwoWay}" 
+                    Text = "{Binding nomeEntry}" 
                     Placeholder="Nome" 
                     Keyboard="Text"/>
                 <Image
@@ -49,7 +49,7 @@
                     Grid.Row="1"
                     Grid.ColumnSpan="12"
                     x:Name="precoEntry" 
-                    Text = "{Binding precoEntry, Mode=TwoWay, Converter={StaticResource floatConverter}}" 
+                    Text = "{Binding precoEntry, Converter={StaticResource decimalConverter}}" 
                     Placeholder="Preco" 
                     Keyboard="Numeric"/>
                 <Image
@@ -64,19 +64,19 @@
                 <Entry
                     Grid.Row="2"
                     Grid.ColumnSpan="12"
-                    Text = "{Binding marcaEntry, Mode=TwoWay}" 
+                    Text = "{Binding marcaEntry}" 
                     Placeholder="Marca"/>
 
                 <Entry
                     Grid.Row="3"
                     Grid.ColumnSpan="12"
-                    Text = "{Binding descricaoEntry, Mode=TwoWay}" 
+                    Text = "{Binding descricaoEntry}" 
                     Placeholder="Descrição"/>
 
                 <Entry
                     Grid.Row="4"
                     Grid.ColumnSpan="12"
-                    Text = "{Binding localEntry, Mode=TwoWay}" 
+                    Text = "{Binding localEntry}" 
                     Placeholder="Local no estoque"/>
             </Grid>
         </ScrollView>

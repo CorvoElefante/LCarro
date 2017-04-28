@@ -19,7 +19,7 @@ namespace Carro.Models
 
         public string Nome { get; set; }
 
-        public float Valor { get; set; }
+        public decimal Valor { get; set; }
 
         public int Quantidade { get; set; }
 

@@ -18,40 +18,40 @@
 
 
     <Grid
-        Margin="0"
-        Padding="10"
+        Margin="10"
+        Padding="0"
         RowSpacing="30"
         ColumnSpacing="0">
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
         <Image
-            Grid.Column="2"
-            Grid.RowSpan="6"
-            Grid.ColumnSpan="6"
             Source="CarLogo512.png"
             IsOpaque="True"
             Aspect="AspectFit"
             HorizontalOptions="Center"/>
 
         <Entry
-            Grid.Row="7"
-            Grid.ColumnSpan="10"
+            Grid.Row="1"
             BackgroundColor="Transparent"
-            Text="{Binding cpfEntry, Mode=TwoWay}"
+            Text="{Binding cpfEntry}"
             Placeholder="CPF"
             Keyboard="Text"/>
 
         <Entry
-            Grid.Row="8"
-            Grid.ColumnSpan="10"
+            Grid.Row="2"
             BackgroundColor="Transparent"
-            Text="{Binding serialKeyEntry, Mode=TwoWay}"
+            Text="{Binding serialKeyEntry}"
             Placeholder="Codigo de Ativação"
             Keyboard="Numeric"/>
 
         <Frame
-            Grid.Row="9"
-            Grid.Column="6"
-            Grid.ColumnSpan="4"
+            Grid.Row="3"
             BackgroundColor="#2f7dd6"
             Padding="0">
             <Label
