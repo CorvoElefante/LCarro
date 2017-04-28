@@ -22,11 +22,12 @@ namespace Carro.ViewModels
             {
                 var lista = new PerdaProduto();
                 lista.QuantidadePerdida = value.QuantidadePerdida;
-                lista.IdProduto = value.Id;
+                lista.IdProduto = value.IdProduto;
                 lista.Local = value.Local;
                 lista.Marca = value.Marca;
                 lista.Nome = value.Nome;
                 lista.Preco = value.Preco;
+                lista.Quantidade = value.Quantidade;
 
                 if (lista.QuantidadePerdida > 0)
                 {
@@ -102,10 +103,10 @@ namespace Carro.ViewModels
         Command _RemoveProdutoCommand;
         public Command RemoveProdutoCommand
         {
-            get { return _RemoveProdutoCommand ?? (_RemoveProdutoCommand = new Command<PerdaProduto>(async (qq) => await ExecuteRemoveProdutoCommand(qq))); }
+            get { return _RemoveProdutoCommand ?? (_RemoveProdutoCommand = new Command<PerdaProduto>((qq) => ExecuteRemoveProdutoCommand(qq))); }
         }
 
-        async Task ExecuteRemoveProdutoCommand(PerdaProduto qq)
+        void ExecuteRemoveProdutoCommand(PerdaProduto qq)
         {
             if (!IsBusy)
             {
@@ -149,7 +150,17 @@ namespace Carro.ViewModels
                     using (var scope = new TransactionScope(sqlite))
                     {
                         var service = new DataService(sqlite);
-                        service.SavePerda(new Models.Perda { Nome = nomeEntry, Justificativa = justificativaEntry, PerdaProdutos = PerdaProdutos.ToList<PerdaProduto>() });
+                        foreach(PerdaProduto perdido in PerdaProdutos)
+                        {
+                            if (perdido.QuantidadePerdida > perdido.Quantidade)
+                            {
+                                service.AtualizaEstoque(perdido.IdProduto, 0);
+                            }else
+                            {
+                                service.AtualizaEstoque(perdido.IdProduto, (perdido.Quantidade - perdido.QuantidadePerdida));
+                            }
+                        }
+                        service.SavePerda(new Perda { Nome = nomeEntry, Justificativa = justificativaEntry, PerdaProdutos = PerdaProdutos.ToList<PerdaProduto>() });
                         scope.Complete();
                     }
                     await Navigation.PopAsync();
