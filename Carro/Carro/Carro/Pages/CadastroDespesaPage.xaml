@@ -15,6 +15,7 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <resources:FloatConverter x:Key="floatConverter" />
+            <resources:DecimalConverter x:Key="decimalConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -51,7 +52,7 @@
                     Grid.Row="1"
                     Grid.ColumnSpan="12"
                     x:Name="valorEntry" 
-                    Text="{Binding valorEntry, Mode=TwoWay, Converter={StaticResource floatConverter}}" 
+                    Text="{Binding valorEntry, Mode=TwoWay, Converter={StaticResource decimalConverter}}" 
                     Placeholder="Valor gasto" 
                     Keyboard="Numeric"/>
                 <Image

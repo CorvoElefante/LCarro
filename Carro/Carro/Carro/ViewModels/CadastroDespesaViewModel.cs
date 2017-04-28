@@ -56,8 +56,8 @@ namespace Carro.ViewModels
             }
         }
 
-        float _valorEntry = 0.0F;
-        public float valorEntry
+        decimal _valorEntry = 0.0m;
+        public decimal valorEntry
         {
             get
             {

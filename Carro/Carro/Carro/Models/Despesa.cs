@@ -17,7 +17,7 @@ namespace Carro.Models
 
         public string Descricao { get; set; }
 
-        public float Valor { get; set; }
+        public decimal Valor { get; set; }
 
         public int Categoria { get; set; }
         //0 = Selecione a categoria (Invalido)
