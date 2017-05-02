@@ -9,10 +9,9 @@ using Xamarin.Forms.Xaml;
 
 namespace Carro.Pages
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class RealatorioProdutoSemEstoqueResultadoPage : ContentPage
+    public partial class RelatorioProdutoSemEstoqueResultadoPage : ContentPage
     {
-        public RealatorioProdutoSemEstoqueResultadoPage()
+        public RelatorioProdutoSemEstoqueResultadoPage()
         {
             InitializeComponent();
         }
