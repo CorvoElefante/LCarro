@@ -164,8 +164,8 @@ namespace Carro.ViewModels
                     using (var scope = new TransactionScope(sqlite))
                     {
                         var service = new DataService(sqlite);
-
-                        service.SaveProduto(new Produto { Nome = nomeEntry, Preco = precoEntry, Quantidade = quantidadeEntry, Marca = marcaEntry, Descricao = descricaoEntry, Local = localEntry });
+                        DateTime data = DateTime.Now;
+                        service.SaveProduto(new Produto { Nome = nomeEntry, Preco = precoEntry, Quantidade = quantidadeEntry, Marca = marcaEntry, Descricao = descricaoEntry, Local = localEntry, Registro = data });
                         scope.Complete();
                     }
                     await Navigation.PopAsync();
