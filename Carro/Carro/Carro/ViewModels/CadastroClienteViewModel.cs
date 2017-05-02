@@ -159,7 +159,8 @@ namespace Carro.ViewModels
                     {
                         var service = new DataService(sqlite);
 
-                        service.SavePessoa(new Pessoa { Nome = nomeEntry, RuaN = ruaNEntry, Bairro = bairroEntry, Telefone = telefoneEntry, Email = emailEntry, Data = ndataEntry, Cpf = cpfEntry });
+                        DateTime data = DateTime.Now;
+                        service.SavePessoa(new Pessoa { Nome = nomeEntry, RuaN = ruaNEntry, Bairro = bairroEntry, Telefone = telefoneEntry, Email = emailEntry, Data = ndataEntry, Cpf = cpfEntry, Registro = data });
                         scope.Complete();
                     }
                     await Navigation.PopAsync();

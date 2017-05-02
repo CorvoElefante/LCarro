@@ -160,7 +160,8 @@ namespace Carro.ViewModels
                                 service.AtualizaEstoque(perdido.IdProduto, (perdido.Quantidade - perdido.QuantidadePerdida));
                             }
                         }
-                        service.SavePerda(new Perda { Nome = nomeEntry, Justificativa = justificativaEntry, PerdaProdutos = PerdaProdutos.ToList<PerdaProduto>() });
+                        DateTime data = DateTime.Now;
+                        service.SavePerda(new Perda { Nome = nomeEntry, Justificativa = justificativaEntry, Registro = data, PerdaProdutos = PerdaProdutos.ToList<PerdaProduto>() });
                         scope.Complete();
                     }
                     await Navigation.PopAsync();

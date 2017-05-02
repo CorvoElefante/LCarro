@@ -49,7 +49,7 @@ namespace Carro.Services
 
         public List<Despesa> GetDespesas()
         {
-            return UnitOfWork.DespesaRepository.GetAll().OrderBy(Despesa => Despesa.Nome).ToList();
+            return UnitOfWork.DespesaRepository.GetAll().OrderByDescending(Despesa => Despesa.Id).ToList();
         }
 
         public void SaveDespesa(Despesa despesa)
@@ -59,7 +59,7 @@ namespace Carro.Services
 
         public List<Despesa> FindDespesaByNome(string nome)
         {
-            return UnitOfWork.DespesaRepository.Find(a => a.Nome.Contains(nome)).OrderBy(Despesa => Despesa.Nome).ToList();
+            return UnitOfWork.DespesaRepository.Find(a => a.Nome.Contains(nome)).OrderByDescending(Despesa => Despesa.Id).ToList();
         }
 
         public void DeleteDespesa(Despesa despesa)
@@ -93,11 +93,11 @@ namespace Carro.Services
             var elements = DB.Table<Perda>();
             if (nome == null || nome == "")
             {
-                list = DB.Query<Perda>("SELECT perda.Id, perda.Nome, perda.Justificativa FROM perda ORDER BY perda.Nome").ToList();
+                list = DB.Query<Perda>("SELECT perda.Id, perda.Nome, perda.Justificativa, perda.Registro FROM perda ORDER BY perda.Id DESC").ToList();
             }
             else
             {
-                list = DB.Query<Perda>("SELECT perda.Id, perda.Nome, perda.Justificativa FROM perda WHERE (perda.Nome LIKE ('%' || ? || '%')) ORDER BY perda.Nome", nome).ToList();
+                list = DB.Query<Perda>("SELECT perda.Id, perda.Nome, perda.Justificativa, perda.Registro FROM perda WHERE (perda.Nome LIKE ('%' || ? || '%')) ORDER BY perda.Id DESC", nome).ToList();
             }
 
             foreach (Perda element in list)

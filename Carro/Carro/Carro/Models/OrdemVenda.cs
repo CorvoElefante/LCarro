@@ -21,8 +21,6 @@ namespace Carro.Models
         [OneToOne]
         public Pessoa Pessoa { get; set; }
 
-        public string Data { get; set; }
-
         public int Prazo { get; set; }
 
         public float Valor { get; set; }

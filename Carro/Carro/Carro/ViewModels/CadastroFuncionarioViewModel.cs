@@ -184,7 +184,8 @@ namespace Carro.ViewModels
                     using (var scope = new TransactionScope(sqlite))
                     {
                         var service = new DataService(sqlite);
-                        var Pessoa = new Pessoa { Nome = nomeEntry, RuaN = ruaNEntry, Bairro = bairroEntry, Telefone = telefoneEntry, Email = emailEntry, Data = ndataEntry, Cpf = cpfEntry };
+                        DateTime data = DateTime.Now;
+                        var Pessoa = new Pessoa { Nome = nomeEntry, RuaN = ruaNEntry, Bairro = bairroEntry, Telefone = telefoneEntry, Email = emailEntry, Data = ndataEntry, Cpf = cpfEntry, Registro = data };
                         service.SavePessoa(Pessoa);
 
                         service.SaveFuncionario(new Funcionario { Salario = salarioEntry, Funcao = funcaoEntry, Pessoa = Pessoa });
