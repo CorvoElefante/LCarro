@@ -115,8 +115,8 @@
     <Compile Include="Pages\CadastroServicoPage.xaml.cs">
       <DependentUpon>CadastroServicoPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\RealatorioProdutoSemEstoqueResultadoPage.xaml.cs">
-      <DependentUpon>RealatorioProdutoSemEstoqueResultadoPage.xaml</DependentUpon>
+    <Compile Include="Pages\RelatorioProdutoSemEstoqueResultadoPage.xaml.cs">
+      <DependentUpon>RelatorioProdutoSemEstoqueResultadoPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\RelatorioClienteAdicionadoResultadoPage.xaml.cs">
       <DependentUpon>RelatorioClienteAdicionadoResultadoPage.xaml</DependentUpon>
@@ -443,7 +443,7 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\RealatorioProdutoSemEstoqueResultadoPage.xaml">
+    <EmbeddedResource Include="Pages\RelatorioProdutoSemEstoqueResultadoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
