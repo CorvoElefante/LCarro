@@ -23,5 +23,7 @@ namespace Carro
         public string Data { get; set; }
 
         public string Email { get; set; }
+
+        public DateTime Registro { get; set; }
     }
 }

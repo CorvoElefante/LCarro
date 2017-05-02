@@ -225,7 +225,28 @@
     <Compile Include="ViewModels\ListaServicoViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MenuViewModel.cs" />
+    <Compile Include="ViewModels\RelatorioClienteAdicionadoResultadoViewModel.cs" />
+    <Compile Include="ViewModels\RelatorioClienteAdicionadoSelecaoViewModel.cs" />
+    <Compile Include="ViewModels\RelatorioClienteCompraramQuantidadeResultadoViewModel.cs" />
+    <Compile Include="ViewModels\RelatorioClienteCompraramQuantidadeSelecaoViewModel.cs" />
+    <Compile Include="ViewModels\RelatorioClienteCompraramValorResultadoViewModel.cs" />
+    <Compile Include="ViewModels\RelatorioClienteCompraramValorSelecaoViewModel.cs" />
+    <Compile Include="ViewModels\RelatorioClienteTotalResultadoViewModel.cs" />
+    <Compile Include="ViewModels\RelatorioDespesaCategoriaResultadoViewModel.cs" />
+    <Compile Include="ViewModels\RelatorioDespesaCategoriaSelecaoViewModel.cs" />
+    <Compile Include="ViewModels\RelatorioFuncionarioNumeroVendaResultadoViewModel.cs" />
+    <Compile Include="ViewModels\RelatorioFuncionarioNumeroVendaSelecaoViewModel.cs" />
+    <Compile Include="ViewModels\RelatorioFuncionarioValorVendaResultadoViewModel.cs" />
+    <Compile Include="ViewModels\RelatorioFuncionarioValorVendaSelecaoViewModel.cs" />
     <Compile Include="ViewModels\RelatorioMenuViewModel.cs" />
+    <Compile Include="ViewModels\RelatorioPerdaTotalResultadoViewModel.cs" />
+    <Compile Include="ViewModels\RelatorioPerdaTotalSelecaoPageViewModel.cs" />
+    <Compile Include="ViewModels\RelatorioProdutoMaisVendidoResultadoViewModel.cs" />
+    <Compile Include="ViewModels\RelatorioProdutoMaisVendidoSelecaoViewModel.cs" />
+    <Compile Include="ViewModels\RelatorioProdutoSemEstoqueResultadoViewModel.cs" />
+    <Compile Include="ViewModels\RelatorioProdutoValorTotalEstoqueResultadoViewModel.cs" />
+    <Compile Include="ViewModels\RelatorioServicoUtilizadoResultadoViewModel.cs" />
+    <Compile Include="ViewModels\RelatorioServicoUtilizadoSelecaoViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">

@@ -19,5 +19,7 @@ namespace Carro.Models
         public string Descricao { get; set; }
 
         public string Tempo { get; set; }//Duração do serviço
+
+        public DateTime Registro { get; set; }
     }
 }

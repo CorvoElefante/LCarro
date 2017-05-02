@@ -24,5 +24,7 @@ namespace Carro.Models
 
         public string Local { get; set; }//Localizacao do produto na loja(estante, balcao, mostruario...)
 
+        public DateTime Registro { get; set; }
+
     }
 }

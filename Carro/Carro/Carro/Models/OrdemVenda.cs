@@ -27,6 +27,8 @@ namespace Carro.Models
 
         public float Valor { get; set; }
 
+        public DateTime Registro { get; set; }
+
         [OneToMany(CascadeOperations = CascadeOperation.All)]
         public List<FuncionarioServico> FuncionarioServicos { get; set; }
 

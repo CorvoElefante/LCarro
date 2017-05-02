@@ -22,5 +22,7 @@ namespace Carro.Models
 
         [OneToOne]
         public Pessoa Pessoa { get; set; }
+
+        public DateTime Registro { get; set; }
     }
 }

@@ -20,5 +20,7 @@ namespace Carro.Models
         [OneToMany(CascadeOperations = CascadeOperation.All)]
         public List<PerdaProduto> PerdaProdutos { get; set; }
 
+        public DateTime Registro { get; set; }
+
     }
 }

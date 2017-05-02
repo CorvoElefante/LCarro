@@ -28,5 +28,7 @@ namespace Carro.Models
         //5 = Materias de Escritório
         //6 = Materias de Limpeza
         //7 = Outros
+
+        public DateTime Registro { get; set; }
     }
 }
