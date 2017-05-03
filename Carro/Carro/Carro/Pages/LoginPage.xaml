@@ -5,18 +5,6 @@
              x:Class="Carro.Pages.LoginPage"
              BackgroundColor="#444444">
 
-    <!--<ResourceDictionary>
-        <Style 
-            x:Key="EntryStyle" 
-            TargetType="Entry">
-
-            <Setter 
-                Property="TextColor" 
-                Value="#FFFFF7"/>
-        </Style>
-    </ResourceDictionary>-->
-
-
     <Grid
         Margin="10"
         Padding="0"
