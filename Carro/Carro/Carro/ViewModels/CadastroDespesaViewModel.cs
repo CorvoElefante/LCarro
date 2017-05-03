@@ -158,7 +158,7 @@ namespace Carro.ViewModels
 
         async Task ExecuteSalvarDespesaCommand()
         {
-            if (!(nomeEntry == string.Empty || valorEntry <= 0))
+            if (!(nomeEntry == string.Empty || valorEntry <= 0 || categoriaEntry == 0))
             {
                 if (!IsBusy)
                 {

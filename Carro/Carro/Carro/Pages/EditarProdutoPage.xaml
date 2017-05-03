@@ -96,7 +96,8 @@
                         Grid.ColumnSpan="5"
                         VerticalOptions="End"
                         FontSize="Large"
-                        Text="{Binding quantidadeAdicionadaEntry, Converter={StaticResource intConverter}"/>
+                        Text="{Binding quantidadeAdicionadaEntry, Converter={StaticResource intConverter}"
+                        Keyboard="Numeric"/>
 
                     <Label
                         Grid.Row="6"
@@ -115,12 +116,12 @@
 
                     <Label
                         Grid.Row="7"
-                        Grid.ColumnSpan="2"
+                        Grid.ColumnSpan="4"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"
                         FontSize="Large"
                         Text="Total:"/>
-                <Label
+                    <Label
                         Grid.Row="7"
                         Grid.Column="3"
                         Grid.ColumnSpan="10"
