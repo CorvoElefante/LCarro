@@ -197,5 +197,33 @@ namespace Carro.Services
         }
 
         #endregion
+
+        #region Relatorios
+
+        #region  RelatorioPessoaCliente
+
+        #endregion
+
+        #region RelatorioDespesa
+
+        #endregion
+
+        #region RelatorioPerda
+
+        #endregion
+
+        #region RelatorioFuncionario
+
+        #endregion
+
+        #region RelatorioProduto
+
+        #endregion
+
+        #region RelatorioServico
+
+        #endregion
+
+        #endregion
     }
 }
