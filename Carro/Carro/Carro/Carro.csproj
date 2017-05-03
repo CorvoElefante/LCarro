@@ -259,6 +259,12 @@
     <Compile Include="ViewModels\RelatorioFuncionarioNumeroVendaSelecaoViewModel.cs" />
     <Compile Include="ViewModels\RelatorioFuncionarioValorVendaResultadoViewModel.cs" />
     <Compile Include="ViewModels\RelatorioFuncionarioValorVendaSelecaoViewModel.cs" />
+    <Compile Include="ViewModels\RelatorioMenuClienteViewModel.cs" />
+    <Compile Include="ViewModels\RelatorioMenuDespesaViewModel.cs" />
+    <Compile Include="ViewModels\RelatorioMenuFuncionarioViewModel.cs" />
+    <Compile Include="ViewModels\RelatorioMenuPerdaViewModel.cs" />
+    <Compile Include="ViewModels\RelatorioMenuProdutoViewModel.cs" />
+    <Compile Include="ViewModels\RelatorioMenuServicoViewModel.cs" />
     <Compile Include="ViewModels\RelatorioMenuViewModel.cs" />
     <Compile Include="ViewModels\RelatorioPerdaTotalResultadoViewModel.cs" />
     <Compile Include="ViewModels\RelatorioPerdaTotalSelecaoPageViewModel.cs" />

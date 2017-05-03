@@ -3,4 +3,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
              x:Class="Carro.Pages.RelatorioMenuFuncionarioPage">
+
+    <StackLayout
+        VerticalOptions="StartAndExpand"
+        HorizontalOptions="Center">
+        <Frame>
+            <Label
+                Text="Relatório de funcionarios que mais vendem"
+                FontSize="Large"/>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding RelFuncionarioVendaCommand}"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+
+        <Frame>
+            <Label
+                Text="Relatório de funcionarios que mais rendem"
+                FontSize="Large"/>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding RelFucionarioRendeCommand}"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+    </StackLayout>
 </ContentPage>

@@ -43,23 +43,23 @@ namespace Carro.ViewModels
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new ListaServicoPage());
+                await Navigation.PushAsync(new RelatorioMenuServicoPage());
                 IsBusy = false;
             }
         }
 
-        Command _RelatorioMenuClientesCommand;
-        public Command RelatorioMenuClientesCommand
+        Command _RelatorioMenuClienteCommand;
+        public Command RelatorioMenuClienteCommand
         {
-            get { return _RelatorioMenuClientesCommand ?? (_RelatorioMenuClientesCommand = new Command(async () => await ExecuteRelatorioMenuClientesCommand())); }
+            get { return _RelatorioMenuClienteCommand ?? (_RelatorioMenuClienteCommand = new Command(async () => await ExecuteRelatorioMenuClienteCommand())); }
         }
 
-        async Task ExecuteRelatorioMenuClientesCommand()
+        async Task ExecuteRelatorioMenuClienteCommand()
         {
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new ListaClientePage());
+                await Navigation.PushAsync(new RelatorioMenuClientePage());
                 IsBusy = false;
             }
         }
@@ -75,7 +75,7 @@ namespace Carro.ViewModels
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new ListaFuncionarioPage());
+                await Navigation.PushAsync(new RelatorioMenuFuncionarioPage());
                 IsBusy = false;
             }
         }
@@ -91,13 +91,13 @@ namespace Carro.ViewModels
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new ListaPerdaPage());
+                await Navigation.PushAsync(new RelatorioMenuPerdaPage());
                 IsBusy = false;
             }
         }
 
         Command _RelatorioMenuDespesaCommand;
-        public Command MenuDespesaCommand
+        public Command RelatorioMenuDespesaCommand
         {
             get { return _RelatorioMenuDespesaCommand ?? (_RelatorioMenuDespesaCommand = new Command(async () => await ExecuteRelatorioMenuDespesaCommand())); }
         }
@@ -107,7 +107,7 @@ namespace Carro.ViewModels
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new ListaDespesaPage());
+                await Navigation.PushAsync(new RelatorioMenuDespesaPage());
                 IsBusy = false;
             }
         }
@@ -123,7 +123,7 @@ namespace Carro.ViewModels
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new ListaProdutoPage());
+                await Navigation.PushAsync(new RelatorioMenuProdutoPage());
                 IsBusy = false;
             }
         }

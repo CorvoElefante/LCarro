@@ -3,4 +3,35 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
              x:Class="Carro.Pages.RelatorioMenuProdutoPage">
+
+    <StackLayout
+        VerticalOptions="StartAndExpand"
+        HorizontalOptions="Center">
+        <Frame>
+            <Label
+                Text="Relatório de produtos mais vendidos"
+                FontSize="Large"/>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding RelProdutoVendidoCommand}"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+
+        <Frame>
+            <Label
+                Text="Relatório de produtos sem estoque"
+                FontSize="Large"/>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding RelProdutoSemEstoqueCommand}"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+
+        <Frame>
+            <Label
+                Text="Relatório total do valor de produtos em estoque"
+                FontSize="Large"/>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding RelProdutoValorTotalCommand}"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+    </StackLayout>
 </ContentPage>

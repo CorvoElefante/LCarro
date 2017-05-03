@@ -3,4 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
              x:Class="Carro.Pages.RelatorioMenuPerdaPage">
+
+    <StackLayout
+        VerticalOptions="StartAndExpand"
+        HorizontalOptions="Center">
+        <Frame>
+            <Label
+                Text="Relatório total de perdas"
+                FontSize="Large"/>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding RelPerdaTotalCommand}"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+    </StackLayout>
 </ContentPage>
