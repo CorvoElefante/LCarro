@@ -202,9 +202,38 @@ namespace Carro.Services
 
         #region  RelatorioPessoaCliente
 
+        public int RelatorioTotalClientes()
+        {
+            List<Pessoa> lista = new List<Pessoa>();
+            lista = DB.Query<Pessoa>("SELECT Pessoa.Id FROM Pessoa");
+            int totalClientes = lista.Count();
+
+            return totalClientes;
+        }
+
+        public List<Pessoa> RelatorioClientesAdicionados(DateTime dataInicial, DateTime dataFinal)
+        {
+            List<Pessoa> lista = new List<Pessoa>();
+
+            lista = DB.Query<Pessoa>("SELECT * FROM Pessoa");
+
+            foreach (Pessoa element in lista)
+            {
+                if (DateTime.Compare(dataInicial, element.Registro) > 0 || DateTime.Compare(dataFinal, element.Registro) < 0)
+                {
+                    lista.Remove(element);
+                }
+            }
+
+            return lista;
+
+        }
+
         #endregion
 
         #region RelatorioDespesa
+
+
 
         #endregion
 
@@ -235,9 +264,8 @@ namespace Carro.Services
         {
             List<Produto> list = new List<Produto>();
             decimal total = 0m;
-            var elements = DB.Table<Produto>();
 
-            list = DB.Query<Produto>("Produto.Preco, Produto.Quantidade FROM Produto WHERE Produto.Quantidade > 0").ToList();
+            list = DB.Query<Produto>("SELECT Produto.Preco, Produto.Quantidade FROM Produto WHERE Produto.Quantidade > 0").ToList();
 
             foreach (Produto element in list)
             {
