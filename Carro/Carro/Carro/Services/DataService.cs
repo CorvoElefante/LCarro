@@ -265,7 +265,7 @@ namespace Carro.Services
             List<Produto> list = new List<Produto>();
             decimal total = 0m;
 
-            list = DB.Query<Produto>("Produto.Preco, Produto.Quantidade FROM Produto WHERE Produto.Quantidade > 0").ToList();
+            list = DB.Query<Produto>("SELECT Produto.Preco, Produto.Quantidade FROM Produto WHERE Produto.Quantidade > 0").ToList();
 
             foreach (Produto element in list)
             {
