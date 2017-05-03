@@ -218,6 +218,35 @@ namespace Carro.Services
 
         #region RelatorioProduto
 
+        public List<Produto> RelatorioProdutoSemEstoque(string nome)
+        {
+            List<Produto> list = new List<Produto>();
+            if (nome == null || nome == "")
+            {
+                list = DB.Query<Produto>("SELECT Produto.Id, Produto.Nome, Produto.Marca, Produto.Preco FROM Produto WHERE Produto.Quantidade = 0").ToList();
+            }else
+            {
+                list = DB.Query<Produto>("SELECT Produto.Id, Produto.Nome, Produto.Marca, Produto.Preco FROM Produto WHERE ((Produto.Quantidade = 0) AND (Produto.Nome LIKE ('%' || ? || '%')))", nome).ToList();
+            }
+            return list;
+        }
+
+        public decimal RelatorioValorTotalEstoque()
+        {
+            List<Produto> list = new List<Produto>();
+            decimal total = 0m;
+            var elements = DB.Table<Produto>();
+
+            list = DB.Query<Produto>("Produto.Preco, Produto.Quantidade FROM Produto WHERE Produto.Quantidade > 0").ToList();
+
+            foreach (Produto element in list)
+            {
+                total = total + (element.Quantidade * element.Preco);
+            }
+
+            return total;
+        }
+
         #endregion
 
         #region RelatorioServico

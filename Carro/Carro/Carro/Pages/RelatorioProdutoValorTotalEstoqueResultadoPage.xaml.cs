@@ -1,20 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using System;
+using System.Collections.Generic;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using Carro.ViewModels;
 
 namespace Carro.Pages
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RelatorioProdutoValorTotalEstoqueResultadoPage : ContentPage
     {
         public RelatorioProdutoValorTotalEstoqueResultadoPage()
         {
+            BindingContext = new RelatorioProdutoValorTotalEstoqueResultadoViewModel(Navigation);
             InitializeComponent();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            ((RelatorioProdutoValorTotalEstoqueResultadoViewModel)BindingContext).ValorTotalEstoqueCommand.Execute(null);
         }
     }
 }
