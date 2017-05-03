@@ -20,12 +20,6 @@ namespace Carro.ViewModels
 
         }
 
-        Command _ValorTotalEstoqueCommand;
-        public Command ValorTotalEstoqueCommand
-        {
-            get { return _ValorTotalEstoqueCommand ?? (_ValorTotalEstoqueCommand = new Command(() => ExecuteValorTotalEstoqueCommand())); }
-        }
-
         decimal _valorTotal = 0m;
         public decimal valorTotal
         {
@@ -40,7 +34,13 @@ namespace Carro.ViewModels
             }
         }
 
-        void ExecuteValorTotalEstoqueCommand()
+        Command _ValorTotalEstoqueCommand;
+        public Command ValorTotalEstoqueCommand
+        {
+            get { return _ValorTotalEstoqueCommand ?? (_ValorTotalEstoqueCommand = new Command(() => ExecuteValorTotalEstoqueCommand())); }
+        }
+
+                void ExecuteValorTotalEstoqueCommand()
         {
 
             var sqlite = DependencyService.Get<ISQLite>();
