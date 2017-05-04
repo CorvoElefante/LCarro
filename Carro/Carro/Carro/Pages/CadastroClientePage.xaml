@@ -11,11 +11,15 @@
         <ToolbarItem
       Icon="{x:Static resources:Images.IconeUser32}"/>
     </ContentPage.ToolbarItems>
-
-    <Grid>
-        <ScrollView
-            Grid.RowSpan="8"
-            Padding="30">
+    
+    <ScrollView>
+        <Grid
+            Padding="30"
+            RowSpacing="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
             <Grid
                 RowSpacing="30">
                 <Grid.RowDefinitions>
@@ -30,13 +34,12 @@
                 <Entry 
                     Grid.Column="0"
                     Grid.Row="0"
-                    Grid.ColumnSpan="12"
+                    Grid.ColumnSpan="18"
                     Text="{Binding nomeEntry}" 
                     Placeholder="Nome" 
                     Keyboard="Text"/>
                 <Image
-                    Margin="8"
-                    Grid.Column="12"
+                    Grid.Column="17"
                     Source="ic_unchecked16.png"
                     IsVisible="{Binding nomeEntryInvalido}"
                     IsOpaque="True"
@@ -45,7 +48,7 @@
                 <Entry 
                     Grid.Column="0"
                     Grid.Row="1"
-                    Grid.ColumnSpan="12"
+                    Grid.ColumnSpan="18"
                     Text="{Binding ruaNEntry}" 
                     Placeholder="Rua"/>
 
@@ -53,14 +56,14 @@
                 <Entry 
                     Grid.Column="0"
                     Grid.Row="2"
-                    Grid.ColumnSpan="12"
+                    Grid.ColumnSpan="18"
                     Text="{Binding bairroEntry}" 
                     Placeholder="Bairro"/>
 
                 <Entry 
                     Grid.Column="0"
                     Grid.Row="3"
-                    Grid.ColumnSpan="12"
+                    Grid.ColumnSpan="18"
                     Text="{Binding telefoneEntry}" 
                     Placeholder="Telefone" 
                     Keyboard="Telephone"/>
@@ -68,7 +71,7 @@
                 <Entry 
                     Grid.Column="0"
                     Grid.Row="4"
-                    Grid.ColumnSpan="12"
+                    Grid.ColumnSpan="18"
                     Text="{Binding emailEntry}"
                     Placeholder="Email"
                     Keyboard="Email"/>
@@ -76,7 +79,7 @@
                 <Entry 
                     Grid.Column="0"
                     Grid.Row="5"
-                    Grid.ColumnSpan="12"
+                    Grid.ColumnSpan="18"
                     Text="{Binding ndataEntry}"
                     Placeholder="Data de nascimento"
                     Keyboard="Numeric"/>
@@ -84,61 +87,62 @@
                 <Entry 
                     Grid.Column="0"
                     Grid.Row="6"
-                    Grid.ColumnSpan="12"
+                    Grid.ColumnSpan="18"
                     Text="{Binding cpfEntry}"
                     Placeholder="CPF"
                     Keyboard="Numeric"/>
             </Grid>
-        </ScrollView>
 
-        <Grid
-            Grid.Row="8"
-            BackgroundColor="Transparent"
-            Padding="4"
-            ColumnSpacing="-30">
             <Grid
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                BackgroundColor="Transparent">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                <Image
+                Grid.Row="1"
+                BackgroundColor="Transparent"
+                ColumnSpacing="0">
+                <Grid
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    BackgroundColor="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Image
                     Grid.Column="1"
                     Source="ic_success64.png"
-                    IsOpaque="True"/>
-                <Label
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+                    <Label
                     HorizontalOptions="End"
                     VerticalOptions="Center"
                     Text="Salvar"
                     TextColor="#444444"
                     FontSize="Medium"/>
-                <Grid.GestureRecognizers>
-                    <TapGestureRecognizer
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer
                         Command="{Binding SalvarPessoaCommand}"/>
-                </Grid.GestureRecognizers>
-            </Grid>
-            <Grid
-                HorizontalOptions="Center"
+                    </Grid.GestureRecognizers>
+                </Grid>
+                <Grid
+                HorizontalOptions="End"
                 VerticalOptions="Center"
                 Grid.Column="1"
                 BackgroundColor="Transparent">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                <Image
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Image
                     Source="ic_error64.png"
-                    IsOpaque="True"/>
-                <Label
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+                    <Label
                     Grid.Column="1"
                     HorizontalOptions="End"
                     VerticalOptions="Center"
                     Text="Deletar"
                     TextColor="#444444"
                     FontSize="Medium"/>
+                </Grid>
             </Grid>
         </Grid>
-    </Grid>
+    </ScrollView>
 </ContentPage>
