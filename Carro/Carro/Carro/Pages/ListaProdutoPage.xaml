@@ -8,10 +8,10 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem
-      Icon="{x:Static resources:Images.IconeUser132}"
-      Command="{Binding AddProdutoCommand}"/>
+            Icon="{x:Static resources:Images.IconeUser132}"
+            Command="{Binding AddProdutoCommand}"/>
         <ToolbarItem
-      Icon="{x:Static resources:Images.IconeProdutos32}"/>
+            Icon="{x:Static resources:Images.IconeProdutos32}"/>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Resources>
@@ -21,13 +21,13 @@
     </ContentPage.Resources>
 
     <ListView
-			HorizontalOptions="FillAndExpand"
-			VerticalOptions="FillAndExpand"
-			HasUnevenRows="true"
-			SeparatorVisibility="None"
-			Header="{Binding .}"
-			ItemsSource="{Binding Produtos}"
-			ItemTapped="Handle_ItemTapped">
+		HorizontalOptions="FillAndExpand"
+		VerticalOptions="FillAndExpand"
+		HasUnevenRows="true"
+		SeparatorVisibility="None"
+		Header="{Binding .}"
+		ItemsSource="{Binding Produtos}"
+		ItemTapped="Handle_ItemTapped">
 
         <x:Arguments>
             <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
@@ -46,33 +46,36 @@
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
-                    <Grid 
-                      Margin="2"
-                      Padding="2"
-                      RowSpacing="0"
-                      ColumnSpacing="0"
-                      BackgroundColor="Transparent">
-                        
+                    <Grid
+                        Margin="4"
+                        ColumnSpacing="20"
+                        BackgroundColor="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
                         <Label 
-                            Grid.ColumnSpan="2"
+                            HorizontalOptions="StartAndExpand"
 							FontAttributes="Bold"
 							FontSize="Large"
 							Text="{Binding Nome}"/>
-                        
-                        <Label 
+                        <Label
                             Grid.Column="1"
-                            HorizontalOptions="End"
+                            HorizontalOptions="EndAndExpand"
 							Text="{Binding Preco, Converter={StaticResource decimalConverter}}"/>
-                        
                         <Label 
-                            Grid.Row="1"
+                            Grid.Row="1" 
+                            HorizontalOptions="StartAndExpand"
 							Text="{Binding Marca}"/>
-                        
                         <Label 
                             Grid.Row="1" 
                             Grid.Column="1"
-                            HorizontalOptions="End"
-						    Text="{Binding Quantidade}"/>
+                            HorizontalOptions="EndAndExpand"
+							Text="{Binding Quantidade}"/>
                     </Grid>
                 </ViewCell>
             </DataTemplate>

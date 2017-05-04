@@ -40,25 +40,31 @@
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
-                    <Grid 
-              Margin="2"
-              Padding="2"
-              RowSpacing="0"
-              ColumnSpacing="0"
-              BackgroundColor="Transparent">
+                    <Grid
+                        Margin="4"
+                        ColumnSpacing="20"
+                        BackgroundColor="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
                         <Label 
-                Grid.ColumnSpan="2"
-								FontAttributes="Bold"
-								FontSize="Large"
-								Text="{Binding Nome}"/>
+                            HorizontalOptions="StartAndExpand"
+							FontAttributes="Bold"
+							FontSize="Large"
+							Text="{Binding Nome}"/>
                         <Label 
-                Grid.Row="1"
-								Text="{Binding Email}"/>
+                            Grid.Row="1"
+							Text="{Binding Email}"/>
                         <Label 
-                Grid.Row="1" 
-                Grid.Column="1"
-                HorizontalOptions="End"
-								Text="{Binding Telefone}"/>
+                            Grid.Row="1" 
+                            Grid.Column="1"
+                            HorizontalOptions="EndAndExpand"
+							Text="{Binding Telefone}"/>
                     </Grid>
                 </ViewCell>
             </DataTemplate>

@@ -5,14 +5,14 @@
              x:Class="Carro.Pages.ListaDespesaPage"
              Title="Despesas"
              BackgroundColor="#FFFFF7">
-  
-  <ContentPage.ToolbarItems>
-    <ToolbarItem 
-      Icon="{x:Static resources:Images.IconeUser132}" 
-      Command="{Binding AddDespesaCommand}"/>
-    <ToolbarItem
-      Icon="{x:Static resources:Images.IconeTimeIsMoney32}"/>
-  </ContentPage.ToolbarItems>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+            Icon="{x:Static resources:Images.IconeUser132}" 
+            Command="{Binding AddDespesaCommand}"/>
+        <ToolbarItem
+            Icon="{x:Static resources:Images.IconeTimeIsMoney32}"/>
+    </ContentPage.ToolbarItems>
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -21,49 +21,62 @@
     </ContentPage.Resources>
 
     <ListView
-     HorizontalOptions="FillAndExpand"
-     VerticalOptions="FillAndExpand"
-     HasUnevenRows="true"
-     SeparatorVisibility="None"
-     Header="{Binding .}"
-     ItemsSource="{Binding Despesas}"
-     ItemTapped="Handle_ItemTapped">
+         HorizontalOptions="FillAndExpand"
+         VerticalOptions="FillAndExpand"
+         HasUnevenRows="true"
+         SeparatorVisibility="None"
+         Header="{Binding .}"
+         ItemsSource="{Binding Despesas}"
+         ItemTapped="Handle_ItemTapped">
 
-    <x:Arguments>
-      <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
-    </x:Arguments>
+        <x:Arguments>
+            <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
+        </x:Arguments>
 
-    <ListView.HeaderTemplate>
-      <DataTemplate>
-        <SearchBar
+        <ListView.HeaderTemplate>
+            <DataTemplate>
+                <SearchBar
 					HeightRequest="45"
 					Placeholder="Buscar"
 					Text="{Binding Search}">
-        </SearchBar>
-      </DataTemplate>
-    </ListView.HeaderTemplate>
+                </SearchBar>
+            </DataTemplate>
+        </ListView.HeaderTemplate>
 
-    <ListView.ItemTemplate>
-      <DataTemplate>
-        <ViewCell>
-            <Grid
-              Margin="2"
-              Padding="2"
-              RowSpacing="0"
-              ColumnSpacing="0"
-              BackgroundColor="Transparent">
-              <Label Grid.ColumnSpan="2"
-								FontAttributes="Bold"
-								FontSize="Large"
-								Text="{Binding Nome}"/>
-              <Label Grid.Row="1"
-								Text="{Binding Categoria}"/>
-              <Label Grid.Row="1" Grid.Column="1"
-                HorizontalOptions="End"
-								Text="{Binding Valor, Converter={StaticResource decimalConverter}}"/>
-            </Grid>
-        </ViewCell>
-      </DataTemplate>
-    </ListView.ItemTemplate>
-  </ListView>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid
+                        Margin="4"
+                        ColumnSpacing="20"
+                        BackgroundColor="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Label
+                            HorizontalOptions="StartAndExpand"
+							FontAttributes="Bold"
+							FontSize="Large"
+							Text="{Binding Nome}"/>
+
+                        <Label 
+                            Grid.Column="1"
+                            HorizontalOptions="EndAndExpand"
+                            FontSize="Large"
+						    Text="{Binding Valor, Converter={StaticResource decimalConverter}"/>
+
+                        <Label
+                            Grid.Row="1"
+                            Text="{Binding Categoria}"/>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 </ContentPage>

@@ -8,11 +8,11 @@
 
   <ContentPage.ToolbarItems>
     <ToolbarItem 
-      Icon="{x:Static resources:Images.IconeUser132}"
-			Command="{Binding AddPerdaCommand}"/>
+        Icon="{x:Static resources:Images.IconeUser132}"
+	    Command="{Binding AddPerdaCommand}"/>
     <ToolbarItem 
-      Icon="{x:Static resources:Images.IconeAnalytics32}"/>
-  </ContentPage.ToolbarItems>
+        Icon="{x:Static resources:Images.IconeAnalytics32}"/>
+    </ContentPage.ToolbarItems>
 
   <ListView
      HorizontalOptions="FillAndExpand"
@@ -29,35 +29,41 @@
 
     <ListView.HeaderTemplate>
       <DataTemplate>
-        <SearchBar
-					HeightRequest="45"
-					Placeholder="Buscar"
-					Text="{Binding Search}">
-        </SearchBar>
+            <SearchBar
+				HeightRequest="45"
+				Placeholder="Buscar"
+				Text="{Binding Search}">
+            </SearchBar>
       </DataTemplate>
     </ListView.HeaderTemplate>
 
-    <ListView.ItemTemplate>
-      <DataTemplate>
-        <ViewCell>
-          <Grid
-            Margin="2"
-            Padding="2"
-            RowSpacing="0"
-            ColumnSpacing="0"
-            BackgroundColor="Transparent">
-            <Label Grid.ColumnSpan="2"
-              FontAttributes="Bold"
-              FontSize="Large"
-              Text="{Binding Nome}"/>
-            <Label Grid.Row="1"
-              Text="{Binding IdProduto}"/>
-            <Label Grid.Row="1" Grid.Column="1"
-              HorizontalOptions="End"
-              Text="{Binding Quantidade}"/>
-          </Grid>
-        </ViewCell>
-      </DataTemplate>
-    </ListView.ItemTemplate>
-  </ListView>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid
+                        Margin="4"
+                        ColumnSpacing="20"
+                        BackgroundColor="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Label 
+                            HorizontalOptions="StartAndExpand"
+							FontAttributes="Bold"
+							FontSize="Large"
+							Text="{Binding Nome}"/>
+                        <Label 
+                            Grid.Column="1"
+                            HorizontalOptions="EndAndExpand"
+							Text="{Binding Registro}"/>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 </ContentPage>
