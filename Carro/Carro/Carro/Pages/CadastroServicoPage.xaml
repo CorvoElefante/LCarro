@@ -17,10 +17,14 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <Grid>
-        <ScrollView
-            Grid.RowSpan="8"
-            Padding="30">
+    <ScrollView>
+        <Grid
+            Padding="30"
+            RowSpacing="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
             <Grid
                 RowSpacing="30">
                 <Grid.RowDefinitions>
@@ -30,13 +34,12 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Entry
-                    Grid.ColumnSpan="12"
+                    Grid.ColumnSpan="18"
                     Text="{Binding nomeEntry}"
                     Placeholder="Nome"
                     Keyboard="Text"/>
                 <Image
-                    Margin="8"
-                    Grid.Column="12"
+                    Grid.Column="17"
                     Source="ic_unchecked16.png"
                     IsVisible="{Binding nomeEntryInvalido}"
                     IsOpaque="True"
@@ -44,14 +47,13 @@
 
                 <Entry
                     Grid.Row="1"
-                    Grid.ColumnSpan="12"
+                    Grid.ColumnSpan="18"
                     x:Name="precoEntry"
                     Text="{Binding precoEntry, Converter={StaticResource decimalConverter}}"
                     Placeholder="Preço"
                     Keyboard="Numeric"/>
                 <Image
-                    Margin="8"
-                    Grid.Column="12"
+                    Grid.Column="17"
                     Grid.Row="1"
                     Source="ic_unchecked16.png"
                     IsVisible="{Binding precoEntryInvalido}"
@@ -60,35 +62,34 @@
 
                 <Entry
                     Grid.Row="2"
-                    Grid.ColumnSpan="12"
+                    Grid.ColumnSpan="18"
                     Text="{Binding descricaoEntry}"
                     Placeholder="Descrição"/>
 
                 <Entry
                     Grid.Row="3"
-                    Grid.ColumnSpan="12"
+                    Grid.ColumnSpan="18"
                     Text="{Binding tempoEntry}"
                     Placeholder="Tempo de conclusão"/>
             </Grid>
-        </ScrollView>
 
-        <Grid
-            Grid.Row="8"
-            BackgroundColor="Transparent"
-            Padding="4"
-            ColumnSpacing="-30">
             <Grid
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                BackgroundColor="Transparent">
+                Grid.Row="1"
+                BackgroundColor="Transparent"
+                ColumnSpacing="0">
+            <Grid
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    BackgroundColor="Transparent">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 <Image
                     Grid.Column="1"
                     Source="ic_success64.png"
-                    IsOpaque="True"/>
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
                 <Label
                     HorizontalOptions="End"
                     VerticalOptions="Center"
@@ -101,7 +102,7 @@
                 </Grid.GestureRecognizers>
             </Grid>
             <Grid
-                HorizontalOptions="Center"
+                HorizontalOptions="End"
                 VerticalOptions="Center"
                 Grid.Column="1"
                 BackgroundColor="Transparent">
@@ -111,7 +112,8 @@
                 </Grid.ColumnDefinitions>
                 <Image
                     Source="ic_error64.png"
-                    IsOpaque="True"/>
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
                 <Label
                     Grid.Column="1"
                     HorizontalOptions="End"
@@ -122,4 +124,5 @@
             </Grid>
         </Grid>
     </Grid>
+    </ScrollView>
 </ContentPage>

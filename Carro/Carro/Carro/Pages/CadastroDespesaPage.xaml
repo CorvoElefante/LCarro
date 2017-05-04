@@ -18,10 +18,14 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <Grid>
-        <ScrollView
-            Grid.RowSpan="8"
-            Padding="30">
+    <ScrollView>
+        <Grid
+            Padding="30"
+            RowSpacing="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
             <Grid
                 RowSpacing="30">
                 <Grid.RowDefinitions>
@@ -33,13 +37,12 @@
                 <Entry 
                     Grid.Column="0"
                     Grid.Row="0"
-                    Grid.ColumnSpan="12"
+                    Grid.ColumnSpan="18"
                     Text="{Binding nomeEntry}" 
                     Placeholder="Nome" 
                     Keyboard="Text"/>
                 <Image
-                    Margin="8"
-                    Grid.Column="12"
+                    Grid.Column="17"
                     Grid.Row="0"
                     Source="ic_unchecked16.png"
                     IsVisible="{Binding nomeEntryInvalido}"
@@ -49,14 +52,13 @@
                 <Entry 
                     Grid.Column="0"
                     Grid.Row="1"
-                    Grid.ColumnSpan="12"
+                    Grid.ColumnSpan="18"
                     x:Name="valorEntry" 
                     Text="{Binding valorEntry, Converter={StaticResource decimalConverter}}" 
                     Placeholder="Valor gasto" 
                     Keyboard="Numeric"/>
                 <Image
-                    Margin="8"
-                    Grid.Column="12"
+                    Grid.Column="17"
                     Grid.Row="1"
                     Source="ic_unchecked16.png"
                     IsVisible="{Binding valorEntryInvalido}"
@@ -66,14 +68,14 @@
                 <Entry 
                     Grid.Column="0"
                     Grid.Row="2"
-                    Grid.ColumnSpan="12"
+                    Grid.ColumnSpan="18"
                     Text="{Binding descricaoEntry}" 
                     Placeholder="Descrição" 
                     Keyboard="Text"/>
 
                 <Picker
                     Grid.Row="3"
-                    Grid.ColumnSpan="12"
+                    Grid.ColumnSpan="18"
                     SelectedIndex="{Binding categoriaEntry}">
                     <Picker.Items>
                         <x:String>Selecione a categoria</x:String>
@@ -87,33 +89,32 @@
                     </Picker.Items>
                 </Picker>
                 <Image
-                    Margin="8"
-                    Grid.Column="12"
+                    Grid.Column="17"
                     Grid.Row="3"
                     Source="ic_unchecked16.png"
                     IsVisible="{Binding categoriaEntryInvalido}"
                     IsOpaque="True"
                     Aspect="AspectFit"/>
             </Grid>
-        </ScrollView>
+        
 
         <Grid
-            Grid.Row="8"
-            BackgroundColor="Transparent"
-            Padding="4"
-            ColumnSpacing="-30">
+                Grid.Row="1"
+                BackgroundColor="Transparent"
+                ColumnSpacing="0">
             <Grid
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                BackgroundColor="Transparent">
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    BackgroundColor="Transparent">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 <Image
                     Grid.Column="1"
                     Source="ic_success64.png"
-                    IsOpaque="True"/>
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
                 <Label
                     HorizontalOptions="End"
                     VerticalOptions="Center"
@@ -126,7 +127,7 @@
                 </Grid.GestureRecognizers>
             </Grid>
             <Grid
-                HorizontalOptions="Center"
+                HorizontalOptions="End"
                 VerticalOptions="Center"
                 Grid.Column="1"
                 BackgroundColor="Transparent">
@@ -136,7 +137,8 @@
                 </Grid.ColumnDefinitions>
                 <Image
                     Source="ic_error64.png"
-                    IsOpaque="True"/>
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
                 <Label
                     Grid.Column="1"
                     HorizontalOptions="End"
@@ -147,4 +149,5 @@
             </Grid>
         </Grid>
     </Grid>
+    </ScrollView>
 </ContentPage>

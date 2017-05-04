@@ -11,10 +11,14 @@
       Icon="{x:Static resources:Images.IconeUser32}"/>
     </ContentPage.ToolbarItems>
 
-    <Grid>
-        <ScrollView
-            Grid.RowSpan="8"
-            Padding="30">
+    <ScrollView>
+        <Grid
+            Padding="30"
+            RowSpacing="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
             <Grid
                 RowSpacing="30">
                 <Grid.RowDefinitions>
@@ -30,7 +34,7 @@
                     <TapGestureRecognizer/>
                 </Entry.GestureRecognizers>
             </Entry>
-            
+
             <Entry
                 Placeholder="Funcionarios">
                 <Entry.GestureRecognizers>
@@ -38,56 +42,56 @@
                 </Entry.GestureRecognizers>
             </Entry>
 
-        </ScrollView>
-
-        <Grid
-            Grid.Row="8"
-            BackgroundColor="Transparent"
-            Padding="4"
-            ColumnSpacing="-30">
             <Grid
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                BackgroundColor="Transparent">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                <Image
+                Grid.Row="1"
+                BackgroundColor="Transparent"
+                ColumnSpacing="0">
+                <Grid
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    BackgroundColor="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Image
                     Grid.Column="1"
                     Source="ic_success64.png"
-                    IsOpaque="True"/>
-                <Label
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+                    <Label
                     HorizontalOptions="End"
                     VerticalOptions="Center"
                     Text="Salvar"
                     TextColor="#444444"
                     FontSize="Medium"/>
-                <Grid.GestureRecognizers>
-                    <TapGestureRecognizer
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer
                         Command="{Binding SalvarPessoaCommand}"/>
-                </Grid.GestureRecognizers>
-            </Grid>
-            <Grid
-                HorizontalOptions="Center"
+                    </Grid.GestureRecognizers>
+                </Grid>
+                <Grid
+                HorizontalOptions="End"
                 VerticalOptions="Center"
                 Grid.Column="1"
                 BackgroundColor="Transparent">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                <Image
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Image
                     Source="ic_error64.png"
-                    IsOpaque="True"/>
-                <Label
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+                    <Label
                     Grid.Column="1"
                     HorizontalOptions="End"
                     VerticalOptions="Center"
                     Text="Deletar"
                     TextColor="#444444"
                     FontSize="Medium"/>
+                </Grid>
             </Grid>
         </Grid>
-    </Grid>
+    </ScrollView>
 </ContentPage>
