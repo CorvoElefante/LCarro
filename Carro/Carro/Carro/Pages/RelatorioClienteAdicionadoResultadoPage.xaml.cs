@@ -1,19 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using System;
+using System.Collections.Generic;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using Carro.ViewModels;
 
 namespace Carro.Pages
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RelatorioClienteAdicionadoResultadoPage : ContentPage
     {
-        public RelatorioClienteAdicionadoResultadoPage()
+        public RelatorioClienteAdicionadoResultadoPage(RelatorioClienteAdicionadoSelecaoViewModel.DataCompleta data)
         {
+            BindingContext = new RelatorioClienteAdicionadoResultadoViewModel(Navigation, data);
             InitializeComponent();
         }
     }
