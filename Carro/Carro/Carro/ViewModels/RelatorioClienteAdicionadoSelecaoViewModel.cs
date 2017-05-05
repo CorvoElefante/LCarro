@@ -19,22 +19,15 @@ namespace Carro.ViewModels
 
         }
 
-
-        DataCompleta _data = new DataCompleta();
-        public DataCompleta data
+        public class DataCompleta
         {
-            get
-            {
-                return _data;
-            }
-            set
-            {
-                _data = value;
-                SetPropertyChanged(nameof(data));
-            }
+            public DateTime DataInicio;
+            public DateTime DataFinal;
         }
 
-        DateTime _dataInicial = System.DateTime.Now;
+        
+
+        DateTime _dataInicial = System.DateTime.Today;
         public DateTime dataInicial
         {
             get
@@ -45,7 +38,6 @@ namespace Carro.ViewModels
             {
                 _dataInicial = value;
                 SetPropertyChanged(nameof(dataInicial));
-                data.DataInicio = dataInicial;
             }
         }
 
@@ -60,28 +52,24 @@ namespace Carro.ViewModels
             {
                 _dataFinal = value;
                 SetPropertyChanged(nameof(dataFinal));
-                data.DataFim = dataFinal;
             }
         }
 
-        public class DataCompleta
+        
+
+        Command _RelClienteAdicionadoCommand3;
+        public Command RelClienteAdicionadoCommand3
         {
-            public DateTime DataInicio = DateTime.Now;
-            public DateTime DataFim = DateTime.Now;
+            get { return _RelClienteAdicionadoCommand3 ?? (_RelClienteAdicionadoCommand3 = new Command(async () => await ExecuteRelClienteAdicionadoCommand3())); }
         }
 
-
-
-        Command _RelClienteAdicionadoCommand;
-        public Command RelClienteAdicionadoCommand
-        {
-            get { return _RelClienteAdicionadoCommand ?? (_RelClienteAdicionadoCommand = new Command<DataCompleta>(async (data) => await ExecuteRelClienteAdicionadoCommand(data))); }
-        }
-
-        async Task ExecuteRelClienteAdicionadoCommand(DataCompleta data)
+        async Task ExecuteRelClienteAdicionadoCommand3()
         {
             if (!IsBusy)
             {
+                DataCompleta data = new DataCompleta();
+                data.DataInicio = dataInicial;
+                data.DataFinal = dataFinal;
                 IsBusy = true;
                 await Navigation.PushAsync(new RelatorioClienteAdicionadoResultadoPage(data));
                 IsBusy = false;

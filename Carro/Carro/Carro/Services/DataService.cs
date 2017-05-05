@@ -215,15 +215,7 @@ namespace Carro.Services
         {
             List<Pessoa> lista = new List<Pessoa>();
 
-            lista = DB.Query<Pessoa>("SELECT * FROM Pessoa");
-
-            foreach (Pessoa element in lista)
-            {
-                if (DateTime.Compare(dataInicial, element.Registro) > 0 || DateTime.Compare(dataFinal, element.Registro) < 0)
-                {
-                    lista.Remove(element);
-                }
-            }
+            lista = DB.Query<Pessoa>("SELECT * FROM Pessoa WHERE Registro >= ? AND Registro <= ?", dataInicial.Ticks, dataFinal.Ticks);
 
             return lista;
 
