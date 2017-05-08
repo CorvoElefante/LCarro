@@ -17,11 +17,11 @@ namespace Carro.ViewModels
         public RelatorioClienteAdicionadoResultadoViewModel(INavigation navigation, RelatorioClienteAdicionadoSelecaoViewModel.DataCompleta dataCompleta) : base(navigation)
         {
             dataInicial = dataCompleta.DataInicio;
-            dataFinal = dataCompleta.DataFim;
+            dataFinal = dataCompleta.DataFinal;
             ExecuteListaClientesAdicionadosCommand();
         }
 
-        DateTime _dataInicial = System.DateTime.Now;
+        DateTime _dataInicial = System.DateTime.Today;
         public DateTime dataInicial
         {
             get

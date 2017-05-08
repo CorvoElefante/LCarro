@@ -110,8 +110,8 @@ namespace Carro.ViewModels
             }
         }
 
-        string _ndataEntry = string.Empty;
-        public string ndataEntry
+        DateTime _ndataEntry = DateTime.Today;
+        public DateTime ndataEntry
         {
             get
             {
@@ -184,7 +184,7 @@ namespace Carro.ViewModels
                     using (var scope = new TransactionScope(sqlite))
                     {
                         var service = new DataService(sqlite);
-                        DateTime data = DateTime.Now;
+                        DateTime data = DateTime.UtcNow;
                         var Pessoa = new Pessoa { Nome = nomeEntry, RuaN = ruaNEntry, Bairro = bairroEntry, Telefone = telefoneEntry, Email = emailEntry, Data = ndataEntry, Cpf = cpfEntry, Registro = data };
                         service.SavePessoa(Pessoa);
 

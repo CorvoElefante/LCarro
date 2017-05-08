@@ -20,7 +20,7 @@ namespace Carro
 
         public string Telefone { get; set; }
 
-        public string Data { get; set; }
+        public DateTime Data { get; set; }
 
         public string Email { get; set; }
 

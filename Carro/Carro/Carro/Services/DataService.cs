@@ -215,15 +215,7 @@ namespace Carro.Services
         {
             List<Pessoa> lista = new List<Pessoa>();
 
-            lista = DB.Query<Pessoa>("SELECT * FROM Pessoa");
-
-            foreach (Pessoa element in lista)
-            {
-                if (DateTime.Compare(dataInicial, element.Registro) > 0 || DateTime.Compare(dataFinal, element.Registro) < 0)
-                {
-                    lista.Remove(element);
-                }
-            }
+            lista = DB.Query<Pessoa>("SELECT * FROM Pessoa WHERE Registro >= ? AND Registro <= ?", dataInicial.Ticks, dataFinal.Ticks);
 
             return lista;
 
@@ -233,7 +225,20 @@ namespace Carro.Services
 
         #region RelatorioDespesa
 
+        public List<Despesa> RelatorioDespesas(DateTime dataInicial, DateTime dataFinal, int categoria)
+        {
+            List<Despesa> lista = new List<Despesa>();
+            if(categoria == 0)
+            {
+                lista = DB.Query<Despesa>("SELECT * FROM Despesa WHERE Registro >= ? AND Registro <= ?", dataInicial.Ticks, dataFinal.Ticks);
+            }else
+            {
+                lista = DB.Query<Despesa>("SELECT * FROM Despesa WHERE Registro >= ? AND Registro <= ? AND Categoria = ?", dataInicial.Ticks, dataFinal.Ticks, categoria);
+            }
 
+            return lista;
+
+        }
 
         #endregion
 

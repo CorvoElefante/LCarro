@@ -112,8 +112,8 @@ namespace Carro.ViewModels
             }
         }
 
-        string _ndataEntry = string.Empty;
-        public string ndataEntry
+        DateTime _ndataEntry = DateTime.Today;
+        public DateTime ndataEntry
         {
             get
             {
@@ -140,6 +140,20 @@ namespace Carro.ViewModels
             }
         }
 
+        DateTime _data = DateTime.UtcNow;
+        public DateTime data
+        {
+            get
+            {
+                return _data;
+            }
+            set
+            {
+                _data = value;
+                SetPropertyChanged(nameof(data));
+            }
+        }
+
         Command _SalvarPessoaCommand;
         public Command SalvarPessoaCommand
         {
@@ -159,7 +173,6 @@ namespace Carro.ViewModels
                     {
                         var service = new DataService(sqlite);
 
-                        DateTime data = DateTime.Now;
                         service.SavePessoa(new Pessoa { Nome = nomeEntry, RuaN = ruaNEntry, Bairro = bairroEntry, Telefone = telefoneEntry, Email = emailEntry, Data = ndataEntry, Cpf = cpfEntry, Registro = data });
                         scope.Complete();
                     }

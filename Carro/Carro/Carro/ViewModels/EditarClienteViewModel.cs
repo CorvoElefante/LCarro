@@ -149,8 +149,8 @@ namespace Carro.ViewModels
             }
         }
 
-        string _ndataEntry = string.Empty;
-        public string ndataEntry
+        DateTime _ndataEntry = DateTime.Today;
+        public DateTime ndataEntry
         {
             get
             {
