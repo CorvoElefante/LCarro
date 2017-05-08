@@ -17,61 +17,67 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <Grid
-        Padding="30">
-        <Grid
-        Grid.RowSpan="8"
-        RowSpacing="30">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="50"/>
-            </Grid.RowDefinitions>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <ScrollView
+            Padding="30">
+            <Grid
+                RowSpacing="30">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="140"/>
-            </Grid.ColumnDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="140"/>
+                </Grid.ColumnDefinitions>
 
-            <Label 
+                <Label 
             Text="{Binding produto}"
             FontSize="Large"/>
-            
-            <Label
+
+                <Label
             Grid.Row="1"
             Text="Quantidade atual em estoque:"
             FontSize="Large"/>
-            <Label
+                <Label
             Grid.Row="1"
             Grid.Column="1"
             VerticalOptions="Center"
             HorizontalOptions="End"
             Text="{Binding quantidadeEstoque}"
             FontSize="Large"/>
-            
-            <Label
+
+                <Label
             Grid.Row="2"
                 VerticalOptions="Center"
             Text="Quantidade perdida:"
             FontSize="Large"/>
-            <Entry
+                <Entry
             Grid.Row="2"
             Grid.Column="1"
             VerticalOptions="Center"
             Text= "{Binding quantidadePerdidaEntry, Converter={StaticResource intConverter}}"
             FontSize="Large"
             Keyboard="Numeric"/>
-        </Grid>
+            </Grid>
+        </ScrollView>
 
         <Grid
-        Grid.Row="8"
-        BackgroundColor="Transparent"
-        Padding="4"
-        ColumnSpacing="-30">
+            HorizontalOptions="Fill"
+            VerticalOptions="End"
+            Grid.Row="1"
+            BackgroundColor="#444444"
+            ColumnSpacing="0">
             <Grid
-            HorizontalOptions="Center"
-            VerticalOptions="Center"
-            BackgroundColor="Transparent">
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                BackgroundColor="Transparent">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
@@ -79,16 +85,17 @@
                 <Image
                     Grid.Column="1"
                     Source="ic_success64.png"
-                    IsOpaque="True"/>
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
                 <Label
                     HorizontalOptions="End"
                     VerticalOptions="Center"
                     Text="Salvar"
-                    TextColor="#444444"
+                    TextColor="#FFFFF7"
                     FontSize="Medium"/>
                 <Grid.GestureRecognizers>
                     <TapGestureRecognizer
-                        Command="{Binding SalvaProdutoPerdaCommand}"/>
+                        Command="{Binding SalvarProdutoPerdaCommand}"/>
                 </Grid.GestureRecognizers>
             </Grid>
             <Grid
@@ -102,16 +109,16 @@
                 </Grid.ColumnDefinitions>
                 <Image
                     Source="ic_error64.png"
-                    IsOpaque="True"/>
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
                 <Label
                     Grid.Column="1"
                     HorizontalOptions="End"
                     VerticalOptions="Center"
                     Text="Deletar"
-                    TextColor="#444444"
+                    TextColor="#FFFFF7"
                     FontSize="Medium"/>
             </Grid>
         </Grid>
     </Grid>
-
 </ContentPage>

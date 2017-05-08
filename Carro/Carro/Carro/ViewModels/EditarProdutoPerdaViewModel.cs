@@ -84,13 +84,13 @@ namespace Carro.ViewModels
             }
         }
 
-        Command _SalvaProdutoPerdaCommand;
-        public Command SalvaProdutoPerdaCommand
+        Command _SalvarProdutoPerdaCommand;
+        public Command SalvarProdutoPerdaCommand
         {
-            get { return _SalvaProdutoPerdaCommand ?? (_SalvaProdutoPerdaCommand = new Command(async () => await ExecuteSalvaProdutoPerdaCommand())); }
+            get { return _SalvarProdutoPerdaCommand ?? (_SalvarProdutoPerdaCommand = new Command(async () => await ExecuteSalvarProdutoPerdaCommand())); }
         }
 
-        async Task ExecuteSalvaProdutoPerdaCommand()
+        async Task ExecuteSalvarProdutoPerdaCommand()
         {
 
             if (!IsBusy)

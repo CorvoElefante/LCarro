@@ -12,11 +12,14 @@
     </ContentPage.ToolbarItems>
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
         <ScrollView
-            Grid.RowSpan="8"
             Padding="30">
             <Grid
-            RowSpacing="30">
+                RowSpacing="30">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -26,78 +29,89 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
+
                 <Entry 
-                    Grid.ColumnSpan="12"
-                    Text="{Binding nomeEntry, Mode=TwoWay}" 
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    Grid.ColumnSpan="18"
+                    Text="{Binding nomeEntry}" 
                     Placeholder="Nome" 
                     Keyboard="Text"/>
                 <Image
-                    Margin="8"
-                    Grid.Column="12"
+                    Grid.Column="17"
                     Source="ic_unchecked16.png"
                     IsVisible="{Binding nomeEntryInvalido}"
                     IsOpaque="True"
                     Aspect="AspectFit"/>
 
                 <Entry 
+                    Grid.Column="0"
                     Grid.Row="1"
-                    Grid.ColumnSpan="12"
-                    Text="{Binding ruaNEntry, Mode=TwoWay}" 
+                    Grid.ColumnSpan="18"
+                    Text="{Binding ruaNEntry}" 
                     Placeholder="Rua"/>
 
+
                 <Entry 
+                    Grid.Column="0"
                     Grid.Row="2"
-                    Grid.ColumnSpan="12"
-                    Text="{Binding bairroEntry, Mode=TwoWay}" 
+                    Grid.ColumnSpan="18"
+                    Text="{Binding bairroEntry}" 
                     Placeholder="Bairro"/>
 
                 <Entry 
+                    Grid.Column="0"
                     Grid.Row="3"
-                    Grid.ColumnSpan="12"
-                    Text="{Binding telefoneEntry, Mode=TwoWay}" 
+                    Grid.ColumnSpan="18"
+                    Text="{Binding telefoneEntry}" 
                     Placeholder="Telefone" 
                     Keyboard="Telephone"/>
 
                 <Entry 
+                    Grid.Column="0"
                     Grid.Row="4"
-                    Grid.ColumnSpan="12"
-                    Text="{Binding emailEntry, Mode=TwoWay}"
+                    Grid.ColumnSpan="18"
+                    Text="{Binding emailEntry}"
                     Placeholder="Email"
                     Keyboard="Email"/>
 
                 <Entry 
+                    Grid.Column="0"
                     Grid.Row="5"
-                    Grid.ColumnSpan="12"
-                    Text="{Binding ndataEntry, Mode=TwoWay}"
+                    Grid.ColumnSpan="18"
+                    Text="{Binding ndataEntry}"
                     Placeholder="Data de nascimento"
                     Keyboard="Numeric"/>
 
                 <Entry 
+                    Grid.Column="0"
                     Grid.Row="6"
-                    Grid.ColumnSpan="12"
-                    Text="{Binding cpfEntry, Mode=TwoWay}"
+                    Grid.ColumnSpan="18"
+                    Text="{Binding cpfEntry}"
                     Placeholder="CPF"
                     Keyboard="Numeric"/>
             </Grid>
         </ScrollView>
 
         <Grid
-            Grid.Row="8"
+            HorizontalOptions="Fill"
+            VerticalOptions="End"
+            Grid.Row="1"
             BackgroundColor="#444444"
-            Padding="4"
-            ColumnSpacing="-30">
+            ColumnSpacing="0">
             <Grid
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 BackgroundColor="Transparent">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 <Image
                     Grid.Column="1"
                     Source="ic_success64.png"
-                    IsOpaque="True"/>
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
                 <Label
                     HorizontalOptions="End"
                     VerticalOptions="Center"
@@ -120,7 +134,8 @@
                 </Grid.ColumnDefinitions>
                 <Image
                     Source="ic_error64.png"
-                    IsOpaque="True"/>
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
                 <Label
                     Grid.Column="1"
                     HorizontalOptions="End"

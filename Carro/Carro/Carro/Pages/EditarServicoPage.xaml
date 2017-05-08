@@ -19,11 +19,14 @@
     </ContentPage.Resources>
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
         <ScrollView
-            Grid.RowSpan="8"
             Padding="30">
             <Grid
-               RowSpacing="30">
+                RowSpacing="30">
                 <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -75,22 +78,24 @@
         </ScrollView>
 
         <Grid
-            Grid.Row="8"
+            HorizontalOptions="Fill"
+            VerticalOptions="End"
+            Grid.Row="1"
             BackgroundColor="#444444"
-            Padding="4"
-            ColumnSpacing="-30">
+            ColumnSpacing="0">
             <Grid
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 BackgroundColor="Transparent">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 <Image
                     Grid.Column="1"
                     Source="ic_success64.png"
-                    IsOpaque="True"/>
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
                 <Label
                     HorizontalOptions="End"
                     VerticalOptions="Center"
@@ -99,7 +104,7 @@
                     FontSize="Medium"/>
                 <Grid.GestureRecognizers>
                     <TapGestureRecognizer
-                        Command="{Binding SalvarServicoCommand}"/>
+                        Command="{Binding SalvarPessoaCommand}"/>
                 </Grid.GestureRecognizers>
             </Grid>
             <Grid
@@ -113,7 +118,8 @@
                 </Grid.ColumnDefinitions>
                 <Image
                     Source="ic_error64.png"
-                    IsOpaque="True"/>
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
                 <Label
                     Grid.Column="1"
                     HorizontalOptions="End"
@@ -123,7 +129,7 @@
                     FontSize="Medium"/>
                 <Grid.GestureRecognizers>
                     <TapGestureRecognizer
-                        Command="{Binding DeletarServicoCommand}"/>
+                        Command="{Binding DeletarPessoaCommand}"/>
                 </Grid.GestureRecognizers>
             </Grid>
         </Grid>

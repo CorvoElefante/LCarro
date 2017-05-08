@@ -72,7 +72,7 @@
                 <Entry
                     Grid.Row="3"
                     Grid.ColumnSpan="18"
-                    Text = "{Binding descricaoEntry}" 
+                    Text = "{Binding descricaoEntry}"
                     Placeholder="Descrição"/>
 
                 <Entry
@@ -80,6 +80,19 @@
                     Grid.ColumnSpan="18"
                     Text = "{Binding localEntry}" 
                     Placeholder="Local no estoque"/>
+
+                <Label
+                    VerticalOptions="Center"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="7"
+                    Text = "Quantidade:"
+                    FontSize="Medium"/>
+
+                <Entry
+                    Grid.Row="5"
+                    Grid.Column="7"
+                    Grid.ColumnSpan="11"
+                    Text = "{Binding quantidadeEntry}"/>
             </Grid>
 
             <Grid

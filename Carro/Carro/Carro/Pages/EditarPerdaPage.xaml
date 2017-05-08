@@ -3,9 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
              x:Class="Carro.Pages.EditarPerdaPage"
-             Title="Editar Despesa"
+             Title="Perda"
              BackgroundColor="#FFFFF7">
 
+    <!--Atenção: Essa page não segue o padrão das outras de editar-->
+    
     <Grid>
         <ScrollView
             Grid.RowSpan="8"
@@ -18,20 +20,27 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <Entry
+                
+                <Label
                     Grid.ColumnSpan="12"
-                    Text = "{Binding nomeEntry}" 
-                    Placeholder="Nome" 
-                    Keyboard="Text"/>
+                    Text = "{Binding nomeEntry}"
+                    FontAttributes="Bold"
+                    FontSize="Large"/>
 
-                <Entry
+                <Label
                     Grid.Row="1"
                     Grid.ColumnSpan="12"
-                    Text = "{Binding justificativaEntry}" 
-                    Placeholder="Justificativa" 
-                    Keyboard="Text"/>
+                    Text = "{Binding justificativaEntry}"
+                    FontSize="Large"/>
 
-                <!--Por um titulo para a lista-->
+                <Label
+                    Grid.Row="2"
+                    Grid.ColumnSpan="12"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Produtos perdidos"
+                    FontAttributes="Bold"
+                    FontSize="Medium">
+                </Label>
 
                 <ListView
                     Grid.Row="3"
