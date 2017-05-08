@@ -41,7 +41,7 @@ namespace Carro.ViewModels
             }
         }
 
-        DateTime _dataFinal = System.DateTime.Now;
+        DateTime _dataFinal = DateTime.Now;
         public DateTime dataFinal
         {
             get

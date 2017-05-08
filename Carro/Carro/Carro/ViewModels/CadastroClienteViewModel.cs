@@ -140,6 +140,20 @@ namespace Carro.ViewModels
             }
         }
 
+        DateTime _data = DateTime.Now;
+        public DateTime data
+        {
+            get
+            {
+                return _data;
+            }
+            set
+            {
+                _data = value;
+                SetPropertyChanged(nameof(data));
+            }
+        }
+
         Command _SalvarPessoaCommand;
         public Command SalvarPessoaCommand
         {
@@ -159,7 +173,6 @@ namespace Carro.ViewModels
                     {
                         var service = new DataService(sqlite);
 
-                        DateTime data = System.DateTime.Now;
                         service.SavePessoa(new Pessoa { Nome = nomeEntry, RuaN = ruaNEntry, Bairro = bairroEntry, Telefone = telefoneEntry, Email = emailEntry, Data = ndataEntry, Cpf = cpfEntry, Registro = data });
                         scope.Complete();
                     }
