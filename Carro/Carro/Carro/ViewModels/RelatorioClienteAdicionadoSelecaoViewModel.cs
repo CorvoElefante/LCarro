@@ -25,8 +25,6 @@ namespace Carro.ViewModels
             public DateTime DataFinal;
         }
 
-        
-
         DateTime _dataInicial = System.DateTime.Today;
         public DateTime dataInicial
         {
@@ -41,7 +39,7 @@ namespace Carro.ViewModels
             }
         }
 
-        DateTime _dataFinal = DateTime.Now;
+        DateTime _dataFinal = DateTime.UtcNow;
         public DateTime dataFinal
         {
             get

@@ -225,7 +225,20 @@ namespace Carro.Services
 
         #region RelatorioDespesa
 
+        public List<Despesa> RelatorioDespesas(DateTime dataInicial, DateTime dataFinal, int categoria)
+        {
+            List<Despesa> lista = new List<Despesa>();
+            if(categoria == 0)
+            {
+                lista = DB.Query<Despesa>("SELECT * FROM Despesa WHERE Registro >= ? AND Registro <= ?", dataInicial.Ticks, dataFinal.Ticks);
+            }else
+            {
+                lista = DB.Query<Despesa>("SELECT * FROM Despesa WHERE Registro >= ? AND Registro <= ? AND Categoria = ?", dataInicial.Ticks, dataFinal.Ticks, categoria);
+            }
 
+            return lista;
+
+        }
 
         #endregion
 

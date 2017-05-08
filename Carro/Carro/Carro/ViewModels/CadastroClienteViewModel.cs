@@ -140,7 +140,7 @@ namespace Carro.ViewModels
             }
         }
 
-        DateTime _data = DateTime.Now;
+        DateTime _data = DateTime.UtcNow;
         public DateTime data
         {
             get

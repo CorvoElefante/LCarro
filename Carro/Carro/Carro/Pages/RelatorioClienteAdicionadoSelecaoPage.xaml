@@ -46,7 +46,7 @@
 
         <Frame>
             <Label
-                Text="Relatório total de perdas"
+                Text="Relatório de clientes adicionados"
                 FontSize="Large"/>
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding RelClienteAdicionadoCommand3}"/>

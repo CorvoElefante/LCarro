@@ -160,7 +160,7 @@ namespace Carro.ViewModels
                                 service.AtualizaEstoque(perdido.IdProduto, (perdido.Quantidade - perdido.QuantidadePerdida));
                             }
                         }
-                        DateTime data = DateTime.Now;
+                        DateTime data = DateTime.UtcNow;
                         service.SavePerda(new Perda { Nome = nomeEntry, Justificativa = justificativaEntry, Registro = data, PerdaProdutos = PerdaProdutos.ToList<PerdaProduto>() });
                         scope.Complete();
                     }
