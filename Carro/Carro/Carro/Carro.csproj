@@ -52,8 +52,17 @@
     <Compile Include="Pages\CadastroFuncionarioPage.xaml.cs">
       <DependentUpon>CadastroFuncionarioPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\CadastroVendaPage.xaml.cs">
-      <DependentUpon>CadastroVendaPage.xaml</DependentUpon>
+    <Compile Include="Pages\CadastroVendaClienteFuncionarioPage.xaml.cs">
+      <DependentUpon>CadastroVendaClienteFuncionarioPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CadastroVendaConclusaoPage.xaml.cs">
+      <DependentUpon>CadastroVendaConclusaoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CadastroVendaProdutoPage.xaml.cs">
+      <DependentUpon>CadastroVendaProdutoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CadastroVendaServicoPage.xaml.cs">
+      <DependentUpon>CadastroVendaServicoPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\EditarClientePage.xaml.cs">
       <DependentUpon>EditarClientePage.xaml</DependentUpon>
@@ -75,9 +84,6 @@
     </Compile>
     <Compile Include="Pages\EditarServicoPage.xaml.cs">
       <DependentUpon>EditarServicoPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\HistoricoVendaPage.xaml.cs">
-      <DependentUpon>HistoricoVendaPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ListaClientePage.xaml.cs">
       <DependentUpon>ListaClientePage.xaml</DependentUpon>
@@ -230,6 +236,7 @@
     <Compile Include="ViewModels\CadastroPerdaViewModel.cs" />
     <Compile Include="ViewModels\CadastroProdutoViewModel.cs" />
     <Compile Include="ViewModels\CadastroServicoViewModel.cs" />
+    <Compile Include="ViewModels\CadastroVendaViewModel.cs" />
     <Compile Include="ViewModels\EditarClienteViewModel.cs" />
     <Compile Include="ViewModels\EditarDespesaViewModel.cs" />
     <Compile Include="ViewModels\EditarFuncionarioViewModel.cs" />
@@ -317,10 +324,6 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\MenuPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pages\HistoricoVendaPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -534,12 +537,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\CadastroVendaPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Pages\RelatorioMenuClientePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
@@ -571,6 +568,30 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\RelatorioMenuServicoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\CadastroVendaClienteFuncionarioPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\CadastroVendaProdutoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\CadastroVendaServicoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\CadastroVendaConclusaoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

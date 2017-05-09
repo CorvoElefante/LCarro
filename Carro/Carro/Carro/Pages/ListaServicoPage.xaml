@@ -21,13 +21,13 @@
     </ContentPage.Resources>
 
     <ListView
-     HorizontalOptions="FillAndExpand"
-     VerticalOptions="FillAndExpand"
-     HasUnevenRows="true"
-     SeparatorVisibility="None"
-     Header="{Binding .}"
-     ItemsSource="{Binding Servicos}"
-     ItemTapped="Handle_ItemTapped">
+         HorizontalOptions="FillAndExpand"
+         VerticalOptions="FillAndExpand"
+         HasUnevenRows="true"
+         SeparatorVisibility="None"
+         Header="{Binding .}"
+         ItemsSource="{Binding Servicos}"
+         ItemTapped="Handle_ItemTapped">
 
     <x:Arguments>
       <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
@@ -36,9 +36,9 @@
     <ListView.HeaderTemplate>
       <DataTemplate>
         <SearchBar
-					HeightRequest="45"
-					Placeholder="Buscar"
-					Text="{Binding Search}">
+			HeightRequest="45"
+			Placeholder="Buscar"
+			Text="{Binding Search}">
         </SearchBar>
       </DataTemplate>
     </ListView.HeaderTemplate>

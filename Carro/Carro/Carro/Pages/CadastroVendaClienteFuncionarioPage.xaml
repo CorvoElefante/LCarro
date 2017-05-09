@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
+             x:Class="Carro.Pages.CadastroVendaClienteFuncionarioPage"
+             Title="Nova Venda - Cliente">
+
+    <ScrollView>
+        <Grid
+            Padding="30"
+            RowSpacing="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid
+                RowSpacing="30">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <ListView
+		            HorizontalOptions="FillAndExpand"
+		            VerticalOptions="FillAndExpand"
+		            HasUnevenRows="true"
+		            SeparatorVisibility="None"
+		            ItemsSource="{Binding Funcionarios}"
+		            ItemTapped="Handle_ItemTapped">
+
+                    <x:Arguments>
+                        <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
+                    </x:Arguments>
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.ContextActions>
+                                    <MenuItem 
+                                    Clicked="OnDelete" 
+                                    CommandParameter="{Binding .}" 
+                                    Text="Delete" 
+                                    IsDestructive="True" />
+                                </ViewCell.ContextActions>
+                                
+                                <Grid
+                                    Margin="4"
+                                    ColumnSpacing="20"
+                                    BackgroundColor="Transparent">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Label 
+                                        HorizontalOptions="StartAndExpand"
+							            FontAttributes="Bold"
+							            FontSize="Large"
+							            Text="{Binding Pessoa.Nome}"/>
+                                    <Label 
+                                        Grid.Row="1"
+							            Text="{Binding Salario, Converter={StaticResource decimalConverter}}"/>
+                                    <Label 
+                                        Grid.Row="1" 
+                                        Grid.Column="1"
+                                        HorizontalOptions="EndAndExpand"
+							            Text="{Binding Funcao}"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <!--Adicionar aqui-->
+
+            </Grid>
+
+            <Grid
+                Grid.Row="1"
+                BackgroundColor="Transparent"
+                ColumnSpacing="0">
+                <Grid
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    BackgroundColor="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Image
+                        Grid.Column="1"
+                        Source="ic_success64.png"
+                        IsOpaque="True"
+                        Aspect="AspectFit"/>
+                    <Label
+                        HorizontalOptions="End"
+                        VerticalOptions="Center"
+                        Text="Salvar"
+                        TextColor="#444444"
+                        FontSize="Medium"/>
+                    <!--<Grid.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Command="{Binding SalvarPessoaCommand}"/>
+                        </Grid.GestureRecognizers>-->
+                </Grid>
+                <Grid
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+                    Grid.Column="1"
+                    BackgroundColor="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Image
+                        Source="ic_error64.png"
+                        IsOpaque="True"
+                        Aspect="AspectFit"/>
+                    <Label
+                        Grid.Column="1"
+                        HorizontalOptions="End"
+                        VerticalOptions="Center"
+                        Text="Deletar"
+                        TextColor="#444444"
+                        FontSize="Medium"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </ScrollView>
+</ContentPage>
