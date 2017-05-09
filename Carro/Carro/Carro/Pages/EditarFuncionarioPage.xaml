@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
              x:Class="Carro.Pages.EditarFuncionarioPage"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              Title="Editar Funcionário"
              BackgroundColor="#FFFFF7">
 
@@ -73,12 +74,35 @@
                     Placeholder="Telefone" 
                     Keyboard="Telephone"/>
 
-                <Entry
+                <DatePicker 
+                    VerticalOptions="CenterAndExpand"
+                    Date="{Binding ndataEntry}"
                     Grid.Row="5"
-                    Grid.ColumnSpan="12"
-                    Text="{Binding ndataEntry}" 
-                    Placeholder="Data de nascimento" 
-                    Keyboard="Numeric"/>
+                    Grid.ColumnSpan="18">
+                    <DatePicker.Format>
+                        dd-MM-yyyy
+                    </DatePicker.Format>
+                    <DatePicker.MinimumDate>
+                        <sys:DateTime 
+                            x:FactoryMethod="Parse">
+                            <x:Arguments>
+                                <x:String>
+                                    Jan 1 1920
+                                </x:String>
+                            </x:Arguments>
+                        </sys:DateTime>
+                    </DatePicker.MinimumDate>
+                    <DatePicker.MaximumDate>
+                        <sys:DateTime 
+                            x:FactoryMethod="Parse">
+                            <x:Arguments>
+                                <x:String>
+                                    Dec 31 2050
+                                </x:String>
+                            </x:Arguments>
+                        </sys:DateTime>
+                    </DatePicker.MaximumDate>
+                </DatePicker>
 
                 <Entry
                     Grid.Row="6"

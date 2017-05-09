@@ -149,7 +149,7 @@ namespace Carro.ViewModels
             }
         }
 
-        DateTime _ndataEntry = DateTime.Today;
+        DateTime _ndataEntry = DateTime.MinValue;
         public DateTime ndataEntry
         {
             get
