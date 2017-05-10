@@ -23,6 +23,8 @@ namespace Carro.Models
 
         public int Quantidade { get; set; }
 
+        public int QuantidadeVendida { get; set; }
+
         public string Marca { get; set; }
 
         public string Descricao { get; set; }

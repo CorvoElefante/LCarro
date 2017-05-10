@@ -72,7 +72,7 @@
                 <Entry
                     Grid.Row="3"
                     Grid.ColumnSpan="12"
-                    Text="{Binding tempoEntry, Mode=TwoWay}"
+                    Text="{Binding tempoEntry}"
                     Placeholder="Tempo de conclusão"/>
             </Grid>
         </ScrollView>

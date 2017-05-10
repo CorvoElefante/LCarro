@@ -46,10 +46,10 @@
                     Text="Salvar"
                     TextColor="#444444"
                     FontSize="Medium"/>
-                    <!--<Grid.GestureRecognizers>
+                    <Grid.GestureRecognizers>
                         <TapGestureRecognizer
-                            Command="{Binding SalvarPessoaCommand}"/>
-                        </Grid.GestureRecognizers>-->
+                            Command="{Binding SalvarVendaCommand}"/>
+                        </Grid.GestureRecognizers>
                 </Grid>
                 <Grid
                 HorizontalOptions="End"
@@ -68,9 +68,13 @@
                     Grid.Column="1"
                     HorizontalOptions="End"
                     VerticalOptions="Center"
-                    Text="Deletar"
+                    Text="Voltar"
                     TextColor="#444444"
                     FontSize="Medium"/>
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Command="{Binding CadastroVendaVoltaCommand}"/>
+                    </Grid.GestureRecognizers>
                 </Grid>
             </Grid>
         </Grid>

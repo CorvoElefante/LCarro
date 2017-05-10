@@ -17,14 +17,25 @@
                 RowSpacing="30">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
+                <Label
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Adicionar Servico">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer
+                        Command="{Binding ListaServicoCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+
                 <ListView
+                     Grid.Row="1"
                      HorizontalOptions="FillAndExpand"
                      VerticalOptions="FillAndExpand"
                      HasUnevenRows="true"
                      SeparatorVisibility="None"
-                     ItemsSource="{Binding Servicos}"
+                     ItemsSource="{Binding ServicosSelecionados}"
                      ItemTapped="Handle_ItemTapped">
 
                     <x:Arguments>
@@ -100,10 +111,10 @@
                     Text="Salvar"
                     TextColor="#444444"
                     FontSize="Medium"/>
-                    <!--<Grid.GestureRecognizers>
+                    <Grid.GestureRecognizers>
                         <TapGestureRecognizer
-                            Command="{Binding SalvarPessoaCommand}"/>
-                        </Grid.GestureRecognizers>-->
+                            Command="{Binding CadastroVendaConclucaoCommand}"/>
+                        </Grid.GestureRecognizers>
                 </Grid>
                 <Grid
                 HorizontalOptions="End"
@@ -122,9 +133,13 @@
                     Grid.Column="1"
                     HorizontalOptions="End"
                     VerticalOptions="Center"
-                    Text="Deletar"
+                    Text="Voltar"
                     TextColor="#444444"
                     FontSize="Medium"/>
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Command="{Binding CadastroVendaVoltaCommand}"/>
+                    </Grid.GestureRecognizers>
                 </Grid>
             </Grid>
         </Grid>

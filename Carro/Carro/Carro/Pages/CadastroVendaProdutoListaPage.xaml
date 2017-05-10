@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
+             x:Class="Carro.Pages.CadastroVendaProdutoListaPage"
+             Title="Produtos">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <resources:DecimalConverter x:Key="decimalConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ListView
+		HorizontalOptions="FillAndExpand"
+		VerticalOptions="FillAndExpand"
+		HasUnevenRows="true"
+		SeparatorVisibility="None"
+		Header="{Binding .}"
+		ItemsSource="{Binding Produtos}"
+		ItemTapped="Handle_ItemTapped">
+
+        <x:Arguments>
+            <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
+        </x:Arguments>
+
+        <ListView.HeaderTemplate>
+            <DataTemplate>
+                <SearchBar
+					HeightRequest="45"
+					Placeholder="Buscar"
+					Text="{Binding SearchProduto}">
+                </SearchBar>
+            </DataTemplate>
+        </ListView.HeaderTemplate>
+
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid
+                        Margin="4"
+                        ColumnSpacing="20"
+                        BackgroundColor="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Label 
+                            HorizontalOptions="StartAndExpand"
+							FontAttributes="Bold"
+							FontSize="Large"
+							Text="{Binding Nome}"/>
+                        <Label
+                            Grid.Column="1"
+                            HorizontalOptions="EndAndExpand"
+							Text="{Binding Preco, Converter={StaticResource decimalConverter}}"/>
+                        <Label 
+                            Grid.Row="1" 
+                            HorizontalOptions="StartAndExpand"
+							Text="{Binding Marca}"/>
+                        <Label 
+                            Grid.Row="1" 
+                            Grid.Column="1"
+                            HorizontalOptions="EndAndExpand"
+							Text="{Binding Quantidade}"/>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

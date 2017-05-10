@@ -17,14 +17,43 @@
                 RowSpacing="30">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
+                <Label
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Selecionar Cliente">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer
+                        Command="{Binding ListaClienteCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <Label
+                    Grid.Row="1"
+                    VerticalOptions="CenterAndExpand"
+                    Text="{Binding pessoaSelecionada}"
+                    FontSize="Large"/>
+
+                <Label
+                    Grid.Row="2"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Adicionar Funcionario">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer
+                        Command="{Binding ListaFuncionarioCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+
                 <ListView
+                    Grid.Row="3"
 		            HorizontalOptions="FillAndExpand"
 		            VerticalOptions="FillAndExpand"
 		            HasUnevenRows="true"
 		            SeparatorVisibility="None"
-		            ItemsSource="{Binding Funcionarios}"
+		            ItemsSource="{Binding FuncionariosSelecionados}"
 		            ItemTapped="Handle_ItemTapped">
 
                     <x:Arguments>
@@ -97,13 +126,13 @@
                     <Label
                         HorizontalOptions="End"
                         VerticalOptions="Center"
-                        Text="Salvar"
+                        Text="Avançar"
                         TextColor="#444444"
                         FontSize="Medium"/>
-                    <!--<Grid.GestureRecognizers>
+                    <Grid.GestureRecognizers>
                         <TapGestureRecognizer
-                            Command="{Binding SalvarPessoaCommand}"/>
-                        </Grid.GestureRecognizers>-->
+                            Command="{Binding CadastroVendaProdutoCommand}"/>
+                        </Grid.GestureRecognizers>
                 </Grid>
                 <Grid
                     HorizontalOptions="End"
@@ -122,9 +151,13 @@
                         Grid.Column="1"
                         HorizontalOptions="End"
                         VerticalOptions="Center"
-                        Text="Deletar"
+                        Text="Cancelar"
                         TextColor="#444444"
                         FontSize="Medium"/>
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Command="{Binding CadastroVendaVoltaCommand}"/>
+                    </Grid.GestureRecognizers>
                 </Grid>
             </Grid>
         </Grid>

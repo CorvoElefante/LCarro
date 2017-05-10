@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
+             x:Class="Carro.Pages.CadastroVendaServicoQuantidadePage"
+             Title="Quantidade - Serviço">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <resources:IntConverter x:Key="intConverter" />
+            <resources:DecimalConverter x:Key="decimalConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <Grid
+            Padding="30"
+            RowSpacing="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid
+                RowSpacing="30">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Label
+                    Text="{Binding servicoSelecionadoTemporario.Nome}"/>
+
+                <Label
+                    Grid.Row="1"
+                    x:Name="precoEntry"
+                    Text="{Binding servicoSelecionadoTemporario.Valor, Converter={StaticResource decimalConverter}}"/>
+
+                <Label
+                    Grid.Row="2"
+                    VerticalOptions="Center"
+                    Text="Quantidade vendida:"
+                    FontSize="Large"/>
+                <Entry
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    VerticalOptions="Center"
+                    Text= "{Binding servicoSelecionadoTemporario.QuantidadeVendida, Converter={StaticResource intConverter}}"
+                    FontSize="Large"/>
+
+                <!--Adicionar aqui-->
+
+            </Grid>
+
+            <Grid
+                Grid.Row="1"
+                BackgroundColor="Transparent"
+                ColumnSpacing="0">
+                <Grid
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    BackgroundColor="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Image
+                        Grid.Column="1"
+                        Source="ic_success64.png"
+                        IsOpaque="True"
+                        Aspect="AspectFit"/>
+                    <Label
+                        HorizontalOptions="End"
+                        VerticalOptions="Center"
+                        Text="Salvar"
+                        TextColor="#444444"
+                        FontSize="Medium"/>
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Command="{Binding SalvaVendaServicoQuantidadeCommand}"/>
+                        </Grid.GestureRecognizers>
+                </Grid>
+                <Grid
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+                    Grid.Column="1"
+                    BackgroundColor="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Image
+                        Source="ic_error64.png"
+                        IsOpaque="True"
+                        Aspect="AspectFit"/>
+                    <Label
+                        Grid.Column="1"
+                        HorizontalOptions="End"
+                        VerticalOptions="Center"
+                        Text="Deletar"
+                        TextColor="#444444"
+                        FontSize="Medium"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </ScrollView>
+</ContentPage>

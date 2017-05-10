@@ -21,7 +21,7 @@ namespace Carro.Models
 
         public decimal Valor { get; set; }
 
-        public int Quantidade { get; set; }
+        public int QuantidadeVendida { get; set; }
 
         public string Descricao { get; set; }
 
