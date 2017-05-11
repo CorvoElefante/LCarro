@@ -16,13 +16,13 @@ namespace Carro.ViewModels
         {
         }
 
-        Command _MenuVendaCommand;
-        public Command MenuVendaCommand
+        Command _MenuPreVendaCommand;
+        public Command MenuPreVendaCommand
         {
-            get { return _MenuVendaCommand ?? (_MenuVendaCommand = new Command(async () => await ExecuteMenuVendaCommand())); }
+            get { return _MenuPreVendaCommand ?? (_MenuPreVendaCommand = new Command(async () => await ExecuteMenuPreVendaCommand())); }
         }
 
-        async Task ExecuteMenuVendaCommand()
+        async Task ExecuteMenuPreVendaCommand()
         {
             if (!IsBusy)
             {

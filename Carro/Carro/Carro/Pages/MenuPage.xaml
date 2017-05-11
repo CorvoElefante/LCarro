@@ -24,7 +24,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding MenuProdutoCommand}" />
+                <TapGestureRecognizer Command="{Binding MenuPreVendaCommand}" />
             </Grid.GestureRecognizers>
 
             <Image
@@ -52,9 +52,9 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Grid.GestureRecognizers>
+            <!--<Grid.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding MenuVendaCommand}" />
-            </Grid.GestureRecognizers>
+            </Grid.GestureRecognizers>-->
             
             <Image
               Source="ic_money128.png"
