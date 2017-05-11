@@ -200,7 +200,7 @@ namespace Carro.Services
 
         #region OrdemVenda
 
-        public List<OrdemVenda> FindVendaByNome(string nome)
+        public List<OrdemVenda> FindVendaByNome(string nome, int tipoBusca)
         {
             List<OrdemVenda> list = new List<OrdemVenda>();
             if (nome == null || nome == "")

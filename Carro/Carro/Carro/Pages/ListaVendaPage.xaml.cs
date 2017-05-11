@@ -1,20 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using Carro.ViewModels;
 
 namespace Carro.Pages
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ListaVendaPage : ContentPage
     {
         public ListaVendaPage()
         {
+            BindingContext = new ListaVendaViewModel(Navigation);
             InitializeComponent();
+        }
+
+        void Handle_ItemTapped(object sender, Xamarin.Forms.ItemTappedEventArgs e)
+        {
+            if (e == null)
+            {
+                return; // has been set to null, do not 'process' tapped event 
+            }
         }
     }
 }

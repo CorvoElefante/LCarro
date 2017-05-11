@@ -27,7 +27,7 @@ namespace Carro.ViewModels
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new CadastroVendaClienteFuncionarioPage());
+                await Navigation.PushAsync(new ListaVendaPage());
                 IsBusy = false;
             }
         }

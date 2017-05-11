@@ -272,6 +272,7 @@
     <Compile Include="ViewModels\ListaProdutoPerdaViewModel.cs" />
     <Compile Include="ViewModels\ListaProdutoViewModel.cs" />
     <Compile Include="ViewModels\ListaServicoViewModel.cs" />
+    <Compile Include="ViewModels\ListaVendaViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MenuViewModel.cs" />
     <Compile Include="ViewModels\RelatorioClienteAdicionadoResultadoViewModel.cs" />
