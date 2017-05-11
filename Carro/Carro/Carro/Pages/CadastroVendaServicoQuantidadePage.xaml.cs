@@ -11,10 +11,15 @@ namespace Carro.Pages
 {
     public partial class CadastroVendaServicoQuantidadePage : ContentPage
     {
-        public CadastroVendaServicoQuantidadePage()
+        public CadastroVendaServicoQuantidadePage(CadastroVendaViewModel vendaViewModel)
         {
-            BindingContext = new CadastroVendaViewModel(Navigation);
+            BindingContext = vendaViewModel;
             InitializeComponent();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
         }
     }
 }

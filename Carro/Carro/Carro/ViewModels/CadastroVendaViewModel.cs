@@ -238,7 +238,7 @@ namespace Carro.ViewModels
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new CadastroVendaProdutoPage());
+                await Navigation.PushAsync(new CadastroVendaProdutoPage(this));
                 IsBusy = false;
             }
         }
@@ -254,7 +254,7 @@ namespace Carro.ViewModels
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new CadastroVendaServicoPage());
+                await Navigation.PushAsync(new CadastroVendaServicoPage(this));
                 IsBusy = false;
             }
         }
@@ -270,7 +270,7 @@ namespace Carro.ViewModels
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new CadastroVendaConclusaoPage());
+                await Navigation.PushAsync(new CadastroVendaConclusaoPage(this));
                 IsBusy = false;
             }
         }
@@ -302,7 +302,7 @@ namespace Carro.ViewModels
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new CadastroVendaClienteListaPage());
+                await Navigation.PushAsync(new CadastroVendaClienteListaPage(this));
                 IsBusy = false;
             }
         }
@@ -318,7 +318,7 @@ namespace Carro.ViewModels
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new CadastroVendaFuncionarioListaPage());
+                await Navigation.PushAsync(new CadastroVendaFuncionarioListaPage(this));
                 IsBusy = false;
             }
         }
@@ -334,7 +334,7 @@ namespace Carro.ViewModels
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new CadastroVendaProdutoListaPage());
+                await Navigation.PushAsync(new CadastroVendaProdutoListaPage(this));
                 IsBusy = false;
             }
         }
@@ -350,7 +350,7 @@ namespace Carro.ViewModels
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new CadastroVendaServicoListaPage());
+                await Navigation.PushAsync(new CadastroVendaServicoListaPage(this));
                 IsBusy = false;
             }
         }
@@ -408,8 +408,8 @@ namespace Carro.ViewModels
                 produtoSelecionadoTemporario.Quantidade = value.Quantidade;
                 produtoSelecionadoTemporario.Valor = value.Preco;
                 produtoSelecionadoTemporario.Descricao = value.Descricao;
-                Navigation.PopAsync();
-                await Navigation.PushAsync(new CadastroVendaProdutoQuantidadePage());
+                await Navigation.PopAsync();
+                await Navigation.PushAsync(new CadastroVendaProdutoQuantidadePage(this));
                 IsBusy = false;
             }
         }
@@ -430,8 +430,8 @@ namespace Carro.ViewModels
                 servicoSelecionadoTemporario.Tempo = value.Tempo;
                 servicoSelecionadoTemporario.Valor = value.Preco;
                 servicoSelecionadoTemporario.Descricao = value.Descricao;
-                Navigation.PopAsync();
-                await Navigation.PushAsync(new CadastroVendaServicoQuantidadePage());
+                await Navigation.PopAsync();
+                await Navigation.PushAsync(new CadastroVendaServicoQuantidadePage(this));
                 IsBusy = false;
             }
         }

@@ -7,9 +7,9 @@ namespace Carro.Pages
 {
     public partial class CadastroVendaProdutoListaPage : ContentPage
     {
-        public CadastroVendaProdutoListaPage()
+        public CadastroVendaProdutoListaPage(CadastroVendaViewModel vendaViewModel)
         {
-            BindingContext = new CadastroVendaViewModel(Navigation);
+            BindingContext = vendaViewModel;
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
         }
@@ -26,6 +26,11 @@ namespace Carro.Pages
                 ((CadastroVendaViewModel)BindingContext).AdicionaProdutoCommand.Execute(((ListView)sender).SelectedItem);
             }
              ((ListView)sender).SelectedItem = null; // de-select the row
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
         }
     }
 }
