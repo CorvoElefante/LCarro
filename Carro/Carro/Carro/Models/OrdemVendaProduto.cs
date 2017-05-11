@@ -31,6 +31,8 @@ namespace Carro.Models
 
         public string Local { get; set; }
 
+        public decimal Desconto { get; set; }
+
         [ManyToOne]
         public OrdemVenda OrdemVenda { get; set; }
     }

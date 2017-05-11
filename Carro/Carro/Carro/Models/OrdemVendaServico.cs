@@ -27,6 +27,8 @@ namespace Carro.Models
 
         public string Tempo { get; set; }
 
+        public decimal Desconto { get; set; }
+
         [ManyToOne]
         public OrdemVenda OrdemVenda { get; set; }
     }

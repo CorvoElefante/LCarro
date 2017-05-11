@@ -198,6 +198,30 @@ namespace Carro.Services
 
         #endregion
 
+        #region OrdemVenda
+
+        public List<OrdemVenda> FindVendaByNome(string nome)
+        {
+            List<OrdemVenda> list = new List<OrdemVenda>();
+            if (nome == null || nome == "")
+            {
+                list = DB.Query<OrdemVenda>("SELECT * FROM OrdemVenda ORDER BY Registro").ToList();
+            }
+            else
+            {
+                list = DB.Query<OrdemVenda>("SELECT * FROM OrdemVenda INNER JOIN Pessoa ON OrdemVenda.IdCliente = Pessoa.Id WHERE (Pessoa.Nome LIKE ('%' || ? || '%')) ORDER BY Registro", nome).ToList();
+            }
+
+            foreach (OrdemVenda element in list)
+            {
+                DB.GetChildren(element, false);
+            }
+
+            return list;
+        }
+
+        #endregion
+
         #region Relatorios
 
         #region  RelatorioPessoaCliente
