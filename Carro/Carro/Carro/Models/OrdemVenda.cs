@@ -27,7 +27,7 @@ namespace Carro.Models
 
         public int ParcelasPagas { get; set; }
 
-        public float Valor { get; set; }
+        public decimal Valor { get; set; }
 
         public DateTime Registro { get; set; }
 

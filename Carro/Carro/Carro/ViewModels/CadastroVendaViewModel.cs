@@ -7,6 +7,7 @@ using Carro.Repositories;
 using Carro.Services;
 using System.Threading.Tasks;
 using Carro.Pages;
+using System.Linq;
 
 namespace Carro.ViewModels
 {
@@ -60,8 +61,8 @@ namespace Carro.ViewModels
             }
         }
 
-        ObservableCollection<Funcionario> _FuncionariosSelecionados = new ObservableCollection<Funcionario>();
-        public ObservableCollection<Funcionario> FuncionariosSelecionados
+        ObservableCollection<FuncionarioServico> _FuncionariosSelecionados = new ObservableCollection<FuncionarioServico>();
+        public ObservableCollection<FuncionarioServico> FuncionariosSelecionados
         {
             get
             {
@@ -71,6 +72,20 @@ namespace Carro.ViewModels
             {
                 _FuncionariosSelecionados = value;
                 SetPropertyChanged(nameof(FuncionariosSelecionados));
+            }
+        }
+
+        FuncionarioServico _funcionarioSelecionadoTemporario = new FuncionarioServico();
+        public FuncionarioServico funcionarioSelecionadoTemporario
+        {
+            get
+            {
+                return _funcionarioSelecionadoTemporario;
+            }
+            set
+            {
+                _funcionarioSelecionadoTemporario = value;
+                SetPropertyChanged(nameof(funcionarioSelecionadoTemporario));
             }
         }
 
@@ -158,6 +173,48 @@ namespace Carro.ViewModels
             }
         }
 
+        decimal _ValorTotalProdutos = 0m;
+        public decimal ValorTotalProdutos
+        {
+            get
+            {
+                return _ValorTotalProdutos;
+            }
+            set
+            {
+                _ValorTotalProdutos = value;
+                SetPropertyChanged(nameof(ValorTotalProdutos));
+            }
+        }
+
+        decimal _ValorTotalServicos = 0m;
+        public decimal ValorTotalServicos
+        {
+            get
+            {
+                return _ValorTotalServicos;
+            }
+            set
+            {
+                _ValorTotalServicos = value;
+                SetPropertyChanged(nameof(ValorTotalServicos));
+            }
+        }
+
+        decimal _ValorTotal = 0m;
+        public decimal ValorTotal
+        {
+            get
+            {
+                return _ValorTotal;
+            }
+            set
+            {
+                _ValorTotal = value;
+                SetPropertyChanged(nameof(ValorTotal));
+            }
+        }
+
         string _SearchPessoa = string.Empty;
         public string SearchPessoa
         {
@@ -210,6 +267,21 @@ namespace Carro.ViewModels
         #endregion
 
         #region Commands
+
+        public void AtualizaValorTotal()
+        {
+            foreach(OrdemVendaProduto produto in ProdutosSelecionados)
+            {
+                ValorTotalProdutos = ValorTotalProdutos + (produto.QuantidadeVendida * produto.Valor);
+            }
+
+            foreach (OrdemVendaServico servico in ServicosSelecionados)
+            {
+                ValorTotalServicos = ValorTotalServicos + (servico.QuantidadeVendida * servico.Valor);
+            }
+
+            ValorTotal = ValorTotalProdutos + ValorTotalServicos;
+        }
 
         Command _CadastroVendaVoltaCommand;
         public Command CadastroVendaVoltaCommand
@@ -275,19 +347,45 @@ namespace Carro.ViewModels
             }
         }
 
-        Command _SalvarVendaCommand;
-        public Command SalvarVendaCommand
+        Command _SalvarPreVendaCommand;
+        public Command SalvarPreVendaCommand
         {
-            get { return _SalvarVendaCommand ?? (_SalvarVendaCommand = new Command(async () => await ExecuteSalvarVendaCommand())); }
+            get { return _SalvarPreVendaCommand ?? (_SalvarPreVendaCommand = new Command(async () => await ExecutePreSalvarVendaCommand())); }
         }
 
-        async Task ExecuteSalvarVendaCommand()
+        async Task ExecutePreSalvarVendaCommand()
         {
             if (!IsBusy)
             {
-                IsBusy = true;
-                await Navigation.PopToRootAsync();
-                IsBusy = false;
+                if (!IsBusy)
+                {
+                    IsBusy = true;
+
+                    var sqlite = DependencyService.Get<ISQLite>();
+                    using (var scope = new TransactionScope(sqlite))
+                    {
+                        var service = new DataService(sqlite);
+                        DateTime data = DateTime.UtcNow;
+
+                        foreach (OrdemVendaProduto vendido in ProdutosSelecionados)
+                        {
+                            if (vendido.QuantidadeVendida > vendido.Quantidade)
+                            {
+                                service.AtualizaEstoque(vendido.IdProduto, 0);
+                            }
+                            else
+                            {
+                                service.AtualizaEstoque(vendido.IdProduto, (vendido.Quantidade - vendido.QuantidadeVendida));
+                            }
+                        }
+
+                        service.SaveOrdemVenda(new OrdemVenda { eVenda = false, IdCliente = pessoaSelecionada.Id, Pessoa = pessoaSelecionada, PrazoInicial = 0, NumeroParcelas = 0, ParcelasPagas = 0, Valor = ValorTotal, Registro = data, FuncionarioServicos = FuncionariosSelecionados.ToList<FuncionarioServico>(), OrdemVendaProdutos = ProdutosSelecionados.ToList<OrdemVendaProduto>(), OrdemVendaServicos = ServicosSelecionados.ToList<OrdemVendaServico>()});
+
+                        scope.Complete();
+                    }
+                    await Navigation.PopToRootAsync();
+                    IsBusy = false;
+                }
             }
         }
 
@@ -384,8 +482,27 @@ namespace Carro.ViewModels
             if (!IsBusy)
             {
                 IsBusy = true;
-                FuncionariosSelecionados.Add(value);
+                funcionarioSelecionadoTemporario.IdFuncionario = value.Id;
+                funcionarioSelecionadoTemporario.Funcionario = value;
+                FuncionariosSelecionados.Add(funcionarioSelecionadoTemporario);
+                funcionarioSelecionadoTemporario = new FuncionarioServico();
                 await Navigation.PopAsync();
+                IsBusy = false;
+            }
+        }
+
+        Command _RemoveFuncionarioCommand;
+        public Command RemoveFuncionarioCommand
+        {
+            get { return _RemoveFuncionarioCommand ?? (_RemoveFuncionarioCommand = new Command<FuncionarioServico>((qq) => ExecuteRemoveFuncionarioCommand(qq))); }
+        }
+
+        void ExecuteRemoveFuncionarioCommand(FuncionarioServico qq)
+        {
+            if (!IsBusy)
+            {
+                IsBusy = true;
+                FuncionariosSelecionados.Remove(qq);
                 IsBusy = false;
             }
         }
@@ -414,6 +531,25 @@ namespace Carro.ViewModels
             }
         }
 
+        Command _RemoveProdutoCommand;
+        public Command RemoveProdutoCommand
+        {
+            get { return _RemoveProdutoCommand ?? (_RemoveProdutoCommand = new Command<OrdemVendaProduto>((qq) => ExecuteRemoveProdutoCommand(qq))); }
+        }
+
+        void ExecuteRemoveProdutoCommand(OrdemVendaProduto qq)
+        {
+            if (!IsBusy)
+            {
+                IsBusy = true;
+                ProdutosSelecionados.Remove(qq);
+                ValorTotalProdutos = 0m;
+                ValorTotalServicos = 0m;
+                AtualizaValorTotal();
+                IsBusy = false;
+            }
+        }
+
         Command _AdicionaServicoCommand;
         public Command AdicionaServicoCommand
         {
@@ -436,6 +572,25 @@ namespace Carro.ViewModels
             }
         }
 
+        Command _RemoveServicoCommand;
+        public Command RemoveServicoCommand
+        {
+            get { return _RemoveServicoCommand ?? (_RemoveServicoCommand = new Command<OrdemVendaServico>((qq) => ExecuteRemoveServicoCommand(qq))); }
+        }
+
+        void ExecuteRemoveServicoCommand(OrdemVendaServico qq)
+        {
+            if (!IsBusy)
+            {
+                IsBusy = true;
+                ServicosSelecionados.Remove(qq);
+                ValorTotalProdutos = 0m;
+                ValorTotalServicos = 0m;
+                AtualizaValorTotal();
+                IsBusy = false;
+            }
+        }
+
         Command _SalvaVendaProdutoQuantidadeCommand;
         public Command SalvaVendaProdutoQuantidadeCommand
         {
@@ -449,6 +604,9 @@ namespace Carro.ViewModels
                 IsBusy = true;
                 ProdutosSelecionados.Add(produtoSelecionadoTemporario);
                 produtoSelecionadoTemporario = new OrdemVendaProduto();
+                ValorTotalProdutos = 0m;
+                ValorTotalServicos = 0m;
+                AtualizaValorTotal();
                 await Navigation.PopAsync();
                 IsBusy = false;
             }
@@ -467,6 +625,9 @@ namespace Carro.ViewModels
                 IsBusy = true;
                 ServicosSelecionados.Add(servicoSelecionadoTemporario);
                 servicoSelecionadoTemporario = new OrdemVendaServico();
+                ValorTotalProdutos = 0m;
+                ValorTotalServicos = 0m;
+                AtualizaValorTotal();
                 await Navigation.PopAsync();
                 IsBusy = false;
             }

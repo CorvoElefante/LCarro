@@ -5,6 +5,12 @@
              x:Class="Carro.Pages.CadastroVendaClienteFuncionarioPage"
              Title="Nova Venda - Cliente">
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <resources:DecimalConverter x:Key="decimalConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <ScrollView>
         <Grid
             Padding="30"
@@ -88,15 +94,15 @@
                                         HorizontalOptions="StartAndExpand"
 							            FontAttributes="Bold"
 							            FontSize="Large"
-							            Text="{Binding Pessoa.Nome}"/>
+							            Text="{Binding Funcionario.Pessoa.Nome}"/>
                                     <Label 
                                         Grid.Row="1"
-							            Text="{Binding Salario, Converter={StaticResource decimalConverter}}"/>
+							            Text="{Binding Funcionario.Salario, Converter={StaticResource decimalConverter}}"/>
                                     <Label 
                                         Grid.Row="1" 
                                         Grid.Column="1"
                                         HorizontalOptions="EndAndExpand"
-							            Text="{Binding Funcao}"/>
+							            Text="{Binding Funcionario.Funcao}"/>
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>

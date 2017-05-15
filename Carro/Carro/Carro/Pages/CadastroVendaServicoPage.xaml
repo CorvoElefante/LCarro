@@ -5,6 +5,12 @@
              x:Class="Carro.Pages.CadastroVendaServicoPage"
              Title="Nova Venda - Serviços">
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <resources:DecimalConverter x:Key="decimalConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <ScrollView>
         <Grid
             Padding="30"

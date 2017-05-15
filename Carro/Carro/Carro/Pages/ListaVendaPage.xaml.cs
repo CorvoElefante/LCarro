@@ -19,6 +19,7 @@ namespace Carro.Pages
             {
                 return; // has been set to null, do not 'process' tapped event 
             }
+            ((ListView)sender).SelectedItem = null; // de-select the row
         }
     }
 }

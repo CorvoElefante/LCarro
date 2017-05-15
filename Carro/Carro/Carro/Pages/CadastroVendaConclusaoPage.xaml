@@ -48,7 +48,7 @@
                     FontSize="Medium"/>
                     <Grid.GestureRecognizers>
                         <TapGestureRecognizer
-                            Command="{Binding SalvarVendaCommand}"/>
+                            Command="{Binding SalvarPreVendaCommand}"/>
                         </Grid.GestureRecognizers>
                 </Grid>
                 <Grid

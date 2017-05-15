@@ -26,6 +26,17 @@ namespace Carro.Pages
             ((ListView)sender).SelectedItem = null; // de-select the row
         }
 
+        public void OnDelete(object sender, EventArgs e)
+        {
+            var mi = ((MenuItem)sender);
+
+            if (((CadastroVendaViewModel)BindingContext).RemoveFuncionarioCommand.CanExecute(null))
+            {
+                ((CadastroVendaViewModel)BindingContext).RemoveFuncionarioCommand.Execute(mi.CommandParameter);
+            }
+            DisplayAlert("", "Funcionário removido com sucesso", "OK");
+        }
+
         protected override void OnAppearing()
         {
             base.OnAppearing();

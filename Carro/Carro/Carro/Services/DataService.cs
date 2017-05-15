@@ -200,6 +200,11 @@ namespace Carro.Services
 
         #region OrdemVenda
 
+        public void SaveOrdemVenda(OrdemVenda ordemvenda)
+        {
+            UnitOfWork.OrdemVendaRepository.AddOrUpdate(ordemvenda);
+        }
+
         public List<OrdemVenda> FindVendaByNome(string nome, int tipoBusca)
         {
             List<OrdemVenda> list = new List<OrdemVenda>();
