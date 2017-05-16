@@ -86,7 +86,7 @@
             </Grid.GestureRecognizers>
 
             <Image
-              Source="ic_Cliente_48x"
+              Source="ic_Cliente_teste"
               IsOpaque="True"
               Aspect="AspectFit"
               HorizontalOptions="Center"/>
