@@ -53,6 +53,7 @@ namespace Carro.Resources
         public static FileImageSource IconePessoa = new FileImageSource { File = "ic_pessoa" };
 
         public static FileImageSource ic_Cliente_48x = new FileImageSource { File = "ic_Cliente_48x" };
+        public static FileImageSource ic_Cliente_teste = new FileImageSource { File = "ic_Cliente_teste" };
         public static FileImageSource ic_Despesa_48x = new FileImageSource { File = "ic_Despesa_48x" };
         public static FileImageSource ic_Funcionario_48x = new FileImageSource { File = "ic_Funcionario_48x" };
         public static FileImageSource ic_Opcoes_48x = new FileImageSource { File = "ic_Opcoes_48x" };
