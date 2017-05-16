@@ -51,5 +51,27 @@ namespace Carro.Resources
         public static FileImageSource IconeAdicionarPessoa = new FileImageSource { File = "ic_adicionarPessoa" };
         public static FileImageSource IconeCerto = new FileImageSource { File = "ic_certo" };
         public static FileImageSource IconePessoa = new FileImageSource { File = "ic_pessoa" };
+
+        public static FileImageSource ic_Cliente_48x = new FileImageSource { File = "ic_Cliente_48x" };
+        public static FileImageSource ic_Despesa_48x = new FileImageSource { File = "ic_Despesa_48x" };
+        public static FileImageSource ic_Funcionario_48x = new FileImageSource { File = "ic_Funcionario_48x" };
+        public static FileImageSource ic_Opcoes_48x = new FileImageSource { File = "ic_Opcoes_48x" };
+        public static FileImageSource ic_Perda_48x = new FileImageSource { File = "ic_Perda_48x" };
+        public static FileImageSource ic_PreVenda_48x = new FileImageSource { File = "ic_PreVenda_48x" };
+        public static FileImageSource ic_Produto_48x = new FileImageSource { File = "ic_Produto_48x" };
+        public static FileImageSource ic_Relatorio_48x = new FileImageSource { File = "ic_Relatorio_48x" };
+        public static FileImageSource ic_Servico_48x = new FileImageSource { File = "ic_Servico_48x" };
+        public static FileImageSource ic_Venda_48x = new FileImageSource { File = "ic_Venda_48x" };
+
+        public static FileImageSource ic_Cliente_24x = new FileImageSource { File = "ic_Cliente_24x" };
+        public static FileImageSource ic_Despesa_24x = new FileImageSource { File = "ic_Despesa_24x" };
+        public static FileImageSource ic_Funcionario_24x = new FileImageSource { File = "ic_Funcionario_24x" };
+        public static FileImageSource ic_Opcoes_24x = new FileImageSource { File = "ic_Opcoes_24x" };
+        public static FileImageSource ic_Perda_24x = new FileImageSource { File = "ic_Perda_24x" };
+        public static FileImageSource ic_PreVenda_24x = new FileImageSource { File = "ic_PreVenda_24x" };
+        public static FileImageSource ic_Produto_24x = new FileImageSource { File = "ic_Produto_24x" };
+        public static FileImageSource ic_Relatorio_24x = new FileImageSource { File = "ic_Relatorio_24x" };
+        public static FileImageSource ic_Servico_24x = new FileImageSource { File = "ic_Servico_24x" };
+        public static FileImageSource ic_Venda_24x = new FileImageSource { File = "ic_Venda_24x" };
     }
 }

@@ -28,7 +28,7 @@
             </Grid.GestureRecognizers>
 
             <Image
-              Source="ic_buy128.png"
+              Source="ic_PreVenda_48x"
               IsOpaque="True"
               Aspect="AspectFit"
               HorizontalOptions="Center"/>
@@ -57,7 +57,7 @@
             </Grid.GestureRecognizers>-->
             
             <Image
-              Source="ic_money128.png"
+              Source="ic_Venda_48x"
               IsOpaque="True"
               Aspect="AspectFit"
               HorizontalOptions="Center"/>
@@ -86,7 +86,7 @@
             </Grid.GestureRecognizers>
 
             <Image
-              Source="ic_man128.png"
+              Source="ic_Cliente_48x"
               IsOpaque="True"
               Aspect="AspectFit"
               HorizontalOptions="Center"/>
@@ -115,7 +115,7 @@
             </Grid.GestureRecognizers>
 
             <Image
-              Source="ic_cart128.png"
+              Source="ic_Produto_48x"
               IsOpaque="True"
               Aspect="AspectFit"
               HorizontalOptions="Center"/>
@@ -144,7 +144,7 @@
             </Grid.GestureRecognizers>
             
             <Image
-              Source="ic_services128.png"
+              Source="ic_Servico_48x"
               IsOpaque="True"
               Aspect="AspectFit"
               HorizontalOptions="Center"/>
@@ -173,7 +173,7 @@
             </Grid.GestureRecognizers>
 
             <Image
-              Source="ic_timeismoney128.png"
+              Source="ic_Despesa_48x"
               IsOpaque="True"
               Aspect="AspectFit"
               HorizontalOptions="Center"/>
@@ -202,7 +202,7 @@
             </Grid.GestureRecognizers>
 
             <Image
-              Source="ic_analytics128.png"
+              Source="ic_Perda_48x"
               IsOpaque="True"
               Aspect="AspectFit"
               HorizontalOptions="Center"/>
@@ -231,7 +231,7 @@
             </Grid.GestureRecognizers>
 
             <Image
-              Source="ic_team128.png"
+              Source="ic_Funcionario_48x"
               IsOpaque="True"
               Aspect="AspectFit"
               HorizontalOptions="Center"/>
@@ -260,7 +260,7 @@
             </Grid.GestureRecognizers>
 
             <Image
-              Source="ic_business128.png"
+              Source="ic_Relatorio_48x"
               IsOpaque="True"
               Aspect="AspectFit"
               HorizontalOptions="Center"/>
@@ -289,7 +289,7 @@
             </Grid.GestureRecognizers>
 
             <Image
-              Source="ic_shield128.png"
+              Source="ic_Opcoes_48x"
               IsOpaque="True"
               Aspect="AspectFit"
               HorizontalOptions="Center"/>
