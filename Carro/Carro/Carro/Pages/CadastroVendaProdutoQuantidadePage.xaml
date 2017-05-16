@@ -8,6 +8,8 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <resources:IntConverter x:Key="intConverter" />
+            <resources:DecimalConverter x:Key="decimalConverter" />
+            <resources:PercentualConverter x:Key="percentualConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -59,6 +61,31 @@
             Grid.Column="1"
             VerticalOptions="Center"
             Text= "{Binding produtoSelecionadoTemporario.QuantidadeVendida, Converter={StaticResource intConverter}}"
+            FontSize="Large"
+            Keyboard="Numeric"/>
+
+                <Label
+            Grid.Row="5"
+                VerticalOptions="Center"
+            Text="Desconto produtos:"
+            FontSize="Large"/>
+                <Entry
+            Grid.Row="5"
+            Grid.Column="1"
+            VerticalOptions="Center"
+            Text= "{Binding DescontoProduto, Converter={StaticResource decimalConverter}}"
+            FontSize="Large"
+            Keyboard="Numeric"/>
+                <Label
+            Grid.Row="6"
+                VerticalOptions="Center"
+            Text="Desconto produtos %:"
+            FontSize="Large"/>
+                <Entry
+            Grid.Row="6"
+            Grid.Column="1"
+            VerticalOptions="Center"
+            Text= "{Binding DescontoProdutoPorcentagem, Converter={StaticResource percentualConverter}}"
             FontSize="Large"
             Keyboard="Numeric"/>
 
