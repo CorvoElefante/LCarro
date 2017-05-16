@@ -215,6 +215,62 @@ namespace Carro.ViewModels
             }
         }
 
+        decimal _DescontoProduto = 0m;
+        public decimal DescontoProduto
+        {
+            get
+            {
+                return _DescontoProduto;
+            }
+            set
+            {
+                _DescontoProduto = value;
+                SetPropertyChanged(nameof(DescontoProduto));          
+            }
+        }
+
+        decimal _DescontoProdutoPorcentagem = 0m;
+        public decimal DescontoProdutoPorcentagem
+        {
+            get
+            {
+                return _DescontoProdutoPorcentagem;
+            }
+            set
+            {
+                _DescontoProdutoPorcentagem = value;
+                SetPropertyChanged(nameof(DescontoProdutoPorcentagem));
+            }
+        }
+
+        decimal _DescontoServico = 0m;
+        public decimal DescontoServico
+        {
+            get
+            {
+                return _DescontoServico;
+            }
+            set
+            {
+                _DescontoServico = value;
+                SetPropertyChanged(nameof(DescontoServico));
+            }
+        }
+
+        decimal _DescontoServicoPorcentagem = 0m;
+        public decimal DescontoServicoPorcentagem
+        {
+            get
+            {
+                return _DescontoServicoPorcentagem;
+            }
+            set
+            {
+                _DescontoServicoPorcentagem = value;
+                SetPropertyChanged(nameof(DescontoServicoPorcentagem));
+            }
+        }
+
         string _SearchPessoa = string.Empty;
         public string SearchPessoa
         {
@@ -602,11 +658,14 @@ namespace Carro.ViewModels
             if (!IsBusy)
             {
                 IsBusy = true;
-                ProdutosSelecionados.Add(produtoSelecionadoTemporario);
-                produtoSelecionadoTemporario = new OrdemVendaProduto();
-                ValorTotalProdutos = 0m;
-                ValorTotalServicos = 0m;
-                AtualizaValorTotal();
+                if(produtoSelecionadoTemporario.QuantidadeVendida > 0)
+                {
+                    ProdutosSelecionados.Add(produtoSelecionadoTemporario);
+                    produtoSelecionadoTemporario = new OrdemVendaProduto();
+                    ValorTotalProdutos = 0m;
+                    ValorTotalServicos = 0m;
+                    AtualizaValorTotal();
+                }
                 await Navigation.PopAsync();
                 IsBusy = false;
             }
@@ -623,11 +682,14 @@ namespace Carro.ViewModels
             if (!IsBusy)
             {
                 IsBusy = true;
-                ServicosSelecionados.Add(servicoSelecionadoTemporario);
-                servicoSelecionadoTemporario = new OrdemVendaServico();
-                ValorTotalProdutos = 0m;
-                ValorTotalServicos = 0m;
-                AtualizaValorTotal();
+                if(servicoSelecionadoTemporario.QuantidadeVendida > 0)
+                {
+                    ServicosSelecionados.Add(servicoSelecionadoTemporario);
+                    servicoSelecionadoTemporario = new OrdemVendaServico();
+                    ValorTotalProdutos = 0m;
+                    ValorTotalServicos = 0m;
+                    AtualizaValorTotal();
+                }
                 await Navigation.PopAsync();
                 IsBusy = false;
             }

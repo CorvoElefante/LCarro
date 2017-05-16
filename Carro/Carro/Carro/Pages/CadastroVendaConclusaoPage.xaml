@@ -5,6 +5,12 @@
              x:Class="Carro.Pages.CadastroVendaConclusaoPage"
              Title="Nova Venda - Conclusão">
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <resources:DecimalConverter x:Key="decimalConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <ScrollView>
         <Grid
             Padding="30"
@@ -19,7 +25,15 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
-                <!--Adicionar aqui-->
+                <Label
+                    Text="Valor total: "
+                    TextColor="#444444"
+                    FontSize="Medium"/>
+                <Label
+                    Grid.Column="1"
+                    Text="{Binding ValorTotal, Converter={StaticResource decimalConverter}}"
+                    TextColor="#444444"
+                    FontSize="Medium"/>
 
             </Grid>
 
