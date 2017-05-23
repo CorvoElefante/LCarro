@@ -11,295 +11,228 @@
       RowSpacing="6"
       ColumnSpacing="0">
 
-        <Grid
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Image
             Grid.Row="0"
             Grid.Column="0"
-            BackgroundColor="Transparent"
-            Margin="2"
-            Padding="0"
-            RowSpacing="2"
-            ColumnSpacing="0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <Grid.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding MenuPreVendaCommand}" />
-            </Grid.GestureRecognizers>
+            Source="ic_PreVenda_48x"
+            IsOpaque="True"
+            Aspect="AspectFit"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding MenuPreVendaCommand}"/>
+            </Image.GestureRecognizers>
+        </Image>
 
-            <Image
-              Source="ic_PreVenda_48x"
-              IsOpaque="True"
-              Aspect="AspectFit"
-              HorizontalOptions="Center"/>
-            <Label
-              Text="Pré-Venda"
-              TextColor="#FFFFF7"
-              FontSize="Large"
-              Grid.Row="1"
-              HorizontalOptions="Center"/>
-        </Grid>
+        <Label
+            Grid.Row="1"
+            Grid.Column="0"
+            Text="Pré-Venda"
+            TextColor="#FFFFF7"
+            FontSize="Large"
+            HorizontalOptions="Center"/>
 
-        <Grid
+        <Image
             Grid.Row="0"
             Grid.Column="1"
-            BackgroundColor="Transparent"
-            Margin="2"
-            Padding="0"
-            RowSpacing="2"
-            ColumnSpacing="0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <!--<Grid.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding MenuVendaCommand}" />
-            </Grid.GestureRecognizers>-->
-            
-            <Image
-              Source="ic_Venda_48x"
-              IsOpaque="True"
-              Aspect="AspectFit"
-              HorizontalOptions="Center"/>
-            <Label
-              Text="Vendas"
-              TextColor="#FFFFF7"
-              FontSize="Large"
-              Grid.Row="1"
-              HorizontalOptions="Center"/>
-        </Grid>
+            Source="ic_Venda_48x"
+            IsOpaque="True"
+            Aspect="AspectFit"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand">
+            <!--<Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding MenuVendaCommand}"/>
+            </Image.GestureRecognizers>-->
+        </Image>
 
-        <Grid
-            Grid.Row="1"
-            Grid.Column="0"
-            BackgroundColor="Transparent"
-            Margin="2"
-            Padding="0" 
-            RowSpacing="2" 
-            ColumnSpacing="0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <Grid.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding MenuClientesCommand}" />
-            </Grid.GestureRecognizers>
-
-            <Image
-              Source="ic_Cliente_48x"
-              IsOpaque="True"
-              Aspect="AspectFit"
-              HorizontalOptions="Center"/>
-            <Label
-              Text="Clientes"
-              TextColor="#FFFFF7"
-              FontSize="Large"
-              Grid.Row="1"
-              HorizontalOptions="Center"/>
-        </Grid>
-
-        <Grid
+        <Label
             Grid.Row="1"
             Grid.Column="1"
-            BackgroundColor="Transparent"
-            Margin="2"
-            Padding="0"
-            RowSpacing="2"
-            ColumnSpacing="0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <Grid.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding MenuProdutoCommand}" />
-            </Grid.GestureRecognizers>
+            Text="Vendas"
+            TextColor="#FFFFF7"
+            FontSize="Large"
+            HorizontalOptions="Center"/>
 
-            <Image
-              Source="ic_Produto_48x"
-              IsOpaque="True"
-              Aspect="AspectFit"
-              HorizontalOptions="Center"/>
-            <Label
-              Text="Produtos"
-              TextColor="#FFFFF7"
-              FontSize="Large"
-              Grid.Row="1"
-              HorizontalOptions="Center"/>
-        </Grid>
-
-        <Grid
+        <Image
             Grid.Row="2"
             Grid.Column="0"
-            BackgroundColor="Transparent"
-            Margin="2"
-            Padding="0"
-            RowSpacing="2"
-            ColumnSpacing="0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <Grid.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding MenuServicoCommand}" />
-            </Grid.GestureRecognizers>
-            
-            <Image
-              Source="ic_Servico_48x"
-              IsOpaque="True"
-              Aspect="AspectFit"
-              HorizontalOptions="Center"/>
-            <Label
-              Text="Serviços"
-              TextColor="#FFFFF7"
-              FontSize="Large"
-              Grid.Row="1"
-              HorizontalOptions="Center"/>
-        </Grid>
+            Source="ic_Cliente_48x"
+            IsOpaque="True"
+            Aspect="AspectFit"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding MenuClientesCommand}"/>
+            </Image.GestureRecognizers>
+        </Image>
 
-        <Grid
+        <Label
+            Grid.Row="3"
+            Grid.Column="0"
+            Text="Clientes"
+            TextColor="#FFFFF7"
+            FontSize="Large"
+            HorizontalOptions="Center"/>
+
+        <Image
             Grid.Row="2"
             Grid.Column="1"
-            BackgroundColor="Transparent"
-            Margin="2"
-            Padding="0"
-            RowSpacing="2"
-            ColumnSpacing="0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <Grid.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding MenuDespesaCommand}" />
-            </Grid.GestureRecognizers>
+            Source="ic_Produto_48x"
+            IsOpaque="True"
+            Aspect="AspectFit"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding MenuProdutoCommand}"/>
+            </Image.GestureRecognizers>
+        </Image>
 
-            <Image
-              Source="ic_Despesa_48x"
-              IsOpaque="True"
-              Aspect="AspectFit"
-              HorizontalOptions="Center"/>
-            <Label
-              Text="Despesas"
-              TextColor="#FFFFF7"
-              FontSize="Large"
-              Grid.Row="1"
-              HorizontalOptions="Center"/>
-        </Grid>
-
-        <Grid
-            Grid.Row="3"
-            Grid.Column="0"
-            BackgroundColor="Transparent"
-            Margin="2"
-            Padding="0"
-            RowSpacing="2"
-            ColumnSpacing="0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <Grid.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding MenuPerdaCommand}" />
-            </Grid.GestureRecognizers>
-
-            <Image
-              Source="ic_Perda_48x"
-              IsOpaque="True"
-              Aspect="AspectFit"
-              HorizontalOptions="Center"/>
-            <Label
-              Text="Perdas"
-              TextColor="#FFFFF7"
-              FontSize="Large"
-              Grid.Row="1"
-              HorizontalOptions="Center"/>
-        </Grid>
-
-        <Grid
+        <Label
             Grid.Row="3"
             Grid.Column="1"
-            BackgroundColor="Transparent"
-            Margin="2"
-            Padding="0"
-            RowSpacing="2"
-            ColumnSpacing="0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <Grid.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding MenuFuncionarioCommand}" />
-            </Grid.GestureRecognizers>
+            Text="Produtos"
+            TextColor="#FFFFF7"
+            FontSize="Large"
+            HorizontalOptions="Center"/>
 
-            <Image
-              Source="ic_Funcionario_48x"
-              IsOpaque="True"
-              Aspect="AspectFit"
-              HorizontalOptions="Center"/>
-            <Label
-              Text="Funcionários"
-              TextColor="#FFFFF7"
-              FontSize="Large"
-              Grid.Row="1"
-              HorizontalOptions="Center"/>
-        </Grid>
-
-        <Grid
+        <Image
             Grid.Row="4"
             Grid.Column="0"
-            BackgroundColor="Transparent"
-            Margin="2"
-            Padding="0"
-            RowSpacing="2"
-            ColumnSpacing="0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <Grid.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding MenuRelatoriosCommand}" />
-            </Grid.GestureRecognizers>
+            Source="ic_Servico_48x"
+            IsOpaque="True"
+            Aspect="AspectFit"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding MenuServicoCommand}"/>
+            </Image.GestureRecognizers>
+        </Image>
 
-            <Image
-              Source="ic_Relatorio_48x"
-              IsOpaque="True"
-              Aspect="AspectFit"
-              HorizontalOptions="Center"/>
-            <Label
-              Text="Relatórios"
-              TextColor="#FFFFF7"
-              FontSize="Large"
-              Grid.Row="1"
-              HorizontalOptions="Center"/>
-        </Grid>
+        <Label
+            Grid.Row="5"
+            Grid.Column="0"
+            Text="Serviços"
+            TextColor="#FFFFF7"
+            FontSize="Large"
+            HorizontalOptions="Center"/>
 
-        <Grid
+        <Image
             Grid.Row="4"
             Grid.Column="1"
-            BackgroundColor="Transparent"
-            Margin="2"
-            Padding="0"
-            RowSpacing="2"
-            ColumnSpacing="0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <Grid.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding MenuSobreCommand}" />
-            </Grid.GestureRecognizers>
+            Source="ic_Despesa_48x"
+            IsOpaque="True"
+            Aspect="AspectFit"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding MenuDespesaCommand}"/>
+            </Image.GestureRecognizers>
+        </Image>
 
-            <Image
-              Source="ic_Opcoes_48x"
-              IsOpaque="True"
-              Aspect="AspectFit"
-              HorizontalOptions="Center"/>
-            <Label
-              Text="Sobre"
-              TextColor="#FFFFF7"
-              FontSize="Large"
-              Grid.Row="1"
-              HorizontalOptions="Center"/>
-        </Grid>
+        <Label
+            Grid.Row="5"
+            Grid.Column="1"
+            Text="Despesas"
+            TextColor="#FFFFF7"
+            FontSize="Large"
+            HorizontalOptions="Center"/>
+
+        <Image
+            Grid.Row="6"
+            Grid.Column="0"
+            Source="ic_Perda_48x"
+            IsOpaque="True"
+            Aspect="AspectFit"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding MenuPerdaCommand}"/>
+            </Image.GestureRecognizers>
+        </Image>
+
+        <Label
+            Grid.Row="7"
+            Grid.Column="0"
+            Text="Perdas"
+            TextColor="#FFFFF7"
+            FontSize="Large"
+            HorizontalOptions="Center"/>
+
+        <Image
+            Grid.Row="6"
+            Grid.Column="1"
+            Source="ic_Funcionario_48x"
+            IsOpaque="True"
+            Aspect="AspectFit"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding MenuFuncionarioCommand}"/>
+            </Image.GestureRecognizers>
+        </Image>
+
+        <Label
+            Grid.Row="7"
+            Grid.Column="1"
+            Text="Funcionários"
+            TextColor="#FFFFF7"
+            FontSize="Large"
+            HorizontalOptions="Center"/>
+
+        <Image
+            Grid.Row="8"
+            Grid.Column="0"
+            Source="ic_Relatorio_48x"
+            IsOpaque="True"
+            Aspect="AspectFit"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding MenuRelatoriosCommand}"/>
+            </Image.GestureRecognizers>
+        </Image>
+
+        <Label
+            Grid.Row="9"
+            Grid.Column="0"
+            Text="Relatórios"
+            TextColor="#FFFFF7"
+            FontSize="Large"
+            HorizontalOptions="Center"/>
+
+        <Image
+            Grid.Row="8"
+            Grid.Column="1"
+            Source="ic_Opcoes_48x"
+            IsOpaque="True"
+            Aspect="AspectFit"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding MenuSobreCommand}"/>
+            </Image.GestureRecognizers>
+        </Image>
+
+        <Label
+            Grid.Row="9"
+            Grid.Column="1"
+            Text="Sobre"
+            TextColor="#FFFFF7"
+            FontSize="Large"
+            HorizontalOptions="Center"/>
     </Grid>
 </ContentPage>
 
