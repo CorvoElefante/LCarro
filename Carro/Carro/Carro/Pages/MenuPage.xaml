@@ -27,7 +27,7 @@
         <Image
             Grid.Row="0"
             Grid.Column="0"
-            Source="ic_PreVenda_48x"
+            Source="ic_PreVenda_Large"
             IsOpaque="True"
             Aspect="AspectFit"
             VerticalOptions="CenterAndExpand"
@@ -48,7 +48,7 @@
         <Image
             Grid.Row="0"
             Grid.Column="1"
-            Source="ic_Venda_48x"
+            Source="ic_Venda_Large"
             IsOpaque="True"
             Aspect="AspectFit"
             VerticalOptions="CenterAndExpand"
@@ -69,7 +69,7 @@
         <Image
             Grid.Row="2"
             Grid.Column="0"
-            Source="ic_Cliente_48x"
+            Source="ic_Cliente_Large"
             IsOpaque="True"
             Aspect="AspectFit"
             VerticalOptions="CenterAndExpand"
@@ -90,7 +90,7 @@
         <Image
             Grid.Row="2"
             Grid.Column="1"
-            Source="ic_Produto_48x"
+            Source="ic_Produto_Large"
             IsOpaque="True"
             Aspect="AspectFit"
             VerticalOptions="CenterAndExpand"
@@ -111,7 +111,7 @@
         <Image
             Grid.Row="4"
             Grid.Column="0"
-            Source="ic_Servico_48x"
+            Source="ic_Servico_Large"
             IsOpaque="True"
             Aspect="AspectFit"
             VerticalOptions="CenterAndExpand"
@@ -132,7 +132,7 @@
         <Image
             Grid.Row="4"
             Grid.Column="1"
-            Source="ic_Despesa_48x"
+            Source="ic_Despesa_Large"
             IsOpaque="True"
             Aspect="AspectFit"
             VerticalOptions="CenterAndExpand"
@@ -153,7 +153,7 @@
         <Image
             Grid.Row="6"
             Grid.Column="0"
-            Source="ic_Perda_48x"
+            Source="ic_Perda_Large"
             IsOpaque="True"
             Aspect="AspectFit"
             VerticalOptions="CenterAndExpand"
@@ -174,7 +174,7 @@
         <Image
             Grid.Row="6"
             Grid.Column="1"
-            Source="ic_Funcionario_48x"
+            Source="ic_Funcionario_Large"
             IsOpaque="True"
             Aspect="AspectFit"
             VerticalOptions="CenterAndExpand"
@@ -195,7 +195,7 @@
         <Image
             Grid.Row="8"
             Grid.Column="0"
-            Source="ic_Relatorio_48x"
+            Source="ic_Relatorio_Large"
             IsOpaque="True"
             Aspect="AspectFit"
             VerticalOptions="CenterAndExpand"
@@ -216,7 +216,7 @@
         <Image
             Grid.Row="8"
             Grid.Column="1"
-            Source="ic_Opcoes_48x"
+            Source="ic_Opcao_Large"
             IsOpaque="True"
             Aspect="AspectFit"
             VerticalOptions="CenterAndExpand"
