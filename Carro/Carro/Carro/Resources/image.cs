@@ -29,6 +29,28 @@ namespace Carro.Resources
         public static FileImageSource ic_Relatorio_Small = new FileImageSource { File = "ic_Relatorio_Small" };
         public static FileImageSource ic_Servico_Small = new FileImageSource { File = "ic_Servico_Small" };
         public static FileImageSource ic_Venda_Small = new FileImageSource { File = "ic_Venda_Small" };
+        public static FileImageSource ic_Add_Small = new FileImageSource { File = "ic_Add_Small" };
+        #endregion
+
+        #region Cadastro
+        public static FileImageSource ic_Cadastro_Cliente_Small = new FileImageSource { File = " ic_Cadastro_Cliente_Small" };
+        public static FileImageSource ic_Cadastro_Despesa_Small = new FileImageSource { File = " ic_Cadastro_Despesa_Small" };
+        public static FileImageSource ic_Cadastro_Funcionario_Small = new FileImageSource { File = " ic_Cadastro_Funcionario_Small" };
+        public static FileImageSource ic_Cadastro_Perda_Small = new FileImageSource { File = " ic_Cadastro_Perda_Small" };
+        public static FileImageSource ic_Cadastro_PreVenda_Small = new FileImageSource { File = " ic_Cadastro_PreVenda_Small" };
+        public static FileImageSource ic_Cadastro_Produto_Small = new FileImageSource { File = " ic_Cadastro_Produto_Small" };
+        public static FileImageSource ic_Cadastro_Servico_Small = new FileImageSource { File = " ic_Cadastro_Servico_Small" };
+        #endregion
+
+        #region Edicao
+        public static FileImageSource ic_Editar_Cliente_Small = new FileImageSource { File = " ic_Editar_Cliente_Small" };
+        public static FileImageSource ic_Editar_Despesa_Small = new FileImageSource { File = " ic_Editar_Despesa_Small" };
+        public static FileImageSource ic_Editar_Funcionario_Small = new FileImageSource { File = " ic_Editar_Funcionario_Small" };
+        public static FileImageSource ic_Editar_Perda_Small = new FileImageSource { File = " ic_Editar_Perda_Small" };
+        public static FileImageSource ic_Editar_PreVenda_Small = new FileImageSource { File = " ic_Editar_PreVenda_Small" };
+        public static FileImageSource ic_Editar_Produto_Small = new FileImageSource { File = " ic_Editar_Produto_Small" };
+        public static FileImageSource ic_Editar_Servico_Small = new FileImageSource { File = " ic_Editar_Servico_Small" };
+        public static FileImageSource ic_Visualiza_Venda_Small = new FileImageSource { File = " ic_Visualiza_Venda_Small" };
         #endregion
 
         #region Menu_Relatorio
