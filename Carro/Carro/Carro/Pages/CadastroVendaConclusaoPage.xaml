@@ -5,6 +5,11 @@
              x:Class="Carro.Pages.CadastroVendaConclusaoPage"
              Title="Nova Venda - Conclusão">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+      Icon="{x:Static resources:Images.ic_Cadastro_PreVenda_Small}"/>
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Resources>
         <ResourceDictionary>
             <resources:DecimalConverter x:Key="decimalConverter" />

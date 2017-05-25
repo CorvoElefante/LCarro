@@ -8,10 +8,10 @@
 
   <ContentPage.ToolbarItems>
     <ToolbarItem
-      Icon="{x:Static resources:Images.IconeUser132}"
+      Icon="{x:Static resources:Images.ic_Add_Small}"
       Command="{Binding AddFuncionarioCommand}"/>
     <ToolbarItem
-      Icon="{x:Static resources:Images.IconeTeam32}"/>
+      Icon="{x:Static resources:Images.ic_Funcionario_Small}"/>
   </ContentPage.ToolbarItems>
 
     <ContentPage.Resources>

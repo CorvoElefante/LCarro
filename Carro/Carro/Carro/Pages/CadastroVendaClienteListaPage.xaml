@@ -5,6 +5,10 @@
              x:Class="Carro.Pages.CadastroVendaClienteListaPage"
              Title="Clientes">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+      Icon="{x:Static resources:Images.ic_Cadastro_PreVenda_Small}"/>
+    </ContentPage.ToolbarItems>
 
     <ContentPage.Resources>
         <ResourceDictionary>

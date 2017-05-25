@@ -6,6 +6,11 @@
              Title="Produtos"
              BackgroundColor="#FFFFF7">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+      Icon="{x:Static resources:Images.ic_Cadastro_Perda_Small}"/>
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Resources>
         <ResourceDictionary>
             <resources:DecimalConverter x:Key="decimalConverter" />

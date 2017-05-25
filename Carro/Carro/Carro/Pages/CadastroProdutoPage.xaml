@@ -6,11 +6,9 @@
              Title="Novo Produto"
              BackgroundColor="#FFFFF7">
 
-    <!--Essa page possui "backgroundcolor" claro-->
-
     <ContentPage.ToolbarItems>
         <ToolbarItem
-      Icon="{x:Static resources:Images.IconeUser32}"/>
+      Icon="{x:Static resources:Images.ic_Cadastro_Produto_Small}"/>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Resources>

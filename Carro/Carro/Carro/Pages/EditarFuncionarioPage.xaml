@@ -9,7 +9,7 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem 
-            Icon="{x:Static resources:Images.IconeUser32}"/>
+            Icon="{x:Static resources:Images.ic_Editar_Funcionario_Small}"/>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Resources>

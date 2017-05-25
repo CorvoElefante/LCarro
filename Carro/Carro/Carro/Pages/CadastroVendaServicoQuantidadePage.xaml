@@ -5,6 +5,11 @@
              x:Class="Carro.Pages.CadastroVendaServicoQuantidadePage"
              Title="Quantidade - Serviço">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+      Icon="{x:Static resources:Images.ic_Cadastro_PreVenda_Small}"/>
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Resources>
         <ResourceDictionary>
             <resources:IntConverter x:Key="intConverter" />

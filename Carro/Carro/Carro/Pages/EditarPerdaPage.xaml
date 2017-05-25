@@ -7,7 +7,12 @@
              BackgroundColor="#FFFFF7">
 
     <!--Atenção: Essa page não segue o padrão das outras de editar-->
-    
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+            Icon="{x:Static resources:Images.ic_Editar_Perda_Small}"/>
+    </ContentPage.ToolbarItems>
+
     <Grid>
         <ScrollView
             Grid.RowSpan="8"

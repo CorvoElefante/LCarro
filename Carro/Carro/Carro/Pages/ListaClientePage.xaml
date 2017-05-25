@@ -8,10 +8,10 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem
-      Icon="{x:Static resources:Images.IconeUser132}"
+      Icon="{x:Static resources:Images.ic_Add_Small}"
       Command="{Binding AddPessoaCommand}"/>
         <ToolbarItem
-      Icon="{x:Static resources:Images.IconeMan32}"/>
+      Icon="{x:Static resources:Images.ic_Cliente_Small}"/>
     </ContentPage.ToolbarItems>
 
     <ListView
