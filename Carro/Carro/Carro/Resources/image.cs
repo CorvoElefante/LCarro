@@ -5,6 +5,11 @@ namespace Carro.Resources
 {
     public static class Images
     {
+        #region Logo
+        public static FileImageSource ic_Logo_Generico_Large = new FileImageSource { File = "ic_Logo_Generico_Large" };
+        public static FileImageSource ic_Logo_Generico_XLarge = new FileImageSource { File = "ic_Logo_Generico_XLarge" };
+        #endregion
+
         #region Menu
         public static FileImageSource ic_Cliente_Large = new FileImageSource { File = "ic_Cliente_Large" };
         public static FileImageSource ic_Despesa_Large = new FileImageSource { File = "ic_Despesa_Large" };
