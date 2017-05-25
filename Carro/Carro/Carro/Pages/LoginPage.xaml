@@ -19,7 +19,7 @@
         </Grid.RowDefinitions>
 
         <Image
-            Source="CarLogo512.png"
+            Source="ic_Logo_Generico_XLarge"
             IsOpaque="True"
             Aspect="AspectFit"
             HorizontalOptions="Center"/>
