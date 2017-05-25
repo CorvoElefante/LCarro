@@ -4,7 +4,12 @@
              xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
              x:Class="Carro.Pages.RelatorioDespesaCategoriaResultadoPage">
 
-        <ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+      Icon="{x:Static resources:Images.ic_Relatorio_Despesa_Small}"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Resources>
             <ResourceDictionary>
                 <resources:DecimalConverter x:Key="decimalConverter" />
             </ResourceDictionary>

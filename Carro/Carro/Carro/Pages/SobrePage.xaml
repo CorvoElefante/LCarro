@@ -8,7 +8,7 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem
-      Icon="{x:Static resources:Images.IconeShield32}"/>
+      Icon="{x:Static resources:Images.ic_Opcao_Small}"/>
     </ContentPage.ToolbarItems>
 
     <Label Text="Nois é foda"> </Label>

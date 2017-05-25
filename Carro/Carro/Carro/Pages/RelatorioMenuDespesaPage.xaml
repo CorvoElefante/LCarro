@@ -4,6 +4,11 @@
              xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
              x:Class="Carro.Pages.RelatorioMenuDespesaPage">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+      Icon="{x:Static resources:Images.ic_Relatorio_Despesa_Small}"/>
+    </ContentPage.ToolbarItems>
+
     <StackLayout
         VerticalOptions="StartAndExpand"
         HorizontalOptions="Center">

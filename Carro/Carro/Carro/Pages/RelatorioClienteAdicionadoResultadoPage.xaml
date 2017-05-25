@@ -4,6 +4,11 @@
              xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
              x:Class="Carro.Pages.RelatorioClienteAdicionadoResultadoPage">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+      Icon="{x:Static resources:Images.ic_Relatorio_Cliente_Small}"/>
+    </ContentPage.ToolbarItems>
+
     <ListView
 			        HorizontalOptions="FillAndExpand"
 			        VerticalOptions="FillAndExpand"

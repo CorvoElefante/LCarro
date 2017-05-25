@@ -5,6 +5,11 @@
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              x:Class="Carro.Pages.RelatorioDespesaCategoriaSelecaoPage">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+      Icon="{x:Static resources:Images.ic_Relatorio_Despesa_Small}"/>
+    </ContentPage.ToolbarItems>
+
     <StackLayout>
         <DatePicker VerticalOptions="CenterAndExpand" Date="{Binding dataInicial}">
             <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
