@@ -17,15 +17,15 @@ namespace Carro.Resources
         public static FileImageSource ic_Servico_Large = new FileImageSource { File = "ic_Servico_Large" };
         public static FileImageSource ic_Venda_Large = new FileImageSource { File = "ic_Venda_Large" };
 
-        public static FileImageSource ic_Cliente_24x = new FileImageSource { File = "ic_Cliente_24x" };
-        public static FileImageSource ic_Despesa_24x = new FileImageSource { File = "ic_Despesa_24x" };
-        public static FileImageSource ic_Funcionario_24x = new FileImageSource { File = "ic_Funcionario_24x" };
-        public static FileImageSource ic_Opcoes_24x = new FileImageSource { File = "ic_Opcoes_24x" };
-        public static FileImageSource ic_Perda_24x = new FileImageSource { File = "ic_Perda_24x" };
-        public static FileImageSource ic_PreVenda_24x = new FileImageSource { File = "ic_PreVenda_24x" };
-        public static FileImageSource ic_Produto_24x = new FileImageSource { File = "ic_Produto_24x" };
-        public static FileImageSource ic_Relatorio_24x = new FileImageSource { File = "ic_Relatorio_24x" };
-        public static FileImageSource ic_Servico_24x = new FileImageSource { File = "ic_Servico_24x" };
-        public static FileImageSource ic_Venda_24x = new FileImageSource { File = "ic_Venda_24x" };
+        public static FileImageSource ic_Cliente_Small = new FileImageSource { File = "ic_Cliente_Small" };
+        public static FileImageSource ic_Despesa_Small = new FileImageSource { File = "ic_Despesa_Small" };
+        public static FileImageSource ic_Funcionario_Small = new FileImageSource { File = "ic_Funcionario_Small" };
+        public static FileImageSource ic_Opcao_Small = new FileImageSource { File = "ic_Opcoes_Small" };
+        public static FileImageSource ic_Perda_Small = new FileImageSource { File = "ic_Perda_Small" };
+        public static FileImageSource ic_PreVenda_Small = new FileImageSource { File = "ic_PreVenda_Small" };
+        public static FileImageSource ic_Produto_Small = new FileImageSource { File = "ic_Produto_Small" };
+        public static FileImageSource ic_Relatorio_Small = new FileImageSource { File = "ic_Relatorio_Small" };
+        public static FileImageSource ic_Servico_Small = new FileImageSource { File = "ic_Servico_Small" };
+        public static FileImageSource ic_Venda_Small = new FileImageSource { File = "ic_Venda_Small" };
     }
 }
