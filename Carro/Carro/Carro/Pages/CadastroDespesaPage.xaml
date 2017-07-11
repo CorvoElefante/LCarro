@@ -96,58 +96,63 @@
                     IsOpaque="True"
                     Aspect="AspectFit"/>
             </Grid>
-        
 
-        <Grid
+
+            <Grid
                 Grid.Row="1"
                 BackgroundColor="Transparent"
-                ColumnSpacing="0">
-            <Grid
+                ColumnSpacing="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid
                     HorizontalOptions="Start"
                     VerticalOptions="Center"
                     BackgroundColor="Transparent">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                <Image
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image
                     Grid.Column="1"
-                    Source="ic_success64.png"
+                    Source="ic_Salvar_Large"
                     IsOpaque="True"
                     Aspect="AspectFit"/>
-                <Label
-                    HorizontalOptions="End"
+                    <Label
+                    HorizontalOptions="Start"
                     VerticalOptions="Center"
-                    Text="Salvar"
+                    Text="  Salvar"
                     TextColor="#444444"
                     FontSize="Medium"/>
-                <Grid.GestureRecognizers>
-                    <TapGestureRecognizer
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer
                         Command="{Binding SalvarDespesaCommand}"/>
-                </Grid.GestureRecognizers>
-            </Grid>
-            <Grid
-                HorizontalOptions="End"
-                VerticalOptions="Center"
-                Grid.Column="1"
-                BackgroundColor="Transparent">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                <Image
-                    Source="ic_error64.png"
+                    </Grid.GestureRecognizers>
+                </Grid>
+
+                <Grid
+                    Grid.Column="1"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+                    BackgroundColor="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Image
+                    Source="ic_Deletar_Large"
                     IsOpaque="True"
                     Aspect="AspectFit"/>
-                <Label
+                    <Label
                     Grid.Column="1"
                     HorizontalOptions="End"
                     VerticalOptions="Center"
                     Text="Deletar"
                     TextColor="#444444"
                     FontSize="Medium"/>
+                </Grid>
             </Grid>
         </Grid>
-    </Grid>
     </ScrollView>
 </ContentPage>

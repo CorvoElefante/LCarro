@@ -102,49 +102,54 @@
             <Grid
                 Grid.Row="1"
                 BackgroundColor="Transparent"
-                ColumnSpacing="0">
+                ColumnSpacing="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
                 <Grid
                     HorizontalOptions="Start"
                     VerticalOptions="Center"
                     BackgroundColor="Transparent">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Image
                     Grid.Column="1"
-                    Source="ic_success64.png"
+                    Source="ic_Salvar_Large"
                     IsOpaque="True"
                     Aspect="AspectFit"/>
                     <Label
-                    HorizontalOptions="End"
+                    HorizontalOptions="Start"
                     VerticalOptions="Center"
-                    Text="Salvar"
+                    Text="  Salvar"
                     TextColor="#444444"
                     FontSize="Medium"/>
                     <Grid.GestureRecognizers>
                         <TapGestureRecognizer
-                            Command="{Binding CadastroVendaConclucaoCommand}"/>
-                        </Grid.GestureRecognizers>
+                        Command="{Binding CadastroVendaConclucaoCommand}"/>
+                    </Grid.GestureRecognizers>
                 </Grid>
+
                 <Grid
-                HorizontalOptions="End"
-                VerticalOptions="Center"
-                Grid.Column="1"
-                BackgroundColor="Transparent">
+                    Grid.Column="1"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+                    BackgroundColor="Transparent">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <Image
-                    Source="ic_error64.png"
+                    Source="ic_Deletar_Large"
                     IsOpaque="True"
                     Aspect="AspectFit"/>
                     <Label
                     Grid.Column="1"
                     HorizontalOptions="End"
                     VerticalOptions="Center"
-                    Text="Voltar"
+                    Text="Deletar"
                     TextColor="#444444"
                     FontSize="Medium"/>
                     <Grid.GestureRecognizers>

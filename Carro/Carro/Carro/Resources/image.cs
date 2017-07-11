@@ -58,6 +58,12 @@ namespace Carro.Resources
         public static FileImageSource ic_Visualiza_Venda_Small = new FileImageSource { File = " ic_Visualiza_Venda_Small" };
         #endregion
 
+        #region Outros
+        public static FileImageSource ic_Salvar_Large = new FileImageSource { File = " ic_Salvar_Large" };
+        public static FileImageSource ic_Deletar_Large = new FileImageSource { File = " ic_Deletar_Large" };
+        #endregion
+
+
         #region Menu_Relatorio
         public static FileImageSource ic_Relatorio_Cliente_Large = new FileImageSource { File = "ic_Relatorio_Cliente_Large" };
         public static FileImageSource ic_Relatorio_Despesa_Large = new FileImageSource { File = "ic_Relatorio_Despesa_Large" };
