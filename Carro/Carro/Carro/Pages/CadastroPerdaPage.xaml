@@ -20,13 +20,13 @@
     </ContentPage.Resources>
 
     <Grid
-        Padding="30,30,30,-30"
-        RowSpacing="0">
+        Margin="30,30,30,0"
+        RowSpacing="15">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <Grid
@@ -132,7 +132,6 @@
             </Grid.ColumnDefinitions>
             <Grid
                 HorizontalOptions="Start"
-                VerticalOptions="Center"
                 BackgroundColor="Transparent">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
@@ -145,8 +144,8 @@
                     IsOpaque="True"
                     Aspect="AspectFit"/>
                 <Label
-                    HorizontalOptions="Start"
                     VerticalOptions="Center"
+                    HorizontalOptions="Start"
                     Text="Salvar"
                     TextColor="#444444"
                     FontSize="Medium"/>
@@ -159,7 +158,6 @@
             <Grid
                 Grid.Column="1"
                 HorizontalOptions="End"
-                VerticalOptions="Center"
                 BackgroundColor="Transparent">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -171,8 +169,8 @@
                     Aspect="AspectFit"/>
                 <Label
                     Grid.Column="1"
-                    HorizontalOptions="End"
                     VerticalOptions="Center"
+                    HorizontalOptions="End"
                     Text="Deletar"
                     TextColor="#444444"
                     FontSize="Medium"/>
