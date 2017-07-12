@@ -67,7 +67,7 @@
                     <Label
                     HorizontalOptions="Start"
                     VerticalOptions="Center"
-                    Text="  Salvar"
+                    Text="Salvar"
                     TextColor="#444444"
                     FontSize="Medium"/>
                     <Grid.GestureRecognizers>

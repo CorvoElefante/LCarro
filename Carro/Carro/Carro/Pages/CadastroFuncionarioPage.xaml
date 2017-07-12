@@ -149,14 +149,14 @@
                     </Grid.ColumnDefinitions>
                     <Image
                     Grid.Column="1"
-                        Margin="4"
+                    Margin="4"
                     Source="ic_Salvar_Large"
                     IsOpaque="True"
                     Aspect="AspectFit"/>
                     <Label
                     HorizontalOptions="Start"
                     VerticalOptions="Center"
-                    Text="  Salvar"
+                    Text="Salvar"
                     TextColor="#444444"
                     FontSize="Medium"/>
                     <Grid.GestureRecognizers>

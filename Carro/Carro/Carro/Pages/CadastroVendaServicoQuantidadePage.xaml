@@ -101,13 +101,13 @@
                     <Image
                     Grid.Column="1"
                     Source="ic_Salvar_Large"
-                        Margin="4"
+                    Margin="4"
                     IsOpaque="True"
                     Aspect="AspectFit"/>
                     <Label
                     HorizontalOptions="Start"
                     VerticalOptions="Center"
-                    Text="  Salvar"
+                    Text="Salvar"
                     TextColor="#444444"
                     FontSize="Medium"/>
                     <Grid.GestureRecognizers>
