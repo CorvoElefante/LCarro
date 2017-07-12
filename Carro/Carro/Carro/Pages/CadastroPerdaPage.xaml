@@ -21,12 +21,12 @@
 
     <ScrollView>
         <Grid
-            Padding="30"
-            RowSpacing="30">
+            Padding="30,30,30,-30"
+            RowSpacing="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             
@@ -68,7 +68,6 @@
             </Label>
 
             <ListView
-                MinimumHeightRequest="1"
                 Grid.Row="2"
                 VerticalOptions="StartAndExpand"
 			    HasUnevenRows="true"
@@ -125,9 +124,9 @@
             </ListView>
 
             <Grid
-                Grid.Row="1"
+                Grid.Row="3"
                 BackgroundColor="Transparent"
-                ColumnSpacing="10">
+                ColumnSpacing="6">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -142,6 +141,7 @@
                     </Grid.ColumnDefinitions>
                     <Image
                     Grid.Column="1"
+                        Margin="4"
                     Source="ic_Salvar_Large"
                     IsOpaque="True"
                     Aspect="AspectFit"/>

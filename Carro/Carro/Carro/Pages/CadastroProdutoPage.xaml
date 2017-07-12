@@ -19,8 +19,8 @@
 
     <ScrollView>
         <Grid
-            Padding="30"
-            RowSpacing="30">
+            Padding="30,30,30,-30"
+            RowSpacing="-10">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
@@ -90,13 +90,14 @@
                     Grid.Row="5"
                     Grid.Column="7"
                     Grid.ColumnSpan="11"
-                    Text = "{Binding quantidadeEntry}"/>
+                    Text = "{Binding quantidadeEntry}"
+                    Keyboard="Numeric"/>
             </Grid>
 
             <Grid
                 Grid.Row="1"
                 BackgroundColor="Transparent"
-                ColumnSpacing="10">
+                ColumnSpacing="6">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -111,6 +112,7 @@
                     </Grid.ColumnDefinitions>
                     <Image
                     Grid.Column="1"
+                        Margin="4"
                     Source="ic_Salvar_Large"
                     IsOpaque="True"
                     Aspect="AspectFit"/>

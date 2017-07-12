@@ -20,8 +20,8 @@
 
     <ScrollView>
         <Grid
-            Padding="30"
-            RowSpacing="30">
+            Padding="30,30,30,-30"
+            RowSpacing="-10">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
@@ -85,7 +85,7 @@
             <Grid
                 Grid.Row="1"
                 BackgroundColor="Transparent"
-                ColumnSpacing="10">
+                ColumnSpacing="6">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -101,6 +101,7 @@
                     <Image
                     Grid.Column="1"
                     Source="ic_Salvar_Large"
+                        Margin="4"
                     IsOpaque="True"
                     Aspect="AspectFit"/>
                     <Label
