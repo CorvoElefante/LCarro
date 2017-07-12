@@ -19,166 +19,164 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <ScrollView>
+    <Grid
+        Padding="30,30,30,-30"
+        RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
         <Grid
-            Padding="30,30,30,-30"
-            RowSpacing="0">
+            RowSpacing="30">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            
-            <Grid
-                RowSpacing="30">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <Entry
-                    Grid.ColumnSpan="18"
-                    Text = "{Binding nomeEntry, Mode=TwoWay}" 
-                    Placeholder="Nome" 
-                    Keyboard="Text"/>
-                <Image
-                    Grid.Column="17"
-                    Source="ic_unchecked16.png"
-                    IsVisible="{Binding nomeEntryInvalido}"
-                    IsOpaque="True"
-                    Aspect="AspectFit"/>
+            <Entry
+                Grid.ColumnSpan="18"
+                Text = "{Binding nomeEntry, Mode=TwoWay}" 
+                Placeholder="Nome" 
+                Keyboard="Text"/>
+            <Image
+                Grid.Column="17"
+                Source="ic_unchecked16.png"
+                IsVisible="{Binding nomeEntryInvalido}"
+                IsOpaque="True"
+                Aspect="AspectFit"/>
 
-                <Entry
-                    Grid.Row="1"
-                    Grid.ColumnSpan="18"
-                    Text = "{Binding justificativaEntry, Mode=TwoWay}" 
-                    Placeholder="Justificativa" 
-                    Keyboard="Text"/>
-            </Grid>
-
-            <Label
+            <Entry
                 Grid.Row="1"
-                HorizontalOptions="CenterAndExpand"
-                Text="Adicionar Produto">
-                <Label.GestureRecognizers>
-                    <TapGestureRecognizer
+                Grid.ColumnSpan="18"
+                Text = "{Binding justificativaEntry, Mode=TwoWay}" 
+                Placeholder="Justificativa" 
+                Keyboard="Text"/>
+        </Grid>
+
+        <Label
+            Grid.Row="1"
+            HorizontalOptions="CenterAndExpand"
+            Text="Adicionar Produto">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer
                         Command="{Binding ListaProdutoCommand}"/>
-                </Label.GestureRecognizers>
-            </Label>
+            </Label.GestureRecognizers>
+        </Label>
 
-            <ListView
-                Grid.Row="2"
-                VerticalOptions="StartAndExpand"
-			    HasUnevenRows="true"
-			    SeparatorVisibility="None"
-			    ItemsSource="{Binding PerdaProdutos}"
-			    ItemTapped="Handle_ItemTapped">
+        <ListView
+            Grid.Row="2"
+            VerticalOptions="StartAndExpand"
+			HasUnevenRows="true"
+			SeparatorVisibility="None"
+			ItemsSource="{Binding PerdaProdutos}"
+			ItemTapped="Handle_ItemTapped">
 
-                <x:Arguments>
-                    <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
-                </x:Arguments>
+            <x:Arguments>
+                <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
+            </x:Arguments>
 
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.ContextActions>
-                                <MenuItem 
-                                    Clicked="OnDelete" 
-                                    CommandParameter="{Binding .}" 
-                                    Text="Delete" 
-                                    IsDestructive="True" />
-                            </ViewCell.ContextActions>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem 
+                                Clicked="OnDelete" 
+                                CommandParameter="{Binding .}" 
+                                Text="Delete" 
+                                IsDestructive="True"/>
+                        </ViewCell.ContextActions>
 
-                            <Grid
-                                Margin="4"
-                                BackgroundColor="Transparent">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="Auto"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto"/>
-                                    <RowDefinition Height="Auto"/>
-                                </Grid.RowDefinitions>
+                        <Grid
+                            Margin="4"
+                            BackgroundColor="Transparent">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
 
-                                <Label
-                                    HorizontalOptions="StartAndExpand"
-							        FontAttributes="Bold"
-							        FontSize="Large"
-							        Text="{Binding Nome}"/>
+                            <Label
+                                HorizontalOptions="StartAndExpand"
+							    FontAttributes="Bold"
+							    FontSize="Large"
+							    Text="{Binding Nome}"/>
 
-                                <Label 
-                                    Grid.Column="1"
-                                    HorizontalOptions="EndAndExpand"
-                                    FontSize="Large"
-						            Text="{Binding QuantidadePerdida}"/>
+                            <Label 
+                                Grid.Column="1"
+                                HorizontalOptions="EndAndExpand"
+                                FontSize="Large"
+						        Text="{Binding QuantidadePerdida}"/>
 
-                                <Label
-                                    Grid.Row="1"
-							        Text="{Binding Marca}"/>
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                            <Label
+                                Grid.Row="1"
+							    Text="{Binding Marca}"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
 
+        <Grid
+            Grid.Row="3"
+            BackgroundColor="Transparent"
+            ColumnSpacing="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
             <Grid
-                Grid.Row="3"
-                BackgroundColor="Transparent"
-                ColumnSpacing="6">
+                HorizontalOptions="Start"
+                VerticalOptions="Center"
+                BackgroundColor="Transparent">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Grid
-                    HorizontalOptions="Start"
-                    VerticalOptions="Center"
-                    BackgroundColor="Transparent">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Image
+                <Image
                     Grid.Column="1"
                     Margin="4"
                     Source="ic_Salvar_Large"
                     IsOpaque="True"
                     Aspect="AspectFit"/>
-                    <Label
+                <Label
                     HorizontalOptions="Start"
                     VerticalOptions="Center"
                     Text="Salvar"
                     TextColor="#444444"
                     FontSize="Medium"/>
-                    <Grid.GestureRecognizers>
-                        <TapGestureRecognizer
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer
                         Command="{Binding SalvarPerdaCommand}"/>
-                    </Grid.GestureRecognizers>
-                </Grid>
+                </Grid.GestureRecognizers>
+            </Grid>
 
-                <Grid
-                    Grid.Column="1"
-                    HorizontalOptions="End"
-                    VerticalOptions="Center"
-                    BackgroundColor="Transparent">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <Image
+            <Grid
+                Grid.Column="1"
+                HorizontalOptions="End"
+                VerticalOptions="Center"
+                BackgroundColor="Transparent">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Image
                     Source="ic_Deletar_Large"
                     IsOpaque="True"
                     Aspect="AspectFit"/>
-                    <Label
+                <Label
                     Grid.Column="1"
                     HorizontalOptions="End"
                     VerticalOptions="Center"
                     Text="Deletar"
                     TextColor="#444444"
                     FontSize="Medium"/>
-                </Grid>
             </Grid>
         </Grid>
-    </ScrollView>
+    </Grid>
 </ContentPage>
