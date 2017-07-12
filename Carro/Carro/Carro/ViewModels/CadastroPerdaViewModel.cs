@@ -47,6 +47,21 @@ namespace Carro.ViewModels
             {
                 _PerdaProdutos = value;
                 SetPropertyChanged(nameof(PerdaProdutos));
+                tamanhoLista = 65 * PerdaProdutos.Count();
+            }
+        }
+
+        int _tamanhoLista = 65;
+        public int tamanhoLista
+        {
+            get
+            {
+                return _tamanhoLista;
+            }
+            set
+            {
+                _tamanhoLista = value;
+                SetPropertyChanged(nameof(tamanhoLista));
             }
         }
 
