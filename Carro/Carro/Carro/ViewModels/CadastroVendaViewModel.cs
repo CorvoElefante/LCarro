@@ -225,7 +225,9 @@ namespace Carro.ViewModels
             set
             {
                 _DescontoProduto = value;
-                SetPropertyChanged(nameof(DescontoProduto));          
+                SetPropertyChanged(nameof(DescontoProduto));
+                _DescontoProdutoPorcentagem = AtualizaDescontoPorcentagemProduto();
+                SetPropertyChanged(nameof(DescontoProdutoPorcentagem));
             }
         }
 
@@ -240,6 +242,8 @@ namespace Carro.ViewModels
             {
                 _DescontoProdutoPorcentagem = value;
                 SetPropertyChanged(nameof(DescontoProdutoPorcentagem));
+                _DescontoProduto = AtualizaDescontoValorProduto();
+                SetPropertyChanged(nameof(DescontoProduto));
             }
         }
 
@@ -254,6 +258,8 @@ namespace Carro.ViewModels
             {
                 _DescontoServico = value;
                 SetPropertyChanged(nameof(DescontoServico));
+                _DescontoServicoPorcentagem = AtualizaDescontoPorcentagemServico();
+                SetPropertyChanged(nameof(DescontoServicoPorcentagem));
             }
         }
 
@@ -268,6 +274,8 @@ namespace Carro.ViewModels
             {
                 _DescontoServicoPorcentagem = value;
                 SetPropertyChanged(nameof(DescontoServicoPorcentagem));
+                _DescontoServico = AtualizaDescontoValorServico();
+                SetPropertyChanged(nameof(DescontoServico));
             }
         }
 
@@ -323,6 +331,58 @@ namespace Carro.ViewModels
         #endregion
 
         #region Commands
+
+        public decimal AtualizaDescontoPorcentagemProduto()
+        {
+            decimal valorTotal;
+            decimal porcentagem;
+
+            valorTotal = produtoSelecionadoTemporario.QuantidadeVendida * produtoSelecionadoTemporario.Valor;
+            if (valorTotal == 0)
+            {
+                valorTotal = produtoSelecionadoTemporario.Valor;
+            }
+            porcentagem = DescontoProduto / valorTotal * 100;
+
+            return porcentagem;
+        }
+
+        public decimal AtualizaDescontoValorProduto()
+        {
+            decimal valorTotal;
+            decimal valor;
+
+            valorTotal = produtoSelecionadoTemporario.QuantidadeVendida * produtoSelecionadoTemporario.Valor;
+            valor = valorTotal * DescontoProdutoPorcentagem / 100;
+
+            return valor;
+        }
+
+        public decimal AtualizaDescontoPorcentagemServico()
+        {
+            decimal valorTotal;
+            decimal porcentagem;
+
+            valorTotal = servicoSelecionadoTemporario.QuantidadeVendida * servicoSelecionadoTemporario.Valor;
+            if (valorTotal == 0)
+            {
+                valorTotal = servicoSelecionadoTemporario.Valor;
+            }
+            porcentagem = DescontoServico / valorTotal * 100;
+
+            return porcentagem;
+        }
+
+        public decimal AtualizaDescontoValorServico()
+        {
+            decimal valorTotal;
+            decimal valor;
+
+            valorTotal = servicoSelecionadoTemporario.QuantidadeVendida * servicoSelecionadoTemporario.Valor;
+            valor = valorTotal * DescontoServicoPorcentagem / 100;
+
+            return valor;
+        }
 
         public void AtualizaValorTotal()
         {
