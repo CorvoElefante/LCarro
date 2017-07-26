@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
              x:Class="Carro.Pages.CadastroVendaServicoPage"
-             Title="Nova Venda - Serviços">
+             Title="Nova Venda - Serviços"
+             BackgroundColor="#FFFFF7">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem
@@ -16,149 +17,137 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <ScrollView>
+    <Grid
+        Padding="30,30,30,0"
+        RowSpacing="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label
+            HorizontalOptions="CenterAndExpand"
+            Text="Adicionar Servico">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer
+                    Command="{Binding ListaServicoCommand}"/>
+            </Label.GestureRecognizers>
+        </Label>
+
+        <ListView
+            Grid.Row="1"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            HasUnevenRows="true"
+            SeparatorVisibility="None"
+            ItemsSource="{Binding ServicosSelecionados}"
+            ItemTapped="Handle_ItemTapped">
+
+            <x:Arguments>
+                <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
+            </x:Arguments>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem 
+                                Clicked="OnDelete" 
+                                CommandParameter="{Binding .}" 
+                                Text="Delete" 
+                                IsDestructive="True" />
+                        </ViewCell.ContextActions>
+
+                        <Grid
+                            Margin="4"
+                            ColumnSpacing="20"
+                            BackgroundColor="Transparent">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Label 
+                                HorizontalOptions="StartAndExpand"
+							    FontAttributes="Bold"
+							    FontSize="Large"
+							    Text="{Binding Nome}"/>
+                            <Label 
+                                Grid.Column="1"
+							    Text="{Binding Preco, Converter={StaticResource decimalConverter}}"/>
+                            <Label 
+                                Grid.Row="1" 
+                                Grid.Column="1"
+                                HorizontalOptions="EndAndExpand"
+							    Text="{Binding Tempo}"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
         <Grid
-            Padding="30,30,30,-30"
-            RowSpacing="-10">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
+            Grid.Row="2"
+            BackgroundColor="Transparent"
+            VerticalOptions="End"
+            ColumnSpacing="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
             <Grid
-                RowSpacing="30">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-
-                <Label
-                    HorizontalOptions="CenterAndExpand"
-                    Text="Adicionar Servico">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer
-                        Command="{Binding ListaServicoCommand}"/>
-                    </Label.GestureRecognizers>
-                </Label>
-
-                <ListView
-                     Grid.Row="1"
-                     HorizontalOptions="FillAndExpand"
-                     VerticalOptions="FillAndExpand"
-                     HasUnevenRows="true"
-                     SeparatorVisibility="None"
-                     ItemsSource="{Binding ServicosSelecionados}"
-                     ItemTapped="Handle_ItemTapped">
-
-                    <x:Arguments>
-                        <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
-                    </x:Arguments>
-                    
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <ViewCell.ContextActions>
-                                    <MenuItem 
-                                    Clicked="OnDelete" 
-                                    CommandParameter="{Binding .}" 
-                                    Text="Delete" 
-                                    IsDestructive="True" />
-                                </ViewCell.ContextActions>
-                                
-                                <Grid
-                                    Margin="4"
-                                    ColumnSpacing="20"
-                                    BackgroundColor="Transparent">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="Auto"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto"/>
-                                        <RowDefinition Height="Auto"/>
-                                    </Grid.RowDefinitions>
-                                    <Label 
-                                    HorizontalOptions="StartAndExpand"
-							        FontAttributes="Bold"
-							        FontSize="Large"
-							        Text="{Binding Nome}"/>
-                                    <Label 
-                                    Grid.Column="1"
-							        Text="{Binding Preco, Converter={StaticResource decimalConverter}}"/>
-                                    <Label 
-                                    Grid.Row="1" 
-                                    Grid.Column="1"
-                                    HorizontalOptions="EndAndExpand"
-							        Text="{Binding Tempo}"/>
-                                </Grid>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-
-                <!--Adicionar aqui-->
-
-            </Grid>
-
-            <Grid
-                Grid.Row="1"
-                BackgroundColor="Transparent"
-                ColumnSpacing="6">
+                HorizontalOptions="Start"
+                BackgroundColor="Transparent">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Grid
-                    HorizontalOptions="Start"
-                    VerticalOptions="Center"
-                    BackgroundColor="Transparent">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Image
+                <Image
                     Grid.Column="1"
                     Margin="4"
                     Source="ic_Salvar_Large"
                     IsOpaque="True"
                     Aspect="AspectFit"/>
-                    <Label
-                    HorizontalOptions="Start"
+                <Label
                     VerticalOptions="Center"
+                    HorizontalOptions="Start"
                     Text="Salvar"
                     TextColor="#444444"
                     FontSize="Medium"/>
-                    <Grid.GestureRecognizers>
-                        <TapGestureRecognizer
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer
                         Command="{Binding CadastroVendaConclucaoCommand}"/>
-                    </Grid.GestureRecognizers>
-                </Grid>
+                </Grid.GestureRecognizers>
+            </Grid>
 
-                <Grid
-                    Grid.Column="1"
-                    HorizontalOptions="End"
-                    VerticalOptions="Center"
-                    BackgroundColor="Transparent">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <Image
+            <Grid
+                Grid.Column="1"
+                HorizontalOptions="End"
+                BackgroundColor="Transparent">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Image
                     Source="ic_Deletar_Large"
                     IsOpaque="True"
                     Aspect="AspectFit"/>
-                    <Label
+                <Label
                     Grid.Column="1"
-                    HorizontalOptions="End"
                     VerticalOptions="Center"
+                    HorizontalOptions="End"
                     Text="Deletar"
                     TextColor="#444444"
                     FontSize="Medium"/>
-                    <Grid.GestureRecognizers>
-                        <TapGestureRecognizer
-                            Command="{Binding CadastroVendaVoltaCommand}"/>
-                    </Grid.GestureRecognizers>
-                </Grid>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding CadastroVendaVoltaCommand}"/>
+                </Grid.GestureRecognizers>
             </Grid>
         </Grid>
-    </ScrollView>
+    </Grid>
 </ContentPage>

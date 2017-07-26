@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
              x:Class="Carro.Pages.CadastroVendaClienteFuncionarioPage"
-             Title="Nova Venda - Cliente">
+             Title="Nova Venda - Cliente"
+             BackgroundColor="#FFFFF7">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem
@@ -16,168 +17,162 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <ScrollView>
+    <Grid
+            Padding="30,30,30,0"
+            RowSpacing="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
         <Grid
-            Padding="30,30,30,-30"
-            RowSpacing="-10">
+                RowSpacing="30">
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Grid
-                RowSpacing="30">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
 
-                <Label
+            <Label
                     HorizontalOptions="CenterAndExpand"
                     Text="Selecionar Cliente">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
                         Command="{Binding ListaClienteCommand}"/>
-                    </Label.GestureRecognizers>
-                </Label>
+                </Label.GestureRecognizers>
+            </Label>
 
-                <Label
-                    x:Name="pessoaSelecionadaLabel"
-                    Grid.Row="1"
-                    VerticalOptions="CenterAndExpand"
-                    Text="{Binding pessoaSelecionada}"
-                    FontSize="Large"/>
-
-                <Label
-                    Grid.Row="2"
-                    HorizontalOptions="CenterAndExpand"
-                    Text="Adicionar Funcionario">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer
-                        Command="{Binding ListaFuncionarioCommand}"/>
-                    </Label.GestureRecognizers>
-                </Label>
-
-                <ListView
-                    Grid.Row="3"
-		            HorizontalOptions="FillAndExpand"
-		            VerticalOptions="FillAndExpand"
-		            HasUnevenRows="true"
-		            SeparatorVisibility="None"
-		            ItemsSource="{Binding FuncionariosSelecionados}"
-		            ItemTapped="Handle_ItemTapped">
-
-                    <x:Arguments>
-                        <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
-                    </x:Arguments>
-
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <ViewCell.ContextActions>
-                                    <MenuItem 
-                                    Clicked="OnDelete" 
-                                    CommandParameter="{Binding .}" 
-                                    Text="Delete" 
-                                    IsDestructive="True" />
-                                </ViewCell.ContextActions>
-                                
-                                <Grid
-                                    Margin="4"
-                                    ColumnSpacing="20"
-                                    BackgroundColor="Transparent">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="Auto"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto"/>
-                                        <RowDefinition Height="Auto"/>
-                                    </Grid.RowDefinitions>
-                                    <Label 
-                                        HorizontalOptions="StartAndExpand"
-							            FontAttributes="Bold"
-							            FontSize="Large"
-							            Text="{Binding Funcionario.Pessoa.Nome}"/>
-                                    <Label 
-                                        Grid.Row="1"
-							            Text="{Binding Funcionario.Salario, Converter={StaticResource decimalConverter}}"/>
-                                    <Label 
-                                        Grid.Row="1" 
-                                        Grid.Column="1"
-                                        HorizontalOptions="EndAndExpand"
-							            Text="{Binding Funcionario.Funcao}"/>
-                                </Grid>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-
-                <!--Adicionar aqui-->
-
-            </Grid>
-
-            <Grid
+            <Label
+                x:Name="pessoaSelecionadaLabel"
                 Grid.Row="1"
-                BackgroundColor="Transparent"
-                ColumnSpacing="6">
+                VerticalOptions="CenterAndExpand"
+                Text="{Binding pessoaSelecionada}"
+                FontSize="Large"/>
+
+            <Label
+                Grid.Row="2"
+                HorizontalOptions="CenterAndExpand"
+                Text="Adicionar Funcionario">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding ListaFuncionarioCommand}"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+
+        <ListView
+            Grid.Row="1"
+		    HorizontalOptions="FillAndExpand"
+		    VerticalOptions="FillAndExpand"
+		    HasUnevenRows="true"
+		    SeparatorVisibility="None"
+		    ItemsSource="{Binding FuncionariosSelecionados}"
+		    ItemTapped="Handle_ItemTapped">
+
+            <x:Arguments>
+                <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
+            </x:Arguments>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem 
+                                Clicked="OnDelete" 
+                                CommandParameter="{Binding .}" 
+                                Text="Delete" 
+                                IsDestructive="True" />
+                        </ViewCell.ContextActions>
+
+                        <Grid
+                            Margin="4"
+                            ColumnSpacing="20"
+                            BackgroundColor="Transparent">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Label 
+                                HorizontalOptions="StartAndExpand"
+							    FontAttributes="Bold"
+							    FontSize="Large"
+							    Text="{Binding Funcionario.Pessoa.Nome}"/>
+                            <Label 
+                                Grid.Row="1"
+							    Text="{Binding Funcionario.Salario, Converter={StaticResource decimalConverter}}"/>
+                            <Label 
+                                Grid.Row="1" 
+                                Grid.Column="1"
+                                HorizontalOptions="EndAndExpand"
+							    Text="{Binding Funcionario.Funcao}"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Grid
+            Grid.Row="2"
+            BackgroundColor="Transparent"
+            VerticalOptions="End"
+            ColumnSpacing="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid
+                HorizontalOptions="Start"
+                BackgroundColor="Transparent">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Grid
-                    HorizontalOptions="Start"
-                    VerticalOptions="Center"
-                    BackgroundColor="Transparent">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Image
+                <Image
                     Grid.Column="1"
-                        Margin="4"
+                    Margin="4"
                     Source="ic_Salvar_Large"
                     IsOpaque="True"
                     Aspect="AspectFit"/>
-                    <Label
-                    HorizontalOptions="Start"
+                <Label
                     VerticalOptions="Center"
+                    HorizontalOptions="Start"
                     Text="Salvar"
                     TextColor="#444444"
                     FontSize="Medium"/>
-                    <Grid.GestureRecognizers>
-                        <TapGestureRecognizer
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer
                         Command="{Binding CadastroVendaProdutoCommand}"/>
-                    </Grid.GestureRecognizers>
-                </Grid>
+                </Grid.GestureRecognizers>
+            </Grid>
 
-                <Grid
-                    Grid.Column="1"
-                    HorizontalOptions="End"
-                    VerticalOptions="Center"
-                    BackgroundColor="Transparent">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <Image
+            <Grid
+                Grid.Column="1"
+                HorizontalOptions="End"
+                BackgroundColor="Transparent">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Image
                     Source="ic_Deletar_Large"
                     IsOpaque="True"
                     Aspect="AspectFit"/>
-                    <Label
+                <Label
                     Grid.Column="1"
-                    HorizontalOptions="End"
                     VerticalOptions="Center"
+                    HorizontalOptions="End"
                     Text="Deletar"
                     TextColor="#444444"
                     FontSize="Medium"/>
-                    <Grid.GestureRecognizers>
-                        <TapGestureRecognizer
-                            Command="{Binding CadastroVendaVoltaCommand}"/>
-                    </Grid.GestureRecognizers>
-                </Grid>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding CadastroVendaVoltaCommand}"/>
+                </Grid.GestureRecognizers>
             </Grid>
         </Grid>
-    </ScrollView>
+    </Grid>
 </ContentPage>

@@ -14,16 +14,15 @@
     </ContentPage.ToolbarItems>
 
     <Grid>
-        <ScrollView
-            Grid.RowSpan="8"
-            Padding="30">
+        <ScrollView>
             <Grid
-                RowSpacing="30">
+                Margin="30,30,30,0"
+                RowSpacing="15">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 
                 <Label
