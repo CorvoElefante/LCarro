@@ -103,6 +103,99 @@
     <Compile Include="Pages\EditarServicoPage.xaml.cs">
       <DependentUpon>EditarServicoPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Help\CadastroClienteHelpPage.xaml.cs">
+      <DependentUpon>CadastroClienteHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\CadastroDespesaHelpPage.xaml.cs">
+      <DependentUpon>CadastroDespesaHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\CadastroFuncionarioHelpPage.xaml.cs">
+      <DependentUpon>CadastroFuncionarioHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\CadastroPerdaHelpPage.xaml.cs">
+      <DependentUpon>CadastroPerdaHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\CadastroProdutoHelpPage.xaml.cs">
+      <DependentUpon>CadastroProdutoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\CadastroServicoHelpPage.xaml.cs">
+      <DependentUpon>CadastroServicoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\CadastroVendaClienteFuncionarioHelpPage.xaml.cs">
+      <DependentUpon>CadastroVendaClienteFuncionarioHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\CadastroVendaClienteListaHelpPage.xaml.cs">
+      <DependentUpon>CadastroVendaClienteListaHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\CadastroVendaConclusaoHelpPage.xaml.cs">
+      <DependentUpon>CadastroVendaConclusaoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\CadastroVendaFuncionarioListaHelpPage.xaml.cs">
+      <DependentUpon>CadastroVendaFuncionarioListaHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\CadastroVendaProdutoHelpPage.xaml.cs">
+      <DependentUpon>CadastroVendaProdutoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\CadastroVendaProdutoListaHelpPage.xaml.cs">
+      <DependentUpon>CadastroVendaProdutoListaHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\CadastroVendaProdutoQuantidadeHelpPage.xaml.cs">
+      <DependentUpon>CadastroVendaProdutoQuantidadeHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\CadastroVendaServicoHelpPage.xaml.cs">
+      <DependentUpon>CadastroVendaServicoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\CadastroVendaServicoListaHelpPage.xaml.cs">
+      <DependentUpon>CadastroVendaServicoListaHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\CadastroVendaServicoQuantidadeHelpPage.xaml.cs">
+      <DependentUpon>CadastroVendaServicoQuantidadeHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\EditarClienteHelpPage.xaml.cs">
+      <DependentUpon>EditarClienteHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\EditarDespesaHelpPage.xaml.cs">
+      <DependentUpon>EditarDespesaHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\EditarFuncionarioHelpPage.xaml.cs">
+      <DependentUpon>EditarFuncionarioHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\EditarPerdaHelpPage.xaml.cs">
+      <DependentUpon>EditarPerdaHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\EditarProdutoHelpPage.xaml.cs">
+      <DependentUpon>EditarProdutoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\EditarProdutoPerdaHelpPage.xaml.cs">
+      <DependentUpon>EditarProdutoPerdaHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\EditarServicoHelpPage.xaml.cs">
+      <DependentUpon>EditarServicoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\ListaClienteHelpPage.xaml.cs">
+      <DependentUpon>ListaClienteHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\ListaDespesaHelpPage.xaml.cs">
+      <DependentUpon>ListaDespesaHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\ListaFuncionarioHelpPage.xaml.cs">
+      <DependentUpon>ListaFuncionarioHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\ListaPerdaHelpPage.xaml.cs">
+      <DependentUpon>ListaPerdaHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\ListaProdutoHelpPage.xaml.cs">
+      <DependentUpon>ListaProdutoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\ListaProdutoPerdaHelpPage.xaml.cs">
+      <DependentUpon>ListaProdutoPerdaHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\ListaServicoHelpPage.xaml.cs">
+      <DependentUpon>ListaServicoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\ListaVendaHelpPage.xaml.cs">
+      <DependentUpon>ListaVendaHelpPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ListaClientePage.xaml.cs">
       <DependentUpon>ListaClientePage.xaml</DependentUpon>
     </Compile>
@@ -657,6 +750,192 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\ListaVendaPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\CadastroClienteHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\CadastroDespesaHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\CadastroFuncionarioHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\CadastroPerdaHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\CadastroProdutoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\CadastroServicoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\CadastroVendaClienteFuncionarioHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\CadastroVendaClienteListaHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\CadastroVendaConclusaoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\CadastroVendaFuncionarioListaHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\CadastroVendaProdutoListaHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\CadastroVendaServicoListaHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\CadastroVendaProdutoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\CadastroVendaProdutoQuantidadeHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\CadastroVendaServicoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\CadastroVendaServicoQuantidadeHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\EditarClienteHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\EditarDespesaHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\EditarFuncionarioHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\EditarPerdaHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\EditarProdutoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\EditarProdutoPerdaHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\EditarServicoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\ListaClienteHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\ListaDespesaHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\ListaFuncionarioHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\ListaPerdaHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\ListaProdutoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\ListaProdutoPerdaHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\ListaServicoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\ListaVendaHelpPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
