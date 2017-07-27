@@ -9,7 +9,6 @@ using Xamarin.Forms.Xaml;
 
 namespace Carro.Pages.Help
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CadastroVendaServicoQuantidadeHelpPage : ContentPage
     {
         public CadastroVendaServicoQuantidadeHelpPage()
