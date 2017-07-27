@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
+             x:Class="Carro.Pages.Relatorios.RelatorioDespesaCategoriaResultadoPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+      Icon="{x:Static resources:Images.ic_Relatorio_Despesa_Small}"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Resources>
+            <ResourceDictionary>
+                <resources:DecimalConverter x:Key="decimalConverter" />
+            </ResourceDictionary>
+        </ContentPage.Resources>
+
+        <ListView
+         HorizontalOptions="FillAndExpand"
+         VerticalOptions="FillAndExpand"
+         HasUnevenRows="true"
+         SeparatorVisibility="None"
+         ItemsSource="{Binding Despesas}"
+         ItemTapped="Handle_ItemTapped">
+
+        <x:Arguments>
+            <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
+        </x:Arguments>
+
+        <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid
+                        Margin="4"
+                        ColumnSpacing="20"
+                        BackgroundColor="Transparent">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Label
+                            HorizontalOptions="StartAndExpand"
+							FontAttributes="Bold"
+							FontSize="Large"
+							Text="{Binding Nome}"/>
+
+                            <Label 
+                            Grid.Column="1"
+                            HorizontalOptions="EndAndExpand"
+                            FontSize="Large"
+						    Text="{Binding Valor, Converter={StaticResource decimalConverter}"/>
+
+                            <Label
+                            Grid.Row="1"
+                            Text="{Binding Categoria}"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+</ContentPage>
