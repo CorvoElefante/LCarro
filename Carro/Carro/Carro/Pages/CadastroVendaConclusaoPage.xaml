@@ -18,20 +18,20 @@
 
     <ScrollView>
         <Grid
-            Padding="30,30,30,-30"
-            RowSpacing="-10">
+            Padding="30,30,30,0"
+            RowSpacing="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid
-                RowSpacing="30">
+                RowSpacing="15">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
                 <Label
-                    Text="Valor total: "
+                    Text="Valor total:"
                     TextColor="#444444"
                     FontSize="Medium"/>
                 <Label
@@ -44,32 +44,30 @@
 
             <Grid
                 Grid.Row="1"
-                BackgroundColor="Transparent"
-                ColumnSpacing="6">
+                VerticalOptions="End"
+                BackgroundColor="#FFFFF7"
+                ColumnSpacing="5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid
-                    HorizontalOptions="Start"
                     VerticalOptions="Center"
                     BackgroundColor="Transparent">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Image
-                    Grid.Column="1"
-                        Margin="4"
-                    Source="ic_Salvar_Large"
-                    IsOpaque="True"
-                    Aspect="AspectFit"/>
+                        Grid.Column="1"
+                        Source="ic_Salvar_Large"
+                        IsOpaque="True"
+                        Aspect="AspectFit"/>
                     <Label
-                    HorizontalOptions="Start"
-                    VerticalOptions="Center"
-                    Text="Salvar"
-                    TextColor="#444444"
-                    FontSize="Medium"/>
+                        VerticalOptions="Center"
+                        Text="Salvar"
+                        TextColor="#444444"
+                        FontSize="Large"/>
                     <Grid.GestureRecognizers>
                         <TapGestureRecognizer
                         Command="{Binding CadastroPreVendaProdutoCommand}"/>
@@ -83,22 +81,22 @@
                     BackgroundColor="Transparent">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Image
-                    Source="ic_Deletar_Large"
-                    IsOpaque="True"
-                    Aspect="AspectFit"/>
+                        Source="ic_Deletar_Large"
+                        IsOpaque="True"
+                        Aspect="AspectFit"/>
                     <Label
-                    Grid.Column="1"
-                    HorizontalOptions="End"
-                    VerticalOptions="Center"
-                    Text="Deletar"
-                    TextColor="#444444"
-                    FontSize="Medium"/>
+                        Grid.Column="1"
+                        HorizontalOptions="End"
+                        VerticalOptions="Center"
+                        Text="Voltar"
+                        TextColor="#444444"
+                        FontSize="Large"/>
                     <Grid.GestureRecognizers>
                         <TapGestureRecognizer
-                            Command="{Binding CadastroVendaVoltaCommand}"/>
+                        Command="{Binding VoltaCommand}"/>
                     </Grid.GestureRecognizers>
                 </Grid>
             </Grid>
