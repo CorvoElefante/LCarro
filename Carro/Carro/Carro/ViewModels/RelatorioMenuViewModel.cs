@@ -7,6 +7,8 @@ using Carro.Repositories;
 using Carro.Services;
 using System.Threading.Tasks;
 using Carro.Pages;
+using Carro.Pages.Relatorios;
+
 
 namespace Carro.ViewModels
 {

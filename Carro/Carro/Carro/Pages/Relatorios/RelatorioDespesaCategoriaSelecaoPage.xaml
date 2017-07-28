@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             x:Class="Carro.Pages.Relatorios.RelatorioDespesaCategoriaSelecaoPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+      Icon="{x:Static resources:Images.ic_Relatorio_Despesa_Small}"/>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout>
+        <DatePicker VerticalOptions="CenterAndExpand" Date="{Binding dataInicial}">
+            <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
+            <DatePicker.MinimumDate>
+                <sys:DateTime x:FactoryMethod="Parse">
+                    <x:Arguments>
+                        <x:String>Jan 1 2015</x:String>
+                    </x:Arguments>
+                </sys:DateTime>
+            </DatePicker.MinimumDate>
+            <DatePicker.MaximumDate>
+                <sys:DateTime x:FactoryMethod="Parse">
+                    <x:Arguments>
+                        <x:String>Dec 31 2050</x:String>
+                    </x:Arguments>
+                </sys:DateTime>
+            </DatePicker.MaximumDate>
+        </DatePicker>
+
+        <DatePicker VerticalOptions="CenterAndExpand" Date="{Binding dataFinal}">
+            <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
+            <DatePicker.MinimumDate>
+                <sys:DateTime x:FactoryMethod="Parse">
+                    <x:Arguments>
+                        <x:String>Jan 1 2015</x:String>
+                    </x:Arguments>
+                </sys:DateTime>
+            </DatePicker.MinimumDate>
+            <DatePicker.MaximumDate>
+                <sys:DateTime x:FactoryMethod="Parse">
+                    <x:Arguments>
+                        <x:String>Dec 31 2050</x:String>
+                    </x:Arguments>
+                </sys:DateTime>
+            </DatePicker.MaximumDate>
+        </DatePicker>
+
+        <Picker
+                SelectedIndex="{Binding categoriaEntry}">
+            <Picker.Items>
+                <x:String>Selecione a categoria</x:String>
+                <x:String>Alimentação</x:String>
+                <x:String>Compra de produtos</x:String>
+                <x:String>Funcionários</x:String>
+                <x:String>Manutenção</x:String>
+                <x:String>Materias de Escritório</x:String>
+                <x:String>Materias de Limpeza</x:String>
+                <x:String>Outros</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <Frame>
+            <Label
+                Text="Relatório de despesas"
+                FontSize="Large"/>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding RelDespesaCommand}"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+
+    </StackLayout>
+
+
+</ContentPage>

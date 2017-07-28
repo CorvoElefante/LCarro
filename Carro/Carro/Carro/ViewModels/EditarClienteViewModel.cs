@@ -7,6 +7,7 @@ using Carro.Repositories;
 using Carro.Services;
 using System.Threading.Tasks;
 using Carro.Pages;
+using Carro.Pages.Help;
 
 namespace Carro.ViewModels
 {
@@ -235,5 +236,20 @@ namespace Carro.ViewModels
             }
         }
 
+        Command _HelpCommand;
+        public Command HelpCommand
+        {
+            get { return _HelpCommand ?? (_HelpCommand = new Command(async () => await ExecuteHelpCommand())); }
+        }
+
+        async Task ExecuteHelpCommand()
+        {
+            if (!IsBusy)
+            {
+                IsBusy = true;
+                await Navigation.PushAsync(new EditarClienteHelpPage());
+                IsBusy = false;
+            }
+        }
     }
 }

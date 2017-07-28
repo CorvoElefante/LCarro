@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace Carro.ViewModels
@@ -47,6 +48,22 @@ namespace Carro.ViewModels
             foreach (var invocation in invocationList)
             {
                 PropertyChanged -= (PropertyChangedEventHandler)invocation;
+            }
+        }
+
+        Command _VoltaCommand;
+        public Command VoltaCommand
+        {
+            get { return _VoltaCommand ?? (_VoltaCommand = new Command(async () => await ExecuteVoltaCommand())); }
+        }
+
+        async Task ExecuteVoltaCommand()
+        {
+            if (!IsBusy)
+            {
+                IsBusy = true;
+                await Navigation.PopAsync();
+                IsBusy = false;
             }
         }
     }
