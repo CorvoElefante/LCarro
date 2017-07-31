@@ -20,6 +20,7 @@ namespace Carro.Repositories
             _FuncionarioServicoRepository = new GenericRepository<FuncionarioServico, long>(DB, DBLocker);
             _OrdemVendaProdutoRepository = new GenericRepository<OrdemVendaProduto, long>(DB, DBLocker);
             _OrdemVendaServicoRepository = new GenericRepository<OrdemVendaServico, long>(DB, DBLocker);
+            _OrdemVendaParcelaRepository = new GenericRepository<OrdemVendaParcela, long>(DB, DBLocker);
             _OrdemVendaRepository = new GenericRepository<OrdemVenda, long>(DB, DBLocker);
 
             lock (DBLocker)
@@ -34,6 +35,7 @@ namespace Carro.Repositories
                 DB.CreateTable<FuncionarioServico>();
                 DB.CreateTable<OrdemVendaProduto>();
                 DB.CreateTable<OrdemVendaServico>();
+                DB.CreateTable<OrdemVendaParcela>();
                 DB.CreateTable<OrdemVenda>();
             }
         }
@@ -152,6 +154,19 @@ namespace Carro.Repositories
             get
             {
                 return _OrdemVendaServicoRepository;
+            }
+        }
+
+        #endregion
+
+        #region OrdemvendaParcela
+
+        IGenericRepository<OrdemVendaParcela, long> _OrdemVendaParcelaRepository;
+        public IGenericRepository<OrdemVendaParcela, long> OrdemVendaParcelaRepository
+        {
+            get
+            {
+                return _OrdemVendaParcelaRepository;
             }
         }
 

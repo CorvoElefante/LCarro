@@ -40,6 +40,7 @@
     <Compile Include="Models\Funcionario.cs" />
     <Compile Include="Models\FuncionarioServico.cs" />
     <Compile Include="Models\OrdemVenda.cs" />
+    <Compile Include="Models\OrdemVendaParcela.cs" />
     <Compile Include="Models\OrdemVendaProduto.cs" />
     <Compile Include="Models\OrdemVendaServico.cs" />
     <Compile Include="Models\Perda.cs" />

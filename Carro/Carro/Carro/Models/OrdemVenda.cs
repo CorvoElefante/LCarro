@@ -25,13 +25,11 @@ namespace Carro.Models
 
         public int NumeroParcelas { get; set; }
 
-        public int ParcelasPagas { get; set; }
-
         public decimal Valor { get; set; }
 
         public DateTime Registro { get; set; }
 
-        public decimal DescontoGeral { get; set; }
+        public decimal DescontoTotal { get; set; }
 
         [OneToMany(CascadeOperations = CascadeOperation.All)]
         public List<FuncionarioServico> FuncionarioServicos { get; set; }
@@ -41,6 +39,9 @@ namespace Carro.Models
 
         [OneToMany(CascadeOperations = CascadeOperation.All)]
         public List<OrdemVendaServico> OrdemVendaServicos { get; set; }
+
+        [OneToMany(CascadeOperations = CascadeOperation.All)]
+        public List<OrdemVendaParcela> OrdemVendaParcela { get; set; }
     }
 }
 
