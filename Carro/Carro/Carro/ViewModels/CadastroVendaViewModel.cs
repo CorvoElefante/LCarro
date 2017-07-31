@@ -447,13 +447,13 @@ namespace Carro.ViewModels
             }
         }
 
-        Command _CadastroVendaConclucaoCommand;
-        public Command CadastroVendaConclucaoCommand
+        Command _CadastroVendaConclusaoCommand;
+        public Command CadastroVendaConclusaoCommand
         {
-            get { return _CadastroVendaConclucaoCommand ?? (_CadastroVendaConclucaoCommand = new Command(async () => await ExecuteCadastroVendaConclucaoCommand())); }
+            get { return _CadastroVendaConclusaoCommand ?? (_CadastroVendaConclusaoCommand = new Command(async () => await ExecuteCadastroVendaConclusaoCommand())); }
         }
 
-        async Task ExecuteCadastroVendaConclucaoCommand()
+        async Task ExecuteCadastroVendaConclusaoCommand()
         {
             if (!IsBusy)
             {
@@ -466,10 +466,10 @@ namespace Carro.ViewModels
         Command _SalvarPreVendaCommand;
         public Command SalvarPreVendaCommand
         {
-            get { return _SalvarPreVendaCommand ?? (_SalvarPreVendaCommand = new Command(async () => await ExecutePreSalvarVendaCommand())); }
+            get { return _SalvarPreVendaCommand ?? (_SalvarPreVendaCommand = new Command(async () => await ExecuteSalvarPreVendaCommand())); }
         }
 
-        async Task ExecutePreSalvarVendaCommand()
+        async Task ExecuteSalvarPreVendaCommand()
         {
             if (!IsBusy)
             {
@@ -495,7 +495,7 @@ namespace Carro.ViewModels
                             }
                         }
 
-                        service.SaveOrdemVenda(new OrdemVenda { eVenda = false, IdCliente = pessoaSelecionada.Id, Pessoa = pessoaSelecionada, PrazoInicial = 0, NumeroParcelas = 0, ParcelasPagas = 0, Valor = ValorTotal, Registro = data, FuncionarioServicos = FuncionariosSelecionados.ToList<FuncionarioServico>(), OrdemVendaProdutos = ProdutosSelecionados.ToList<OrdemVendaProduto>(), OrdemVendaServicos = ServicosSelecionados.ToList<OrdemVendaServico>()});
+                        service.SaveOrdemVenda(new OrdemVenda { eVenda = false, IdCliente = pessoaSelecionada.Id, Pessoa = pessoaSelecionada, PrazoInicial = 0, NumeroParcelas = 0, Valor = ValorTotal, Registro = data, FuncionarioServicos = FuncionariosSelecionados.ToList<FuncionarioServico>(), OrdemVendaProdutos = ProdutosSelecionados.ToList<OrdemVendaProduto>(), OrdemVendaServicos = ServicosSelecionados.ToList<OrdemVendaServico>()});
 
                         scope.Complete();
                     }

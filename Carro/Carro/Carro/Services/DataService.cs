@@ -205,7 +205,7 @@ namespace Carro.Services
             UnitOfWork.OrdemVendaRepository.AddOrUpdate(ordemvenda);
         }
 
-        public List<OrdemVenda> FindVendaByNome(string nome, int tipoBusca)
+        public List<OrdemVenda> FindVendaByNome(string nome)
         {
             List<OrdemVenda> list = new List<OrdemVenda>();
             if (nome == null || nome == "")
