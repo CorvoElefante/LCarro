@@ -178,13 +178,13 @@ namespace Carro.ViewModels
             }
         }
 
-        Command _SalvarPessoaCommand;
-        public Command SalvarPessoaCommand
+        Command _SalvarClienteCommand;
+        public Command SalvarClienteCommand
         {
-            get { return _SalvarPessoaCommand ?? (_SalvarPessoaCommand = new Command(async () => await ExecuteSalvarPessoaCommand())); }
+            get { return _SalvarClienteCommand ?? (_SalvarClienteCommand = new Command(async () => await ExecuteSalvarClienteCommand())); }
         }
 
-        async Task ExecuteSalvarPessoaCommand()
+        async Task ExecuteSalvarClienteCommand()
         {
             if (nomeEntry != string.Empty)
             {
@@ -211,13 +211,13 @@ namespace Carro.ViewModels
 
         }
 
-        Command _DeletarPessoaCommand;
-        public Command DeletarPessoaCommand
+        Command _DeletarClienteCommand;
+        public Command DeletarClienteCommand
         {
-            get { return _DeletarPessoaCommand ?? (_DeletarPessoaCommand = new Command(async () => await ExecuteDeletarPessoaCommand())); }
+            get { return _DeletarClienteCommand ?? (_DeletarClienteCommand = new Command(async () => await ExecuteDeletarClienteCommand())); }
         }
 
-        async Task ExecuteDeletarPessoaCommand()
+        async Task ExecuteDeletarClienteCommand()
         {
             if (!IsBusy)
             {
