@@ -19,15 +19,16 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <Grid>
+    <Grid
+        RowSpacing="0">
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <ScrollView
-            Padding="30">
+            Padding="30,30,30,0">
             <Grid
-                RowSpacing="30">
+                RowSpacing="15">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -89,92 +90,95 @@
                 <Label
                     Grid.Row="5"
                     Grid.ColumnSpan="7"
-                        HorizontalOptions="Start"
-                        VerticalOptions="Center"
-                        FontSize="Large"
-                        Text="Adicionar ao estoque:"/>
-                    <Entry
-                        Grid.Row="5"
-                        Grid.Column="7"
-                        Grid.ColumnSpan="5"
-                        VerticalOptions="End"
-                        FontSize="Large"
-                        Text="{Binding quantidadeAdicionadaEntry, Converter={StaticResource intConverter}"
-                        Keyboard="Numeric"/>
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    FontSize="Large"
+                    Text="Adicionar ao estoque:"/>
+                <Entry
+                    Grid.Row="5"
+                    Grid.Column="7"
+                    Grid.ColumnSpan="5"
+                    VerticalOptions="End"
+                    FontSize="Large"
+                    Text="{Binding quantidadeAdicionadaEntry, Converter={StaticResource intConverter}"
+                    Keyboard="Numeric"/>
 
-                    <Label
-                        Grid.Row="6"
-                        Grid.ColumnSpan="8"
-                        HorizontalOptions="Start"
-                        VerticalOptions="Center"
-                        FontSize="Large"
-                        Text="Quantidade em estoque:"/>
-                    <Label
-                        Grid.Row="6"
-                        Grid.Column="8"
-                        Grid.ColumnSpan="4"
-                        VerticalOptions="Center"
-                        FontSize="Large"
-                        Text="{Binding quantidadeEntry}"/>
+                <Label
+                    Grid.Row="6"
+                    Grid.ColumnSpan="8"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    FontSize="Large"
+                    Text="Quantidade em estoque:"/>
+                <Label
+                    Grid.Row="6"
+                    Grid.Column="8"
+                    Grid.ColumnSpan="4"
+                    VerticalOptions="Center"
+                    FontSize="Large"
+                    Text="{Binding quantidadeEntry}"/>
 
-                    <Label
-                        Grid.Row="7"
-                        Grid.ColumnSpan="4"
-                        HorizontalOptions="Start"
-                        VerticalOptions="Center"
-                        FontSize="Large"
-                        Text="Total:"/>
-                    <Label
-                        Grid.Row="7"
-                        Grid.Column="3"
-                        Grid.ColumnSpan="10"
-                        VerticalOptions="End"
-                        FontSize="Large"
-                        Text="{Binding quantidadeTotalEntry}"/>
+                <Label
+                    Grid.Row="7"
+                    Grid.ColumnSpan="4"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    FontSize="Large"
+                    Text="Total:"/>
+                <Label
+                    Grid.Row="7"
+                    Grid.Column="3"
+                    Grid.ColumnSpan="10"
+                    VerticalOptions="End"
+                    FontSize="Large"
+                    Text="{Binding quantidadeTotalEntry}"/>
             </Grid>
         </ScrollView>
 
         <Grid
-            HorizontalOptions="Fill"
-            VerticalOptions="End"
             Grid.Row="1"
+            Padding="30,5,30,5"
+            VerticalOptions="End"
             BackgroundColor="#444444"
-            ColumnSpacing="0">
+            ColumnSpacing="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
             <Grid
-                HorizontalOptions="Center"
                 VerticalOptions="Center"
                 BackgroundColor="Transparent">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Image
                     Grid.Column="1"
-                    Source="ic_success64.png"
+                    Source="ic_Salvar_Large"
                     IsOpaque="True"
                     Aspect="AspectFit"/>
                 <Label
-                    HorizontalOptions="End"
                     VerticalOptions="Center"
                     Text="Salvar"
                     TextColor="#FFFFF7"
-                    FontSize="Medium"/>
+                    FontSize="Large"/>
                 <Grid.GestureRecognizers>
                     <TapGestureRecognizer
                         Command="{Binding SalvarProdutoCommand}"/>
                 </Grid.GestureRecognizers>
             </Grid>
+
             <Grid
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
                 Grid.Column="1"
+                HorizontalOptions="End"
+                VerticalOptions="Center"
                 BackgroundColor="Transparent">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Image
-                    Source="ic_error64.png"
+                    Source="ic_Deletar_Large"
                     IsOpaque="True"
                     Aspect="AspectFit"/>
                 <Label
@@ -183,7 +187,7 @@
                     VerticalOptions="Center"
                     Text="Deletar"
                     TextColor="#FFFFF7"
-                    FontSize="Medium"/>
+                    FontSize="Large"/>
                 <Grid.GestureRecognizers>
                     <TapGestureRecognizer
                         Command="{Binding DeletarProdutoCommand}"/>
