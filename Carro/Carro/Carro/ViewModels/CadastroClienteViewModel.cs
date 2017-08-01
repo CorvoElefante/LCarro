@@ -155,13 +155,13 @@ namespace Carro.ViewModels
             }
         }
 
-        Command _SalvarPessoaCommand;
-        public Command SalvarPessoaCommand
+        Command _SalvarClienteCommand;
+        public Command SalvarClienteCommand
         {
-            get { return _SalvarPessoaCommand ?? (_SalvarPessoaCommand = new Command(async () => await ExecuteSalvarPessoaCommand())); }
+            get { return _SalvarClienteCommand ?? (_SalvarClienteCommand = new Command(async () => await ExecuteSalvarClienteCommand())); }
         }
 
-        async Task ExecuteSalvarPessoaCommand()
+        async Task ExecuteSalvarClienteCommand()
         {
             if (nomeEntry != string.Empty)
             {

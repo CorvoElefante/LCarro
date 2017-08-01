@@ -33,22 +33,6 @@ namespace Carro.ViewModels
             }
         }
 
-        int _tipoBusca = 0;
-        public int tipoBusca
-        {
-            get
-            {
-                return _tipoBusca;
-            }
-            set
-            {
-                _tipoBusca = value;
-                SetPropertyChanged(nameof(tipoBusca));
-                //0 = Data
-                //1 = Vencidos
-            }
-        }
-
         string _Search = string.Empty;
         public string Search
         {
@@ -57,7 +41,7 @@ namespace Carro.ViewModels
             {
                 _Search = value;
                 var sqlite = DependencyService.Get<ISQLite>();
-                Vendas = new ObservableCollection<OrdemVenda>(new DataService(sqlite).FindVendaByNome(_Search, tipoBusca));
+                Vendas = new ObservableCollection<OrdemVenda>(new DataService(sqlite).FindVendaByNome(_Search));
             }
         }
 
@@ -90,7 +74,7 @@ namespace Carro.ViewModels
             using (var scope = new TransactionScope(sqlite))
             {
                 Vendas = new ObservableCollection<OrdemVenda>(
-                    new DataService(sqlite).FindVendaByNome("", tipoBusca)
+                    new DataService(sqlite).FindVendaByNome("")
                 );
                 scope.Complete();
             }
