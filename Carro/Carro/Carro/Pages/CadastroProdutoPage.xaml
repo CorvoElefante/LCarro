@@ -31,70 +31,75 @@
                 Padding="30,0,30,0"
                 RowSpacing="15">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                </Grid.ColumnDefinitions>
+                
                 <Entry
-                    Grid.ColumnSpan="18"
                     Text = "{Binding nomeEntry}" 
                     Placeholder="Nome" 
                     Keyboard="Text"/>
                 <Image
-                    Grid.Column="17"
-                    Source="ic_unchecked16.png"
+                    Grid.Column="1"
+                    Source="ic_Deletar_Large"
                     IsVisible="{Binding nomeEntryInvalido}"
                     IsOpaque="True"
                     Aspect="AspectFit"/>
 
                 <Entry
                     Grid.Row="1"
-                    Grid.ColumnSpan="18"
                     x:Name="precoEntry" 
                     Text = "{Binding precoEntry, Converter={StaticResource decimalConverter}}" 
                     Placeholder="Preco" 
                     Keyboard="Numeric"/>
                 <Image
-                    Grid.Column="17"
                     Grid.Row="1"
-                    Source="ic_unchecked16.png"
+                    Grid.Column="1"
+                    Source="ic_Deletar_Large"
                     IsVisible="{Binding precoEntryInvalido}"
                     IsOpaque="True"
                     Aspect="AspectFit"/>
 
                 <Entry
                     Grid.Row="2"
-                    Grid.ColumnSpan="18"
                     Text = "{Binding marcaEntry}" 
                     Placeholder="Marca"/>
 
                 <Entry
                     Grid.Row="3"
-                    Grid.ColumnSpan="18"
                     Text = "{Binding descricaoEntry}"
                     Placeholder="Descrição"/>
 
                 <Entry
                     Grid.Row="4"
-                    Grid.ColumnSpan="18"
                     Text = "{Binding localEntry}" 
                     Placeholder="Local no estoque"/>
 
-                <Label
-                    VerticalOptions="Center"
-                    Grid.Row="5"
-                    Grid.ColumnSpan="7"
-                    Text = "Quantidade:"
-                    FontSize="Medium"/>
+                <Grid
+                    Grid.Row="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
 
-                <Entry
-                    Grid.Row="5"
-                    Grid.Column="7"
-                    Grid.ColumnSpan="11"
-                    Text = "{Binding quantidadeEntry}"
-                    Keyboard="Numeric"/>
+                    <Label
+                        VerticalOptions="Center"
+                        Text = "Quantidade:"
+                        FontSize="Medium"/>
+                    <Entry
+                        Grid.Column="1"
+                        Text = "{Binding quantidadeEntry}"
+                        Keyboard="Numeric"/>
+                </Grid>
             </Grid>
 
 

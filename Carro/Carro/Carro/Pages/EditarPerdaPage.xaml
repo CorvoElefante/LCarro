@@ -17,7 +17,7 @@
     <Grid>
         <ScrollView>
             <Grid
-                Margin="30,30,30,0"
+                Padding="30,30,30,0"
                 RowSpacing="15">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
