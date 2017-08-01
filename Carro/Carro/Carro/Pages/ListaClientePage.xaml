@@ -11,7 +11,8 @@
       Icon="{x:Static resources:Images.ic_Add_Small}"
       Command="{Binding AddPessoaCommand}"/>
         <ToolbarItem
-      Icon="{x:Static resources:Images.ic_Cliente_Small}"/>
+      Icon="{x:Static resources:Images.ic_Cliente_Small}"
+            Command="{Binding HelpCommand}"/>
     </ContentPage.ToolbarItems>
 
     <ListView

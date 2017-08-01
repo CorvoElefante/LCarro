@@ -9,7 +9,8 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem
-      Icon="{x:Static resources:Images.ic_Editar_Produto_Small}"/>
+      Icon="ic_Editar_Produto_Small"
+            Command="{Binding HelpCommand}"/>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Resources>

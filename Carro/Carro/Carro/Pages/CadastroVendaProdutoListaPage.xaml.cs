@@ -11,7 +11,6 @@ namespace Carro.Pages
         {
             BindingContext = vendaViewModel;
             InitializeComponent();
-            NavigationPage.SetHasNavigationBar(this, false);
         }
 
         void Handle_ItemTapped(object sender, Xamarin.Forms.ItemTappedEventArgs e)

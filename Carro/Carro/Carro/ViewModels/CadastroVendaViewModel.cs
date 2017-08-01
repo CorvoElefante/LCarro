@@ -7,6 +7,7 @@ using Carro.Repositories;
 using Carro.Services;
 using System.Threading.Tasks;
 using Carro.Pages;
+using Carro.Pages.Help;
 using System.Linq;
 
 namespace Carro.ViewModels
@@ -754,6 +755,170 @@ namespace Carro.ViewModels
                 IsBusy = false;
             }
         }
+
+        #region HelpCommand
+
+        Command _CadastroVendaClienteFuncionarioHelpCommand;
+        public Command CadastroVendaClienteFuncionarioHelpCommand
+        {
+            get { return _CadastroVendaClienteFuncionarioHelpCommand ?? (_CadastroVendaClienteFuncionarioHelpCommand = new Command(async () => await ExecuteCadastroVendaClienteFuncionarioHelpCommand())); }
+        }
+
+        async Task ExecuteCadastroVendaClienteFuncionarioHelpCommand()
+        {
+            if (!IsBusy)
+            {
+                IsBusy = true;
+                await Navigation.PushAsync(new CadastroVendaClienteFuncionarioHelpPage());
+                IsBusy = false;
+            }
+        }
+
+        Command _CadastroVendaClienteListaHelpCommand;
+        public Command CadastroVendaClienteListaHelpCommand
+        {
+            get { return _CadastroVendaClienteListaHelpCommand ?? (_CadastroVendaClienteListaHelpCommand = new Command(async () => await ExecuteCadastroVendaClienteListaHelpCommand())); }
+        }
+
+        async Task ExecuteCadastroVendaClienteListaHelpCommand()
+        {
+            if (!IsBusy)
+            {
+                IsBusy = true;
+                await Navigation.PushAsync(new CadastroVendaClienteListaHelpPage());
+                IsBusy = false;
+            }
+        }
+
+        Command _CadastroVendaConclusaoHelpCommand;
+        public Command CadastroVendaConclusaoHelpCommand
+        {
+            get { return _CadastroVendaConclusaoHelpCommand ?? (_CadastroVendaConclusaoHelpCommand = new Command(async () => await ExecuteCadastroVendaConclusaoHelpCommand())); }
+        }
+
+        async Task ExecuteCadastroVendaConclusaoHelpCommand()
+        {
+            if (!IsBusy)
+            {
+                IsBusy = true;
+                await Navigation.PushAsync(new CadastroVendaConclusaoHelpPage());
+                IsBusy = false;
+            }
+        }
+
+        Command _CadastroVendaFuncionarioListaHelpCommand;
+        public Command CadastroVendaFuncionarioListaHelpCommand
+        {
+            get { return _CadastroVendaFuncionarioListaHelpCommand ?? (_CadastroVendaFuncionarioListaHelpCommand = new Command(async () => await ExecuteCadastroVendaFuncionarioListaHelpCommand())); }
+        }
+
+        async Task ExecuteCadastroVendaFuncionarioListaHelpCommand()
+        {
+            if (!IsBusy)
+            {
+                IsBusy = true;
+                await Navigation.PushAsync(new CadastroVendaFuncionarioListaHelpPage());
+                IsBusy = false;
+            }
+        }
+
+        Command _CadastroVendaProdutoHelpCommand;
+        public Command CadastroVendaProdutoHelpCommand
+        {
+            get { return _CadastroVendaProdutoHelpCommand ?? (_CadastroVendaProdutoHelpCommand = new Command(async () => await ExecuteCadastroVendaProdutoHelpCommand())); }
+        }
+
+        async Task ExecuteCadastroVendaProdutoHelpCommand()
+        {
+            if (!IsBusy)
+            {
+                IsBusy = true;
+                await Navigation.PushAsync(new CadastroVendaProdutoHelpPage());
+                IsBusy = false;
+            }
+        }
+
+        Command _CadastroVendaProdutoListaHelpCommand;
+        public Command CadastroVendaProdutoListaHelpCommand
+        {
+            get { return _CadastroVendaProdutoListaHelpCommand ?? (_CadastroVendaProdutoListaHelpCommand = new Command(async () => await ExecuteCadastroVendaProdutoListaHelpCommand())); }
+        }
+
+        async Task ExecuteCadastroVendaProdutoListaHelpCommand()
+        {
+            if (!IsBusy)
+            {
+                IsBusy = true;
+                await Navigation.PushAsync(new CadastroVendaProdutoListaHelpPage());
+                IsBusy = false;
+            }
+        }
+
+        Command _CadastroVendaProdutoQuantidadeHelpCommand;
+        public Command CadastroVendaProdutoQuantidadeHelpCommand
+        {
+            get { return _CadastroVendaProdutoQuantidadeHelpCommand ?? (_CadastroVendaProdutoQuantidadeHelpCommand = new Command(async () => await ExecuteCadastroVendaProdutoQuantidadeHelpCommand())); }
+        }
+
+        async Task ExecuteCadastroVendaProdutoQuantidadeHelpCommand()
+        {
+            if (!IsBusy)
+            {
+                IsBusy = true;
+                await Navigation.PushAsync(new CadastroVendaProdutoQuantidadeHelpPage());
+                IsBusy = false;
+            }
+        }
+
+        Command _CadastroVendaServicoHelpCommand;
+        public Command CadastroVendaServicoHelpCommand
+        {
+            get { return _CadastroVendaServicoHelpCommand ?? (_CadastroVendaServicoHelpCommand = new Command(async () => await ExecuteCadastroVendaServicoHelpCommand())); }
+        }
+
+        async Task ExecuteCadastroVendaServicoHelpCommand()
+        {
+            if (!IsBusy)
+            {
+                IsBusy = true;
+                await Navigation.PushAsync(new CadastroVendaServicoHelpPage());
+                IsBusy = false;
+            }
+        }
+
+        Command _CadastroVendaServicoListaHelpCommand;
+        public Command CadastroVendaServicoListaHelpCommand
+        {
+            get { return _CadastroVendaServicoListaHelpCommand ?? (_CadastroVendaServicoListaHelpCommand = new Command(async () => await ExecuteCadastroVendaServicoListaHelpCommand())); }
+        }
+
+        async Task ExecuteCadastroVendaServicoListaHelpCommand()
+        {
+            if (!IsBusy)
+            {
+                IsBusy = true;
+                await Navigation.PushAsync(new CadastroVendaServicoListaHelpPage());
+                IsBusy = false;
+            }
+        }
+
+        Command _CadastroVendaServicoQuantidadeHelpCommand;
+        public Command CadastroVendaServicoQuantidadeHelpCommand
+        {
+            get { return _CadastroVendaServicoQuantidadeHelpCommand ?? (_CadastroVendaServicoQuantidadeHelpCommand = new Command(async () => await ExecuteCadastroVendaServicoQuantidadeHelpCommand())); }
+        }
+
+        async Task ExecuteCadastroVendaServicoQuantidadeHelpCommand()
+        {
+            if (!IsBusy)
+            {
+                IsBusy = true;
+                await Navigation.PushAsync(new CadastroVendaServicoQuantidadeHelpPage());
+                IsBusy = false;
+            }
+        }
+
+        #endregion
 
         #endregion
     }

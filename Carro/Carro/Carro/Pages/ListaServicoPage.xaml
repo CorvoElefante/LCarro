@@ -11,7 +11,8 @@
       Icon="{x:Static resources:Images.ic_Add_Small}"
 			Command="{Binding AddServicoCommand}"/>
     <ToolbarItem
-      Icon="{x:Static resources:Images.ic_Servico_Small}"/>
+      Icon="{x:Static resources:Images.ic_Servico_Small}"
+        Command="{Binding HelpCommand}"/>
   </ContentPage.ToolbarItems>
 
     <ContentPage.Resources>

@@ -11,7 +11,8 @@
         Icon="{x:Static resources:Images.ic_Add_Small}"
 	    Command="{Binding AddPerdaCommand}"/>
     <ToolbarItem 
-        Icon="{x:Static resources:Images.ic_Perda_Small}"/>
+        Icon="{x:Static resources:Images.ic_Perda_Small}"
+        Command="{Binding HelpCommand}"/>
     </ContentPage.ToolbarItems>
 
   <ListView

@@ -10,7 +10,8 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem
-      Icon="{x:Static resources:Images.ic_Cadastro_Funcionario_Small}"/>
+      Icon="ic_Cadastro_Funcionario_Small"
+            Command="{Binding HelpCommand}"/>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Resources>
