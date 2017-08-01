@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
              x:Class="Carro.Pages.CadastroServicoPage"
-             Title="Novo Serviço"
-             BackgroundColor="#FFFFF7">
+             BackgroundColor="#FFFFF7"
+             Title="Novo Serviço">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem
@@ -19,13 +19,15 @@
 
     <ScrollView>
         <Grid
-            Padding="30,30,30,0"
+            Padding="0,30,0,0"
             RowSpacing="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="75"/>
             </Grid.RowDefinitions>
+            
             <Grid
+                Padding="30,0,30,0"
                 RowSpacing="15">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -73,21 +75,24 @@
                     Placeholder="Tempo de conclusão"/>
             </Grid>
 
+
             <Grid
                 Grid.Row="1"
+                Padding="0,5,0,5"
                 VerticalOptions="End"
-                BackgroundColor="#FFFFF7"
+                BackgroundColor="Transparent"
                 ColumnSpacing="5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid
+                    HorizontalOptions="Center"
                     VerticalOptions="Center"
                     BackgroundColor="Transparent">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <Image
                         Grid.Column="1"
@@ -95,6 +100,7 @@
                         IsOpaque="True"
                         Aspect="AspectFit"/>
                     <Label
+                        HorizontalOptions="End"
                         VerticalOptions="Center"
                         Text="Salvar"
                         TextColor="#444444"
@@ -107,11 +113,11 @@
 
                 <Grid
                     Grid.Column="1"
-                    HorizontalOptions="End"
+                    HorizontalOptions="Center"
                     VerticalOptions="Center"
                     BackgroundColor="Transparent">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Image
@@ -120,7 +126,7 @@
                         Aspect="AspectFit"/>
                     <Label
                         Grid.Column="1"
-                        HorizontalOptions="End"
+                        HorizontalOptions="Start"
                         VerticalOptions="Center"
                         Text="Voltar"
                         TextColor="#444444"

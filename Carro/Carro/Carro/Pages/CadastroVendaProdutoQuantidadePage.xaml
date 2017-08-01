@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
              x:Class="Carro.Pages.CadastroVendaProdutoQuantidadePage"
+             BackgroundColor="#FFFFF7"
              Title="Quantidade - Produto">
 
     <ContentPage.ToolbarItems>
@@ -20,13 +21,14 @@
 
     <ScrollView>
         <Grid
-            Padding="30,30,30,0"
+            Padding="0,30,0,0"
             RowSpacing="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="75"/>
             </Grid.RowDefinitions>
             <Grid
+                Padding="30,0,30,0"
                 RowSpacing="15">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -36,69 +38,69 @@
                 </Grid.RowDefinitions>
 
                 <Label 
-            Text="{Binding produtoSelecionadoTemporario.Nome}"
-            FontSize="Large"/>
+                    Text="{Binding produtoSelecionadoTemporario.Nome}"
+                    FontSize="Large"/>
 
                 <Label
                     Grid.Row="1"
-            Text="{Binding produtoSelecionadoTemporario.Marca}"
-            FontSize="Large"/>
+                    Text="{Binding produtoSelecionadoTemporario.Marca}"
+                    FontSize="Large"/>
 
                 <Label
-            Grid.Row="2"
-            Text="Quantidade atual em estoque:"
-            FontSize="Large"/>
+                    Grid.Row="2"
+                    Text="Quantidade atual em estoque:"
+                    FontSize="Large"/>
                 <Label
-            Grid.Row="3"
-            Grid.Column="1"
-            VerticalOptions="Center"
-            HorizontalOptions="End"
-            Text="{Binding produtoSelecionadoTemporario.Quantidade}"
-            FontSize="Large"/>
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    VerticalOptions="Center"
+                    HorizontalOptions="End"
+                    Text="{Binding produtoSelecionadoTemporario.Quantidade}"
+                    FontSize="Large"/>
 
                 <Label
-            Grid.Row="4"
-                VerticalOptions="Center"
-            Text="Quantidade vendida:"
-            FontSize="Large"/>
+                    Grid.Row="4"
+                    VerticalOptions="Center"
+                    Text="Quantidade vendida:"
+                    FontSize="Large"/>
                 <Entry
-            Grid.Row="4"
-            Grid.Column="1"
-            VerticalOptions="Center"
-            Text= "{Binding produtoSelecionadoTemporario.QuantidadeVendida, Converter={StaticResource intConverter}}"
-            FontSize="Large"
-            Keyboard="Numeric"/>
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    VerticalOptions="Center"
+                    Text= "{Binding produtoSelecionadoTemporario.QuantidadeVendida, Converter={StaticResource intConverter}}"
+                    FontSize="Large"
+                    Keyboard="Numeric"/>
 
                 <Label
-            Grid.Row="5"
-                VerticalOptions="Center"
-            Text="Desconto produtos:"
-            FontSize="Large"/>
+                    Grid.Row="5"
+                    VerticalOptions="Center"
+                    Text="Desconto produtos:"
+                    FontSize="Large"/>
                 <Entry
-            Grid.Row="5"
-            Grid.Column="1"
-            VerticalOptions="Center"
-            Text= "{Binding DescontoProduto, Converter={StaticResource decimalConverter}}"
-            FontSize="Large"
-            Keyboard="Numeric"/>
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    VerticalOptions="Center"
+                    Text= "{Binding DescontoProduto, Converter={StaticResource decimalConverter}}"
+                    FontSize="Large"
+                    Keyboard="Numeric"/>
                 <Label
-            Grid.Row="6"
-                VerticalOptions="Center"
-            Text="Desconto produtos %:"
-            FontSize="Large"/>
+                    Grid.Row="6"
+                    VerticalOptions="Center"
+                    Text="Desconto produtos %:"
+                    FontSize="Large"/>
                 <Entry
-            Grid.Row="6"
-            Grid.Column="1"
-            VerticalOptions="Center"
-            Text= "{Binding DescontoProdutoPorcentagem, Converter={StaticResource percentualConverter}}"
-            FontSize="Large"
-            Keyboard="Numeric"/>
+                    Grid.Row="6"
+                    Grid.Column="1"
+                    VerticalOptions="Center"
+                    Text= "{Binding DescontoProdutoPorcentagem, Converter={StaticResource percentualConverter}}"
+                    FontSize="Large"
+                    Keyboard="Numeric"/>
             </Grid>
 
             <Grid
                 Grid.Row="1"
                 VerticalOptions="End"
-                BackgroundColor="#FFFFF7"
+                BackgroundColor="Transparent"
                 ColumnSpacing="5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -123,7 +125,7 @@
                         FontSize="Large"/>
                     <Grid.GestureRecognizers>
                         <TapGestureRecognizer
-                        Command="{Binding SalvaVendaProdutoQuantidadeCommand}"/>
+                            Command="{Binding SalvaVendaProdutoQuantidadeCommand}"/>
                     </Grid.GestureRecognizers>
                 </Grid>
 
@@ -149,7 +151,7 @@
                         FontSize="Large"/>
                     <Grid.GestureRecognizers>
                         <TapGestureRecognizer
-                        Command="{Binding VoltaCommand}"/>
+                            Command="{Binding VoltaCommand}"/>
                     </Grid.GestureRecognizers>
                 </Grid>
             </Grid>

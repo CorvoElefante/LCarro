@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
              x:Class="Carro.Pages.EditarProdutoPage"
-             Title="Editar Produto"
-             BackgroundColor="#FFFFF7">
+             BackgroundColor="#FFFFF7"
+             Title="Editar Produto">
 
 
     <ContentPage.ToolbarItems>
@@ -23,11 +23,12 @@
         RowSpacing="0">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="75"/>
         </Grid.RowDefinitions>
-        <ScrollView
-            Padding="30,30,30,0">
+        
+        <ScrollView>
             <Grid
+                Padding="30,0,30,0"
                 RowSpacing="15">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -137,20 +138,20 @@
 
         <Grid
             Grid.Row="1"
-            Padding="30,5,30,5"
+            Padding="0,5,0,5"
             VerticalOptions="End"
-            BackgroundColor="#444444"
-            ColumnSpacing="5">
+            BackgroundColor="#444444">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid
+                HorizontalOptions="Center"
                 VerticalOptions="Center"
                 BackgroundColor="Transparent">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 <Image
                     Grid.Column="1"
@@ -158,6 +159,7 @@
                     IsOpaque="True"
                     Aspect="AspectFit"/>
                 <Label
+                    HorizontalOptions="End"
                     VerticalOptions="Center"
                     Text="Salvar"
                     TextColor="#FFFFF7"
@@ -170,11 +172,11 @@
 
             <Grid
                 Grid.Column="1"
-                HorizontalOptions="End"
+                HorizontalOptions="Center"
                 VerticalOptions="Center"
                 BackgroundColor="Transparent">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Image
@@ -183,9 +185,9 @@
                     Aspect="AspectFit"/>
                 <Label
                     Grid.Column="1"
-                    HorizontalOptions="End"
+                    HorizontalOptions="Start"
                     VerticalOptions="Center"
-                    Text="Deletar"
+                    Text="Excluir"
                     TextColor="#FFFFF7"
                     FontSize="Large"/>
                 <Grid.GestureRecognizers>

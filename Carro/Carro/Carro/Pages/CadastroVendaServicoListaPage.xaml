@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
              x:Class="Carro.Pages.CadastroVendaServicoListaPage"
+             BackgroundColor="#FFFFF7"
              Title="Serviços">
 
     <ContentPage.ToolbarItems>
@@ -32,9 +33,9 @@
         <ListView.HeaderTemplate>
             <DataTemplate>
                 <SearchBar
-			HeightRequest="45"
-			Placeholder="Buscar"
-			Text="{Binding SearchServico}">
+			        HeightRequest="45"
+			        Placeholder="Buscar"
+			        Text="{Binding SearchServico}">
                 </SearchBar>
             </DataTemplate>
         </ListView.HeaderTemplate>
