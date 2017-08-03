@@ -104,6 +104,36 @@
     <Compile Include="Pages\EditarServicoPage.xaml.cs">
       <DependentUpon>EditarServicoPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\EditarVendaClienteFuncionarioPage.xaml.cs">
+      <DependentUpon>EditarVendaClienteFuncionarioPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EditarVendaClienteListaPage.xaml.cs">
+      <DependentUpon>EditarVendaClienteListaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EditarVendaConclusaoPage.xaml.cs">
+      <DependentUpon>EditarVendaConclusaoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EditarVendaFuncionarioListaPage.xaml.cs">
+      <DependentUpon>EditarVendaFuncionarioListaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EditarVendaProdutoListaPage.xaml.cs">
+      <DependentUpon>EditarVendaProdutoListaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EditarVendaProdutoPage.xaml.cs">
+      <DependentUpon>EditarVendaProdutoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EditarVendaProdutoQuantidadePage.xaml.cs">
+      <DependentUpon>EditarVendaProdutoQuantidadePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EditarVendaServicoListaPage.xaml.cs">
+      <DependentUpon>EditarVendaServicoListaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EditarVendaServicoPage.xaml.cs">
+      <DependentUpon>EditarVendaServicoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EditarVendaServicoQuantidadePage.xaml.cs">
+      <DependentUpon>EditarVendaServicoQuantidadePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Help\CadastroClienteHelpPage.xaml.cs">
       <DependentUpon>CadastroClienteHelpPage.xaml</DependentUpon>
     </Compile>
@@ -172,6 +202,36 @@
     </Compile>
     <Compile Include="Pages\Help\EditarServicoHelpPage.xaml.cs">
       <DependentUpon>EditarServicoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\EditarVendaClienteFuncionarioHelpPage.xaml.cs">
+      <DependentUpon>EditarVendaClienteFuncionarioHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\EditarVendaClienteListaHelpPage.xaml.cs">
+      <DependentUpon>EditarVendaClienteListaHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\EditarVendaConclusaoHelpPage.xaml.cs">
+      <DependentUpon>EditarVendaConclusaoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\EditarVendaFuncionarioListaHelpPage.xaml.cs">
+      <DependentUpon>EditarVendaFuncionarioListaHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\EditarVendaProdutoHelpPage.xaml.cs">
+      <DependentUpon>EditarVendaProdutoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\EditarVendaProdutoListaHelpPage.xaml.cs">
+      <DependentUpon>EditarVendaProdutoListaHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\EditarVendaProdutoQuantidadeHelpPage.xaml.cs">
+      <DependentUpon>EditarVendaProdutoQuantidadeHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\EditarVendaServicoHelpPage.xaml.cs">
+      <DependentUpon>EditarVendaServicoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\EditarVendaServicoListaHelpPage.xaml.cs">
+      <DependentUpon>EditarVendaServicoListaHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\EditarVendaServicoQuantidadeHelpPage.xaml.cs">
+      <DependentUpon>EditarVendaServicoQuantidadeHelpPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Help\ListaClienteHelpPage.xaml.cs">
       <DependentUpon>ListaClienteHelpPage.xaml</DependentUpon>
@@ -360,6 +420,7 @@
     <Compile Include="ViewModels\EditarProdutoPerdaViewModel.cs" />
     <Compile Include="ViewModels\EditarProdutoViewModel.cs" />
     <Compile Include="ViewModels\EditarServicoViewModel.cs" />
+    <Compile Include="ViewModels\EditarVendaViewModel.cs" />
     <Compile Include="ViewModels\ListaClienteViewModel.cs" />
     <Compile Include="ViewModels\ListaDespesaViewModel.cs" />
     <Compile Include="ViewModels\ListaFuncionarioViewModel.cs" />
@@ -941,7 +1002,126 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\EditarVendaClienteFuncionarioPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\EditarVendaClienteListaPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\EditarVendaConclusaoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\EditarVendaFuncionarioListaPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\EditarVendaProdutoListaPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\EditarVendaProdutoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\EditarVendaProdutoQuantidadePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\EditarVendaServicoListaPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\EditarVendaServicoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\EditarVendaServicoQuantidadePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\EditarVendaClienteFuncionarioHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\EditarVendaClienteListaHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\EditarVendaConclusaoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\EditarVendaFuncionarioListaHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\EditarVendaProdutoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\EditarVendaProdutoListaHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\EditarVendaProdutoQuantidadeHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\EditarVendaServicoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\EditarVendaServicoListaHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\EditarVendaServicoQuantidadeHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
