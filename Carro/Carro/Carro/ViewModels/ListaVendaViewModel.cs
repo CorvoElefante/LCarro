@@ -80,6 +80,22 @@ namespace Carro.ViewModels
             }
         }
 
+        Command _EditarVendaCommand;
+        public Command EditarVendaCommand
+        {
+            get { return _EditarVendaCommand ?? (_EditarVendaCommand = new Command<OrdemVenda>(async (qq) => await ExecuteEditarVendaCommand(qq))); }
+        }
+
+        async Task ExecuteEditarVendaCommand(OrdemVenda value)
+        {
+            if (!IsBusy)
+            {
+                IsBusy = true;
+                await Navigation.PushAsync(new EditarVendaClienteFuncionarioPage(value));
+                IsBusy = false;
+            }
+        }
+
         Command _HelpCommand;
         public Command HelpCommand
         {
