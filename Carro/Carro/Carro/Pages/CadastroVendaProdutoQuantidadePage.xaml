@@ -100,6 +100,7 @@
 
             <Grid
                 Grid.Row="1"
+                Padding="0,5,0,5"
                 VerticalOptions="End"
                 BackgroundColor="Transparent"
                 ColumnSpacing="5">
@@ -108,11 +109,12 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid
+                    HorizontalOptions="Center"
                     VerticalOptions="Center"
                     BackgroundColor="Transparent">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <Image
                         Grid.Column="1"
@@ -120,23 +122,24 @@
                         IsOpaque="True"
                         Aspect="AspectFit"/>
                     <Label
+                        HorizontalOptions="End"
                         VerticalOptions="Center"
                         Text="Salvar"
                         TextColor="#444444"
                         FontSize="Large"/>
                     <Grid.GestureRecognizers>
                         <TapGestureRecognizer
-                            Command="{Binding SalvaVendaProdutoQuantidadeCommand}"/>
+                        Command="{Binding SalvaVendaProdutoQuantidadeCommand}"/>
                     </Grid.GestureRecognizers>
                 </Grid>
 
                 <Grid
                     Grid.Column="1"
-                    HorizontalOptions="End"
+                    HorizontalOptions="Center"
                     VerticalOptions="Center"
                     BackgroundColor="Transparent">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Image
@@ -145,14 +148,14 @@
                         Aspect="AspectFit"/>
                     <Label
                         Grid.Column="1"
-                        HorizontalOptions="End"
+                        HorizontalOptions="Start"
                         VerticalOptions="Center"
                         Text="Voltar"
                         TextColor="#444444"
                         FontSize="Large"/>
                     <Grid.GestureRecognizers>
                         <TapGestureRecognizer
-                            Command="{Binding VoltaCommand}"/>
+                        Command="{Binding VoltaCommand}"/>
                     </Grid.GestureRecognizers>
                 </Grid>
             </Grid>
