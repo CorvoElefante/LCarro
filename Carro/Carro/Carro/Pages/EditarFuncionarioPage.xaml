@@ -38,6 +38,7 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
+                
                 <Entry
                     Grid.ColumnSpan="12"
                     Text="{Binding nomeEntry}" 

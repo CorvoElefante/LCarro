@@ -107,8 +107,7 @@
                 Grid.Row="1"
                 Padding="0,5,0,5"
                 VerticalOptions="End"
-                BackgroundColor="Transparent"
-                ColumnSpacing="5">
+                BackgroundColor="Transparent">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
