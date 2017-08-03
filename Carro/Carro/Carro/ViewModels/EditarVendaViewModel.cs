@@ -16,14 +16,29 @@ namespace Carro.ViewModels
     {
         public EditarVendaViewModel(INavigation navigation, OrdemVenda value) : base(navigation)
         {
+            idEntry = value.Id;
             pessoaSelecionada = value.Pessoa;
             FuncionariosSelecionados = new ObservableCollection<FuncionarioServico>(value.FuncionarioServicos);
             ProdutosSelecionados = new ObservableCollection<OrdemVendaProduto>(value.OrdemVendaProdutos);
             ServicosSelecionados = new ObservableCollection<OrdemVendaServico>(value.OrdemVendaServicos);
-            ValorTotal = value.Valor;            
+            ValorTotal = value.Valor;    
         }
 
         #region Propriedades
+
+        long? _idEntry = 0;
+        public long? idEntry
+        {
+            get
+            {
+                return _idEntry;
+            }
+            set
+            {
+                _idEntry = value;
+                SetPropertyChanged(nameof(idEntry));
+            }
+        }
 
         ObservableCollection<Pessoa> _Pessoas = new ObservableCollection<Pessoa>();
         public ObservableCollection<Pessoa> Pessoas
@@ -501,7 +516,7 @@ namespace Carro.ViewModels
                             }
                         }
 
-                        service.SaveOrdemVenda(new OrdemVenda { eVenda = false, IdCliente = pessoaSelecionada.Id, Pessoa = pessoaSelecionada, PrazoInicial = 0, NumeroParcelas = 0, Valor = ValorTotal, Registro = data, FuncionarioServicos = FuncionariosSelecionados.ToList<FuncionarioServico>(), OrdemVendaProdutos = ProdutosSelecionados.ToList<OrdemVendaProduto>(), OrdemVendaServicos = ServicosSelecionados.ToList<OrdemVendaServico>() });
+                        service.SaveOrdemVenda(new OrdemVenda { Id = idEntry, eVenda = false, IdCliente = pessoaSelecionada.Id, Pessoa = pessoaSelecionada, PrazoInicial = 0, NumeroParcelas = 0, Valor = ValorTotal, Registro = data, FuncionarioServicos = FuncionariosSelecionados.ToList<FuncionarioServico>(), OrdemVendaProdutos = ProdutosSelecionados.ToList<OrdemVendaProduto>(), OrdemVendaServicos = ServicosSelecionados.ToList<OrdemVendaServico>() });
 
                         scope.Complete();
                     }
