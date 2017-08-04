@@ -216,6 +216,48 @@ namespace Carro.ViewModels
             }
         }
 
+        decimal _ValorTotalIndividual = 0m;
+        public decimal ValorTotalIndividual
+        {
+            get
+            {
+                return _ValorTotalIndividual;
+            }
+            set
+            {
+                _ValorTotalIndividual = value;
+                SetPropertyChanged(nameof(ValorTotalIndividual));
+            }
+        }
+
+        decimal _DescontoGeral = 0m;
+        public decimal DescontoGeral
+        {
+            get
+            {
+                return _DescontoGeral;
+            }
+            set
+            {
+                _DescontoGeral = value;
+                SetPropertyChanged(nameof(DescontoGeral));
+            }
+        }
+
+        decimal _DescontoGeralPorcentagem = 0m;
+        public decimal DescontoGeralPorcentagem
+        {
+            get
+            {
+                return _DescontoGeralPorcentagem;
+            }
+            set
+            {
+                _DescontoGeralPorcentagem = value;
+                SetPropertyChanged(nameof(DescontoGeralPorcentagem));
+            }
+        }
+
         decimal _DescontoProduto = 0m;
         public decimal DescontoProduto
         {
@@ -277,6 +319,109 @@ namespace Carro.ViewModels
                 SetPropertyChanged(nameof(DescontoServicoPorcentagem));
                 _DescontoServico = AtualizaDescontoValorServico();
                 SetPropertyChanged(nameof(DescontoServico));
+            }
+        }
+
+        int _Pagamento = 0;
+        public int Pagamento
+        {
+            get
+            {
+                return _Pagamento;
+            }
+            set
+            {
+                _Pagamento = value;
+                SetPropertyChanged(nameof(Pagamento));
+                //0 = Selecione a forma de pagamento (Invalido)
+                //1 = A vista
+                //2 = A prazo
+
+            }
+        }
+
+        bool _PagamentoInvalido = true;
+        public bool PagamentoInvalido
+        {
+            get
+            {
+                return _PagamentoInvalido;
+            }
+            set
+            {
+                _PagamentoInvalido = value;
+                SetPropertyChanged(nameof(PagamentoInvalido));
+            }
+        }
+
+        int _Parcela = 0;
+        public int Parcela
+        {
+            get
+            {
+                return _Parcela;
+            }
+            set
+            {
+                _Parcela = value;
+                SetPropertyChanged(nameof(Parcela));
+                //0 = Selecione o numero de parcelas (Invalido)
+                //1 = 1x
+                //2 = 2x
+                //3 = 3x
+                //4 = 4x
+                //5 = 5x
+                //6 = 6x
+                //9 = 9x
+                //12 = 12x
+            }
+        }
+
+        bool _ParcelaInvalido = true;
+        public bool ParcelaInvalido
+        {
+            get
+            {
+                return _ParcelaInvalido;
+            }
+            set
+            {
+                _ParcelaInvalido = value;
+                SetPropertyChanged(nameof(ParcelaInvalido));
+            }
+        }
+
+        int _Entrada = 0;
+        public int Entrada
+        {
+            get
+            {
+                return _Entrada;
+            }
+            set
+            {
+                _Entrada = value;
+                SetPropertyChanged(nameof(Entrada));
+                //0 = Selecione a entrada (Invalido)
+                //1 = A vista
+                //2 = 30 dias
+                //3 = 60 dias
+                //4 = 90 dias
+
+            }
+        }
+
+        bool _EntradaInvalido = true;
+        public bool EntradaInvalido
+        {
+            get
+            {
+                return _EntradaInvalido;
+            }
+            set
+            {
+                _EntradaInvalido = value;
+                SetPropertyChanged(nameof(EntradaInvalido));
             }
         }
 
