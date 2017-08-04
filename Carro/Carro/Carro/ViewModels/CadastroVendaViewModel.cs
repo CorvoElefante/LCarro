@@ -216,17 +216,17 @@ namespace Carro.ViewModels
             }
         }
 
-        decimal _ValorTotalIndividual = 0m;
-        public decimal ValorTotalIndividual
+        decimal _DescontoTotalIndividual = 0m;
+        public decimal DescontoTotalIndividual
         {
             get
             {
-                return _ValorTotalIndividual;
+                return _DescontoTotalIndividual;
             }
             set
             {
-                _ValorTotalIndividual = value;
-                SetPropertyChanged(nameof(ValorTotalIndividual));
+                _DescontoTotalIndividual = value;
+                SetPropertyChanged(nameof(DescontoTotalIndividual));
             }
         }
 
