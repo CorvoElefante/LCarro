@@ -28,7 +28,7 @@
             </Grid.RowDefinitions>
             
             <Grid
-                Padding="30,0,30,0"
+                Padding="30,0,15,0"
                 RowSpacing="15">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="45"/>

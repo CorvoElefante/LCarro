@@ -26,6 +26,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="75"/>
         </Grid.RowDefinitions>
+        
         <Grid
             Padding="30,0,30,0"
             RowSpacing="15">
@@ -36,8 +37,8 @@
             </Grid.RowDefinitions>
 
             <Label
-                    HorizontalOptions="CenterAndExpand"
-                    Text="Selecionar Cliente">
+                HorizontalOptions="CenterAndExpand"
+                Text="Selecionar Cliente">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer
                         Command="{Binding ListaClienteCommand}"/>
@@ -83,7 +84,7 @@
                                 Clicked="OnDelete" 
                                 CommandParameter="{Binding .}" 
                                 Text="Delete" 
-                                IsDestructive="True" />
+                                IsDestructive="True"/>
                         </ViewCell.ContextActions>
 
                         <Grid

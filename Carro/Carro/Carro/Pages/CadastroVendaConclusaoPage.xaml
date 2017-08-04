@@ -28,10 +28,15 @@
             </Grid.RowDefinitions>
             <Grid
                 Padding="30,0,30,0"
-                RowSpacing="15">
+                RowSpacing="30">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
                 <Label
                     Text="Valor total:"

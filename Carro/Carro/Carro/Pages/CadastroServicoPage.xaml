@@ -28,50 +28,57 @@
             </Grid.RowDefinitions>
             
             <Grid
-                Padding="30,0,30,0"
+                Padding="30,0,15,0"
                 RowSpacing="15">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
                 </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                </Grid.ColumnDefinitions>
+
                 <Entry
-                    Grid.ColumnSpan="18"
+                    Grid.ColumnSpan="2"
                     Text="{Binding nomeEntry}"
                     Placeholder="Nome"
                     Keyboard="Text"/>
                 <Image
-                    Grid.Column="17"
-                    Source="ic_unchecked16.png"
+                    Grid.Column="2"
+                    Source="ic_Deletar_Large"
                     IsVisible="{Binding nomeEntryInvalido}"
                     IsOpaque="True"
                     Aspect="AspectFit"/>
 
                 <Entry
                     Grid.Row="1"
-                    Grid.ColumnSpan="18"
+                    Grid.ColumnSpan="2"
                     x:Name="precoEntry"
                     Text="{Binding precoEntry, Converter={StaticResource decimalConverter}}"
                     Placeholder="Preço"
                     Keyboard="Numeric"/>
                 <Image
-                    Grid.Column="17"
                     Grid.Row="1"
-                    Source="ic_unchecked16.png"
+                    Grid.Column="2"
+                    Source="ic_Deletar_Large"
                     IsVisible="{Binding precoEntryInvalido}"
                     IsOpaque="True"
                     Aspect="AspectFit"/>
 
                 <Entry
                     Grid.Row="2"
-                    Grid.ColumnSpan="18"
+                    Grid.ColumnSpan="2"
                     Text="{Binding descricaoEntry}"
                     Placeholder="Descrição"/>
 
                 <Entry
                     Grid.Row="3"
-                    Grid.ColumnSpan="18"
+                    Grid.ColumnSpan="2"
                     Text="{Binding tempoEntry}"
                     Placeholder="Tempo de conclusão"/>
             </Grid>

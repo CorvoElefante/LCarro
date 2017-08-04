@@ -29,56 +29,58 @@
             </Grid.RowDefinitions>
             
             <Grid
-                Padding="30,0,30,0"
+                Padding="30,0,15,0"
                 RowSpacing="15">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
                 </Grid.RowDefinitions>
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                </Grid.ColumnDefinitions>
+                
                 <Entry 
-                    Grid.Column="0"
-                    Grid.Row="0"
-                    Grid.ColumnSpan="18"
+                    Grid.ColumnSpan="2"
                     Text="{Binding nomeEntry}" 
                     Placeholder="Nome" 
                     Keyboard="Text"/>
                 <Image
-                    Grid.Column="17"
-                    Grid.Row="0"
-                    Source="ic_unchecked16.png"
+                    Grid.Column="2"
+                    Source="ic_Deletar_Large"
                     IsVisible="{Binding nomeEntryInvalido}"
                     IsOpaque="True"
                     Aspect="AspectFit"/>
 
                 <Entry 
-                    Grid.Column="0"
                     Grid.Row="1"
-                    Grid.ColumnSpan="18"
+                    Grid.ColumnSpan="2"
                     x:Name="valorEntry" 
                     Text="{Binding valorEntry, Converter={StaticResource decimalConverter}}" 
                     Placeholder="Valor gasto" 
                     Keyboard="Numeric"/>
                 <Image
-                    Grid.Column="17"
                     Grid.Row="1"
+                    Grid.Column="2"
                     Source="ic_unchecked16.png"
                     IsVisible="{Binding valorEntryInvalido}"
                     IsOpaque="True"
                     Aspect="AspectFit"/>
 
                 <Entry 
-                    Grid.Column="0"
                     Grid.Row="2"
-                    Grid.ColumnSpan="18"
+                    Grid.ColumnSpan="2"
                     Text="{Binding descricaoEntry}" 
                     Placeholder="Descrição" 
                     Keyboard="Text"/>
 
                 <Picker
                     Grid.Row="3"
-                    Grid.ColumnSpan="18"
+                    Grid.ColumnSpan="2"
                     SelectedIndex="{Binding categoriaEntry}">
                     <Picker.Items>
                         <x:String>Selecione a categoria</x:String>
@@ -92,9 +94,9 @@
                     </Picker.Items>
                 </Picker>
                 <Image
-                    Grid.Column="17"
+                    Grid.Column="2"
                     Grid.Row="3"
-                    Source="ic_unchecked16.png"
+                    Source="ic_Deletar_Large"
                     IsVisible="{Binding categoriaEntryInvalido}"
                     IsOpaque="True"
                     Aspect="AspectFit"/>

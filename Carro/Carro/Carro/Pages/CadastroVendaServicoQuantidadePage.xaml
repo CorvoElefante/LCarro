@@ -28,58 +28,81 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="75"/>
             </Grid.RowDefinitions>
+
             <Grid
                 Padding="30,0,30,0"
                 RowSpacing="15">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
-                <Label
-                    Text="{Binding servicoSelecionadoTemporario.Nome}"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
 
-                <Label
+                    <Label 
+                        Text="{Binding servicoSelecionadoTemporario.Nome}"
+                        FontSize="Large"
+                        FontAttributes="Bold"/>
+                    <Label
+                        Grid.Row="1"
+                        Text="{Binding servicoSelecionadoTemporario.Valor, Converter={StaticResource decimalConverter}}"
+                        FontSize="Medium"/>
+                </Grid>
+
+                <Grid
                     Grid.Row="1"
-                    x:Name="precoEntry"
-                    Text="{Binding servicoSelecionadoTemporario.Valor, Converter={StaticResource decimalConverter}}"/>
+                    RowSpacing="15">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
 
-                <Label
-                    Grid.Row="2"
-                    VerticalOptions="Center"
-                    Text="Quantidade vendida:"
-                    FontSize="Large"/>
-                <Entry
-                    Grid.Row="2"
-                    Grid.Column="1"
-                    VerticalOptions="Center"
-                    Text= "{Binding servicoSelecionadoTemporario.QuantidadeVendida, Converter={StaticResource intConverter}}"
-                    FontSize="Large"/>
-                <Label
-                    Grid.Row="3"
-                    VerticalOptions="Center"
-                    Text="Desconto serviços:"
-                    FontSize="Large"/>
-                <Entry
-                    Grid.Row="3"
-                    Grid.Column="1"
-                    VerticalOptions="Center"
-                    Text= "{Binding DescontoServico, Converter={StaticResource decimalConverter}}"
-                    FontSize="Large"
-                    Keyboard="Numeric"/>
-                <Label
-                    Grid.Row="4"
-                    VerticalOptions="Center"
-                    Text="Desconto serviços %:"
-                    FontSize="Large"/>
-                <Entry
-                    Grid.Row="4"
-                    Grid.Column="1"
-                    VerticalOptions="Center"
-                    Text= "{Binding DescontoServicoPorcentagem, Converter={StaticResource percentualConverter}}"
-                    FontSize="Large"
-                    Keyboard="Numeric"/>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label
+                        VerticalOptions="Center"
+                        Text="Quantidade vendida:"
+                        FontSize="Large"/>
+                    <Entry
+                        Grid.Column="1"
+                        VerticalOptions="Center"
+                        Text= "{Binding servicoSelecionadoTemporario.QuantidadeVendida, Converter={StaticResource intConverter}}"
+                        FontSize="Large"/>
+
+                    <Label
+                        Grid.Row="1"
+                        VerticalOptions="Center"
+                        Text="Desconto serviços:"
+                        FontSize="Large"/>
+                    <Entry
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        VerticalOptions="Center"
+                        Text= "{Binding DescontoServico, Converter={StaticResource decimalConverter}}"
+                        FontSize="Large"
+                        Keyboard="Numeric"/>
+
+                    <Label
+                        Grid.Row="2"
+                        VerticalOptions="Center"
+                        Text="Desconto serviços %:"
+                        FontSize="Large"/>
+                    <Entry
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        VerticalOptions="Center"
+                        Text= "{Binding DescontoServicoPorcentagem, Converter={StaticResource percentualConverter}}"
+                        FontSize="Large"
+                        Keyboard="Numeric"/>
+                </Grid>
             </Grid>
 
             <Grid
