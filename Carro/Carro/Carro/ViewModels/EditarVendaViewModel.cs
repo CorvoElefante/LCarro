@@ -236,6 +236,48 @@ namespace Carro.ViewModels
             }
         }
 
+        decimal _ValorTotalIndividual = 0m;
+        public decimal ValorTotalIndividual
+        {
+            get
+            {
+                return _ValorTotalIndividual;
+            }
+            set
+            {
+                _ValorTotalIndividual = value;
+                SetPropertyChanged(nameof(ValorTotalIndividual));
+            }
+        }
+
+        decimal _DescontoGeral = 0m;
+        public decimal DescontoGeral
+        {
+            get
+            {
+                return _DescontoGeral;
+            }
+            set
+            {
+                _DescontoGeral = value;
+                SetPropertyChanged(nameof(DescontoGeral));
+            }
+        }
+
+        decimal _DescontoGeralPorcentagem = 0m;
+        public decimal DescontoGeralPorcentagem
+        {
+            get
+            {
+                return _DescontoGeralPorcentagem;
+            }
+            set
+            {
+                _DescontoGeralPorcentagem = value;
+                SetPropertyChanged(nameof(DescontoGeralPorcentagem));
+            }
+        }
+
         decimal _DescontoProduto = 0m;
         public decimal DescontoProduto
         {
@@ -297,6 +339,109 @@ namespace Carro.ViewModels
                 SetPropertyChanged(nameof(DescontoServicoPorcentagem));
                 _DescontoServico = AtualizaDescontoValorServico();
                 SetPropertyChanged(nameof(DescontoServico));
+            }
+        }
+
+        int _Pagamento = 0;
+        public int Pagamento
+        {
+            get
+            {
+                return _Pagamento;
+            }
+            set
+            {
+                _Pagamento = value;
+                SetPropertyChanged(nameof(Pagamento));
+                //0 = Selecione a forma de pagamento (Invalido)
+                //1 = A vista
+                //2 = A prazo
+
+            }
+        }
+
+        bool _PagamentoInvalido = true;
+        public bool PagamentoInvalido
+        {
+            get
+            {
+                return _PagamentoInvalido;
+            }
+            set
+            {
+                _PagamentoInvalido = value;
+                SetPropertyChanged(nameof(PagamentoInvalido));
+            }
+        }
+
+        int _Parcela = 0;
+        public int Parcela
+        {
+            get
+            {
+                return _Parcela;
+            }
+            set
+            {
+                _Parcela = value;
+                SetPropertyChanged(nameof(Parcela));
+                //0 = Selecione o numero de parcelas (Invalido)
+                //1 = 1x
+                //2 = 2x
+                //3 = 3x
+                //4 = 4x
+                //5 = 5x
+                //6 = 6x
+                //9 = 9x
+                //12 = 12x
+            }
+        }
+
+        bool _ParcelaInvalido = true;
+        public bool ParcelaInvalido
+        {
+            get
+            {
+                return _ParcelaInvalido;
+            }
+            set
+            {
+                _ParcelaInvalido = value;
+                SetPropertyChanged(nameof(ParcelaInvalido));
+            }
+        }
+
+        int _Entrada = 0;
+        public int Entrada
+        {
+            get
+            {
+                return _Entrada;
+            }
+            set
+            {
+                _Entrada = value;
+                SetPropertyChanged(nameof(Entrada));
+                //0 = Selecione a entrada (Invalido)
+                //1 = A vista
+                //2 = 30 dias
+                //3 = 60 dias
+                //4 = 90 dias
+
+            }
+        }
+
+        bool _EntradaInvalido = true;
+        public bool EntradaInvalido
+        {
+            get
+            {
+                return _EntradaInvalido;
+            }
+            set
+            {
+                _EntradaInvalido = value;
+                SetPropertyChanged(nameof(EntradaInvalido));
             }
         }
 
@@ -420,13 +565,13 @@ namespace Carro.ViewModels
             ValorTotal = ValorTotalProdutos + ValorTotalServicos;
         }
 
-        Command _CadastroVendaVoltaCommand;
-        public Command CadastroVendaVoltaCommand
+        Command _EditarVendaVoltaCommand;
+        public Command EditarVendaVoltaCommand
         {
-            get { return _CadastroVendaVoltaCommand ?? (_CadastroVendaVoltaCommand = new Command(async () => await ExecuteCadastroVendaVoltaCommand())); }
+            get { return _EditarVendaVoltaCommand ?? (_EditarVendaVoltaCommand = new Command(async () => await ExecuteEditarVendaVoltaCommand())); }
         }
 
-        async Task ExecuteCadastroVendaVoltaCommand()
+        async Task ExecuteEditarVendaVoltaCommand()
         {
             if (!IsBusy)
             {
@@ -436,13 +581,13 @@ namespace Carro.ViewModels
             }
         }
 
-        Command _CadastroVendaProdutoCommand;
-        public Command CadastroVendaProdutoCommand
+        Command _EditarVendaProdutoCommand;
+        public Command EditarVendaProdutoCommand
         {
-            get { return _CadastroVendaProdutoCommand ?? (_CadastroVendaProdutoCommand = new Command(async () => await ExecuteCadastroVendaProdutoCommand())); }
+            get { return _EditarVendaProdutoCommand ?? (_EditarVendaProdutoCommand = new Command(async () => await ExecuteEditarVendaProdutoCommand())); }
         }
 
-        async Task ExecuteCadastroVendaProdutoCommand()
+        async Task ExecuteEditarVendaProdutoCommand()
         {
             if (!IsBusy)
             {
@@ -452,13 +597,13 @@ namespace Carro.ViewModels
             }
         }
 
-        Command _CadastroVendaServicoCommand;
-        public Command CadastroVendaServicoCommand
+        Command _EditarVendaServicoCommand;
+        public Command EditarVendaServicoCommand
         {
-            get { return _CadastroVendaServicoCommand ?? (_CadastroVendaServicoCommand = new Command(async () => await ExecuteCadastroVendaServicoCommand())); }
+            get { return _EditarVendaServicoCommand ?? (_EditarVendaServicoCommand = new Command(async () => await ExecuteEditarVendaServicoCommand())); }
         }
 
-        async Task ExecuteCadastroVendaServicoCommand()
+        async Task ExecuteEditarVendaServicoCommand()
         {
             if (!IsBusy)
             {
@@ -468,13 +613,13 @@ namespace Carro.ViewModels
             }
         }
 
-        Command _CadastroVendaConclusaoCommand;
-        public Command CadastroVendaConclusaoCommand
+        Command _EditarVendaConclusaoCommand;
+        public Command EditarVendaConclusaoCommand
         {
-            get { return _CadastroVendaConclusaoCommand ?? (_CadastroVendaConclusaoCommand = new Command(async () => await ExecuteCadastroVendaConclusaoCommand())); }
+            get { return _EditarVendaConclusaoCommand ?? (_EditarVendaConclusaoCommand = new Command(async () => await ExecuteEditarVendaConclusaoCommand())); }
         }
 
-        async Task ExecuteCadastroVendaConclusaoCommand()
+        async Task ExecuteEditarVendaConclusaoCommand()
         {
             if (!IsBusy)
             {
@@ -516,7 +661,7 @@ namespace Carro.ViewModels
                             }
                         }
 
-                        service.SaveOrdemVenda(new OrdemVenda { Id = idEntry, eVenda = false, IdCliente = pessoaSelecionada.Id, Pessoa = pessoaSelecionada, PrazoInicial = 0, NumeroParcelas = 0, Valor = ValorTotal, Registro = data, FuncionarioServicos = FuncionariosSelecionados.ToList<FuncionarioServico>(), OrdemVendaProdutos = ProdutosSelecionados.ToList<OrdemVendaProduto>(), OrdemVendaServicos = ServicosSelecionados.ToList<OrdemVendaServico>() });
+                        service.SaveOrdemVenda(new OrdemVenda { eVenda = false, IdCliente = pessoaSelecionada.Id, Pessoa = pessoaSelecionada, PrazoInicial = 0, NumeroParcelas = 0, Valor = ValorTotal, Registro = data, FuncionarioServicos = FuncionariosSelecionados.ToList<FuncionarioServico>(), OrdemVendaProdutos = ProdutosSelecionados.ToList<OrdemVendaProduto>(), OrdemVendaServicos = ServicosSelecionados.ToList<OrdemVendaServico>() });
 
                         scope.Complete();
                     }
