@@ -12,33 +12,13 @@ using System.Linq;
 
 namespace Carro.ViewModels
 {
-    public class EditarVendaViewModel : BaseViewModel
+    public class CadastroFinalVendaViewModel : BaseViewModel
     {
-        public EditarVendaViewModel(INavigation navigation, OrdemVenda value) : base(navigation)
+        public CadastroFinalVendaViewModel(INavigation navigation) : base(navigation)
         {
-            idEntry = value.Id;
-            pessoaSelecionada = value.Pessoa;
-            FuncionariosSelecionados = new ObservableCollection<FuncionarioServico>(value.FuncionarioServicos);
-            ProdutosSelecionados = new ObservableCollection<OrdemVendaProduto>(value.OrdemVendaProdutos);
-            ServicosSelecionados = new ObservableCollection<OrdemVendaServico>(value.OrdemVendaServicos);
-            ValorTotal = value.Valor;    
         }
 
         #region Propriedades
-
-        long? _idEntry = 0;
-        public long? idEntry
-        {
-            get
-            {
-                return _idEntry;
-            }
-            set
-            {
-                _idEntry = value;
-                SetPropertyChanged(nameof(idEntry));
-            }
-        }
 
         ObservableCollection<Pessoa> _Pessoas = new ObservableCollection<Pessoa>();
         public ObservableCollection<Pessoa> Pessoas
@@ -420,77 +400,62 @@ namespace Carro.ViewModels
             ValorTotal = ValorTotalProdutos + ValorTotalServicos;
         }
 
-        Command _CadastroVendaVoltaCommand;
-        public Command CadastroVendaVoltaCommand
+
+        Command _CadastroFinalVendaProdutoCommand;
+        public Command CadastroFinalVendaProdutoCommand
         {
-            get { return _CadastroVendaVoltaCommand ?? (_CadastroVendaVoltaCommand = new Command(async () => await ExecuteCadastroVendaVoltaCommand())); }
+            get { return _CadastroFinalVendaProdutoCommand ?? (_CadastroFinalVendaProdutoCommand = new Command(async () => await ExecuteCadastroFinalVendaProdutoCommand())); }
         }
 
-        async Task ExecuteCadastroVendaVoltaCommand()
-        {
-            if (!IsBusy)
-            {
-                IsBusy = true;
-                await Navigation.PopAsync();
-                IsBusy = false;
-            }
-        }
-
-        Command _CadastroVendaProdutoCommand;
-        public Command CadastroVendaProdutoCommand
-        {
-            get { return _CadastroVendaProdutoCommand ?? (_CadastroVendaProdutoCommand = new Command(async () => await ExecuteCadastroVendaProdutoCommand())); }
-        }
-
-        async Task ExecuteCadastroVendaProdutoCommand()
+        async Task ExecuteCadastroFinalVendaProdutoCommand()
         {
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new EditarVendaProdutoPage(this));
+                await Navigation.PushAsync(new CadastroFinalVendaProdutoPage(this));
                 IsBusy = false;
             }
         }
 
-        Command _CadastroVendaServicoCommand;
-        public Command CadastroVendaServicoCommand
+        Command _CadastroFinalVendaServicoCommand;
+        public Command CadastroFinalVendaServicoCommand
         {
-            get { return _CadastroVendaServicoCommand ?? (_CadastroVendaServicoCommand = new Command(async () => await ExecuteCadastroVendaServicoCommand())); }
+            get { return _CadastroFinalVendaServicoCommand ?? (_CadastroFinalVendaServicoCommand = new Command(async () => await ExecuteCadastroFinalVendaServicoCommand())); }
         }
 
-        async Task ExecuteCadastroVendaServicoCommand()
+        async Task ExecuteCadastroFinalVendaServicoCommand()
         {
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new EditarVendaServicoPage(this));
+                await Navigation.PushAsync(new CadastroFinalVendaServicoPage(this));
                 IsBusy = false;
             }
         }
 
-        Command _CadastroVendaConclusaoCommand;
-        public Command CadastroVendaConclusaoCommand
+        Command _CadastroFinalVendaConclusaoCommand;
+        public Command CadastroFinalVendaConclusaoCommand
         {
-            get { return _CadastroVendaConclusaoCommand ?? (_CadastroVendaConclusaoCommand = new Command(async () => await ExecuteCadastroVendaConclusaoCommand())); }
+            get { return _CadastroFinalVendaConclusaoCommand ?? (_CadastroFinalVendaConclusaoCommand = new Command(async () => await ExecuteCadastroFinalVendaConclusaoCommand())); }
         }
 
-        async Task ExecuteCadastroVendaConclusaoCommand()
+        async Task ExecuteCadastroFinalVendaConclusaoCommand()
         {
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new EditarVendaConclusaoPage(this));
+                await Navigation.PushAsync(new CadastroFinalVendaConclusaoPage(this));
                 IsBusy = false;
             }
         }
 
-        Command _SalvarPreVendaCommand;
-        public Command SalvarPreVendaCommand
+        Command _SalvarFinalVendaCommand;
+        public Command SalvarFinalVendaCommand
         {
-            get { return _SalvarPreVendaCommand ?? (_SalvarPreVendaCommand = new Command(async () => await ExecuteSalvarPreVendaCommand())); }
+            get { return _SalvarFinalVendaCommand ?? (_SalvarFinalVendaCommand = new Command(async () => await ExecuteSalvarFinalVendaCommand())); }
         }
 
-        async Task ExecuteSalvarPreVendaCommand()
+        async Task ExecuteSalvarFinalVendaCommand()
         {
             if (!IsBusy)
             {
@@ -516,7 +481,7 @@ namespace Carro.ViewModels
                             }
                         }
 
-                        service.SaveOrdemVenda(new OrdemVenda { Id = idEntry, eVenda = false, IdCliente = pessoaSelecionada.Id, Pessoa = pessoaSelecionada, PrazoInicial = 0, NumeroParcelas = 0, Valor = ValorTotal, Registro = data, FuncionarioServicos = FuncionariosSelecionados.ToList<FuncionarioServico>(), OrdemVendaProdutos = ProdutosSelecionados.ToList<OrdemVendaProduto>(), OrdemVendaServicos = ServicosSelecionados.ToList<OrdemVendaServico>() });
+                        service.SaveOrdemVenda(new OrdemVenda { eVenda = true, IdCliente = pessoaSelecionada.Id, Pessoa = pessoaSelecionada, PrazoInicial = 0, NumeroParcelas = 0, Valor = ValorTotal, Registro = data, FuncionarioServicos = FuncionariosSelecionados.ToList<FuncionarioServico>(), OrdemVendaProdutos = ProdutosSelecionados.ToList<OrdemVendaProduto>(), OrdemVendaServicos = ServicosSelecionados.ToList<OrdemVendaServico>() });
 
                         scope.Complete();
                     }
@@ -537,7 +502,7 @@ namespace Carro.ViewModels
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new EditarVendaClienteListaPage(this));
+                await Navigation.PushAsync(new CadastroFinalVendaClienteListaPage(this));
                 IsBusy = false;
             }
         }
@@ -553,7 +518,7 @@ namespace Carro.ViewModels
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new EditarVendaFuncionarioListaPage(this));
+                await Navigation.PushAsync(new CadastroFinalVendaFuncionarioListaPage(this));
                 IsBusy = false;
             }
         }
@@ -569,7 +534,7 @@ namespace Carro.ViewModels
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new EditarVendaProdutoListaPage(this));
+                await Navigation.PushAsync(new CadastroFinalVendaProdutoListaPage(this));
                 IsBusy = false;
             }
         }
@@ -585,7 +550,7 @@ namespace Carro.ViewModels
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new EditarVendaServicoListaPage(this));
+                await Navigation.PushAsync(new CadastroFinalVendaServicoListaPage(this));
                 IsBusy = false;
             }
         }
@@ -663,7 +628,7 @@ namespace Carro.ViewModels
                 produtoSelecionadoTemporario.Valor = value.Preco;
                 produtoSelecionadoTemporario.Descricao = value.Descricao;
                 await Navigation.PopAsync();
-                await Navigation.PushAsync(new EditarVendaProdutoQuantidadePage(this));
+                await Navigation.PushAsync(new CadastroFinalVendaProdutoQuantidadePage(this));
                 IsBusy = false;
             }
         }
@@ -704,7 +669,7 @@ namespace Carro.ViewModels
                 servicoSelecionadoTemporario.Valor = value.Preco;
                 servicoSelecionadoTemporario.Descricao = value.Descricao;
                 await Navigation.PopAsync();
-                await Navigation.PushAsync(new EditarVendaServicoQuantidadePage(this));
+                await Navigation.PushAsync(new CadastroFinalVendaServicoQuantidadePage(this));
                 IsBusy = false;
             }
         }
@@ -752,13 +717,13 @@ namespace Carro.ViewModels
             }
         }
 
-        Command _SalvaVendaServicoQuantidadeCommand;
-        public Command SalvaVendaServicoQuantidadeCommand
+        Command _SalvaFinalVendaServicoQuantidadeCommand;
+        public Command SalvaFinalVendaServicoQuantidadeCommand
         {
-            get { return _SalvaVendaServicoQuantidadeCommand ?? (_SalvaVendaServicoQuantidadeCommand = new Command(async () => await ExecuteSalvaVendaServicoQuantidadeCommand())); }
+            get { return _SalvaFinalVendaServicoQuantidadeCommand ?? (_SalvaFinalVendaServicoQuantidadeCommand = new Command(async () => await ExecuteSalvaFinalVendaServicoQuantidadeCommand())); }
         }
 
-        async Task ExecuteSalvaVendaServicoQuantidadeCommand()
+        async Task ExecuteSalvaFinalVendaServicoQuantidadeCommand()
         {
             if (!IsBusy)
             {
@@ -778,162 +743,162 @@ namespace Carro.ViewModels
 
         #region HelpCommand
 
-        Command _EditarVendaClienteFuncionarioHelpCommand;
-        public Command EditarVendaClienteFuncionarioHelpCommand
+        Command _CadastroFinalVendaClienteFuncionarioHelpCommand;
+        public Command CadastroFinalVendaClienteFuncionarioHelpCommand
         {
-            get { return _EditarVendaClienteFuncionarioHelpCommand ?? (_EditarVendaClienteFuncionarioHelpCommand = new Command(async () => await ExecuteEditarVendaClienteFuncionarioHelpCommand())); }
+            get { return _CadastroFinalVendaClienteFuncionarioHelpCommand ?? (_CadastroFinalVendaClienteFuncionarioHelpCommand = new Command(async () => await ExecuteCadastroFinalVendaClienteFuncionarioHelpCommand())); }
         }
 
-        async Task ExecuteEditarVendaClienteFuncionarioHelpCommand()
+        async Task ExecuteCadastroFinalVendaClienteFuncionarioHelpCommand()
         {
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new EditarVendaClienteFuncionarioHelpPage());
+                await Navigation.PushAsync(new CadastroFinalVendaClienteFuncionarioHelpPage());
                 IsBusy = false;
             }
         }
 
-        Command _EditarVendaClienteListaHelpCommand;
-        public Command EditarVendaClienteListaHelpCommand
+        Command _CadastroFinalVendaClienteListaHelpCommand;
+        public Command CadastroFinalVendaClienteListaHelpCommand
         {
-            get { return _EditarVendaClienteListaHelpCommand ?? (_EditarVendaClienteListaHelpCommand = new Command(async () => await ExecuteEditarVendaClienteListaHelpCommand())); }
+            get { return _CadastroFinalVendaClienteListaHelpCommand ?? (_CadastroFinalVendaClienteListaHelpCommand = new Command(async () => await ExecuteCadastroFinalVendaClienteListaHelpCommand())); }
         }
 
-        async Task ExecuteEditarVendaClienteListaHelpCommand()
+        async Task ExecuteCadastroFinalVendaClienteListaHelpCommand()
         {
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new EditarVendaClienteListaHelpPage());
+                await Navigation.PushAsync(new CadastroFinalVendaClienteListaHelpPage());
                 IsBusy = false;
             }
         }
 
-        Command _EditarVendaConclusaoHelpCommand;
-        public Command EditarVendaConclusaoHelpCommand
+        Command _CadastroFinalVendaConclusaoHelpCommand;
+        public Command CadastroFinalVendaConclusaoHelpCommand
         {
-            get { return _EditarVendaConclusaoHelpCommand ?? (_EditarVendaConclusaoHelpCommand = new Command(async () => await ExecuteEditarVendaConclusaoHelpCommand())); }
+            get { return _CadastroFinalVendaConclusaoHelpCommand ?? (_CadastroFinalVendaConclusaoHelpCommand = new Command(async () => await ExecuteCadastroFinalVendaConclusaoHelpCommand())); }
         }
 
-        async Task ExecuteEditarVendaConclusaoHelpCommand()
+        async Task ExecuteCadastroFinalVendaConclusaoHelpCommand()
         {
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new EditarVendaConclusaoHelpPage());
+                await Navigation.PushAsync(new CadastroFinalVendaConclusaoHelpPage());
                 IsBusy = false;
             }
         }
 
-        Command _EditarVendaFuncionarioListaHelpCommand;
-        public Command EditarVendaFuncionarioListaHelpCommand
+        Command _CadastroFinalVendaFuncionarioListaHelpCommand;
+        public Command CadastroFinalVendaFuncionarioListaHelpCommand
         {
-            get { return _EditarVendaFuncionarioListaHelpCommand ?? (_EditarVendaFuncionarioListaHelpCommand = new Command(async () => await ExecuteEditarVendaFuncionarioListaHelpCommand())); }
+            get { return _CadastroFinalVendaFuncionarioListaHelpCommand ?? (_CadastroFinalVendaFuncionarioListaHelpCommand = new Command(async () => await ExecuteCadastroFinalVendaFuncionarioListaHelpCommand())); }
         }
 
-        async Task ExecuteEditarVendaFuncionarioListaHelpCommand()
+        async Task ExecuteCadastroFinalVendaFuncionarioListaHelpCommand()
         {
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new EditarVendaFuncionarioListaHelpPage());
+                await Navigation.PushAsync(new CadastroFinalVendaFuncionarioListaHelpPage());
                 IsBusy = false;
             }
         }
 
-        Command _EditarVendaProdutoHelpCommand;
-        public Command EditarVendaProdutoHelpCommand
+        Command _CadastroFinalVendaProdutoHelpCommand;
+        public Command CadastroFinalVendaProdutoHelpCommand
         {
-            get { return _EditarVendaProdutoHelpCommand ?? (_EditarVendaProdutoHelpCommand = new Command(async () => await ExecuteEditarVendaProdutoHelpCommand())); }
+            get { return _CadastroFinalVendaProdutoHelpCommand ?? (_CadastroFinalVendaProdutoHelpCommand = new Command(async () => await ExecuteCadastroFinalVendaProdutoHelpCommand())); }
         }
 
-        async Task ExecuteEditarVendaProdutoHelpCommand()
+        async Task ExecuteCadastroFinalVendaProdutoHelpCommand()
         {
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new EditarVendaProdutoHelpPage());
+                await Navigation.PushAsync(new CadastroFinalVendaProdutoHelpPage());
                 IsBusy = false;
             }
         }
 
-        Command _EditarVendaProdutoListaHelpCommand;
-        public Command EditarVendaProdutoListaHelpCommand
+        Command _CadastroFinalVendaProdutoListaHelpCommand;
+        public Command CadastroFinalVendaProdutoListaHelpCommand
         {
-            get { return _EditarVendaProdutoListaHelpCommand ?? (_EditarVendaProdutoListaHelpCommand = new Command(async () => await ExecuteEditarVendaProdutoListaHelpCommand())); }
+            get { return _CadastroFinalVendaProdutoListaHelpCommand ?? (_CadastroFinalVendaProdutoListaHelpCommand = new Command(async () => await ExecuteCadastroFinalVendaProdutoListaHelpCommand())); }
         }
 
-        async Task ExecuteEditarVendaProdutoListaHelpCommand()
+        async Task ExecuteCadastroFinalVendaProdutoListaHelpCommand()
         {
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new EditarVendaProdutoListaHelpPage());
+                await Navigation.PushAsync(new CadastroFinalVendaProdutoListaHelpPage());
                 IsBusy = false;
             }
         }
 
-        Command _EditarVendaProdutoQuantidadeHelpCommand;
-        public Command EditarVendaProdutoQuantidadeHelpCommand
+        Command _CadastroFinalVendaProdutoQuantidadeHelpCommand;
+        public Command CadastroFinalVendaProdutoQuantidadeHelpCommand
         {
-            get { return _EditarVendaProdutoQuantidadeHelpCommand ?? (_EditarVendaProdutoQuantidadeHelpCommand = new Command(async () => await ExecuteEditarVendaProdutoQuantidadeHelpCommand())); }
+            get { return _CadastroFinalVendaProdutoQuantidadeHelpCommand ?? (_CadastroFinalVendaProdutoQuantidadeHelpCommand = new Command(async () => await ExecuteCadastroFinalVendaProdutoQuantidadeHelpCommand())); }
         }
 
-        async Task ExecuteEditarVendaProdutoQuantidadeHelpCommand()
+        async Task ExecuteCadastroFinalVendaProdutoQuantidadeHelpCommand()
         {
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new EditarVendaProdutoQuantidadeHelpPage());
+                await Navigation.PushAsync(new CadastroFinalVendaProdutoQuantidadeHelpPage());
                 IsBusy = false;
             }
         }
 
-        Command _EditarVendaServicoHelpCommand;
-        public Command EditarVendaServicoHelpCommand
+        Command _CadastroFinalVendaServicoHelpCommand;
+        public Command CadastroFinalVendaServicoHelpCommand
         {
-            get { return _EditarVendaServicoHelpCommand ?? (_EditarVendaServicoHelpCommand = new Command(async () => await ExecuteEditarVendaServicoHelpCommand())); }
+            get { return _CadastroFinalVendaServicoHelpCommand ?? (_CadastroFinalVendaServicoHelpCommand = new Command(async () => await ExecuteCadastroFinalVendaServicoHelpCommand())); }
         }
 
-        async Task ExecuteEditarVendaServicoHelpCommand()
+        async Task ExecuteCadastroFinalVendaServicoHelpCommand()
         {
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new EditarVendaServicoHelpPage());
+                await Navigation.PushAsync(new CadastroFinalVendaServicoHelpPage());
                 IsBusy = false;
             }
         }
 
-        Command _EditarVendaServicoListaHelpCommand;
-        public Command EditarVendaServicoListaHelpCommand
+        Command _CadastroFinalVendaServicoListaHelpCommand;
+        public Command CadastroFinalVendaServicoListaHelpCommand
         {
-            get { return _EditarVendaServicoListaHelpCommand ?? (_EditarVendaServicoListaHelpCommand = new Command(async () => await ExecuteEditarVendaServicoListaHelpCommand())); }
+            get { return _CadastroFinalVendaServicoListaHelpCommand ?? (_CadastroFinalVendaServicoListaHelpCommand = new Command(async () => await ExecuteCadastroFinalVendaServicoListaHelpCommand())); }
         }
 
-        async Task ExecuteEditarVendaServicoListaHelpCommand()
+        async Task ExecuteCadastroFinalVendaServicoListaHelpCommand()
         {
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new EditarVendaServicoListaHelpPage());
+                await Navigation.PushAsync(new CadastroFinalVendaServicoListaHelpPage());
                 IsBusy = false;
             }
         }
 
-        Command _EditarVendaServicoQuantidadeHelpCommand;
-        public Command EditarVendaServicoQuantidadeHelpCommand
+        Command _CadastroFinalVendaServicoQuantidadeHelpCommand;
+        public Command CadastroFinalVendaServicoQuantidadeHelpCommand
         {
-            get { return _EditarVendaServicoQuantidadeHelpCommand ?? (_EditarVendaServicoQuantidadeHelpCommand = new Command(async () => await ExecuteEditarVendaServicoQuantidadeHelpCommand())); }
+            get { return _CadastroFinalVendaServicoQuantidadeHelpCommand ?? (_CadastroFinalVendaServicoQuantidadeHelpCommand = new Command(async () => await ExecuteCadastroFinalVendaServicoQuantidadeHelpCommand())); }
         }
 
-        async Task ExecuteEditarVendaServicoQuantidadeHelpCommand()
+        async Task ExecuteCadastroFinalVendaServicoQuantidadeHelpCommand()
         {
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new EditarVendaServicoQuantidadeHelpPage());
+                await Navigation.PushAsync(new CadastroFinalVendaServicoQuantidadeHelpPage());
                 IsBusy = false;
             }
         }

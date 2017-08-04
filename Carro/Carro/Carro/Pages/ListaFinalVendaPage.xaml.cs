@@ -5,11 +5,11 @@ using Carro.ViewModels;
 
 namespace Carro.Pages
 {
-    public partial class ListaVendaPage : ContentPage
+    public partial class ListaFinalVendaPage : ContentPage
     {
-        public ListaVendaPage()
+        public ListaFinalVendaPage()
         {
-            BindingContext = new ListaVendaViewModel(Navigation);
+            BindingContext = new ListaFinalVendaViewModel(Navigation);
             InitializeComponent();
         }
 
@@ -21,9 +21,9 @@ namespace Carro.Pages
             }
             ((ListView)sender).SelectedItem = null; // de-select the row
 
-            if (((ListaVendaViewModel)BindingContext).EditarVendaCommand.CanExecute(null))
+            if (((ListaFinalVendaViewModel)BindingContext).EditarFinalVendaCommand.CanExecute(null))
             {
-                ((ListaVendaViewModel)BindingContext).EditarVendaCommand.Execute(((ListView)sender).SelectedItem);
+                ((ListaFinalVendaViewModel)BindingContext).EditarFinalVendaCommand.Execute(((ListView)sender).SelectedItem);
             }
             ((ListView)sender).SelectedItem = null; // de-select the row
         }
