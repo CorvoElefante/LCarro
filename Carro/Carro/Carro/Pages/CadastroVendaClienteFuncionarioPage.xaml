@@ -4,7 +4,7 @@
              xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
              x:Class="Carro.Pages.CadastroVendaClienteFuncionarioPage"
              BackgroundColor="#FFFFF7"
-             Title="Nova Venda - Cliente">
+             Title="Nova Pré-Venda - Cliente">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem

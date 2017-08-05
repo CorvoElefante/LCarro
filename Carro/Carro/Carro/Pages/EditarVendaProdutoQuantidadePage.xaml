@@ -1,10 +1,191 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Carro.Pages.EditarVendaProdutoQuantidadePage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin Forms!" />
-        </StackLayout>
-    </ContentPage.Content>
+             xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
+             x:Class="Carro.Pages.EditarVendaProdutoQuantidadePage"
+             BackgroundColor="#FFFFF7"
+             Title="Quantidade - Produto">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Icon="ic_Cadastro_PreVenda_Small"
+            Command="{Binding CadastroVendaProdutoQuantidadeHelpCommand}"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <resources:IntConverter x:Key="intConverter" />
+            <resources:DecimalConverter x:Key="decimalConverter" />
+            <resources:PercentualConverter x:Key="percentualConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <Grid
+            Padding="0,30,0,0"
+            RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="75"/>
+            </Grid.RowDefinitions>
+
+            <Grid
+                Padding="30,0,30,0"
+                RowSpacing="15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Label 
+                        Text="{Binding produtoSelecionadoTemporario.Nome}"
+                        FontSize="Large"
+                        FontAttributes="Bold"/>
+                    <Label
+                        Grid.Row="1"
+                        Text="{Binding produtoSelecionadoTemporario.Valor, Converter={StaticResource decimalConverter}}"
+                        FontSize="Medium"/>
+                </Grid>
+
+                <Grid
+                    Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label
+                        Grid.Row="1"
+                        Text="Quantidade atual em estoque:"
+                        FontSize="Large"/>
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        VerticalOptions="Center"
+                        HorizontalOptions="End"
+                        Text="{Binding produtoSelecionadoTemporario.Quantidade}"
+                        FontSize="Large"/>
+                </Grid>
+
+                <Grid
+                    Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label
+                        VerticalOptions="Center"
+                        Text="Quantidade vendida:"
+                        FontSize="Large"/>
+                    <Entry
+                        Grid.Column="1"
+                        VerticalOptions="Center"
+                        Text= "{Binding produtoSelecionadoTemporario.QuantidadeVendida, Converter={StaticResource intConverter}}"
+                        FontSize="Large"
+                        Keyboard="Numeric"/>
+
+                    <Label
+                        Grid.Row="1"
+                        VerticalOptions="Center"
+                        Text="Desconto produtos:"
+                        FontSize="Large"/>
+                    <Entry
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        VerticalOptions="Center"
+                        Text= "{Binding DescontoProduto, Converter={StaticResource decimalConverter}}"
+                        FontSize="Large"
+                        Keyboard="Numeric"/>
+
+                    <Label
+                        Grid.Row="2"
+                        VerticalOptions="Center"
+                        Text="Desconto produtos %:"
+                        FontSize="Large"/>
+                    <Entry
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        VerticalOptions="Center"
+                        Text= "{Binding DescontoProdutoPorcentagem, Converter={StaticResource percentualConverter}}"
+                        FontSize="Large"
+                        Keyboard="Numeric"/>
+                </Grid>
+            </Grid>
+
+            <Grid
+                Grid.Row="1"
+                Padding="0,5,0,5"
+                VerticalOptions="End"
+                BackgroundColor="Transparent"
+                ColumnSpacing="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    BackgroundColor="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Image
+                        Grid.Column="1"
+                        Source="ic_Salvar_Large"
+                        IsOpaque="True"
+                        Aspect="AspectFit"/>
+                    <Label
+                        HorizontalOptions="End"
+                        VerticalOptions="Center"
+                        Text="Salvar"
+                        TextColor="#444444"
+                        FontSize="Large"/>
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer
+                        Command="{Binding SalvaVendaProdutoQuantidadeCommand}"/>
+                    </Grid.GestureRecognizers>
+                </Grid>
+
+                <Grid
+                    Grid.Column="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    BackgroundColor="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image
+                        Source="ic_Deletar_Large"
+                        IsOpaque="True"
+                        Aspect="AspectFit"/>
+                    <Label
+                        Grid.Column="1"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Center"
+                        Text="Voltar"
+                        TextColor="#444444"
+                        FontSize="Large"/>
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer
+                        Command="{Binding VoltaCommand}"/>
+                    </Grid.GestureRecognizers>
+                </Grid>
+            </Grid>
+        </Grid>
+    </ScrollView>
 </ContentPage>

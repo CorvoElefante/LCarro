@@ -1,10 +1,155 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Carro.Pages.EditarVendaServicoPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin Forms!" />
-        </StackLayout>
-    </ContentPage.Content>
+             xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
+             x:Class="Carro.Pages.EditarVendaServicoPage"
+             BackgroundColor="#FFFFF7"
+             Title="Nova Venda - Serviços">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Icon="ic_Editar_PreVenda_Small"
+            Command="{Binding EditarVendaServicoHelpCommand}"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <resources:DecimalConverter x:Key="decimalConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid
+        Padding="0,30,0,0"
+        RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="75"/>
+        </Grid.RowDefinitions>
+
+        <Label
+            HorizontalOptions="CenterAndExpand"
+            Text="Adicionar Servico">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer
+                    Command="{Binding ListaServicoCommand}"/>
+            </Label.GestureRecognizers>
+        </Label>
+
+        <ListView
+            Grid.Row="1"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            HasUnevenRows="true"
+            SeparatorVisibility="None"
+            ItemsSource="{Binding ServicosSelecionados}"
+            ItemTapped="Handle_ItemTapped">
+
+            <x:Arguments>
+                <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
+            </x:Arguments>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem 
+                                Clicked="OnDelete" 
+                                CommandParameter="{Binding .}" 
+                                Text="Delete" 
+                                IsDestructive="True" />
+                        </ViewCell.ContextActions>
+
+                        <Grid
+                            Margin="4"
+                            ColumnSpacing="20"
+                            BackgroundColor="Transparent">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Label 
+                                HorizontalOptions="StartAndExpand"
+							    FontAttributes="Bold"
+							    FontSize="Large"
+							    Text="{Binding Nome}"/>
+                            <Label 
+                                Grid.Column="1"
+							    Text="{Binding Preco, Converter={StaticResource decimalConverter}}"/>
+                            <Label 
+                                Grid.Row="1" 
+                                Grid.Column="1"
+                                HorizontalOptions="EndAndExpand"
+							    Text="{Binding Tempo}"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Grid
+            Grid.Row="2"
+            Padding="0,5,0,5"
+            VerticalOptions="End"
+            BackgroundColor="Transparent">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                BackgroundColor="Transparent">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Image
+                    Grid.Column="1"
+                    Source="ic_Salvar_Large"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+                <Label
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+                    Text="Salvar"
+                    TextColor="#444444"
+                    FontSize="Large"/>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding EditarVendaConclusaoCommand}"/>
+                </Grid.GestureRecognizers>
+            </Grid>
+
+            <Grid
+                Grid.Column="1"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                BackgroundColor="Transparent">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image
+                    Source="ic_Deletar_Large"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+                <Label
+                    Grid.Column="1"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    Text="Voltar"
+                    TextColor="#444444"
+                    FontSize="Large"/>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding VoltaCommand}"/>
+                </Grid.GestureRecognizers>
+            </Grid>
+        </Grid>
+    </Grid>
 </ContentPage>

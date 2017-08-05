@@ -1,10 +1,77 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Carro.Pages.EditarVendaClienteListaPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin Forms!" />
-        </StackLayout>
-    </ContentPage.Content>
+             xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
+             x:Class="Carro.Pages.EditarVendaClienteListaPage"
+             BackgroundColor="#FFFFF7"
+             Title="Clientes">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Icon="ic_Editar_PreVenda_Small"
+            Command="{Binding EditarVendaClienteListaHelpCommand}"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <resources:DecimalConverter x:Key="decimalConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ListView
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="FillAndExpand"
+        HasUnevenRows="true"
+        SeparatorVisibility="None"
+        Header="{Binding .}"
+        ItemsSource="{Binding Pessoas}"
+        ItemTapped="Handle_ItemTapped">
+
+        <x:Arguments>
+            <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
+        </x:Arguments>
+
+        <ListView.HeaderTemplate>
+            <DataTemplate>
+                <SearchBar
+				HeightRequest="45"
+				Placeholder="Buscar"
+				Text="{Binding SearchPessoa}">
+                </SearchBar>
+            </DataTemplate>
+        </ListView.HeaderTemplate>
+
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid
+                        Margin="4"
+                        ColumnSpacing="20"
+                        BackgroundColor="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Label 
+                            HorizontalOptions="StartAndExpand"
+							FontAttributes="Bold"
+							FontSize="Large"
+							Text="{Binding Nome}"/>
+                        <Label 
+                            Grid.Row="1"
+							Text="{Binding Email}"/>
+                        <Label 
+                            Grid.Row="1" 
+                            Grid.Column="1"
+                            HorizontalOptions="EndAndExpand"
+							Text="{Binding Telefone}"/>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 </ContentPage>
