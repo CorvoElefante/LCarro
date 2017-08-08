@@ -732,13 +732,13 @@ namespace Carro.ViewModels
         }
 
 
-        Command _CadastroVendaProdutoCommand;
-        public Command CadastroVendaProdutoCommand
+        Command _EditarVendaProdutoCommand;
+        public Command EditarVendaProdutoCommand
         {
-            get { return _CadastroVendaProdutoCommand ?? (_CadastroVendaProdutoCommand = new Command(async () => await ExecuteCadastroVendaProdutoCommand())); }
+            get { return _EditarVendaProdutoCommand ?? (_EditarVendaProdutoCommand = new Command(async () => await ExecuteEditarVendaProdutoCommand())); }
         }
 
-        async Task ExecuteCadastroVendaProdutoCommand()
+        async Task ExecuteEditarVendaProdutoCommand()
         {
             if (!IsBusy)
             {
@@ -748,13 +748,13 @@ namespace Carro.ViewModels
             }
         }
 
-        Command _CadastroVendaServicoCommand;
-        public Command CadastroVendaServicoCommand
+        Command _EditarVendaServicoCommand;
+        public Command EditarVendaServicoCommand
         {
-            get { return _CadastroVendaServicoCommand ?? (_CadastroVendaServicoCommand = new Command(async () => await ExecuteCadastroVendaServicoCommand())); }
+            get { return _EditarVendaServicoCommand ?? (_EditarVendaServicoCommand = new Command(async () => await ExecuteEditarVendaServicoCommand())); }
         }
 
-        async Task ExecuteCadastroVendaServicoCommand()
+        async Task ExecuteEditarVendaServicoCommand()
         {
             if (!IsBusy)
             {
@@ -764,13 +764,13 @@ namespace Carro.ViewModels
             }
         }
 
-        Command _CadastroVendaConclusaoCommand;
-        public Command CadastroVendaConclusaoCommand
+        Command _EditarVendaConclusaoCommand;
+        public Command EditarVendaConclusaoCommand
         {
-            get { return _CadastroVendaConclusaoCommand ?? (_CadastroVendaConclusaoCommand = new Command(async () => await ExecuteCadastroVendaConclusaoCommand())); }
+            get { return _EditarVendaConclusaoCommand ?? (_EditarVendaConclusaoCommand = new Command(async () => await ExecuteEditarVendaConclusaoCommand())); }
         }
 
-        async Task ExecuteCadastroVendaConclusaoCommand()
+        async Task ExecuteEditarVendaConclusaoCommand()
         {
             if (!IsBusy)
             {

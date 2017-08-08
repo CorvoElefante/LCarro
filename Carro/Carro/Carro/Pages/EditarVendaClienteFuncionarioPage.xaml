@@ -103,7 +103,7 @@
                                 HorizontalOptions="StartAndExpand"
 							    FontAttributes="Bold"
 							    FontSize="Large"
-							    Text="{Binding Funcionario.Pessoa.Nome}"/>
+							    Text="{Binding OrdemVenda.Funcionario.Pessoa.Nome}"/>
                             <Label 
                                 Grid.Row="1"
 							    Text="{Binding Funcionario.Salario, Converter={StaticResource decimalConverter}}"/>
