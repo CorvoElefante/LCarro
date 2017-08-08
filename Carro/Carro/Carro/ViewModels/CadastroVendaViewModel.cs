@@ -216,6 +216,20 @@ namespace Carro.ViewModels
             }
         }
 
+        decimal _ValorTotalComDesconto = 0m;
+        public decimal ValorTotalComDesconto
+        {
+            get
+            {
+                return _ValorTotalComDesconto;
+            }
+            set
+            {
+                _ValorTotalComDesconto = value;
+                SetPropertyChanged(nameof(ValorTotalComDesconto));
+            }
+        }
+
         decimal _DescontoTotalIndividual = 0m;
         public decimal DescontoTotalIndividual
         {
@@ -241,6 +255,9 @@ namespace Carro.ViewModels
             {
                 _DescontoGeral = value;
                 SetPropertyChanged(nameof(DescontoGeral));
+                _DescontoGeralPorcentagem = AtualizaDescontoPorcentagemGeral();
+                SetPropertyChanged(nameof(DescontoGeralPorcentagem));
+                AtualizaValorTotalComDesconto();
             }
         }
 
@@ -255,6 +272,9 @@ namespace Carro.ViewModels
             {
                 _DescontoGeralPorcentagem = value;
                 SetPropertyChanged(nameof(DescontoGeralPorcentagem));
+                _DescontoGeral = AtualizaDescontoValorGeral();
+                SetPropertyChanged(nameof(DescontoGeral));
+                AtualizaValorTotalComDesconto();
             }
         }
 
@@ -322,49 +342,79 @@ namespace Carro.ViewModels
             }
         }
 
-        int _Pagamento = 0;
-        public int Pagamento
+        int _FormaPagamento = 0;
+        public int FormaPagamento
         {
             get
             {
-                return _Pagamento;
+                return _FormaPagamento;
             }
             set
             {
-                _Pagamento = value;
-                SetPropertyChanged(nameof(Pagamento));
+                _FormaPagamento = value;
+                SetPropertyChanged(nameof(FormaPagamento));
                 //0 = Selecione a forma de pagamento (Invalido)
                 //1 = A vista
                 //2 = A prazo
+                if(FormaPagamento == 0)
+                {
+                    FormaPagamentoInvalido = true;
+                    Parcelas = 0;
+                    ParcelasInvalido = true;
+                    ParcelasIsEnabled = true;
+                    Entrada = 0;
+                    EntradaInvalido = true;
+                    EntradaIsEnabled = true;
+                }
+                else
+                {
+                    if(FormaPagamento == 1)
+                    {
+                        FormaPagamentoInvalido = false;
+                        Parcelas = 0;
+                        ParcelasInvalido = false;
+                        ParcelasIsEnabled = false;
+                        Entrada = 0;
+                        EntradaInvalido = false;
+                        EntradaIsEnabled = false;
 
+                    }else
+                    {
+                        FormaPagamentoInvalido = false;
+                        ParcelasInvalido = true;
+                        ParcelasIsEnabled = true;
+                        EntradaInvalido = true;
+                        EntradaIsEnabled = true;
+                    }
+                }
             }
         }
 
-        bool _PagamentoInvalido = true;
-        public bool PagamentoInvalido
+        bool _FormaPagamentoInvalido = true;
+        public bool FormaPagamentoInvalido
         {
             get
             {
-                return _PagamentoInvalido;
+                return _FormaPagamentoInvalido;
             }
             set
             {
-                _PagamentoInvalido = value;
-                SetPropertyChanged(nameof(PagamentoInvalido));
+                _FormaPagamentoInvalido = value;
+                SetPropertyChanged(nameof(FormaPagamentoInvalido));
             }
         }
 
-        int _Parcela = 0;
-        public int Parcela
+        int _Parcelas = 0;
+        public int Parcelas
         {
             get
             {
-                return _Parcela;
+                return _Parcelas;
             }
             set
             {
-                _Parcela = value;
-                SetPropertyChanged(nameof(Parcela));
+                _Parcelas = value;
+                SetPropertyChanged(nameof(Parcelas));
                 //0 = Selecione o numero de parcelas (Invalido)
                 //1 = 1x
                 //2 = 2x
@@ -374,20 +424,45 @@ namespace Carro.ViewModels
                 //6 = 6x
                 //9 = 9x
                 //12 = 12x
+                if(Parcelas == 0)
+                {
+                    ParcelasInvalido = true;
+                    if(FormaPagamento == 1)
+                    {
+                        ParcelasInvalido = false;
+                    }
+                }else
+                {
+                    ParcelasInvalido = false;
+                }
             }
         }
 
-        bool _ParcelaInvalido = true;
-        public bool ParcelaInvalido
+        bool _ParcelasInvalido = true;
+        public bool ParcelasInvalido
         {
             get
             {
-                return _ParcelaInvalido;
+                return _ParcelasInvalido;
             }
             set
             {
-                _ParcelaInvalido = value;
-                SetPropertyChanged(nameof(ParcelaInvalido));
+                _ParcelasInvalido = value;
+                SetPropertyChanged(nameof(ParcelasInvalido));
+            }
+        }
+
+        bool _ParcelasIsEnabled = true;
+        public bool ParcelasIsEnabled
+        {
+            get
+            {
+                return _ParcelasIsEnabled;
+            }
+            set
+            {
+                _ParcelasIsEnabled = value;
+                SetPropertyChanged(nameof(ParcelasIsEnabled));
             }
         }
 
@@ -407,6 +482,18 @@ namespace Carro.ViewModels
                 //2 = 30 dias
                 //3 = 60 dias
                 //4 = 90 dias
+                if (Entrada == 0)
+                {
+                    EntradaInvalido = true;
+                    if (FormaPagamento == 1)
+                    {
+                        EntradaInvalido = false;
+                    }
+                }
+                else
+                {
+                    EntradaInvalido = false;
+                }
 
             }
         }
@@ -422,6 +509,20 @@ namespace Carro.ViewModels
             {
                 _EntradaInvalido = value;
                 SetPropertyChanged(nameof(EntradaInvalido));
+            }
+        }
+
+        bool _EntradaIsEnabled = true;
+        public bool EntradaIsEnabled
+        {
+            get
+            {
+                return _EntradaIsEnabled;
+            }
+            set
+            {
+                _EntradaIsEnabled = value;
+                SetPropertyChanged(nameof(EntradaIsEnabled));
             }
         }
 
@@ -486,9 +587,12 @@ namespace Carro.ViewModels
             valorTotal = produtoSelecionadoTemporario.QuantidadeVendida * produtoSelecionadoTemporario.Valor;
             if (valorTotal == 0)
             {
-                valorTotal = produtoSelecionadoTemporario.Valor;
+                porcentagem = 0;
+            }else
+            {
+                porcentagem = DescontoProduto / valorTotal * 100;
             }
-            porcentagem = DescontoProduto / valorTotal * 100;
+            
 
             return porcentagem;
         }
@@ -512,9 +616,12 @@ namespace Carro.ViewModels
             valorTotal = servicoSelecionadoTemporario.QuantidadeVendida * servicoSelecionadoTemporario.Valor;
             if (valorTotal == 0)
             {
-                valorTotal = servicoSelecionadoTemporario.Valor;
+                porcentagem = 0;
+            }else
+            {
+                porcentagem = DescontoServico / valorTotal * 100;
             }
-            porcentagem = DescontoServico / valorTotal * 100;
+            
 
             return porcentagem;
         }
@@ -526,6 +633,34 @@ namespace Carro.ViewModels
 
             valorTotal = servicoSelecionadoTemporario.QuantidadeVendida * servicoSelecionadoTemporario.Valor;
             valor = valorTotal * DescontoServicoPorcentagem / 100;
+
+            return valor;
+        }
+
+        public decimal AtualizaDescontoPorcentagemGeral()
+        {
+            decimal valorTotal;
+            decimal porcentagem;
+
+            valorTotal = ValorTotal;
+            if (valorTotal == 0)
+            {
+                porcentagem = 0;
+            }else
+            {
+                porcentagem = DescontoGeral / valorTotal * 100;
+            }
+
+            return porcentagem;
+        }
+
+        public decimal AtualizaDescontoValorGeral()
+        {
+            decimal valorTotal;
+            decimal valor;
+
+            valorTotal = ValorTotal;
+            valor = valorTotal * DescontoGeralPorcentagem / 100;
 
             return valor;
         }
@@ -545,21 +680,27 @@ namespace Carro.ViewModels
             ValorTotal = ValorTotalProdutos + ValorTotalServicos;
         }
 
-        Command _CadastroVendaVoltaCommand;
-        public Command CadastroVendaVoltaCommand
+        public void AtualizaDescontoTotalIndividual()
         {
-            get { return _CadastroVendaVoltaCommand ?? (_CadastroVendaVoltaCommand = new Command(async () => await ExecuteCadastroVendaVoltaCommand())); }
+            decimal desconto = 0m;
+            foreach (OrdemVendaProduto produto in ProdutosSelecionados)
+            {
+                desconto = desconto + produto.Desconto;
+            }
+
+            foreach (OrdemVendaServico servico in ServicosSelecionados)
+            {
+                desconto = desconto + servico.Desconto;
+            }
+
+            DescontoTotalIndividual = desconto;
         }
 
-        async Task ExecuteCadastroVendaVoltaCommand()
+        public void AtualizaValorTotalComDesconto()
         {
-            if (!IsBusy)
-            {
-                IsBusy = true;
-                await Navigation.PopAsync();
-                IsBusy = false;
-            }
+            ValorTotalComDesconto = ValorTotal - DescontoTotalIndividual - DescontoGeral;
         }
+
 
         Command _CadastroVendaProdutoCommand;
         public Command CadastroVendaProdutoCommand
@@ -604,6 +745,8 @@ namespace Carro.ViewModels
             if (!IsBusy)
             {
                 IsBusy = true;
+                AtualizaDescontoTotalIndividual();
+                AtualizaValorTotalComDesconto();
                 await Navigation.PushAsync(new CadastroVendaConclusaoPage(this));
                 IsBusy = false;
             }
@@ -641,7 +784,7 @@ namespace Carro.ViewModels
                             }
                         }
 
-                        service.SaveOrdemVenda(new OrdemVenda { eVenda = false, IdCliente = pessoaSelecionada.Id, Pessoa = pessoaSelecionada, PrazoInicial = 0, NumeroParcelas = 0, Valor = ValorTotal, Registro = data, FuncionarioServicos = FuncionariosSelecionados.ToList<FuncionarioServico>(), OrdemVendaProdutos = ProdutosSelecionados.ToList<OrdemVendaProduto>(), OrdemVendaServicos = ServicosSelecionados.ToList<OrdemVendaServico>()});
+                        service.SaveOrdemVenda(new OrdemVenda { eVenda = false, IdCliente = pessoaSelecionada.Id, Pessoa = pessoaSelecionada, FormaPagamento = FormaPagamento, Parcelas = Parcelas, Valor = ValorTotalComDesconto, DescontoTotal = DescontoGeral, Registro = data, FuncionarioServicos = FuncionariosSelecionados.ToList<FuncionarioServico>(), OrdemVendaProdutos = ProdutosSelecionados.ToList<OrdemVendaProduto>(), OrdemVendaServicos = ServicosSelecionados.ToList<OrdemVendaServico>()});
 
                         scope.Complete();
                     }
@@ -866,10 +1009,12 @@ namespace Carro.ViewModels
                 IsBusy = true;
                 if(produtoSelecionadoTemporario.QuantidadeVendida > 0)
                 {
+                    produtoSelecionadoTemporario.Desconto = DescontoProduto;
                     ProdutosSelecionados.Add(produtoSelecionadoTemporario);
                     produtoSelecionadoTemporario = new OrdemVendaProduto();
                     ValorTotalProdutos = 0m;
                     ValorTotalServicos = 0m;
+                    DescontoProduto = 0m;
                     AtualizaValorTotal();
                 }
                 await Navigation.PopAsync();
@@ -890,10 +1035,12 @@ namespace Carro.ViewModels
                 IsBusy = true;
                 if(servicoSelecionadoTemporario.QuantidadeVendida > 0)
                 {
+                    servicoSelecionadoTemporario.Desconto = DescontoServico;
                     ServicosSelecionados.Add(servicoSelecionadoTemporario);
                     servicoSelecionadoTemporario = new OrdemVendaServico();
                     ValorTotalProdutos = 0m;
                     ValorTotalServicos = 0m;
+                    DescontoServico = 0m;
                     AtualizaValorTotal();
                 }
                 await Navigation.PopAsync();

@@ -112,7 +112,7 @@
                     </Grid.ColumnDefinitions>
 
                     <Label
-                        Text="Desconto individuais:"
+                        Text="Descontos individuais:"
                         TextColor="#444444"/>
                     <Label
                         Grid.Column="1"
@@ -176,14 +176,14 @@
                         TextColor="#444444"/>
                     <Label
                         Grid.Column="1"
-                        Text="{Binding ValorTotal, Converter={StaticResource decimalConverter}}"
+                        Text="{Binding ValorTotalComDesconto, Converter={StaticResource decimalConverter}}"
                         TextColor="#444444"/>
                 </Grid>
                 
                 <Picker
                     Grid.Row="6"
                     Grid.ColumnSpan="2"
-                    SelectedIndex="{Binding Pagamento}">
+                    SelectedIndex="{Binding FormaPagamento}">
                     <Picker.Items>
                         <x:String>Selecione a forma de pagamento</x:String>
                         <x:String>À vista</x:String>
@@ -194,15 +194,15 @@
                     Grid.Row="6"
                     Grid.Column="2"
                     Source="ic_Deletar_Large"
-                    IsVisible="{Binding PagamentoInvalido}"
+                    IsVisible="{Binding FormaPagamentoInvalido}"
                     IsOpaque="True"
                     Aspect="AspectFit"/>
 
                 <Picker
                     Grid.Row="7"
                     Grid.ColumnSpan="2"
-                    IsEnabled="True"
-                    SelectedIndex="{Binding Parcela}">
+                    IsEnabled="{Binding ParcelasIsEnabled}"
+                    SelectedIndex="{Binding Parcelas}">
                     <Picker.Items>
                         <x:String>Selecione o número de parcelas</x:String>
                         <x:String>1x</x:String>
@@ -219,14 +219,14 @@
                     Grid.Row="7"
                     Grid.Column="2"
                     Source="ic_Deletar_Large"
-                    IsVisible="{Binding ParcelaInvalido}"
+                    IsVisible="{Binding ParcelasInvalido}"
                     IsOpaque="True"
                     Aspect="AspectFit"/>
 
                 <Picker
                     Grid.Row="8"
                     Grid.ColumnSpan="2"
-                    IsEnabled="True"
+                    IsEnabled="{Binding ParcelasIsEnabled}"
                     SelectedIndex="{Binding Entrada}">
                     <Picker.Items>
                         <x:String>Selecione a entrada</x:String>

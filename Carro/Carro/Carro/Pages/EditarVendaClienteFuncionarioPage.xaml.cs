@@ -37,10 +37,10 @@ namespace Carro.Pages
             DisplayAlert("", "Funcionário removido com sucesso", "OK");
         }
 
-        //protected override void OnAppearing()
-        //{
-        //    base.OnAppearing();
-        //    pessoaSelecionadaLabel.Text = ((EditarVendaViewModel)BindingContext).pessoaSelecionada?.Nome;
-        //}
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            pessoaSelecionadaLabel.Text = ((EditarVendaViewModel)BindingContext).pessoaSelecionada ?.Nome;
+        }
     }
 }

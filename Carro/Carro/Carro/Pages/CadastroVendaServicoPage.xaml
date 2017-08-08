@@ -79,12 +79,17 @@
 							    Text="{Binding Nome}"/>
                             <Label 
                                 Grid.Column="1"
-							    Text="{Binding Preco, Converter={StaticResource decimalConverter}}"/>
+							    Text="{Binding Valor, Converter={StaticResource decimalConverter}}"/>
+                            <Label 
+                                Grid.Row="1" 
+                                Grid.Column="0"
+                                HorizontalOptions="StartAndExpand"
+							    Text="{Binding Tempo}"/>
                             <Label 
                                 Grid.Row="1" 
                                 Grid.Column="1"
                                 HorizontalOptions="EndAndExpand"
-							    Text="{Binding Tempo}"/>
+							    Text="{Binding QuantidadeVendida}"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

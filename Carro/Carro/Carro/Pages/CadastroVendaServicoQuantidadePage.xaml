@@ -75,7 +75,8 @@
                         Grid.Column="1"
                         VerticalOptions="Center"
                         Text= "{Binding servicoSelecionadoTemporario.QuantidadeVendida, Converter={StaticResource intConverter}}"
-                        FontSize="Large"/>
+                        FontSize="Large"
+                        Keyboard="Numeric"/>
 
                     <Label
                         Grid.Row="1"
