@@ -216,17 +216,17 @@ namespace Carro.ViewModels
             }
         }
 
-        decimal _ValorTotalIndividual = 0m;
-        public decimal ValorTotalIndividual
+        decimal _DescontoTotalIndividual = 0m;
+        public decimal DescontoTotalIndividual
         {
             get
             {
-                return _ValorTotalIndividual;
+                return _DescontoTotalIndividual;
             }
             set
             {
-                _ValorTotalIndividual = value;
-                SetPropertyChanged(nameof(ValorTotalIndividual));
+                _DescontoTotalIndividual = value;
+                SetPropertyChanged(nameof(DescontoTotalIndividual));
             }
         }
 
@@ -322,17 +322,17 @@ namespace Carro.ViewModels
             }
         }
 
-        int _Pagamento = 0;
-        public int Pagamento
+        int _FormaPagamento = 0;
+        public int FormaPagamento
         {
             get
             {
-                return _Pagamento;
+                return _FormaPagamento;
             }
             set
             {
-                _Pagamento = value;
-                SetPropertyChanged(nameof(Pagamento));
+                _FormaPagamento = value;
+                SetPropertyChanged(nameof(FormaPagamento));
                 //0 = Selecione a forma de pagamento (Invalido)
                 //1 = A vista
                 //2 = A prazo
@@ -340,31 +340,31 @@ namespace Carro.ViewModels
             }
         }
 
-        bool _PagamentoInvalido = true;
-        public bool PagamentoInvalido
+        bool _FormaPagamentoInvalido = true;
+        public bool FormaPagamentoInvalido
         {
             get
             {
-                return _PagamentoInvalido;
+                return _FormaPagamentoInvalido;
             }
             set
             {
-                _PagamentoInvalido = value;
-                SetPropertyChanged(nameof(PagamentoInvalido));
+                _FormaPagamentoInvalido = value;
+                SetPropertyChanged(nameof(FormaPagamentoInvalido));
             }
         }
 
-        int _Parcela = 0;
-        public int Parcela
+        int _Parcelas = 0;
+        public int Parcelas
         {
             get
             {
-                return _Parcela;
+                return _Parcelas;
             }
             set
             {
-                _Parcela = value;
-                SetPropertyChanged(nameof(Parcela));
+                _Parcelas = value;
+                SetPropertyChanged(nameof(Parcelas));
                 //0 = Selecione o numero de parcelas (Invalido)
                 //1 = 1x
                 //2 = 2x
@@ -377,17 +377,17 @@ namespace Carro.ViewModels
             }
         }
 
-        bool _ParcelaInvalido = true;
-        public bool ParcelaInvalido
+        bool _ParcelasInvalido = true;
+        public bool ParcelasInvalido
         {
             get
             {
-                return _ParcelaInvalido;
+                return _ParcelasInvalido;
             }
             set
             {
-                _ParcelaInvalido = value;
-                SetPropertyChanged(nameof(ParcelaInvalido));
+                _ParcelasInvalido = value;
+                SetPropertyChanged(nameof(ParcelasInvalido));
             }
         }
 
@@ -641,7 +641,7 @@ namespace Carro.ViewModels
                             }
                         }
 
-                        service.SaveOrdemVenda(new OrdemVenda { eVenda = false, IdCliente = pessoaSelecionada.Id, Pessoa = pessoaSelecionada, PrazoInicial = 0, NumeroParcelas = 0, Valor = ValorTotal, Registro = data, FuncionarioServicos = FuncionariosSelecionados.ToList<FuncionarioServico>(), OrdemVendaProdutos = ProdutosSelecionados.ToList<OrdemVendaProduto>(), OrdemVendaServicos = ServicosSelecionados.ToList<OrdemVendaServico>() });
+                        service.SaveOrdemVenda(new OrdemVenda { eVenda = true, IdCliente = pessoaSelecionada.Id, Pessoa = pessoaSelecionada, FormaPagamento = FormaPagamento, Parcelas = Parcelas, Valor = ValorTotal, DescontoTotal = DescontoGeral, Registro = data, FuncionarioServicos = FuncionariosSelecionados.ToList<FuncionarioServico>(), OrdemVendaProdutos = ProdutosSelecionados.ToList<OrdemVendaProduto>(), OrdemVendaServicos = ServicosSelecionados.ToList<OrdemVendaServico>() });
 
                         scope.Complete();
                     }
