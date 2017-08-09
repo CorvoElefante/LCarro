@@ -22,62 +22,70 @@
         
         <ScrollView>
             <Grid
-                Padding="30,0,30,0"
+                Padding="30,30,15,0"
                 RowSpacing="15">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
                 </Grid.RowDefinitions>
 
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                </Grid.ColumnDefinitions>
+
+
                 <Entry 
-                    Grid.ColumnSpan="18"
+                    Grid.ColumnSpan="2"
                     Text="{Binding nomeEntry}" 
                     Placeholder="Nome" 
                     Keyboard="Text"/>
                 <Image
-                    Grid.Column="17"
-                    Source="ic_unchecked16.png"
+                    Grid.Column="2"
+                    Source="ic_Deletar_Large"
                     IsVisible="{Binding nomeEntryInvalido}"
                     IsOpaque="True"
                     Aspect="AspectFit"/>
 
                 <Entry 
                     Grid.Row="1"
-                    Grid.ColumnSpan="18"
+                    Grid.ColumnSpan="2"
                     Text="{Binding ruaNEntry}" 
                     Placeholder="Rua"/>
 
 
                 <Entry 
                     Grid.Row="2"
-                    Grid.ColumnSpan="18"
+                    Grid.ColumnSpan="2"
                     Text="{Binding bairroEntry}" 
                     Placeholder="Bairro"/>
 
                 <Entry 
                     Grid.Row="3"
-                    Grid.ColumnSpan="18"
+                    Grid.ColumnSpan="2"
                     Text="{Binding telefoneEntry}" 
                     Placeholder="Telefone" 
                     Keyboard="Telephone"/>
 
                 <Entry 
                     Grid.Row="4"
-                    Grid.ColumnSpan="18"
+                    Grid.ColumnSpan="2"
                     Text="{Binding emailEntry}"
                     Placeholder="Email"
                     Keyboard="Email"/>
 
                 <DatePicker 
-                    VerticalOptions="CenterAndExpand"
-                    Date="{Binding ndataEntry}"
                     Grid.Row="5"
-                    Grid.ColumnSpan="18">
+                    Grid.ColumnSpan="2"
+                    VerticalOptions="CenterAndExpand"
+                    Date="{Binding ndataEntry}">
                     <DatePicker.Format>
                         dd-MM-yyyy
                     </DatePicker.Format>
@@ -105,7 +113,14 @@
 
                 <Entry 
                     Grid.Row="6"
-                    Grid.ColumnSpan="18"
+                    Grid.ColumnSpan="2"
+                    Text="{Binding identidadeEntry}"
+                    Placeholder="RG"
+                    Keyboard="Numeric"/>
+                
+                <Entry 
+                    Grid.Row="7"
+                    Grid.ColumnSpan="2"
                     Text="{Binding cpfEntry}"
                     Placeholder="CPF"
                     Keyboard="Numeric"/>

@@ -34,6 +34,7 @@
                     <RowDefinition Height="45"/>
                     <RowDefinition Height="45"/>
                     <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
@@ -114,6 +115,13 @@
 
                 <Entry 
                     Grid.Row="6"
+                    Grid.ColumnSpan="2"
+                    Text="{Binding identidadeEntry}"
+                    Placeholder="RG"
+                    Keyboard="Numeric"/>
+
+                <Entry 
+                    Grid.Row="7"
                     Grid.ColumnSpan="2"
                     Text="{Binding cpfEntry}"
                     Placeholder="CPF"

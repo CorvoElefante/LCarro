@@ -17,30 +17,32 @@
     <Grid>
         <ScrollView>
             <Grid
-                Padding="30,30,30,0"
+                Padding="30,30,15,0"
                 RowSpacing="15">
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
                 <Label
-                    Grid.ColumnSpan="12"
                     Text = "{Binding nomeEntry}"
                     FontAttributes="Bold"
                     FontSize="Large"/>
 
                 <Label
                     Grid.Row="1"
-                    Grid.ColumnSpan="12"
                     Text = "{Binding justificativaEntry}"
                     FontSize="Large"/>
 
                 <Label
                     Grid.Row="2"
-                    Grid.ColumnSpan="12"
                     HorizontalOptions="CenterAndExpand"
                     Text="Produtos perdidos"
                     FontAttributes="Bold"
@@ -49,7 +51,7 @@
 
                 <ListView
                     Grid.Row="3"
-                    Grid.ColumnSpan="12"
+                    Grid.ColumnSpan="3"
 			        HorizontalOptions="FillAndExpand"
 			        VerticalOptions="FillAndExpand"
 			        HasUnevenRows="true"

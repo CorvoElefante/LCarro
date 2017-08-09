@@ -27,47 +27,59 @@
         
         <ScrollView>
             <Grid
-                Padding="30,0,30,0"
+                Padding="30,30,30,0"
                 RowSpacing="15">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
                 </Grid.RowDefinitions>
-
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="140"/>
-                </Grid.ColumnDefinitions>
 
                 <Label 
                     Text="{Binding produto}"
-                    FontSize="Large"/>
+                    FontSize="Large"
+                    FontAttributes="Bold"/>
+
+                <Grid
+                    Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
 
                 <Label
-                    Grid.Row="1"
                     Text="Quantidade atual em estoque:"
+                    VerticalOptions="Center"
                     FontSize="Large"/>
+                    
                 <Label
-                    Grid.Row="1"
                     Grid.Column="1"
                     VerticalOptions="Center"
                     HorizontalOptions="End"
                     Text="{Binding quantidadeEstoque}"
-                    FontSize="Large"/>
+                    FontSize="Large"/> 
+                </Grid>
 
-                <Label
-                    Grid.Row="2"
-                    VerticalOptions="Center"
-                    Text="Quantidade perdida:"
-                    FontSize="Large"/>
-                <Entry
-                    Grid.Row="2"
-                    Grid.Column="1"
-                    VerticalOptions="Center"
-                    Text= "{Binding quantidadePerdidaEntry, Converter={StaticResource intConverter}}"
-                    FontSize="Large"
-                    Keyboard="Numeric"/>
+
+                <Grid
+                    Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Label
+                        VerticalOptions="Center"
+                        Text="Quantidade perdida:"
+                        FontSize="Large"/>
+                    <Entry
+                        Grid.Column="1"
+                        VerticalOptions="Center"
+                        Text= "{Binding quantidadePerdidaEntry, Converter={StaticResource intConverter}}"
+                        FontSize="Large"
+                        Keyboard="Numeric"/>
+                </Grid>
+                
             </Grid>
         </ScrollView>
 

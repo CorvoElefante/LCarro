@@ -26,7 +26,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="75"/>
             </Grid.RowDefinitions>
-            
+
             <Grid
                 Padding="30,0,15,0"
                 RowSpacing="15">
@@ -44,7 +44,7 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="10"/>
                 </Grid.ColumnDefinitions>
-                
+
                 <Entry
                     Grid.ColumnSpan="2"
                     Text = "{Binding nomeEntry}" 
@@ -100,7 +100,7 @@
                     Grid.Column="1"
                     Text = "{Binding quantidadeEntry}"
                     Keyboard="Numeric"/>
-                </Grid>
+            </Grid>
 
 
             <Grid

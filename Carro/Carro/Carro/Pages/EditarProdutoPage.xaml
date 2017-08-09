@@ -29,111 +29,78 @@
         
         <ScrollView>
             <Grid
-                Padding="30,0,30,0"
+                Padding="30,30,15,0"
                 RowSpacing="15">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
                 </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                </Grid.ColumnDefinitions>
+
                 <Entry
-                    Grid.ColumnSpan="12"
+                    Grid.ColumnSpan="2"
                     Text = "{Binding nomeEntry}" 
                     Placeholder="Nome" 
                     Keyboard="Text"/>
                 <Image
-                    Margin="8"
-                    Grid.Column="12"
-                    Source="ic_unchecked16.png"
+                    Grid.Column="2"
+                    Source="ic_Deletar_Large"
                     IsVisible="{Binding nomeEntryInvalido}"
                     IsOpaque="True"
                     Aspect="AspectFit"/>
 
                 <Entry
                     Grid.Row="1"
-                    Grid.ColumnSpan="12"
+                    Grid.ColumnSpan="2"
                     x:Name="precoEntry" 
                     Text = "{Binding precoEntry, Converter={StaticResource decimalConverter}}" 
                     Placeholder="Preco" 
                     Keyboard="Numeric"/>
                 <Image
-                    Margin="8"
-                    Grid.Column="12"
                     Grid.Row="1"
-                    Source="ic_unchecked16.png"
+                    Grid.Column="2"
+                    Source="ic_Deletar_Large"
                     IsVisible="{Binding precoEntryInvalido}"
                     IsOpaque="True"
                     Aspect="AspectFit"/>
 
                 <Entry
                     Grid.Row="2"
-                    Grid.ColumnSpan="12"
+                    Grid.ColumnSpan="2"
                     Text = "{Binding marcaEntry}" 
                     Placeholder="Marca"/>
 
-
                 <Entry
                     Grid.Row="3"
-                    Grid.ColumnSpan="12"
-                    Text = "{Binding descricaoEntry}" 
+                    Grid.ColumnSpan="2"
+                    Text = "{Binding descricaoEntry}"
                     Placeholder="Descrição"/>
 
                 <Entry
                     Grid.Row="4"
-                    Grid.ColumnSpan="12"
+                    Grid.ColumnSpan="2"
                     Text = "{Binding localEntry}" 
                     Placeholder="Local no estoque"/>
 
                 <Label
                     Grid.Row="5"
-                    Grid.ColumnSpan="7"
-                    HorizontalOptions="Start"
                     VerticalOptions="Center"
-                    FontSize="Large"
-                    Text="Adicionar ao estoque:"/>
+                    Text = "Quantidade:"
+                    FontSize="Medium"/>
                 <Entry
                     Grid.Row="5"
-                    Grid.Column="7"
-                    Grid.ColumnSpan="5"
-                    VerticalOptions="End"
-                    FontSize="Large"
-                    Text="{Binding quantidadeAdicionadaEntry, Converter={StaticResource intConverter}"
+                    Grid.Column="1"
+                    Text = "{Binding quantidadeEntry}"
                     Keyboard="Numeric"/>
-
-                <Label
-                    Grid.Row="6"
-                    Grid.ColumnSpan="8"
-                    HorizontalOptions="Start"
-                    VerticalOptions="Center"
-                    FontSize="Large"
-                    Text="Quantidade em estoque:"/>
-                <Label
-                    Grid.Row="6"
-                    Grid.Column="8"
-                    Grid.ColumnSpan="4"
-                    VerticalOptions="Center"
-                    FontSize="Large"
-                    Text="{Binding quantidadeEntry}"/>
-
-                <Label
-                    Grid.Row="7"
-                    Grid.ColumnSpan="4"
-                    HorizontalOptions="Start"
-                    VerticalOptions="Center"
-                    FontSize="Large"
-                    Text="Total:"/>
-                <Label
-                    Grid.Row="7"
-                    Grid.Column="3"
-                    Grid.ColumnSpan="10"
-                    VerticalOptions="End"
-                    FontSize="Large"
-                    Text="{Binding quantidadeTotalEntry}"/>
             </Grid>
         </ScrollView>
 
