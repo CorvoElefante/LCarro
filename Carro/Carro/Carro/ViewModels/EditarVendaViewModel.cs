@@ -19,7 +19,7 @@ namespace Carro.ViewModels
             idEntry = value.Id;
             pessoaSelecionada = value.Pessoa;
             Parcelas = value.Parcelas;
-            Entrada = value.Parcelas;
+            Entrada = value.Entrada;
             FormaPagamento = value.FormaPagamento;
             ValorTotalComDesconto = value.Valor;
             DescontoGeral = value.DescontoTotal;
