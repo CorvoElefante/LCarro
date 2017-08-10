@@ -219,7 +219,7 @@ namespace Carro.Services
 
             foreach (OrdemVenda element in list)
             {
-                DB.GetChildren(element, false);
+                DB.GetChildren(element, true);
             }
 
             return list;

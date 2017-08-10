@@ -19,10 +19,10 @@ namespace Carro.Models
         [ForeignKey(typeof(Funcionario))]
         public long? IdFuncionario { get; set; }
 
-        [OneToOne]
+        [OneToOne (CascadeOperations = CascadeOperation.CascadeRead)]
         public Funcionario Funcionario { get; set; }
 
-        [ManyToOne]
+        [ManyToOne (CascadeOperations = CascadeOperation.CascadeRead)]
         public OrdemVenda OrdemVenda { get; set; }
 
     }

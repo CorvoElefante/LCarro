@@ -20,7 +20,7 @@ namespace Carro.Models
         [ForeignKey(typeof(Pessoa))]
         public long? PessoaId { get; set; }
 
-        [OneToOne]
+        [OneToOne(CascadeOperations = CascadeOperation.CascadeRead)]
         public Pessoa Pessoa { get; set; }
 
         public DateTime Registro { get; set; }
