@@ -11,9 +11,9 @@ namespace Carro.Pages
 {
     public partial class EditarFinalVendaPagarParcelasPage : ContentPage
     {
-        public EditarFinalVendaPagarParcelasPage()
+        public EditarFinalVendaPagarParcelasPage(OrdemVendaParcela value)
         {
-            BindingContext = new EditarFinalVendaPagarParcelasViewModel(Navigation);
+            BindingContext = new EditarFinalVendaPagarParcelasViewModel(Navigation, value);
             InitializeComponent();
         }
     }

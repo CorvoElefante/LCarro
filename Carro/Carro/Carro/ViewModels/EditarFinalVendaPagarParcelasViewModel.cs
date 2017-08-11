@@ -14,7 +14,7 @@ namespace Carro.ViewModels
     public class EditarFinalVendaPagarParcelasViewModel : BaseViewModel
     {
 
-        public EditarFinalVendaPagarParcelasViewModel(INavigation navigation) : base(navigation){
+        public EditarFinalVendaPagarParcelasViewModel(INavigation navigation, OrdemVendaParcela value) : base(navigation){
 
         }
 

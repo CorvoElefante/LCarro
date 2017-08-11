@@ -18,18 +18,32 @@ namespace Carro.ViewModels
 
         }
 
+        ObservableCollection<OrdemVendaParcela> _OrdemVendaParcelas = new ObservableCollection<OrdemVendaParcela>();
+        public ObservableCollection<OrdemVendaParcela> OrdemVendaParcelas
+        {
+            get
+            {
+                return _OrdemVendaParcelas;
+            }
+            set
+            {
+                _OrdemVendaParcelas = value;
+                SetPropertyChanged(nameof(OrdemVendaParcelas));
+            }
+        }
+
         Command _PagarParcelasCommand;
         public Command PagarParcelasCommand
         {
-            get { return _PagarParcelasCommand ?? (_PagarParcelasCommand = new Command(async () => await ExecutePagarParcelasCommand())); }
+            get { return _PagarParcelasCommand ?? (_PagarParcelasCommand = new Command<OrdemVendaParcela>(async (qq) => await ExecutePagarParcelasCommand(qq))); }
         }
 
-        async Task ExecutePagarParcelasCommand()
+        async Task ExecutePagarParcelasCommand(OrdemVendaParcela qq)
         {
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new EditarFinalVendaPagarParcelasPage());
+                await Navigation.PushAsync(new EditarFinalVendaPagarParcelasPage(qq));
                 IsBusy = false;
             }
         }
