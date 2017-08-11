@@ -21,14 +21,6 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <Picker
-        SelectedIndex="{Binding tipoBusca}">
-        <Picker.Items>
-            <x:String>Data</x:String>
-            <x:String>Vencidos</x:String>
-        </Picker.Items>
-    </Picker>
-    
     <ListView
          HorizontalOptions="FillAndExpand"
          VerticalOptions="FillAndExpand"
@@ -56,13 +48,13 @@
             <DataTemplate>
                 <ViewCell>
                     <Grid
-                        Margin="4"
-                        ColumnSpacing="20"
+                        Padding="30,0,30,0"
                         BackgroundColor="Transparent">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
+
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
@@ -82,6 +74,7 @@
 
                         <Label
                             Grid.Row="1"
+                            HorizontalOptions="StartAndExpand"
                             Text="{Binding Registro}"/>
                     </Grid>
                 </ViewCell>

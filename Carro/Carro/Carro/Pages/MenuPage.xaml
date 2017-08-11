@@ -53,9 +53,9 @@
             Aspect="AspectFit"
             VerticalOptions="CenterAndExpand"
             HorizontalOptions="CenterAndExpand">
-            <!--<Image.GestureRecognizers>
+            <Image.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding MenuVendaCommand}"/>
-            </Image.GestureRecognizers>-->
+            </Image.GestureRecognizers>
         </Image>
 
         <Label

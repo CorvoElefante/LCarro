@@ -19,7 +19,7 @@
     </ContentPage.Resources>
 
     <Grid
-        Padding="0,30,0,0"
+        Padding="0,15,0,0"
         RowSpacing="0">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -28,39 +28,54 @@
         </Grid.RowDefinitions>
 
         <Grid
-            Padding="30,0,30,0"
+            Padding="30,0,30,15"
             RowSpacing="15">
             <Grid.RowDefinitions>
+                <RowDefinition Height="35"/>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="35"/>
             </Grid.RowDefinitions>
 
-            <Label
-                HorizontalOptions="CenterAndExpand"
-                Text="Selecionar Cliente">
-                <Label.GestureRecognizers>
+            <Frame
+                Padding="5"
+                HorizontalOptions="Center"
+                BackgroundColor="#444444">
+                <Label
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Text="Selecionar Cliente"
+                    FontSize="Medium"
+                    TextColor="#FFFFF7"/>
+                <Frame.GestureRecognizers>
                     <TapGestureRecognizer
                         Command="{Binding ListaClienteCommand}"/>
-                </Label.GestureRecognizers>
-            </Label>
+                </Frame.GestureRecognizers>
+            </Frame>
 
             <Label
-                x:Name="pessoaSelecionadaLabel"
                 Grid.Row="1"
-                VerticalOptions="CenterAndExpand"
+                x:Name="pessoaSelecionadaLabel"
+                VerticalOptions="StartAndExpand"
                 Text="{Binding pessoaSelecionada}"
-                FontSize="Large"/>
+                FontSize="Large"
+                FontAttributes="Bold"/>
 
-            <Label
+            <Frame
                 Grid.Row="2"
-                HorizontalOptions="CenterAndExpand"
-                Text="Adicionar Funcionario">
-                <Label.GestureRecognizers>
+                Padding="5"
+                HorizontalOptions="Center"
+                BackgroundColor="#444444">
+                <Label
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Text="Adicionar Funcionario"
+                    FontSize="Medium"
+                    TextColor="#FFFFF7"/>
+                <Frame.GestureRecognizers>
                     <TapGestureRecognizer
                         Command="{Binding ListaFuncionarioCommand}"/>
-                </Label.GestureRecognizers>
-            </Label>
+                </Frame.GestureRecognizers>
+            </Frame>
         </Grid>
 
         <ListView
@@ -83,34 +98,31 @@
                             <MenuItem 
                                 Clicked="OnDelete" 
                                 CommandParameter="{Binding .}" 
-                                Text="Delete" 
+                                Text="Excluir" 
                                 IsDestructive="True"/>
                         </ViewCell.ContextActions>
 
                         <Grid
-                            Margin="4"
-                            ColumnSpacing="20"
+                            Padding="30,0,30,0"
                             BackgroundColor="Transparent">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
+
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
+
                             <Label 
                                 HorizontalOptions="StartAndExpand"
 							    FontAttributes="Bold"
 							    FontSize="Large"
 							    Text="{Binding Funcionario.Pessoa.Nome}"/>
                             <Label 
-                                Grid.Row="1"
-							    Text="{Binding Funcionario.Salario, Converter={StaticResource decimalConverter}}"/>
-                            <Label 
                                 Grid.Row="1" 
-                                Grid.Column="1"
-                                HorizontalOptions="EndAndExpand"
+                                HorizontalOptions="StartAndExpand"
 							    Text="{Binding Funcionario.Funcao}"/>
                         </Grid>
                     </ViewCell>
@@ -122,7 +134,7 @@
             Grid.Row="2"
             Padding="0,5,0,5"
             VerticalOptions="End"
-            BackgroundColor="Transparent">
+            BackgroundColor="#444444">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -143,8 +155,8 @@
                 <Label
                     HorizontalOptions="End"
                     VerticalOptions="Center"
-                    Text="Salvar"
-                    TextColor="#444444"
+                    Text="Avançar"
+                    TextColor="#FFFFF7"
                     FontSize="Large"/>
                 <Grid.GestureRecognizers>
                     <TapGestureRecognizer
@@ -170,7 +182,7 @@
                     HorizontalOptions="Start"
                     VerticalOptions="Center"
                     Text="Voltar"
-                    TextColor="#444444"
+                    TextColor="#FFFFF7"
                     FontSize="Large"/>
                 <Grid.GestureRecognizers>
                     <TapGestureRecognizer
