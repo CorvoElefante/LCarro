@@ -18,6 +18,22 @@ namespace Carro.ViewModels
 
         }
 
+        Command _PagarParcelasCommand;
+        public Command PagarParcelasCommand
+        {
+            get { return _PagarParcelasCommand ?? (_PagarParcelasCommand = new Command(async () => await ExecutePagarParcelasCommand())); }
+        }
+
+        async Task ExecutePagarParcelasCommand()
+        {
+            if (!IsBusy)
+            {
+                IsBusy = true;
+                await Navigation.PushAsync(new EditarFinalVendaPagarParcelasPage());
+                IsBusy = false;
+            }
+        }
+
         Command _HelpCommand;
         public Command HelpCommand
         {
