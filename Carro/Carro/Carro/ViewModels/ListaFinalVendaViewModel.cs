@@ -33,6 +33,17 @@ namespace Carro.ViewModels
             }
         }
 
+        int _tipoBusca = 0;
+        public int tipoBusca
+        {
+            get { return _tipoBusca; }
+            set
+            {
+                _tipoBusca = value;
+                SetPropertyChanged(nameof(tipoBusca));
+            }
+        }
+
         string _Search = string.Empty;
         public string Search
         {
@@ -91,7 +102,7 @@ namespace Carro.ViewModels
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new EditarFinalVendaPage(value));
+                await Navigation.PushAsync(new EditarFinalVendaClienteFuncionarioPage(value));
                 IsBusy = false;
             }
         }

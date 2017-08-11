@@ -1,10 +1,164 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Carro.Pages.EditarFinalVendaProdutoPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin Forms!" />
-        </StackLayout>
-    </ContentPage.Content>
+             xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
+             x:Class="Carro.Pages.EditarFinalVendaProdutoPage"
+             BackgroundColor="#FFFFF7"
+             Title="Venda - Produtos">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Icon="ic_Editar_Venda_Small"
+            Command="{Binding EditarFinalVendaProdutoHelpCommand}"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <resources:DecimalConverter x:Key="decimalConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid
+        Padding="0,15,0,0"
+        RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="75"/>
+        </Grid.RowDefinitions>
+
+        <Grid
+            Padding="30,0,30,15"
+            RowSpacing="15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"/>
+            </Grid.RowDefinitions>
+
+            <Frame
+                Padding="5"
+                HorizontalOptions="Center"
+                BackgroundColor="#444444">
+                <Label
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Text="Produtos"
+                    FontSize="Medium"
+                    TextColor="#FFFFF7"/>
+            </Frame>
+        </Grid>
+
+        <ListView
+            Grid.Row="1"
+		    HorizontalOptions="FillAndExpand"
+		    VerticalOptions="FillAndExpand"
+		    HasUnevenRows="true"
+		    SeparatorVisibility="None"
+		    ItemsSource="{Binding ProdutosSelecionados}"
+		    ItemTapped="Handle_ItemTapped">
+
+            <x:Arguments>
+                <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
+            </x:Arguments>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid
+                            Padding="30,0,30,0"
+                            BackgroundColor="Transparent">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Label 
+                                HorizontalOptions="StartAndExpand"
+							    FontAttributes="Bold"
+							    FontSize="Large"
+							    Text="{Binding Nome}"/>
+                            <Label
+                                Grid.Column="1"
+                                HorizontalOptions="EndAndExpand"
+							    Text="{Binding Valor, Converter={StaticResource decimalConverter}}"/>
+                            <Label 
+                                Grid.Row="1" 
+                                HorizontalOptions="StartAndExpand"
+							    Text="{Binding Marca}"/>
+                            <Label 
+                                Grid.Row="1" 
+                                Grid.Column="1"
+                                HorizontalOptions="EndAndExpand"
+							    Text="{Binding QuantidadeVendida}"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Grid
+            Grid.Row="2"
+            Padding="0,5,0,5"
+            VerticalOptions="End"
+            BackgroundColor="#444444">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                BackgroundColor="Transparent">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Image
+                    Grid.Column="1"
+                    Source="ic_Salvar_Large"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+                <Label
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+                    Text="Avançar"
+                    TextColor="#FFFFF7"
+                    FontSize="Large"/>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding EditarFinalVendaServicoCommand}"/>
+                </Grid.GestureRecognizers>
+            </Grid>
+
+            <Grid
+                Grid.Column="1"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                BackgroundColor="Transparent">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image
+                    Source="ic_Deletar_Large"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+                <Label
+                    Grid.Column="1"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    Text="Voltar"
+                    TextColor="#FFFFF7"
+                    FontSize="Large"/>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding VoltaCommand}"/>
+                </Grid.GestureRecognizers>
+            </Grid>
+        </Grid>
+    </Grid>
 </ContentPage>

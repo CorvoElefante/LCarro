@@ -41,7 +41,7 @@
                 <Label
                     VerticalOptions="Center"
                     HorizontalOptions="Center"
-                    Text="Adicionar Servico"
+                    Text="Adicionar Serviço"
                     FontSize="Medium"
                     TextColor="#FFFFF7"/>
                 <Frame.GestureRecognizers>

@@ -6,10 +6,9 @@
              BackgroundColor="#FFFFF7"
              Title="Nova Venda - Conclusão">
 
-
     <ContentPage.ToolbarItems>
         <ToolbarItem
-      Icon="ic_Editar_PreVenda_Small"
+            Icon="ic_Editar_PreVenda_Small"
             Command="{Binding EditarVendaConclusaoHelpCommand}"/>
     </ContentPage.ToolbarItems>
 
@@ -57,120 +56,14 @@
                     </Grid.ColumnDefinitions>
 
                     <Label
-                    Grid.ColumnSpan="3"
-                    Text="{Binding pessoaSelecionada.Nome}"
-                    TextColor="#444444"
-                    FontSize="Large"/>
+                        Grid.ColumnSpan="3"
+                        Text="{Binding pessoaSelecionada.Nome}"
+                        TextColor="#444444"
+                        FontSize="Large"/>
 
                     <Grid
-                    Grid.Row="1"
-                    Grid.ColumnSpan="2">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto"/>
-                        </Grid.ColumnDefinitions>
-
-                        <Label
-                        Text="Valor em produtos:"
-                        TextColor="#444444"/>
-                        <Label
-                        Grid.Column="1"
-                        VerticalOptions="Center"
-                        HorizontalOptions="End"
-                        Text="{Binding ValorTotalProdutos, Converter={StaticResource decimalConverter}}"
-                        TextColor="#444444"/>
-                    </Grid>
-
-                    <Grid
-                    Grid.Row="2"
-                    Grid.ColumnSpan="2">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto"/>
-                        </Grid.ColumnDefinitions>
-
-                        <Label
-                        Text="Valor em serviços:"
-                        TextColor="#444444"/>
-                        <Label
-                        Grid.Column="1"
-                        VerticalOptions="Center"
-                        HorizontalOptions="End"
-                        Text="{Binding ValorTotalServicos, Converter={StaticResource decimalConverter}}"
-                        TextColor="#444444"/>
-                    </Grid>
-
-                    <Grid
-                    Grid.Row="3"
-                    Grid.ColumnSpan="2">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto"/>
-                        </Grid.ColumnDefinitions>
-
-                        <Label
-                        Text="Desconto individuais:"
-                        TextColor="#444444"/>
-                        <Label
-                        Grid.Column="1"
-                        VerticalOptions="Center"
-                        HorizontalOptions="End"
-                        Text="{Binding DescontoTotalIndividual, Converter={StaticResource decimalConverter}}"
-                        TextColor="#444444"/>
-                    </Grid>
-
-                    <Grid
-                    Grid.Row="4"
-                    Grid.ColumnSpan="2">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-
-                        <Label
-                        VerticalOptions="Center"
-                        Text="Desconto geral:"/>
-                        <Entry
-                        Grid.Column="1"
-                        VerticalOptions="Center"
-                        Text="{Binding DescontoGeral, Converter={StaticResource decimalConverter}}"
-                        Keyboard="Numeric"
-                        FontSize="Default"/>
-
-                        <Label
                         Grid.Row="1"
-                        VerticalOptions="Center"
-                        Text="Desconto geral %:"/>
-                        <Entry
-                        Grid.Row="1"
-                        Grid.Column="1"
-                        VerticalOptions="Center"
-                        Text="{Binding DescontoGeralPorcentagem, Converter={StaticResource decimalConverter}}"
-                        Keyboard="Numeric"
-                        FontSize="Default"/>
-                    </Grid>
-
-
-                    <Grid
-                    Grid.Row="5"
-                    Grid.ColumnSpan="2">
+                        Grid.ColumnSpan="2">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
@@ -181,18 +74,124 @@
                         </Grid.ColumnDefinitions>
 
                         <Label
-                        Text="Valor total:"
-                        TextColor="#444444"/>
+                            Text="Valor em produtos:"
+                            TextColor="#444444"/>
                         <Label
-                        Grid.Column="1"
-                        Text="{Binding ValorTotal, Converter={StaticResource decimalConverter}}"
-                        TextColor="#444444"/>
+                            Grid.Column="1"
+                            VerticalOptions="Center"
+                            HorizontalOptions="End"
+                            Text="{Binding ValorTotalProdutos, Converter={StaticResource decimalConverter}}"
+                            TextColor="#444444"/>
+                    </Grid>
+
+                    <Grid
+                        Grid.Row="2"
+                        Grid.ColumnSpan="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label
+                            Text="Valor em serviços:"
+                            TextColor="#444444"/>
+                        <Label
+                            Grid.Column="1"
+                            VerticalOptions="Center"
+                            HorizontalOptions="End"
+                            Text="{Binding ValorTotalServicos, Converter={StaticResource decimalConverter}}"
+                            TextColor="#444444"/>
+                    </Grid>
+
+                    <Grid
+                        Grid.Row="3"
+                        Grid.ColumnSpan="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label
+                            Text="Desconto individuais:"
+                            TextColor="#444444"/>
+                        <Label
+                            Grid.Column="1"
+                            VerticalOptions="Center"
+                            HorizontalOptions="End"
+                            Text="{Binding DescontoTotalIndividual, Converter={StaticResource decimalConverter}}"
+                            TextColor="#444444"/>
+                    </Grid>
+
+                    <Grid
+                        Grid.Row="4"
+                        Grid.ColumnSpan="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label
+                            VerticalOptions="Center"
+                            Text="Desconto geral:"/>
+                        <Entry
+                            Grid.Column="1"
+                            VerticalOptions="Center"
+                            Text="{Binding DescontoGeral, Converter={StaticResource decimalConverter}}"
+                            Keyboard="Numeric"
+                            FontSize="Default"/>
+
+                        <Label
+                            Grid.Row="1"
+                            VerticalOptions="Center"
+                            Text="Desconto geral %:"/>
+                        <Entry
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            VerticalOptions="Center"
+                            Text="{Binding DescontoGeralPorcentagem, Converter={StaticResource decimalConverter}}"
+                            Keyboard="Numeric"
+                            FontSize="Default"/>
+                    </Grid>
+
+
+                    <Grid
+                        Grid.Row="5"
+                        Grid.ColumnSpan="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label
+                            Text="Valor total:"
+                            TextColor="#444444"/>
+                        <Label
+                            Grid.Column="1"
+                            Text="{Binding ValorTotal, Converter={StaticResource decimalConverter}}"
+                            TextColor="#444444"/>
                     </Grid>
 
                     <Picker
-                    Grid.Row="6"
-                    Grid.ColumnSpan="2"
-                    SelectedIndex="{Binding FormaPagamento}">
+                        Grid.Row="6"
+                        Grid.ColumnSpan="2"
+                        SelectedIndex="{Binding FormaPagamento}">
                         <Picker.Items>
                             <x:String>Selecione a forma de pagamento</x:String>
                             <x:String>À vista</x:String>
@@ -200,18 +199,18 @@
                         </Picker.Items>
                     </Picker>
                     <Image
-                    Grid.Row="6"
-                    Grid.Column="2"
-                    Source="ic_Deletar_Large"
-                    IsVisible="{Binding FormaPagamentoInvalido}"
-                    IsOpaque="True"
-                    Aspect="AspectFit"/>
+                        Grid.Row="6"
+                        Grid.Column="2"
+                        Source="ic_Deletar_Large"
+                        IsVisible="{Binding FormaPagamentoInvalido}"
+                        IsOpaque="True"
+                        Aspect="AspectFit"/>
 
                     <Picker
-                    Grid.Row="7"
-                    Grid.ColumnSpan="2"
-                    IsEnabled="{Binding ParcelasIsEnabled}"
-                    SelectedIndex="{Binding Parcelas}">
+                        Grid.Row="7"
+                        Grid.ColumnSpan="2"
+                        IsEnabled="{Binding ParcelasIsEnabled}"
+                        SelectedIndex="{Binding Parcelas}">
                         <Picker.Items>
                             <x:String>Selecione o número de parcelas</x:String>
                             <x:String>1x</x:String>
@@ -225,18 +224,18 @@
                         </Picker.Items>
                     </Picker>
                     <Image
-                    Grid.Row="7"
-                    Grid.Column="2"
-                    Source="ic_Deletar_Large"
-                    IsVisible="{Binding ParcelasInvalido}"
-                    IsOpaque="True"
-                    Aspect="AspectFit"/>
+                        Grid.Row="7"
+                        Grid.Column="2"
+                        Source="ic_Deletar_Large"
+                        IsVisible="{Binding ParcelasInvalido}"
+                        IsOpaque="True"
+                        Aspect="AspectFit"/>
 
                     <Picker
-                    Grid.Row="8"
-                    Grid.ColumnSpan="2"
-                    IsEnabled="{Binding EntradaIsEnabled}"
-                    SelectedIndex="{Binding Entrada}">
+                        Grid.Row="8"
+                        Grid.ColumnSpan="2"
+                        IsEnabled="{Binding EntradaIsEnabled}"
+                        SelectedIndex="{Binding Entrada}">
                         <Picker.Items>
                             <x:String>Selecione a entrada</x:String>
                             <x:String>À vista</x:String>
@@ -246,12 +245,12 @@
                         </Picker.Items>
                     </Picker>
                     <Image
-                    Grid.Row="8"
-                    Grid.Column="2"
-                    Source="ic_Deletar_Large"
-                    IsVisible="{Binding EntradaInvalido}"
-                    IsOpaque="True"
-                    Aspect="AspectFit"/>
+                        Grid.Row="8"
+                        Grid.Column="2"
+                        Source="ic_Deletar_Large"
+                        IsVisible="{Binding EntradaInvalido}"
+                        IsOpaque="True"
+                        Aspect="AspectFit"/>
                 </Grid>
 
                 <Grid
