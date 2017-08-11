@@ -22,6 +22,8 @@ namespace Carro.Models
 
         public DateTime Vencimento { get; set; }
 
+        public bool Pago { get; set; }
+
         [ManyToOne]
         public OrdemVenda OrdemVenda { get; set; }
     }
