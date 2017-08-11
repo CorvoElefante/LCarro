@@ -5,8 +5,8 @@
              x:Class="Carro.Pages.EditarVendaConclusaoPage"
              BackgroundColor="#FFFFF7"
              Title="Nova Venda - Conclusão">
-    
-    
+
+
     <ContentPage.ToolbarItems>
         <ToolbarItem
       Icon="ic_Editar_PreVenda_Small"
@@ -19,179 +19,187 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <ScrollView>
-        <Grid
-            Padding="0,30,0,0"
-            RowSpacing="0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="75"/>
-            </Grid.RowDefinitions>
+    <Grid
+        RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="75"/>
+        </Grid.RowDefinitions>
+
+        <ScrollView>
             <Grid
-                Padding="30,0,15,0"
+                Padding="0,30,0,0"
                 RowSpacing="15">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="45"/>
-                    <RowDefinition Height="45"/>
-                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="75"/>
                 </Grid.RowDefinitions>
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="10"/>
-                </Grid.ColumnDefinitions>
+                <Grid
+                    Padding="30,0,15,0"
+                    RowSpacing="15">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="45"/>
+                    </Grid.RowDefinitions>
 
-                <Label
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label
                     Grid.ColumnSpan="3"
                     Text="{Binding pessoaSelecionada.Nome}"
                     TextColor="#444444"
                     FontSize="Large"/>
 
-                <Grid
+                    <Grid
                     Grid.Row="1"
                     Grid.ColumnSpan="2">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
 
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
 
-                    <Label
+                        <Label
                         Text="Valor em produtos:"
                         TextColor="#444444"/>
-                    <Label
+                        <Label
                         Grid.Column="1"
                         VerticalOptions="Center"
                         HorizontalOptions="End"
                         Text="{Binding ValorTotalProdutos, Converter={StaticResource decimalConverter}}"
                         TextColor="#444444"/>
-                </Grid>
+                    </Grid>
 
-                <Grid
+                    <Grid
                     Grid.Row="2"
                     Grid.ColumnSpan="2">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
 
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
 
-                    <Label
+                        <Label
                         Text="Valor em serviços:"
                         TextColor="#444444"/>
-                    <Label
+                        <Label
                         Grid.Column="1"
                         VerticalOptions="Center"
                         HorizontalOptions="End"
                         Text="{Binding ValorTotalServicos, Converter={StaticResource decimalConverter}}"
                         TextColor="#444444"/>
-                </Grid>
+                    </Grid>
 
-                <Grid
+                    <Grid
                     Grid.Row="3"
                     Grid.ColumnSpan="2">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
 
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
 
-                    <Label
+                        <Label
                         Text="Desconto individuais:"
                         TextColor="#444444"/>
-                    <Label
+                        <Label
                         Grid.Column="1"
                         VerticalOptions="Center"
                         HorizontalOptions="End"
                         Text="{Binding DescontoTotalIndividual, Converter={StaticResource decimalConverter}}"
                         TextColor="#444444"/>
-                </Grid>
+                    </Grid>
 
-                <Grid
+                    <Grid
                     Grid.Row="4"
                     Grid.ColumnSpan="2">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
 
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
 
-                    <Label
+                        <Label
                         VerticalOptions="Center"
                         Text="Desconto geral:"/>
-                    <Entry
+                        <Entry
                         Grid.Column="1"
                         VerticalOptions="Center"
                         Text="{Binding DescontoGeral, Converter={StaticResource decimalConverter}}"
                         Keyboard="Numeric"
                         FontSize="Default"/>
 
-                    <Label
+                        <Label
                         Grid.Row="1"
                         VerticalOptions="Center"
                         Text="Desconto geral %:"/>
-                    <Entry
+                        <Entry
                         Grid.Row="1"
                         Grid.Column="1"
                         VerticalOptions="Center"
                         Text="{Binding DescontoGeralPorcentagem, Converter={StaticResource decimalConverter}}"
                         Keyboard="Numeric"
                         FontSize="Default"/>
-                </Grid>
+                    </Grid>
 
 
-                <Grid
+                    <Grid
                     Grid.Row="5"
                     Grid.ColumnSpan="2">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
 
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
 
-                    <Label
+                        <Label
                         Text="Valor total:"
                         TextColor="#444444"/>
-                    <Label
+                        <Label
                         Grid.Column="1"
                         Text="{Binding ValorTotal, Converter={StaticResource decimalConverter}}"
                         TextColor="#444444"/>
-                </Grid>
+                    </Grid>
 
-                <Picker
+                    <Picker
                     Grid.Row="6"
                     Grid.ColumnSpan="2"
                     SelectedIndex="{Binding FormaPagamento}">
-                    <Picker.Items>
-                        <x:String>Selecione a forma de pagamento</x:String>
-                        <x:String>À vista</x:String>
-                        <x:String>À prazo</x:String>
-                    </Picker.Items>
-                </Picker>
-                <Image
+                        <Picker.Items>
+                            <x:String>Selecione a forma de pagamento</x:String>
+                            <x:String>À vista</x:String>
+                            <x:String>À prazo</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Image
                     Grid.Row="6"
                     Grid.Column="2"
                     Source="ic_Deletar_Large"
@@ -199,24 +207,24 @@
                     IsOpaque="True"
                     Aspect="AspectFit"/>
 
-                <Picker
+                    <Picker
                     Grid.Row="7"
                     Grid.ColumnSpan="2"
                     IsEnabled="{Binding ParcelasIsEnabled}"
                     SelectedIndex="{Binding Parcelas}">
-                    <Picker.Items>
-                        <x:String>Selecione o número de parcelas</x:String>
-                        <x:String>1x</x:String>
-                        <x:String>2x</x:String>
-                        <x:String>3x</x:String>
-                        <x:String>4x</x:String>
-                        <x:String>5x</x:String>
-                        <x:String>6x</x:String>
-                        <x:String>9x</x:String>
-                        <x:String>12x</x:String>
-                    </Picker.Items>
-                </Picker>
-                <Image
+                        <Picker.Items>
+                            <x:String>Selecione o número de parcelas</x:String>
+                            <x:String>1x</x:String>
+                            <x:String>2x</x:String>
+                            <x:String>3x</x:String>
+                            <x:String>4x</x:String>
+                            <x:String>5x</x:String>
+                            <x:String>6x</x:String>
+                            <x:String>9x</x:String>
+                            <x:String>12x</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Image
                     Grid.Row="7"
                     Grid.Column="2"
                     Source="ic_Deletar_Large"
@@ -224,88 +232,117 @@
                     IsOpaque="True"
                     Aspect="AspectFit"/>
 
-                <Picker
+                    <Picker
                     Grid.Row="8"
                     Grid.ColumnSpan="2"
                     IsEnabled="{Binding EntradaIsEnabled}"
                     SelectedIndex="{Binding Entrada}">
-                    <Picker.Items>
-                        <x:String>Selecione a entrada</x:String>
-                        <x:String>À vista</x:String>
-                        <x:String>30 dias</x:String>
-                        <x:String>60 dias</x:String>
-                        <x:String>90 dias</x:String>
-                    </Picker.Items>
-                </Picker>
-                <Image
+                        <Picker.Items>
+                            <x:String>Selecione a entrada</x:String>
+                            <x:String>À vista</x:String>
+                            <x:String>30 dias</x:String>
+                            <x:String>60 dias</x:String>
+                            <x:String>90 dias</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Image
                     Grid.Row="8"
                     Grid.Column="2"
                     Source="ic_Deletar_Large"
                     IsVisible="{Binding EntradaInvalido}"
                     IsOpaque="True"
                     Aspect="AspectFit"/>
-            </Grid>
-
-            <Grid
-                Grid.Row="1"
-                Padding="0,5,0,5"
-                VerticalOptions="End"
-                BackgroundColor="Transparent">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Grid
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    BackgroundColor="Transparent">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <Image
-                        Grid.Column="1"
-                        Source="ic_Salvar_Large"
-                        IsOpaque="True"
-                        Aspect="AspectFit"/>
-                    <Label
-                        HorizontalOptions="End"
-                        VerticalOptions="Center"
-                        Text="Salvar"
-                        TextColor="#444444"
-                        FontSize="Large"/>
-                    <Grid.GestureRecognizers>
-                        <TapGestureRecognizer
-                        Command="{Binding SalvarPreVendaCommand}"/>
-                    </Grid.GestureRecognizers>
                 </Grid>
 
                 <Grid
-                    Grid.Column="1"
-                    HorizontalOptions="Center"
+                    Grid.Row="1"
+                    Padding="30,5,30,5"
+                    HorizontalOptions="FillAndExpand"
                     VerticalOptions="Center"
-                    BackgroundColor="Transparent">
+                    BackgroundColor="#7f8c8d">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Image
-                        Source="ic_Deletar_Large"
+                        HorizontalOptions="Start"
+                        Source="ic_Salvar_Venda_Final"
                         IsOpaque="True"
                         Aspect="AspectFit"/>
                     <Label
                         Grid.Column="1"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"
-                        Text="Voltar"
-                        TextColor="#444444"
+                        Text="Salvar Venda"
+                        TextColor="#FFFFF7"
                         FontSize="Large"/>
                     <Grid.GestureRecognizers>
                         <TapGestureRecognizer
-                        Command="{Binding VoltaCommand}"/>
+                            Command="{Binding SalvarPreVendaCommand}"/>
                     </Grid.GestureRecognizers>
                 </Grid>
             </Grid>
+        </ScrollView>
+
+        <Grid
+            Grid.Row="1"
+            Padding="0,5,0,5"
+            VerticalOptions="End"
+            BackgroundColor="#444444">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                BackgroundColor="Transparent">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Image
+                    Grid.Column="1"
+                    Source="ic_Salvar_Large"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+                <Label
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+                    Text="Salvar"
+                    TextColor="#FFFFF7"
+                    FontSize="Large"/>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding SalvarPreVendaCommand}"/>
+                </Grid.GestureRecognizers>
+            </Grid>
+
+            <Grid
+                Grid.Column="1"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                BackgroundColor="Transparent">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image
+                    Source="ic_Deletar_Large"
+                    IsOpaque="True"
+                    Aspect="AspectFit"/>
+                <Label
+                    Grid.Column="1"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    Text="Voltar"
+                    TextColor="#FFFFF7"
+                    FontSize="Large"/>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding VoltaCommand}"/>
+                </Grid.GestureRecognizers>
+            </Grid>
         </Grid>
-    </ScrollView>
+    </Grid>
 </ContentPage>

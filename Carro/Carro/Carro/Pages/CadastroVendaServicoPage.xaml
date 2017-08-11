@@ -19,7 +19,7 @@
     </ContentPage.Resources>
 
     <Grid
-        Padding="0,30,0,0"
+        Padding="0,15,0,0"
         RowSpacing="0">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -27,14 +27,29 @@
             <RowDefinition Height="75"/>
         </Grid.RowDefinitions>
 
-        <Label
-            HorizontalOptions="CenterAndExpand"
-            Text="Adicionar Servico">
-            <Label.GestureRecognizers>
-                <TapGestureRecognizer
-                    Command="{Binding ListaServicoCommand}"/>
-            </Label.GestureRecognizers>
-        </Label>
+        <Grid
+            Padding="30,0,30,15"
+            RowSpacing="15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"/>
+            </Grid.RowDefinitions>
+            
+            <Frame
+                Padding="5"
+                HorizontalOptions="Center"
+                BackgroundColor="#444444">
+                <Label
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Text="Adicionar Servico"
+                    FontSize="Medium"
+                    TextColor="#FFFFF7"/>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding ListaServicoCommand}"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+        </Grid>
 
         <ListView
             Grid.Row="1"
@@ -56,22 +71,23 @@
                             <MenuItem 
                                 Clicked="OnDelete" 
                                 CommandParameter="{Binding .}" 
-                                Text="Delete" 
-                                IsDestructive="True" />
+                                Text="Excluir" 
+                                IsDestructive="True"/>
                         </ViewCell.ContextActions>
 
                         <Grid
-                            Margin="4"
-                            ColumnSpacing="20"
+                            Padding="30,0,30,0"
                             BackgroundColor="Transparent">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
+
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
+                            
                             <Label 
                                 HorizontalOptions="StartAndExpand"
 							    FontAttributes="Bold"
@@ -79,10 +95,10 @@
 							    Text="{Binding Nome}"/>
                             <Label 
                                 Grid.Column="1"
+                                HorizontalOptions="EndAndExpand"
 							    Text="{Binding Valor, Converter={StaticResource decimalConverter}}"/>
                             <Label 
                                 Grid.Row="1" 
-                                Grid.Column="0"
                                 HorizontalOptions="StartAndExpand"
 							    Text="{Binding Tempo}"/>
                             <Label 
@@ -121,7 +137,7 @@
                 <Label
                     HorizontalOptions="End"
                     VerticalOptions="Center"
-                    Text="Salvar"
+                    Text="Avançar"
                     TextColor="#444444"
                     FontSize="Large"/>
                 <Grid.GestureRecognizers>

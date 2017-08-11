@@ -32,34 +32,18 @@ namespace Carro.ViewModels
             }
         }
 
-        Command _MenuServicoCommand;
-        public Command MenuServicoCommand
+        Command _MenuVendaCommand;
+        public Command MenuVendaCommand
         {
-            get { return _MenuServicoCommand ?? (_MenuServicoCommand = new Command(async () => await ExecuteMenuServicoCommand())); }
+            get { return _MenuVendaCommand ?? (_MenuVendaCommand = new Command(async () => await ExecuteMenuVendaCommand())); }
         }
 
-        async Task ExecuteMenuServicoCommand()
+        async Task ExecuteMenuVendaCommand()
         {
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new ListaServicoPage());
-                IsBusy = false;
-            }
-        }
-
-        Command _MenuRelatoriosCommand;
-        public Command MenuRelatoriosCommand
-        {
-            get { return _MenuRelatoriosCommand ?? (_MenuRelatoriosCommand = new Command(async () => await ExecuteMenuRelatoriosCommand())); }
-        }
-
-        async Task ExecuteMenuRelatoriosCommand()
-        {
-            if (!IsBusy)
-            {
-                IsBusy = true;
-                await Navigation.PushAsync(new RelatorioMenuPage());
+                await Navigation.PushAsync(new ListaFinalVendaPage());
                 IsBusy = false;
             }
         }
@@ -80,34 +64,34 @@ namespace Carro.ViewModels
             }
         }
 
-        Command _MenuFuncionarioCommand;
-        public Command MenuFuncionarioCommand
+        Command _MenuProdutoCommand;
+        public Command MenuProdutoCommand
         {
-            get { return _MenuFuncionarioCommand ?? (_MenuFuncionarioCommand = new Command(async () => await ExecuteMenuFuncionarioCommand())); }
+            get { return _MenuProdutoCommand ?? (_MenuProdutoCommand = new Command(async () => await ExecuteMenuProdutoCommand())); }
         }
 
-        async Task ExecuteMenuFuncionarioCommand()
+        async Task ExecuteMenuProdutoCommand()
         {
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new ListaFuncionarioPage());
+                await Navigation.PushAsync(new ListaProdutoPage());
                 IsBusy = false;
             }
         }
 
-        Command _MenuPerdaCommand;
-        public Command MenuPerdaCommand
+        Command _MenuServicoCommand;
+        public Command MenuServicoCommand
         {
-            get { return _MenuPerdaCommand ?? (_MenuPerdaCommand = new Command(async () => await ExecuteMenuPerdaCommand())); }
+            get { return _MenuServicoCommand ?? (_MenuServicoCommand = new Command(async () => await ExecuteMenuServicoCommand())); }
         }
 
-        async Task ExecuteMenuPerdaCommand()
+        async Task ExecuteMenuServicoCommand()
         {
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new ListaPerdaPage());
+                await Navigation.PushAsync(new ListaServicoPage());
                 IsBusy = false;
             }
         }
@@ -128,6 +112,54 @@ namespace Carro.ViewModels
             }
         }
 
+        Command _MenuPerdaCommand;
+        public Command MenuPerdaCommand
+        {
+            get { return _MenuPerdaCommand ?? (_MenuPerdaCommand = new Command(async () => await ExecuteMenuPerdaCommand())); }
+        }
+
+        async Task ExecuteMenuPerdaCommand()
+        {
+            if (!IsBusy)
+            {
+                IsBusy = true;
+                await Navigation.PushAsync(new ListaPerdaPage());
+                IsBusy = false;
+            }
+        }
+
+        Command _MenuFuncionarioCommand;
+        public Command MenuFuncionarioCommand
+        {
+            get { return _MenuFuncionarioCommand ?? (_MenuFuncionarioCommand = new Command(async () => await ExecuteMenuFuncionarioCommand())); }
+        }
+
+        async Task ExecuteMenuFuncionarioCommand()
+        {
+            if (!IsBusy)
+            {
+                IsBusy = true;
+                await Navigation.PushAsync(new ListaFuncionarioPage());
+                IsBusy = false;
+            }
+        }
+
+        Command _MenuRelatoriosCommand;
+        public Command MenuRelatoriosCommand
+        {
+            get { return _MenuRelatoriosCommand ?? (_MenuRelatoriosCommand = new Command(async () => await ExecuteMenuRelatoriosCommand())); }
+        }
+
+        async Task ExecuteMenuRelatoriosCommand()
+        {
+            if (!IsBusy)
+            {
+                IsBusy = true;
+                await Navigation.PushAsync(new RelatorioMenuPage());
+                IsBusy = false;
+            }
+        }
+
         Command _MenuSobreCommand;
         public Command MenuSobreCommand
         {
@@ -140,22 +172,6 @@ namespace Carro.ViewModels
             {
                 IsBusy = true;
                 await Navigation.PushAsync(new SobrePage());
-                IsBusy = false;
-            }
-        }
-
-        Command _MenuProdutoCommand;
-        public Command MenuProdutoCommand
-        {
-            get { return _MenuProdutoCommand ?? (_MenuProdutoCommand = new Command(async () => await ExecuteMenuProdutoCommand())); }
-        }
-
-        async Task ExecuteMenuProdutoCommand()
-        {
-            if (!IsBusy)
-            {
-                IsBusy = true;
-                await Navigation.PushAsync(new ListaProdutoPage());
                 IsBusy = false;
             }
         }
