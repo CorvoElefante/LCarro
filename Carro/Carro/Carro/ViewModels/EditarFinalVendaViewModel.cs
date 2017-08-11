@@ -511,6 +511,22 @@ namespace Carro.ViewModels
             }
         }
 
+        Command _EditarFinalVendaParcelaCommand;
+        public Command EditarFinalVendaParcelaCommand
+        {
+            get { return _EditarFinalVendaParcelaCommand ?? (_EditarFinalVendaParcelaCommand = new Command(async () => await ExecuteEditarFinalVendaParcelaCommand())); }
+        }
+
+        async Task ExecuteEditarFinalVendaParcelaCommand()
+        {
+            if (!IsBusy)
+            {
+                IsBusy = true;
+                await Navigation.PushAsync(new EditarFinalVendaParcelaPage());
+                IsBusy = false;
+            }
+        }
+
         #region HelpCommand
 
         Command _EditarFinalVendaClienteFuncionarioHelpCommand;
