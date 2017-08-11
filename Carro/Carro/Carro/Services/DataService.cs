@@ -225,6 +225,26 @@ namespace Carro.Services
             return list;
         }
 
+        public List<OrdemVenda> FindFinalVendaByNome(string nome)
+        {
+            List<OrdemVenda> list = new List<OrdemVenda>();
+            if (nome == null || nome == "")
+            {
+                list = DB.Query<OrdemVenda>("SELECT * FROM OrdemVenda WHERE eVenda = 1 ORDER BY Registro").ToList();
+            }
+            else
+            {
+                list = DB.Query<OrdemVenda>("SELECT * FROM OrdemVenda INNER JOIN Pessoa ON OrdemVenda.IdCliente = Pessoa.Id WHERE ((Pessoa.Nome LIKE ('%' || ? || '%')) && eVenda = 1) ORDER BY Registro", nome).ToList();
+            }
+
+            foreach (OrdemVenda element in list)
+            {
+                DB.GetChildren(element, true);
+            }
+
+            return list;
+        }
+
         #endregion
 
         #region Relatorios
