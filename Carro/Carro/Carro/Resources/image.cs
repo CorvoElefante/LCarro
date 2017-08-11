@@ -43,6 +43,7 @@ namespace Carro.Resources
         public static FileImageSource ic_Cadastro_Funcionario_Small = new FileImageSource { File = " ic_Cadastro_Funcionario_Small" };
         public static FileImageSource ic_Cadastro_Perda_Small = new FileImageSource { File = " ic_Cadastro_Perda_Small" };
         public static FileImageSource ic_Cadastro_PreVenda_Small = new FileImageSource { File = " ic_Cadastro_PreVenda_Small" };
+        public static FileImageSource ic_Cadastro_Venda_Small = new FileImageSource { File = " ic_Cadastro_PreVenda_Small" };
         public static FileImageSource ic_Cadastro_Produto_Small = new FileImageSource { File = " ic_Cadastro_Produto_Small" };
         public static FileImageSource ic_Cadastro_Servico_Small = new FileImageSource { File = " ic_Cadastro_Servico_Small" };
         #endregion
@@ -53,6 +54,7 @@ namespace Carro.Resources
         public static FileImageSource ic_Editar_Funcionario_Small = new FileImageSource { File = " ic_Editar_Funcionario_Small" };
         public static FileImageSource ic_Editar_Perda_Small = new FileImageSource { File = " ic_Editar_Perda_Small" };
         public static FileImageSource ic_Editar_PreVenda_Small = new FileImageSource { File = " ic_Editar_PreVenda_Small" };
+        public static FileImageSource ic_Editar_Venda_Small = new FileImageSource { File = " ic_Editar_PreVenda_Small" };
         public static FileImageSource ic_Editar_Produto_Small = new FileImageSource { File = " ic_Editar_Produto_Small" };
         public static FileImageSource ic_Editar_Servico_Small = new FileImageSource { File = " ic_Editar_Servico_Small" };
         public static FileImageSource ic_Visualiza_Venda_Small = new FileImageSource { File = " ic_Visualiza_Venda_Small" };
@@ -61,6 +63,7 @@ namespace Carro.Resources
         #region Outros
         public static FileImageSource ic_Salvar_Large = new FileImageSource { File = " ic_Salvar_Large" };
         public static FileImageSource ic_Deletar_Large = new FileImageSource { File = " ic_Deletar_Large" };
+        public static FileImageSource ic_Salvar_Venda_Final = new FileImageSource { File = " ic_Salvar_Venda_Final" };
         #endregion
 
 

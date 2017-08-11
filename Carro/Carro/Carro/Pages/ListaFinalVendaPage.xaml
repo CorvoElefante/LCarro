@@ -11,7 +11,7 @@
             Icon="{x:Static resources:Images.ic_Add_Small}" 
             Command="{Binding AddFinalVendaCommand}"/>
         <ToolbarItem
-            Icon="{x:Static resources:Images.ic_PreVenda_Small}"
+            Icon="{x:Static resources:Images.ic_Venda_Small}"
             Command="{Binding HelpCommand}"/>
     </ContentPage.ToolbarItems>
 

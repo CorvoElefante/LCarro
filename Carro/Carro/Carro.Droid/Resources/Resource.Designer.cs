@@ -1989,7 +1989,7 @@ namespace Carro.Droid
 			public const int ic_Cadastro_Servico_Small = 2130837592;
 			
 			// aapt resource value: 0x7f020059
-			public const int ic_Cadastro_Venda = 2130837593;
+			public const int ic_Cadastro_Venda_Small = 2130837593;
 			
 			// aapt resource value: 0x7f02005a
 			public const int ic_cast_dark = 2130837594;

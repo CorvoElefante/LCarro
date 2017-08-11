@@ -1,10 +1,77 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Carro.Pages.CadastroFinalVendaFuncionarioListaPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin Forms!" />
-        </StackLayout>
-    </ContentPage.Content>
+             xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
+             x:Class="Carro.Pages.CadastroFinalVendaFuncionarioListaPage"
+             BackgroundColor="#FFFFF7"
+             Title="Funcionários">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Icon="ic_Cadastro_Venda_Small"
+            Command="{Binding CadastroFinalVendaFuncionarioListaHelpCommand}"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <resources:DecimalConverter x:Key="decimalConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ListView
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="FillAndExpand"
+        HasUnevenRows="true"
+        SeparatorVisibility="None"
+        Header="{Binding .}"
+        ItemsSource="{Binding Funcionarios}"
+        ItemTapped="Handle_ItemTapped">
+
+        <x:Arguments>
+            <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
+        </x:Arguments>
+
+        <ListView.HeaderTemplate>
+            <DataTemplate>
+                <SearchBar
+				HeightRequest="45"
+				Placeholder="Buscar"
+				Text="{Binding SearchFuncionario}">
+                </SearchBar>
+            </DataTemplate>
+        </ListView.HeaderTemplate>
+
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid
+                        Margin="4"
+                        ColumnSpacing="20"
+                        BackgroundColor="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Label 
+                            HorizontalOptions="StartAndExpand"
+							FontAttributes="Bold"
+							FontSize="Large"
+							Text="{Binding Pessoa.Nome}"/>
+                        <Label 
+                            Grid.Row="1"
+							Text="{Binding Salario, Converter={StaticResource decimalConverter}}"/>
+                        <Label 
+                            Grid.Row="1" 
+                            Grid.Column="1"
+                            HorizontalOptions="EndAndExpand"
+							Text="{Binding Funcao}"/>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 </ContentPage>
