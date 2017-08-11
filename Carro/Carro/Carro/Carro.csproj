@@ -119,8 +119,17 @@
     <Compile Include="Pages\EditarDespesaPage.xaml.cs">
       <DependentUpon>EditarDespesaPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\EditarFinalVendaPage.xaml.cs">
-      <DependentUpon>EditarFinalVendaPage.xaml</DependentUpon>
+    <Compile Include="Pages\EditarFinalVendaClienteFuncionarioPage.xaml.cs">
+      <DependentUpon>EditarFinalVendaClienteFuncionarioPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EditarFinalVendaConclusaoPage.xaml.cs">
+      <DependentUpon>EditarFinalVendaConclusaoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EditarFinalVendaProdutoPage.xaml.cs">
+      <DependentUpon>EditarFinalVendaProdutoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EditarFinalVendaServicoPage.xaml.cs">
+      <DependentUpon>EditarFinalVendaServicoPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\EditarFuncionarioPage.xaml.cs">
       <DependentUpon>EditarFuncionarioPage.xaml</DependentUpon>
@@ -250,6 +259,18 @@
     </Compile>
     <Compile Include="Pages\Help\EditarDespesaHelpPage.xaml.cs">
       <DependentUpon>EditarDespesaHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\EditarFinalVendaClienteFuncionarioHelpPage.xaml.cs">
+      <DependentUpon>EditarFinalVendaClienteFuncionarioHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\EditarFinalVendaConclusaoHelpPage.xaml.cs">
+      <DependentUpon>EditarFinalVendaConclusaoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\EditarFinalVendaProdutoHelpPage.xaml.cs">
+      <DependentUpon>EditarFinalVendaProdutoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\EditarFinalVendaServicoHelpPage.xaml.cs">
+      <DependentUpon>EditarFinalVendaServicoHelpPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Help\EditarFuncionarioHelpPage.xaml.cs">
       <DependentUpon>EditarFuncionarioHelpPage.xaml</DependentUpon>
@@ -485,6 +506,7 @@
     <Compile Include="ViewModels\CadastroVendaViewModel.cs" />
     <Compile Include="ViewModels\EditarClienteViewModel.cs" />
     <Compile Include="ViewModels\EditarDespesaViewModel.cs" />
+    <Compile Include="ViewModels\EditarFinalVendaViewModel.cs" />
     <Compile Include="ViewModels\EditarFuncionarioViewModel.cs" />
     <Compile Include="ViewModels\EditarPerdaViewModel.cs" />
     <Compile Include="ViewModels\EditarProdutoPerdaViewModel.cs" />
@@ -1218,12 +1240,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\EditarFinalVendaPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Pages\CadastroFinalVendaConclusaoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
@@ -1327,6 +1343,54 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\Help\CadastroFinalVendaFuncionarioListaHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\EditarFinalVendaClienteFuncionarioHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\EditarFinalVendaConclusaoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\EditarFinalVendaProdutoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\EditarFinalVendaServicoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\EditarFinalVendaProdutoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\EditarFinalVendaServicoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\EditarFinalVendaConclusaoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\EditarFinalVendaClienteFuncionarioPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
