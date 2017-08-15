@@ -41,7 +41,7 @@ namespace Carro.ViewModels
             {
                 _Search = value;
                 var sqlite = DependencyService.Get<ISQLite>();
-                Vendas = new ObservableCollection<OrdemVenda>(new DataService(sqlite).FindVendaByNome(_Search));
+                Vendas = new ObservableCollection<OrdemVenda>(new DataService(sqlite).FindVendaByNome(_Search, false));
             }
         }
 
@@ -74,7 +74,7 @@ namespace Carro.ViewModels
             using (var scope = new TransactionScope(sqlite))
             {
                 Vendas = new ObservableCollection<OrdemVenda>(
-                    new DataService(sqlite).FindVendaByNome("")
+                    new DataService(sqlite).FindVendaByNome("", false)
                 );
                 scope.Complete();
             }

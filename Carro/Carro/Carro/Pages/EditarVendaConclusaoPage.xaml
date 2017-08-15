@@ -277,7 +277,7 @@
                         FontSize="Large"/>
                     <Grid.GestureRecognizers>
                         <TapGestureRecognizer
-                            Command="{Binding SalvarPreVendaCommand}"/>
+                            Command="{Binding TransformaEmVendaCommand}"/>
                     </Grid.GestureRecognizers>
                 </Grid>
             </Grid>

@@ -18,9 +18,9 @@ namespace Carro.ViewModels
         {
             idEntry = value.Id;
             pessoaSelecionada = value.Pessoa;
+            FormaPagamento = value.FormaPagamento;
             Parcelas = value.Parcelas;
             Entrada = value.Entrada;
-            FormaPagamento = value.FormaPagamento;
             ValorTotalComDesconto = value.Valor;
             DescontoGeral = value.DescontoTotal;
             FuncionariosSelecionados = new ObservableCollection<FuncionarioServico>(value.FuncionarioServicos);
