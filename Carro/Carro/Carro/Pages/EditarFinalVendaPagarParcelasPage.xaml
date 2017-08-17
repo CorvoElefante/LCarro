@@ -19,54 +19,59 @@
     </ContentPage.Resources>
 
     <Grid
-        Padding="0,15,0,0"
         RowSpacing="0">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="75"/>
         </Grid.RowDefinitions>
-        <Grid
-            Padding="30,0,30,0"
-            RowSpacing="15">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="45"/>
-                <RowDefinition Height="45"/>
-                <RowDefinition Height="45"/>
-            </Grid.RowDefinitions>
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
+        <ScrollView>
+            <Grid
+                Padding="30,15,30,0"
+                RowSpacing="15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
 
-            <Label
-                VerticalOptions="Center"
-                Text = "Parcela Numero:"
-                FontSize="Medium"/>
-            <Label
-                Grid.Column="1"
-                Text = "{Binding Parcela.NumeroParcela}"/>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
 
-            <Label
-                Grid.Row="1"
-                VerticalOptions="Center"
-                Text = "Valor:"
-                FontSize="Medium"/>
-            <Label
-                Grid.Row="1"
-                Grid.Column="1"
-                Text = "{Binding Parcela.ValorParcela}"/>
+                <Label
+                    VerticalOptions="Start"
+                    Text="{Binding Parcela.NumeroParcela, StringFormat='Parcela {0}'}"
+                    FontSize="Large"
+                    FontAttributes="Bold"/>
 
-            <Label
-                Grid.Row="2"
-                VerticalOptions="Center"
-                Text = "Vencimento:"
-                FontSize="Medium"/>
-            <Label
-                Grid.Row="2"
-                Grid.Column="1"
-                Text = "{Binding Parcela.Vencimento}"/>
-        </Grid>
+                <Label
+                    Grid.Row="1"
+                    VerticalOptions="Center"
+                    Text = "Valor:"
+                    FontSize="Large"/>
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    VerticalOptions="Center"
+                    Text="{Binding Parcela.ValorParcela, Converter={StaticResource decimalConverter}}"
+                    FontSize="Medium"/>
+
+                <Label
+                    Grid.Row="2"
+                    VerticalOptions="Center"
+                    Text = "Vencimento:"
+                    FontSize="Large"/>
+                <Label
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    VerticalOptions="Center"
+                    Text="{Binding Parcela.Vencimento, StringFormat='{}{0:dd.MM.yyyy}'}"
+                    FontSize="Medium"/>
+            </Grid>
+        </ScrollView>
+
 
 
 
@@ -99,9 +104,9 @@
                     TextColor="#FFFFF7"
                     FontSize="Large"/>
                 <Grid.GestureRecognizers>
-                <TapGestureRecognizer
-                        Command="{Binding PagaParcelaCommand}"/>
-            </Grid.GestureRecognizers>
+                    <TapGestureRecognizer
+                    Command="{Binding PagaParcelaCommand}"/>
+                </Grid.GestureRecognizers>
             </Grid>
 
             <Grid
