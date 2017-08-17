@@ -852,7 +852,7 @@ namespace Carro.ViewModels
                                 {
                                     parcelaTemporario.ValorParcela = ValorTotalComDesconto / 9;
                                     parcelaTemporario.NumeroParcela = i;
-                                    parcelaTemporario.Vencimento = data.AddMonths(i + (Entrada - 1));
+                                    parcelaTemporario.Vencimento = data.AddMonths(i + (Entrada - 2));
                                     parcelaTemporario.Pago = false;
                                     OrdemVendaParcelas.Add(parcelaTemporario);
                                     parcelaTemporario = new OrdemVendaParcela();
@@ -868,7 +868,7 @@ namespace Carro.ViewModels
                                     {
                                         parcelaTemporario.ValorParcela = ValorTotalComDesconto / 12;
                                         parcelaTemporario.NumeroParcela = i;
-                                        parcelaTemporario.Vencimento = data.AddMonths(i + (Entrada - 1));
+                                        parcelaTemporario.Vencimento = data.AddMonths(i + (Entrada - 2));
                                         parcelaTemporario.Pago = false;
                                         OrdemVendaParcelas.Add(parcelaTemporario);
                                         parcelaTemporario = new OrdemVendaParcela();
@@ -882,7 +882,7 @@ namespace Carro.ViewModels
                                     {
                                         parcelaTemporario.ValorParcela = ValorTotalComDesconto / Parcelas;
                                         parcelaTemporario.NumeroParcela = i;
-                                        parcelaTemporario.Vencimento = data.AddMonths(i + (Entrada - 1));
+                                        parcelaTemporario.Vencimento = data.AddMonths(i + (Entrada - 2));
                                         parcelaTemporario.Pago = false;
                                         OrdemVendaParcelas.Add(parcelaTemporario);
                                         parcelaTemporario = new OrdemVendaParcela();
