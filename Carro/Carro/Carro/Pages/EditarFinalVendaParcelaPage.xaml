@@ -18,32 +18,28 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <Grid
-        Padding="0,15,0,0"
-        RowSpacing="0">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="75"/>
-        </Grid.RowDefinitions>
+    <ListView
+		HorizontalOptions="FillAndExpand"
+		VerticalOptions="FillAndExpand"
+		HasUnevenRows="true"
+		SeparatorVisibility="None"
+		ItemsSource="{Binding OrdemVendaParcelas}"
+		ItemTapped="Handle_ItemTapped">
 
-        <ListView
-		    HorizontalOptions="FillAndExpand"
-		    VerticalOptions="FillAndExpand"
-		    HasUnevenRows="true"
-		    SeparatorVisibility="None"
-		    ItemsSource="{Binding OrdemVendaParcelas}"
-		    ItemTapped="Handle_ItemTapped">
+        <x:Arguments>
+            <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
+        </x:Arguments>
 
-            <x:Arguments>
-                <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
-            </x:Arguments>
-
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Frame
+                        Margin="15,10,15,0"
+                        Padding="15,0,15,0"
+                        BackgroundColor="Green">
                         <Grid
-                            Padding="30,0,30,0"
-                            BackgroundColor="Transparent">
+                            BackgroundColor="Transparent"
+                            RowSpacing="0">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="Auto"/>
@@ -56,24 +52,28 @@
 
                             <Label 
                                 HorizontalOptions="StartAndExpand"
+                                VerticalOptions="Center"
 							    FontAttributes="Bold"
 							    FontSize="Large"
-							    Text="{Binding NumeroParcela}"/>
+							    Text="{Binding NumeroParcela, StringFormat='Parcela {0}'}"/>
                             <Label 
-                                Grid.Column="1" 
+                                Grid.Column="1"
                                 HorizontalOptions="StartAndExpand"
-							    Text="{Binding ValorParcela}"/>
+                                VerticalOptions="Center"
+                                FontAttributes="Bold"
+                                FontSize="Large"
+							    Text="{Binding ValorParcela, Converter={StaticResource decimalConverter}}"/>
 
                             <Label 
                                 Grid.Row="1" 
                                 HorizontalOptions="StartAndExpand"
-							    FontAttributes="Bold"
-							    FontSize="Large"
-							    Text="{Binding Vencimento}"/>
+                                VerticalOptions="Center"
+							    FontSize="Medium"
+							    Text="{Binding Vencimento, StringFormat='{}{0:dd.MM.yyyy}'}"/>
                         </Grid>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </Grid>
+                    </Frame>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 </ContentPage>

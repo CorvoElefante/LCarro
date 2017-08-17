@@ -32,6 +32,20 @@ namespace Carro.ViewModels
             }
         }
 
+        string _nParcela = "Parcela ";
+        public string nParcela
+        {
+            get
+            {
+                return _nParcela;
+            }
+            set
+            {
+                _nParcela = value;
+                SetPropertyChanged(nameof(nParcela));
+            }
+        }
+
         Command _PagarParcelasCommand;
         public Command PagarParcelasCommand
         {

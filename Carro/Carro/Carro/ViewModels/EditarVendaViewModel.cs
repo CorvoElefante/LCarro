@@ -818,7 +818,7 @@ namespace Carro.ViewModels
 
         async Task ExecuteSalvarPreVendaCommand()
         {
-            if (!IsBusy)
+            if (FormaPagamentoInvalido == false && ParcelasInvalido == false && EntradaInvalido == false)
             {
                 if (!IsBusy)
                 {
