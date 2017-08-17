@@ -24,6 +24,8 @@ namespace Carro.Models
 
         public bool Pago { get; set; }
 
+        public string Cor { get; set; }
+
         [ManyToOne]
         public OrdemVenda OrdemVenda { get; set; }
     }

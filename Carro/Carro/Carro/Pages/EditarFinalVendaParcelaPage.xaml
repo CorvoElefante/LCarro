@@ -36,7 +36,7 @@
                     <Frame
                         Margin="15,10,15,0"
                         Padding="15,0,15,0"
-                        BackgroundColor="Green">
+                        BackgroundColor="{Binding Cor}">
                         <Grid
                             BackgroundColor="Transparent"
                             RowSpacing="0">

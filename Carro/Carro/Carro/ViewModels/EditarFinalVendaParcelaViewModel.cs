@@ -14,8 +14,27 @@ namespace Carro.ViewModels
     public class EditarFinalVendaParcelaViewModel : BaseViewModel
     {
 
-        public EditarFinalVendaParcelaViewModel(INavigation navigation, ObservableCollection<OrdemVendaParcela> value) : base(navigation){
+        public EditarFinalVendaParcelaViewModel(INavigation navigation, ObservableCollection<OrdemVendaParcela> value) : base(navigation)
+        {
             OrdemVendaParcelas = new ObservableCollection<OrdemVendaParcela>(value);
+            foreach (OrdemVendaParcela parc in OrdemVendaParcelas)
+            {
+                if (parc.Pago == true)
+                {
+                    parc.Cor = "Green";
+                }
+                else
+                {
+                    if (parc.Vencimento < DateTime.UtcNow)
+                    {
+                        parc.Cor = "Red";
+                    }
+                    else
+                    {
+                        parc.Cor = "Blue";
+                    }
+                }
+            }
         }
 
         ObservableCollection<OrdemVendaParcela> _OrdemVendaParcelas = new ObservableCollection<OrdemVendaParcela>();
@@ -29,20 +48,6 @@ namespace Carro.ViewModels
             {
                 _OrdemVendaParcelas = value;
                 SetPropertyChanged(nameof(OrdemVendaParcelas));
-            }
-        }
-
-        string _nParcela = "Parcela ";
-        public string nParcela
-        {
-            get
-            {
-                return _nParcela;
-            }
-            set
-            {
-                _nParcela = value;
-                SetPropertyChanged(nameof(nParcela));
             }
         }
 
