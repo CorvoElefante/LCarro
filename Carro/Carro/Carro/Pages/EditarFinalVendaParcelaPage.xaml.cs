@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Carro.ViewModels;
 using Carro.Models;
+using System.Collections.ObjectModel;
 
 namespace Carro.Pages
 {
     public partial class EditarFinalVendaParcelaPage : ContentPage
     {
-        public EditarFinalVendaParcelaPage()
+        public EditarFinalVendaParcelaPage(ObservableCollection<OrdemVendaParcela> value)
         {
-            BindingContext = new EditarFinalVendaParcelaViewModel(Navigation);
+            BindingContext = new EditarFinalVendaParcelaViewModel(Navigation, value);
             InitializeComponent();
         }
 

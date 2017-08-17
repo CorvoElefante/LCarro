@@ -18,9 +18,9 @@ namespace Carro.ViewModels
         {
             idEntry = value.Id;
             pessoaSelecionada = value.Pessoa;
+            FormaPagamento = value.FormaPagamento;
             Parcelas = value.Parcelas;
             Entrada = value.Entrada;
-            FormaPagamento = value.FormaPagamento;
             ValorTotalComDesconto = value.Valor;
             DescontoGeral = value.DescontoTotal;
             FuncionariosSelecionados = new ObservableCollection<FuncionarioServico>(value.FuncionarioServicos);
@@ -196,6 +196,34 @@ namespace Carro.ViewModels
             {
                 _servicoSelecionadoTemporario = value;
                 SetPropertyChanged(nameof(servicoSelecionadoTemporario));
+            }
+        }
+
+        ObservableCollection<OrdemVendaParcela> _OrdemVendaParcelas = new ObservableCollection<OrdemVendaParcela>();
+        public ObservableCollection<OrdemVendaParcela> OrdemVendaParcelas
+        {
+            get
+            {
+                return _OrdemVendaParcelas;
+            }
+            set
+            {
+                _OrdemVendaParcelas = value;
+                SetPropertyChanged(nameof(OrdemVendaParcelas));
+            }
+        }
+
+        OrdemVendaParcela _parcelaTemporario = new OrdemVendaParcela();
+        public OrdemVendaParcela parcelaTemporario
+        {
+            get
+            {
+                return _parcelaTemporario;
+            }
+            set
+            {
+                _parcelaTemporario = value;
+                SetPropertyChanged(nameof(parcelaTemporario));
             }
         }
 
@@ -814,13 +842,90 @@ namespace Carro.ViewModels
                             }
                         }
 
-                        service.SaveOrdemVenda(new OrdemVenda { eVenda = false, IdCliente = pessoaSelecionada.Id, Pessoa = pessoaSelecionada, FormaPagamento = FormaPagamento, Parcelas = Parcelas, Valor = ValorTotalComDesconto, DescontoTotal = DescontoGeral, Registro = data, FuncionarioServicos = FuncionariosSelecionados.ToList<FuncionarioServico>(), OrdemVendaProdutos = ProdutosSelecionados.ToList<OrdemVendaProduto>(), OrdemVendaServicos = ServicosSelecionados.ToList<OrdemVendaServico>() });
+                        if (FormaPagamento == 2)
+                        {
+
+                            if (Parcelas == 7)
+                            {
+
+                                for (int i = 1; i <= 9; i++)
+                                {
+                                    parcelaTemporario.ValorParcela = ValorTotalComDesconto / 9;
+                                    parcelaTemporario.NumeroParcela = i;
+                                    parcelaTemporario.Vencimento = data.AddMonths(i + (Entrada - 1));
+                                    parcelaTemporario.Pago = false;
+                                    OrdemVendaParcelas.Add(parcelaTemporario);
+                                    parcelaTemporario = new OrdemVendaParcela();
+
+                                }
+                            }
+                            else
+                            {
+                                if (Parcelas == 8)
+                                {
+
+                                    for (int i = 1; i <= 12; i++)
+                                    {
+                                        parcelaTemporario.ValorParcela = ValorTotalComDesconto / 12;
+                                        parcelaTemporario.NumeroParcela = i;
+                                        parcelaTemporario.Vencimento = data.AddMonths(i + (Entrada - 1));
+                                        parcelaTemporario.Pago = false;
+                                        OrdemVendaParcelas.Add(parcelaTemporario);
+                                        parcelaTemporario = new OrdemVendaParcela();
+                                    }
+
+                                }
+                                else
+                                {
+
+                                    for (int i = 1; i <= Parcelas; i++)
+                                    {
+                                        parcelaTemporario.ValorParcela = ValorTotalComDesconto / Parcelas;
+                                        parcelaTemporario.NumeroParcela = i;
+                                        parcelaTemporario.Vencimento = data.AddMonths(i + (Entrada - 1));
+                                        parcelaTemporario.Pago = false;
+                                        OrdemVendaParcelas.Add(parcelaTemporario);
+                                        parcelaTemporario = new OrdemVendaParcela();
+                                    }
+                                }
+                            }
+
+                        }
+                        else
+                        {
+                            OrdemVendaParcelas = new ObservableCollection<OrdemVendaParcela>();
+                        }
+
+
+                        service.SaveOrdemVenda(new OrdemVenda { Id = idEntry, eVenda = false, IdCliente = pessoaSelecionada.Id, Pessoa = pessoaSelecionada, FormaPagamento = FormaPagamento, Parcelas = Parcelas, Entrada = Entrada, Valor = ValorTotalComDesconto, DescontoTotal = DescontoGeral, Registro = data, FuncionarioServicos = FuncionariosSelecionados.ToList<FuncionarioServico>(), OrdemVendaProdutos = ProdutosSelecionados.ToList<OrdemVendaProduto>(), OrdemVendaServicos = ServicosSelecionados.ToList<OrdemVendaServico>(), OrdemVendaParcela = OrdemVendaParcelas.ToList<OrdemVendaParcela>() });
 
                         scope.Complete();
                     }
                     await Navigation.PopToRootAsync();
                     IsBusy = false;
                 }
+            }
+        }
+
+        Command _TransformaEmVendaCommand;
+        public Command TransformaEmVendaCommand
+        {
+            get { return _TransformaEmVendaCommand ?? (_TransformaEmVendaCommand = new Command(async () => await ExecuteTransformaEmVendaCommand())); }
+        }
+
+        async Task ExecuteTransformaEmVendaCommand()
+        {
+            if (!IsBusy)
+            {
+                IsBusy = true;
+                var sqlite = DependencyService.Get<ISQLite>();
+                using (var scope = new TransactionScope(sqlite))
+                {
+                    var service = new DataService(sqlite);
+                    service.TransformaEmVenda(idEntry);
+                }
+                    await Navigation.PopToRootAsync();
+                IsBusy = false;
             }
         }
 

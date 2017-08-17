@@ -16,7 +16,7 @@ namespace Carro.Services
         {
             DB = sqlite.GetConnection();
             UnitOfWork = new UnitOfWork(DB);
-            
+
         }
         readonly SQLiteConnection DB;
 
@@ -83,7 +83,7 @@ namespace Carro.Services
 
         public void AtualizaEstoque(long? idProduto, int quantidadeEstoque)
         {
-            
+
             DB.Query<Produto>("UPDATE Produto SET Quantidade = ? WHERE Id = ?", quantidadeEstoque, idProduto);
         }
 
@@ -134,7 +134,7 @@ namespace Carro.Services
             {
                 list = DB.Query<Funcionario>("SELECT funcionario.Id, funcionario.Salario, funcionario.Funcao, funcionario.PessoaId FROM funcionario INNER JOIN pessoa ON funcionario.PessoaId = Pessoa.Id WHERE (Pessoa.Nome LIKE ('%' || ? || '%')) ORDER BY Pessoa.Nome", nome).ToList();
             }
-            
+
             foreach (Funcionario element in list)
             {
                 DB.GetChildren(element, false);
@@ -205,16 +205,16 @@ namespace Carro.Services
             UnitOfWork.OrdemVendaRepository.AddOrUpdate(ordemvenda);
         }
 
-        public List<OrdemVenda> FindVendaByNome(string nome)
+        public List<OrdemVenda> FindVendaByNome(string nome, bool eVenda)
         {
             List<OrdemVenda> list = new List<OrdemVenda>();
             if (nome == null || nome == "")
             {
-                list = DB.Query<OrdemVenda>("SELECT * FROM OrdemVenda ORDER BY Registro").ToList();
+                list = DB.Query<OrdemVenda>("SELECT * FROM OrdemVenda WHERE eVenda = ? ORDER BY Registro", eVenda).ToList();
             }
             else
             {
-                list = DB.Query<OrdemVenda>("SELECT * FROM OrdemVenda INNER JOIN Pessoa ON OrdemVenda.IdCliente = Pessoa.Id WHERE (Pessoa.Nome LIKE ('%' || ? || '%')) ORDER BY Registro", nome).ToList();
+                list = DB.Query<OrdemVenda>("SELECT * FROM OrdemVenda INNER JOIN Pessoa ON OrdemVenda.IdCliente = Pessoa.Id WHERE ((Pessoa.Nome LIKE ('%' || ? || '%')) AND eVenda = ?) ORDER BY Registro", nome, eVenda).ToList();
             }
 
             foreach (OrdemVenda element in list)
@@ -225,24 +225,16 @@ namespace Carro.Services
             return list;
         }
 
-        public List<OrdemVenda> FindFinalVendaByNome(string nome)
+        public void TransformaEmVenda(long? id)
         {
-            List<OrdemVenda> list = new List<OrdemVenda>();
-            if (nome == null || nome == "")
-            {
-                list = DB.Query<OrdemVenda>("SELECT * FROM OrdemVenda WHERE eVenda = 1 ORDER BY Registro").ToList();
-            }
-            else
-            {
-                list = DB.Query<OrdemVenda>("SELECT * FROM OrdemVenda INNER JOIN Pessoa ON OrdemVenda.IdCliente = Pessoa.Id WHERE ((Pessoa.Nome LIKE ('%' || ? || '%')) && eVenda = 1) ORDER BY Registro", nome).ToList();
-            }
 
-            foreach (OrdemVenda element in list)
-            {
-                DB.GetChildren(element, true);
-            }
+            DB.Query<OrdemVenda>("UPDATE OrdemVenda SET eVenda = 1 WHERE OrdemVenda.Id = ?", id);
 
-            return list;
+        }
+
+        public void PagaParcela(long? IdOrdemVenda, long? IdParcela)
+        {
+            DB.Query<OrdemVenda>("UPDATE OrdemVendaParcela SET Pago = 1 WHERE OrdemVendaParcela.IdOrdemVenda = ? AND OrdemVendaParcela.Id = ?", IdOrdemVenda, IdParcela);
         }
 
         #endregion
@@ -277,10 +269,11 @@ namespace Carro.Services
         public List<Despesa> RelatorioDespesas(DateTime dataInicial, DateTime dataFinal, int categoria)
         {
             List<Despesa> lista = new List<Despesa>();
-            if(categoria == 0)
+            if (categoria == 0)
             {
                 lista = DB.Query<Despesa>("SELECT * FROM Despesa WHERE Registro >= ? AND Registro <= ?", dataInicial.Ticks, dataFinal.Ticks);
-            }else
+            }
+            else
             {
                 lista = DB.Query<Despesa>("SELECT * FROM Despesa WHERE Registro >= ? AND Registro <= ? AND Categoria = ?", dataInicial.Ticks, dataFinal.Ticks, categoria);
             }
@@ -307,7 +300,8 @@ namespace Carro.Services
             if (nome == null || nome == "")
             {
                 list = DB.Query<Produto>("SELECT Produto.Id, Produto.Nome, Produto.Marca, Produto.Preco FROM Produto WHERE Produto.Quantidade = 0").ToList();
-            }else
+            }
+            else
             {
                 list = DB.Query<Produto>("SELECT Produto.Id, Produto.Nome, Produto.Marca, Produto.Preco FROM Produto WHERE ((Produto.Quantidade = 0) AND (Produto.Nome LIKE ('%' || ? || '%')))", nome).ToList();
             }
