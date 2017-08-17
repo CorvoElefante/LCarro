@@ -232,6 +232,11 @@ namespace Carro.Services
 
         }
 
+        public void PagaParcela(long? IdOrdemVenda, long? IdParcela)
+        {
+            DB.Query<OrdemVenda>("UPDATE OrdemVendaParcela SET Pago = 1 WHERE OrdemVendaParcela.IdOrdemVenda = ? AND OrdemVendaParcela.Id = ?", IdOrdemVenda, IdParcela);
+        }
+
         #endregion
 
         #region Relatorios

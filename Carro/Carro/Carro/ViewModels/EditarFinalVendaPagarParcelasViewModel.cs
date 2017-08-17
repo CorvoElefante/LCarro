@@ -16,6 +16,46 @@ namespace Carro.ViewModels
 
         public EditarFinalVendaPagarParcelasViewModel(INavigation navigation, OrdemVendaParcela value) : base(navigation){
 
+            Parcela = value;
+        }
+
+        OrdemVendaParcela _Parcela = new OrdemVendaParcela();
+        public OrdemVendaParcela Parcela
+        {
+            get
+            {
+                return _Parcela;
+            }
+            set
+            {
+                _Parcela = value;
+                SetPropertyChanged(nameof(Parcela));
+            }
+        }
+
+        Command _PagaParcelaCommand;
+        public Command PagaParcelaCommand
+        {
+            get { return _PagaParcelaCommand ?? (_PagaParcelaCommand = new Command(async () => await ExecutePagaParcelaCommand())); }
+        }
+
+        async Task ExecutePagaParcelaCommand()
+        {
+            if (!IsBusy)
+            {
+                IsBusy = true;
+
+                var sqlite = DependencyService.Get<ISQLite>();
+                using (var scope = new TransactionScope(sqlite))
+                {
+                    var service = new DataService(sqlite);
+
+                    service.PagaParcela(Parcela.IdOrdemVenda, Parcela.Id);
+                    scope.Complete();
+                }
+                await Navigation.PopToRootAsync();
+                IsBusy = false;
+            }
         }
 
         Command _HelpCommand;

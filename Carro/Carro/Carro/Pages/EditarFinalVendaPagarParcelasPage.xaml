@@ -45,8 +45,7 @@
                 FontSize="Medium"/>
             <Label
                 Grid.Column="1"
-                Text = "{Binding NumeroParcela}"
-                Keyboard="Numeric"/>
+                Text = "{Binding Parcela.NumeroParcela}"/>
 
             <Label
                 Grid.Row="1"
@@ -56,8 +55,7 @@
             <Label
                 Grid.Row="1"
                 Grid.Column="1"
-                Text = "{Binding ValorParcela}"
-                Keyboard="Numeric"/>
+                Text = "{Binding Parcela.ValorParcela}"/>
 
             <Label
                 Grid.Row="2"
@@ -67,8 +65,7 @@
             <Label
                 Grid.Row="2"
                 Grid.Column="1"
-                Text = "{Binding Vencimento}"
-                Keyboard="Numeric"/>
+                Text = "{Binding Parcela.Vencimento}"/>
         </Grid>
 
 
@@ -101,10 +98,10 @@
                     Text="Pagar"
                     TextColor="#FFFFF7"
                     FontSize="Large"/>
-                <!--<Grid.GestureRecognizers>
+                <Grid.GestureRecognizers>
                 <TapGestureRecognizer
-                        Command="{Binding SalvarPreVendaCommand}"/>
-            </Grid.GestureRecognizers>-->
+                        Command="{Binding PagaParcelaCommand}"/>
+            </Grid.GestureRecognizers>
             </Grid>
 
             <Grid

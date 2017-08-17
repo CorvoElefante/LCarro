@@ -26,6 +26,7 @@ namespace Carro.ViewModels
             FuncionariosSelecionados = new ObservableCollection<FuncionarioServico>(value.FuncionarioServicos);
             ProdutosSelecionados = new ObservableCollection<OrdemVendaProduto>(value.OrdemVendaProdutos);
             ServicosSelecionados = new ObservableCollection<OrdemVendaServico>(value.OrdemVendaServicos);
+            OrdemVendaParcelas = new ObservableCollection<OrdemVendaParcela>(value.OrdemVendaParcela);
             ValorTotal = value.Valor;
         }
 
@@ -98,6 +99,20 @@ namespace Carro.ViewModels
             {
                 _ServicosSelecionados = value;
                 SetPropertyChanged(nameof(ServicosSelecionados));
+            }
+        }
+
+        ObservableCollection<OrdemVendaParcela> _OrdemVendaParcelas = new ObservableCollection<OrdemVendaParcela>();
+        public ObservableCollection<OrdemVendaParcela> OrdemVendaParcelas
+        {
+            get
+            {
+                return _OrdemVendaParcelas;
+            }
+            set
+            {
+                _OrdemVendaParcelas = value;
+                SetPropertyChanged(nameof(OrdemVendaParcelas));
             }
         }
 
@@ -514,15 +529,15 @@ namespace Carro.ViewModels
         Command _EditarFinalVendaParcelaCommand;
         public Command EditarFinalVendaParcelaCommand
         {
-            get { return _EditarFinalVendaParcelaCommand ?? (_EditarFinalVendaParcelaCommand = new Command(async () => await ExecuteEditarFinalVendaParcelaCommand())); }
+            get { return _EditarFinalVendaParcelaCommand ?? (_EditarFinalVendaParcelaCommand = new Command<ObservableCollection<OrdemVendaParcela>>(async (qq) => await ExecuteEditarFinalVendaParcelaCommand(qq))); }
         }
 
-        async Task ExecuteEditarFinalVendaParcelaCommand()
+        async Task ExecuteEditarFinalVendaParcelaCommand(ObservableCollection<OrdemVendaParcela> qq)
         {
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new EditarFinalVendaParcelaPage());
+                await Navigation.PushAsync(new EditarFinalVendaParcelaPage(OrdemVendaParcelas));
                 IsBusy = false;
             }
         }

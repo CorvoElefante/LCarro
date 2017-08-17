@@ -14,8 +14,8 @@ namespace Carro.ViewModels
     public class EditarFinalVendaParcelaViewModel : BaseViewModel
     {
 
-        public EditarFinalVendaParcelaViewModel(INavigation navigation) : base(navigation){
-
+        public EditarFinalVendaParcelaViewModel(INavigation navigation, ObservableCollection<OrdemVendaParcela> value) : base(navigation){
+            OrdemVendaParcelas = new ObservableCollection<OrdemVendaParcela>(value);
         }
 
         ObservableCollection<OrdemVendaParcela> _OrdemVendaParcelas = new ObservableCollection<OrdemVendaParcela>();
