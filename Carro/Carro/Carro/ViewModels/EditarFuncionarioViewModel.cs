@@ -24,6 +24,7 @@ namespace Carro.ViewModels
             telefoneEntry = value.Pessoa.Telefone;
             emailEntry = value.Pessoa.Email;
             ndataEntry = value.Pessoa.Data;
+            identidadeEntry = value.Pessoa.Identidade;
             cpfEntry = value.Pessoa.Cpf;
             salarioEntry = value.Salario;
             funcaoEntry = value.Funcao;
@@ -179,6 +180,20 @@ namespace Carro.ViewModels
             }
         }
 
+        string _identidadeEntry = string.Empty;
+        public string identidadeEntry
+        {
+            get
+            {
+                return _identidadeEntry;
+            }
+            set
+            {
+                _identidadeEntry = value;
+                SetPropertyChanged(nameof(identidadeEntry));
+            }
+        }
+
         string _cpfEntry = string.Empty;
         public string cpfEntry
         {
@@ -239,7 +254,7 @@ namespace Carro.ViewModels
                     using (var scope = new TransactionScope(sqlite))
                     {
                         var service = new DataService(sqlite);
-                        var Pessoa = new Pessoa { Id = idEntryPessoa, Nome = nomeEntry, RuaN = ruaNEntry, Bairro = bairroEntry, Telefone = telefoneEntry, Email = emailEntry, Data = ndataEntry, Cpf = cpfEntry };
+                        var Pessoa = new Pessoa { Id = idEntryPessoa, Nome = nomeEntry, RuaN = ruaNEntry, Bairro = bairroEntry, Telefone = telefoneEntry, Email = emailEntry, Data = ndataEntry, Identidade = identidadeEntry, Cpf = cpfEntry };
                         service.SavePessoa(Pessoa);
 
                         service.SaveFuncionario(new Funcionario { Id = idEntryFuncionario, Salario = salarioEntry, Funcao = funcaoEntry, Pessoa = Pessoa });

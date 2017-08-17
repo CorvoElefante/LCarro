@@ -11,18 +11,18 @@
       RowSpacing="6"
       ColumnSpacing="0">
 
-    <Grid.RowDefinitions>
-        <RowDefinition Height="*"/>
-        <RowDefinition Height="Auto"/>
-        <RowDefinition Height="*"/>
-        <RowDefinition Height="Auto"/>
-        <RowDefinition Height="*"/>
-        <RowDefinition Height="Auto"/>
-        <RowDefinition Height="*"/>
-        <RowDefinition Height="Auto"/>
-    </Grid.RowDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
 
-    <Image
+        <Image
             Grid.Row="0"
             Grid.Column="0"
             Source="ic_Relatorio_PreVenda_Large"
@@ -30,12 +30,12 @@
             Aspect="AspectFit"
             VerticalOptions="CenterAndExpand"
             HorizontalOptions="CenterAndExpand">
-        <Image.GestureRecognizers>
-            <TapGestureRecognizer Command="{Binding RelatorioMenuPreVendaCommand}"/>
-        </Image.GestureRecognizers>
-    </Image>
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding RelatorioMenuPreVendaCommand}"/>
+            </Image.GestureRecognizers>
+        </Image>
 
-    <Label
+        <Label
             Grid.Row="1"
             Grid.Column="0"
             Text="Pré-Venda"
@@ -43,7 +43,7 @@
             FontSize="Large"
             HorizontalOptions="Center"/>
 
-    <Image
+        <Image
             Grid.Row="0"
             Grid.Column="1"
             Source="ic_Relatorio_Venda_Large"
@@ -51,12 +51,12 @@
             Aspect="AspectFit"
             VerticalOptions="CenterAndExpand"
             HorizontalOptions="CenterAndExpand">
-        <!--<Image.GestureRecognizers>
+            <!--<Image.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding RelatorioMenuVendaCommand}"/>
             </Image.GestureRecognizers>-->
-    </Image>
+        </Image>
 
-    <Label
+        <Label
             Grid.Row="1"
             Grid.Column="1"
             Text="Vendas"
@@ -64,7 +64,7 @@
             FontSize="Large"
             HorizontalOptions="Center"/>
 
-    <Image
+        <Image
             Grid.Row="2"
             Grid.Column="0"
             Source="ic_Relatorio_Cliente_Large"
@@ -72,12 +72,12 @@
             Aspect="AspectFit"
             VerticalOptions="CenterAndExpand"
             HorizontalOptions="CenterAndExpand">
-        <Image.GestureRecognizers>
-            <TapGestureRecognizer Command="{Binding RelatorioMenuClienteCommand}"/>
-        </Image.GestureRecognizers>
-    </Image>
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding RelatorioMenuClienteCommand}"/>
+            </Image.GestureRecognizers>
+        </Image>
 
-    <Label
+        <Label
             Grid.Row="3"
             Grid.Column="0"
             Text="Clientes"
@@ -85,7 +85,7 @@
             FontSize="Large"
             HorizontalOptions="Center"/>
 
-    <Image
+        <Image
             Grid.Row="2"
             Grid.Column="1"
             Source="ic_Relatorio_Produto_Large"
@@ -93,12 +93,12 @@
             Aspect="AspectFit"
             VerticalOptions="CenterAndExpand"
             HorizontalOptions="CenterAndExpand">
-        <Image.GestureRecognizers>
-            <TapGestureRecognizer Command="{Binding RelatorioMenuProdutoCommand}"/>
-        </Image.GestureRecognizers>
-    </Image>
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding RelatorioMenuProdutoCommand}"/>
+            </Image.GestureRecognizers>
+        </Image>
 
-    <Label
+        <Label
             Grid.Row="3"
             Grid.Column="1"
             Text="Produtos"
@@ -106,7 +106,7 @@
             FontSize="Large"
             HorizontalOptions="Center"/>
 
-    <Image
+        <Image
             Grid.Row="4"
             Grid.Column="0"
             Source="ic_Relatorio_Servico_Large"
@@ -114,12 +114,12 @@
             Aspect="AspectFit"
             VerticalOptions="CenterAndExpand"
             HorizontalOptions="CenterAndExpand">
-        <Image.GestureRecognizers>
-            <TapGestureRecognizer Command="{Binding RelatorioMenuServicoCommand}"/>
-        </Image.GestureRecognizers>
-    </Image>
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding RelatorioMenuServicoCommand}"/>
+            </Image.GestureRecognizers>
+        </Image>
 
-    <Label
+        <Label
             Grid.Row="5"
             Grid.Column="0"
             Text="Serviços"
@@ -127,7 +127,7 @@
             FontSize="Large"
             HorizontalOptions="Center"/>
 
-    <Image
+        <Image
             Grid.Row="4"
             Grid.Column="1"
             Source="ic_Relatorio_Despesa_Large"
@@ -135,12 +135,12 @@
             Aspect="AspectFit"
             VerticalOptions="CenterAndExpand"
             HorizontalOptions="CenterAndExpand">
-        <Image.GestureRecognizers>
-            <TapGestureRecognizer Command="{Binding RelatorioMenuDespesaCommand}"/>
-        </Image.GestureRecognizers>
-    </Image>
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding RelatorioMenuDespesaCommand}"/>
+            </Image.GestureRecognizers>
+        </Image>
 
-    <Label
+        <Label
             Grid.Row="5"
             Grid.Column="1"
             Text="Despesas"
@@ -148,7 +148,7 @@
             FontSize="Large"
             HorizontalOptions="Center"/>
 
-    <Image
+        <Image
             Grid.Row="6"
             Grid.Column="0"
             Source="ic_Relatorio_Perda_Large"
@@ -156,12 +156,12 @@
             Aspect="AspectFit"
             VerticalOptions="CenterAndExpand"
             HorizontalOptions="CenterAndExpand">
-        <Image.GestureRecognizers>
-            <TapGestureRecognizer Command="{Binding RelatorioMenuPerdaCommand}"/>
-        </Image.GestureRecognizers>
-    </Image>
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding RelatorioMenuPerdaCommand}"/>
+            </Image.GestureRecognizers>
+        </Image>
 
-    <Label
+        <Label
             Grid.Row="7"
             Grid.Column="0"
             Text="Perdas"
@@ -169,7 +169,7 @@
             FontSize="Large"
             HorizontalOptions="Center"/>
 
-    <Image
+        <Image
             Grid.Row="6"
             Grid.Column="1"
             Source="ic_Relatorio_Funcionario_Large"
@@ -177,17 +177,17 @@
             Aspect="AspectFit"
             VerticalOptions="CenterAndExpand"
             HorizontalOptions="CenterAndExpand">
-        <Image.GestureRecognizers>
-            <TapGestureRecognizer Command="{Binding RelatorioMenuFuncionarioCommand}"/>
-        </Image.GestureRecognizers>
-    </Image>
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding RelatorioMenuFuncionarioCommand}"/>
+            </Image.GestureRecognizers>
+        </Image>
 
-    <Label
+        <Label
             Grid.Row="7"
             Grid.Column="1"
             Text="Funcionários"
             TextColor="#FFFFF7"
             FontSize="Large"
             HorizontalOptions="Center"/>
-</Grid>
+    </Grid>
 </ContentPage>

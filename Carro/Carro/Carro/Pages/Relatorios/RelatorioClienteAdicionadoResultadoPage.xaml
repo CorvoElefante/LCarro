@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
-             x:Class="Carro.Pages.Relatorios.RelatorioClienteAdicionadoResultadoPage">
+             x:Class="Carro.Pages.Relatorios.RelatorioClienteAdicionadoResultadoPage"
+             BackgroundColor="#FFFFF7"
+             Title="Clientes">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem
@@ -10,12 +12,12 @@
     </ContentPage.ToolbarItems>
 
     <ListView
-			        HorizontalOptions="FillAndExpand"
-			        VerticalOptions="FillAndExpand"
-			        HasUnevenRows="true"
-			        SeparatorVisibility="None"
-			        ItemsSource="{Binding Pessoas}"
-			        ItemTapped="Handle_ItemTapped">
+	    HorizontalOptions="FillAndExpand"
+	    VerticalOptions="FillAndExpand"
+	    HasUnevenRows="true"
+	    SeparatorVisibility="None"
+	    ItemsSource="{Binding Pessoas}"
+	    ItemTapped="Handle_ItemTapped">
 
         <x:Arguments>
             <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
@@ -25,9 +27,9 @@
             <DataTemplate>
                 <ViewCell>
                     <Grid
-                                Margin="4"
-                                ColumnSpacing="20"
-                                BackgroundColor="Transparent">
+                        Margin="4"
+                        ColumnSpacing="20"
+                        BackgroundColor="Transparent">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="Auto"/>
@@ -38,24 +40,23 @@
                         </Grid.RowDefinitions>
 
                         <Label
-                                    HorizontalOptions="StartAndExpand"
-							        FontAttributes="Bold"
-							        FontSize="Large"
-							        Text="{Binding Nome}"/>
+                            HorizontalOptions="StartAndExpand"
+							FontAttributes="Bold"
+							FontSize="Large"
+							Text="{Binding Nome}"/>
 
                         <Label 
-                                    Grid.Column="1"
-                                    HorizontalOptions="EndAndExpand"
-                                    FontSize="Large"
-						            Text="{Binding Email}"/>
+                            Grid.Column="1"
+                            HorizontalOptions="EndAndExpand"
+                            FontSize="Large"
+						    Text="{Binding Email}"/>
 
                         <Label
-                                    Grid.Row="1"
-							        Text="{Binding Telefone}"/>
+                            Grid.Row="1"
+							Text="{Binding Telefone}"/>
                     </Grid>
                 </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
-
 </ContentPage>

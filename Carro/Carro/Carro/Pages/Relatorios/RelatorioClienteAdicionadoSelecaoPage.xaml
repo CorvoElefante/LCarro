@@ -3,61 +3,129 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
-             x:Class="Carro.Pages.Relatorios.RelatorioClienteAdicionadoSelecaoPage">
+             x:Class="Carro.Pages.Relatorios.RelatorioClienteAdicionadoSelecaoPage"
+             BackgroundColor="#FFFFF7"
+             Title="Clientes adicionados">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem
-      Icon="{x:Static resources:Images.ic_Relatorio_Cliente_Small}"/>
+            Icon="{x:Static resources:Images.ic_Relatorio_Cliente_Small}"/>
     </ContentPage.ToolbarItems>
 
+    <Grid
+        Padding="0,30,0,0"
+        RowSpacing="0">
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
 
-    <StackLayout>
-        <DatePicker VerticalOptions="CenterAndExpand" Date="{Binding dataInicial}">
-            <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
-            <DatePicker.MinimumDate>
-                <sys:DateTime x:FactoryMethod="Parse">
-                    <x:Arguments>
-                        <x:String>Jan 1 2015</x:String>
-                    </x:Arguments>
-                </sys:DateTime>
-            </DatePicker.MinimumDate>
-            <DatePicker.MaximumDate>
-                <sys:DateTime x:FactoryMethod="Parse">
-                    <x:Arguments>
-                        <x:String>Dec 31 2050</x:String>
-                    </x:Arguments>
-                </sys:DateTime>
-            </DatePicker.MaximumDate>
-        </DatePicker>
+        <ScrollView
+            VerticalOptions="Start">
+            
+            <Grid
+                Padding="30,0,30,0"
+                RowSpacing="15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
-        <DatePicker VerticalOptions="CenterAndExpand" Date="{Binding dataFinal}">
-            <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
-            <DatePicker.MinimumDate>
-                <sys:DateTime x:FactoryMethod="Parse">
-                    <x:Arguments>
-                        <x:String>Jan 1 2015</x:String>
-                    </x:Arguments>
-                </sys:DateTime>
-            </DatePicker.MinimumDate>
-            <DatePicker.MaximumDate>
-                <sys:DateTime x:FactoryMethod="Parse">
-                    <x:Arguments>
-                        <x:String>Dec 31 2050</x:String>
-                    </x:Arguments>
-                </sys:DateTime>
-            </DatePicker.MaximumDate>
-        </DatePicker>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
-        <Frame>
+                <Label
+                    Grid.ColumnSpan="2"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Start"
+                    Text="Selecione um intervalo:"
+                    FontSize="Large"
+                    FontAttributes="Bold"
+                    TextColor="#444444"/>
+
+                <Label
+                    Grid.Row="1"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Start"
+                    Text="Data inicial:"
+                    FontSize="Medium"
+                    TextColor="#444444"/>
+
+                <DatePicker
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    VerticalOptions="CenterAndExpand" 
+                    Date="{Binding dataInicial}">
+                    <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
+                    <DatePicker.MinimumDate>
+                        <sys:DateTime 
+                            x:FactoryMethod="Parse">
+                            <x:Arguments>
+                                <x:String>Jan 1 2015</x:String>
+                            </x:Arguments>
+                        </sys:DateTime>
+                    </DatePicker.MinimumDate>
+                    <DatePicker.MaximumDate>
+                        <sys:DateTime 
+                            x:FactoryMethod="Parse">
+                            <x:Arguments>
+                                <x:String>Dec 31 2050</x:String>
+                            </x:Arguments>
+                        </sys:DateTime>
+                    </DatePicker.MaximumDate>
+                </DatePicker>
+
+                <Label
+                    Grid.Row="2"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Start"
+                    Text="Data final:"
+                    FontSize="Medium"
+                    TextColor="#444444"/>
+
+                <DatePicker
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    VerticalOptions="CenterAndExpand"
+                    Date="{Binding dataFinal}">
+                    <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
+                    <DatePicker.MinimumDate>
+                        <sys:DateTime 
+                            x:FactoryMethod="Parse">
+                            <x:Arguments>
+                                <x:String>Jan 1 2015</x:String>
+                            </x:Arguments>
+                        </sys:DateTime>
+                    </DatePicker.MinimumDate>
+                    <DatePicker.MaximumDate>
+                        <sys:DateTime 
+                            x:FactoryMethod="Parse">
+                            <x:Arguments>
+                                <x:String>Dec 31 2050</x:String>
+                            </x:Arguments>
+                        </sys:DateTime>
+                    </DatePicker.MaximumDate>
+                </DatePicker>
+            </Grid>
+        </ScrollView>
+
+        <Frame
+            Grid.Row="1"
+            VerticalOptions="End"
+            BackgroundColor="#444444">
             <Label
-                Text="Relatório de clientes adicionados"
-                FontSize="Large"/>
+                Text="Avançar"
+                HorizontalOptions="Center"
+                FontSize="Large"
+                TextColor="#FFFFF7"/>
             <Frame.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding RelClienteAdicionadoCommand3}"/>
+                <TapGestureRecognizer 
+                    Command="{Binding RelClienteAdicionadoCommand3}"/>
             </Frame.GestureRecognizers>
         </Frame>
-
-    </StackLayout>
-
+    </Grid>
 </ContentPage>

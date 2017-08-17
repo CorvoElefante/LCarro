@@ -125,6 +125,20 @@ namespace Carro.ViewModels
             }
         }
 
+        string _identidadeEntry = string.Empty;
+        public string identidadeEntry
+        {
+            get
+            {
+                return _identidadeEntry;
+            }
+            set
+            {
+                _identidadeEntry = value;
+                SetPropertyChanged(nameof(identidadeEntry));
+            }
+        }
+
         string _cpfEntry = string.Empty;
         public string cpfEntry
         {
@@ -186,7 +200,7 @@ namespace Carro.ViewModels
                     {
                         var service = new DataService(sqlite);
                         DateTime data = DateTime.UtcNow;
-                        var Pessoa = new Pessoa { Nome = nomeEntry, RuaN = ruaNEntry, Bairro = bairroEntry, Telefone = telefoneEntry, Email = emailEntry, Data = ndataEntry, Cpf = cpfEntry, Registro = data };
+                        var Pessoa = new Pessoa { Nome = nomeEntry, RuaN = ruaNEntry, Bairro = bairroEntry, Telefone = telefoneEntry, Email = emailEntry, Data = ndataEntry, Identidade = identidadeEntry, Cpf = cpfEntry, Registro = data };
                         service.SavePessoa(Pessoa);
 
                         service.SaveFuncionario(new Funcionario { Salario = salarioEntry, Funcao = funcaoEntry, Pessoa = Pessoa });

@@ -40,6 +40,7 @@
                     <RowDefinition Height="45"/>
                     <RowDefinition Height="45"/>
                     <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
@@ -72,22 +73,29 @@
                     Text="{Binding bairroEntry}" 
                     Placeholder="Bairro"/>
 
-                <Entry
+                <Entry 
                     Grid.Row="3"
+                    Grid.ColumnSpan="2"
+                    Text="{Binding identidadeEntry}"
+                    Placeholder="RG"
+                    Keyboard="Numeric"/>
+
+                <Entry
+                    Grid.Row="4"
                     Grid.ColumnSpan="2"
                     Text="{Binding cpfEntry}" 
                     Placeholder="CPF" 
                     Keyboard="Numeric"/>
 
                 <Entry
-                    Grid.Row="4"
+                    Grid.Row="5"
                     Grid.ColumnSpan="2"
                     Text ="{Binding telefoneEntry}" 
                     Placeholder="Telefone" 
                     Keyboard="Telephone"/>
 
                 <DatePicker
-                    Grid.Row="5"
+                    Grid.Row="6"
                     Grid.ColumnSpan="2"
                     VerticalOptions="CenterAndExpand"
                     Date="{Binding ndataEntry}">
@@ -117,14 +125,14 @@
                 </DatePicker>
 
                 <Entry
-                    Grid.Row="6"
+                    Grid.Row="7"
                     Grid.ColumnSpan="2"
                     Text="{Binding emailEntry}"  
                     Placeholder="Email" 
                     Keyboard="Email"/>
 
                 <Entry
-                    Grid.Row="7"
+                    Grid.Row="8"
                     Grid.ColumnSpan="2"
                     x:Name="salarioEntry" 
                     Text="{Binding salarioEntry, Converter={StaticResource decimalConverter}}"  
@@ -132,7 +140,7 @@
                     Keyboard="Numeric"/>
 
                 <Entry
-                    Grid.Row="8"
+                    Grid.Row="9"
                     Grid.ColumnSpan="2"
                     Text="{Binding funcaoEntry}"  
                     Placeholder="Função"/>
