@@ -529,15 +529,15 @@ namespace Carro.ViewModels
         Command _EditarFinalVendaParcelaCommand;
         public Command EditarFinalVendaParcelaCommand
         {
-            get { return _EditarFinalVendaParcelaCommand ?? (_EditarFinalVendaParcelaCommand = new Command<ObservableCollection<OrdemVendaParcela>>(async (qq) => await ExecuteEditarFinalVendaParcelaCommand(qq))); }
+            get { return _EditarFinalVendaParcelaCommand ?? (_EditarFinalVendaParcelaCommand = new Command<long?>(async (qq) => await ExecuteEditarFinalVendaParcelaCommand(qq))); }
         }
 
-        async Task ExecuteEditarFinalVendaParcelaCommand(ObservableCollection<OrdemVendaParcela> qq)
+        async Task ExecuteEditarFinalVendaParcelaCommand(long? qq)
         {
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new EditarFinalVendaParcelaPage(OrdemVendaParcelas));
+                await Navigation.PushAsync(new EditarFinalVendaParcelaPage(idEntry));
                 IsBusy = false;
             }
         }

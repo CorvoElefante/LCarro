@@ -12,7 +12,7 @@ namespace Carro.Pages
 {
     public partial class EditarFinalVendaParcelaPage : ContentPage
     {
-        public EditarFinalVendaParcelaPage(ObservableCollection<OrdemVendaParcela> value)
+        public EditarFinalVendaParcelaPage(long? value)
         {
             BindingContext = new EditarFinalVendaParcelaViewModel(Navigation, value);
             InitializeComponent();
@@ -30,6 +30,15 @@ namespace Carro.Pages
                 ((EditarFinalVendaParcelaViewModel)BindingContext).PagarParcelasCommand.Execute(((ListView)sender).SelectedItem);
             }
             ((ListView)sender).SelectedItem = null; // de-select the row
+        }
+
+        protected override void OnAppearing()
+        {
+            if (((EditarFinalVendaParcelaViewModel)BindingContext).BuscaParcelasCommand.CanExecute(null))
+            {
+                ((EditarFinalVendaParcelaViewModel)BindingContext).BuscaParcelasCommand.Execute(null);
+            }
+            base.OnAppearing();
         }
     }
 }

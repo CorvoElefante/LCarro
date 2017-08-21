@@ -14,26 +14,23 @@ namespace Carro.ViewModels
     public class EditarFinalVendaParcelaViewModel : BaseViewModel
     {
 
-        public EditarFinalVendaParcelaViewModel(INavigation navigation, ObservableCollection<OrdemVendaParcela> value) : base(navigation)
+        public EditarFinalVendaParcelaViewModel(INavigation navigation, long? value) : base(navigation)
         {
-            OrdemVendaParcelas = new ObservableCollection<OrdemVendaParcela>(value);
-            foreach (OrdemVendaParcela parc in OrdemVendaParcelas)
+            IdOrdemVenda = value;
+            ExecuteBuscaParcelasCommand();
+        }
+
+        long? _IdOrdemVenda = 0;
+        public long? IdOrdemVenda
+        {
+            get
             {
-                if (parc.Pago == true)
-                {
-                    parc.Cor = "Green";
-                }
-                else
-                {
-                    if (parc.Vencimento < DateTime.UtcNow)
-                    {
-                        parc.Cor = "Red";
-                    }
-                    else
-                    {
-                        parc.Cor = "Blue";
-                    }
-                }
+                return _IdOrdemVenda;
+            }
+            set
+            {
+                _IdOrdemVenda = value;
+                SetPropertyChanged(nameof(IdOrdemVenda));
             }
         }
 
@@ -63,6 +60,49 @@ namespace Carro.ViewModels
             {
                 IsBusy = true;
                 await Navigation.PushAsync(new EditarFinalVendaPagarParcelasPage(qq));
+                IsBusy = false;
+            }
+        }
+
+        Command _BuscaParcelasCommand;
+        public Command BuscaParcelasCommand
+        {
+            get { return _BuscaParcelasCommand ?? (_BuscaParcelasCommand = new Command(() => ExecuteBuscaParcelasCommand())); }
+        }
+
+        public void ExecuteBuscaParcelasCommand()
+        {
+            if (!IsBusy)
+            {
+                IsBusy = true;
+
+                var sqlite = DependencyService.Get<ISQLite>();
+                using (var scope = new TransactionScope(sqlite))
+                {
+                    var service = new DataService(sqlite);
+
+                    OrdemVendaParcelas = new ObservableCollection<OrdemVendaParcela>(service.BuscaParcelas(IdOrdemVenda));
+
+                    foreach (OrdemVendaParcela parc in OrdemVendaParcelas)
+                    {
+                        if (parc.Pago == true)
+                        {
+                            parc.Cor = "Green";
+                        }
+                        else
+                        {
+                            if (parc.Vencimento < DateTime.UtcNow)
+                            {
+                                parc.Cor = "Red";
+                            }
+                            else
+                            {
+                                parc.Cor = "Blue";
+                            }
+                        }
+                    }
+                }
+
                 IsBusy = false;
             }
         }

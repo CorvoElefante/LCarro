@@ -53,7 +53,7 @@ namespace Carro.ViewModels
                     service.PagaParcela(Parcela.IdOrdemVenda, Parcela.Id);
                     scope.Complete();
                 }
-                await Navigation.PopToRootAsync();
+                await Navigation.PopAsync();
                 IsBusy = false;
             }
         }

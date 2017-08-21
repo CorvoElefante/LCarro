@@ -237,6 +237,15 @@ namespace Carro.Services
             DB.Query<OrdemVenda>("UPDATE OrdemVendaParcela SET Pago = 1 WHERE OrdemVendaParcela.IdOrdemVenda = ? AND OrdemVendaParcela.Id = ?", IdOrdemVenda, IdParcela);
         }
 
+        public List<OrdemVendaParcela> BuscaParcelas(long? IdOrdemVenda)
+        {
+            List<OrdemVendaParcela> list = new List<OrdemVendaParcela>();
+
+            list = DB.Query<OrdemVendaParcela>("SELECT * FROM OrdemVendaParcela WHERE OrdemVendaParcela.IdOrdemVenda = ? ", IdOrdemVenda);
+
+            return list;
+        }
+
         #endregion
 
         #region Relatorios
