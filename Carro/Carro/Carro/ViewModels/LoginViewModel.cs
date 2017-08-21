@@ -15,6 +15,7 @@ namespace Carro.ViewModels
     {
         public LoginViewModel(INavigation navigation) : base(navigation)
         {
+
         }
 
         Command _MenuCommand;
