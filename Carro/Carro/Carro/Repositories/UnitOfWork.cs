@@ -10,6 +10,7 @@ namespace Carro.Repositories
         {
             DB = sqlite;
 
+            _LoginRepository = new GenericRepository<Login, long>(DB, DBLocker);
             _PessoaRepository = new GenericRepository<Pessoa, long>(DB, DBLocker);
             _DespesaRepository = new GenericRepository<Despesa, long>(DB, DBLocker);
             _FuncionarioRepository = new GenericRepository<Funcionario, long>(DB, DBLocker);
@@ -25,6 +26,7 @@ namespace Carro.Repositories
 
             lock (DBLocker)
             {
+                DB.CreateTable<Login>();
                 DB.CreateTable<Pessoa>();
                 DB.CreateTable<Despesa>();
                 DB.CreateTable<Funcionario>();
@@ -42,6 +44,17 @@ namespace Carro.Repositories
 
         static object DBLocker = new object();
         readonly SQLiteConnection DB;
+
+        #region Login
+        IGenericRepository<Login, long> _LoginRepository;
+        public IGenericRepository<Login, long> LoginRepository
+        {
+            get
+            {
+                return _LoginRepository;
+            }
+        }
+        #endregion
 
         #region Pessoa
         IGenericRepository<Pessoa, long> _PessoaRepository;
