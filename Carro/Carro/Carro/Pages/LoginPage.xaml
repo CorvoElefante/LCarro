@@ -6,14 +6,12 @@
              BackgroundColor="#FFFFF7">
 
     <Grid
-        Margin="10"
-        Padding="0"
-        RowSpacing="30"
-        ColumnSpacing="0">
+        Padding="30,30,30,30"
+        VerticalOptions="FillAndExpand"
+        RowSpacing="30">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
@@ -21,37 +19,45 @@
         <Image
             Source="ic_Logo_Generico_XLarge"
             IsOpaque="True"
-            Aspect="AspectFit"
-            HorizontalOptions="Center"/>
+            Aspect="AspectFit"/>
 
-        <Entry
-            Grid.Row="1"
-            BackgroundColor="Transparent"
-            Text="{Binding cpfEntry}"
-            Placeholder="CPF"
-            Keyboard="Text"/>
+        <Grid
+            Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
-        <Entry
-            Grid.Row="2"
-            BackgroundColor="Transparent"
-            Text="{Binding serialKeyEntry}"
-            Placeholder="Codigo de Ativação"
-            Keyboard="Numeric"/>
+            <Entry
+                BackgroundColor="Transparent"
+                Text="{Binding cpfEntry}"
+                Placeholder="CPF"
+                Keyboard="Text"/>
 
-        <Frame
-            Grid.Row="3"
-            BackgroundColor="#2f7dd6"
-            Padding="0">
-            <Label
-                VerticalOptions="Center"
-                HorizontalOptions="Center"
-                Text="Login"
-                FontSize="Large"
-                TextColor="#FFFFF7"/>
-            <Frame.GestureRecognizers>
-                <TapGestureRecognizer
-                    Command="{Binding MenuCommand}"/>
-            </Frame.GestureRecognizers>
-        </Frame>
+            <Entry
+                Grid.Row="1"
+                BackgroundColor="Transparent"
+                Text="{Binding serialKeyEntry}"
+                Placeholder="Codigo de Ativação"
+                Keyboard="Numeric"/>
+        </Grid>
+
+        <Grid
+            Grid.Row="2">
+            <Frame
+                Padding="0"
+                BackgroundColor="#2f7dd6">
+                <Label
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Text="Login"
+                    FontSize="Large"
+                    TextColor="#FFFFF7"/>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding MenuCommand}"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+        </Grid>
     </Grid>
 </ContentPage>
