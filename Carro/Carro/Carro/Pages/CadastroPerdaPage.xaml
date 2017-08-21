@@ -99,7 +99,7 @@
                         </ViewCell.ContextActions>
 
                         <Grid
-                            Margin="4"
+                            Padding="30,0,30,0"
                             BackgroundColor="Transparent">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
