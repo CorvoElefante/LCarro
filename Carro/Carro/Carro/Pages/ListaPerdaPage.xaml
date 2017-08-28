@@ -42,8 +42,7 @@
             <DataTemplate>
                 <ViewCell>
                     <Grid
-                        Margin="4"
-                        ColumnSpacing="20"
+                        Padding="30,10,30,0"
                         BackgroundColor="Transparent">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
@@ -59,9 +58,9 @@
 							FontSize="Large"
 							Text="{Binding Nome}"/>
                         <Label 
-                            Grid.Column="1"
+                            Grid.Row="1"
                             HorizontalOptions="EndAndExpand"
-							Text="{Binding Registro}"/>
+							Text="{Binding Registro, StringFormat='{}{0:dd/MM/yyyy}'}"/>
                     </Grid>
                 </ViewCell>
             </DataTemplate>

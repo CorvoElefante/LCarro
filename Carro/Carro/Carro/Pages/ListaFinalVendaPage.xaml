@@ -56,8 +56,7 @@
             <DataTemplate>
                 <ViewCell>
                     <Grid
-                        Margin="4"
-                        ColumnSpacing="20"
+                        Padding="30,10,30,0"
                         BackgroundColor="Transparent">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
@@ -82,7 +81,7 @@
 
                         <Label
                             Grid.Row="1"
-                            Text="{Binding Registro}"/>
+                            Text="{Binding Registro, StringFormat='{}{0:dd/MM/yyyy - HH:mm}'}"/>
                     </Grid>
                 </ViewCell>
             </DataTemplate>

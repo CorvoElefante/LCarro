@@ -46,8 +46,7 @@
             <DataTemplate>
                 <ViewCell>
                     <Grid
-                        Margin="4"
-                        ColumnSpacing="20"
+                        Padding="30,15,30,0"
                         BackgroundColor="Transparent">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
@@ -57,6 +56,7 @@
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
+                        
                         <Label 
                             HorizontalOptions="StartAndExpand"
 							FontAttributes="Bold"

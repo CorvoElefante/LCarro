@@ -51,7 +51,6 @@
 
                 <ListView
                     Grid.Row="3"
-                    Grid.ColumnSpan="3"
 			        HorizontalOptions="FillAndExpand"
 			        VerticalOptions="FillAndExpand"
 			        HasUnevenRows="true"
@@ -66,33 +65,34 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                
+
                                 <Grid
-                                    Margin="2"
-                                    Padding="2"
-                                    RowSpacing="0"
-                                    ColumnSpacing="0"
+                                    Padding="30,0,30,0"
                                     BackgroundColor="Transparent">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
 
                                     <Label
-                                        Grid.ColumnSpan="10"
-							            FontAttributes="Bold"
-							            FontSize="Large"
-							            Text="{Binding Nome}"/>
+                                    HorizontalOptions="StartAndExpand"
+							        FontAttributes="Bold"
+							        FontSize="Large"
+							        Text="{Binding Nome}"/>
 
                                     <Label 
-                                        Grid.Column="12"
-                                        Grid.RowSpan="2"
-                                        Grid.ColumnSpan="2"
-                                        HorizontalOptions="Center"
-                                        VerticalOptions="Center"
-                                        FontSize="Large"
-						                Text="{Binding QuantidadePerdida}"/>
+                                    Grid.Column="1"
+                                    HorizontalOptions="EndAndExpand"
+                                    FontSize="Large"
+						            Text="{Binding QuantidadePerdida}"/>
 
                                     <Label
-                                        Grid.Row="1"
-                                        Grid.ColumnSpan="10"
-							            Text="{Binding Marca}"/>
+                                    Grid.Row="1"
+							        Text="{Binding Marca}"/>
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>

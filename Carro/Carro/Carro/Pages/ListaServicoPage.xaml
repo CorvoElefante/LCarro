@@ -6,14 +6,14 @@
              Title="Lista de Serviços"
              BackgroundColor="#FFFFF7">
 
-  <ContentPage.ToolbarItems>
-    <ToolbarItem
-      Icon="{x:Static resources:Images.ic_Add_Small}"
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Icon="{x:Static resources:Images.ic_Add_Small}"
 			Command="{Binding AddServicoCommand}"/>
-    <ToolbarItem
-      Icon="{x:Static resources:Images.ic_Servico_Small}"
-        Command="{Binding HelpCommand}"/>
-  </ContentPage.ToolbarItems>
+        <ToolbarItem
+            Icon="{x:Static resources:Images.ic_Servico_Small}"
+            Command="{Binding HelpCommand}"/>
+    </ContentPage.ToolbarItems>
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -30,26 +30,25 @@
          ItemsSource="{Binding Servicos}"
          ItemTapped="Handle_ItemTapped">
 
-    <x:Arguments>
-      <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
-    </x:Arguments>
+        <x:Arguments>
+            <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
+        </x:Arguments>
 
-    <ListView.HeaderTemplate>
-      <DataTemplate>
-        <SearchBar
-			HeightRequest="45"
-			Placeholder="Buscar"
-			Text="{Binding Search}">
-        </SearchBar>
-      </DataTemplate>
-    </ListView.HeaderTemplate>
+        <ListView.HeaderTemplate>
+            <DataTemplate>
+                <SearchBar
+	                HeightRequest="45"
+	                Placeholder="Buscar"
+	                Text="{Binding Search}">
+                </SearchBar>
+            </DataTemplate>
+        </ListView.HeaderTemplate>
 
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
                     <Grid
-                        Margin="4"
-                        ColumnSpacing="20"
+                        Padding="30,15,30,0"
                         BackgroundColor="Transparent">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
@@ -59,6 +58,7 @@
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
+
                         <Label 
                             HorizontalOptions="StartAndExpand"
 							FontAttributes="Bold"
