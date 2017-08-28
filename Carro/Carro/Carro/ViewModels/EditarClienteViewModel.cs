@@ -28,6 +28,7 @@ namespace Carro.ViewModels
             identidadeEntry = value.Identidade;
             cpfEntry = value.Cpf;
             pessoaEntry = value;
+            Registro = value.Registro;
 
         }
 
@@ -193,6 +194,20 @@ namespace Carro.ViewModels
             }
         }
 
+        DateTime _Registro = new DateTime();
+        public DateTime Registro
+        {
+            get
+            {
+                return _Registro;
+            }
+            set
+            {
+                _Registro = value;
+                SetPropertyChanged(nameof(Registro));
+            }
+        }
+
         Command _SalvarClienteCommand;
         public Command SalvarClienteCommand
         {
@@ -212,7 +227,7 @@ namespace Carro.ViewModels
                     {
                         var service = new DataService(sqlite);
 
-                        service.SavePessoa(new Pessoa { Id = idEntry, Nome = nomeEntry, RuaN = ruaNEntry, Bairro = bairroEntry, Telefone = telefoneEntry, Email = emailEntry, Data = ndataEntry, Identidade = identidadeEntry, Cpf = cpfEntry });
+                        service.SavePessoa(new Pessoa { Id = idEntry, Nome = nomeEntry, RuaN = ruaNEntry, Bairro = bairroEntry, Telefone = telefoneEntry, Email = emailEntry, Data = ndataEntry, Identidade = identidadeEntry, Cpf = cpfEntry, Registro = Registro });
                         scope.Complete();
                     }
                     await Navigation.PopAsync();

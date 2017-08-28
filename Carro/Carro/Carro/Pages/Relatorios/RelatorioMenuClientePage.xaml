@@ -12,6 +12,16 @@
     <StackLayout
         VerticalOptions="StartAndExpand"
         HorizontalOptions="Center">
+
+        <Frame>
+            <Label
+                Text="Relatório de aniversariantes do dia"
+                FontSize="Large"/>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding RelClienteAniversarianteCommand}"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+
         <Frame>
             <Label
                 Text="Relatório de clientes adicionados"

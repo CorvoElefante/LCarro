@@ -16,6 +16,22 @@ namespace Carro.ViewModels.Relatorios
         {
         }
 
+        Command _RelClienteAniversarianteCommand;
+        public Command RelClienteAniversarianteCommand
+        {
+            get { return _RelClienteAniversarianteCommand ?? (_RelClienteAniversarianteCommand = new Command(async () => await ExecuteRelClienteAniversarianteCommand())); }
+        }
+
+        async Task ExecuteRelClienteAniversarianteCommand()
+        {
+            if (!IsBusy)
+            {
+                IsBusy = true;
+                await Navigation.PushAsync(new RelatorioClienteAniversarianteDiaResultadoPage());
+                IsBusy = false;
+            }
+        }
+
         Command _RelClienteAddCommand;
         public Command RelClienteAddCommand
         {
