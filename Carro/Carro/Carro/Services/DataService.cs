@@ -271,6 +271,36 @@ namespace Carro.Services
 
         }
 
+        public List<OrdemVenda> RelatorioClientesCompraramQuantidade(DateTime dataInicial, DateTime dataFinal)
+        {
+            List<OrdemVenda> lista = new List<OrdemVenda>();
+
+            lista = DB.Query<OrdemVenda>("SELECT IdCliente, Count(*) AS Valor FROM OrdemVenda WHERE Registro >= ? AND Registro <= ? AND eVenda = 1 GROUP BY IdCliente ORDER BY Valor DESC", dataInicial.Ticks, dataFinal.Ticks);
+
+            foreach (OrdemVenda element in lista)
+            {
+                DB.GetChildren(element, true);
+            }
+
+            return lista;
+
+        }
+
+        public List<OrdemVenda> RelatorioClientesCompraramValor(DateTime dataInicial, DateTime dataFinal)
+        {
+            List<OrdemVenda> lista = new List<OrdemVenda>();
+
+            lista = DB.Query<OrdemVenda>("SELECT IdCliente, SUM(Valor) AS Valor FROM OrdemVenda WHERE Registro >= ? AND Registro <= ? AND eVenda = 1 GROUP BY IdCliente ORDER BY Valor DESC", dataInicial.Ticks, dataFinal.Ticks);
+
+            foreach (OrdemVenda element in lista)
+            {
+                DB.GetChildren(element, true);
+            }
+
+            return lista;
+
+        }
+
         #endregion
 
         #region RelatorioDespesa
