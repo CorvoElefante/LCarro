@@ -325,6 +325,35 @@ namespace Carro.Services
 
         #region RelatorioPerda
 
+        public decimal RelatorioPerdas(DateTime dataInicial, DateTime dataFinal)
+        {
+
+            List<PerdaProduto> lista = new List<PerdaProduto>();
+            decimal ValorTotalPerdas = 0;
+
+            lista = DB.Query<PerdaProduto>("SELECT * FROM PerdaProduto");
+
+            foreach (PerdaProduto element in lista)
+            {
+                DB.GetChildren(element, true);
+            }
+
+            foreach (PerdaProduto element in lista.ToList())
+            {
+                if (element.Perda.Registro < dataInicial || element.Perda.Registro > dataFinal)
+                {
+                    lista.Remove(element);
+                }
+            }
+
+            foreach (PerdaProduto element in lista.ToList())
+            {
+                ValorTotalPerdas = ValorTotalPerdas + (element.QuantidadePerdida * element.Preco);
+            }
+
+            return ValorTotalPerdas;
+        }
+
         #endregion
 
         #region RelatorioFuncionario
@@ -362,9 +391,65 @@ namespace Carro.Services
             return total;
         }
 
+        public List<OrdemVendaProduto> RelatorioProdutosMaisVendidos(DateTime dataInicial, DateTime dataFinal)
+        {
+
+            List<OrdemVendaProduto> lista = new List<OrdemVendaProduto>();
+
+            lista = DB.Query<OrdemVendaProduto>("SELECT IdProduto, IdOrdemVenda, Nome, Marca, SUM(QuantidadeVendida) AS QuantidadeVendida FROM OrdemVendaProduto GROUP BY IdProduto ORDER BY QuantidadeVendida DESC");
+
+            foreach (OrdemVendaProduto element in lista)
+            {
+                DB.GetChildren(element, true);
+            }
+
+            foreach (OrdemVendaProduto element in lista.ToList())
+            {
+                if (element.OrdemVenda.Registro < dataInicial || element.OrdemVenda.Registro > dataFinal)
+                {
+                    lista.Remove(element);
+                }
+
+                if (element.OrdemVenda.eVenda == false)
+                {
+                    lista.Remove(element);
+                }
+            }
+
+            return lista;
+        }
+
         #endregion
 
         #region RelatorioServico
+
+        public List<OrdemVendaServico> RelatorioServicosMaisVendidos(DateTime dataInicial, DateTime dataFinal)
+        {
+
+            List<OrdemVendaServico> lista = new List<OrdemVendaServico>();
+
+            lista = DB.Query<OrdemVendaServico>("SELECT IdServico, IdOrdemVenda, Nome, Tempo, SUM(QuantidadeVendida) AS QuantidadeVendida FROM OrdemVendaServico GROUP BY IdServico ORDER BY QuantidadeVendida DESC");
+
+            foreach (OrdemVendaServico element in lista)
+            {
+                DB.GetChildren(element, true);
+            }
+
+            foreach (OrdemVendaServico element in lista.ToList())
+            {
+                if (element.OrdemVenda.Registro < dataInicial || element.OrdemVenda.Registro > dataFinal)
+                {
+                    lista.Remove(element);
+                }
+
+                if (element.OrdemVenda.eVenda == false)
+                {
+                    lista.Remove(element);
+                }
+            }
+
+            return lista;
+        }
 
         #endregion
 

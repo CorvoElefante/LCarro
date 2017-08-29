@@ -8,5 +8,12 @@
         <ToolbarItem
       Icon="{x:Static resources:Images.ic_Relatorio_Perda_Small}"/>
     </ContentPage.ToolbarItems>
-    
+
+    <Label
+        HorizontalOptions="Start"
+        VerticalOptions="Center"
+        FontSize="Large"
+        Text="{Binding ValorTotalPerdas}"/>
+
+
 </ContentPage>
