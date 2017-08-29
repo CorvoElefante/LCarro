@@ -10,7 +10,7 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem
-      Icon="ic_Cadastro_Cliente_Small"
+            Icon="ic_Cadastro_Cliente_Small"
             Command="{Binding HelpCommand}"/>
     </ContentPage.ToolbarItems>
     
@@ -159,7 +159,7 @@
                         FontSize="Large"/>
                     <Grid.GestureRecognizers>
                         <TapGestureRecognizer
-                        Command="{Binding SalvarClienteCommand}"/>
+                            Command="{Binding SalvarClienteCommand}"/>
                     </Grid.GestureRecognizers>
                 </Grid>
 
@@ -185,7 +185,7 @@
                         FontSize="Large"/>
                     <Grid.GestureRecognizers>
                         <TapGestureRecognizer
-                        Command="{Binding VoltaCommand}"/>
+                            Command="{Binding VoltaCommand}"/>
                     </Grid.GestureRecognizers>
                 </Grid>
             </Grid>
