@@ -325,6 +325,35 @@ namespace Carro.Services
 
         #region RelatorioPerda
 
+        public decimal RelatorioPerdas(DateTime dataInicial, DateTime dataFinal)
+        {
+
+            List<PerdaProduto> lista = new List<PerdaProduto>();
+            decimal ValorTotalPerdas = 0;
+
+            lista = DB.Query<PerdaProduto>("SELECT * FROM PerdaProduto");
+
+            foreach (PerdaProduto element in lista)
+            {
+                DB.GetChildren(element, true);
+            }
+
+            foreach (PerdaProduto element in lista.ToList())
+            {
+                if (element.Perda.Registro < dataInicial || element.Perda.Registro > dataFinal)
+                {
+                    lista.Remove(element);
+                }
+            }
+
+            foreach (PerdaProduto element in lista.ToList())
+            {
+                ValorTotalPerdas = ValorTotalPerdas + (element.QuantidadePerdida * element.Preco);
+            }
+
+            return ValorTotalPerdas;
+        }
+
         #endregion
 
         #region RelatorioFuncionario
