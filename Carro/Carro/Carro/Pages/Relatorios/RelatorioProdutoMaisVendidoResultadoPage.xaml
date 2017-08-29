@@ -2,11 +2,64 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
-             x:Class="Carro.Pages.Relatorios.RelatorioProdutoMaisVendidoResultadoPage">
+             x:Class="Carro.Pages.Relatorios.RelatorioProdutoMaisVendidoResultadoPage"
+             BackgroundColor="#FFFFF7"
+             Title="Produtos mais vendidos">
+    
 
     <ContentPage.ToolbarItems>
         <ToolbarItem
       Icon="{x:Static resources:Images.ic_Relatorio_Produto_Small}"/>
     </ContentPage.ToolbarItems>
-    
+
+    <ListView
+	    HorizontalOptions="FillAndExpand"
+	    VerticalOptions="FillAndExpand"
+	    HasUnevenRows="true"
+	    SeparatorVisibility="None"
+	    ItemsSource="{Binding Produtos}"
+	    ItemTapped="Handle_ItemTapped">
+
+        <x:Arguments>
+            <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
+        </x:Arguments>
+
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid
+                        Margin="4"
+                        ColumnSpacing="20"
+                        BackgroundColor="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Label
+                            HorizontalOptions="StartAndExpand"
+							FontAttributes="Bold"
+							FontSize="Large"
+							Text="{Binding Nome}"/>
+
+                        <Label 
+                            Grid.Column="1"
+                            HorizontalOptions="EndAndExpand"
+                            FontSize="Large"
+						    Text="{Binding QuantidadeVendida}"/>
+
+                        <Label
+                            Grid.Row="1"
+							Text="{Binding Marca}"/>
+
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
 </ContentPage>

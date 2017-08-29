@@ -362,6 +362,34 @@ namespace Carro.Services
             return total;
         }
 
+        public List<OrdemVendaProduto> RelatorioProdutosMaisVendidos(DateTime dataInicial, DateTime dataFinal)
+        {
+
+            List<OrdemVendaProduto> lista = new List<OrdemVendaProduto>();
+
+            lista = DB.Query<OrdemVendaProduto>("SELECT IdProduto, IdOrdemVenda, Nome, Marca, SUM(QuantidadeVendida) AS QuantidadeVendida FROM OrdemVendaProduto GROUP BY IdProduto ORDER BY QuantidadeVendida DESC");
+
+            foreach (OrdemVendaProduto element in lista)
+            {
+                DB.GetChildren(element, true);
+            }
+
+            foreach (OrdemVendaProduto element in lista.ToList())
+            {
+                if (element.OrdemVenda.Registro < dataInicial || element.OrdemVenda.Registro > dataFinal)
+                {
+                    lista.Remove(element);
+                }
+
+                if (element.OrdemVenda.eVenda == false)
+                {
+                    lista.Remove(element);
+                }
+            }
+
+            return lista;
+        }
+
         #endregion
 
         #region RelatorioServico

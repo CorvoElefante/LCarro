@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 using Carro.ViewModels.Relatorios;
 
 
@@ -13,9 +9,19 @@ namespace Carro.Pages.Relatorios
 {
     public partial class RelatorioProdutoMaisVendidoResultadoPage : ContentPage
     {
-        public RelatorioProdutoMaisVendidoResultadoPage()
+        public RelatorioProdutoMaisVendidoResultadoPage(RelatorioProdutoMaisVendidoSelecaoViewModel.DataCompleta data)
         {
+            BindingContext = new RelatorioProdutoMaisVendidoResultadoViewModel(Navigation, data);
             InitializeComponent();
+        }
+
+        void Handle_ItemTapped(object sender, Xamarin.Forms.ItemTappedEventArgs e)
+        {
+            if (e == null)
+            {
+                return; // has been set to null, do not 'process' tapped event 
+            }
+            ((ListView)sender).SelectedItem = null; // de-select the row
         }
     }
 }
