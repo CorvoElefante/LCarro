@@ -394,6 +394,34 @@ namespace Carro.Services
 
         #region RelatorioServico
 
+        public List<OrdemVendaServico> RelatorioServicosMaisVendidos(DateTime dataInicial, DateTime dataFinal)
+        {
+
+            List<OrdemVendaServico> lista = new List<OrdemVendaServico>();
+
+            lista = DB.Query<OrdemVendaServico>("SELECT IdServico, IdOrdemVenda, Nome, Tempo, SUM(QuantidadeVendida) AS QuantidadeVendida FROM OrdemVendaServico GROUP BY IdServico ORDER BY QuantidadeVendida DESC");
+
+            foreach (OrdemVendaServico element in lista)
+            {
+                DB.GetChildren(element, true);
+            }
+
+            foreach (OrdemVendaServico element in lista.ToList())
+            {
+                if (element.OrdemVenda.Registro < dataInicial || element.OrdemVenda.Registro > dataFinal)
+                {
+                    lista.Remove(element);
+                }
+
+                if (element.OrdemVenda.eVenda == false)
+                {
+                    lista.Remove(element);
+                }
+            }
+
+            return lista;
+        }
+
         #endregion
 
         #endregion
