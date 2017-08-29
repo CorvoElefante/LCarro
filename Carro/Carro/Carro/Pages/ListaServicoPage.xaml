@@ -37,7 +37,6 @@
         <ListView.HeaderTemplate>
             <DataTemplate>
                 <SearchBar
-	                HeightRequest="45"
 	                Placeholder="Buscar"
 	                Text="{Binding Search}">
                 </SearchBar>
@@ -48,7 +47,8 @@
             <DataTemplate>
                 <ViewCell>
                     <Grid
-                        Padding="30,15,30,0"
+                        Padding="30,10,30,0"
+                        RowSpacing="-5"
                         BackgroundColor="Transparent">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
