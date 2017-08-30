@@ -33,10 +33,15 @@
 
         <ListView.HeaderTemplate>
             <DataTemplate>
-                <SearchBar
-				Placeholder="Buscar"
-				Text="{Binding SearchPessoa}">
-                </SearchBar>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45"/>
+                    </Grid.RowDefinitions>
+
+                    <SearchBar
+					    Placeholder="Buscar"
+					    Text="{Binding SearchPessoa}"/>
+                </Grid>
             </DataTemplate>
         </ListView.HeaderTemplate>
 
