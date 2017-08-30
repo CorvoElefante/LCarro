@@ -358,6 +358,36 @@ namespace Carro.Services
 
         #region RelatorioFuncionario
 
+        public List<OrdemVenda> RelatorioFuncionarioVendaQuantidade(DateTime dataInicial, DateTime dataFinal)
+        {
+            List<OrdemVenda> lista = new List<OrdemVenda>();
+
+            lista = DB.Query<OrdemVenda>("SELECT IdFuncionario, Count(*) AS Valor FROM OrdemVenda WHERE Registro >= ? AND Registro <= ? AND eVenda = 1 GROUP BY IdFuncionario ORDER BY Valor DESC", dataInicial.Ticks, dataFinal.Ticks);
+
+            foreach (OrdemVenda element in lista)
+            {
+                DB.GetChildren(element, true);
+            }
+
+            return lista;
+
+        }
+
+        public List<OrdemVenda> RelatorioFuncionarioVendaValor(DateTime dataInicial, DateTime dataFinal)
+        {
+            List<OrdemVenda> lista = new List<OrdemVenda>();
+
+            lista = DB.Query<OrdemVenda>("SELECT IdFuncionario, SUM(Valor) AS Valor FROM OrdemVenda WHERE Registro >= ? AND Registro <= ? AND eVenda = 1 GROUP BY IdFuncionario ORDER BY Valor DESC", dataInicial.Ticks, dataFinal.Ticks);
+
+            foreach (OrdemVenda element in lista)
+            {
+                DB.GetChildren(element, true);
+            }
+
+            return lista;
+
+        }
+
         #endregion
 
         #region RelatorioProduto
