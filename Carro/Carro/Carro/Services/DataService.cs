@@ -250,6 +250,107 @@ namespace Carro.Services
 
         #region Relatorios
 
+        #region RelatorioSaldo
+
+
+        public decimal RelatorioSaldoVendasRecebidas(DateTime dataInicial, DateTime dataFinal)
+        {
+            decimal vendasRecebidas = 0;
+            List<OrdemVendaParcela> listaOrdemVenda = new List<OrdemVendaParcela>();
+
+
+            listaOrdemVenda = DB.Query<OrdemVendaParcela>("SELECT * FROM OrdemVendaParcela");
+
+            foreach (OrdemVendaParcela element in listaOrdemVenda)
+            {
+                DB.GetChildren(element, true);
+            }
+
+            foreach (OrdemVendaParcela element in listaOrdemVenda.ToList())
+            {
+                if (element.OrdemVenda.Registro < dataInicial || element.OrdemVenda.Registro > dataFinal)
+                {
+                    listaOrdemVenda.Remove(element);
+                }
+
+                if (element.OrdemVenda.eVenda == false)
+                {
+                    listaOrdemVenda.Remove(element);
+                }
+
+                if (element.Pago == false)
+                {
+                    listaOrdemVenda.Remove(element);
+                }
+            }
+
+            foreach (OrdemVendaParcela element in listaOrdemVenda.ToList())
+            {
+                if (element.OrdemVenda.FormaPagamento == 1)
+                {
+                    vendasRecebidas = vendasRecebidas + element.OrdemVenda.Valor;
+                }
+                if (element.OrdemVenda.FormaPagamento == 2)
+                {
+                    vendasRecebidas = vendasRecebidas + element.ValorParcela;
+                }
+
+            }
+
+            return vendasRecebidas;
+        }
+
+        public decimal RelatorioSaldoDespesas(DateTime dataInicial, DateTime dataFinal)
+        {
+            decimal despesas = 0;
+            List<Despesa> listaDespesa = new List<Despesa>();
+
+
+            listaDespesa = DB.Query<Despesa>("SELECT * FROM Despesa WHERE Registro >= ? AND Registro <= ?", dataInicial.Ticks, dataFinal.Ticks);
+
+            foreach (Despesa element in listaDespesa)
+            {
+                despesas = despesas + element.Valor;
+            }
+
+
+            return despesas;
+        }
+
+        public decimal RelatorioSaldoPerdas(DateTime dataInicial, DateTime dataFinal)
+        {
+            decimal perdas = 0;
+            List<PerdaProduto> listaPerda = new List<PerdaProduto>();
+
+            listaPerda = DB.Query<PerdaProduto>("SELECT * FROM PerdaProduto");
+
+            foreach (PerdaProduto element in listaPerda)
+            {
+                DB.GetChildren(element, true);
+            }
+
+            foreach (PerdaProduto element in listaPerda.ToList())
+            {
+                if (element.Perda.Registro < dataInicial || element.Perda.Registro > dataFinal)
+                {
+                    listaPerda.Remove(element);
+                }
+            }
+
+            foreach (PerdaProduto element in listaPerda)
+            {
+                perdas = perdas + (element.QuantidadePerdida * element.Preco);
+            }
+
+            return perdas;
+        }
+
+        #endregion
+
+        #region RelatorioFinalVenda
+
+        #endregion
+
         #region  RelatorioPessoaCliente
 
         public int RelatorioTotalClientes()
