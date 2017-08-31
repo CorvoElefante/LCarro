@@ -26,12 +26,14 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="75"/>
         </Grid.RowDefinitions>
-        
+
         <ScrollView>
             <Grid
                 Padding="30,30,15,0"
                 RowSpacing="15">
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
                     <RowDefinition Height="45"/>
                     <RowDefinition Height="45"/>
                     <RowDefinition Height="45"/>
@@ -94,13 +96,37 @@
                 <Label
                     Grid.Row="5"
                     VerticalOptions="Center"
-                    Text = "Quantidade:"
+                    Text = "Quantidade em estoque:"
                     FontSize="Medium"/>
-                <Entry
+                <Label
                     Grid.Row="5"
                     Grid.Column="1"
-                    Text = "{Binding quantidadeEntry}"
+                    VerticalOptions="Center"
+                    HorizontalOptions="End"
+                    Text = "{Binding quantidadeEntry}"/>
+
+                <Label
+                    Grid.Row="6"
+                    VerticalOptions="Center"
+                    Text = "Adicionar ao estoque:"
+                    FontSize="Medium"/>
+                <Entry
+                    Grid.Row="6"
+                    Grid.Column="1"
+                    Text = "{Binding quantidadeAdicionadaEntry}"
                     Keyboard="Numeric"/>
+
+                <Label
+                    Grid.Row="7" 
+                    VerticalOptions="Center" 
+                    Text="Total:"
+                    FontSize="Medium" />
+                <Label 
+                    Grid.Row="7" 
+                    Grid.Column="1"
+                    VerticalOptions="Center"
+                    HorizontalOptions="End"
+                    Text="{Binding quantidadeTotalEntry}"/>
             </Grid>
         </ScrollView>
 
