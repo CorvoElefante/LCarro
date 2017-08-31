@@ -6,188 +6,202 @@
              BackgroundColor="#444444">
 
     <Grid
-      Margin="10"
-      Padding="0"
-      RowSpacing="6"
-      ColumnSpacing="0">
+        x:Name="Menu"
+        RowSpacing="15">
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
+        <Grid
+            x:Name="Saldo">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
-        <Image
-            Grid.Row="0"
-            Grid.Column="0"
-            Source="ic_Relatorio_PreVenda_Large"
-            IsOpaque="True"
-            Aspect="AspectFit"
-            VerticalOptions="CenterAndExpand"
-            HorizontalOptions="CenterAndExpand">
-            <Image.GestureRecognizers>
+            <Image
+                Source="ic_Relatorio_Saldo_Large"
+                IsOpaque="True"
+                Aspect="AspectFit"/>
+            <Label
+                Grid.Row="1"
+                Text="Saldo"
+                TextColor="#FFFFF7"
+                FontSize="Large"
+                HorizontalOptions="Center"/>
+
+            <Grid.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding RelatorioMenuSaldoCommand}"/>
-            </Image.GestureRecognizers>
-        </Image>
+            </Grid.GestureRecognizers>
+        </Grid>
 
-        <Label
-            Grid.Row="1"
-            Grid.Column="0"
-            Text="Pré-Venda"
-            TextColor="#FFFFF7"
-            FontSize="Large"
-            HorizontalOptions="Center"/>
+        <Grid
+            x:Name="Venda"
+            Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
-        <Image
-            Grid.Row="0"
-            Grid.Column="1"
-            Source="ic_Relatorio_Venda_Large"
-            IsOpaque="True"
-            Aspect="AspectFit"
-            VerticalOptions="CenterAndExpand"
-            HorizontalOptions="CenterAndExpand">
-            <Image.GestureRecognizers>
+            <Image
+                Source="ic_Relatorio_Venda_Large"
+                IsOpaque="True"
+                Aspect="AspectFit"/>
+            <Label
+                Grid.Row="1"
+                Text="Vendas"
+                TextColor="#FFFFF7"
+                FontSize="Large"
+                HorizontalOptions="Center"/>
+
+            <Grid.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding RelatorioMenuFinalVendaCommand}"/>
-            </Image.GestureRecognizers>
-        </Image>
+            </Grid.GestureRecognizers>
+        </Grid>
 
-        <Label
-            Grid.Row="1"
-            Grid.Column="1"
-            Text="Vendas"
-            TextColor="#FFFFF7"
-            FontSize="Large"
-            HorizontalOptions="Center"/>
+        <Grid
+            x:Name="Cliente"
+            Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
-        <Image
-            Grid.Row="2"
-            Grid.Column="0"
-            Source="ic_Relatorio_Cliente_Large"
-            IsOpaque="True"
-            Aspect="AspectFit"
-            VerticalOptions="CenterAndExpand"
-            HorizontalOptions="CenterAndExpand">
-            <Image.GestureRecognizers>
+            <Image
+                Source="ic_Relatorio_Cliente_Large"
+                IsOpaque="True"
+                Aspect="AspectFit"/>
+            <Label
+                Grid.Row="1"
+                Text="Clientes"
+                TextColor="#FFFFF7"
+                FontSize="Large"
+                HorizontalOptions="Center"/>
+
+            <Grid.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding RelatorioMenuClienteCommand}"/>
-            </Image.GestureRecognizers>
-        </Image>
+            </Grid.GestureRecognizers>
+        </Grid>
 
-        <Label
-            Grid.Row="3"
-            Grid.Column="0"
-            Text="Clientes"
-            TextColor="#FFFFF7"
-            FontSize="Large"
-            HorizontalOptions="Center"/>
+        <Grid
+            x:Name="Produto"
+            Grid.Row="1"
+            Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
-        <Image
-            Grid.Row="2"
-            Grid.Column="1"
-            Source="ic_Relatorio_Produto_Large"
-            IsOpaque="True"
-            Aspect="AspectFit"
-            VerticalOptions="CenterAndExpand"
-            HorizontalOptions="CenterAndExpand">
-            <Image.GestureRecognizers>
+            <Image
+                Source="ic_Relatorio_Produto_Large"
+                IsOpaque="True"
+                Aspect="AspectFit"/>
+            <Label
+                Grid.Row="1"
+                Text="Produtos"
+                TextColor="#FFFFF7"
+                FontSize="Large"
+                HorizontalOptions="Center"/>
+
+            <Grid.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding RelatorioMenuProdutoCommand}"/>
-            </Image.GestureRecognizers>
-        </Image>
+            </Grid.GestureRecognizers>
+        </Grid>
 
-        <Label
-            Grid.Row="3"
-            Grid.Column="1"
-            Text="Produtos"
-            TextColor="#FFFFF7"
-            FontSize="Large"
-            HorizontalOptions="Center"/>
+        <Grid
+            x:Name="Servico"
+            Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
-        <Image
-            Grid.Row="4"
-            Grid.Column="0"
-            Source="ic_Relatorio_Servico_Large"
-            IsOpaque="True"
-            Aspect="AspectFit"
-            VerticalOptions="CenterAndExpand"
-            HorizontalOptions="CenterAndExpand">
-            <Image.GestureRecognizers>
+            <Image
+                Source="ic_Relatorio_Servico_Large"
+                IsOpaque="True"
+                Aspect="AspectFit"/>
+            <Label
+                Grid.Row="1"
+                Text="Serviços"
+                TextColor="#FFFFF7"
+                FontSize="Large"
+                HorizontalOptions="Center"/>
+
+            <Grid.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding RelatorioMenuServicoCommand}"/>
-            </Image.GestureRecognizers>
-        </Image>
+            </Grid.GestureRecognizers>
+        </Grid>
 
-        <Label
-            Grid.Row="5"
-            Grid.Column="0"
-            Text="Serviços"
-            TextColor="#FFFFF7"
-            FontSize="Large"
-            HorizontalOptions="Center"/>
+        <Grid
+            x:Name="Despesa"
+            Grid.Row="2"
+            Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
-        <Image
-            Grid.Row="4"
-            Grid.Column="1"
-            Source="ic_Relatorio_Despesa_Large"
-            IsOpaque="True"
-            Aspect="AspectFit"
-            VerticalOptions="CenterAndExpand"
-            HorizontalOptions="CenterAndExpand">
-            <Image.GestureRecognizers>
+            <Image
+                Source="ic_Relatorio_Despesa_Large"
+                IsOpaque="True"
+                Aspect="AspectFit"/>
+            <Label
+                Grid.Row="1"
+                Text="Despesas"
+                TextColor="#FFFFF7"
+                FontSize="Large"
+                HorizontalOptions="Center"/>
+
+            <Grid.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding RelatorioMenuDespesaCommand}"/>
-            </Image.GestureRecognizers>
-        </Image>
+            </Grid.GestureRecognizers>
+        </Grid>
 
-        <Label
-            Grid.Row="5"
-            Grid.Column="1"
-            Text="Despesas"
-            TextColor="#FFFFF7"
-            FontSize="Large"
-            HorizontalOptions="Center"/>
+        <Grid
+            x:Name="Perda"
+            Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
-        <Image
-            Grid.Row="6"
-            Grid.Column="0"
-            Source="ic_Relatorio_Perda_Large"
-            IsOpaque="True"
-            Aspect="AspectFit"
-            VerticalOptions="CenterAndExpand"
-            HorizontalOptions="CenterAndExpand">
-            <Image.GestureRecognizers>
+            <Image
+                Source="ic_Relatorio_Perda_Large"
+                IsOpaque="True"
+                Aspect="AspectFit"/>
+            <Label
+                Grid.Row="1"
+                Text="Perdas"
+                TextColor="#FFFFF7"
+                FontSize="Large"
+                HorizontalOptions="Center"/>
+
+            <Grid.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding RelatorioMenuPerdaCommand}"/>
-            </Image.GestureRecognizers>
-        </Image>
+            </Grid.GestureRecognizers>
+        </Grid>
 
-        <Label
-            Grid.Row="7"
-            Grid.Column="0"
-            Text="Perdas"
-            TextColor="#FFFFF7"
-            FontSize="Large"
-            HorizontalOptions="Center"/>
+        <Grid
+            x:Name="Funcionario"
+            Grid.Row="3"
+            Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
-        <Image
-            Grid.Row="6"
-            Grid.Column="1"
-            Source="ic_Relatorio_Funcionario_Large"
-            IsOpaque="True"
-            Aspect="AspectFit"
-            VerticalOptions="CenterAndExpand"
-            HorizontalOptions="CenterAndExpand">
-            <Image.GestureRecognizers>
+            <Image
+                Source="ic_Relatorio_Funcionario_Large"
+                IsOpaque="True"
+                Aspect="AspectFit"/>
+            <Label
+                x:Name="LabelFuncionario"
+                Grid.Row="1"
+                Text="Funcionários"
+                TextColor="#FFFFF7"
+                FontSize="Large"
+                HorizontalOptions="Center"/>
+
+            <Grid.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding RelatorioMenuFuncionarioCommand}"/>
-            </Image.GestureRecognizers>
-        </Image>
-
-        <Label
-            Grid.Row="7"
-            Grid.Column="1"
-            Text="Funcionários"
-            TextColor="#FFFFF7"
-            FontSize="Large"
-            HorizontalOptions="Center"/>
+            </Grid.GestureRecognizers>
+        </Grid>
     </Grid>
 </ContentPage>
