@@ -16,6 +16,8 @@ namespace Carro.Models
         [ForeignKey(typeof(OrdemVenda))]
         public long? IdOrdemVenda { get; set; }
 
+        public decimal Valor { get; set; }
+
         [ForeignKey(typeof(Funcionario))]
         public long? IdFuncionario { get; set; }
 

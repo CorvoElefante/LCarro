@@ -358,30 +358,56 @@ namespace Carro.Services
 
         #region RelatorioFuncionario
 
-        public List<OrdemVenda> RelatorioFuncionarioVendaQuantidade(DateTime dataInicial, DateTime dataFinal)
+        public List<FuncionarioServico> RelatorioFuncionarioVendaQuantidade(DateTime dataInicial, DateTime dataFinal)
         {
-            List<OrdemVenda> lista = new List<OrdemVenda>();
+            List<FuncionarioServico> lista = new List<FuncionarioServico>();
 
-            lista = DB.Query<OrdemVenda>("SELECT IdFuncionario, Count(*) AS Valor FROM OrdemVenda WHERE Registro >= ? AND Registro <= ? AND eVenda = 1 GROUP BY IdFuncionario ORDER BY Valor DESC", dataInicial.Ticks, dataFinal.Ticks);
+            lista = DB.Query<FuncionarioServico>("SELECT IdFuncionario, IdOrdemVenda, Count(*) AS Valor FROM FuncionarioServico GROUP BY IdFuncionario ORDER BY Valor DESC");
 
-            foreach (OrdemVenda element in lista)
+            foreach (FuncionarioServico element in lista)
             {
                 DB.GetChildren(element, true);
+            }
+
+            foreach (FuncionarioServico element in lista.ToList())
+            {
+                if (element.OrdemVenda.Registro < dataInicial || element.OrdemVenda.Registro > dataFinal)
+                {
+                    lista.Remove(element);
+                }
+
+                if (element.OrdemVenda.eVenda == false)
+                {
+                    lista.Remove(element);
+                }
             }
 
             return lista;
 
         }
 
-        public List<OrdemVenda> RelatorioFuncionarioVendaValor(DateTime dataInicial, DateTime dataFinal)
+        public List<FuncionarioServico> RelatorioFuncionarioVendaValor(DateTime dataInicial, DateTime dataFinal)
         {
-            List<OrdemVenda> lista = new List<OrdemVenda>();
+            List<FuncionarioServico> lista = new List<FuncionarioServico>();
 
-            lista = DB.Query<OrdemVenda>("SELECT IdFuncionario, SUM(Valor) AS Valor FROM OrdemVenda WHERE Registro >= ? AND Registro <= ? AND eVenda = 1 GROUP BY IdFuncionario ORDER BY Valor DESC", dataInicial.Ticks, dataFinal.Ticks);
+            lista = DB.Query<FuncionarioServico>("SELECT FuncionarioServico.IdFuncionario, FuncionarioServico.IdOrdemVenda, SUM(OrdemVenda.Valor) AS Valor FROM FuncionarioServico INNER JOIN OrdemVenda ON FuncionarioServico.IdOrdemVenda = OrdemVenda.Id GROUP BY FuncionarioServico.IdFuncionario ORDER BY FuncionarioServico.Valor DESC");
 
-            foreach (OrdemVenda element in lista)
+            foreach (FuncionarioServico element in lista)
             {
                 DB.GetChildren(element, true);
+            }
+
+            foreach (FuncionarioServico element in lista.ToList())
+            {
+                if (element.OrdemVenda.Registro < dataInicial || element.OrdemVenda.Registro > dataFinal)
+                {
+                    lista.Remove(element);
+                }
+
+                if (element.OrdemVenda.eVenda == false)
+                {
+                    lista.Remove(element);
+                }
             }
 
             return lista;

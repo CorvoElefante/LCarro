@@ -48,8 +48,8 @@ namespace Carro.ViewModels.Relatorios
             }
         }
 
-        ObservableCollection<OrdemVenda> _FuncionariosVendaQuantidade = new ObservableCollection<OrdemVenda>();
-        public ObservableCollection<OrdemVenda> FuncionariosVendaQuantidade
+        ObservableCollection<FuncionarioServico> _FuncionariosVendaQuantidade = new ObservableCollection<FuncionarioServico>();
+        public ObservableCollection<FuncionarioServico> FuncionariosVendaQuantidade
         {
             get
             {
@@ -74,7 +74,7 @@ namespace Carro.ViewModels.Relatorios
             var sqlite = DependencyService.Get<ISQLite>();
             using (var scope = new TransactionScope(sqlite))
             {
-                FuncionariosVendaQuantidade = new ObservableCollection<OrdemVenda>(
+                FuncionariosVendaQuantidade = new ObservableCollection<FuncionarioServico>(
                     new DataService(sqlite).RelatorioFuncionarioVendaQuantidade(dataInicial, dataFinal)
                 );
                 scope.Complete();
