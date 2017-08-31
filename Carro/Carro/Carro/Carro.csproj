@@ -405,6 +405,18 @@
     <Compile Include="Pages\Relatorios\RelatorioClienteAniversarianteDiaResultadoPage.xaml.cs">
       <DependentUpon>RelatorioClienteAniversarianteDiaResultadoPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Relatorios\RelatorioFinalVendaAReceberResultadoPage.xaml.cs">
+      <DependentUpon>RelatorioFinalVendaAReceberResultadoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Relatorios\RelatorioFinalVendaEmAtrasoResultadoPage.xaml.cs">
+      <DependentUpon>RelatorioFinalVendaEmAtrasoResultadoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Relatorios\RelatorioFinalVendaValorVendidoResultadoPage.xaml.cs">
+      <DependentUpon>RelatorioFinalVendaValorVendidoResultadoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Relatorios\RelatorioFinalVendaValorVendidoSelecaoPage.xaml.cs">
+      <DependentUpon>RelatorioFinalVendaValorVendidoSelecaoPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Relatorios\RelatorioMenuClientePage.xaml.cs">
       <DependentUpon>RelatorioMenuClientePage.xaml</DependentUpon>
     </Compile>
@@ -489,6 +501,12 @@
     <Compile Include="Pages\Relatorios\RelatorioProdutoValorTotalEstoqueResultadoPage.xaml.cs">
       <DependentUpon>RelatorioProdutoValorTotalEstoqueResultadoPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Relatorios\RelatorioSaldoResultadoPage.xaml.cs">
+      <DependentUpon>RelatorioSaldoResultadoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Relatorios\RelatorioSaldoSelecaoPage.xaml.cs">
+      <DependentUpon>RelatorioSaldoSelecaoPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Relatorios\RelatorioServicoUtilizadoResultadoPage.xaml.cs">
       <DependentUpon>RelatorioServicoUtilizadoResultadoPage.xaml</DependentUpon>
     </Compile>
@@ -558,6 +576,10 @@
     <Compile Include="ViewModels\Relatorios\RelatorioClienteTotalResultadoViewModel.cs" />
     <Compile Include="ViewModels\Relatorios\RelatorioDespesaCategoriaResultadoViewModel.cs" />
     <Compile Include="ViewModels\Relatorios\RelatorioDespesaCategoriaSelecaoViewModel.cs" />
+    <Compile Include="ViewModels\Relatorios\RelatorioFinalVendaAReceberResultadoViewModel.cs" />
+    <Compile Include="ViewModels\Relatorios\RelatorioFinalVendaEmAtrasoResultadoViewModel.cs" />
+    <Compile Include="ViewModels\Relatorios\RelatorioFinalVendaValorVendidoResultadoViewModel.cs" />
+    <Compile Include="ViewModels\Relatorios\RelatorioFinalVendaValorVendidoSelecaoViewModel.cs" />
     <Compile Include="ViewModels\Relatorios\RelatorioFuncionarioNumeroVendaResultadoViewModel.cs" />
     <Compile Include="ViewModels\Relatorios\RelatorioFuncionarioNumeroVendaSelecaoViewModel.cs" />
     <Compile Include="ViewModels\Relatorios\RelatorioFuncionarioValorVendaResultadoViewModel.cs" />
@@ -577,6 +599,8 @@
     <Compile Include="ViewModels\Relatorios\RelatorioProdutoMaisVendidoSelecaoViewModel.cs" />
     <Compile Include="ViewModels\Relatorios\RelatorioProdutoSemEstoqueResultadoViewModel.cs" />
     <Compile Include="ViewModels\Relatorios\RelatorioProdutoValorTotalEstoqueResultadoViewModel.cs" />
+    <Compile Include="ViewModels\Relatorios\RelatorioSaldoResultadoViewModel.cs" />
+    <Compile Include="ViewModels\Relatorios\RelatorioSaldoSelecaoViewModel.cs" />
     <Compile Include="ViewModels\Relatorios\RelatorioServicoUtilizadoResultadoViewModel.cs" />
     <Compile Include="ViewModels\Relatorios\RelatorioServicoUtilizadoSelecaoViewModel.cs" />
   </ItemGroup>
@@ -1457,6 +1481,42 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\Relatorios\RelatorioMenuFinalVendaPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Relatorios\RelatorioSaldoSelecaoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Relatorios\RelatorioSaldoResultadoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Relatorios\RelatorioFinalVendaValorVendidoSelecaoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Relatorios\RelatorioFinalVendaValorVendidoResultadoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Relatorios\RelatorioFinalVendaEmAtrasoResultadoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Relatorios\RelatorioFinalVendaAReceberResultadoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
