@@ -52,6 +52,7 @@ namespace Carro.Pages
                     Menu.Children.Add(Funcionario, 3, 1);
                     Menu.Children.Add(Relatorio, 4, 0);
                     Menu.Children.Add(Opcao, 4, 1);
+                    LabelFuncionario.Margin = new Thickness (0,0,-20,0);
                 }
                 else
                 {
@@ -80,6 +81,7 @@ namespace Carro.Pages
                     Menu.Children.Add(Funcionario, 1, 3);
                     Menu.Children.Add(Relatorio, 0, 4);
                     Menu.Children.Add(Opcao, 1, 4);
+                    LabelFuncionario.Margin = new Thickness();
                 }
             }
         }

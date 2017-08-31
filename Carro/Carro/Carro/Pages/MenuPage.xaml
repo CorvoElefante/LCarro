@@ -192,6 +192,7 @@
                 IsOpaque="True"
                 Aspect="AspectFit"/>
             <Label
+                x:Name="LabelFuncionario"
                 Grid.Row="1"
                 Text="Funcionários"
                 TextColor="#FFFFF7"
