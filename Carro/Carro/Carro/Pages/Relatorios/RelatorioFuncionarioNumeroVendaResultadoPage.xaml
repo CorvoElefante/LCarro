@@ -43,7 +43,7 @@
                             HorizontalOptions="StartAndExpand"
 							FontAttributes="Bold"
 							FontSize="Large"
-							Text="{Binding Pessoa.Nome}"/>
+							Text="{Binding Funcionario.Pessoa.Nome}"/>
 
                         <Label
                             Grid.Row="1"

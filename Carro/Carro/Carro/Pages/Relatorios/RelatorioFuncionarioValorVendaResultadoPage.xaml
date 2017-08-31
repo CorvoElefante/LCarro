@@ -2,11 +2,57 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
-             x:Class="Carro.Pages.Relatorios.RelatorioFuncionarioValorVendaResultadoPage">
+             x:Class="Carro.Pages.Relatorios.RelatorioFuncionarioValorVendaResultadoPage"
+             BackgroundColor="#FFFFF7"
+             Title="Funcionarios">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem
       Icon="{x:Static resources:Images.ic_Relatorio_Funcionario_Small}"/>
     </ContentPage.ToolbarItems>
-    
+
+    <ListView
+	    HorizontalOptions="FillAndExpand"
+	    VerticalOptions="FillAndExpand"
+	    HasUnevenRows="true"
+	    SeparatorVisibility="None"
+	    ItemsSource="{Binding FuncionariosVendaValor}"
+	    ItemTapped="Handle_ItemTapped">
+
+        <x:Arguments>
+            <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
+        </x:Arguments>
+
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid
+                        Margin="4"
+                        ColumnSpacing="20"
+                        BackgroundColor="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Label
+                            HorizontalOptions="StartAndExpand"
+							FontAttributes="Bold"
+							FontSize="Large"
+							Text="{Binding Funcionario.Pessoa.Nome}"/>
+
+                        <Label
+                            Grid.Row="1"
+                            Grid.Column="1"
+							Text="{Binding Valor}"/>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
 </ContentPage>
