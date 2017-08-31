@@ -50,7 +50,7 @@
                 <Label
                     VerticalOptions="Center"
                     HorizontalOptions="Center"
-                    Text="Login"
+                    Text="Entrar"
                     FontSize="Large"
                     TextColor="#FFFFF7"/>
                 <Frame.GestureRecognizers>
