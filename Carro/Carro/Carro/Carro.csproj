@@ -411,6 +411,9 @@
     <Compile Include="Pages\Relatorios\RelatorioMenuDespesaPage.xaml.cs">
       <DependentUpon>RelatorioMenuDespesaPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Relatorios\RelatorioMenuFinalVendaPage.xaml.cs">
+      <DependentUpon>RelatorioMenuFinalVendaPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Relatorios\RelatorioMenuFuncionarioPage.xaml.cs">
       <DependentUpon>RelatorioMenuFuncionarioPage.xaml</DependentUpon>
     </Compile>
@@ -419,6 +422,9 @@
     </Compile>
     <Compile Include="Pages\Relatorios\RelatorioMenuProdutoPage.xaml.cs">
       <DependentUpon>RelatorioMenuProdutoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Relatorios\RelatorioMenuSaldoPage.xaml.cs">
+      <DependentUpon>RelatorioMenuSaldoPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Relatorios\RelatorioMenuServicoPage.xaml.cs">
       <DependentUpon>RelatorioMenuServicoPage.xaml</DependentUpon>
@@ -558,9 +564,11 @@
     <Compile Include="ViewModels\Relatorios\RelatorioFuncionarioValorVendaSelecaoViewModel.cs" />
     <Compile Include="ViewModels\Relatorios\RelatorioMenuClienteViewModel.cs" />
     <Compile Include="ViewModels\Relatorios\RelatorioMenuDespesaViewModel.cs" />
+    <Compile Include="ViewModels\Relatorios\RelatorioMenuFinalVendaViewModel.cs" />
     <Compile Include="ViewModels\Relatorios\RelatorioMenuFuncionarioViewModel.cs" />
     <Compile Include="ViewModels\Relatorios\RelatorioMenuPerdaViewModel.cs" />
     <Compile Include="ViewModels\Relatorios\RelatorioMenuProdutoViewModel.cs" />
+    <Compile Include="ViewModels\Relatorios\RelatorioMenuSaldoViewModel.cs" />
     <Compile Include="ViewModels\Relatorios\RelatorioMenuServicoViewModel.cs" />
     <Compile Include="ViewModels\RelatorioMenuViewModel.cs" />
     <Compile Include="ViewModels\Relatorios\RelatorioPerdaTotalResultadoViewModel.cs" />
@@ -1437,6 +1445,18 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\Relatorios\RelatorioClienteAniversarianteDiaResultadoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Relatorios\RelatorioMenuSaldoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Relatorios\RelatorioMenuFinalVendaPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

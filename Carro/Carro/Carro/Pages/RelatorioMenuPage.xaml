@@ -31,7 +31,7 @@
             VerticalOptions="CenterAndExpand"
             HorizontalOptions="CenterAndExpand">
             <Image.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding RelatorioMenuPreVendaCommand}"/>
+                <TapGestureRecognizer Command="{Binding RelatorioMenuSaldoCommand}"/>
             </Image.GestureRecognizers>
         </Image>
 
@@ -51,9 +51,9 @@
             Aspect="AspectFit"
             VerticalOptions="CenterAndExpand"
             HorizontalOptions="CenterAndExpand">
-            <!--<Image.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding RelatorioMenuVendaCommand}"/>
-            </Image.GestureRecognizers>-->
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding RelatorioMenuFinalVendaCommand}"/>
+            </Image.GestureRecognizers>
         </Image>
 
         <Label
