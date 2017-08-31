@@ -18,18 +18,34 @@ namespace Carro.ViewModels
         {
         }
 
-        Command _RelatorioMenuVendaCommand;
-        public Command MRelatorioenuVendaCommand
+        Command _RelatorioMenuFinalVendaCommand;
+        public Command RelatorioMenuFinalVendaCommand
         {
-            get { return _RelatorioMenuVendaCommand ?? (_RelatorioMenuVendaCommand = new Command(async () => await ExecuteRelatorioMenuVendaCommand())); }
+            get { return _RelatorioMenuFinalVendaCommand ?? (_RelatorioMenuFinalVendaCommand = new Command(async () => await ExecuteRelatorioMenuFinalVendaCommand())); }
         }
 
-        async Task ExecuteRelatorioMenuVendaCommand()
+        async Task ExecuteRelatorioMenuFinalVendaCommand()
         {
             if (!IsBusy)
             {
                 IsBusy = true;
-                //await Navigation.PushAsync(new MenuPage());
+                await Navigation.PushAsync(new RelatorioMenuFinalVendaPage());
+                IsBusy = false;
+            }
+        }
+
+        Command _RelatorioMenuSaldoCommand;
+        public Command RelatorioMenuSaldoCommand
+        {
+            get { return _RelatorioMenuSaldoCommand ?? (_RelatorioMenuSaldoCommand = new Command(async () => await ExecuteRelatorioMenuSaldoCommand())); }
+        }
+
+        async Task ExecuteRelatorioMenuSaldoCommand()
+        {
+            if (!IsBusy)
+            {
+                IsBusy = true;
+                await Navigation.PushAsync(new RelatorioMenuSaldoPage());
                 IsBusy = false;
             }
         }
