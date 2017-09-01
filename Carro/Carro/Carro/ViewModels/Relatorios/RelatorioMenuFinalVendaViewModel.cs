@@ -31,5 +31,21 @@ namespace Carro.ViewModels.Relatorios
                 IsBusy = false;
             }
         }
+
+        Command _RelVendasAtrasadas;
+        public Command RelVendasAtrasadas
+        {
+            get { return _RelVendasAtrasadas ?? (_RelVendasAtrasadas = new Command(async () => await ExecuteRelVendasAtrasadas())); }
+        }
+
+        async Task ExecuteRelVendasAtrasadas()
+        {
+            if (!IsBusy)
+            {
+                IsBusy = true;
+                await Navigation.PushAsync(new RelatorioFinalVendaEmAtrasoResultadoPage());
+                IsBusy = false;
+            }
+        }
     }
 }

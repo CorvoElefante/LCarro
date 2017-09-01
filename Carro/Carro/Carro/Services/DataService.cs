@@ -391,6 +391,37 @@ namespace Carro.Services
             return quantidadeVendida;
         }
 
+        public List<OrdemVenda> RelatorioFinalVendaAtradas()
+        {
+            List<OrdemVenda> listaOrdemVenda = new List<OrdemVenda>();
+            bool estaAtrasado = false;
+
+
+            listaOrdemVenda = DB.Query<OrdemVenda>("SELECT * FROM OrdemVenda WHERE FormaPagamento = 2");
+
+            foreach (OrdemVenda element in listaOrdemVenda)
+            {
+                DB.GetChildren(element, true);
+            }
+
+            foreach (OrdemVenda element in listaOrdemVenda.ToList())
+            {
+                foreach (OrdemVendaParcela element2 in element.OrdemVendaParcela)
+                {
+                    if (element2.Vencimento < (DateTime.Today.AddHours(23)) && element2.Pago == false)
+                    {
+                        estaAtrasado = true;
+                    }
+                }
+                if (!estaAtrasado)
+                {
+                    listaOrdemVenda.Remove(element);
+                }
+            }
+
+            return listaOrdemVenda;
+        }
+
         #endregion
 
         #region  RelatorioPessoaCliente

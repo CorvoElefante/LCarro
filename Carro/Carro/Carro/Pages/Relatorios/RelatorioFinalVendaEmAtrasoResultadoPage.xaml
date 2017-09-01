@@ -1,10 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Carro.Pages.Relatorios.RelatorioFinalVendaEmAtrasoResultadoPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin Forms!" />
-        </StackLayout>
-    </ContentPage.Content>
+             x:Class="Carro.Pages.Relatorios.RelatorioFinalVendaEmAtrasoResultadoPage"
+             Title="Lista de Vendas Atradas"
+             BackgroundColor="#FFFFF7">
+
+    <ListView
+         HorizontalOptions="FillAndExpand"
+         VerticalOptions="FillAndExpand"
+         HasUnevenRows="true"
+         SeparatorVisibility="None"
+         ItemsSource="{Binding VendasAtrasadas}"
+         ItemTapped="Handle_ItemTapped">
+
+        <x:Arguments>
+            <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
+        </x:Arguments>
+
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid
+                        Padding="30,10,30,0"
+                        RowSpacing="-5"
+                        BackgroundColor="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Label
+                            HorizontalOptions="StartAndExpand"
+							FontAttributes="Bold"
+							FontSize="Large"
+							Text="{Binding Pessoa.Nome}"/>
+
+                        <Label 
+                            Grid.Column="1"
+                            HorizontalOptions="EndAndExpand"
+                            FontSize="Large"
+						    Text="{Binding Valor}"/>
+
+                        <Label
+                            Grid.Row="1"
+                            Text="{Binding Registro, StringFormat='{}{0:dd/MM/yyyy - HH:mm}'}"/>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 </ContentPage>
