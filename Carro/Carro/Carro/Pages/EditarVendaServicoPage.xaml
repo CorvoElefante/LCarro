@@ -19,7 +19,7 @@
     </ContentPage.Resources>
 
     <Grid
-        Padding="0,15,0,0"
+        Padding="0,10,0,0"
         RowSpacing="0">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>

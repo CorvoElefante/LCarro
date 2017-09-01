@@ -20,7 +20,7 @@
 
     <ScrollView>
         <Grid
-            Padding="0,30,0,0"
+            Padding="0,10,0,0"
             RowSpacing="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -30,12 +30,12 @@
                 Padding="30,0,15,0"
                 RowSpacing="15">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
                     <RowDefinition Height="45"/>
                     <RowDefinition Height="45"/>
                     <RowDefinition Height="45"/>
@@ -67,13 +67,15 @@
 
                     <Label
                         Text="Valor em produtos:"
-                        TextColor="#444444"/>
+                        TextColor="#444444"
+                        FontSize="Medium"/>
                     <Label
                         Grid.Column="1"
                         VerticalOptions="Center"
                         HorizontalOptions="End"
                         Text="{Binding ValorTotalProdutos, Converter={StaticResource decimalConverter}}"
-                        TextColor="#444444"/>
+                        TextColor="#444444"
+                        FontSize="Medium"/>
                 </Grid>
 
                 <Grid
@@ -90,13 +92,15 @@
 
                     <Label
                         Text="Valor em serviços:"
-                        TextColor="#444444"/>
+                        TextColor="#444444"
+                        FontSize="Medium"/>
                     <Label
                         Grid.Column="1"
                         VerticalOptions="Center"
                         HorizontalOptions="End"
                         Text="{Binding ValorTotalServicos, Converter={StaticResource decimalConverter}}"
-                        TextColor="#444444"/>
+                        TextColor="#444444"
+                        FontSize="Medium"/>
                 </Grid>
 
                 <Grid
@@ -113,13 +117,15 @@
 
                     <Label
                         Text="Descontos individuais:"
-                        TextColor="#444444"/>
+                        TextColor="#444444"
+                        FontSize="Medium"/>
                     <Label
                         Grid.Column="1"
                         VerticalOptions="Center"
                         HorizontalOptions="End"
                         Text="{Binding DescontoTotalIndividual, Converter={StaticResource decimalConverter}}"
-                        TextColor="#444444"/>
+                        TextColor="#444444"
+                        FontSize="Medium"/>
                 </Grid>
 
                 <Grid
@@ -136,26 +142,29 @@
                     </Grid.ColumnDefinitions>
 
                     <Label
-                        VerticalOptions="Center"
-                        Text="Desconto geral:"/>
+                        Text="Desconto geral:"
+                        TextColor="#444444"
+                        FontSize="Medium"/>
                     <Entry
                         Grid.Column="1"
                         VerticalOptions="Center"
                         Text="{Binding DescontoGeral, Converter={StaticResource decimalConverter}}"
                         Keyboard="Numeric"
-                        FontSize="Default"/>
+                        TextColor="#444444"/>
 
                     <Label
                         Grid.Row="1"
                         VerticalOptions="Center"
-                        Text="Desconto geral %:"/>
+                        Text="Desconto geral %:"
+                        TextColor="#444444"
+                        FontSize="Medium"/>
                     <Entry
                         Grid.Row="1"
                         Grid.Column="1"
                         VerticalOptions="Center"
                         Text="{Binding DescontoGeralPorcentagem, Converter={StaticResource decimalConverter}}"
                         Keyboard="Numeric"
-                        FontSize="Default"/>
+                        TextColor="#444444"/>
                 </Grid>
 
 
@@ -173,17 +182,20 @@
 
                     <Label
                         Text="Valor total:"
-                        TextColor="#444444"/>
+                        TextColor="#444444"
+                        FontSize="Medium"/>
                     <Label
                         Grid.Column="1"
                         Text="{Binding ValorTotalComDesconto, Converter={StaticResource decimalConverter}}"
-                        TextColor="#444444"/>
+                        TextColor="#444444"
+                        FontSize="Medium"/>
                 </Grid>
 
                 <Picker
                     Grid.Row="6"
                     Grid.ColumnSpan="2"
-                    SelectedIndex="{Binding FormaPagamento}">
+                    SelectedIndex="{Binding FormaPagamento}"
+                    TextColor="#444444">
                     <Picker.Items>
                         <x:String>Selecione a forma de pagamento</x:String>
                         <x:String>À vista</x:String>
@@ -202,7 +214,8 @@
                     Grid.Row="7"
                     Grid.ColumnSpan="2"
                     IsEnabled="{Binding ParcelasIsEnabled}"
-                    SelectedIndex="{Binding Parcelas}">
+                    SelectedIndex="{Binding Parcelas}"
+                    TextColor="#444444">
                     <Picker.Items>
                         <x:String>Selecione o número de parcelas</x:String>
                         <x:String>1x</x:String>
@@ -227,7 +240,8 @@
                     Grid.Row="8"
                     Grid.ColumnSpan="2"
                     IsEnabled="{Binding ParcelasIsEnabled}"
-                    SelectedIndex="{Binding Entrada}">
+                    SelectedIndex="{Binding Entrada}"
+                    TextColor="#444444">
                     <Picker.Items>
                         <x:String>Selecione a entrada</x:String>
                         <x:String>À vista</x:String>

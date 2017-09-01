@@ -15,90 +15,87 @@
     </ContentPage.ToolbarItems>
 
     <Grid>
-        <ScrollView>
-            <Grid
-                Padding="30,30,15,0"
-                RowSpacing="15">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="45"/>
-                    <RowDefinition Height="45"/>
-                    <RowDefinition Height="45"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid
+            Padding="30,10,30,-10"
+            RowSpacing="15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
+            <Label
+                Text = "{Binding nomeEntry}"
+                FontAttributes="Bold"
+                FontSize="Large"/>
 
-                <Label
-                    Text = "{Binding nomeEntry}"
-                    FontAttributes="Bold"
-                    FontSize="Large"/>
+            <Label
+                Grid.Row="1"
+                Text = "{Binding justificativaEntry}"
+                FontSize="Large"/>
 
-                <Label
-                    Grid.Row="1"
-                    Text = "{Binding justificativaEntry}"
-                    FontSize="Large"/>
+            <Label
+                Grid.Row="2"
+                HorizontalOptions="Center"
+                Text="Produtos perdidos"
+                FontAttributes="Bold"
+                FontSize="Medium">
+            </Label>
+        </Grid>
 
-                <Label
-                    Grid.Row="2"
-                    HorizontalOptions="CenterAndExpand"
-                    Text="Produtos perdidos"
-                    FontAttributes="Bold"
-                    FontSize="Medium">
-                </Label>
+        <ListView
+            Grid.Row="1"
+		    HorizontalOptions="FillAndExpand"
+		    VerticalOptions="FillAndExpand"
+		    HasUnevenRows="true"
+		    SeparatorVisibility="None"
+		    ItemsSource="{Binding ProdutosPerdidos}"
+		    ItemTapped="Handle_ItemTapped">
 
-                <ListView
-                    Grid.Row="3"
-			        HorizontalOptions="FillAndExpand"
-			        VerticalOptions="FillAndExpand"
-			        HasUnevenRows="true"
-			        SeparatorVisibility="None"
-			        ItemsSource="{Binding ProdutosPerdidos}"
-			        ItemTapped="Handle_ItemTapped">
+            <x:Arguments>
+                <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
+            </x:Arguments>
 
-                    <x:Arguments>
-                        <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
-                    </x:Arguments>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
 
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
+                        <Grid
+                            Padding="35,10,30,0"
+                            RowSpacing="-5"
+                            BackgroundColor="Transparent">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
 
-                                <Grid
-                                    Padding="30,0,30,0"
-                                    BackgroundColor="Transparent">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="Auto"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto"/>
-                                        <RowDefinition Height="Auto"/>
-                                    </Grid.RowDefinitions>
+                            <Label
+                                HorizontalOptions="StartAndExpand"
+							    FontAttributes="Bold"
+							    FontSize="Large"
+							    Text="{Binding Nome}"/>
 
-                                    <Label
-                                    HorizontalOptions="StartAndExpand"
-							        FontAttributes="Bold"
-							        FontSize="Large"
-							        Text="{Binding Nome}"/>
+                            <Label 
+                                Grid.Column="1"
+                                HorizontalOptions="EndAndExpand"
+                                FontSize="Large"
+						        Text="{Binding QuantidadePerdida}"/>
 
-                                    <Label 
-                                    Grid.Column="1"
-                                    HorizontalOptions="EndAndExpand"
-                                    FontSize="Large"
-						            Text="{Binding QuantidadePerdida}"/>
-
-                                    <Label
-                                    Grid.Row="1"
-							        Text="{Binding Marca}"/>
-                                </Grid>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </Grid>
-        </ScrollView>
+                            <Label
+                                Grid.Row="1"
+							    Text="{Binding Marca}"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </ContentPage>
