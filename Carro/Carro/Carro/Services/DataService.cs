@@ -261,7 +261,7 @@ namespace Carro.Services
 
 
             listaOrdemVendaParcela = DB.Query<OrdemVendaParcela>("SELECT * FROM OrdemVendaParcela");
-            listaOrdemVenda = DB.Query<OrdemVenda>("SELECT * FROM OrdemVenda");
+            listaOrdemVenda = DB.Query<OrdemVenda>("SELECT * FROM OrdemVenda WHERE Registro >= ? AND Registro <= ?", dataInicial.Ticks, dataFinal.Ticks);
 
             foreach (OrdemVendaParcela element in listaOrdemVendaParcela)
             {
@@ -289,11 +289,6 @@ namespace Carro.Services
 
             foreach (OrdemVenda element in listaOrdemVenda.ToList())
             {
-                if (element.Registro < dataInicial || element.Registro > dataFinal)
-                {
-                    listaOrdemVenda.Remove(element);
-                }
-
                 if (element.eVenda == false)
                 {
                     listaOrdemVenda.Remove(element);
@@ -368,6 +363,33 @@ namespace Carro.Services
         #endregion
 
         #region RelatorioFinalVenda
+
+        public decimal RelatorioFinalVendaValorVendido(DateTime dataInicial, DateTime dataFinal)
+        {
+            List<OrdemVenda> listaOrdemVenda = new List<OrdemVenda>();
+            decimal valorVendido = 0;
+
+            listaOrdemVenda = DB.Query<OrdemVenda>("SELECT * FROM OrdemVenda WHERE Registro >= ? AND Registro <= ?", dataInicial.Ticks, dataFinal.Ticks);
+
+            foreach (OrdemVenda element in listaOrdemVenda)
+            {
+                valorVendido = valorVendido + element.Valor;
+            }
+
+            return valorVendido;
+        }
+
+        public int RelatorioFinalVendaQuantidadeVendida(DateTime dataInicial, DateTime dataFinal)
+        {
+            List<OrdemVenda> listaOrdemVenda = new List<OrdemVenda>();
+            int quantidadeVendida= 0;
+
+            listaOrdemVenda = DB.Query<OrdemVenda>("SELECT * FROM OrdemVenda WHERE Registro >= ? AND Registro <= ?", dataInicial.Ticks, dataFinal.Ticks);
+
+            quantidadeVendida = listaOrdemVenda.Count();
+
+            return quantidadeVendida;
+        }
 
         #endregion
 
