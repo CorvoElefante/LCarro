@@ -29,7 +29,7 @@
 
         <ScrollView>
             <Grid
-                Padding="30,30,15,0"
+                Padding="30,10,15,0"
                 RowSpacing="15">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="45"/>
@@ -103,7 +103,8 @@
                     Grid.Column="1"
                     VerticalOptions="Center"
                     HorizontalOptions="End"
-                    Text = "{Binding quantidadeEntry}"/>
+                    Text = "{Binding quantidadeEntry}"
+                    FontSize="Medium"/>
 
                 <Label
                     Grid.Row="6"
@@ -126,7 +127,8 @@
                     Grid.Column="1"
                     VerticalOptions="Center"
                     HorizontalOptions="End"
-                    Text="{Binding quantidadeTotalEntry}"/>
+                    Text="{Binding quantidadeTotalEntry}"
+                    FontSize="Medium"/>
             </Grid>
         </ScrollView>
 
