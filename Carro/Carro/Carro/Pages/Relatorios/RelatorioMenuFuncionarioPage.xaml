@@ -2,32 +2,52 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
-             x:Class="Carro.Pages.Relatorios.RelatorioMenuFuncionarioPage">
+             x:Class="Carro.Pages.Relatorios.RelatorioMenuFuncionarioPage"
+             Title="Relatorios de Funcionários">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem
-      Icon="{x:Static resources:Images.ic_Relatorio_Funcionario_Small}"/>
+            Icon="ic_Relatorio_Funcionario_Small"
+            Command="{Binding HelpCommand}"/>
     </ContentPage.ToolbarItems>
 
-    <StackLayout
-        VerticalOptions="StartAndExpand"
-        HorizontalOptions="Center">
-        <Frame>
-            <Label
-                Text="Relatório de funcionarios que mais vendem"
-                FontSize="Large"/>
-            <Frame.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding RelFuncionarioVendaCommand}"/>
-            </Frame.GestureRecognizers>
-        </Frame>
+    <ScrollView>
+        <Grid
+            Padding="30,10,30,0"
+            RowSpacing="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="45"/>
+            </Grid.RowDefinitions>
 
-        <Frame>
-            <Label
-                Text="Relatório de funcionarios que mais rendem"
-                FontSize="Large"/>
-            <Frame.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding RelFucionarioRendeCommand}"/>
-            </Frame.GestureRecognizers>
-        </Frame>
-    </StackLayout>
+            <Frame
+                Padding="15,0,15,0"
+                BackgroundColor="#444444">
+                <Label
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Text="Funcionários que mais vendem em quantidade"
+                    TextColor="#FFFFF7"
+                    FontSize="Medium"/>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding RelFuncionarioVendaCommand}"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            <Frame
+                Grid.Row="1"
+                Padding="15,0,15,0"
+                BackgroundColor="#444444">
+                <Label
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Text="Funcionários que mais vendem em valor"
+                    TextColor="#FFFFF7"
+                    FontSize="Medium"/>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding RelFucionarioRendeCommand}"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+        </Grid>
+    </ScrollView>
 </ContentPage>

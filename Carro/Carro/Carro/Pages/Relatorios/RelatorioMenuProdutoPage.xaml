@@ -2,41 +2,68 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
-             x:Class="Carro.Pages.Relatorios.RelatorioMenuProdutoPage">
+             x:Class="Carro.Pages.Relatorios.RelatorioMenuProdutoPage"
+             Title="Relatórios de produtos">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem
-      Icon="{x:Static resources:Images.ic_Relatorio_Produto_Small}"/>
+            Icon="ic_Relatorio_Produto_Small"
+            Command="{Binding HelpCommand}"/>
     </ContentPage.ToolbarItems>
 
-    <StackLayout
-        VerticalOptions="StartAndExpand"
-        HorizontalOptions="Center">
-        <Frame>
-            <Label
-                Text="Relatório de produtos mais vendidos"
-                FontSize="Large"/>
-            <Frame.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding RelProdutoVendidoCommand}"/>
-            </Frame.GestureRecognizers>
-        </Frame>
+    <ScrollView>
+        <Grid
+            Padding="30,10,30,0"
+            RowSpacing="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="45"/>
+            </Grid.RowDefinitions>
 
-        <Frame>
-            <Label
-                Text="Relatório de produtos sem estoque"
-                FontSize="Large"/>
-            <Frame.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding RelProdutoSemEstoqueCommand}"/>
-            </Frame.GestureRecognizers>
-        </Frame>
+            <Frame
+                Padding="0,0,0,0"
+                BackgroundColor="#444444">
+                <Label
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Text="produtos mais vendidos"
+                    TextColor="#FFFFF7"
+                    FontSize="Medium"/>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding RelProdutoVendidoCommand}"/>
+                </Frame.GestureRecognizers>
+            </Frame>
 
-        <Frame>
-            <Label
-                Text="Relatório total do valor de produtos em estoque"
-                FontSize="Large"/>
-            <Frame.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding RelProdutoValorTotalCommand}"/>
-            </Frame.GestureRecognizers>
-        </Frame>
-    </StackLayout>
+            <Frame
+                Grid.Row="1"
+                Padding="0,0,0,0"
+                BackgroundColor="#444444">
+                <Label
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Text="produtos sem estoque"
+                    TextColor="#FFFFF7"
+                    FontSize="Medium"/>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding RelProdutoSemEstoqueCommand}"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            <Frame
+                Grid.Row="2"
+                Padding="0,0,0,0"
+                BackgroundColor="#444444">
+                <Label
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Text="produtos em estoque"
+                    TextColor="#FFFFF7"
+                    FontSize="Medium"/>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding RelProdutoValorTotalCommand}"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+        </Grid>
+    </ScrollView>
 </ContentPage>

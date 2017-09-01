@@ -1,19 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Carro.Pages.Relatorios.RelatorioMenuSaldoPage">
-    <ContentPage.Content>
-        <StackLayout
-            VerticalOptions="StartAndExpand"
-            HorizontalOptions="Center">
-            <Frame>
+             x:Class="Carro.Pages.Relatorios.RelatorioMenuSaldoPage"
+             Title="Relatórios de Saldo">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Icon="ic_Relatorio_Saldo_Small"
+            Command="{Binding HelpCommand}"/>
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <Grid
+            Padding="30,10,30,0"
+            RowSpacing="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45"/>
+            </Grid.RowDefinitions>
+
+            <Frame
+                Padding="0,0,0,0"
+                BackgroundColor="#444444">
                 <Label
-                Text="Relatório de saldo"
-                FontSize="Large"/>
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Text="Saldo"
+                    TextColor="#FFFFF7"
+                    FontSize="Medium"/>
                 <Frame.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding RelSaldoCommand}"/>
                 </Frame.GestureRecognizers>
             </Frame>
-        </StackLayout>
-    </ContentPage.Content>
+        </Grid>
+    </ScrollView>
 </ContentPage>

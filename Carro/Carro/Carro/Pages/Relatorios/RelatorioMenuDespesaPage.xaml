@@ -2,23 +2,36 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
-             x:Class="Carro.Pages.Relatorios.RelatorioMenuDespesaPage">
+             x:Class="Carro.Pages.Relatorios.RelatorioMenuDespesaPage"
+             Title="Relatórios de despesas">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem
-      Icon="{x:Static resources:Images.ic_Relatorio_Despesa_Small}"/>
+            Icon="ic_Relatorio_Despesa_Small"
+            Command="{Binding HelpCommand}"/>
     </ContentPage.ToolbarItems>
 
-    <StackLayout
-        VerticalOptions="StartAndExpand"
-        HorizontalOptions="Center">
-        <Frame>
-            <Label
-                Text="Relatório de despesas por categoria"
-                FontSize="Large"/>
-            <Frame.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding RelDespesaCategoriaCommand}"/>
-            </Frame.GestureRecognizers>
-        </Frame>
-    </StackLayout>
+    <ScrollView>
+        <Grid
+            Padding="30,10,30,0"
+            RowSpacing="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45"/>
+            </Grid.RowDefinitions>
+
+            <Frame
+                Padding="0,0,0,0"
+                BackgroundColor="#444444">
+                <Label
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Text="Despesas por categoria"
+                    TextColor="#FFFFF7"
+                    FontSize="Medium"/>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding RelDespesaCategoriaCommand}"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+        </Grid>
+    </ScrollView>
 </ContentPage>

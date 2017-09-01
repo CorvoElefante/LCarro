@@ -2,39 +2,68 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
-             x:Class="Carro.Pages.Relatorios.RelatorioMenuFinalVendaPage">
+             x:Class="Carro.Pages.Relatorios.RelatorioMenuFinalVendaPage"
+             Title="Relatórios de vendas">
 
-        <StackLayout
-            VerticalOptions="StartAndExpand"
-            HorizontalOptions="Center">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Icon="ic_Relatorio_Venda_Small"
+            Command="{Binding HelpCommand}"/>
+    </ContentPage.ToolbarItems>
 
-            <Frame>
+    <ScrollView>
+        <Grid
+            Padding="30,10,30,0"
+            RowSpacing="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="45"/>
+            </Grid.RowDefinitions>
+
+            <Frame
+                Padding="0,0,0,0"
+                BackgroundColor="#444444">
                 <Label
-                Text="Relatório de valor vendido no periodo"
-                FontSize="Large"/>
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Text="Valor vendido no periodo"
+                    TextColor="#FFFFF7"
+                    FontSize="Medium"/>
                 <Frame.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding RelValorVendido}"/>
+                    <TapGestureRecognizer Command="{Binding RelValorVendido}"/>
                 </Frame.GestureRecognizers>
             </Frame>
 
-        <Frame>
-            <Label
-                Text="Relatório de vendas atrasadas"
-                FontSize="Large"/>
-            <Frame.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding RelVendasAtrasadas}"/>
-            </Frame.GestureRecognizers>
-        </Frame>
+            <Frame
+                Grid.Row="1"
+                Padding="0,0,0,0"
+                BackgroundColor="#444444">
+                <Label
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Text="Vendas atrasadas"
+                    TextColor="#FFFFF7"
+                    FontSize="Medium"/>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding RelVendasAtrasadas}"/>
+                </Frame.GestureRecognizers>
+            </Frame>
 
-        <Frame>
-            <Label
-                Text="Relatório de valor de vendas a receber"
-                FontSize="Large"/>
-            <Frame.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding RelVendasReceber}"/>
-            </Frame.GestureRecognizers>
-        </Frame>
-
-    </StackLayout>
-
+            <Frame
+                Grid.Row="2"
+                Padding="0,0,0,0"
+                BackgroundColor="#444444">
+                <Label
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Text="Vendas a receber"
+                    TextColor="#FFFFF7"
+                    FontSize="Medium"/>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding RelVendasReceber}"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+        </Grid>
+    </ScrollView>
 </ContentPage>

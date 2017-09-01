@@ -2,60 +2,100 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
-             x:Class="Carro.Pages.Relatorios.RelatorioMenuClientePage">
+             x:Class="Carro.Pages.Relatorios.RelatorioMenuClientePage"
+             Title="Relatórios de clientes">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem
-      Icon="{x:Static resources:Images.ic_Relatorio_Cliente_Small}"/>
+            Icon="ic_Relatorio_Cliente_Small"
+            Command="{Binding HelpCommand}"/>
     </ContentPage.ToolbarItems>
 
-    <StackLayout
-        VerticalOptions="StartAndExpand"
-        HorizontalOptions="Center">
+    <ScrollView>
+        <Grid
+            Padding="30,10,30,0"
+            RowSpacing="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="45"/>
+            </Grid.RowDefinitions>
 
-        <Frame>
-            <Label
-                Text="Relatório de aniversariantes do dia"
-                FontSize="Large"/>
-            <Frame.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding RelClienteAniversarianteCommand}"/>
-            </Frame.GestureRecognizers>
-        </Frame>
+            <Frame
+                Padding="0,0,0,0"
+                BackgroundColor="#444444">
+                <Label
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Text="Aniversariantes do dia"
+                    TextColor="#FFFFF7"
+                    FontSize="Medium"/>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding RelClienteAniversarianteCommand}"/>
+                </Frame.GestureRecognizers>
+            </Frame>
 
-        <Frame>
-            <Label
-                Text="Relatório de clientes adicionados"
-                FontSize="Large"/>
-            <Frame.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding RelClienteAddCommand}"/>
-            </Frame.GestureRecognizers>
-        </Frame>
+            <Frame
+                Grid.Row="1"
+                Padding="0,0,0,0"
+                BackgroundColor="#444444">
+                <Label
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Text="Clientes adicionados"
+                    TextColor="#FFFFF7"
+                    FontSize="Medium"/>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding RelClienteAddCommand}"/>
+                </Frame.GestureRecognizers>
+            </Frame>
 
-        <Frame>
-            <Label
-                Text="Relatório de clientes frequentes"
-                FontSize="Large"/>
-            <Frame.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding RelClienteFrequenteCommand}"/>
-            </Frame.GestureRecognizers>
-        </Frame>
+            <Frame
+                Grid.Row="2"
+                Padding="0,0,0,0"
+                BackgroundColor="#444444">
+                <Label
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Text="Clientes frequentes"
+                    TextColor="#FFFFF7"
+                    FontSize="Medium"/>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding RelClienteFrequenteCommand}"/>
+                </Frame.GestureRecognizers>
+            </Frame>
 
-        <Frame>
-            <Label
-                Text="Relatório de clientes que mais gastam"
-                FontSize="Large"/>
-            <Frame.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding RelClienteValorCommand}"/>
-            </Frame.GestureRecognizers>
-        </Frame>
+            <Frame
+                Grid.Row="3"
+                Padding="0,0,0,0"
+                BackgroundColor="#444444">
+                <Label
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Text="Clientes que mais gastam"
+                    TextColor="#FFFFF7"
+                    FontSize="Medium"/>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding RelClienteValorCommand}"/>
+                </Frame.GestureRecognizers>
+            </Frame>
 
-        <Frame>
-            <Label
-                Text="Relatório do total de clientes"
-                FontSize="Large"/>
-            <Frame.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding RelTotalClienteCommand}"/>
-            </Frame.GestureRecognizers>
-        </Frame>
-    </StackLayout>
+            <Frame
+                Grid.Row="4"
+                Padding="0,0,0,0"
+                BackgroundColor="#444444">
+                <Label
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Text="Total de clientes"
+                    TextColor="#FFFFF7"
+                    FontSize="Medium"/>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding RelTotalClienteCommand}"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+        </Grid>
+    </ScrollView>
 </ContentPage>
