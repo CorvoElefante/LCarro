@@ -357,6 +357,114 @@
     <Compile Include="Pages\Help\ListaVendaHelpPage.xaml.cs">
       <DependentUpon>ListaVendaHelpPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Help\RelatoriosHelp\RelatorioClienteAdicionadoResultadoHelpPage.xaml.cs">
+      <DependentUpon>RelatorioClienteAdicionadoResultadoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\RelatoriosHelp\RelatorioClienteAdicionadoSelecaoHelpPage.xaml.cs">
+      <DependentUpon>RelatorioClienteAdicionadoSelecaoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\RelatoriosHelp\RelatorioClienteAniversarianteDiaResultadoHelpPage.xaml.cs">
+      <DependentUpon>RelatorioClienteAniversarianteDiaResultadoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\RelatoriosHelp\RelatorioClienteCompraramQuantidadeResultadoHelpPage.xaml.cs">
+      <DependentUpon>RelatorioClienteCompraramQuantidadeResultadoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\RelatoriosHelp\RelatorioClienteCompraramQuantidadeSelecaoHelpPage.xaml.cs">
+      <DependentUpon>RelatorioClienteCompraramQuantidadeSelecaoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\RelatoriosHelp\RelatorioClienteCompraramValorResultadoHelpPage.xaml.cs">
+      <DependentUpon>RelatorioClienteCompraramValorResultadoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\RelatoriosHelp\RelatorioClienteCompraramValorSelecaoHelpPage.xaml.cs">
+      <DependentUpon>RelatorioClienteCompraramValorSelecaoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\RelatoriosHelp\RelatorioClienteTotalResultadoHelpPage.xaml.cs">
+      <DependentUpon>RelatorioClienteTotalResultadoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\RelatoriosHelp\RelatorioDespesaCategoriaResultadoHelpPage.xaml.cs">
+      <DependentUpon>RelatorioDespesaCategoriaResultadoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\RelatoriosHelp\RelatorioDespesaCategoriaSelecaoHelpPage.xaml.cs">
+      <DependentUpon>RelatorioDespesaCategoriaSelecaoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\RelatoriosHelp\RelatorioFinalVendaAReceberResultadoHelpPage.xaml.cs">
+      <DependentUpon>RelatorioFinalVendaAReceberResultadoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\RelatoriosHelp\RelatorioFinalVendaEmAtrasoResultadoHelpPage.xaml.cs">
+      <DependentUpon>RelatorioFinalVendaEmAtrasoResultadoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\RelatoriosHelp\RelatorioFinalVendaValorVendidoResultadoHelpPage.xaml.cs">
+      <DependentUpon>RelatorioFinalVendaValorVendidoResultadoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\RelatoriosHelp\RelatorioFinalVendaValorVendidoSelecaoHelpPage.xaml.cs">
+      <DependentUpon>RelatorioFinalVendaValorVendidoSelecaoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\RelatoriosHelp\RelatorioFuncionarioNumeroVendaResultadoHelpPage.xaml.cs">
+      <DependentUpon>RelatorioFuncionarioNumeroVendaResultadoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\RelatoriosHelp\RelatorioFuncionarioNumeroVendaSelecaoHelpPage.xaml.cs">
+      <DependentUpon>RelatorioFuncionarioNumeroVendaSelecaoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\RelatoriosHelp\RelatorioFuncionarioValorVendaResultadoHelpPage.xaml.cs">
+      <DependentUpon>RelatorioFuncionarioValorVendaResultadoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\RelatoriosHelp\RelatorioFuncionarioValorVendaSelecaoHelpPage.xaml.cs">
+      <DependentUpon>RelatorioFuncionarioValorVendaSelecaoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\RelatoriosHelp\RelatorioMenuClienteHelpPage.xaml.cs">
+      <DependentUpon>RelatorioMenuClienteHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\RelatoriosHelp\RelatorioMenuDespesaHelpPage.xaml.cs">
+      <DependentUpon>RelatorioMenuDespesaHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\RelatoriosHelp\RelatorioMenuFinalVendaHelpPage.xaml.cs">
+      <DependentUpon>RelatorioMenuFinalVendaHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\RelatoriosHelp\RelatorioMenuFuncionarioHelpPage.xaml.cs">
+      <DependentUpon>RelatorioMenuFuncionarioHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\RelatoriosHelp\RelatorioMenuPerdaHelpPage.xaml.cs">
+      <DependentUpon>RelatorioMenuPerdaHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\RelatoriosHelp\RelatorioMenuProdutoHelpPage.xaml.cs">
+      <DependentUpon>RelatorioMenuProdutoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\RelatoriosHelp\RelatorioMenuSaldoHelpPage.xaml.cs">
+      <DependentUpon>RelatorioMenuSaldoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\RelatoriosHelp\RelatorioMenuServicoHelpPage.xaml.cs">
+      <DependentUpon>RelatorioMenuServicoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\RelatoriosHelp\RelatorioPerdaTotalResultadoHelpPage.xaml.cs">
+      <DependentUpon>RelatorioPerdaTotalResultadoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\RelatoriosHelp\RelatorioPerdaTotalSelecaoHelpPage.xaml.cs">
+      <DependentUpon>RelatorioPerdaTotalSelecaoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\RelatoriosHelp\RelatorioProdutoMaisVendidoResultadoHelpPage.xaml.cs">
+      <DependentUpon>RelatorioProdutoMaisVendidoResultadoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\RelatoriosHelp\RelatorioProdutoMaisVendidoSelecaoHelpPage.xaml.cs">
+      <DependentUpon>RelatorioProdutoMaisVendidoSelecaoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\RelatoriosHelp\RelatorioProdutoSemEstoqueResultadoHelpPage.xaml.cs">
+      <DependentUpon>RelatorioProdutoSemEstoqueResultadoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\RelatoriosHelp\RelatorioProdutoValorTotalEstoqueResultadoHelpPage.xaml.cs">
+      <DependentUpon>RelatorioProdutoValorTotalEstoqueResultadoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\RelatoriosHelp\RelatorioSaldoResultadoHelpPage.xaml.cs">
+      <DependentUpon>RelatorioSaldoResultadoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\RelatoriosHelp\RelatorioSaldoSelecaoHelpPage.xaml.cs">
+      <DependentUpon>RelatorioSaldoSelecaoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\RelatoriosHelp\RelatorioServicoUtilizadoResultadoHelpPage.xaml.cs">
+      <DependentUpon>RelatorioServicoUtilizadoResultadoHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Help\RelatoriosHelp\RelatorioServicoUtilizadoSelecaoHelpPage.xaml.cs">
+      <DependentUpon>RelatorioServicoUtilizadoSelecaoHelpPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ListaClientePage.xaml.cs">
       <DependentUpon>ListaClientePage.xaml</DependentUpon>
     </Compile>
@@ -1517,6 +1625,222 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\Relatorios\RelatorioFinalVendaAReceberResultadoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\RelatoriosHelp\RelatorioClienteCompraramQuantidadeSelecaoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\RelatoriosHelp\RelatorioClienteAdicionadoResultadoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\RelatoriosHelp\RelatorioClienteAdicionadoSelecaoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\RelatoriosHelp\RelatorioClienteAniversarianteDiaResultadoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\RelatoriosHelp\RelatorioClienteCompraramQuantidadeResultadoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\RelatoriosHelp\RelatorioClienteCompraramValorResultadoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\RelatoriosHelp\RelatorioClienteCompraramValorSelecaoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\RelatoriosHelp\RelatorioClienteTotalResultadoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\RelatoriosHelp\RelatorioDespesaCategoriaResultadoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\RelatoriosHelp\RelatorioDespesaCategoriaSelecaoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\RelatoriosHelp\RelatorioFinalVendaAReceberResultadoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\RelatoriosHelp\RelatorioFinalVendaEmAtrasoResultadoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\RelatoriosHelp\RelatorioFinalVendaValorVendidoResultadoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\RelatoriosHelp\RelatorioFinalVendaValorVendidoSelecaoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\RelatoriosHelp\RelatorioFuncionarioNumeroVendaResultadoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\RelatoriosHelp\RelatorioFuncionarioNumeroVendaSelecaoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\RelatoriosHelp\RelatorioFuncionarioValorVendaResultadoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\RelatoriosHelp\RelatorioFuncionarioValorVendaSelecaoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\RelatoriosHelp\RelatorioMenuClienteHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\RelatoriosHelp\RelatorioMenuDespesaHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\RelatoriosHelp\RelatorioMenuFinalVendaHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\RelatoriosHelp\RelatorioMenuFuncionarioHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\RelatoriosHelp\RelatorioMenuPerdaHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\RelatoriosHelp\RelatorioMenuProdutoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\RelatoriosHelp\RelatorioMenuSaldoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\RelatoriosHelp\RelatorioMenuServicoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\RelatoriosHelp\RelatorioPerdaTotalResultadoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\RelatoriosHelp\RelatorioPerdaTotalSelecaoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\RelatoriosHelp\RelatorioProdutoMaisVendidoResultadoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\RelatoriosHelp\RelatorioProdutoMaisVendidoSelecaoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\RelatoriosHelp\RelatorioProdutoSemEstoqueResultadoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\RelatoriosHelp\RelatorioProdutoValorTotalEstoqueResultadoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\RelatoriosHelp\RelatorioSaldoResultadoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\RelatoriosHelp\RelatorioSaldoSelecaoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\RelatoriosHelp\RelatorioServicoUtilizadoResultadoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Help\RelatoriosHelp\RelatorioServicoUtilizadoSelecaoHelpPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
