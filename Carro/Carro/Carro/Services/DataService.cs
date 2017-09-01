@@ -256,45 +256,65 @@ namespace Carro.Services
         public decimal RelatorioSaldoVendasRecebidas(DateTime dataInicial, DateTime dataFinal)
         {
             decimal vendasRecebidas = 0;
-            List<OrdemVendaParcela> listaOrdemVenda = new List<OrdemVendaParcela>();
+            List<OrdemVendaParcela> listaOrdemVendaParcela = new List<OrdemVendaParcela>();
+            List<OrdemVenda> listaOrdemVenda = new List<OrdemVenda>();
 
 
-            listaOrdemVenda = DB.Query<OrdemVendaParcela>("SELECT * FROM OrdemVendaParcela");
+            listaOrdemVendaParcela = DB.Query<OrdemVendaParcela>("SELECT * FROM OrdemVendaParcela");
+            listaOrdemVenda = DB.Query<OrdemVenda>("SELECT * FROM OrdemVenda");
 
-            foreach (OrdemVendaParcela element in listaOrdemVenda)
+            foreach (OrdemVendaParcela element in listaOrdemVendaParcela)
             {
                 DB.GetChildren(element, true);
             }
 
-            foreach (OrdemVendaParcela element in listaOrdemVenda.ToList())
+            foreach (OrdemVendaParcela element in listaOrdemVendaParcela.ToList())
             {
                 if (element.OrdemVenda.Registro < dataInicial || element.OrdemVenda.Registro > dataFinal)
                 {
-                    listaOrdemVenda.Remove(element);
+                    listaOrdemVendaParcela.Remove(element);
                 }
 
                 if (element.OrdemVenda.eVenda == false)
                 {
+                    listaOrdemVendaParcela.Remove(element);
+                }
+
+                if (element.OrdemVenda.FormaPagamento == 2 && element.Pago == false)
+                {
+                    listaOrdemVendaParcela.Remove(element);
+                }
+
+            }
+
+            foreach (OrdemVenda element in listaOrdemVenda.ToList())
+            {
+                if (element.Registro < dataInicial || element.Registro > dataFinal)
+                {
                     listaOrdemVenda.Remove(element);
                 }
 
-                if (element.Pago == false)
+                if (element.eVenda == false)
                 {
                     listaOrdemVenda.Remove(element);
+                }
+
+            }
+
+            foreach (OrdemVenda element in listaOrdemVenda.ToList())
+            {
+                if (element.FormaPagamento == 1)
+                {
+                    vendasRecebidas = vendasRecebidas + element.Valor;
                 }
             }
 
-            foreach (OrdemVendaParcela element in listaOrdemVenda.ToList())
+            foreach (OrdemVendaParcela element in listaOrdemVendaParcela.ToList())
             {
-                if (element.OrdemVenda.FormaPagamento == 1)
-                {
-                    vendasRecebidas = vendasRecebidas + element.OrdemVenda.Valor;
-                }
                 if (element.OrdemVenda.FormaPagamento == 2)
                 {
                     vendasRecebidas = vendasRecebidas + element.ValorParcela;
                 }
-
             }
 
             return vendasRecebidas;
