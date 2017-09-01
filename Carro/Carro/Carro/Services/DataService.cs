@@ -422,6 +422,21 @@ namespace Carro.Services
             return listaOrdemVenda;
         }
 
+        public decimal RelatorioFinalVendaQuantidadeAReceber()
+        {
+            List<OrdemVendaParcela> listaOrdemVendaParcela = new List<OrdemVendaParcela>();
+            decimal vendasReceber = 0;
+
+            listaOrdemVendaParcela = DB.Query<OrdemVendaParcela>("SELECT ValorParcela FROM OrdemVendaParcela WHERE Pago = 0");
+
+            foreach (OrdemVendaParcela element in listaOrdemVendaParcela)
+            {
+                vendasReceber = vendasReceber + element.ValorParcela;
+            }
+
+            return vendasReceber;
+        }
+
         #endregion
 
         #region  RelatorioPessoaCliente

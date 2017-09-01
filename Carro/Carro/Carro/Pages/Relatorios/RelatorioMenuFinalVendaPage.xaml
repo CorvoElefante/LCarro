@@ -26,6 +26,15 @@
             </Frame.GestureRecognizers>
         </Frame>
 
+        <Frame>
+            <Label
+                Text="Relatório de valor de vendas a receber"
+                FontSize="Large"/>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding RelVendasReceber}"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+
     </StackLayout>
 
 </ContentPage>
