@@ -16,18 +16,18 @@ namespace Carro.ViewModels.Relatorios
         {
         }
 
-        Command _RelClienteAddCommand;
-        public Command RelClienteAddCommand
+        Command _RelValorVendido;
+        public Command RelValorVendido
         {
-            get { return _RelClienteAddCommand ?? (_RelClienteAddCommand = new Command(async () => await ExecuteRelClienteAddCommand())); }
+            get { return _RelValorVendido ?? (_RelValorVendido = new Command(async () => await ExecuteRelValorVendido())); }
         }
 
-        async Task ExecuteRelClienteAddCommand()
+        async Task ExecuteRelValorVendido()
         {
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new RelatorioClienteAdicionadoSelecaoPage());
+                await Navigation.PushAsync(new RelatorioFinalVendaValorVendidoSelecaoPage());
                 IsBusy = false;
             }
         }

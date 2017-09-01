@@ -250,6 +250,149 @@ namespace Carro.Services
 
         #region Relatorios
 
+        #region RelatorioSaldo
+
+
+        public decimal RelatorioSaldoVendasRecebidas(DateTime dataInicial, DateTime dataFinal)
+        {
+            decimal vendasRecebidas = 0;
+            List<OrdemVendaParcela> listaOrdemVendaParcela = new List<OrdemVendaParcela>();
+            List<OrdemVenda> listaOrdemVenda = new List<OrdemVenda>();
+
+
+            listaOrdemVendaParcela = DB.Query<OrdemVendaParcela>("SELECT * FROM OrdemVendaParcela");
+            listaOrdemVenda = DB.Query<OrdemVenda>("SELECT * FROM OrdemVenda WHERE Registro >= ? AND Registro <= ?", dataInicial.Ticks, dataFinal.Ticks);
+
+            foreach (OrdemVendaParcela element in listaOrdemVendaParcela)
+            {
+                DB.GetChildren(element, true);
+            }
+
+            foreach (OrdemVendaParcela element in listaOrdemVendaParcela.ToList())
+            {
+                if (element.OrdemVenda.Registro < dataInicial || element.OrdemVenda.Registro > dataFinal)
+                {
+                    listaOrdemVendaParcela.Remove(element);
+                }
+
+                if (element.OrdemVenda.eVenda == false)
+                {
+                    listaOrdemVendaParcela.Remove(element);
+                }
+
+                if (element.OrdemVenda.FormaPagamento == 2 && element.Pago == false)
+                {
+                    listaOrdemVendaParcela.Remove(element);
+                }
+
+            }
+
+            foreach (OrdemVenda element in listaOrdemVenda.ToList())
+            {
+                if (element.eVenda == false)
+                {
+                    listaOrdemVenda.Remove(element);
+                }
+
+            }
+
+            foreach (OrdemVenda element in listaOrdemVenda.ToList())
+            {
+                if (element.FormaPagamento == 1)
+                {
+                    vendasRecebidas = vendasRecebidas + element.Valor;
+                }
+            }
+
+            foreach (OrdemVendaParcela element in listaOrdemVendaParcela.ToList())
+            {
+                if (element.OrdemVenda.FormaPagamento == 2)
+                {
+                    vendasRecebidas = vendasRecebidas + element.ValorParcela;
+                }
+            }
+
+            return vendasRecebidas;
+        }
+
+        public decimal RelatorioSaldoDespesas(DateTime dataInicial, DateTime dataFinal)
+        {
+            decimal despesas = 0;
+            List<Despesa> listaDespesa = new List<Despesa>();
+
+
+            listaDespesa = DB.Query<Despesa>("SELECT * FROM Despesa WHERE Registro >= ? AND Registro <= ?", dataInicial.Ticks, dataFinal.Ticks);
+
+            foreach (Despesa element in listaDespesa)
+            {
+                despesas = despesas + element.Valor;
+            }
+
+
+            return despesas;
+        }
+
+        public decimal RelatorioSaldoPerdas(DateTime dataInicial, DateTime dataFinal)
+        {
+            decimal perdas = 0;
+            List<PerdaProduto> listaPerda = new List<PerdaProduto>();
+
+            listaPerda = DB.Query<PerdaProduto>("SELECT * FROM PerdaProduto");
+
+            foreach (PerdaProduto element in listaPerda)
+            {
+                DB.GetChildren(element, true);
+            }
+
+            foreach (PerdaProduto element in listaPerda.ToList())
+            {
+                if (element.Perda.Registro < dataInicial || element.Perda.Registro > dataFinal)
+                {
+                    listaPerda.Remove(element);
+                }
+            }
+
+            foreach (PerdaProduto element in listaPerda)
+            {
+                perdas = perdas + (element.QuantidadePerdida * element.Preco);
+            }
+
+            return perdas;
+        }
+
+        #endregion
+
+        #region RelatorioFinalVenda
+
+        public decimal RelatorioFinalVendaValorVendido(DateTime dataInicial, DateTime dataFinal)
+        {
+            List<OrdemVenda> listaOrdemVenda = new List<OrdemVenda>();
+            decimal valorVendido = 0;
+
+            listaOrdemVenda = DB.Query<OrdemVenda>("SELECT * FROM OrdemVenda WHERE Registro >= ? AND Registro <= ?", dataInicial.Ticks, dataFinal.Ticks);
+
+            foreach (OrdemVenda element in listaOrdemVenda)
+            {
+                valorVendido = valorVendido + element.Valor;
+            }
+
+            return valorVendido;
+        }
+
+        public int RelatorioFinalVendaQuantidadeVendida(DateTime dataInicial, DateTime dataFinal)
+        {
+            List<OrdemVenda> listaOrdemVenda = new List<OrdemVenda>();
+            int quantidadeVendida= 0;
+
+            listaOrdemVenda = DB.Query<OrdemVenda>("SELECT * FROM OrdemVenda WHERE Registro >= ? AND Registro <= ?", dataInicial.Ticks, dataFinal.Ticks);
+
+            quantidadeVendida = listaOrdemVenda.Count();
+
+            return quantidadeVendida;
+        }
+
+        #endregion
+
         #region  RelatorioPessoaCliente
 
         public int RelatorioTotalClientes()
