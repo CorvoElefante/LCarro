@@ -171,7 +171,7 @@ namespace Carro.ViewModels
             if (!IsBusy)
             {
                 IsBusy = true;
-                await Navigation.PushAsync(new SobrePage());
+                await Navigation.PushAsync(new OpcaoPage());
                 IsBusy = false;
             }
         }
