@@ -8,8 +8,8 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem
-            Icon="ic_Editar_Venda_Small"
-            Command="{Binding EditarFinalVendaPagarParcelasHelpCommand}"/>
+            Icon="ic_Pagar_Parcela"
+            Command="{Binding HelpCommand}"/>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Resources>
@@ -94,7 +94,7 @@
                 </Grid.ColumnDefinitions>
                 <Image
                     Grid.Column="1"
-                    Source="ic_Salvar_Large"
+                    Source="ic_Pagar_Parcela"
                     IsOpaque="True"
                     Aspect="AspectFit"/>
                 <Label

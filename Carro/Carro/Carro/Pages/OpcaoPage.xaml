@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
+             x:Class="Carro.Pages.OpcoesPage"
+             BackgroundColor="#FFFFF7"
+             Title="Opções">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Icon="{x:Static resources:Images.ic_Opcao_Small}"/>
+    </ContentPage.ToolbarItems>
+
+    <Grid>
+        <Frame
+            Padding="0"
+            BackgroundColor="#2f7dd6">
+            <Label
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Text="Backup"
+                FontSize="Large"
+                TextColor="#FFFFF7"/>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer
+                    Command="{Binding BackupPageCommand}"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+
+        <Frame
+            Padding="0"
+            Grid.Row="1"
+            BackgroundColor="#2f7dd6">
+            <Label
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Text="Sobre"
+                FontSize="Large"
+                TextColor="#FFFFF7"/>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer
+                    Command="{Binding SobrePageCommand}"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+    </Grid>
+</ContentPage>

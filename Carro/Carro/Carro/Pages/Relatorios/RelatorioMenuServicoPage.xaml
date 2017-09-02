@@ -25,7 +25,7 @@
                 <Label
                     VerticalOptions="Center"
                     HorizontalOptions="Center"
-                    Text="Serviços mais utilizados"
+                    Text="Serviços mais vendidos"
                     TextColor="#FFFFF7"
                     FontSize="Medium"/>
                 <Frame.GestureRecognizers>

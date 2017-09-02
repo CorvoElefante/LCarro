@@ -8,8 +8,8 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem
-            Icon="ic_Editar_Venda_Small"
-            Command="{Binding EditarFinalVendaParcelaHelpCommand}"/>
+            Icon="ic_Pagar_Parcela"
+            Command="{Binding HelpCommand}"/>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Resources>

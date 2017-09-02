@@ -42,7 +42,7 @@
                 <Label
                     VerticalOptions="Center"
                     HorizontalOptions="Center"
-                    Text="produtos sem estoque"
+                    Text="Produtos sem estoque"
                     TextColor="#FFFFF7"
                     FontSize="Medium"/>
                 <Frame.GestureRecognizers>
@@ -52,12 +52,12 @@
 
             <Frame
                 Grid.Row="2"
-                Padding="0,0,0,0"
+                Padding="15,0,0,0"
                 BackgroundColor="#444444">
                 <Label
                     VerticalOptions="Center"
                     HorizontalOptions="Center"
-                    Text="produtos em estoque"
+                    Text="Valor total de produtos em estoque"
                     TextColor="#FFFFF7"
                     FontSize="Medium"/>
                 <Frame.GestureRecognizers>

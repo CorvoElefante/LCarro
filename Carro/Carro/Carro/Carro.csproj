@@ -510,6 +510,12 @@
     <Compile Include="Pages\CadastroServicoPage.xaml.cs">
       <DependentUpon>CadastroServicoPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\OpcaoBackupPage.xaml.cs">
+      <DependentUpon>OpcaoBackupPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OpcaoSobrePage.xaml.cs">
+      <DependentUpon>OpcaoSobrePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Relatorios\RelatorioClienteAniversarianteDiaResultadoPage.xaml.cs">
       <DependentUpon>RelatorioClienteAniversarianteDiaResultadoPage.xaml</DependentUpon>
     </Compile>
@@ -621,8 +627,8 @@
     <Compile Include="Pages\Relatorios\RelatorioServicoUtilizadoSelecaoPage.xaml.cs">
       <DependentUpon>RelatorioServicoUtilizadoSelecaoPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\SobrePage.xaml.cs">
-      <DependentUpon>SobrePage.xaml</DependentUpon>
+    <Compile Include="Pages\OpcaoPage.xaml.cs">
+      <DependentUpon>OpcaoPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Repositories\GenericReadOnlyRepository.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
@@ -674,6 +680,8 @@
     <Compile Include="ViewModels\ListaVendaViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MenuViewModel.cs" />
+    <Compile Include="ViewModels\OpcaoBackupViewModel.cs" />
+    <Compile Include="ViewModels\OpcaoViewModel.cs" />
     <Compile Include="ViewModels\Relatorios\RelatorioClienteAdicionadoResultadoViewModel.cs" />
     <Compile Include="ViewModels\Relatorios\RelatorioClienteAdicionadoSelecaoViewModel.cs" />
     <Compile Include="ViewModels\Relatorios\RelatorioClienteAniversarianteDiaResultadoViewModel.cs" />
@@ -812,7 +820,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\SobrePage.xaml">
+    <EmbeddedResource Include="Pages\OpcaoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -1841,6 +1849,18 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\Help\RelatoriosHelp\RelatorioServicoUtilizadoSelecaoHelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\OpcaoBackupPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\OpcaoSobrePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

@@ -27,7 +27,7 @@
                 <Label
                     VerticalOptions="Center"
                     HorizontalOptions="Center"
-                    Text="Valor vendido no periodo"
+                    Text="Valor vendido"
                     TextColor="#FFFFF7"
                     FontSize="Medium"/>
                 <Frame.GestureRecognizers>
