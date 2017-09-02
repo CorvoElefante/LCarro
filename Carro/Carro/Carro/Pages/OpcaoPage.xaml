@@ -39,7 +39,7 @@
                 TextColor="#FFFFF7"/>
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer
-                    Command="{Binding SobrePageCommand}"/>
+                    Command="{Binding OpcaoSobreCommand}"/>
             </Frame.GestureRecognizers>
         </Frame>
     </Grid>
