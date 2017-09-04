@@ -16,5 +16,40 @@ namespace Carro.ViewModels
         {
 
         }
+
+        Command _RealizarBackupCommand;
+        public Command RealizarBackupCommand
+        {
+            get { return _RealizarBackupCommand ?? (_RealizarBackupCommand = new Command(async () => await ExecuteRealizarBackupCommand())); }
+        }
+
+        async Task ExecuteRealizarBackupCommand()
+        {
+            if (!IsBusy)
+            {
+                IsBusy = true;
+                bool ok;
+                var sqlite = DependencyService.Get<ISQLite>();
+                ok = sqlite.BackupDBTo();
+
+                IsBusy = false;
+            }
+        }
+
+        Command _ImportarBackupCommand;
+        public Command ImportarBackupCommand
+        {
+            get { return _ImportarBackupCommand ?? (_ImportarBackupCommand = new Command(async () => await ExecuteImportarBackupCommand())); }
+        }
+
+        async Task ExecuteImportarBackupCommand()
+        {
+            if (!IsBusy)
+            {
+                IsBusy = true;
+
+                IsBusy = false;
+            }
+        }
     }
 }

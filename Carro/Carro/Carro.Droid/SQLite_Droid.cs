@@ -11,6 +11,19 @@ namespace Carro.Droid
     {
         const string DBNAME = "db_name.db";
 
+        public bool BackupDBTo(string filename)
+        {
+            try
+            {
+                File.Copy(GetDBPath(), filename, true);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public bool FileExists(string fileName)
         {
             return File.Exists(fileName);
@@ -37,9 +50,23 @@ namespace Carro.Droid
             return Environment.GetFolderPath(Environment.SpecialFolder.Personal);
         }
 
+        public bool RestoreDBFrom(string filename)
+        {
+            try
+            {
+                File.Copy(filename, GetDBPath(), true);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public void SaveDBFile(string fileName, byte[] file)
         {
             File.WriteAllBytes(Path.Combine(GetDBPath(), fileName), file);
         }
+
     }
 }

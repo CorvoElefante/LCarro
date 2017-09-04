@@ -1,10 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Carro.Pages.OpcaoBackupPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin Forms!" />
-        </StackLayout>
-    </ContentPage.Content>
+             xmlns:resources="clr-namespace:Carro.Resources;assembly=Carro"
+             x:Class="Carro.Pages.OpcaoBackupPage"
+             BackgroundColor="#FFFFF7"
+             Title="Opções">
+
+    <Grid>
+        <Frame
+            Padding="0"
+            BackgroundColor="#2f7dd6">
+            <Label
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Text="Realizar Backup"
+                FontSize="Large"
+                TextColor="#FFFFF7"/>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer
+                    Command="{Binding RealizarBackupCommand}"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+
+        <Frame
+            Padding="0"
+            Grid.Row="1"
+            BackgroundColor="#2f7dd6">
+            <Label
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Text="Importar Backup"
+                FontSize="Large"
+                TextColor="#FFFFF7"/>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer
+                    Command="{Binding ImportarBackupCommand}"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+    </Grid>
+    
 </ContentPage>
